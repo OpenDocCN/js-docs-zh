@@ -1,5 +1,3 @@
-# Introduction
-
 # orm2 中文文档
 
 译者：[飞龙](https://github.com/wizardforcel)

@@ -1,5 +1,3 @@
-# 介紹
-
 # Hexo 中文文档
 
 来源：[Hexo](https://hexo.io/zh-cn/)

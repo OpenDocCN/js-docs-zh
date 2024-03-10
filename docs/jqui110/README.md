@@ -1,5 +1,3 @@
-# 介紹
-
 # jQuery UI API 中文文档 1.10
 
 来源：[jQuery UI API 中文文档](http://www.css88.com/jquery-ui-api/)

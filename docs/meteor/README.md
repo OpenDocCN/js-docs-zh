@@ -1,7 +1,5 @@
 # Meteor 中文文档
 
-# Meteor 中文文档
-
 > 来源：[Meteor 中文文档](http://docs.meteorhub.org/#/basic/)
 
 ***Meteor 是一个用于构建现代应用的超简单的开发环境。之前用最好的工具，都需要花费数周时间的事情，现在用 Meteor，只需数小时。***

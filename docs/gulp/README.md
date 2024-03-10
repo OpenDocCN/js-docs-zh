@@ -1,7 +1,5 @@
 # gulp 中文文档
 
-# gulp 中文文档
-
 > 来源：[gulp 中文文档](http://www.gulpjs.com.cn/docs/)
 
 *   入门指南 - 如何开始使用 gulp

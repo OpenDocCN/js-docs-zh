@@ -1,6 +1,4 @@
-# 主页
-
-# lodash
+# lodash 4.5 中文文档
 
 一个 JavaScript 的实用工具库, 表现一致性, [模块化](https://www.npmjs.com/browse/keyword/lodash-modularized), 高性能, 以及 可扩展
 

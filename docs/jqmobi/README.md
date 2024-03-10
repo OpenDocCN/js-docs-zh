@@ -1,5 +1,3 @@
-# 介紹
-
 # jQuery Mobile 中文文档 A4
 
 整理：[darklord](http://www.cnblogs.com/darklord/)
