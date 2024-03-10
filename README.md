@@ -42,7 +42,7 @@
 
 ### Docker
 
-```
+```js
 docker pull apachecn0/flygon-js-docs-zh
 docker run -tid -p <port>:80 apachecn0/flygon-js-docs-zh
 # 访问 http://localhost:{port} 查看文档
@@ -50,7 +50,7 @@ docker run -tid -p <port>:80 apachecn0/flygon-js-docs-zh
 
 ### NPM
 
-```
+```js
 npm install -g flygon-js-docs-zh
 flygon-js-docs-zh <port>
 # 访问 http://localhost:{port} 查看文档

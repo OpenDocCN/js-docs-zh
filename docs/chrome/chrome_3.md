@@ -38,7 +38,7 @@
 
 您必须在扩展说明文件中声明使用书签 API 的权限。例如：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -59,7 +59,7 @@
 
 下面的 代码创建了一个标题为 "Extension bookmarks"的书签夹。函数 create()的第一个参数指定了新书签夹的属性，第二个参数定义了一个在书签夹创建后要执行的回调函数
 
-```
+```js
 chrome.bookmarks.create({'parentId': bookmarkBar.id,
                          'title': 'Extension bookmarks'},
                         function(newFolder) {
@@ -69,7 +69,7 @@ chrome.bookmarks.create({'parentId': bookmarkBar.id,
 
 接下来的代码创建了一个指向扩展开发文档的书签。如果创建书签失败，也不会引起什么问题，所以没有指定回调函数。
 
-```
+```js
 chrome.bookmarks.create({'parentId': extensionsFolderId,
                          'title': 'Extensions doc',
                          'url': 'http://code.google.com/chrome/extensions'}); 
@@ -153,7 +153,7 @@ The callback *parameter* should specify a function that looks like this:
 
 如果需要指定回调函数，则回调函数格式如下：
 
-```
+```js
 function(BookmarkTreeNode result) {...}; 
 ```
 
@@ -185,7 +185,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -225,7 +225,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of BookmarkTreeNode results) {...}; 
 ```
 
@@ -273,7 +273,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of BookmarkTreeNode results) {...}; 
 ```
 
@@ -321,7 +321,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of BookmarkTreeNode results) {...}; 
 ```
 
@@ -361,7 +361,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of BookmarkTreeNode results) {...}; 
 ```
 
@@ -393,7 +393,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -455,7 +455,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 如果需要指定*callback*参数，函数格式如下：
 
-```
+```js
 function(BookmarkTreeNode result) {...}; 
 ```
 
@@ -501,7 +501,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 如果需要指定*callback*参数，函数格式如下：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -539,7 +539,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 如果需要指定*callback*参数，函数格式如下：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -579,7 +579,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of BookmarkTreeNode results) {...}; 
 ```
 
@@ -649,7 +649,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 如果需要指定 callback 参数，函数格式如下：
 
-```
+```js
 function(BookmarkTreeNode result) {...}; 
 ```
 
@@ -994,7 +994,7 @@ Cookies
 
 要使用 cookies API, 你必须在你的清单中声明"cookies"权限，以及任何你希望 cookie 可以访问的主机权限。例如：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -1078,7 +1078,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Cookie cookie) {...}; 
 ```
 
@@ -1182,7 +1182,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of Cookie cookies) {...}; 
 ```
 
@@ -1222,7 +1222,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of CookieStore cookieStores) {...}; 
 ```
 
@@ -1286,7 +1286,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1390,7 +1390,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1562,7 +1562,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 1.  1\. 在扩展的 manifest 中指定 "devtools_page"项：
 
-    ```
+    ```js
     {
       "name": ...
       "version": "1.0",
@@ -1593,7 +1593,7 @@ For information on how to use experimental APIs, see the chrome.experimental.* A
 
 `Event` 是一个对象，当你关注的一些事情发生时通知你。 以下是一个使用 `chrome.tabs.onCreated event` 的例子，每当一个新标签创建时，event 对象会得到通知：
 
-```
+```js
 chrome.tabs.onCreated.**addListener(function(**tab**) {**
   appendToLog('tabs.onCreated --'
               + ' window: ' + tab.windowId
@@ -1609,7 +1609,7 @@ chrome.tabs.onCreated.**addListener(function(**tab**) {**
 
 你可以调用任何 `Event` 对象的以下方法：
 
-```
+```js
 void addListener(function callback(...))
 void removeListener(function callback(...))
 bool hasListener(function callback(...)) 
@@ -1623,7 +1623,7 @@ chorme.history 模块被用于和浏览器所访问的页面记录交互。你�
 
 您必须在扩展 Manifest 文件中定义"history"许可，以便使用 history API. 如下所示：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -1702,7 +1702,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1734,7 +1734,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function() {...}; 
 ```
 
@@ -1790,7 +1790,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function() {...}; 
 ```
 
@@ -1830,7 +1830,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1878,7 +1878,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of VisitItem results) {...}; 
 ```
 
@@ -1958,7 +1958,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of HistoryItem results) {...}; 
 ```
 
@@ -2136,7 +2136,7 @@ Undocumented.
 
 要使用这个 API，您必须在扩展清单文件中 中对授权，例如:
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -2169,7 +2169,7 @@ chrome.management.get(string `id`, function `callback`)
 
 如果你指定了 *回调函数* 它看起来应该像下面这个样子：
 
-```
+```js
 function(ExtensionInfo result) {...}; 
 ```
 
@@ -2189,7 +2189,7 @@ chrome.management.getAll(function `callback`)
 
 如果你指定了 *回调函数*，它看起来应该像下面这个样子：
 
-```
+```js
 function(array of ExtensionInfo result) {...}; 
 ```
 
@@ -2211,7 +2211,7 @@ chrome.management.getPermissionWarningsById(string `id`, function `callback`)
 
 如果你指定了 *回调函数*它看起来应该像下面这个样子：
 
-```
+```js
 function(array of string permissionWarnings) {...}; 
 ```
 
@@ -2235,7 +2235,7 @@ chrome.management.getPermissionWarningsByManifest(string `manifestStr`, function
 
 如果你指定了 *回调函数*，它看起来应该像下面这个样子：
 
-```
+```js
 function(array of string permissionWarnings) {...}; 
 ```
 
@@ -2259,7 +2259,7 @@ chrome.management.launchApp(string `id`, function `callback`)
 
 如果你指定了 *回调函数*，它看起来应该像下面这个样子：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -2285,7 +2285,7 @@ chrome.management.setEnabled(string `id`, boolean `enabled`, function `callback`
 
 如果你指定了 *回调函数*，它看起来应该像下面这个样子：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -2309,7 +2309,7 @@ If you specify the *callback* parameter, it should specify a function that looks
 
 如果你指定了 *回调函数*，它看起来应该像下面这个样子：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -2453,7 +2453,7 @@ chrome 标签模块被用于和浏览器的标签系统交互。此模块被用�
 
 几乎所有 chrome 标签方法需要你在 extension manifest 中定义标签权限。例如：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -2540,7 +2540,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(string dataUrl) {...}; 
 ```
 
@@ -2604,7 +2604,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -2684,7 +2684,7 @@ The callback *parameter* should specify a function that looks like this:
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function(Tab tab) {...}; 
 ```
 
@@ -2732,7 +2732,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(string language) {...}; 
 ```
 
@@ -2812,7 +2812,7 @@ The callback *parameter* should specify a function that looks like this:
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -2852,7 +2852,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Tab tab) {...}; 
 ```
 
@@ -2900,7 +2900,7 @@ T 回调 *参数* 应该如下定义：
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of Tab tabs) {...}; 
 ```
 
@@ -2940,7 +2940,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Tab tab) {...}; 
 ```
 
@@ -2988,7 +2988,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Tab tab) {...}; 
 ```
 
@@ -3066,7 +3066,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -3128,7 +3128,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function(Tab tab) {...}; 
 ```
 
@@ -3174,7 +3174,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -3230,7 +3230,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function(any response) {...}; 
 ```
 
@@ -3310,7 +3310,7 @@ The callback *parameter* should specify a function that looks like this:
 
 回调 *参数* 应该如下定义：
 
-```
+```js
 function(Tab tab) {...}; 
 ```
 
@@ -3736,7 +3736,7 @@ For information on how to use experimental APIs, see the chrome.experimental.* A
 
 要使用视窗 API，你必须在 manifest.json 声明"tabs"的权限 。（不，这不是一个错字 - 窗口和标签模块的互动如此密切，我们决定它们共享一个权限。）例如：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -3875,7 +3875,7 @@ The callback *parameter* should specify a function that looks like this:
 
 如果指定了回调参数，它应该指定一个如下所示函数：
 
-```
+```js
 function(Window window) {...}; 
 ```
 
@@ -3923,7 +3923,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Window window) {...}; 
 ```
 
@@ -3979,7 +3979,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(array of Window windows) {...}; 
 ```
 
@@ -4019,7 +4019,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Window window) {...}; 
 ```
 
@@ -4059,7 +4059,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Window window) {...}; 
 ```
 
@@ -4107,7 +4107,7 @@ The callback *parameter* should specify a function that looks like this:
 
 如果指定了回调参数，它应该指定一个如下所示函数：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -4195,7 +4195,7 @@ The callback *parameter* should specify a function that looks like this:
 
 如果指定了回调参数，它应该指定一个如下所示函数：
 
-```
+```js
 function(Window window) {...}; 
 ```
 

@@ -22,7 +22,7 @@ HTTPS 是建立在 TLS/SSL 之上的 HTTP 协议。在`node.js`中，它被作�
 
 例子：
 
-```
+```js
 // curl -k https://localhost:8000/
 var https = require('https');
 var fs = require('fs');
@@ -40,7 +40,7 @@ https.createServer(options, function (req, res) {
 
 或
 
-```
+```js
 var https = require('https');
 var fs = require('fs');
 
@@ -76,7 +76,7 @@ https.createServer(options, function (req, res) {
 
 例子：
 
-```
+```js
 var https = require('https');
 
 var options = {
@@ -133,7 +133,7 @@ req.on('error', function(e) {
 
 例子：
 
-```
+```js
 var options = {
   hostname: 'encrypted.google.com',
   port: 443,
@@ -153,7 +153,7 @@ var req = https.request(options, function(res) {
 
 例子：
 
-```
+```js
 var options = {
   hostname: 'encrypted.google.com',
   port: 443,
@@ -177,7 +177,7 @@ var req = https.request(options, function(res) {
 
 例子：
 
-```
+```js
 var https = require('https');
 
 https.get('https://encrypted.google.com/', function(res) {

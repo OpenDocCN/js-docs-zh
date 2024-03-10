@@ -52,7 +52,7 @@
 
 使用构造函数验证实例：
 
-```
+```js
 assert.throws(
   function() {
     throw new Error("Wrong value");
@@ -63,7 +63,7 @@ assert.throws(
 
 使用正则表达式验证错误信息:
 
-```
+```js
 assert.throws(
   function() {
     throw new Error("Wrong value");
@@ -74,7 +74,7 @@ assert.throws(
 
 自定义错误验证:
 
-```
+```js
 assert.throws(
   function() {
     throw new Error("Wrong value");

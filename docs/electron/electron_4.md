@@ -10,7 +10,7 @@ Electron 也提供了一些额外的内置组件来开发传统桌面应用。�
 
 主进程脚本看起来像个普通的 nodejs 脚本
 
-```
+```js
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -25,7 +25,7 @@ app.on('ready', function() {
 
 渲染进程和传统的 web 界面一样，除了它具有使用 node 模块的能力：
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <body>
@@ -41,7 +41,7 @@ app.on('ready', function() {
 
 如果你使用的是 CoffeeScript 或 Babel，你可以使用[destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)来让使用内置模块更简单:
 
-```
+```js
 const {app, BrowserWindow} = require('electron'); 
 ```
 
@@ -53,13 +53,13 @@ const {app, BrowserWindow} = require('electron');
 
 为了完整的禁用旧样式，你可以设置环境变量 `ELECTRON_HIDE_INTERNAL_MODULES` :
 
-```
+```js
 process.env.ELECTRON_HIDE_INTERNAL_MODULES = 'true' 
 ```
 
 或者调用 `hideInternalModules` API:
 
-```
+```js
 require('electron').hideInternalModules() 
 ```
 
@@ -83,7 +83,7 @@ Electron 中的 `process` 对象 与 upstream node 中的有以下的不同点:
 
 当 node 被完全关闭的时候，它可以被预加载脚本使用来添加(原文: removed)与 node 无关的全局符号来回退到全局范围:
 
-```
+```js
 // preload.js
 var _setImmediate = setImmediate;
 var _clearImmediate = clearImmediate;
@@ -117,7 +117,7 @@ process.once('loaded', function() {
 
 这页列出了 Chrome 浏览器和 Electron 支持的命令行开关. 你也可以在 app 模块的 ready 事件发出之前使用 app.commandLine.appendSwitch 来添加它们到你应用的 main 脚本里面:
 
-```
+```js
 const app = require('electron').app;
 app.commandLine.appendSwitch('remote-debugging-port', '8315');
 app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1');
@@ -149,7 +149,7 @@ app.on('ready', function() {
 
 在启动 Electron 时，如果你想在主进程中激活 `flags` ，它将被转换.
 
-```
+```js
 $ electron --js-flags="--harmony_proxies --harmony_collections" your-app 
 ```
 
@@ -163,7 +163,7 @@ $ electron --js-flags="--harmony_proxies --harmony_collections" your-app
 
 例如:
 
-```
+```js
 app.commandLine.appendSwitch('proxy-bypass-list', '<local>;*.google.com;*foo.com;1.2.3.4:5678') 
 ```
 
@@ -250,14 +250,14 @@ app.commandLine.appendSwitch('proxy-bypass-list', '<local>;*.google.com;*foo.com
 
 POSIX shells 的例子:
 
-```
+```js
 $ export ELECTRON_ENABLE_LOGGING=true
 $ electron 
 ```
 
 Windows 控制台:
 
-```
+```js
 > set ELECTRON_ENABLE_LOGGING=true
 > electron 
 ```
@@ -310,7 +310,7 @@ Windows 控制台:
 
 获取拖动到 APP 中文件的真实路径的例子：
 
-```
+```js
 <div id="holder">
   Drag your file here
 </div>
@@ -342,13 +342,13 @@ Windows 控制台:
 
 把一个 web page 嵌入到你的 app，首先添加 `webview` 标签到你的 app 待嵌入 page(展示 guest content). 在一个最简单的 `webview` 中，它包含了 web page 的文件路径和一个控制 `webview` 容器展示效果的 css 样式:
 
-```
+```js
 <webview id="foo" src="https://www.github.com/" style="display:inline-block; width:640px; height:480px"></webview> 
 ```
 
 如果想随时控制 guest 内容，可以添加 JavaScript 脚本来监听 `webview` 事件使用 `webview` 方法来做出响应. 这里是 2 个事件监听的例子：一个监听 web page 准备加载，另一个监听 web page 停止加载，并且在加载的时候显示一条 "loading..." 信息:
 
-```
+```js
 <script> onload = function() {
     var webview = document.getElementById("foo");
     var indicator = document.querySelector(".indicator");
@@ -370,7 +370,7 @@ Windows 控制台:
 
 ### `src`
 
-```
+```js
 <webview src="https://www.github.com/"></webview> 
 ```
 
@@ -382,7 +382,7 @@ Windows 控制台:
 
 ### `autosize`
 
-```
+```js
 <webview src="https://www.github.com/" autosize="on" minwidth="576" minheight="432"></webview> 
 ```
 
@@ -390,7 +390,7 @@ Windows 控制台:
 
 ### `nodeintegration`
 
-```
+```js
 <webview src="http://www.google.com/" nodeintegration></webview> 
 ```
 
@@ -398,7 +398,7 @@ Windows 控制台:
 
 ### `plugins`
 
-```
+```js
 <webview src="https://www.github.com/" plugins></webview> 
 ```
 
@@ -406,7 +406,7 @@ Windows 控制台:
 
 ### `preload`
 
-```
+```js
 <webview src="https://www.github.com/" preload="./test.js"></webview> 
 ```
 
@@ -416,7 +416,7 @@ Windows 控制台:
 
 ### `httpreferrer`
 
-```
+```js
 <webview src="https://www.github.com/" httpreferrer="http://cheng.guru"></webview> 
 ```
 
@@ -424,7 +424,7 @@ Windows 控制台:
 
 ### `useragent`
 
-```
+```js
 <webview src="https://www.github.com/" useragent="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko"></webview> 
 ```
 
@@ -432,7 +432,7 @@ Windows 控制台:
 
 ### `disablewebsecurity`
 
-```
+```js
 <webview src="https://www.github.com/" disablewebsecurity></webview> 
 ```
 
@@ -440,7 +440,7 @@ Windows 控制台:
 
 ### partition
 
-```
+```js
 <webview src="https://github.com" partition="persist:github"></webview>
 <webview src="http://electron.atom.io" partition="electron"></webview> 
 ```
@@ -451,7 +451,7 @@ Windows 控制台:
 
 ### `allowpopups`
 
-```
+```js
 <webview src="https://www.github.com/" allowpopups></webview> 
 ```
 
@@ -459,7 +459,7 @@ Windows 控制台:
 
 ### `blinkfeatures`
 
-```
+```js
 <webview src="https://www.github.com/" blinkfeatures="PreciseMemoryInfo, CSSVariables"></webview> 
 ```
 
@@ -473,7 +473,7 @@ Windows 控制台:
 
 **例如**
 
-```
+```js
 webview.addEventListener("dom-ready", function() {
   webview.openDevTools();
 }); 
@@ -834,7 +834,7 @@ Returns:
 
 下面示例代码将所有信息输出到内置控制台，没有考虑到输出等级和其他属性。
 
-```
+```js
 webview.addEventListener('console-message', function(e) {
   console.log('Guest page logged a message:', e.message);
 }); 
@@ -853,7 +853,7 @@ webview.addEventListener('console-message', function(e) {
 
 在请求`webview.findInPage`结果有效时触发.
 
-```
+```js
 webview.addEventListener('found-in-page', function(e) {
   if (e.result.finalUpdate)
     webview.stopFindInPage("keepSelection");
@@ -875,7 +875,7 @@ const rquestId = webview.findInPage("test");
 
 下面示例代码在系统默认浏览器中打开了一个新的 url.
 
-```
+```js
 webview.addEventListener('new-window', function(e) {
   require('electron').shell.openExternal(e.url);
 }); 
@@ -919,7 +919,7 @@ webview.addEventListener('new-window', function(e) {
 
 下面的示例代码指示了在客户端试图关闭自己的时候将改变导航连接为`about:blank`.
 
-```
+```js
 webview.addEventListener('close', function() {
   webview.src = 'about:blank';
 }); 
@@ -936,7 +936,7 @@ webview.addEventListener('close', function() {
 
 你可以很简单的使用 `sendToHost` 方法和 `ipc-message` 事件在 guest page 和 嵌入页(embedder page)之间通信:
 
-```
+```js
 // In embedder page.
 webview.addEventListener('ipc-message', function(event) {
   console.log(event.channel);
@@ -945,7 +945,7 @@ webview.addEventListener('ipc-message', function(event) {
 webview.send('ping'); 
 ```
 
-```
+```js
 // In guest page.
 var ipcRenderer = require('electron').ipcRenderer;
 ipcRenderer.on('ping', function() {
@@ -986,7 +986,7 @@ ipcRenderer.on('ping', function() {
 
 在页面的主体色改变的时候触发. 在使用 meta 标签的时候这就很常见了:
 
-```
+```js
 <meta name='theme-color' content='#ff0000'> 
 ```
 
@@ -1070,7 +1070,7 @@ ipcRenderer.on('ping', function() {
 
 下面的这个例子将会展示如何在最后一个窗口被关闭时退出应用：
 
-```
+```js
 var app = require('app');
 app.on('window-all-closed', function() {
   app.quit();
@@ -1197,7 +1197,7 @@ app.on('window-all-closed', function() {
 
 当对 `url` 验证 `certificate` 证书失败的时候触发，如果需要信任这个证书，你需要阻止默认行为 `event.preventDefault()` 并且 调用 `callback(true)`。
 
-```
+```js
 session.on('certificate-error', function(event, webContents, url, error, certificate, callback) {
   if (url == "https://github.com") {
     // 验证逻辑。
@@ -1227,7 +1227,7 @@ session.on('certificate-error', function(event, webContents, url, error, certifi
 
 需要通过调用 `event.preventDefault()` 来防止应用自动使用第一个证书进行验证。如下所示：
 
-```
+```js
 app.on('select-certificate', function(event, host, url, list, callback) {
   event.preventDefault();
   callback(list[0]);
@@ -1256,7 +1256,7 @@ app.on('select-certificate', function(event, host, url, list, callback) {
 
 默认情况下，Electron 会取消所有的验证行为，如果需要重写这个行为，你需要用 `event.preventDefault()` 来阻止默认行为，并且 用 `callback(username, password)` 来进行验证。
 
-```
+```js
 app.on('login', function(event, webContents, request, authInfo, callback) {
   event.preventDefault();
   callback('username', 'secret');
@@ -1405,7 +1405,7 @@ app.on('login', function(event, webContents, request, authInfo, callback) {
 
 下面是一个简单的例子。我们可以通过这个例子了解如何确保应用为单实例运行状态。
 
-```
+```js
 var myWindow = null;
 
 var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
@@ -1440,7 +1440,7 @@ app.on('ready', function() {
 
 举个例子：
 
-```
+```js
 let browserOptions = {width: 1000, height: 800};
 
 // 只有平台支持的时候才使用透明窗口
@@ -1603,7 +1603,7 @@ Linux 下没有任何的自动更新支持，所以我们推荐用各个 Linux �
 
 `BrowserWindow` 类让你有创建一个浏览器窗口的权力。例如:
 
-```
+```js
 // In the main process.
 const BrowserWindow = require('electron').BrowserWindow;
 
@@ -1733,7 +1733,7 @@ win.show();
 
 通常你想通过 `beforeunload` 处理器来决定是否关闭窗口，但是它也会在窗口重载的时候被触发. 在 Electron 中，返回一个空的字符串或 `false` 可以取消关闭.例如:
 
-```
+```js
 window.onbeforeunload = function(e) {
   console.log('I do not want to be closed');
 
@@ -1815,7 +1815,7 @@ window.onbeforeunload = function(e) {
 
 在请求一个[App Command](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646275(v=vs.85).aspx)的时候触发. 典型的是键盘媒体或浏览器命令, Windows 上的 "Back" 按钮用作鼠标也会触发.
 
-```
+```js
 someWindow.on('app-command', function(e, cmd) {
   // Navigate the window back when the user hits their mouse back button
   if (cmd === 'browser-backward' && someWindow.webContents.canGoBack()) {
@@ -1874,7 +1874,7 @@ someWindow.on('app-command', function(e, cmd) {
 
 使用 `new BrowserWindow` 创建的实例对象，有如下属性:
 
-```
+```js
 // In this example `win` is our instance
 var win = new BrowserWindow({ width: 800, height: 600 }); 
 ```
@@ -2341,7 +2341,7 @@ windows 上句柄类型为 `HWND` ，OS X `NSView*` ， Linux `Window`.
 
 `content-tracing` 模块是用来收集由底层的 Chromium content 模块 产生的搜索数据. 这个模块不具备 web 接口，所有需要我们在 chrome 浏览器中添加 `chrome://tracing/` 来加载生成文件从而查看结果.
 
-```
+```js
 const contentTracing = require('electron').contentTracing;
 
 const options = {
@@ -2470,7 +2470,7 @@ contentTracing.startRecording(options, function() {
 
 对话框例子，展示了选择文件和目录:
 
-```
+```js
 var win = ...;  // BrowserWindow in which to show the dialog
 const dialog = require('electron').dialog;
 console.log(dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', 'multiSelections' ]})); 
@@ -2496,7 +2496,7 @@ console.log(dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', '
 
 `filters` 当需要限定用户的行为的时候，指定一个文件数组给用户展示或选择. 例如:
 
-```
+```js
 {
   filters: [
     { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
@@ -2561,7 +2561,7 @@ console.log(dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', '
 
 **Note**: 使用此模块注册的快捷键是系统全局的(QQ 截图那种), 不要在应用模块(app module)响应 `ready` 消息前使用此模块(注册快捷键).
 
-```
+```js
 var app = require('app');
 var globalShortcut = require('global-shortcut');
 
@@ -2629,7 +2629,7 @@ app.on('will-quit', function() {
 
 一个例子，在主进程和渲染进程之间发送和处理消息:
 
-```
+```js
 // In main process.
 const ipcMain = require('electron').ipcMain;
 ipcMain.on('asynchronous-message', function(event, arg) {
@@ -2643,7 +2643,7 @@ ipcMain.on('synchronous-message', function(event, arg) {
 }); 
 ```
 
-```
+```js
 // In renderer process (web page).
 const ipcRenderer = require('electron').ipcRenderer;
 console.log(ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
@@ -2709,7 +2709,7 @@ ipcRenderer.send('asynchronous-message', 'ping');
 
 下面这个例子是在网页(渲染进程)中通过 remote 模块动态创建的菜单，并且右键显示:
 
-```
+```js
 <!-- index.html -->
 <script> const remote = require('electron').remote;
 const Menu = remote.Menu;
@@ -2728,7 +2728,7 @@ window.addEventListener('contextmenu', function (e) {
 
 例子，在渲染进程中使用模板 api 创建应用菜单:
 
-```
+```js
 var template = [
   {
     label: 'Edit',
@@ -2997,7 +2997,7 @@ OS X 为一些菜单项提供了标准的行为方法，例如 `About xxx`, `Hid
 
 模板:
 
-```
+```js
 [
   {label: '4', id: '4'},
   {label: '5', id: '5'},
@@ -3009,7 +3009,7 @@ OS X 为一些菜单项提供了标准的行为方法，例如 `About xxx`, `Hid
 
 菜单:
 
-```
+```js
 - 1
 - 2
 - 3
@@ -3019,7 +3019,7 @@ OS X 为一些菜单项提供了标准的行为方法，例如 `About xxx`, `Hid
 
 模板:
 
-```
+```js
 [
   {label: 'a', position: 'endof=letters'},
   {label: '1', position: 'endof=numbers'},
@@ -3032,7 +3032,7 @@ OS X 为一些菜单项提供了标准的行为方法，例如 `About xxx`, `Hid
 
 菜单:
 
-```
+```js
 - ---
 - a
 - b
@@ -3104,7 +3104,7 @@ OS X 为一些菜单项提供了标准的行为方法，例如 `About xxx`, `Hid
 
 例如:
 
-```
+```js
 app.on('ready', function() {
   require('electron').powerMonitor.on('suspend', function() {
     console.log('The system is going to sleep');
@@ -3138,7 +3138,7 @@ app.on('ready', function() {
 
 例如:
 
-```
+```js
 const powerSaveBlocker = require('electron').powerSaveBlocker;
 
 var id = powerSaveBlocker.start('prevent-display-sleep');
@@ -3183,7 +3183,7 @@ powerSaveBlocker.stop(id);
 
 例子，使用一个与 `file://` 功能相似的协议 :
 
-```
+```js
 const electron = require('electron');
 const app = electron.app;
 const path = require('path');
@@ -3255,7 +3255,7 @@ app.on('ready', function() {
 
 例子:
 
-```
+```js
 protocol.registerBufferProtocol('atom', function(request, callback) {
   callback({mimeType: 'text/html', data: new Buffer('<h5>Response</h5>')});
 }, function (error) {
@@ -3355,7 +3355,7 @@ POST 请求应当包含 `uploadData` 对象.
 
 你也可以通过使用 `webContents` 的属性 `session` 来使用一个已有页面的 `session` ，`webContents` 是`BrowserWindow` 的属性.
 
-```
+```js
 const BrowserWindow = require('electron').BrowserWindow;
 
 var win = new BrowserWindow({ width: 800, height: 600 });
@@ -3388,7 +3388,7 @@ var ses = win.webContents.session;
 
 可以在 `session` 模块中创建一个 `Session` 对象 :
 
-```
+```js
 const session = require('electron').session;
 
 var ses = session.fromPartition('persist:name'); 
@@ -3408,7 +3408,7 @@ var ses = session.fromPartition('persist:name');
 
 调用 `event.preventDefault()` 可以取消下载，并且在进程的下个 tick 中，这个 `item` 也不可用.
 
-```
+```js
 session.defaultSession.on('will-download', function(event, item, webContents) {
   event.preventDefault();
   require('request')(item.getURL(), function(data) {
@@ -3425,7 +3425,7 @@ session.defaultSession.on('will-download', function(event, item, webContents) {
 
 `cookies` 赋予你全力来查询和修改 cookies. 例如:
 
-```
+```js
 // 查询所有 cookies.
 session.defaultSession.cookies.get({}, function(error, cookies) {
   console.log(cookies);
@@ -3534,7 +3534,7 @@ session.defaultSession.cookies.set(cookie, function(error) {
 
 `proxyRules` 需要遵循下面的规则:
 
-```
+```js
 proxyRules = schemeProxies[";"<schemeProxies>]
 schemeProxies = [<urlScheme>"="]<proxyURIList>
 urlScheme = "http" | "https" | "ftp" | "socks"
@@ -3575,7 +3575,7 @@ proxyURL = [<proxyScheme>"://"]<proxyHost>[":"<proxyPort>]
 
 通过给定配置的 `session` 来模拟网络.
 
-```
+```js
 // 模拟 GPRS 连接，使用的 50kbps 流量，500 毫秒的 rtt.
 window.webContents.session.enableNetworkEmulation({
     latency: 500,
@@ -3599,7 +3599,7 @@ window.webContents.session.enableNetworkEmulation({offline: true});
 
 调用了 `setCertificateVerifyProc(null)` ，则将会回复到默认证书验证过程.
 
-```
+```js
 myWindow.webContents.session.setCertificateVerifyProc(function(hostname, cert, callback) {
   if (hostname == 'github.com')
     callback(true);
@@ -3617,7 +3617,7 @@ myWindow.webContents.session.setCertificateVerifyProc(function(hostname, cert, c
 
 为对应 `session` 许可请求设置响应句柄.调用 `callback(true)` 接收许可，调用 `callback(false)` 禁止许可.
 
-```
+```js
 session.fromPartition(partition).setPermissionRequestHandler(function(webContents, permission, callback) {
   if (webContents.getURL() === host) {
     if (permission == "notifications") {
@@ -3646,7 +3646,7 @@ session.fromPartition(partition).setPermissionRequestHandler(function(webContent
 
 所有事件的 `listener` 都有一个回调事件，当 `listener` 完成它的工作的时候，它将使用一个 `response` 对象来调用.
 
-```
+```js
 // 将所有请求的代理都修改为下列 url.
 var filter = {
   urls: ["https://*.github.com/*", "*://electron.github.io"]
@@ -3824,7 +3824,7 @@ session.defaultSession.webRequest.onBeforeSendHeaders(filter, function(details, 
 
 它负责渲染并控制网页，也是 `BrowserWindow` 对象的属性.一个使用 `webContents` 的例子:
 
-```
+```js
 const BrowserWindow = require('electron').BrowserWindow;
 
 var win = new BrowserWindow({width: 800, height: 1500});
@@ -4077,7 +4077,7 @@ var webContents = win.webContents;
 
 当 page 的主题色时候发出事件.这通常由于引入了一个 meta 标签 :
 
-```
+```js
 <meta name='theme-color' content='#ff0000'> 
 ```
 
@@ -4108,7 +4108,7 @@ var webContents = win.webContents;
 
 在窗口中加载 `url` , `url` 必须包含协议前缀, 比如 `http://` 或 `file://`. 如果加载想要忽略 http 缓存，可以使用 `pragma` 头来达到目的.
 
-```
+```js
 const options = {"extraHeaders" : "pragma: no-cache\n"}
 webContents.loadURL(url, options) 
 ```
@@ -4123,7 +4123,7 @@ webContents.loadURL(url, options)
 
 返回当前 page 的 url.
 
-```
+```js
 var win = new BrowserWindow({width: 800, height: 600});
 win.loadURL("http://github.com");
 
@@ -4308,7 +4308,7 @@ var currentURL = win.webContents.getURL();
 
 使用给定的 `action` 来为 `webContents` 停止任何 `findInPage` 请求.
 
-```
+```js
 webContents.on('found-in-page', function(event, result) {
   if (result.finalUpdate)
     webContents.stopFindInPage("clearSelection");
@@ -4357,7 +4357,7 @@ const requestId = webContents.findInPage("api");
 
 默认，空的 `options` 被视为 :
 
-```
+```js
 {
   marginsType: 0,
   printBackground: false,
@@ -4366,7 +4366,7 @@ const requestId = webContents.findInPage("api");
 } 
 ```
 
-```
+```js
 const BrowserWindow = require('electron').BrowserWindow;
 const fs = require('fs');
 
@@ -4392,7 +4392,7 @@ win.webContents.on("did-finish-load", function() {
 
 添加指定的路径给开发者工具栏的 workspace.必须在 DevTools 创建之后使用它 :
 
-```
+```js
 mainWindow.webContents.on('devtools-opened', function() {
   mainWindow.webContents.addWorkSpace(__dirname);
 }); 
@@ -4449,7 +4449,7 @@ Toggles 开发者工具.
 
 例子，从主进程向渲染进程发送消息 :
 
-```
+```js
 // 主进程.
 var window = null;
 app.on('ready', function() {
@@ -4461,7 +4461,7 @@ app.on('ready', function() {
 }); 
 ```
 
-```
+```js
 <!-- index.html -->
 <html>
 <body>
@@ -4559,7 +4559,7 @@ app.on('ready', function() {
 
 如果保存界面过程初始化成功，返回 true.
 
-```
+```js
 win.loadURL('https://github.com');
 
 win.webContents.on('did-finish-load', function() {
@@ -4592,7 +4592,7 @@ win.webContents.on('did-finish-load', function() {
 
 调试 API 为 [remote debugging protocol](https://developer.chrome.com/devtools/docs/debugger-protocol) 提供交替传送.
 
-```
+```js
 try {
   win.webContents.debugger.attach("1.1");
 } catch(err) {
@@ -4656,7 +4656,7 @@ win.webContents.debugger.sendCommand("Network.enable");
 
 用一个 `Tray` 来表示一个图标,这个图标处于正在运行的系统的通知区 ，通常被添加到一个 context menu 上.
 
-```
+```js
 const electron = require('electron');
 const app = electron.app;
 const Menu = electron.Menu;
@@ -4684,7 +4684,7 @@ app.on('ready', function(){
 *   当在 linux 上使用了应用指示器，将忽略点击事件.
 *   在 Linux，为了让单独的 `MenuItem` 起效，需要再次调用 `setContextMenu` .例如:
 
-```
+```js
 contextMenu.items[2].checked = false;
 appIcon.setContextMenu(contextMenu); 
 ```
@@ -4861,7 +4861,7 @@ appIcon.setContextMenu(contextMenu);
 
 `desktopCapturer` 模块可用来获取可用资源，这个资源可通过 `getUserMedia` 捕获得到.
 
-```
+```js
 // 在渲染进程中.
 var desktopCapturer = require('electron').desktopCapturer;
 
@@ -4995,7 +4995,7 @@ function getUserMediaError(e) {
 
 Electron 中, 与 GUI 相关的模块（如 `dialog`, `menu` 等)只存在于主进程，而不在渲染进程中 。为了能从渲染进程中使用它们，需要用`ipc`模块来给主进程发送进程间消息。使用 `remote` 模块，可以调用主进程对象的方法，而无需显式地发送进程间消息，这类似于 Java 的 [RMI](http://en.wikipedia.org/wiki/Java_remote_method_invocation)。 下面是从渲染进程创建一个浏览器窗口的例子：
 
-```
+```js
 const remote = require('electron').remote;
 const BrowserWindow = remote.BrowserWindow;
 
@@ -5029,7 +5029,7 @@ Electron 确保在渲染进程中的远程对象存在（换句话说，没有�
 
 比如，你不能主进程中给`Array.map`传递来自渲染进程的函数。
 
-```
+```js
 // 主进程 mapNumbers.js
 exports.withRendererCallback = function(mapper) {
   return [1,2,3].map(mapper);
@@ -5042,7 +5042,7 @@ exports.withLocalCallback = function() {
 } 
 ```
 
-```
+```js
 // 渲染进程
 var mapNumbers = require("remote").require("./mapNumbers");
 
@@ -5061,7 +5061,7 @@ console.log(withRendererCb, withLocalCb) // [true, true, true], [2, 3, 4]
 
 例如，下面的代码第一眼看上去毫无问题。给远程对象的`close`事件绑定了一个回调函数：
 
-```
+```js
 remote.getCurrentWindow().on('close', function() {
   // blabla...
 }); 
@@ -5077,7 +5077,7 @@ remote.getCurrentWindow().on('close', function() {
 
 在主进程中的内置模块已经被添加为`remote`模块中的属性，所以可以直接像使用`electron`模块一样直接使用它们。
 
-```
+```js
 const app = remote.app; 
 ```
 
@@ -5115,7 +5115,7 @@ const app = remote.app;
 
 例子，放大当前页到 200%.
 
-```
+```js
 var webFrame = require('electron').webFrame;
 
 webFrame.setZoomFactor(2); 
@@ -5164,7 +5164,7 @@ webFrame.setZoomFactor(2);
 
 例子，使用 [node-spellchecker](https://github.com/atom/node-spellchecker) 作为一个 provider:
 
-```
+```js
 webFrame.setSpellCheckProvider("en-US", true, {
   spellCheck: function(text) {
     return !(require('spellchecker').isMisspelled(text));
@@ -5213,14 +5213,14 @@ webFrame.setSpellCheckProvider("en-US", true, {
 
 `clipboard` 模块提供方法来供复制和粘贴操作 . 下面例子展示了如何将一个字符串写道 clipboard 上:
 
-```
+```js
 const clipboard = require('electron').clipboard;
 clipboard.writeText('Example String'); 
 ```
 
 在 X Window 系统上, 有一个可选的 clipboard. 你可以为每个方法使用 `selection` 来控制它:
 
-```
+```js
 clipboard.writeText('Example String', 'selection');
 console.log(clipboard.readText('selection')); 
 ```
@@ -5302,7 +5302,7 @@ console.log(clipboard.readText('selection'));
 
 返回 clipboard 是否支持指定 `data` 的格式.
 
-```
+```js
 console.log(clipboard.has('<p>selection</p>')); 
 ```
 
@@ -5321,7 +5321,7 @@ console.log(clipboard.has('<p>selection</p>'));
     *   `image` NativeImage
 *   `type` String (可选)
 
-```
+```js
 clipboard.write({text: 'test', html: "<b>test</b>"}); 
 ```
 
@@ -5333,7 +5333,7 @@ clipboard.write({text: 'test', html: "<b>test</b>"});
 
 下面是一个自动提交崩溃报告给服务器的例子 :
 
-```
+```js
 const crashReporter = require('electron').crashReporter;
 
 crashReporter.start({
@@ -5396,14 +5396,14 @@ crashReporter.start({
 
 例如, 当创建一个 tray 或设置窗口的图标时候，你可以使用一个字符串的图片路径 :
 
-```
+```js
 var appIcon = new Tray('/Users/somebody/images/icon.png');
 var window = new BrowserWindow({icon: '/Users/somebody/images/window.png'}); 
 ```
 
 或者从剪切板中读取图片，它返回的是 `nativeImage`:
 
-```
+```js
 var image = clipboard.readImage();
 var appIcon = new Tray(image); 
 ```
@@ -5422,14 +5422,14 @@ var appIcon = new Tray(image);
 
 如果想同时支持展示不同分辨率的图片，你可以将拥有不同 size 的图片放在同一个文件夹下，不用 DPI 后缀.例如 :
 
-```
+```js
 images/
 ├── icon.png
 ├── icon@2x.png
 └── icon@3x.png 
 ```
 
-```
+```js
 var appIcon = new Tray('/Users/somebody/images/icon.png'); 
 ```
 
@@ -5491,7 +5491,7 @@ var appIcon = new Tray('/Users/somebody/images/icon.png');
 
 `nativeImage` 有如下方法:
 
-```
+```js
 const nativeImage = require('electron').nativeImage;
 
 var image = nativeImage.createFromPath('/Users/somebody/images/icon.png'); 
@@ -5543,7 +5543,7 @@ var image = nativeImage.createFromPath('/Users/somebody/images/icon.png');
 
 **注意:** 在渲染进程 / 开发者工具栏, `window.screen` 是一个预设值的 DOM 属性, 所以这样写 `var screen = require('electron').screen` 将不会工作. 在我们下面的例子, 我们取代使用可变名字的 `electronScreen`. 一个例子，创建一个充满真个屏幕的窗口 :
 
-```
+```js
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -5559,7 +5559,7 @@ app.on('ready', function() {
 
 另一个例子，在次页外创建一个窗口:
 
-```
+```js
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -5672,7 +5672,7 @@ app.on('ready', function() {
 
 在用户默认浏览器中打开 URL 的示例:
 
-```
+```js
 var shell = require('shell');
 
 shell.openExternal('https://github.com'); 

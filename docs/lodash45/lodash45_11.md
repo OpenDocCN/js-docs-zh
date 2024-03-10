@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10703 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.assign "See the npm package.")
 
-```
+```js
 _.assign(object, [sources])
 _.assign(object, [sources]) 
 ```
@@ -33,7 +33,7 @@ _.assign(object, [sources])
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.c = 3;
 }
@@ -57,7 +57,7 @@ _.assign({ 'a': 1 }, new Foo, new Bar);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10736 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.assignin "See the npm package.")
 
-```
+```js
 _.assignIn(object, [sources]) 
 ```
 
@@ -81,7 +81,7 @@ _.assignIn(object, [sources])
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.b = 2;
 }
@@ -105,7 +105,7 @@ _.assignIn({ 'a': 1 }, new Foo, new Bar);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10767 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.assigninwith "See the npm package.")
 
-```
+```js
 _.assignInWith(object, sources, [customizer]) 
 ```
 
@@ -133,7 +133,7 @@ _.assignInWith(object, sources, [customizer])
 
 ### 示例
 
-```
+```js
 function customizer(objValue, srcValue) {
   return _.isUndefined(objValue) ? srcValue : objValue;
 }
@@ -152,7 +152,7 @@ defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10797 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.assignwith "See the npm package.")
 
-```
+```js
 _.assignWith(object, sources, [customizer]) 
 ```
 
@@ -180,7 +180,7 @@ _.assignWith(object, sources, [customizer])
 
 ### 示例
 
-```
+```js
 function customizer(objValue, srcValue) {
   return _.isUndefined(objValue) ? srcValue : objValue;
 }
@@ -199,7 +199,7 @@ defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10820 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.at "See the npm package.")
 
-```
+```js
 _.at(object, [paths]) 
 ```
 
@@ -221,7 +221,7 @@ _.at(object, [paths])
 
 ### 示例
 
-```
+```js
 var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
 
 _.at(object, ['a[0].b.c', 'a[1]']);
@@ -239,7 +239,7 @@ _.at(['a', 'b', 'c'], 0, 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10856 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.create "See the npm package.")
 
-```
+```js
 _.create(prototype, [properties]) 
 ```
 
@@ -261,7 +261,7 @@ _.create(prototype, [properties])
 
 ### 示例
 
-```
+```js
 function Shape() {
   this.x = 0;
   this.y = 0;
@@ -291,7 +291,7 @@ circle instanceof Shape;
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10879 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.defaults "See the npm package.")
 
-```
+```js
 _.defaults(object, [sources]) 
 ```
 
@@ -315,7 +315,7 @@ _.defaults(object, [sources])
 
 ### 示例
 
-```
+```js
 _.defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
 // => { 'user': 'barney', 'age': 36 } 
 ```
@@ -328,7 +328,7 @@ _.defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10901 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.defaultsdeep "See the npm package.")
 
-```
+```js
 _.defaultsDeep(object, [sources]) 
 ```
 
@@ -352,7 +352,7 @@ _.defaultsDeep(object, [sources])
 
 ### 示例
 
-```
+```js
 _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'age': 36 } });
 // => { 'user': { 'name': 'barney', 'age': 36 } } 
 ```
@@ -365,7 +365,7 @@ _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'ag
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10940 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.findkey "See the npm package.")
 
-```
+```js
 _.findKey(object, [predicate=_.identity]) 
 ```
 
@@ -387,7 +387,7 @@ _.findKey(object, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = {
   'barney':  { 'age': 36, 'active': true },
   'fred':    { 'age': 40, 'active': false },
@@ -418,7 +418,7 @@ _.findKey(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10977 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.findlastkey "See the npm package.")
 
-```
+```js
 _.findLastKey(object, [predicate=_.identity]) 
 ```
 
@@ -440,7 +440,7 @@ _.findLastKey(object, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = {
   'barney':  { 'age': 36, 'active': true },
   'fred':    { 'age': 40, 'active': false },
@@ -471,7 +471,7 @@ _.findLastKey(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11006 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.forin "See the npm package.")
 
-```
+```js
 _.forIn(object, [iteratee=_.identity]) 
 ```
 
@@ -493,7 +493,7 @@ _.forIn(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -515,7 +515,7 @@ _.forIn(new Foo, function(value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11036 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.forinright "See the npm package.")
 
-```
+```js
 _.forInRight(object, [iteratee=_.identity]) 
 ```
 
@@ -537,7 +537,7 @@ _.forInRight(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -559,7 +559,7 @@ _.forInRight(new Foo, function(value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11066 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.forown "See the npm package.")
 
-```
+```js
 _.forOwn(object, [iteratee=_.identity]) 
 ```
 
@@ -581,7 +581,7 @@ _.forOwn(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -603,7 +603,7 @@ _.forOwn(new Foo, function(value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11093 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.forownright "See the npm package.")
 
-```
+```js
 _.forOwnRight(object, [iteratee=_.identity]) 
 ```
 
@@ -625,7 +625,7 @@ _.forOwnRight(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -647,7 +647,7 @@ _.forOwnRight(new Foo, function(value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11117 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.functions "See the npm package.")
 
-```
+```js
 _.functions(object) 
 ```
 
@@ -665,7 +665,7 @@ _.functions(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = _.constant('a');
   this.b = _.constant('b');
@@ -685,7 +685,7 @@ _.functions(new Foo);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11141 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.functionsin "See the npm package.")
 
-```
+```js
 _.functionsIn(object) 
 ```
 
@@ -703,7 +703,7 @@ _.functionsIn(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = _.constant('a');
   this.b = _.constant('b');
@@ -723,7 +723,7 @@ _.functionsIn(new Foo);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11169 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.get "See the npm package.")
 
-```
+```js
 _.get(object, path, [defaultValue]) 
 ```
 
@@ -749,7 +749,7 @@ _.get(object, path, [defaultValue])
 
 ### 示例
 
-```
+```js
 var object = { 'a': [{ 'b': { 'c': 3 } }] };
 
 _.get(object, 'a[0].b.c');
@@ -770,7 +770,7 @@ _.get(object, 'a.b.c', 'default');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11200 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.has "See the npm package.")
 
-```
+```js
 _.has(object, path) 
 ```
 
@@ -792,7 +792,7 @@ _.has(object, path)
 
 ### 示例
 
-```
+```js
 var object = { 'a': { 'b': { 'c': 3 } } };
 var other = _.create({ 'a': _.create({ 'b': _.create({ 'c': 3 }) }) });
 
@@ -817,7 +817,7 @@ _.has(other, 'a');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11229 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.hasin "See the npm package.")
 
-```
+```js
 _.hasIn(object, path) 
 ```
 
@@ -839,7 +839,7 @@ _.hasIn(object, path)
 
 ### 示例
 
-```
+```js
 var object = _.create({ 'a': _.create({ 'b': _.create({ 'c': 3 }) }) });
 
 _.hasIn(object, 'a');
@@ -863,7 +863,7 @@ _.hasIn(object, 'b');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11252 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.invert "See the npm package.")
 
-```
+```js
 _.invert(object, [multiVal]) 
 ```
 
@@ -885,7 +885,7 @@ _.invert(object, [multiVal])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': 2, 'c': 1 };
 
 _.invert(object);
@@ -900,7 +900,7 @@ _.invert(object);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11279 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.invertby "See the npm package.")
 
-```
+```js
 _.invertBy(object, [iteratee=_.identity]) 
 ```
 
@@ -922,7 +922,7 @@ _.invertBy(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': 2, 'c': 1 };
 
 _.invertBy(object);
@@ -942,7 +942,7 @@ _.invertBy(object, function(value) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11303 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.invoke "See the npm package.")
 
-```
+```js
 _.invoke(object, path, [args]) 
 ```
 
@@ -978,7 +978,7 @@ _.invoke(object, 'a[0].b.c.slice', 1, 3); // => [2, 3]
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11332 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.keys "See the npm package.")
 
-```
+```js
 _.keys(object) 
 ```
 
@@ -998,7 +998,7 @@ _.keys(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -1021,7 +1021,7 @@ _.keys('hi');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11372 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.keysin "See the npm package.")
 
-```
+```js
 _.keysIn(object) 
 ```
 
@@ -1041,7 +1041,7 @@ _.keysIn(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -1061,7 +1061,7 @@ _.keysIn(new Foo);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11408 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.mapkeys "See the npm package.")
 
-```
+```js
 _.mapKeys(object, [iteratee=_.identity]) 
 ```
 
@@ -1083,7 +1083,7 @@ _.mapKeys(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
   return key + value;
 });
@@ -1098,7 +1098,7 @@ _.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11442 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.mapvalues "See the npm package.")
 
-```
+```js
 _.mapValues(object, [iteratee=_.identity]) 
 ```
 
@@ -1120,7 +1120,7 @@ _.mapValues(object, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var users = {
   'fred':    { 'user': 'fred',    'age': 40 },
   'pebbles': { 'user': 'pebbles', 'age': 1 }
@@ -1142,7 +1142,7 @@ _.mapValues(users, 'age');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11479 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.merge "See the npm package.")
 
-```
+```js
 _.merge(object, [sources]) 
 ```
 
@@ -1166,7 +1166,7 @@ _.merge(object, [sources])
 
 ### 示例
 
-```
+```js
 var users = {
   'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
 };
@@ -1187,7 +1187,7 @@ _.merge(users, ages);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11516 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.mergewith "See the npm package.")
 
-```
+```js
 _.mergeWith(object, sources, customizer) 
 ```
 
@@ -1213,7 +1213,7 @@ _.mergeWith(object, sources, customizer)
 
 ### 示例
 
-```
+```js
 function customizer(objValue, srcValue) {
   if (_.isArray(objValue)) {
     return objValue.concat(srcValue);
@@ -1242,7 +1242,7 @@ _.mergeWith(object, other, customizer);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11537 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.omit "See the npm package.")
 
-```
+```js
 _.omit(object, [props]) 
 ```
 
@@ -1264,7 +1264,7 @@ _.omit(object, [props])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': '2', 'c': 3 };
 
 _.omit(object, ['a', 'c']);
@@ -1279,7 +1279,7 @@ _.omit(object, ['a', 'c']);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11562 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.omitby "See the npm package.")
 
-```
+```js
 _.omitBy(object, [predicate=_.identity]) 
 ```
 
@@ -1301,7 +1301,7 @@ _.omitBy(object, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': '2', 'c': 3 };
 
 _.omitBy(object, _.isNumber);
@@ -1316,7 +1316,7 @@ _.omitBy(object, _.isNumber);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11585 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pick "See the npm package.")
 
-```
+```js
 _.pick(object, [props]) 
 ```
 
@@ -1338,7 +1338,7 @@ _.pick(object, [props])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': '2', 'c': 3 };
 
 _.pick(object, ['a', 'c']);
@@ -1353,7 +1353,7 @@ _.pick(object, ['a', 'c']);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11606 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pickby "See the npm package.")
 
-```
+```js
 _.pickBy(object, [predicate=_.identity]) 
 ```
 
@@ -1375,7 +1375,7 @@ _.pickBy(object, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': '2', 'c': 3 };
 
 _.pickBy(object, _.isNumber);
@@ -1390,7 +1390,7 @@ _.pickBy(object, _.isNumber);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11637 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.result "See the npm package.")
 
-```
+```js
 _.result(object, path, [defaultValue]) 
 ```
 
@@ -1416,7 +1416,7 @@ _.result(object, path, [defaultValue])
 
 ### 示例
 
-```
+```js
 var object = { 'a': [{ 'b': { 'c1': 3, 'c2': _.constant(4) } }] };
 
 _.result(object, 'a[0].b.c1');
@@ -1440,7 +1440,7 @@ _.result(object, 'a[0].b.c3', _.constant('default'));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11675 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.set "See the npm package.")
 
-```
+```js
 _.set(object, path, value) 
 ```
 
@@ -1466,7 +1466,7 @@ _.set(object, path, value)
 
 ### 示例
 
-```
+```js
 var object = { 'a': [{ 'b': { 'c': 3 } }] };
 
 _.set(object, 'a[0].b.c', 4);
@@ -1486,7 +1486,7 @@ console.log(object.x[0].y.z);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11700 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.setwith "See the npm package.")
 
-```
+```js
 _.setWith(object, path, value, [customizer]) 
 ```
 
@@ -1516,7 +1516,7 @@ _.setWith(object, path, value, [customizer])
 
 ### 示例
 
-```
+```js
 _.setWith({ '0': { 'length': 2 } }, '[0][1][2]', 3, Object);
 // => { '0': { '1': { '2': 3 }, 'length': 2 } } 
 ```
@@ -1529,7 +1529,7 @@ _.setWith({ '0': { 'length': 2 } }, '[0][1][2]', 3, Object);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11725 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.topairs "See the npm package.")
 
-```
+```js
 _.toPairs(object) 
 ```
 
@@ -1547,7 +1547,7 @@ _.toPairs(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -1567,7 +1567,7 @@ _.toPairs(new Foo);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11749 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.topairsin "See the npm package.")
 
-```
+```js
 _.toPairsIn(object) 
 ```
 
@@ -1585,7 +1585,7 @@ _.toPairsIn(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -1605,7 +1605,7 @@ _.toPairsIn(new Foo);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11780 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.transform "See the npm package.")
 
-```
+```js
 _.transform(object, [iteratee=_.identity], [accumulator]) 
 ```
 
@@ -1631,7 +1631,7 @@ _.transform(object, [iteratee=_.identity], [accumulator])
 
 ### 示例
 
-```
+```js
 _.transform([2, 3, 4], function(result, n) {
   result.push(n *= n);
   return n % 2 == 0;
@@ -1652,7 +1652,7 @@ _.transform({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11828 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unset "See the npm package.")
 
-```
+```js
 _.unset(object, path) 
 ```
 
@@ -1674,7 +1674,7 @@ _.unset(object, path)
 
 ### 示例
 
-```
+```js
 var object = { 'a': [{ 'b': { 'c': 7 } }] };
 _.unset(object, 'a[0].b.c');
 // => true
@@ -1697,7 +1697,7 @@ console.log(object);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11857 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.values "See the npm package.")
 
-```
+```js
 _.values(object) 
 ```
 
@@ -1717,7 +1717,7 @@ _.values(object)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;
@@ -1740,7 +1740,7 @@ _.values('hi');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11883 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.valuesin "See the npm package.")
 
-```
+```js
 _.valuesIn(object) 
 ```
 
@@ -1760,7 +1760,7 @@ Returns the array of property values.
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
   this.b = 2;

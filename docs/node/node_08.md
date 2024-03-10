@@ -10,7 +10,7 @@
 
 下面是一个解析`www.google.com`的例子：
 
-```
+```js
 var dns = require('dns');
 
 dns.lookup('www.google.com', function onLookup(err, addresses, family) {
@@ -22,7 +22,7 @@ dns.lookup('www.google.com', function onLookup(err, addresses, family) {
 
 下面例子是，解析`'www.google.com'`，然后反向解析返回的 IP 地址。
 
-```
+```js
 var dns = require('dns');
 
 dns.resolve4('www.google.com', function (err, addresses) {
@@ -56,7 +56,7 @@ dns.resolve4('www.google.com', function (err, addresses) {
 
 所有的属性都是可选的，以下是一个`options`例子：
 
-```
+```js
 {
   family: 4,
   hints: dns.ADDRCONFIG | dns.V4MAPPED,
@@ -130,7 +130,7 @@ dns.resolve4('www.google.com', function (err, addresses) {
 
 地址是一个有以下结构的对象：
 
-```
+```js
 {
   nsname: 'ns.example.com',
   hostmaster: 'root.example.com',

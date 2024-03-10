@@ -4,7 +4,7 @@
 
 **Events** 是一个可以融合到任何对象的模块, 给予 对象绑定和触发自定义事件的能力. Events 在绑定之前 不需要声明, 并且还可以传递参数. 比如:
 
-```
+```js
 var object = {};
 
 _.extend(object, Backbone.Events);
@@ -20,7 +20,7 @@ object.trigger("alert", "an event");
 
 **on**`object.on(event, callback, [context])`别名: bind 在 object 上绑定一个**callback**回调函数。 只要**event**触发，该回调函数就会调用。如果你的一个页面含有大量的不同时间，我们约定使用冒号来为事件添加 命名空间 俗成地使用冒号来命名：`"poll:start"`, 或 `"change:selection"`。 事件字符串也可能是用空格分隔的多个事件列表（愚人码头注：即可以同时绑定多个事件，事件用空格分隔）...
 
-```
+```js
 book.on("change:title change:author", ...); 
 ```
 
@@ -28,7 +28,7 @@ book.on("change:title change:author", ...);
 
 当回调函数被绑定到特殊"all"事件时，任何事件的发生都会触发该回调函数，回调函数的第一个参数会传递该事件的名称。举个例子，将一个对象的所有事件代理到另一对象：
 
-```
+```js
 proxy.on("all", function(eventName) {
   object.trigger(eventName);
 }); 
@@ -36,7 +36,7 @@ proxy.on("all", function(eventName) {
 
 所有 Backbone 事件方法还支持事件映射的语法， 作为可惜的位置参数：
 
-```
+```js
 book.on({
   "change:title": titleView.update,
   "change:author": authorPane.update,
@@ -46,7 +46,7 @@ book.on({
 
 **off**`object.off([event], [callback], [context])`别名: unbi nd 从 object 对象移除先前绑定的 **callback** 函数。如果没有指定**context（上下文）**，所有上下文下的这个回调函数将被移除。如果没有指定 callback，所有绑定这个事件回调函数将被移除；如果没有指定 event，所有事件的回调函数会被移除。
 
-```
+```js
 // Removes just the `onChange` callback.
 object.off("change", onChange);
 
@@ -71,13 +71,13 @@ object.off();
 
 **listenTo**`object.listenTo(other, event, callback)` 让 **object** 监听 **另一个（other）**对象上的一个特定事件。不使用`other.on(event, callback, object)`，而使用这种形式的优点是：**listenTo**允许 **object**来跟踪这个特定事件，并且以后可以一次性全部移除它们。**callback**总是在**object**上下文环境中被调用。
 
-```
+```js
 view.listenTo(model, 'change', view.render); 
 ```
 
 **stopListening**`object.stopListening([other], [event], [callback])` 让 **object** 停止监听事件。如果调用不带参数的**stopListening**，可以移除 **object** 下所有已经 registered(注册)的 callback 函数...，或者只删除指定对象上明确告知的监听事件，或者一个删除指定事件，或者只删除指定的回调函数。
 
-```
+```js
 view.stopListening();
 
 view.stopListening(model); 

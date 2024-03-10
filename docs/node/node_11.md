@@ -10,7 +10,7 @@
 
 下面是一个异步方法的例子：
 
-```
+```js
 var fs = require('fs');
 
 fs.unlink('/tmp/hello', function (err) {
@@ -21,7 +21,7 @@ fs.unlink('/tmp/hello', function (err) {
 
 下面是一个同步方法的例子：
 
-```
+```js
 var fs = require('fs');
 
 fs.unlinkSync('/tmp/hello');
@@ -30,7 +30,7 @@ console.log('successfully deleted /tmp/hello');
 
 因为异步方法不能够保证执行顺序，所以下面的例子很容易出错：
 
-```
+```js
 fs.rename('/tmp/hello', '/tmp/world', function (err) {
   if (err) throw err;
   console.log('renamed complete');
@@ -43,7 +43,7 @@ fs.stat('/tmp/world', function (err, stats) {
 
 它需要在`fs.rename`后执行`fs.stat`。正确的执行方法应如下：
 
-```
+```js
 fs.rename('/tmp/hello', '/tmp/world', function (err) {
   if (err) throw err;
   fs.stat('/tmp/world', function (err, stats) {
@@ -59,7 +59,7 @@ fs.rename('/tmp/hello', '/tmp/world', function (err) {
 
 大多数的`fs`函数允许你省略回调函数。如果你省略了，将会由一个默认的回调函数来重抛出（rethrows）错误。要获得原始调用地点的堆栈追踪信息，请设置`NODE_DEBUG`环境变量：
 
-```
+```js
 $ cat script.js
 function bad() {
   require('fs').readFile('/');
@@ -207,7 +207,7 @@ Error: EISDIR, read
 
 例子：
 
-```
+```js
 var cache = {'/etc':'/private/etc'};
 fs.realpath('/etc/passwd', cache, function (err, resolvedPath) {
   if (err) throw err;
@@ -391,7 +391,7 @@ fs.realpath('/etc/passwd', cache, function (err, resolvedPath) {
 
 异步得读取文件的所有内容。例子：
 
-```
+```js
 fs.readFile('/etc/passwd', function (err, data) {
   if (err) throw err;
   console.log(data);
@@ -404,7 +404,7 @@ fs.readFile('/etc/passwd', function (err, data) {
 
 如果`options`是一个字符串，那么它将指定编码，例子：
 
-```
+```js
 fs.readFile('/etc/passwd', 'utf8', callback); 
 ```
 
@@ -430,7 +430,7 @@ fs.readFile('/etc/passwd', 'utf8', callback);
 
 例子：
 
-```
+```js
 fs.writeFile('message.txt', 'Hello node.js', function (err) {
   if (err) throw err;
   console.log('It\'s saved!');
@@ -439,7 +439,7 @@ fs.writeFile('message.txt', 'Hello node.js', function (err) {
 
 如果`options`是一个字符串，那么它将指定编码，例子：
 
-```
+```js
 fs.writeFile('message.txt', 'Hello node.js', 'utf8', callback); 
 ```
 
@@ -461,7 +461,7 @@ fs.writeFile('message.txt', 'Hello node.js', 'utf8', callback);
 
 例子：
 
-```
+```js
 fs.appendFile('message.txt', 'data to append', function (err) {
   if (err) throw err;
   console.log('The "data to append" was appended to file!');
@@ -470,7 +470,7 @@ fs.appendFile('message.txt', 'data to append', function (err) {
 
 如果`options`是一个字符串，那么它将指定编码，例子：
 
-```
+```js
 fs.appendFile('message.txt', 'data to append', 'utf8', callback); 
 ```
 
@@ -486,7 +486,7 @@ fs.appendFile('message.txt', 'data to append', 'utf8', callback);
 
 `listener`有两个参数，当前状态对象和先前状态对象：
 
-```
+```js
 fs.watchFile('message.text', function (curr, prev) {
   console.log('the current mtime is: ' + curr.mtime);
   console.log('the previous mtime was: ' + prev.mtime);
@@ -541,7 +541,7 @@ fs.watchFile('message.text', function (curr, prev) {
 
 回调函数中提供的`filename`参数不是在所有平台上都支持的（目前只支持 Linux 和 Windows）。即使是在支持的平台上，`filename`也不是总会被提供。因此，不要假设`filename`参数总会在回调函数中被提供，需要有一些检测它是否为`null`的逻辑。
 
-```
+```js
 fs.watch('somedir', function (event, filename) {
   console.log('event is: ' + event);
   if (filename) {
@@ -558,7 +558,7 @@ fs.watch('somedir', function (event, filename) {
 
 检查文件系统来测试提供的路径是否存在。然后在回调函数的参数中提供结果`true`或`false`：
 
-```
+```js
 fs.exists('/etc/passwd', function (exists) {
   util.debug(exists ? "it's there" : "no passwd!");
 }); 
@@ -585,7 +585,7 @@ fs.exists('/etc/passwd', function (exists) {
 
 最后一个参数`callback`，是一个包含了潜在错误参数的回调函数。如果任何一个可访问检查失败了，错误参数就会被提供。以下是一个在当前进程中检查`/etc/passwd` 可读性和可写性的例子。
 
-```
+```js
 fs.access('/etc/passwd', fs.R_OK | fs.W_OK, function(err) {
   util.debug(err ? 'no access!' : 'can read/write');
 }); 
@@ -609,7 +609,7 @@ fs.access('/etc/passwd', fs.R_OK | fs.W_OK, function(err) {
 
 对于一个普通的文件，`util.inspect(stats)`可能会返回：
 
-```
+```js
 { dev: 2114,
   ino: 48064969,
   mode: 33188,
@@ -645,7 +645,7 @@ fs.access('/etc/passwd', fs.R_OK | fs.W_OK, function(err) {
 
 `options`是一个有以下默认值的对象或字符串：
 
-```
+```js
 { flags: 'r',
   encoding: null,
   fd: null,
@@ -662,7 +662,7 @@ fs.access('/etc/passwd', fs.R_OK | fs.W_OK, function(err) {
 
 从一个 100 字节的文件中读取最后 10 字节数据的例子：
 
-```
+```js
 fs.createReadStream('sample.txt', {start: 90, end: 99}); 
 ```
 
@@ -684,7 +684,7 @@ fs.createReadStream('sample.txt', {start: 90, end: 99});
 
 `options`是一个有以下默认值的对象或字符串：
 
-```
+```js
 { flags: 'w',
   encoding: null,
   fd: null,

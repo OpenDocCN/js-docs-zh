@@ -6,7 +6,7 @@
 
 通过`require('string_decoder')`来使用这个模块。`StringDecoder`解码一个`buffer`为一个字符串。它是一个`buffer.toString()`的简单接口，但是提供了 utf8 的额外支持。
 
-```
+```js
 var StringDecoder = require('string_decoder').StringDecoder;
 var decoder = new StringDecoder('utf8');
 

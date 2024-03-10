@@ -18,7 +18,7 @@
 
 下面的例子里，`stdout`是非阻塞的，`stderr`是阻塞的：
 
-```
+```js
 $ node script.js 2> error.log | tee info.log 
 ```
 
@@ -28,7 +28,7 @@ $ node script.js 2> error.log | tee info.log
 
 向`stdout`打印一行新信息。这个函数可以像`printf()`那样接受多个参数，例子：
 
-```
+```js
 var count = 5;
 console.log('count: %d', count);
 // prints 'count: 5' 
@@ -68,7 +68,7 @@ console.log('count: %d', count);
 
 例子：
 
-```
+```js
 console.time('100-elements');
 for (var i = 0; i < 100; i++) {
   ;
@@ -89,7 +89,7 @@ console.timeEnd('100-elements');
 
 使用`require('console')`后。`Console`或`console.Console`可以取得这个类。
 
-```
+```js
 var Console = require('console').Console;
 var Console = console.Console; 
 ```
@@ -100,7 +100,7 @@ var Console = console.Console;
 
 通过传递一个或两个可写流实例，创建一个新的`Console`。`stdout`是一个用来打印日志和信息的输出流。`stderr`是一个被用来打印警告和错误输出的。如果`stderr`没有被传递，那么警告和错误信息将被传递至`stdout`。
 
-```
+```js
 var output = fs.createWriteStream('./stdout.log');
 var errorOutput = fs.createWriteStream('./stderr.log');
 // custom simple logger
@@ -113,6 +113,6 @@ logger.log('count: %d', count);
 
 全局的`console`是一个特殊的`Console`实例，它的输出被传递至`process.stdout`和`process.stderr`：
 
-```
+```js
 new Console(process.stdout, process.stderr); 
 ```

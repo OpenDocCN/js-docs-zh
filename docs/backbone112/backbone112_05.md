@@ -10,7 +10,7 @@
 
 **model**`collection.model` 覆盖此属性来指定集合中包含的模型类。可以传入原始属性对象（和数组）来 add, create,和 reset，传入的属性会被自动转换为适合的模型类型。
 
-```
+```js
 var Library = Backbone.Collection.extend({
   model: Book
 }); 
@@ -18,7 +18,7 @@ var Library = Backbone.Collection.extend({
 
 集合也可以包含多态模型，通过用构造函数重写这个属性，返回一个模型。
 
-```
+```js
 var Library = Backbone.Collection.extend({
 
   model: function(attrs, options) {
@@ -34,7 +34,7 @@ var Library = Backbone.Collection.extend({
 
 **constructor / initialize**`new Backbone.Collection([models], [options])` 当创建集合时，你可以选择传入初始的 **models** 数组。 集合的 comparator 函数也可以作为选项传入。 传递`false`作为 comparator 选项将阻止排序。 如果定义了 **initialize** 函数，会在集合创建时被调用。 有几个选项， 如果提供的话，将直接附加到集合上：`model` 和 `comparator`。 通过传递`null`给`models`选项来创建一个空的集合。
 
-```
+```js
 var tabs = new TabSet([tab1, tab2, tab3]);
 var spaces = new Backbone.Collection([], {
   model: Space
@@ -45,7 +45,7 @@ var spaces = new Backbone.Collection([], {
 
 **toJSON**`collection.toJSON([options])` 返回集合中包含的每个模型(通过 toJSON) 的属性哈希的数组。可用于集合的序列化和持久化。本方法名称容易引起混淆，因为它与 [JavaScript's JSON API](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON_behavior) 命名相同。
 
-```
+```js
 var collection = new Backbone.Collection([
   {name: "Tim", age: 5},
   {name: "Ida", age: 26},
@@ -92,7 +92,7 @@ alert(JSON.stringify(collection));
 *   [countBy](http://www.css88.com/doc/underscore/#countBy)
 *   [indexBy](http://www.css88.com/doc/underscore/#indexBy)
 
-```
+```js
 books.each(function(book) {
   book.publish();
 });
@@ -112,7 +112,7 @@ var alphabetical = books.sortBy(function(book) {
 
 **add**`collection.add(models, [options])` 向集合中增加一个模型（或一个模型数组），触发`"add"`事件。 如果已经定义了 model 属性， 您也可以通过原始属性的对象让其看起来像一个模型实例。 返回已经添加的（或预先存在的，如果重复）模式。 传递`{at: index}`可以将模型插入集合中特定的`index`索引位置。 如果您要添加 集合中已经存在的模型 到集合，他们会被忽略， 除非你传递`{merge: true}`， 在这种情况下，它们的属性将被合并到相应的模型中， 触发任何适当的`"change"` 事件。
 
-```
+```js
 var ships = new Backbone.Collection;
 
 ships.on("add", function(ship) {
@@ -133,7 +133,7 @@ ships.add([
 
 下面是一个例子 使用**reset**来引导一个集合在页面初始化时加载， 在 Rails 应用程序中：
 
-```
+```js
 <script>
   var accounts = new Backbone.Collection;
   accounts.reset(<%= @accounts.to_json %>);
@@ -144,7 +144,7 @@ ships.add([
 
 **set**`collection.set(models, [options])` **set**方法通过传递模型列表执行一个集合的"smart(智能)"的更新。 如果列表中的一个模型尚不在集合中，那么它将被添加; 如果模型已经在集合中，其属性将被合并; 并且如果集合包含*不*存在于列表中的任何模型，他们将被删除。 以上所有将触发相应的`"add"`, `"remove"`, 和 `"change"`事件。 返回集合中的模型。 如果您想自定义的行为， 你可以设置选项：`{add: false}`, `{remove: false}`, 或 `{merge: false}`，将其禁用。
 
-```
+```js
 var vanHalen = new Backbone.Collection([eddie, alex, stone, roth]);
 
 vanHalen.set([eddie, alex, stone, hagar]);
@@ -156,7 +156,7 @@ vanHalen.set([eddie, alex, stone, hagar]);
 
 **get**`collection.get(id)` 通过一个 id，一个 cid，或者传递一个**model**来 获得集合中 的模型。
 
-```
+```js
 var book = library.get(110); 
 ```
 
@@ -180,7 +180,7 @@ var book = library.get(110);
 
 注意即使下面例子中的 chapters 是后加入到集合中的，但它们都会遵循正确的排序：
 
-```
+```js
 var Chapter  = Backbone.Model;
 var chapters = new Backbone.Collection;
 
@@ -199,7 +199,7 @@ alert(chapters.pluck('title'));
 
 **pluck**`collection.pluck(attribute)` 从集合中的每个模型中拉取 attribute（属性）。等价于调用 `map`，并从迭代器中返回单个属性。
 
-```
+```js
 var stooges = new Backbone.Collection([
   {name: "Curly"},
   {name: "Larry"},
@@ -213,7 +213,7 @@ alert(JSON.stringify(names));
 
 **where**`collection.where(attributes)` 返回集合中所有匹配所传递 **attributes**（属性）的模型数组。 对于简单的`filter（过滤）`比较有用。
 
-```
+```js
 var friends = new Backbone.Collection([
   {name: "Athos",      job: "Musketeer"},
   {name: "Porthos",    job: "Musketeer"},
@@ -230,7 +230,7 @@ alert(musketeers.length);
 
 **url**`collection.url or collection.url()` 设置 **url** 属性（或函数）以指定集合对应的服务器位置。集合内的模型使用 **url** 构造自身的 URLs。
 
-```
+```js
 var Notes = Backbone.Collection.extend({
   url: '/notes'
 });
@@ -246,7 +246,7 @@ var Notes = Backbone.Collection.extend({
 
 **parse**`collection.parse(response, options)` 每一次调用 fetch 从服务器拉取集合的模型数据时，**parse**都会被调用。 本函数接收原始 `response` 对象，返回可以 added（添加） 到集合的模型属性数组。 默认实现是无需操作的，只需简单传入服务端返回的 JSON 对象。 如果需要处理遗留 API，或者在返回数据定义自己的命名空间，可以重写本函数。
 
-```
+```js
 var Tweets = Backbone.Collection.extend({
   // The Twitter Search API returns tweets under "results".
   parse: function(response) {
@@ -259,7 +259,7 @@ var Tweets = Backbone.Collection.extend({
 
 **fetch**`collection.fetch([options])` 从服务器拉取集合的默认模型设置 ，成功接收数据后会 setting（设置）集合。 **options** 支持 `success` 和 `error` 回调函数，两个回调函数接收 `(collection, response, options)`作为参数。当模型数据从服务器返回时， 它使用 set 来（智能的）合并所获取到的模型， 除非你传递了 `{reset: true}`， 在这种情况下，集合将（有效地）重置。 可以委托 Backbone.sync 在幕后自定义持久性策略 并返回一个[jqXHR](http://www.css88.com/jqapi-1.9/jQuery.ajax/#jqXHR)。 **fetch**请求的服务器处理器应该返回模型 JSON 数组。
 
-```
+```js
 Backbone.sync = function(method, model) {
   alert(method + ": " + model.url);
 };
@@ -280,7 +280,7 @@ accounts.fetch();
 
 创建一个模型将立即触发集合上的`"add"`事件， 一个`"request"`的事件作为新的模型被发送到服务器， 还有一个 `"sync"` ”事件，一旦服务器响应成功创建模型。 如果你想在集合中添加这个模型前等待服务器相应，请传递`{wait: true}`。
 
-```
+```js
 var Library = Backbone.Collection.extend({
   model: Book
 });

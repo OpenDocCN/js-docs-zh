@@ -17,7 +17,7 @@
 
 例子：
 
-```
+```js
 var debuglog = util.debuglog('foo');
 
 var bar = 123;
@@ -26,7 +26,7 @@ debuglog('hello from foo [%d]', bar);
 
 如果程序在`NODE_DEBUG=foo`环境下运行，那么输出将是：
 
-```
+```js
 FOO 3245: hello from foo [123] 
 ```
 
@@ -47,19 +47,19 @@ FOO 3245: hello from foo [123]
 
 如果占位符没有对应的参数，那么占位符将不被替换。
 
-```
+```js
 util.format('%s:%s', 'foo'); // 'foo:%s' 
 ```
 
 如果参数多余占位符，那么额外的参数会被转换成字符串（对于对象和链接，使用`util.inspect()`），并且以空格连接。
 
-```
+```js
 util.format('%s:%s', 'foo', 'bar', 'baz'); // 'foo:bar baz' 
 ```
 
 如果第一个参数不是格式化字符串，那么`util.format()`将会返回一个以空格连接的所有参数的字符串。每一个参数都被调用`util.inspect()`来转换成字符串。
 
-```
+```js
 util.format(1, 2, 3); // '1 2 3' 
 ```
 
@@ -67,7 +67,7 @@ util.format(1, 2, 3); // '1 2 3'
 
 在控制台输出带有时间戳的信息。
 
-```
+```js
 require('util').log('Timestamped message.'); 
 ```
 
@@ -87,7 +87,7 @@ require('util').log('Timestamped message.');
 
 一个检查`util`对象所有属性的例子：
 
-```
+```js
 var util = require('util');
 
 console.log(util.inspect(util, { showHidden: true, depth: null })); 
@@ -107,7 +107,7 @@ console.log(util.inspect(util, { showHidden: true, depth: null }));
 
 对象也可以自己定义`inspect(depth)`函数，`util.inspect()`将会调用它，并且输出它的结果：
 
-```
+```js
 var util = require('util');
 
 var obj = { name: 'nate' };
@@ -121,7 +121,7 @@ util.inspect(obj);
 
 你也可以完全返回另一个对象，并且返回的字符串是由这个返回对象格式化而来的，这也`JSON.stringify()`相似：
 
-```
+```js
 var obj = { foo: 'this will not show up in the inspect() output' };
 obj.inspect = function(depth) {
   return { bar: 'baz' };
@@ -139,7 +139,7 @@ util.inspect(obj);
 
 如果`object`是一个数组则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isArray([])
@@ -156,7 +156,7 @@ util.isArray({})
 
 如果`object`是一个正则表达式则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isRegExp(/some regexp/)
@@ -173,7 +173,7 @@ util.isRegExp({})
 
 如果`object`是一个日期则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isDate(new Date())
@@ -190,7 +190,7 @@ util.isDate({})
 
 如果`object`是一个错误对象则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isError(new Error())
@@ -207,7 +207,7 @@ util.isError({ name: 'Error', message: 'an error occurred' })
 
 如果`object`是一个布尔值则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isBoolean(1)
@@ -224,7 +224,7 @@ util.isBoolean(false)
 
 如果`object`是严格的`null`则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isNull(0)
@@ -241,7 +241,7 @@ util.isNull(null)
 
 如果`object`是一`null`或`undefined`则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isNullOrUndefined(0)
@@ -258,7 +258,7 @@ util.isNullOrUndefined(null)
 
 如果`object`是一个数字则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isNumber(false)
@@ -277,7 +277,7 @@ util.isNumber(NaN)
 
 如果`object`是一个字符串则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isString('')
@@ -296,7 +296,7 @@ util.isString(5)
 
 如果`object`是一个`Symbol`则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isSymbol(5)
@@ -313,7 +313,7 @@ util.isSymbol(Symbol('foo'))
 
 如果`object`是`undefined`则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 var foo;
@@ -331,7 +331,7 @@ util.isUndefined(null)
 
 如果`object`严格的是一个对象而不是一个函数，则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isObject(5)
@@ -350,7 +350,7 @@ util.isObject(function(){})
 
 如果`object`是一个函数则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 function Foo() {}
@@ -370,7 +370,7 @@ util.isFunction(Bar)
 
 如果`object`是一个基本值则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isPrimitive(5)
@@ -399,7 +399,7 @@ util.isPrimitive(new Date())
 
 如果`object`是一个`buffer`则返回`true`，否则返回`false`。
 
-```
+```js
 var util = require('util');
 
 util.isBuffer({ length: 0 })
@@ -416,7 +416,7 @@ util.isBuffer(new Buffer('hello world'))
 
 为了方便起见，超类可以通过`constructor.super_`来访问。
 
-```
+```js
 var util = require("util");
 var events = require("events");
 
@@ -445,7 +445,7 @@ stream.write("It works!"); // Received data: "It works!"
 
 标记一个方法为不应再使用。
 
-```
+```js
 var util = require('util');
 
 exports.puts = util.deprecate(function() {

@@ -28,7 +28,7 @@
 
 推荐使用 [spm](http://spmjs.io)
 
-```
+```js
 spm install seajs
 npm install seajs 
 ```

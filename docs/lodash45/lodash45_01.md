@@ -15,25 +15,25 @@
 
 浏览器中使用:
 
-```
+```js
 <script src="lodash.js"></script> 
 ```
 
 AMD 规范中使用:
 
-```
+```js
 require(['lodash'], function(_) {}); 
 ```
 
 使用 npm 安装:
 
-```
+```js
 $ {sudo -H} npm i -g npm$ npm i --save lodash 
 ```
 
 Node.js/io.js 中使用:
 
-```
+```js
 // 直接引用现代版本
 var _ = require('lodash');
 

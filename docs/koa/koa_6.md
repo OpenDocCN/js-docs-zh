@@ -127,7 +127,7 @@ Content-Type 默认为 application/json。
 
 获取 response header 中字段值，field 不区分大小写。
 
-```
+```js
 var etag = this.get('ETag'); 
 ```
 
@@ -135,7 +135,7 @@ var etag = this.get('ETag');
 
 设置 response header 字段 `field` 的值为 `value`。
 
-```
+```js
 this.set('Cache-Control', 'no-cache'); 
 ```
 
@@ -143,7 +143,7 @@ this.set('Cache-Control', 'no-cache');
 
 使用对象同时设置 response header 中多个字段的值。
 
-```
+```js
 this.set({
   'Etag': '1234',
   'Last-Modified': date
@@ -158,7 +158,7 @@ this.set({
 
 获取 response `Content-Type`，不包含像 "charset" 这样的参数。
 
-```
+```js
 var ct = this.type;
 // => "image/png" 
 ```
@@ -167,7 +167,7 @@ var ct = this.type;
 
 通过 mime 类型的字符串或者文件扩展名设置 response `Content-Type`
 
-```
+```js
 this.type = 'text/plain; charset=utf-8';
 this.type = 'image/png';
 this.type = '.png';
@@ -182,7 +182,7 @@ this.type = 'png';
 
 字符串 "back" 是一个特殊参数，其提供了 Referrer 支持。当没有 Referrer 时，使用 `alt` 或者 `/` 代替。
 
-```
+```js
 this.redirect('back');
 this.redirect('back', '/index.html');
 this.redirect('/login');
@@ -191,7 +191,7 @@ this.redirect('http://google.com');
 
 如果想要修改默认的 [302] 状态，直接在重定向之前或者之后执行即可。如果要修改 body，需要在重定向之前执行。
 
-```
+```js
 this.status = 301;
 this.redirect('/cart');
 this.body = 'Redirecting to shopping cart'; 
@@ -213,7 +213,7 @@ this.body = 'Redirecting to shopping cart';
 
 以 UTC 格式设置 `Last-Modified`。您可以使用 `Date` 或 date 字符串来进行设置。
 
-```
+```js
 this.response.lastModified = new Date(); 
 ```
 
@@ -221,7 +221,7 @@ this.response.lastModified = new Date();
 
 设置 包含 `"`s 的 ETag。注意没有对应的 `res.etag` 来获取其值。
 
-```
+```js
 this.response.etag = crypto.createHash('md5').update(this.body).digest('hex'); 
 ```
 

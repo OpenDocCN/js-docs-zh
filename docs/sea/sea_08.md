@@ -8,7 +8,7 @@
 
 模块 factory 构造方法的第一个参数 **必须** 命名为 `require` 。
 
-```
+```js
 // 错误！
 define(function(req) {
   // ...
@@ -24,7 +24,7 @@ define(function(require) {
 
 不要重命名 `require` 函数，或在任何作用域中给 `require` 重新赋值。
 
-```
+```js
 // 错误 - 重命名 "require"！
 var req = require, mod = req("./mod");
 
@@ -44,7 +44,7 @@ function F() {
 
 `require` 的参数值 **必须** 是字符串直接量。
 
-```
+```js
 // 错误！
 require(myModule);
 
@@ -64,7 +64,7 @@ require("my-module");
 
 有时会希望可以使用 `require` 来进行条件加载：
 
-```
+```js
 if (todayIsWeekend)
   require("play");
 else

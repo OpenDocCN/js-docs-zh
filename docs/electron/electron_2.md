@@ -34,7 +34,7 @@
 
 在 OS X 中:
 
-```
+```js
 electron/Electron.app/Contents/Resources/app/
 ├── package.json
 ├── main.js
@@ -43,7 +43,7 @@ electron/Electron.app/Contents/Resources/app/
 
 在 Windows 和 Linux 中:
 
-```
+```js
 electron/resources/app
 ├── package.json
 ├── main.js
@@ -60,14 +60,14 @@ electron/resources/app
 
 在 OS X 中:
 
-```
+```js
 electron/Electron.app/Contents/Resources/
 └── app.asar 
 ```
 
 在 Windows 和 Linux 中:
 
-```
+```js
 electron/resources/
 └── app.asar 
 ```
@@ -93,7 +93,7 @@ electron/resources/
 
 一个改过名字的应用程序的构造可能是这样的：
 
-```
+```js
 MyApp.app/Contents
 ├── Info.plist
 ├── MacOS/
@@ -153,7 +153,7 @@ MyApp.app/Contents
 
 `child.plist`:
 
-```
+```js
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -168,7 +168,7 @@ MyApp.app/Contents
 
 `parent.plist`:
 
-```
+```js
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -181,7 +181,7 @@ MyApp.app/Contents
 
 然后使用下面的脚本标识你的应用 :
 
-```
+```js
 #!/bin/bash 
 # Name of your app.
 APP="YourApp"
@@ -277,13 +277,13 @@ Electron 使用下列加密算法:
 
 ### 1\. 安装 asar
 
-```
+```js
 $ npm install -g asar 
 ```
 
 ### 2\. 用 `asar pack` 打包
 
-```
+```js
 $ asar pack your-app app.asar 
 ```
 
@@ -297,7 +297,7 @@ $ asar pack your-app app.asar
 
 例如，假设我们在 `/path/to` 文件夹下有个 `example.asar` 包：
 
-```
+```js
 $ asar list /path/to/example.asar
 /app.js
 /file.txt
@@ -309,27 +309,27 @@ $ asar list /path/to/example.asar
 
 从 `asar` 包读取一个文件：
 
-```
+```js
 const fs = require('fs');
 fs.readFileSync('/path/to/example.asar/file.txt'); 
 ```
 
 列出 `asar` 包中根目录下的所有文件：
 
-```
+```js
 const fs = require('fs');
 fs.readdirSync('/path/to/example.asar'); 
 ```
 
 使用 `asar` 包中的一个模块：
 
-```
+```js
 require('/path/to/example.asar/dir/module.js'); 
 ```
 
 你也可以使用 `BrowserWindow` 来显示一个 `asar` 包里的 web 页面：
 
-```
+```js
 const BrowserWindow = require('electron').BrowserWindow;
 var win = new BrowserWindow({width: 800, height: 600});
 win.loadURL('file:///path/to/example.asar/static/index.html'); 
@@ -341,7 +341,7 @@ win.loadURL('file:///path/to/example.asar/static/index.html');
 
 例如，用 `$.get` 获取文件:
 
-```
+```js
 <script> var $ = require('./jquery.min.js');
 $.get('file:///path/to/example.asar/file.txt', function(data) {
   console.log(data);
@@ -352,7 +352,7 @@ $.get('file:///path/to/example.asar/file.txt', function(data) {
 
 有些场景，如：核查 `asar` 包的校验和，我们需要像读取“文件”那样读取 `asar` 包的内容(而不是当成虚拟文件夹)。 你可以使用内置的 `original-fs` （提供和 `fs` 一样的 API）模块来读取 `asar` 包的真实信息。
 
-```
+```js
 var originalFs = require('original-fs');
 originalFs.readFileSync('/path/to/example.asar'); 
 ```
@@ -397,7 +397,7 @@ Node 中有一些可以执行程序的 API，如 `child_process.exec`，`child_p
 
 为解决这个问题，你可以在生成 `asar` 包时使用 `--unpack` 选项来排除一些文件，使其不打包到 `asar` 包中， 下面是如何排除一些用作共享用途的 native 模块的方法：
 
-```
+```js
 $ asar pack app app.asar --unpack *.node 
 ```
 
@@ -423,7 +423,7 @@ Electron 同样也支持原生模块，但由于和官方的 Node 相比使用�
 
 最简单的方式就是通过 [`electron-rebuild`](https://github.com/paulcbetts/electron-rebuild) 包重新编译原生模块，它帮你自动完成了下载 headers、编译原生模块等步骤：
 
-```
+```js
 npm install --save-dev electron-rebuild
 
 # 每次运行"npm install"时，也运行这条命令
@@ -437,7 +437,7 @@ npm install --save-dev electron-rebuild
 
 你当然也可以通过 `npm` 安装原生模块。大部分步骤和安装普通模块时一样，除了以下一些系统环境变量你需要自己操作：
 
-```
+```js
 export npm_config_disturl=https://atom.io/download/atom-shell
 export npm_config_target=0.33.1
 export npm_config_arch=x64
@@ -449,7 +449,7 @@ HOME=~/.electron-gyp npm install module-name
 
 你需要告诉 `node-gyp` 去哪下载 Electron 的 headers，以及下载什么版本：
 
-```
+```js
 $ cd /path-to-module/
 $ HOME=~/.electron-gyp node-gyp rebuild --target=0.29.1 --arch=x64 --dist-url=https://atom.io/download/atom-shell 
 ```
@@ -486,19 +486,19 @@ $ HOME=~/.electron-gyp node-gyp rebuild --target=0.29.1 --arch=x64 --dist-url=ht
 
 ### 2\. 安装 [node-inspector](https://github.com/node-inspector/node-inspector)
 
-```
+```js
 $ npm install node-inspector 
 ```
 
 ### 3\. 安装 `node-pre-gyp` 的一个修订版
 
-```
+```js
 $ npm install git+https://git@github.com/enlight/node-pre-gyp.git#detect-electron-runtime-in-find 
 ```
 
 ### 4\. 为 Electron 重新编译 `node-inspector` `v8` 模块（将 target 参数修改为你的 Electron 的版本号）
 
-```
+```js
 $ node_modules/.bin/node-pre-gyp --target=0.36.2 --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall
 $ node_modules/.bin/node-pre-gyp --target=0.36.2 --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall 
 ```
@@ -509,19 +509,19 @@ $ node_modules/.bin/node-pre-gyp --target=0.36.2 --runtime=electron --fallback-t
 
 你也可以用调试参数来运行 Electron ：
 
-```
+```js
 $ electron --debug=5858 your/app 
 ```
 
 或者，在第一行暂停你的脚本：
 
-```
+```js
 $ electron --debug-brk=5858 your/app 
 ```
 
 ### 6\. 使用 Electron 开启 [node-inspector](https://github.com/node-inspector/node-inspector) 服务
 
-```
+```js
 $ ELECTRON_RUN_AS_NODE=true path/to/electron.exe node_modules/node-inspector/bin/inspector.js 
 ```
 
@@ -545,7 +545,7 @@ $ ELECTRON_RUN_AS_NODE=true path/to/electron.exe node_modules/node-inspector/bin
 
 首先，你要下载 `chromedriver`，然后运行以下命令：
 
-```
+```js
 $ ./chromedriver
 Starting ChromeDriver (v2.10.291558) on port 9515
 Only local connections are allowed. 
@@ -555,7 +555,7 @@ Only local connections are allowed.
 
 ### 2\. 安装 WebDriverJS
 
-```
+```js
 $ npm install selenium-webdriver 
 ```
 
@@ -563,7 +563,7 @@ $ npm install selenium-webdriver
 
 在 Electron 下使用 `selenium-webdriver` 和其平时的用法并没有大的差异，只是你需要手动设置连接 ChromeDriver，以及 Electron 的路径：
 
-```
+```js
 const webdriver = require('selenium-webdriver');
 
 var driver = new webdriver.Builder()
@@ -598,7 +598,7 @@ driver.quit();
 
 首先，下载 `chromedriver`，然后运行以下命令：
 
-```
+```js
 $ chromedriver --url-base=wd/hub --port=9515
 Starting ChromeDriver (v2.10.291558) on port 9515
 Only local connections are allowed. 
@@ -608,13 +608,13 @@ Only local connections are allowed.
 
 ### 2\. 安装 WebdriverIO
 
-```
+```js
 $ npm install webdriverio 
 ```
 
 ### 3\. 连接到 ChromeDriver
 
-```
+```js
 const webdriverio = require('webdriverio');
 var options = {
     host: "localhost", // 使用 localhost 作为 ChromeDriver 服务器
@@ -659,7 +659,7 @@ client
 
 例如，要用[React DevTools Extension](https://github.com/facebook/react-devtools)，你得先下载他的源码：
 
-```
+```js
 $ cd /some-directory
 $ git clone --recursive https://github.com/facebook/react-devtools.git 
 ```
@@ -668,14 +668,14 @@ $ git clone --recursive https://github.com/facebook/react-devtools.git
 
 然后你就可以在任意页面的 DevTools 里加载 React DevTools 了，通过控制台输入如下命令加载扩展：
 
-```
+```js
 const BrowserWindow = require('electron').remote.BrowserWindow;
 BrowserWindow.addDevToolsExtension('/some-directory/react-devtools/shells/chrome'); 
 ```
 
 要卸载扩展，可以调用 `BrowserWindow.removeDevToolsExtension` API (扩展名作为参数传入)，该扩展在下次打开 DevTools 时就不会加载了：
 
-```
+```js
 BrowserWindow.removeDevToolsExtension('React Developer Tools'); 
 ```
 
@@ -705,7 +705,7 @@ Electron 现在支持 Pepper Flash 插件。要在 Electron 里面使用 Pepper 
 
 你可以直接在命令行中用 `--ppapi-flash-path` 和 `ppapi-flash-version` 或者 在 app 的准备事件前调用 `app.commandLine.appendSwitch` 这个 method。同时， 添加 `browser-window` 的插件开关。 例如：
 
-```
+```js
 // Specify flash path. 设置 flash 路径
 // On Windows, it might be /path/to/pepflashplayer.dll
 // On OS X, /path/to/PepperFlashPlayer.plugin
@@ -732,7 +732,7 @@ app.on('ready', function() {
 
 在 `<webview>` 标签里添加 `plugins` 属性。
 
-```
+```js
 <webview src="http://www.adobe.com/software/flash/about/" plugins></webview> 
 ```
 
@@ -768,7 +768,7 @@ Electron 没有为 Widevine CDM 插件 配制许可 reasons, 为了获得它，�
 
 示例代码 :
 
-```
+```js
 // You have to pass the filename of `widevinecdmadapter` here, it is
 // * `widevinecdmadapter.plugin` on OS X,
 // * `libwidevinecdmadapter.so` on Linux,

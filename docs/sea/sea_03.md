@@ -8,7 +8,7 @@
 
 用来对 Sea.js 进行配置。
 
-```
+```js
 seajs.config({
 
   // 设置路径，方便跨目录调用
@@ -32,7 +32,7 @@ seajs.config({
 
 用来在页面中加载一个或多个模块。
 
-```
+```js
 // 加载一个模块
 seajs.use('./a');
 
@@ -54,7 +54,7 @@ seajs.use(['./a', './b'], function(a, b) {
 
 用来定义模块。Sea.js 推崇一个模块一个文件，遵循统一的写法：
 
-```
+```js
 define(function(require, exports, module) {
 
   // 模块代码
@@ -69,7 +69,7 @@ define(function(require, exports, module) {
 
 `require` 用来获取指定模块的接口。
 
-```
+```js
 define(function(require) {
 
   // 获取模块 a 的接口
@@ -86,7 +86,7 @@ define(function(require) {
 
 用来在模块内部异步加载一个或多个模块。
 
-```
+```js
 define(function(require) {
 
   // 异步加载一个模块，在加载完成时，执行回调
@@ -109,7 +109,7 @@ define(function(require) {
 
 用来在模块内部对外提供接口。
 
-```
+```js
 define(function(require, exports) {
 
   // 对外提供 foo 属性
@@ -127,7 +127,7 @@ define(function(require, exports) {
 
 与 `exports` 类似，用来在模块内部对外提供接口。
 
-```
+```js
 define(function(require, exports, module) {
 
   // 对外提供接口

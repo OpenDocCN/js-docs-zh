@@ -11,7 +11,7 @@ Or **[grab the latest version on GitHub](https://github.com/madrobby/zepto)**.
 
 用一个 script 标签引入 Zepto 到你的页面的底部：
 
-```
+```js
 ...
 <script src=zepto.min.js></script>
 </body>

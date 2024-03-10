@@ -19,7 +19,7 @@
 > $.get(url, function(data, status, xhr){ ... }) ? XMLHttpRequest
 > $.get(url, [data], [function(data, status, xhr){ ... }], [dataType]) ? XMLHttpRequest
 
-```
+```js
 $.get('http://127.0.0.1/api.php?wcj=123', function(cdata) {
     console.log('ok', cdata)
 },'json')
@@ -33,7 +33,7 @@ $.get('http://127.0.0.1/api.php?wcj=123',{"JSLite":4}, function(cdata) {
 
 1.JSLite 独有....
 
-```
+```js
 $.ajax('GET', 'http://127.0.0.1/api.php', {"wcj":"123","ok":'11'},function(cdata) {
     console.log('ok', cdata)
 }) 
@@ -41,7 +41,7 @@ $.ajax('GET', 'http://127.0.0.1/api.php', {"wcj":"123","ok":'11'},function(cdata
 
 2.通用调用方法
 
-```
+```js
 $.ajax({
     type:'GET',
     dataType:'json',
@@ -61,7 +61,7 @@ $.ajax({
 发送一个 Ajax GET 请求并解析返回的 JSON 数据。方法支持跨域请求。
 $.getJSON(url, function(data, status, xhr){ ... })
 
-```
+```js
 $.getJSON('http://127.0.0.1/api.php', function(data){
   console.log(data)
 }) 
@@ -71,7 +71,7 @@ $.getJSON('http://127.0.0.1/api.php', function(data){
 
 JSONP 方式
 
-```
+```js
 $.ajax({
     url: 'http://127.0.0.1/api.php?callback',
     dataType: 'jsonp',
@@ -96,7 +96,7 @@ $.ajax({
 
 > $.post(url, [data], function(data, status, xhr){ ... }, [dataType])
 
-```
+```js
 $.post('http://127.0.0.1/api.php', {'nike':0},
 function(cdata) {
     console.log('ok', cdata)
@@ -107,7 +107,7 @@ function(cdata) {
 
 1.JSLite 独有....
 
-```
+```js
 var data = { 'key': 'key', 'from': 'from'}
 $.ajax('POST', 'http://127.0.0.1/api.php', data,function(data) {
     console.log('ok', data)
@@ -116,7 +116,7 @@ $.ajax('POST', 'http://127.0.0.1/api.php', data,function(data) {
 
 2.通用调用方法
 
-```
+```js
 $.ajax({
     type:'POST',
     dataType:'json',
@@ -201,12 +201,12 @@ $(selector).load(URL,data,callback);
 
 这是示例文件（"demo.txt"）的内容：
 
-```
+```js
 <h2>JSLite 中 AJAX 的一个方法！</h2>
 <p id="demo">这是一个文本文件</p> 
 ```
 
-```
+```js
 // 把文件 "demo.txt" 的内容加载到指定的 <div> 元素中
 $("#div1").load("demo.txt");
 //把 "demo.txt" 文件中 id="div1" 的元素的内容，加载到指定的 <div> 元素中：

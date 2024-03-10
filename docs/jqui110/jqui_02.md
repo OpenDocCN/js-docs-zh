@@ -152,7 +152,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 匹配的元素上添加"big-blue"样式。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -208,7 +208,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用百叶窗效果切换隐藏显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -255,7 +255,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用反弹特效来切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -305,7 +305,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用剪辑特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -362,7 +362,7 @@ jQuery UI 特效内核使用`rgb()`， `rgba()`，16 进制值，甚至颜色名
 
 ## Example
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -417,7 +417,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用拉拽特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -486,7 +486,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 一个 div 应用反弹特效。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -533,7 +533,7 @@ $( document ).click(function() {
 
 #### 使用分裂特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -577,7 +577,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用淡入淡出特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -624,7 +624,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用折叠特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -685,7 +685,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用拖动特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -732,7 +732,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用高亮特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -778,7 +778,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用拉伸特效来切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -824,7 +824,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用闪烁特效来切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -890,7 +890,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 匹配的元素上移除"big-blue"样式。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -943,7 +943,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### Example: 使用缩放特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -977,7 +977,7 @@ $( document ).click(function() {
 
 #### Example: 使用缩放特效，但只朝一个方向切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1025,7 +1025,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 抖动一个 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1086,7 +1086,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用折叠特效显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1136,7 +1136,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用尺寸特效来改变 div 的尺寸。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1185,7 +1185,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用滑动特效切换显示 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1255,7 +1255,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 向匹配的元素添加样式类"blue"，并且移除样式类"big"。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1322,7 +1322,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 使用折叠特效来切换显示一个 div。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1391,7 +1391,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 把类"big-blue"添加到匹配的元素
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1446,7 +1446,7 @@ Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View
 
 #### 点击绿色元素将其轮廓转移到另一个元素上。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>

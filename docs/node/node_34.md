@@ -4,7 +4,7 @@
 
 要获取这个模块，你可以通过：
 
-```
+```js
 var zlib = require('zlib'); 
 ```
 
@@ -14,7 +14,7 @@ var zlib = require('zlib');
 
 可以通过将一个`fs.ReadStream`的数据导入一个`zlib`流，然后导入一个`fs.WriteStream`，来压缩或解压缩一个文件。
 
-```
+```js
 var gzip = zlib.createGzip();
 var fs = require('fs');
 var inp = fs.createReadStream('input.txt');
@@ -25,7 +25,7 @@ inp.pipe(gzip).pipe(out);
 
 通过使用便捷方法，可以在一个步骤里完成压缩或解压缩数据。
 
-```
+```js
 var input = '.................................';
 zlib.deflate(input, function(err, buffer) {
   if (!err) {
@@ -45,7 +45,7 @@ zlib.unzip(buffer, function(err, buffer) {
 
 注意，这些例子都只是非常简单的展示了一些基本的概念。`zlib`编码的开销是非常昂贵的，并且结果需要被缓存。更多关于速度/内存/压缩的权衡，请参阅下文的`内存使用调优`。
 
-```
+```js
 // client request example
 var zlib = require('zlib');
 var http = require('http');
@@ -243,7 +243,7 @@ http.createServer(function(request, response) {
 
 默认的内存要求（字节）为：
 
-```
+```js
 (1 << (windowBits+2)) +  (1 << (memLevel+9)) 
 ```
 
@@ -251,7 +251,7 @@ http.createServer(function(request, response) {
 
 例子，如果你想要将默认内存需求从 256K 减少至 128K，将选项设置为：
 
-```
+```js
 { windowBits: 14, memLevel: 7 } 
 ```
 
@@ -259,7 +259,7 @@ http.createServer(function(request, response) {
 
 `inflate`的内存需求（字节）为：
 
-```
+```js
 1 << windowBits 
 ```
 
@@ -277,7 +277,7 @@ http.createServer(function(request, response) {
 
 允许的冲刷值：
 
-```
+```js
 zlib.Z_NO_FLUSH
 zlib.Z_PARTIAL_FLUSH
 zlib.Z_SYNC_FLUSH
@@ -289,7 +289,7 @@ zlib.Z_TREES
 
 `compression/decompression`函数的返回码。负值代表错误，正值代表特殊但是正常的事件：
 
-```
+```js
 zlib.Z_OK
 zlib.Z_STREAM_END
 zlib.Z_NEED_DICT
@@ -303,7 +303,7 @@ zlib.Z_VERSION_ERROR
 
 压缩等级：
 
-```
+```js
 zlib.Z_NO_COMPRESSION
 zlib.Z_BEST_SPEED
 zlib.Z_BEST_COMPRESSION
@@ -312,7 +312,7 @@ zlib.Z_DEFAULT_COMPRESSION
 
 压缩策略：
 
-```
+```js
 zlib.Z_FILTERED
 zlib.Z_HUFFMAN_ONLY
 zlib.Z_RLE
@@ -322,7 +322,7 @@ zlib.Z_DEFAULT_STRATEGY
 
 `data_type`域的可能值：
 
-```
+```js
 zlib.Z_BINARY
 zlib.Z_TEXT
 zlib.Z_ASCII
@@ -331,12 +331,12 @@ zlib.Z_UNKNOWN
 
 `deflate`压缩方法（当前版本只支持这一个）：
 
-```
+```js
 zlib.Z_DEFLATED 
 ```
 
 用于初始化`zalloc`，`zfree`，`opaque`：
 
-```
+```js
 zlib.Z_NULL 
 ```

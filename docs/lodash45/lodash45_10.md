@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11907 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.clamp "See the npm package.")
 
-```
+```js
 _.clamp(number, [min], max) 
 ```
 
@@ -34,7 +34,7 @@ _.clamp(number, [min], max)
 
 ### 示例
 
-```
+```js
 _.clamp(-10, -5, 5);
 // => -5
 
@@ -50,7 +50,7 @@ _.clamp(10, -5, 5);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11958 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.inrange "See the npm package.")
 
-```
+```js
 _.inRange(number, [start=0], end) 
 ```
 
@@ -76,7 +76,7 @@ _.inRange(number, [start=0], end)
 
 ### 示例
 
-```
+```js
 _.inRange(3, 2, 4);
 // => true
 
@@ -107,7 +107,7 @@ _.inRange(-3, -2, -6);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L11998 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.random "See the npm package.")
 
-```
+```js
 _.random([min=0], [max=1], [floating]) 
 ```
 
@@ -135,7 +135,7 @@ _.random([min=0], [max=1], [floating])
 
 ### 示例
 
-```
+```js
 _.random(0, 5);
 // =>  0 和 5 之间的数
 

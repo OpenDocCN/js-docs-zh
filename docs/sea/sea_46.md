@@ -8,7 +8,7 @@
 
 先安装 [spm](https://github.com/spmjs/spm/wiki)，然后运行：
 
-```
+```js
 spm install seajs 
 ```
 

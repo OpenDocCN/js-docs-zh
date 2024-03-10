@@ -100,13 +100,13 @@ Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interacti
 
 使用`addClasses`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ addClasses: false }); 
 ```
 
 在组件初始化之后，读取或设置`addClasses`选项
 
-```
+```js
 // getter
 var addClasses = $( ".selector" ).draggable( "option", "addClasses" );
 
@@ -127,13 +127,13 @@ $( ".selector" ).draggable( "option", "addClasses", false );
 
 使用`appendTo`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ appendTo: "body" }); 
 ```
 
 在组件初始化之后，读取或设置`appendTo`选项
 
-```
+```js
 // getter
 var appendTo = $( ".selector" ).draggable( "option", "appendTo" );
 
@@ -147,13 +147,13 @@ $( ".selector" ).draggable( "option", "appendTo", "body" );
 
 使用`axis`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ axis: "x" }); 
 ```
 
 在组件初始化之后，读取或设置`axis`选项：
 
-```
+```js
 // getter
 var axis = $( ".selector" ).draggable( "option", "axis" );
 
@@ -167,13 +167,13 @@ $( ".selector" ).draggable( "option", "axis", "x" );
 
 使用`cancel`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ cancel: ".title" }); 
 ```
 
 在组件初始化之后，读取或设置`cancel`选项：
 
-```
+```js
 // getter
 var cancel = $( ".selector" ).draggable( "option", "cancel" );
 
@@ -187,13 +187,13 @@ $( ".selector" ).draggable( "option", "cancel", ".title" );
 
 使用`connectToSortable`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ connectToSortable: "#my-sortable" }); 
 ```
 
 在组件初始化之后，读取或设置`connectToSortable`选项：
 
-```
+```js
 // getter
 var connectToSortable = $( ".selector" ).draggable( "option", "connectToSortable" );
 
@@ -214,13 +214,13 @@ $( ".selector" ).draggable( "option", "connectToSortable", "#my-sortable" );
 
 使用`containment`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ containment: "parent" }); 
 ```
 
 在组件初始化之后，读取或设置`containment`选项：
 
-```
+```js
 // getter
 var containment = $( ".selector" ).draggable( "option", "containment" );
 
@@ -234,13 +234,13 @@ $( ".selector" ).draggable( "option", "containment", "parent" );
 
 使用`cursor`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ cursor: "crosshair" }); 
 ```
 
 在组件初始化之后，读取或设置`cursor`选项：
 
-```
+```js
 // getter
 var cursor = $( ".selector" ).draggable( "option", "cursor" );
 
@@ -254,13 +254,13 @@ $( ".selector" ).draggable( "option", "cursor", "crosshair" );
 
 使用`cursorAt`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ cursorAt: { left: 5 } }); 
 ```
 
 在组件初始化之后，读取或设置`cursorAt`选项：
 
-```
+```js
 // getter
 var cursorAt = $( ".selector" ).draggable( "option", "cursorAt" );
 
@@ -274,13 +274,13 @@ $( ".selector" ).draggable( "option", "cursorAt", { left: 5 } );
 
 使用`delay`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ delay: 300 }); 
 ```
 
 在组件初始化之后，读取或设置`delay`选项：
 
-```
+```js
 // getter
 var delay = $( ".selector" ).draggable( "option", "delay" );
 
@@ -294,13 +294,13 @@ $( ".selector" ).draggable( "option", "delay", 300 );
 
 使用`disabled`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ disabled: true }); 
 ```
 
 在组件初始化之后，读取或设置`disabled`选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).draggable( "option", "disabled" );
 
@@ -314,13 +314,13 @@ $( ".selector" ).draggable( "option", "disabled", true );
 
 使用`distance`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ distance: 10 }); 
 ```
 
 在组件初始化之后，读取或设置`distance`选项：
 
-```
+```js
 // getter
 var distance = $( ".selector" ).draggable( "option", "distance" );
 
@@ -334,13 +334,13 @@ $( ".selector" ).draggable( "option", "distance", 10 );
 
 使用`grid`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ grid: [ 50, 20 ] }); 
 ```
 
 在组件初始化之后，读取或设置`grid` 选项:
 
-```
+```js
 // getter
 var grid = $( ".selector" ).draggable( "option", "grid" );
 
@@ -354,13 +354,13 @@ $( ".selector" ).draggable( "option", "grid", [ 50, 20 ] );
 
 使用`handle`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ handle: "h2" }); 
 ```
 
 在组件初始化之后，读取或设置`handle` 选项:
 
-```
+```js
 // getter
 var handle = $( ".selector" ).draggable( "option", "handle" );
 
@@ -379,13 +379,13 @@ $( ".selector" ).draggable( "option", "handle", "h2" );
 
 使用`helper`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ helper: "clone" }); 
 ```
 
 在组件初始化之后，读取或设置`helper` 选项:
 
-```
+```js
 // getter
 var helper = $( ".selector" ).draggable( "option", "helper" );
 
@@ -404,13 +404,13 @@ $( ".selector" ).draggable( "option", "helper", "clone" );
 
 使用`iframeFix`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ iframeFix: true }); 
 ```
 
 在组件初始化之后，读取或设置`iframeFix` 选项:
 
-```
+```js
 // getter
 var iframeFix = $( ".selector" ).draggable( "option", "iframeFix" );
 
@@ -424,13 +424,13 @@ $( ".selector" ).draggable( "option", "iframeFix", true );
 
 使用`opacity`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ opacity: 0.35 }); 
 ```
 
 在组件初始化之后，读取或设置`opacity` 选项:
 
-```
+```js
 // getter
 var opacity = $( ".selector" ).draggable( "option", "opacity" );
 
@@ -444,13 +444,13 @@ $( ".selector" ).draggable( "option", "opacity", 0.35 );
 
 使用`refreshPositions`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ refreshPositions: true }); 
 ```
 
 在组件初始化之后，读取或设置`refreshPositions` 选项:
 
-```
+```js
 // getter
 var refreshPositions = $( ".selector" ).draggable( "option", "refreshPositions" );
 
@@ -469,13 +469,13 @@ $( ".selector" ).draggable( "option", "refreshPositions", true );
 
 使用`revert`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ revert: true }); 
 ```
 
 在组件初始化之后，读取或设置`revert` 选项:
 
-```
+```js
 // getter
 var revert = $( ".selector" ).draggable( "option", "revert" );
 
@@ -489,13 +489,13 @@ $( ".selector" ).draggable( "option", "revert", true );
 
 使用`revertDuration`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ revertDuration: 200 }); 
 ```
 
 在组件初始化之后，读取或设置`revertDuration` 选项:
 
-```
+```js
 // getter
 var revertDuration = $( ".selector" ).draggable( "option", "revertDuration" );
 
@@ -509,13 +509,13 @@ $( ".selector" ).draggable( "option", "revertDuration", 200 );
 
 使用`scope`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ scope: "tasks" }); 
 ```
 
 在组件初始化之后，读取或设置`scope` 选项:
 
-```
+```js
 // getter
 var scope = $( ".selector" ).draggable( "option", "scope" );
 
@@ -529,13 +529,13 @@ $( ".selector" ).draggable( "option", "scope", "tasks" );
 
 使用`scroll`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ scroll: false }); 
 ```
 
 在组件初始化之后，读取或设置`scroll` 选项:
 
-```
+```js
 // getter
 var scroll = $( ".selector" ).draggable( "option", "scroll" );
 
@@ -549,13 +549,13 @@ $( ".selector" ).draggable( "option", "scroll", false );
 
 使用`scrollSensitivity`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ scrollSensitivity: 100 }); 
 ```
 
 在组件初始化之后，读取或设置`scrollSensitivity` 选项:
 
-```
+```js
 // getter
 var scrollSensitivity = $( ".selector" ).draggable( "option", "scrollSensitivity" );
 
@@ -569,13 +569,13 @@ $( ".selector" ).draggable( "option", "scrollSensitivity", 100 );
 
 使用`scrollSpeed`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ scrollSpeed: 100 }); 
 ```
 
 在组件初始化之后，读取或设置`scrollSpeed` 选项:
 
-```
+```js
 // getter
 var scrollSpeed = $( ".selector" ).draggable( "option", "scrollSpeed" );
 
@@ -594,13 +594,13 @@ $( ".selector" ).draggable( "option", "scrollSpeed", 100 );
 
 使用`snap`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ snap: true }); 
 ```
 
 在组件初始化之后，读取或设置`snap` 选项:
 
-```
+```js
 // getter
 var snap = $( ".selector" ).draggable( "option", "snap" );
 
@@ -614,13 +614,13 @@ $( ".selector" ).draggable( "option", "snap", true );
 
 使用`snapMode`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ snapMode: "inner" }); 
 ```
 
 在组件初始化之后，读取或设置`snapMode` 选项:
 
-```
+```js
 // getter
 var snapMode = $( ".selector" ).draggable( "option", "snapMode" );
 
@@ -634,13 +634,13 @@ $( ".selector" ).draggable( "option", "snapMode", "inner" );
 
 使用`snapTolerance`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ snapTolerance: 30 }); 
 ```
 
 在组件初始化之后，读取或设置`snapTolerance` 选项:
 
-```
+```js
 // getter
 var snapTolerance = $( ".selector" ).draggable( "option", "snapTolerance" );
 
@@ -654,13 +654,13 @@ $( ".selector" ).draggable( "option", "snapTolerance", 30 );
 
 使用`stack`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ stack: ".products" }); 
 ```
 
 在组件初始化之后，读取或设置`stack` 选项:
 
-```
+```js
 // getter
 var stack = $( ".selector" ).draggable( "option", "stack" );
 
@@ -674,13 +674,13 @@ $( ".selector" ).draggable( "option", "stack", ".products" );
 
 使用`zIndex`选项初始化 Draggable Widget：
 
-```
+```js
 $( ".selector" ).draggable({ zIndex: 100 }); 
 ```
 
 在组件初始化之后，读取或设置`zIndex` 选项:
 
-```
+```js
 // getter
 var zIndex = $( ".selector" ).draggable( "option", "zIndex" );
 
@@ -700,7 +700,7 @@ $( ".selector" ).draggable( "option", "zIndex", 100 );
 
 请求 destroy 方法:
 
-```
+```js
 $( ".selector" ).draggable( "destroy" ); 
 ```
 
@@ -714,7 +714,7 @@ $( ".selector" ).draggable( "destroy" );
 
 请求 disable 方法:
 
-```
+```js
 $( ".selector" ).draggable( "disable" ); 
 ```
 
@@ -728,7 +728,7 @@ $( ".selector" ).draggable( "disable" );
 
 请求 enable 方法:
 
-```
+```js
 $( ".selector" ).draggable( "enable" ); 
 ```
 
@@ -742,7 +742,7 @@ $( ".selector" ).draggable( "enable" );
 
 请求方法:
 
-```
+```js
 var isDisabled = $( ".selector" ).draggable( "option", "disabled" ); 
 ```
 
@@ -756,7 +756,7 @@ var isDisabled = $( ".selector" ).draggable( "option", "disabled" );
 
 请求方法:
 
-```
+```js
 var options = $( ".selector" ).draggable( "option" ); 
 ```
 
@@ -771,7 +771,7 @@ var options = $( ".selector" ).draggable( "option" );
 
 请求方法:
 
-```
+```js
 $( ".selector" ).draggable( "option", "disabled", true ); 
 ```
 
@@ -785,7 +785,7 @@ $( ".selector" ).draggable( "option", "disabled", true );
 
 请求方法:
 
-```
+```js
 $( ".selector" ).draggable( "option", { disabled: true } ); 
 ```
 
@@ -799,7 +799,7 @@ $( ".selector" ).draggable( "option", { disabled: true } );
 
 请求 widget 方法:
 
-```
+```js
 var widget = $( ".selector" ).draggable( "widget" ); 
 ```
 
@@ -818,7 +818,7 @@ var widget = $( ".selector" ).draggable( "widget" );
 
 使用 create 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).draggable({
   create: function( event, ui ) {}
 }); 
@@ -826,7 +826,7 @@ $( ".selector" ).draggable({
 
 绑定一个事件监听器到 dragcreate 事件:
 
-```
+```js
 $( ".selector" ).on( "dragcreate", function( event, ui ) {} ); 
 ```
 
@@ -844,7 +844,7 @@ $( ".selector" ).on( "dragcreate", function( event, ui ) {} );
 
 使用 drag 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).draggable({
   drag: function( event, ui ) {}
 }); 
@@ -852,7 +852,7 @@ $( ".selector" ).draggable({
 
 绑定一个事件监听者到 drag 事件:
 
-```
+```js
 $( ".selector" ).on( "drag", function( event, ui ) {} ); 
 ```
 
@@ -870,7 +870,7 @@ $( ".selector" ).on( "drag", function( event, ui ) {} );
 
 使用 start callback specified:
 
-```
+```js
 $( ".selector" ).draggable({
   start: function( event, ui ) {}
 }); 
@@ -878,7 +878,7 @@ $( ".selector" ).draggable({
 
 拖动事件绑定一个事件监听器：
 
-```
+```js
 $( ".selector" ).on( "dragstart", function( event, ui ) {} ); 
 ```
 
@@ -896,7 +896,7 @@ $( ".selector" ).on( "dragstart", function( event, ui ) {} );
 
 使用 start 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).draggable({
   stop: function( event, ui ) {}
 }); 
@@ -904,7 +904,7 @@ $( ".selector" ).draggable({
 
 绑定一个事件监听者到 dragstart 事件:
 
-```
+```js
 $( ".selector" ).on( "dragstop", function( event, ui ) {} ); 
 ```
 
@@ -912,7 +912,7 @@ $( ".selector" ).on( "dragstop", function( event, ui ) {} );
 
 #### 一个简单的 jQuery UI 一般拖动
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1000,13 +1000,13 @@ jQuery UI 拖放插件可以使所选元素可拖放（这意味着 draggables �
 
 使用指定的`accept`参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ accept: ".special" }); 
 ```
 
 在初始化后设置或者获取`accept`参数：
 
-```
+```js
 // getter
 var accept = $( ".selector" ).droppable( "option", "accept" );
 
@@ -1020,13 +1020,13 @@ $( ".selector" ).droppable( "option", "accept", ".special" );
 
 使用指定的`activeClass` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ activeClass: "ui-state-highlight" }); 
 ```
 
 在初始化后设置或者获取`activeClass`参数：
 
-```
+```js
 // getter
 var activeClass = $( ".selector" ).droppable( "option", "activeClass" );
 
@@ -1040,13 +1040,13 @@ $( ".selector" ).droppable( "option", "activeClass", "ui-state-highlight" );
 
 使用指定的`addClasses` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ addClasses: false }); 
 ```
 
 在初始化后设置或者获取`addClasses`参数：
 
-```
+```js
 // getter
 var addClasses = $( ".selector" ).droppable( "option", "addClasses" );
 
@@ -1060,13 +1060,13 @@ $( ".selector" ).droppable( "option", "addClasses", false );
 
 使用指定的`disabled` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ disabled: true }); 
 ```
 
 在初始化后设置或者获取`disabled`参数：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).droppable( "option", "disabled" );
 
@@ -1080,13 +1080,13 @@ $( ".selector" ).droppable( "option", "disabled", true );
 
 使用指定的`greedy` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ greedy: true }); 
 ```
 
 在初始化后设置或者获取`greedy`参数：
 
-```
+```js
 // getter
 var greedy = $( ".selector" ).droppable( "option", "greedy" );
 
@@ -1100,13 +1100,13 @@ $( ".selector" ).droppable( "option", "greedy", true );
 
 使用指定的`hoverClass` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ hoverClass: "drop-hover" }); 
 ```
 
 在初始化后设置或者获取`hoverClass`参数：
 
-```
+```js
 // getter
 var hoverClass = $( ".selector" ).droppable( "option", "hoverClass" );
 
@@ -1120,13 +1120,13 @@ $( ".selector" ).droppable( "option", "hoverClass", "drop-hover" );
 
 使用指定的`scope` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ scope: "tasks" }); 
 ```
 
 在初始化后设置或者获取`scope`参数：
 
-```
+```js
 // getter
 var scope = $( ".selector" ).droppable( "option", "scope" );
 
@@ -1147,13 +1147,13 @@ $( ".selector" ).droppable( "option", "scope", "tasks" );
 
 使用指定的`tolerance` 参数初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({ tolerance: "fit" }); 
 ```
 
 在初始化后设置或者获取`tolerance`参数：
 
-```
+```js
 // getter
 var tolerance = $( ".selector" ).droppable( "option", "tolerance" );
 
@@ -1173,7 +1173,7 @@ $( ".selector" ).droppable( "option", "tolerance", "fit" );
 
 调用 destroy 方法
 
-```
+```js
 $( ".selector" ).droppable( "destroy" ); 
 ```
 
@@ -1187,7 +1187,7 @@ $( ".selector" ).droppable( "destroy" );
 
 调用 disable 方法
 
-```
+```js
 $( ".selector" ).droppable( "disable" ); 
 ```
 
@@ -1201,7 +1201,7 @@ $( ".selector" ).droppable( "disable" );
 
 调用 enable 方法
 
-```
+```js
 $( ".selector" ).droppable( "enable" ); 
 ```
 
@@ -1215,7 +1215,7 @@ $( ".selector" ).droppable( "enable" );
 
 调用这个方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).droppable( "option", "disabled" ); 
 ```
 
@@ -1229,7 +1229,7 @@ var isDisabled = $( ".selector" ).droppable( "option", "disabled" );
 
 调用这个方法：
 
-```
+```js
 var options = $( ".selector" ).droppable( "option" ); 
 ```
 
@@ -1244,7 +1244,7 @@ var options = $( ".selector" ).droppable( "option" );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).droppable( "option", "disabled", true ); 
 ```
 
@@ -1258,7 +1258,7 @@ $( ".selector" ).droppable( "option", "disabled", true );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).droppable( "option", { disabled: true } ); 
 ```
 
@@ -1272,7 +1272,7 @@ $( ".selector" ).droppable( "option", { disabled: true } );
 
 调用 widget 方法
 
-```
+```js
 var widget = $( ".selector" ).droppable( "widget" ); 
 ```
 
@@ -1293,7 +1293,7 @@ var widget = $( ".selector" ).droppable( "widget" );
 
 使用指定的 activate 回调初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({
  activate: function( event, ui ) {}
 }); 
@@ -1301,7 +1301,7 @@ $( ".selector" ).droppable({
 
 绑定一个事件监听到 dropactivate 事件:
 
-```
+```js
 $( ".selector" ).on( "dropactivate", function( event, ui ) {} ); 
 ```
 
@@ -1318,7 +1318,7 @@ $( ".selector" ).on( "dropactivate", function( event, ui ) {} );
 
 使用指定的 create 回调初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({
  create: function( event, ui ) {}
 }); 
@@ -1326,7 +1326,7 @@ $( ".selector" ).droppable({
 
 绑定一个事件监听到 dropcreate 事件：
 
-```
+```js
 $( ".selector" ).on( "dropcreate", function( event, ui ) {} ); 
 ```
 
@@ -1345,7 +1345,7 @@ $( ".selector" ).on( "dropcreate", function( event, ui ) {} );
 
 使用指定的 deactivate 回调初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({
  deactivate: function( event, ui ) {}
 }); 
@@ -1353,7 +1353,7 @@ $( ".selector" ).droppable({
 
 绑定一个事件监听到 dropdeactivate 事件：
 
-```
+```js
 $( ".selector" ).on( "dropdeactivate", function( event, ui ) {} ); 
 ```
 
@@ -1372,7 +1372,7 @@ $( ".selector" ).on( "dropdeactivate", function( event, ui ) {} );
 
 使用指定的 drop 回调初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({
  drop: function( event, ui ) {}
 }); 
@@ -1380,7 +1380,7 @@ $( ".selector" ).droppable({
 
 绑定一个事件监听到 drop 事件：
 
-```
+```js
 $( ".selector" ).on( "drop", function( event, ui ) {} ); 
 ```
 
@@ -1397,7 +1397,7 @@ $( ".selector" ).on( "drop", function( event, ui ) {} );
 
 使用指定的 out 回调初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({
  out: function( event, ui ) {}
 }); 
@@ -1405,7 +1405,7 @@ $( ".selector" ).droppable({
 
 绑定一个事件监听到 dropout 事件：
 
-```
+```js
 $( ".selector" ).on( "dropout", function( event, ui ) {} ); 
 ```
 
@@ -1424,7 +1424,7 @@ $( ".selector" ).on( "dropout", function( event, ui ) {} );
 
 使用指定的 over 回调初始化一个 droppable：
 
-```
+```js
 $( ".selector" ).droppable({
  over: function( event, ui ) {}
 }); 
@@ -1432,7 +1432,7 @@ $( ".selector" ).droppable({
 
 绑定一个事件监听到 dropover 事件：
 
-```
+```js
 $( ".selector" ).on( "dropover", function( event, ui ) {} ); 
 ```
 
@@ -1440,7 +1440,7 @@ $( ".selector" ).on( "dropover", function( event, ui ) {} );
 
 #### A pair of draggable and droppable elements.
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1529,13 +1529,13 @@ Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interacti
 
 使用指定的 `cancel` 参数初始化一个:
 
-```
+```js
 $( ".selector" ).mouse({ cancel: ".title" }); 
 ```
 
 在初始化后设置或者获取`cancel` 参数：
 
-```
+```js
 // getter
 var cancel = $( ".selector" ).mouse( "option", "cancel" );
 
@@ -1549,13 +1549,13 @@ $( ".selector" ).mouse( "option", "cancel", ".title" );
 
 使用指定的 `delay` 参数初始化一个:
 
-```
+```js
 $( ".selector" ).mouse({ delay: 300 }); 
 ```
 
 在初始化后设置或者获取`delay` 参数：
 
-```
+```js
 // getter
 var delay = $( ".selector" ).mouse( "option", "delay" );
 
@@ -1569,13 +1569,13 @@ $( ".selector" ).mouse( "option", "delay", 300 );
 
 使用指定的 `distance` 参数初始化一个:
 
-```
+```js
 $( ".selector" ).mouse({ distance: 10 }); 
 ```
 
 在初始化后设置或者获取`distance` 参数：
 
-```
+```js
 // getter
 var distance = $( ".selector" ).mouse( "option", "distance" );
 
@@ -1595,7 +1595,7 @@ $( ".selector" ).mouse( "option", "distance", 10 );
 
 调用 _mouseCapture 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseCapture" ); 
 ```
 
@@ -1609,7 +1609,7 @@ $( ".selector" ).mouse( "_mouseCapture" );
 
 调用 _mouseDelayMet 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseDelayMet" ); 
 ```
 
@@ -1623,7 +1623,7 @@ $( ".selector" ).mouse( "_mouseDelayMet" );
 
 调用 _mouseDestroy 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseDestroy" ); 
 ```
 
@@ -1637,7 +1637,7 @@ $( ".selector" ).mouse( "_mouseDestroy" );
 
 调用 _mouseDistanceMet 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseDistanceMet" ); 
 ```
 
@@ -1651,7 +1651,7 @@ $( ".selector" ).mouse( "_mouseDistanceMet" );
 
 调用 _mouseDown 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseDown" ); 
 ```
 
@@ -1665,7 +1665,7 @@ $( ".selector" ).mouse( "_mouseDown" );
 
 调用 _mouseDrag 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseDrag" ); 
 ```
 
@@ -1679,7 +1679,7 @@ $( ".selector" ).mouse( "_mouseDrag" );
 
 调用 _mouseInit 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseInit" ); 
 ```
 
@@ -1693,7 +1693,7 @@ $( ".selector" ).mouse( "_mouseInit" );
 
 调用 _mouseMove 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseMove" ); 
 ```
 
@@ -1707,7 +1707,7 @@ $( ".selector" ).mouse( "_mouseMove" );
 
 调用 _mouseStart 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseStart" ); 
 ```
 
@@ -1721,7 +1721,7 @@ $( ".selector" ).mouse( "_mouseStart" );
 
 调用 _mouseStop 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseStop" ); 
 ```
 
@@ -1735,7 +1735,7 @@ $( ".selector" ).mouse( "_mouseStop" );
 
 调用 _mouseUp 方法:
 
-```
+```js
 $( ".selector" ).mouse( "_mouseUp" ); 
 ```
 
@@ -1806,13 +1806,13 @@ jQuery UI Resizable 插件使选定的内容可以调整大小(这以为着那�
 
 使用指定的 `alsoResize` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ alsoResize: "#mirror" }); 
 ```
 
 在初始化后设置或者获取 `alsoResize` 参数 :
 
-```
+```js
 // getter
 var alsoResize = $( ".selector" ).resizable( "option", "alsoResize" );
 
@@ -1826,13 +1826,13 @@ $( ".selector" ).resizable( "option", "alsoResize", "#mirror" );
 
 使用指定的 `animate` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ animate: true }); 
 ```
 
 在初始化后设置或者获取 `animate` 参数 :
 
-```
+```js
 // getter
 var animate = $( ".selector" ).resizable( "option", "animate" );
 
@@ -1851,13 +1851,13 @@ $( ".selector" ).resizable( "option", "animate", true );
 
 使用指定的 `animateDuration` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ animateDuration: "fast" }); 
 ```
 
 在初始化后设置或者获取 `animateDuration` 参数 :
 
-```
+```js
 // getter
 var animateDuration = $( ".selector" ).resizable( "option", "animateDuration" );
 
@@ -1871,13 +1871,13 @@ $( ".selector" ).resizable( "option", "animateDuration", "fast" );
 
 使用指定的 `animateEasing` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ animateEasing: "easeOutBounce" }); 
 ```
 
 在初始化后设置或者获取 `animateEasing` 参数 :
 
-```
+```js
 // getter
 var animateEasing = $( ".selector" ).resizable( "option", "animateEasing" );
 
@@ -1896,13 +1896,13 @@ $( ".selector" ).resizable( "option", "animateEasing", "easeOutBounce" );
 
 使用指定的 `aspectRatio` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ aspectRatio: true }); 
 ```
 
 在初始化后设置或者获取 `aspectRatio` 参数 :
 
-```
+```js
 // getter
 var aspectRatio = $( ".selector" ).resizable( "option", "aspectRatio" );
 
@@ -1916,13 +1916,13 @@ $( ".selector" ).resizable( "option", "aspectRatio", true );
 
 使用指定的 `autoHide` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ autoHide: true }); 
 ```
 
 在初始化后设置或者获取 `autoHide` 参数 :
 
-```
+```js
 // getter
 var autoHide = $( ".selector" ).resizable( "option", "autoHide" );
 
@@ -1936,13 +1936,13 @@ $( ".selector" ).resizable( "option", "autoHide", true );
 
 使用指定的 `cancel` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ cancel: ".cancel" }); 
 ```
 
 在初始化后设置或者获取 `cancel` 参数 :
 
-```
+```js
 // getter
 var cancel = $( ".selector" ).resizable( "option", "cancel" );
 
@@ -1962,13 +1962,13 @@ $( ".selector" ).resizable( "option", "cancel", ".cancel" );
 
 使用指定的 `containment` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ containment: "parent" }); 
 ```
 
 在初始化后设置或者获取 `containment` 参数 :
 
-```
+```js
 // getter
 var containment = $( ".selector" ).resizable( "option", "containment" );
 
@@ -1982,13 +1982,13 @@ $( ".selector" ).resizable( "option", "containment", "parent" );
 
 使用指定的 `delay` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ delay: 150 }); 
 ```
 
 在初始化后设置或者获取 `delay` 参数 :
 
-```
+```js
 // getter
 var delay = $( ".selector" ).resizable( "option", "delay" );
 
@@ -2002,13 +2002,13 @@ $( ".selector" ).resizable( "option", "delay", 150 );
 
 使用指定的 `disabled` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ disabled: true }); 
 ```
 
 在初始化后设置或者获取 `disabled` 参数 :
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).resizable( "option", "disabled" );
 
@@ -2022,13 +2022,13 @@ $( ".selector" ).resizable( "option", "disabled", true );
 
 使用指定的 `distance` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ distance: 30 }); 
 ```
 
 在初始化后设置或者获取 `distance` 参数 :
 
-```
+```js
 // getter
 var distance = $( ".selector" ).resizable( "option", "distance" );
 
@@ -2042,13 +2042,13 @@ $( ".selector" ).resizable( "option", "distance", 30 );
 
 使用指定的 `ghost` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ ghost: true }); 
 ```
 
 在初始化后设置或者获取 `ghost` 参数 :
 
-```
+```js
 // getter
 var ghost = $( ".selector" ).resizable( "option", "ghost" );
 
@@ -2062,13 +2062,13 @@ $( ".selector" ).resizable( "option", "ghost", true );
 
 使用指定的 `grid` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ grid: [ 20, 10 ] }); 
 ```
 
 在初始化后设置或者获取 `grid` 参数 :
 
-```
+```js
 // getter
 var grid = $( ".selector" ).resizable( "option", "grid" );
 
@@ -2091,13 +2091,13 @@ $( ".selector" ).resizable( "option", "grid", [ 20, 10 ] );
 
 使用指定的 `handles` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ handles: "n, e, s, w" }); 
 ```
 
 在初始化后设置或者获取 `handles` 参数 :
 
-```
+```js
 // getter
 var handles = $( ".selector" ).resizable( "option", "handles" );
 
@@ -2111,13 +2111,13 @@ $( ".selector" ).resizable( "option", "handles", "n, e, s, w" );
 
 使用指定的 `helper` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ helper: "resizable-helper" }); 
 ```
 
 在初始化后设置或者获取 `helper` 参数 :
 
-```
+```js
 // getter
 var helper = $( ".selector" ).resizable( "option", "helper" );
 
@@ -2131,13 +2131,13 @@ $( ".selector" ).resizable( "option", "helper", "resizable-helper" );
 
 使用指定的 `maxHeight` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ maxHeight: 300 }); 
 ```
 
 在初始化后设置或者获取 `maxHeight` 参数 :
 
-```
+```js
 // getter
 var maxHeight = $( ".selector" ).resizable( "option", "maxHeight" );
 
@@ -2151,13 +2151,13 @@ $( ".selector" ).resizable( "option", "maxHeight", 300 );
 
 使用指定的 `maxWidth` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ maxWidth: 300 }); 
 ```
 
 在初始化后设置或者获取 `maxWidth` 参数 :
 
-```
+```js
 // getter
 var maxWidth = $( ".selector" ).resizable( "option", "maxWidth" );
 
@@ -2171,13 +2171,13 @@ $( ".selector" ).resizable( "option", "maxWidth", 300 );
 
 使用指定的 `minHeight` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ minHeight: 150 }); 
 ```
 
 在初始化后设置或者获取 `minHeight` 参数 :
 
-```
+```js
 // getter
 var minHeight = $( ".selector" ).resizable( "option", "minHeight" );
 
@@ -2191,13 +2191,13 @@ $( ".selector" ).resizable( "option", "minHeight", 150 );
 
 使用指定的 `minWidth` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ minWidth: 150 }); 
 ```
 
 在初始化后设置或者获取 `minWidth` 参数 :
 
-```
+```js
 // getter
 var minWidth = $( ".selector" ).resizable( "option", "minWidth" );
 
@@ -2217,7 +2217,7 @@ $( ".selector" ).resizable( "option", "minWidth", 150 );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).resizable( "destroy" ); 
 ```
 
@@ -2231,7 +2231,7 @@ $( ".selector" ).resizable( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).resizable( "disable" ); 
 ```
 
@@ -2245,7 +2245,7 @@ $( ".selector" ).resizable( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).resizable( "enable" ); 
 ```
 
@@ -2259,7 +2259,7 @@ $( ".selector" ).resizable( "enable" );
 
 调用这个方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).resizable( "option", "disabled" ); 
 ```
 
@@ -2273,7 +2273,7 @@ var isDisabled = $( ".selector" ).resizable( "option", "disabled" );
 
 调用这个方法：
 
-```
+```js
 var options = $( ".selector" ).resizable( "option" ); 
 ```
 
@@ -2288,7 +2288,7 @@ var options = $( ".selector" ).resizable( "option" );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).resizable( "option", "disabled", true ); 
 ```
 
@@ -2302,7 +2302,7 @@ $( ".selector" ).resizable( "option", "disabled", true );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).resizable( "option", { disabled: true } ); 
 ```
 
@@ -2316,7 +2316,7 @@ $( ".selector" ).resizable( "option", { disabled: true } );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).resizable( "widget" ); 
 ```
 
@@ -2335,7 +2335,7 @@ var widget = $( ".selector" ).resizable( "widget" );
 
 使用指定的 create 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   create: function( event, ui ) {}
 }); 
@@ -2343,7 +2343,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resizecreate 事件：
 
-```
+```js
 $( ".selector" ).on( "resizecreate", function( event, ui ) {} ); 
 ```
 
@@ -2365,7 +2365,7 @@ $( ".selector" ).on( "resizecreate", function( event, ui ) {} );
 
 使用指定的 resize 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   resize: function( event, ui ) {}
 }); 
@@ -2373,7 +2373,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resize 事件：
 
-```
+```js
 $( ".selector" ).on( "resize", function( event, ui ) {} ); 
 ```
 
@@ -2395,7 +2395,7 @@ $( ".selector" ).on( "resize", function( event, ui ) {} );
 
 使用指定的 start 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   start: function( event, ui ) {}
 }); 
@@ -2403,7 +2403,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resizestart 事件：
 
-```
+```js
 $( ".selector" ).on( "resizestart", function( event, ui ) {} ); 
 ```
 
@@ -2425,7 +2425,7 @@ $( ".selector" ).on( "resizestart", function( event, ui ) {} );
 
 使用指定的 stop 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   stop: function( event, ui ) {}
 }); 
@@ -2433,7 +2433,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resizestop 事件：
 
-```
+```js
 $( ".selector" ).on( "resizestop", function( event, ui ) {} ); 
 ```
 
@@ -2441,7 +2441,7 @@ $( ".selector" ).on( "resizestop", function( event, ui ) {} );
 
 #### A simple jQuery UI Resizable.
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -2536,13 +2536,13 @@ jQuery UI Resizable 插件使选定的内容可以调整大小(这以为着那�
 
 使用指定的 `alsoResize` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ alsoResize: "#mirror" }); 
 ```
 
 在初始化后设置或者获取 `alsoResize` 参数 :
 
-```
+```js
 // getter
 var alsoResize = $( ".selector" ).resizable( "option", "alsoResize" );
 
@@ -2556,13 +2556,13 @@ $( ".selector" ).resizable( "option", "alsoResize", "#mirror" );
 
 使用指定的 `animate` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ animate: true }); 
 ```
 
 在初始化后设置或者获取 `animate` 参数 :
 
-```
+```js
 // getter
 var animate = $( ".selector" ).resizable( "option", "animate" );
 
@@ -2581,13 +2581,13 @@ $( ".selector" ).resizable( "option", "animate", true );
 
 使用指定的 `animateDuration` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ animateDuration: "fast" }); 
 ```
 
 在初始化后设置或者获取 `animateDuration` 参数 :
 
-```
+```js
 // getter
 var animateDuration = $( ".selector" ).resizable( "option", "animateDuration" );
 
@@ -2601,13 +2601,13 @@ $( ".selector" ).resizable( "option", "animateDuration", "fast" );
 
 使用指定的 `animateEasing` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ animateEasing: "easeOutBounce" }); 
 ```
 
 在初始化后设置或者获取 `animateEasing` 参数 :
 
-```
+```js
 // getter
 var animateEasing = $( ".selector" ).resizable( "option", "animateEasing" );
 
@@ -2626,13 +2626,13 @@ $( ".selector" ).resizable( "option", "animateEasing", "easeOutBounce" );
 
 使用指定的 `aspectRatio` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ aspectRatio: true }); 
 ```
 
 在初始化后设置或者获取 `aspectRatio` 参数 :
 
-```
+```js
 // getter
 var aspectRatio = $( ".selector" ).resizable( "option", "aspectRatio" );
 
@@ -2646,13 +2646,13 @@ $( ".selector" ).resizable( "option", "aspectRatio", true );
 
 使用指定的 `autoHide` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ autoHide: true }); 
 ```
 
 在初始化后设置或者获取 `autoHide` 参数 :
 
-```
+```js
 // getter
 var autoHide = $( ".selector" ).resizable( "option", "autoHide" );
 
@@ -2666,13 +2666,13 @@ $( ".selector" ).resizable( "option", "autoHide", true );
 
 使用指定的 `cancel` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ cancel: ".cancel" }); 
 ```
 
 在初始化后设置或者获取 `cancel` 参数 :
 
-```
+```js
 // getter
 var cancel = $( ".selector" ).resizable( "option", "cancel" );
 
@@ -2692,13 +2692,13 @@ $( ".selector" ).resizable( "option", "cancel", ".cancel" );
 
 使用指定的 `containment` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ containment: "parent" }); 
 ```
 
 在初始化后设置或者获取 `containment` 参数 :
 
-```
+```js
 // getter
 var containment = $( ".selector" ).resizable( "option", "containment" );
 
@@ -2712,13 +2712,13 @@ $( ".selector" ).resizable( "option", "containment", "parent" );
 
 使用指定的 `delay` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ delay: 150 }); 
 ```
 
 在初始化后设置或者获取 `delay` 参数 :
 
-```
+```js
 // getter
 var delay = $( ".selector" ).resizable( "option", "delay" );
 
@@ -2732,13 +2732,13 @@ $( ".selector" ).resizable( "option", "delay", 150 );
 
 使用指定的 `disabled` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ disabled: true }); 
 ```
 
 在初始化后设置或者获取 `disabled` 参数 :
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).resizable( "option", "disabled" );
 
@@ -2752,13 +2752,13 @@ $( ".selector" ).resizable( "option", "disabled", true );
 
 使用指定的 `distance` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ distance: 30 }); 
 ```
 
 在初始化后设置或者获取 `distance` 参数 :
 
-```
+```js
 // getter
 var distance = $( ".selector" ).resizable( "option", "distance" );
 
@@ -2772,13 +2772,13 @@ $( ".selector" ).resizable( "option", "distance", 30 );
 
 使用指定的 `ghost` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ ghost: true }); 
 ```
 
 在初始化后设置或者获取 `ghost` 参数 :
 
-```
+```js
 // getter
 var ghost = $( ".selector" ).resizable( "option", "ghost" );
 
@@ -2792,13 +2792,13 @@ $( ".selector" ).resizable( "option", "ghost", true );
 
 使用指定的 `grid` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ grid: [ 20, 10 ] }); 
 ```
 
 在初始化后设置或者获取 `grid` 参数 :
 
-```
+```js
 // getter
 var grid = $( ".selector" ).resizable( "option", "grid" );
 
@@ -2821,13 +2821,13 @@ $( ".selector" ).resizable( "option", "grid", [ 20, 10 ] );
 
 使用指定的 `handles` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ handles: "n, e, s, w" }); 
 ```
 
 在初始化后设置或者获取 `handles` 参数 :
 
-```
+```js
 // getter
 var handles = $( ".selector" ).resizable( "option", "handles" );
 
@@ -2841,13 +2841,13 @@ $( ".selector" ).resizable( "option", "handles", "n, e, s, w" );
 
 使用指定的 `helper` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ helper: "resizable-helper" }); 
 ```
 
 在初始化后设置或者获取 `helper` 参数 :
 
-```
+```js
 // getter
 var helper = $( ".selector" ).resizable( "option", "helper" );
 
@@ -2861,13 +2861,13 @@ $( ".selector" ).resizable( "option", "helper", "resizable-helper" );
 
 使用指定的 `maxHeight` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ maxHeight: 300 }); 
 ```
 
 在初始化后设置或者获取 `maxHeight` 参数 :
 
-```
+```js
 // getter
 var maxHeight = $( ".selector" ).resizable( "option", "maxHeight" );
 
@@ -2881,13 +2881,13 @@ $( ".selector" ).resizable( "option", "maxHeight", 300 );
 
 使用指定的 `maxWidth` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ maxWidth: 300 }); 
 ```
 
 在初始化后设置或者获取 `maxWidth` 参数 :
 
-```
+```js
 // getter
 var maxWidth = $( ".selector" ).resizable( "option", "maxWidth" );
 
@@ -2901,13 +2901,13 @@ $( ".selector" ).resizable( "option", "maxWidth", 300 );
 
 使用指定的 `minHeight` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ minHeight: 150 }); 
 ```
 
 在初始化后设置或者获取 `minHeight` 参数 :
 
-```
+```js
 // getter
 var minHeight = $( ".selector" ).resizable( "option", "minHeight" );
 
@@ -2921,13 +2921,13 @@ $( ".selector" ).resizable( "option", "minHeight", 150 );
 
 使用指定的 `minWidth` 参数初始化 resizable :
 
-```
+```js
 $( ".selector" ).resizable({ minWidth: 150 }); 
 ```
 
 在初始化后设置或者获取 `minWidth` 参数 :
 
-```
+```js
 // getter
 var minWidth = $( ".selector" ).resizable( "option", "minWidth" );
 
@@ -2947,7 +2947,7 @@ $( ".selector" ).resizable( "option", "minWidth", 150 );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).resizable( "destroy" ); 
 ```
 
@@ -2961,7 +2961,7 @@ $( ".selector" ).resizable( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).resizable( "disable" ); 
 ```
 
@@ -2975,7 +2975,7 @@ $( ".selector" ).resizable( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).resizable( "enable" ); 
 ```
 
@@ -2989,7 +2989,7 @@ $( ".selector" ).resizable( "enable" );
 
 调用这个方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).resizable( "option", "disabled" ); 
 ```
 
@@ -3003,7 +3003,7 @@ var isDisabled = $( ".selector" ).resizable( "option", "disabled" );
 
 调用这个方法：
 
-```
+```js
 var options = $( ".selector" ).resizable( "option" ); 
 ```
 
@@ -3018,7 +3018,7 @@ var options = $( ".selector" ).resizable( "option" );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).resizable( "option", "disabled", true ); 
 ```
 
@@ -3032,7 +3032,7 @@ $( ".selector" ).resizable( "option", "disabled", true );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).resizable( "option", { disabled: true } ); 
 ```
 
@@ -3046,7 +3046,7 @@ $( ".selector" ).resizable( "option", { disabled: true } );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).resizable( "widget" ); 
 ```
 
@@ -3065,7 +3065,7 @@ var widget = $( ".selector" ).resizable( "widget" );
 
 使用指定的 create 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   create: function( event, ui ) {}
 }); 
@@ -3073,7 +3073,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resizecreate 事件：
 
-```
+```js
 $( ".selector" ).on( "resizecreate", function( event, ui ) {} ); 
 ```
 
@@ -3095,7 +3095,7 @@ $( ".selector" ).on( "resizecreate", function( event, ui ) {} );
 
 使用指定的 resize 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   resize: function( event, ui ) {}
 }); 
@@ -3103,7 +3103,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resize 事件：
 
-```
+```js
 $( ".selector" ).on( "resize", function( event, ui ) {} ); 
 ```
 
@@ -3125,7 +3125,7 @@ $( ".selector" ).on( "resize", function( event, ui ) {} );
 
 使用指定的 start 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   start: function( event, ui ) {}
 }); 
@@ -3133,7 +3133,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resizestart 事件：
 
-```
+```js
 $( ".selector" ).on( "resizestart", function( event, ui ) {} ); 
 ```
 
@@ -3155,7 +3155,7 @@ $( ".selector" ).on( "resizestart", function( event, ui ) {} );
 
 使用指定的 stop 回调初始化一个 resizable：
 
-```
+```js
 $( ".selector" ).resizable({
   stop: function( event, ui ) {}
 }); 
@@ -3163,7 +3163,7 @@ $( ".selector" ).resizable({
 
 绑定一个事件监听到 resizestop 事件：
 
-```
+```js
 $( ".selector" ).on( "resizestop", function( event, ui ) {} ); 
 ```
 
@@ -3171,7 +3171,7 @@ $( ".selector" ).on( "resizestop", function( event, ui ) {} );
 
 #### A simple jQuery UI Resizable.
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -3257,13 +3257,13 @@ Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interacti
 
 使用指定的 `appendTo` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ appendTo: "#someElem" }); 
 ```
 
 在初始化后设置或者获取 `appendTo` 选项 :
 
-```
+```js
 // getter
 var appendTo = $( ".selector" ).selectable( "option", "appendTo" );
 
@@ -3277,13 +3277,13 @@ $( ".selector" ).selectable( "option", "appendTo", "#someElem" );
 
 使用指定的 `autoRefresh` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ autoRefresh: false }); 
 ```
 
 在初始化后设置或者获取 `autoRefresh` 选项 :
 
-```
+```js
 // getter
 var autoRefresh = $( ".selector" ).selectable( "option", "autoRefresh" );
 
@@ -3297,13 +3297,13 @@ $( ".selector" ).selectable( "option", "autoRefresh", false );
 
 使用指定的 `cancel` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ cancel: "a,.cancel" }); 
 ```
 
 在初始化后设置或者获取 `cancel` 选项 :
 
-```
+```js
 // getter
 var cancel = $( ".selector" ).selectable( "option", "cancel" );
 
@@ -3317,13 +3317,13 @@ $( ".selector" ).selectable( "option", "cancel", "a,.cancel" );
 
 使用指定的 `delay` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ delay: 150 }); 
 ```
 
 在初始化后设置或者获取 `delay` 选项 :
 
-```
+```js
 // getter
 var delay = $( ".selector" ).selectable( "option", "delay" );
 
@@ -3337,13 +3337,13 @@ $( ".selector" ).selectable( "option", "delay", 150 );
 
 使用指定的 `disabled` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ disabled: true }); 
 ```
 
 在初始化后设置或者获取 `disabled` 选项 :
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).selectable( "option", "disabled" );
 
@@ -3357,13 +3357,13 @@ $( ".selector" ).selectable( "option", "disabled", true );
 
 使用指定的 `distance` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ distance: 30 }); 
 ```
 
 在初始化后设置或者获取 `distance` 选项 :
 
-```
+```js
 // getter
 var distance = $( ".selector" ).selectable( "option", "distance" );
 
@@ -3377,13 +3377,13 @@ $( ".selector" ).selectable( "option", "distance", 30 );
 
 使用指定的 `filter` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ filter: "li" }); 
 ```
 
 在初始化后设置或者获取 `filter` 选项 :
 
-```
+```js
 // getter
 var filter = $( ".selector" ).selectable( "option", "filter" );
 
@@ -3402,13 +3402,13 @@ $( ".selector" ).selectable( "option", "filter", "li" );
 
 使用指定的 `tolerance` 参数初始化 selectable :
 
-```
+```js
 $( ".selector" ).selectable({ tolerance: "fit" }); 
 ```
 
 在初始化后设置或者获取 `tolerance` 选项 :
 
-```
+```js
 // getter
 var tolerance = $( ".selector" ).selectable( "option", "tolerance" );
 
@@ -3428,7 +3428,7 @@ $( ".selector" ).selectable( "option", "tolerance", "fit" );
 
 调用 destroy 方法:
 
-```
+```js
 $( ".selector" ).selectable( "destroy" ); 
 ```
 
@@ -3442,7 +3442,7 @@ $( ".selector" ).selectable( "destroy" );
 
 调用 disable 方法:
 
-```
+```js
 $( ".selector" ).selectable( "disable" ); 
 ```
 
@@ -3456,7 +3456,7 @@ $( ".selector" ).selectable( "disable" );
 
 调用 enable 方法:
 
-```
+```js
 $( ".selector" ).selectable( "enable" ); 
 ```
 
@@ -3470,7 +3470,7 @@ $( ".selector" ).selectable( "enable" );
 
 调用 方法:
 
-```
+```js
 var isDisabled = $( ".selector" ).selectable( "option", "disabled" ); 
 ```
 
@@ -3484,7 +3484,7 @@ var isDisabled = $( ".selector" ).selectable( "option", "disabled" );
 
 调用这个方法:
 
-```
+```js
 var options = $( ".selector" ).selectable( "option" ); 
 ```
 
@@ -3499,7 +3499,7 @@ var options = $( ".selector" ).selectable( "option" );
 
 调用这个方法:
 
-```
+```js
 $( ".selector" ).selectable( "option", "disabled", true ); 
 ```
 
@@ -3513,7 +3513,7 @@ $( ".selector" ).selectable( "option", "disabled", true );
 
 调用这个方法:
 
-```
+```js
 $( ".selector" ).selectable( "option", { disabled: true } ); 
 ```
 
@@ -3527,7 +3527,7 @@ $( ".selector" ).selectable( "option", { disabled: true } );
 
 调用 refresh 方法:
 
-```
+```js
 $( ".selector" ).selectable( "refresh" ); 
 ```
 
@@ -3541,7 +3541,7 @@ $( ".selector" ).selectable( "refresh" );
 
 调用 widget 方法:
 
-```
+```js
 var widget = $( ".selector" ).selectable( "widget" ); 
 ```
 
@@ -3560,7 +3560,7 @@ var widget = $( ".selector" ).selectable( "widget" );
 
 使用指定的 create 回调初始化一个 selectable：
 
-```
+```js
 $( ".selector" ).selectable({
   create: function( event, ui ) {}
 }); 
@@ -3568,7 +3568,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectablecreate 事件：
 
-```
+```js
 $( ".selector" ).on( "selectablecreate", function( event, ui ) {} ); 
 ```
 
@@ -3584,7 +3584,7 @@ $( ".selector" ).on( "selectablecreate", function( event, ui ) {} );
 
 使用指定的 selected 回调初始化一个 selectable：
 
-```
+```js
 $( ".selector" ).selectable({
   selected: function( event, ui ) {}
 }); 
@@ -3592,7 +3592,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectableselected 事件：
 
-```
+```js
 $( ".selector" ).on( "selectableselected", function( event, ui ) {} ); 
 ```
 
@@ -3608,7 +3608,7 @@ $( ".selector" ).on( "selectableselected", function( event, ui ) {} );
 
 使用指定的 selecting 回调初始化一个 selectablec：
 
-```
+```js
 $( ".selector" ).selectable({
   selecting: function( event, ui ) {}
 }); 
@@ -3616,7 +3616,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectableselecting 事件：
 
-```
+```js
 $( ".selector" ).on( "selectableselecting", function( event, ui ) {} ); 
 ```
 
@@ -3633,7 +3633,7 @@ $( ".selector" ).on( "selectableselecting", function( event, ui ) {} );
 
 使用指定的 start 回调初始化一个 selectable：
 
-```
+```js
 $( ".selector" ).selectable({
   start: function( event, ui ) {}
 }); 
@@ -3641,7 +3641,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectablestart 事件：
 
-```
+```js
 $( ".selector" ).on( "selectablestart", function( event, ui ) {} ); 
 ```
 
@@ -3658,7 +3658,7 @@ $( ".selector" ).on( "selectablestart", function( event, ui ) {} );
 
 使用指定的 stop 回调初始化一个 selectable：
 
-```
+```js
 $( ".selector" ).selectable({
   stop: function( event, ui ) {}
 }); 
@@ -3666,7 +3666,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectablestop 事件：
 
-```
+```js
 $( ".selector" ).on( "selectablestop", function( event, ui ) {} ); 
 ```
 
@@ -3682,7 +3682,7 @@ $( ".selector" ).on( "selectablestop", function( event, ui ) {} );
 
 使用指定的 unselected 回调初始化一个 selectable：
 
-```
+```js
 $( ".selector" ).selectable({
   unselected: function( event, ui ) {}
 }); 
@@ -3690,7 +3690,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectableunselected 事件：
 
-```
+```js
 $( ".selector" ).on( "selectableunselected", function( event, ui ) {} ); 
 ```
 
@@ -3706,7 +3706,7 @@ $( ".selector" ).on( "selectableunselected", function( event, ui ) {} );
 
 使用指定的 unselecting 回调初始化一个 selectable：
 
-```
+```js
 $( ".selector" ).selectable({
   unselecting: function( event, ui ) {}
 }); 
@@ -3714,7 +3714,7 @@ $( ".selector" ).selectable({
 
 绑定一个事件监听到 selectableunselecting 事件：
 
-```
+```js
 $( ".selector" ).on( "selectableunselecting", function( event, ui ) {} ); 
 ```
 
@@ -3722,7 +3722,7 @@ $( ".selector" ).on( "selectableunselecting", function( event, ui ) {} );
 
 #### A simple jQuery UI Selectable.
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -3850,13 +3850,13 @@ jQuery UI 可排序（Sortable）插件让被被选择的元素通过鼠标拖�
 
 使用指定的 `appendTo` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ appendTo: document.body }); 
 ```
 
 在初始化后设置或者获取 `appendTo` 参数：
 
-```
+```js
 // getter
 var appendTo = $( ".selector" ).sortable( "option", "appendTo" );
 
@@ -3870,13 +3870,13 @@ $( ".selector" ).sortable( "option", "appendTo", document.body );
 
 使用指定的 `axis` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ axis: "x" }); 
 ```
 
 在初始化后设置或者获取 `axis` 参数：
 
-```
+```js
 // getter
 var axis = $( ".selector" ).sortable( "option", "axis" );
 
@@ -3890,13 +3890,13 @@ $( ".selector" ).sortable( "option", "axis", "x" );
 
 使用指定的 `cancel` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ cancel: "a,button" }); 
 ```
 
 在初始化后设置或者获取 `cancel` 参数：
 
-```
+```js
 // getter
 var cancel = $( ".selector" ).sortable( "option", "cancel" );
 
@@ -3910,13 +3910,13 @@ $( ".selector" ).sortable( "option", "cancel", "a,button" );
 
 使用指定的 `connectWith` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ connectWith: "#shopping-cart" }); 
 ```
 
 在初始化后设置或者获取 `connectWith` 参数：
 
-```
+```js
 // getter
 var connectWith = $( ".selector" ).sortable( "option", "connectWith" );
 
@@ -3942,13 +3942,13 @@ $( ".selector" ).sortable( "option", "connectWith", "#shopping-cart" );
 
 使用指定的 `containment` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ containment: "parent" }); 
 ```
 
 在初始化后设置或者获取 `containment` 参数：
 
-```
+```js
 // getter
 var containment = $( ".selector" ).sortable( "option", "containment" );
 
@@ -3962,13 +3962,13 @@ $( ".selector" ).sortable( "option", "containment", "parent" );
 
 使用指定的 `cursor` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ cursor: "move" }); 
 ```
 
 在初始化后设置或者获取 `cursor` 参数：
 
-```
+```js
 // getter
 var cursor = $( ".selector" ).sortable( "option", "cursor" );
 
@@ -3982,13 +3982,13 @@ $( ".selector" ).sortable( "option", "cursor", "move" );
 
 使用指定的 `cursorAt` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ cursorAt: { left: 5 } }); 
 ```
 
 在初始化后设置或者获取 `cursorAt` 参数：
 
-```
+```js
 // getter
 var cursorAt = $( ".selector" ).sortable( "option", "cursorAt" );
 
@@ -4002,13 +4002,13 @@ $( ".selector" ).sortable( "option", "cursorAt", { left: 5 } );
 
 使用指定的 `delay` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ delay: 150 }); 
 ```
 
 在初始化后设置或者获取 `delay` 参数：
 
-```
+```js
 // getter
 var delay = $( ".selector" ).sortable( "option", "delay" );
 
@@ -4022,13 +4022,13 @@ $( ".selector" ).sortable( "option", "delay", 150 );
 
 使用指定的 `disabled` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ disabled: true }); 
 ```
 
 在初始化后设置或者获取 `disabled` 参数：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).sortable( "option", "disabled" );
 
@@ -4042,13 +4042,13 @@ $( ".selector" ).sortable( "option", "disabled", true );
 
 使用指定的 `distance` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ distance: 5 }); 
 ```
 
 在初始化后设置或者获取 `distance` 参数：
 
-```
+```js
 // getter
 var distance = $( ".selector" ).sortable( "option", "distance" );
 
@@ -4062,13 +4062,13 @@ $( ".selector" ).sortable( "option", "distance", 5 );
 
 使用指定的 `dropOnEmpty` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ dropOnEmpty: false }); 
 ```
 
 在初始化后设置或者获取 `dropOnEmpty` 参数：
 
-```
+```js
 // getter
 var dropOnEmpty = $( ".selector" ).sortable( "option", "dropOnEmpty" );
 
@@ -4082,13 +4082,13 @@ $( ".selector" ).sortable( "option", "dropOnEmpty", false );
 
 使用指定的 `forceHelperSize` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ forceHelperSize: true }); 
 ```
 
 在初始化后设置或者获取 `forceHelperSize` 参数：
 
-```
+```js
 // getter
 var forceHelperSize = $( ".selector" ).sortable( "option", "forceHelperSize" );
 
@@ -4102,13 +4102,13 @@ $( ".selector" ).sortable( "option", "forceHelperSize", true );
 
 使用指定的 `forcePlaceholderSize` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ forcePlaceholderSize: true }); 
 ```
 
 在初始化后设置或者获取 `forcePlaceholderSize` 参数：
 
-```
+```js
 // getter
 var forcePlaceholderSize = $( ".selector" ).sortable( "option", "forcePlaceholderSize" );
 
@@ -4122,13 +4122,13 @@ $( ".selector" ).sortable( "option", "forcePlaceholderSize", true );
 
 使用指定的 `grid` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ grid: [ 20, 10 ] }); 
 ```
 
 在初始化后设置或者获取 `grid` 参数：
 
-```
+```js
 // getter
 var grid = $( ".selector" ).sortable( "option", "grid" );
 
@@ -4142,13 +4142,13 @@ $( ".selector" ).sortable( "option", "grid", [ 20, 10 ] );
 
 使用指定的 `handle` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ handle: ".handle" }); 
 ```
 
 在初始化后设置或者获取 `handle` 参数：
 
-```
+```js
 // getter
 var handle = $( ".selector" ).sortable( "option", "handle" );
 
@@ -4167,13 +4167,13 @@ $( ".selector" ).sortable( "option", "handle", ".handle" );
 
 使用指定的 `helper` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ helper: "clone" }); 
 ```
 
 在初始化后设置或者获取 `helper` 参数：
 
-```
+```js
 // getter
 var helper = $( ".selector" ).sortable( "option", "helper" );
 
@@ -4187,13 +4187,13 @@ $( ".selector" ).sortable( "option", "helper", "clone" );
 
 使用指定的 `items` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ items: "> li" }); 
 ```
 
 在初始化后设置或者获取 `items` 参数：
 
-```
+```js
 // getter
 var items = $( ".selector" ).sortable( "option", "items" );
 
@@ -4207,13 +4207,13 @@ $( ".selector" ).sortable( "option", "items", "> li" );
 
 使用指定的 `opacity` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ opacity: 0.5 }); 
 ```
 
 在初始化后设置或者获取 `opacity` 参数：
 
-```
+```js
 // getter
 var opacity = $( ".selector" ).sortable( "option", "opacity" );
 
@@ -4227,13 +4227,13 @@ $( ".selector" ).sortable( "option", "opacity", 0.5 );
 
 使用指定的 `placeholder` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ placeholder: "sortable-placeholder" }); 
 ```
 
 在初始化后设置或者获取 `placeholder` 参数：
 
-```
+```js
 // getter
 var placeholder = $( ".selector" ).sortable( "option", "placeholder" );
 
@@ -4252,13 +4252,13 @@ $( ".selector" ).sortable( "option", "placeholder", "sortable-placeholder" );
 
 使用指定的 `revert` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ revert: true }); 
 ```
 
 在初始化后设置或者获取 `revert` 参数：
 
-```
+```js
 // getter
 var revert = $( ".selector" ).sortable( "option", "revert" );
 
@@ -4272,13 +4272,13 @@ $( ".selector" ).sortable( "option", "revert", true );
 
 使用指定的 `scroll` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ scroll: false }); 
 ```
 
 在初始化后设置或者获取 `scroll` 参数：
 
-```
+```js
 // getter
 var scroll = $( ".selector" ).sortable( "option", "scroll" );
 
@@ -4292,13 +4292,13 @@ $( ".selector" ).sortable( "option", "scroll", false );
 
 使用指定的 `scrollSensitivity` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ scrollSensitivity: 10 }); 
 ```
 
 在初始化后设置或者获取 `scrollSensitivity` 参数：
 
-```
+```js
 // getter
 var scrollSensitivity = $( ".selector" ).sortable( "option", "scrollSensitivity" );
 
@@ -4312,13 +4312,13 @@ $( ".selector" ).sortable( "option", "scrollSensitivity", 10 );
 
 使用指定的 `scrollSpeed` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ scrollSpeed: 40 }); 
 ```
 
 在初始化后设置或者获取 `scrollSpeed` 参数：
 
-```
+```js
 // getter
 var scrollSpeed = $( ".selector" ).sortable( "option", "scrollSpeed" );
 
@@ -4337,13 +4337,13 @@ $( ".selector" ).sortable( "option", "scrollSpeed", 40 );
 
 使用指定的 `tolerance` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ tolerance: "pointer" }); 
 ```
 
 在初始化后设置或者获取 `tolerance` 参数：
 
-```
+```js
 // getter
 var tolerance = $( ".selector" ).sortable( "option", "tolerance" );
 
@@ -4357,13 +4357,13 @@ $( ".selector" ).sortable( "option", "tolerance", "pointer" );
 
 使用指定的 `zIndex` 参数初始化 sortable :
 
-```
+```js
 $( ".selector" ).sortable({ zIndex: 9999 }); 
 ```
 
 在初始化后设置或者获取 `zIndex` 参数：
 
-```
+```js
 // getter
 var zIndex = $( ".selector" ).sortable( "option", "zIndex" );
 
@@ -4383,7 +4383,7 @@ $( ".selector" ).sortable( "option", "zIndex", 9999 );
 
 调用 cancel 方法：
 
-```
+```js
 $( ".selector" ).sortable( "cancel" ); 
 ```
 
@@ -4397,7 +4397,7 @@ $( ".selector" ).sortable( "cancel" );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).sortable( "destroy" ); 
 ```
 
@@ -4411,7 +4411,7 @@ $( ".selector" ).sortable( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).sortable( "disable" ); 
 ```
 
@@ -4425,7 +4425,7 @@ $( ".selector" ).sortable( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).sortable( "enable" ); 
 ```
 
@@ -4439,7 +4439,7 @@ $( ".selector" ).sortable( "enable" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).sortable( "option", "disabled" ); 
 ```
 
@@ -4453,7 +4453,7 @@ var isDisabled = $( ".selector" ).sortable( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).sortable( "option" ); 
 ```
 
@@ -4468,7 +4468,7 @@ var options = $( ".selector" ).sortable( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).sortable( "option", "disabled", true ); 
 ```
 
@@ -4482,7 +4482,7 @@ $( ".selector" ).sortable( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).sortable( "option", { disabled: true } ); 
 ```
 
@@ -4496,7 +4496,7 @@ $( ".selector" ).sortable( "option", { disabled: true } );
 
 调用 refresh 方法：
 
-```
+```js
 $( ".selector" ).sortable( "refresh" ); 
 ```
 
@@ -4510,7 +4510,7 @@ $( ".selector" ).sortable( "refresh" );
 
 调用 refreshPositions 方法：
 
-```
+```js
 $( ".selector" ).sortable( "refreshPositions" ); 
 ```
 
@@ -4531,7 +4531,7 @@ $( ".selector" ).sortable( "refreshPositions" );
 
 调用 serialize 方法：
 
-```
+```js
 var sorted = $( ".selector" ).sortable( "serialize", { key: "sort" } ); 
 ```
 
@@ -4546,7 +4546,7 @@ var sorted = $( ".selector" ).sortable( "serialize", { key: "sort" } );
 
 调用 toArray 方法：
 
-```
+```js
 var sortedIDs = $( ".selector" ).sortable( "toArray" ); 
 ```
 
@@ -4560,7 +4560,7 @@ var sortedIDs = $( ".selector" ).sortable( "toArray" );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).sortable( "widget" ); 
 ```
 
@@ -4584,7 +4584,7 @@ var widget = $( ".selector" ).sortable( "widget" );
 
 使用指定的 activate 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   activate: function( event, ui ) {}
 }); 
@@ -4592,7 +4592,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortactivate 事件：
 
-```
+```js
 $( ".selector" ).on( "sortactivate", function( event, ui ) {} ); 
 ```
 
@@ -4614,7 +4614,7 @@ $( ".selector" ).on( "sortactivate", function( event, ui ) {} );
 
 使用指定的 beforeStop 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   beforeStop: function( event, ui ) {}
 }); 
@@ -4622,7 +4622,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortbeforestop 事件：
 
-```
+```js
 $( ".selector" ).on( "sortbeforestop", function( event, ui ) {} ); 
 ```
 
@@ -4644,7 +4644,7 @@ $( ".selector" ).on( "sortbeforestop", function( event, ui ) {} );
 
 使用指定的 change 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   change: function( event, ui ) {}
 }); 
@@ -4652,7 +4652,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortchange 事件：
 
-```
+```js
 $( ".selector" ).on( "sortchange", function( event, ui ) {} ); 
 ```
 
@@ -4669,7 +4669,7 @@ $( ".selector" ).on( "sortchange", function( event, ui ) {} );
 
 使用指定的 create 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   create: function( event, ui ) {}
 }); 
@@ -4677,7 +4677,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortcreate 事件：
 
-```
+```js
 $( ".selector" ).on( "sortcreate", function( event, ui ) {} ); 
 ```
 
@@ -4699,7 +4699,7 @@ $( ".selector" ).on( "sortcreate", function( event, ui ) {} );
 
 使用指定的 deactivate 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   deactivate: function( event, ui ) {}
 }); 
@@ -4707,7 +4707,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortdeactivate 事件：
 
-```
+```js
 $( ".selector" ).on( "sortdeactivate", function( event, ui ) {} ); 
 ```
 
@@ -4731,7 +4731,7 @@ $( ".selector" ).on( "sortdeactivate", function( event, ui ) {} );
 
 使用指定的 out 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   out: function( event, ui ) {}
 }); 
@@ -4739,7 +4739,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortout 事件：
 
-```
+```js
 $( ".selector" ).on( "sortout", function( event, ui ) {} ); 
 ```
 
@@ -4761,7 +4761,7 @@ $( ".selector" ).on( "sortout", function( event, ui ) {} );
 
 使用指定的 over 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   over: function( event, ui ) {}
 }); 
@@ -4769,7 +4769,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortover 事件：
 
-```
+```js
 $( ".selector" ).on( "sortover", function( event, ui ) {} ); 
 ```
 
@@ -4791,7 +4791,7 @@ $( ".selector" ).on( "sortover", function( event, ui ) {} );
 
 使用指定的 receive 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   receive: function( event, ui ) {}
 }); 
@@ -4799,7 +4799,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortreceive 事件：
 
-```
+```js
 $( ".selector" ).on( "sortreceive", function( event, ui ) {} ); 
 ```
 
@@ -4821,7 +4821,7 @@ $( ".selector" ).on( "sortreceive", function( event, ui ) {} );
 
 使用指定的 remove 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   remove: function( event, ui ) {}
 }); 
@@ -4829,7 +4829,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortremove 事件：
 
-```
+```js
 $( ".selector" ).on( "sortremove", function( event, ui ) {} ); 
 ```
 
@@ -4851,7 +4851,7 @@ $( ".selector" ).on( "sortremove", function( event, ui ) {} );
 
 使用指定的 sort 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   sort: function( event, ui ) {}
 }); 
@@ -4859,7 +4859,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sort 事件：
 
-```
+```js
 $( ".selector" ).on( "sort", function( event, ui ) {} ); 
 ```
 
@@ -4881,7 +4881,7 @@ $( ".selector" ).on( "sort", function( event, ui ) {} );
 
 使用指定的 start 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   start: function( event, ui ) {}
 }); 
@@ -4889,7 +4889,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortstart 事件：
 
-```
+```js
 $( ".selector" ).on( "sortstart", function( event, ui ) {} ); 
 ```
 
@@ -4911,7 +4911,7 @@ $( ".selector" ).on( "sortstart", function( event, ui ) {} );
 
 使用指定的 stop 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   stop: function( event, ui ) {}
 }); 
@@ -4919,7 +4919,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortstop 事件：
 
-```
+```js
 $( ".selector" ).on( "sortstop", function( event, ui ) {} ); 
 ```
 
@@ -4941,7 +4941,7 @@ $( ".selector" ).on( "sortstop", function( event, ui ) {} );
 
 使用指定的 update 回调的 sortable：
 
-```
+```js
 $( ".selector" ).sortable({
   update: function( event, ui ) {}
 }); 
@@ -4949,7 +4949,7 @@ $( ".selector" ).sortable({
 
 绑定一个事件监听器到 sortupdate 事件：
 
-```
+```js
 $( ".selector" ).on( "sortupdate", function( event, ui ) {} ); 
 ```
 
@@ -4957,7 +4957,7 @@ $( ".selector" ).on( "sortupdate", function( event, ui ) {} );
 
 #### A simple jQuery UI Sortable.
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>

@@ -6,13 +6,13 @@ A Sea.js plugin for collecting health data of CMD modules
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-health 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-health.js"></script>
 

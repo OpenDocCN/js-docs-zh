@@ -6,13 +6,13 @@ A Sea.js plugin for loading css
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-css 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-css.js"></script>
 

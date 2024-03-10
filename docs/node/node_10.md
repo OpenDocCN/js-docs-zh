@@ -12,7 +12,7 @@
 
 使用`require('events')`来获取这个`EventEmitter`类。
 
-```
+```js
 var EventEmitter = require('events'); 
 ```
 
@@ -26,7 +26,7 @@ var EventEmitter = require('events');
 
 为指定的事件，在其监听器数组的末尾添加一个新的监听器。不会去检查这个事件是否已经被监听过。事件的多次触发会导致监听器的多次被调用。
 
-```
+```js
 server.on('connection', function (stream) {
   console.log('someone connected!');
 }); 
@@ -38,7 +38,7 @@ server.on('connection', function (stream) {
 
 为事件添加一个 一次性 监听器。这个监听器只会在下次事件触发时被调用，之后被移除。
 
-```
+```js
 server.once('connection', function (stream) {
   console.log('Ah, we have our first user!');
 }); 
@@ -50,7 +50,7 @@ server.once('connection', function (stream) {
 
 从监听器数组中移除指定事件的一个监听器。注意：在数组中，此监听器被移除后，其之后的监听器的索引会被改变。
 
-```
+```js
 var callback = function(stream) {
   console.log('someone connected!');
 };
@@ -81,7 +81,7 @@ server.removeListener('connection', callback);
 
 这个值对于调节最大监听器数来避免 不负责任的警告 或 最大监听器数过大，都非常有用。
 
-```
+```js
 emitter.setMaxListeners(emitter.getMaxListeners() + 1);
 emitter.once('event', function () {
   // do stuff
@@ -99,7 +99,7 @@ emitter.once('event', function () {
 
 返回指定事件的监听器数组。
 
-```
+```js
 server.on('connection', function (stream) {
   console.log('someone connected!');
 });

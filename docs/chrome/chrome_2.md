@@ -36,7 +36,7 @@
 
 在 extension manifest 中用下面的方式注册你的 browser action:
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -148,7 +148,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -196,7 +196,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -252,7 +252,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -300,7 +300,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -348,7 +348,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -407,7 +407,7 @@ Context 菜单用于在 Chrome 的右键菜单中增加自己的菜单项。
 
 要使用 contentMenus API，您必须在清单中声明“contentMenus”权限。同时，您应该指定一个 16x16 的图标用作右键菜单的标识。例如：
 
-```
+```js
 {
         "name": "My extension",
         ...
@@ -505,7 +505,7 @@ Checkbox 或者 radio 的初始状态：true 代表选中，false 代表未选�
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -529,7 +529,7 @@ Chrome.contextMenus.remove(integer `menuItemId`, function `callback`)
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -549,7 +549,7 @@ Chrome.contextMenus.removeAll(function `callback`)
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -613,7 +613,7 @@ Undocumented.
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function() {...}; 
 ```
 
@@ -673,7 +673,7 @@ function() {...};
 
 可以在 extension manifest 中声明使用通知权限，像这样：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -690,7 +690,7 @@ function() {...};
 
 扩展可以使用 getBackgroundPage() 和 getViews()在通知与扩展页面中建立交互。 例如：
 
-```
+```js
 // 在通知中调用扩展页面方法...
 chrome.extension.getBackgroundPage().doThing();
 
@@ -710,7 +710,7 @@ chrome.extension.getViews({type:"notification"}).forEach(function(win) {
 
 扩展的桌面通知 API ，也可用于显示一个网页。 如以下代码所示，首先创建一个简单的文字通知或 HTML 通知，然后显示通知。
 
-```
+```js
 // 创建一个简单的文字通知：
 var notification = webkitNotifications.createNotification(
   '48.png',  // icon url - can be relative
@@ -757,7 +757,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -810,7 +810,7 @@ omnibox 应用程序界面允许向 Google Chrome 的地址栏注册一个关键
 
 如：
 
-```
+```js
 {
   "name": "Aaron's omnibox extension",
   "version": "1.0",
@@ -852,7 +852,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -892,7 +892,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1006,7 +1006,7 @@ The URL 下拉列表中显示的文本。可以包含一个 XML 风格标记。�
 
 ## 在 manifest 中定义你的选项页
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -1019,7 +1019,7 @@ The URL 下拉列表中显示的文本。可以包含一个 XML 风格标记。�
 
 下面是个选项页的范例:
 
-```
+```js
 <html>
 <head><title>My Test Extension Options</title></head>
 <script type="text/javascript">
@@ -1096,7 +1096,7 @@ Favorite Color:
 
 下面是在 extension manifest 中注册替代页的写法。
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -1165,7 +1165,7 @@ Favorite Color:
 
 在 extension manifest 中用下面的方式注册你的 page action：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -1232,7 +1232,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1296,7 +1296,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1344,7 +1344,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1390,7 +1390,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1422,7 +1422,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1473,7 +1473,7 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 下面是 manifest.json 的示例代码，用来生成一个特定的主题。
 
-```
+```js
 {
   "version": "2.6",
   "name": "camo theme",

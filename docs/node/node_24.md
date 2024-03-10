@@ -24,7 +24,7 @@
 
 几乎所有`node.js`程序，不论多简单，都使用了流。下面是一个在`node.js`是使用流的例子：
 
-```
+```js
 var http = require('http');
 
 var server = http.createServer(function (req, res) {
@@ -110,7 +110,7 @@ server.listen(1337);
 
 某些情况下，监听一个`readable`事件会导致一些将要被读出的数据从底层系统进入内部缓冲，如果它没有准备好。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.on('readable', function() {
   // there is some data to read now
@@ -127,7 +127,7 @@ readable.on('readable', function() {
 
 如果你只是想尽快得从流中取得所有数据，这是最好的方式。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.on('data', function(chunk) {
   console.log('got %d bytes of data', chunk.length);
@@ -140,7 +140,7 @@ readable.on('data', function(chunk) {
 
 注意，除非数据被完全消费，`end`事件才会触发。这可以通过切换到流动模式，或重复调用`read()`方法。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.on('data', function(chunk) {
   console.log('got %d bytes of data', chunk.length);
@@ -173,7 +173,7 @@ readable.on('end', function() {
 
 这个方法只能在暂定模式中被调用。在流动模式下，这个方法会被自动地重复调用，知道内部缓冲被排空。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.on('readable', function() {
   var chunk;
@@ -194,7 +194,7 @@ readable.on('readable', function() {
 
 该方法可以正确地处理多字节字符。如果你只是简单地直接取出缓冲并且对它们调用`buf.toString(encoding)`，将会导致错位。如果你想使用字符串读取数据，请使用这个方法。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.setEncoding('utf8');
 readable.on('data', function(chunk) {
@@ -211,7 +211,7 @@ readable.on('data', function(chunk) {
 
 这个方法将会使流切换至流动模式。如果你不想消费流中的数据，但你想监听它的`end`事件，你可以通过调用`readable.resume()`来打开数据流。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.resume();
 readable.on('end', function() {
@@ -225,7 +225,7 @@ readable.on('end', function() {
 
 这个方法会使一个处于流动模式的流停止触发`data`事件，并切换至暂停模式。所有可用的数据将仍然存在于内部缓冲中。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 readable.on('data', function(chunk) {
   console.log('got %d bytes of data', chunk.length);
@@ -244,7 +244,7 @@ readable.on('data', function(chunk) {
 
 这个方法会返回流是否被客户端代码所暂停（调用`readable.pause()`，并且没有在之后调用`readable.resume()`）。
 
-```
+```js
 var readable = new stream.Readable
 
 readable.isPaused() // === false
@@ -264,7 +264,7 @@ readable.isPaused() // === false
 
 可以将数据安全地导流至多个目标。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 var writable = fs.createWriteStream('file.txt');
 // All the data from readable goes into 'file.txt'
@@ -273,7 +273,7 @@ readable.pipe(writable);
 
 这个函数返回目标流，所以你可以链式调用`pipe()`：
 
-```
+```js
 var r = fs.createReadStream('file.txt');
 var z = zlib.createGzip();
 var w = fs.createWriteStream('file.txt.gz');
@@ -282,7 +282,7 @@ r.pipe(z).pipe(w);
 
 例子，模仿 UNIX 的`cat`命令：
 
-```
+```js
 process.stdin.pipe(process.stdout); 
 ```
 
@@ -290,7 +290,7 @@ process.stdin.pipe(process.stdout);
 
 例子，保持被写入的流开启，所以“Goodbye”可以在末端被写入：
 
-```
+```js
 reader.pipe(writer, { end: false });
 reader.on('end', function() {
   writer.end('Goodbye\n');
@@ -309,7 +309,7 @@ reader.on('end', function() {
 
 如果指定了目标，但是并没有为目标设置导流，那么什么都不会发生。
 
-```
+```js
 var readable = getReadableStreamSomehow();
 var writable = fs.createWriteStream('file.txt');
 // All the data from readable goes into 'file.txt',
@@ -331,7 +331,7 @@ setTimeout(function() {
 
 如果你发现你必须经常在你的程序中调用`stream.unshift(chunk)`，你应该考虑实现一个`Transform`流（参阅下文的面向流实现者的 API）。
 
-```
+```js
 // Pull off a header delimited by \n\n
 // use unshift() if we get too much
 // Call the callback with (error, header, stream)
@@ -378,7 +378,7 @@ function parseHeader(stream, callback) {
 
 例子：
 
-```
+```js
 var OldReader = require('./old-api-module.js').OldReader;
 var oreader = new OldReader;
 var Readable = require('stream').Readable;
@@ -421,7 +421,7 @@ myReader.on('readable', function() {
 
 如果一个`writable.write(chunk)`调用返回了`false`，那么`drain`事件会指示出可以继续向流写入数据的时机。
 
-```
+```js
 // Write the data to the supplied writable stream 1MM times.
 // Be attentive to back-pressure.
 function writeOneMillionTimes(writer, data, encoding, callback) {
@@ -475,7 +475,7 @@ function writeOneMillionTimes(writer, data, encoding, callback) {
 
 在调用了`end()`后调用`write()`会导致一个错误。
 
-```
+```js
 // write 'hello, ' and then end with 'world!'
 var file = fs.createWriteStream('example.txt');
 file.write('hello, ');
@@ -487,7 +487,7 @@ file.end('world!');
 
 当调用了`end()`方法，并且所有的数据都被写入了底层系统，这个事件会被触发。
 
-```
+```js
 var writer = getWritableStreamSomehow();
 for (var i = 0; i < 100; i ++) {
   writer.write('hello, #' + i + '!\n');
@@ -504,7 +504,7 @@ writer.on('finish', function() {
 
 这个事件将会在可读流被一个可写流使用`pipe()`方法进行导流时触发。
 
-```
+```js
 var writer = getWritableStreamSomehow();
 var reader = getReadableStreamSomehow();
 writer.on('pipe', function(src) {
@@ -520,7 +520,7 @@ reader.pipe(writer);
 
 当可读流对其调用`unpipe()`方法，在源可读流的目标集合中删除这个可写流，这个事件将会触发。
 
-```
+```js
 var writer = getWritableStreamSomehow();
 var reader = getReadableStreamSomehow();
 writer.on('unpipe', function(src) {
@@ -585,7 +585,7 @@ reader.unpipe(writer);
 
 这是一个可读流的基础例子。它从 1 到 1，000，000 递增数字，然后结束。
 
-```
+```js
 var Readable = require('stream').Readable;
 var util = require('util');
 util.inherits(Counter, Readable);
@@ -614,7 +614,7 @@ Counter.prototype._read = function() {
 
 更好地实现是作为一个转换流实现，请参阅下文更好地实现。
 
-```
+```js
 // A parser for a simple data protocol.
 // The "header" is a JSON object, followed by 2 \n characters, and
 // then a message body.
@@ -756,7 +756,7 @@ SimpleProtocol.prototype._read = function(n) {
 
 这个 API 被设计为尽可能的灵活。例如，你可能正在包装一个有`pause/resume`机制和一个数据回调函数的低级别源。那那些情况下，你可以通过以下方式包装这些低级别源：
 
-```
+```js
 // source is an object with readStop() and readStart() methods,
 // and an `ondata` member that gets called when it has data, and
 // an `onend` member that gets called when the data is over.
@@ -876,7 +876,7 @@ SourceWrapper.prototype._read = function(size) {
 
 仅当目前的数据块被完全消费后，才会调用回调函数。注意，对于某些特殊的输入可能会没有输出。如果你将数据作为第二个参数传入回调函数，那么数据将被传递给`push`方法。换句话说，下面的两个例子是相等的：
 
-```
+```js
 transform.prototype._transform = function (data, encoding, callback) {
   this.push(data);
   callback();
@@ -911,7 +911,7 @@ transform.prototype._transform = function (data, encoding, callback) {
 
 在这个例子中，没有从参数中提供输入，然后将它导流至解释器中，这更符合`node.js`的使用习惯。
 
-```
+```js
 var util = require('util');
 var Transform = require('stream').Transform;
 util.inherits(SimpleProtocol, Transform);
@@ -993,7 +993,7 @@ SimpleProtocol.prototype._transform = function(chunk, encoding, done) {
 
 #### Readable
 
-```
+```js
 var readable = new stream.Readable({
   read: function(n) {
     // sets this._read under the hood
@@ -1003,7 +1003,7 @@ var readable = new stream.Readable({
 
 #### Writable
 
-```
+```js
 var writable = new stream.Writable({
   write: function(chunk, encoding, next) {
     // sets this._write under the hood
@@ -1021,7 +1021,7 @@ var writable = new stream.Writable({
 
 #### Duplex
 
-```
+```js
 var duplex = new stream.Duplex({
   read: function(n) {
     // sets this._read under the hood
@@ -1045,7 +1045,7 @@ var duplex = new stream.Duplex({
 
 #### Transform
 
-```
+```js
 var transform = new stream.Transform({
   transform: function(chunk, encoding, next) {
     // sets this._transform under the hood
@@ -1103,7 +1103,7 @@ var transform = new stream.Transform({
 
 例如，考虑以下代码：
 
-```
+```js
 // WARNING!  BROKEN!
 net.createServer(function(socket) {
 
@@ -1120,7 +1120,7 @@ net.createServer(function(socket) {
 
 解决方案是调用`resume()`方法来开启数据流：
 
-```
+```js
 // Workaround
 net.createServer(function(socket) {
 
@@ -1154,7 +1154,7 @@ net.createServer(function(socket) {
 
 对于双工流，可以分别得通过`readableObjectMode`和`writableObjectMode`设置可读端和可写端。这些配置可以被用来通过转换流实现解释器和序列化器。
 
-```
+```js
 var util = require('util');
 var StringDecoder = require('string_decoder').StringDecoder;
 var Transform = require('stream').Transform;

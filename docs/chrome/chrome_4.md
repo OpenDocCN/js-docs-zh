@@ -30,7 +30,7 @@ ARIA *角色* 属标明了控件类型并描述了其行为。它表现为 DOM �
 
 [ARIA 角色规范](http://www.w3.org/WAI/PF/aria/roles) 包含了如何挑选正确角色的细节信息。例如，如果你的插件包含工具条，工具栏 DOM 元素的角色属性应该如下设置：
 
-```
+```js
 <div role="toolbar"> 
 ```
 
@@ -40,7 +40,7 @@ ARIA 属性也用于描述一类特殊角色控件的当前状态和属性。*�
 
 如下是一个添加 ARIA 属性 aria-activedescendant 到工具栏控件的例子:
 
-```
+```js
 <div role="toolbar" tabindex="0" aria-activedescendant="button1"> 
 ```
 
@@ -48,7 +48,7 @@ ARIA 属性也用于描述一类特殊角色控件的当前状态和属性。*�
 
 如下是样例工具栏的完整定义:
 
-```
+```js
 <div role="toolbar" tabindex="0" aria-activedescendant="button1">
   <img src="buttoncut.png" role="button" alt="cut" id="button1">
   <img src="buttoncopy.png" role="button" alt="copy" id="button2">
@@ -66,13 +66,13 @@ ARIA 属性也用于描述一类特殊角色控件的当前状态和属性。*�
 
 默认来说，能在 HTML DOM 中接受键盘焦点的控件是锚，按钮和表单空间。然而，设置 HTML 属性 tabIndex 为 0，把 DOM 属性放置到默认的标签序列，使他们能接受键盘焦点。 例如:
 
-```
+```js
 _element_.tabIndex = 0 
 ```
 
 设置 tabIndex = -1 从 tab 序列中移出了元素，但是语法上仍然允许元素接受键盘焦点。如下是设置键盘焦点的实例：
 
-```
+```js
 _element_.focus(); 
 ```
 
@@ -104,7 +104,7 @@ _element_.focus();
 
 比如说工具栏，简单的 JS 键盘处理器可能如下所示。请注意为了反映当前的激活工具栏按钮，在响应用户输入后 ARIA aria-activedescendant 属性是如何更新的。
 
-```
+```js
 <head>
 <script>        
  function optionKeyEvent(event) {
@@ -171,7 +171,7 @@ _element_.focus();
 
 请为你的图像提供信息化的可替代文本。如下所示:
 
-```
+```js
 <img src="img.jpg" alt="The logo for the extension"> 
 ```
 
@@ -195,7 +195,7 @@ _element_.focus();
 
 请在扩展清单中注册背景页。一般，背景页不需要任何 HTML，仅仅需要 js 文件，比如：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -210,7 +210,7 @@ _element_.focus();
 
 如果您的确需要自己的背景页，可以使用`page`字段，比如：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -233,7 +233,7 @@ _element_.focus();
 
 例子中的扩展有一个背景页，多个由 image.html 创建的 view 页面。（通过`chrome.tabs.create()`）。
 
-```
+```js
 _//In background.js:_
 // React when a browser action's icon is clicked.
 chrome.browserAction.onClicked.addListener(function(tab) {
@@ -312,7 +312,7 @@ Content scripts 是在 Web 页面内运行的 javascript 脚本。通过使用�
 
 如果 content scipt 的代码总是需要注入，可以在 extension manifest 中的 content_scipt 字段注册它。如下面的例子：
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -329,7 +329,7 @@ Content scripts 是在 Web 页面内运行的 javascript 脚本。通过使用�
 
 如果只是在某些情况下需要注入，可以使用 permission 字段，详见 Programmatic injection。
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -379,7 +379,7 @@ Content scripts 是在 Web 页面内运行的 javascript 脚本。通过使用�
 
 下面的代码（见例子[make_page_red](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/browserAction/make_page_red/)） 演示了点击按钮后向当前标签的页面中注入并执行 javascript 代码。
 
-```
+```js
 _/* in background.html */_
 chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.tabs.executeScript(null,
@@ -396,7 +396,7 @@ _/* in manifest.json */_
 
 一般来说，可以将代码放在文件里面而不是像上面那个例子那样直接注入。 可以这样写：
 
-```
+```js
 chrome.tabs.executeScript(null, {file: "content_script.js"}); 
 ```
 
@@ -406,7 +406,7 @@ Content script 是在一个特殊环境中运行的，这个环境成为 isolate
 
 例如，这个简单的页面：
 
-```
+```js
 hello.html
 ==========
 <html>
@@ -424,7 +424,7 @@ hello.html
 
 现在，将下面这个脚本注入 hello.html：
 
-```
+```js
 contentscript.js
 ================
 var greeting = "hola, ";
@@ -447,7 +447,7 @@ button.addEventListener("click", function() {
 
 下面这个例子是通过自定义的 DOM 事件和把数据放到固定的地方来实现的：
 
-```
+```js
 http://foo.com/example.html
 ===========================
 var customEvent = document.createEvent('Event');
@@ -460,7 +460,7 @@ function fireCustomEvent(data) {
 } 
 ```
 
-```
+```js
 contentscript.js
 ================
 var port = chrome.extension.connect();
@@ -479,7 +479,7 @@ document.getElementById('myCustomEventDiv').addEventListener('myCustomEvent', fu
 
 其次，尽管在独立环境中运行 content script 的机制已经提供了一些保护，如果不加区分的使用 web 页面上的内容还是可以被恶意的 web 页面攻击的。
 
-```
+```js
 contentscript.js
 ================
 var data = document.getElementById("json-data")
@@ -495,7 +495,7 @@ window.setTimeout("animate(" + elmt_id + ")", 200);
 
 建议使用安全一些的 API：
 
-```
+```js
 contentscript.js
 ================
 var data = document.getElementById("json-data")
@@ -515,7 +515,7 @@ window.setTimeout(function() {
 
 通过 chrome.extension.getURL()来获取扩展里文件的 URL。可以像使用其它 url 一样使用这些 URL，如下面的例子所示：
 
-```
+```js
 _//Code for displaying <extensiondir>/images/myimage.png:</extensiondir>_
 var imgURL = **chrome.extension.getURL("images/myimage.png")**;
 document.getElementById("someImage").src = imgURL; 
@@ -539,7 +539,7 @@ document.getElementById("someImage").src = imgURL;
 
 每个正在运行的扩展都存在于自己独立的安全域里. 当没有获取其他权限时，扩展能够使用 XMLHttpRequest 获取来自安装该扩展的域的资源. 例如, 假设有一个扩展包含一个叫 config.json 的 JSON 配置文件,该文件位于 config_resources 目录, 那么该扩展能够使用下面这段代码获取文件内容:
 
-```
+```js
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
 xhr.open("GET", chrome.extension.getURL('/config_resources/config.json'), true);
@@ -552,7 +552,7 @@ xhr.send();
 
 通过添加域名或者域名匹配到 manifest 文件的 permissions 段, 该扩展就拥有了访问除了自己所属域以外的其他域的访问权限.
 
-```
+```js
 {
   "name": "My extension",
   ...
@@ -577,7 +577,7 @@ xhr.send();
 
 这里还需要注意访问权限是根据访问协议(匹配模式里的 http 或者 https 或者其他协议名)及域名来授予的. 例如某个扩展希望同时基于 https 和 http 协议访问某个域或者某些域, 那么它必须分别获取基于这两种协议的访问允许(类似下面这样的声明):
 
-```
+```js
 "permissions": [
   "http://www.google.com/",
   "https://www.google.com/"
@@ -588,7 +588,7 @@ xhr.send();
 
 每当使用通过 XMLHttpRequest 获取的资源时, 你编写的背景页需要注意不要成为[跨域脚本](http://en.wikipedia.org/wiki/Cross-site_scripting)的牺牲品. 特别注意避免使用像下面这样的危险 API:
 
-```
+```js
 background.html
 ===============
 var xhr = new XMLHttpRequest();
@@ -618,7 +618,7 @@ xhr.send();
 
 实际上我们应该首选不会执行脚本的安全 API:
 
-```
+```js
 background.html
 ===============
 var xhr = new XMLHttpRequest();
@@ -691,13 +691,13 @@ xhr.send();
 
 *   在 manifest.json 和 CSS 文件中，像下图一样引用一个字符串：
 
-    ```
+    ```js
     __MSG__messagename___ 
     ```
 
 *   在您的扩展 JavaScript 程序中，像下图一样引用一个字符串：
 
-    ```
+    ```js
     chrome.i18n.getMessage("_messagename_") 
     ```
 
@@ -706,7 +706,7 @@ xhr.send();
 *   国际化系统已经提供了一些 message, 像 @@bidi_dir 和 @@ui_locale。 查看 Predefined messages 连接了解全部预定义 message 名称。
 *   在 message.json 文件里，每个用户可用的字符串都有一个名字项，一个"message"项和一个可选的"description"项。这个名字如"extName"或"search_string"是字符串的 ID, "message"是字符串在当前语言环境中的值。"description"有一些解释信息。示例：
 
-    ```
+    ```js
     {
       "search_string": {
         "message": "hello%20world",
@@ -740,7 +740,7 @@ xhr.send();
 
 一个在 CSS 文件中，用@@extension_id 构造一个 URL 的示例：
 
-```
+```js
 body {
   **background-image:url('chrome-extension://__MSG_@@extension_id__/background.png');**
 } 
@@ -748,13 +748,13 @@ body {
 
 如果扩展的 ID 是 abcdefghijklmnopqrstuvwxyzabcdef，那么上述代码中的粗线部份变成：
 
-```
+```js
 background-image:url('chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/background.png'); 
 ```
 
 一个在 CSS 文件中用@@bidi_* messages 的例子：
 
-```
+```js
 body {
   **direction: __MSG_@@bidi_dir__;**
 }
@@ -771,7 +771,7 @@ div#header {
 
 从左到右的语言，如英语。粗线变成：
 
-```
+```js
 dir: ltr;
 padding-left: 0;
 padding-right: 1.5em; 
@@ -815,7 +815,7 @@ am ar bg bn ca cs da de el en en_GB en_US es es_419 et fi fil fr gu he hi hr hu 
 2.  用语言编码命名新的快捷方式，如 cn_chrome.lnk。
 3.  选择快捷方式的连接属性，加入--lang 和--user-data-dir 参数。如：
 
-    ```
+    ```js
     _path_to_chrome.exe_ --lang=_locale_ --user-data-dir=c:_locale_profile_dir_ 
     ```
 
@@ -823,13 +823,13 @@ am ar bg bn ca cs da de el en en_GB en_US es es_419 et fi fil fr gu he hi hr hu 
 
 示例：用西班牙语创建此类快捷方式:
 
-```
+```js
 _path_to_chrome.exe_ --lang=es --user-data-dir=c:chrome-profile-es 
 ```
 
 示例：你可以创建任意多的快捷方式,，让你的多种语言测试变很容易。
 
-```
+```js
 _path_to_chrome.exe_ --lang=en --user-data-dir=c:chrome-profile-en
 _path_to_chrome.exe_ --lang=en_GB --user-data-dir=c:chrome-profile-en_GB
 _path_to_chrome.exe_ --lang=ko --user-data-dir=c:chrome-profile-ko 
@@ -862,7 +862,7 @@ _path_to_chrome.exe_ --lang=ko --user-data-dir=c:chrome-profile-ko
 
 Linux 上改变语言，先退出 Google Chrome，再如下设置环境变量，重启即可:
 
-```
+```js
 LANGUAGE=es ./chrome 
 ```
 
@@ -874,7 +874,7 @@ LANGUAGE=es ./chrome
 
 下面的代码介绍了怎么得到和显示一个本地化的字符串。用"string1"和"string2"替换 message 的两个占位符。
 
-```
+```js
 function getMessage() {
   var message = chrome.i18n.getMessage("click_here", ["string1", "string2"]);
   document.getElementById("languageSpan").innerHTML = message;
@@ -883,7 +883,7 @@ function getMessage() {
 
 如何提供和使用一个字符串。
 
-```
+```js
 _// In JavaScript code_
 status.innerText = chrome.i18n.getMessage("error", errorDetails);
 
@@ -906,7 +906,7 @@ _// In messages.json_
 
 下例代码介绍了怎么取得所有可用的语言，把它们以"，"号连接成字符串并显示。
 
-```
+```js
 function getAcceptLanguages() {
   chrome.i18n.getAcceptLanguages(function(languageList) {
     var languages = languageList.join(",");
@@ -935,7 +935,7 @@ callback*(function)*
 
 这个回调参数应该是一个函数，类似于：
 
-```
+```js
 function(array of string languages) {...}; 
 ```
 
@@ -1001,7 +1001,7 @@ For information on how to use experimental APIs, see the chrome.experimental.* A
 
 像下面这个例子一样，可以从 content script 发起一个请求：
 
-```
+```js
 contentscript.js
 ================
 chrome.extension.sendRequest({greeting: "hello"}, function(response) {
@@ -1011,7 +1011,7 @@ chrome.extension.sendRequest({greeting: "hello"}, function(response) {
 
 传递一个请求到扩展很容易，你需要指定哪个标签发起这个请求。下面这个例子展示了如何指定标签发起一个请求。
 
-```
+```js
 background.html
 ===============
 chrome.tabs.getSelected(null, function(tab) {
@@ -1023,7 +1023,7 @@ chrome.tabs.getSelected(null, function(tab) {
 
 接受消息的一方，需要启动一个 chrome.extension.onRequest 事件监听器用来处理消息。这个方法在 content script 和扩展中都是一样的。这个请求将会保留直到你做出了回应。下面的这个例子是一个很好的做法调用一个空对象请求然后得到答复的例子。
 
-```
+```js
 chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
     console.log(sender.tab ?
@@ -1048,7 +1048,7 @@ chrome.extension.onRequest.addListener(
 
 下面展示了如何从 content script 建立一个通道，发送和接受消息：
 
-```
+```js
 contentscript.js
 ================
 var port = chrome.extension.connect({name: "knockknock"});
@@ -1065,7 +1065,7 @@ port.onMessage.addListener(function(msg) {
 
 为了处理正在等待的连接，你需要用 chrome.extension.onConnect 事件监听器，对于 content script 或者扩展页面，这个方法都是一样的，但你的扩展的另外一个部分调用"connect()"， 这个事件一旦被触发，通过这个连接你可以利用 Port 对象进行发送和接收消息，下面的例子展示了如何处理连接：
 
-```
+```js
 chrome.extension.onConnect.addListener(function(port) {
   console.assert(port.name == "knockknock");
   port.onMessage.addListener(function(msg) {
@@ -1087,7 +1087,7 @@ chrome.extension.onConnect.addListener(function(port) {
 
 对于扩展内部来说，监听一个传入的请求和连接是一样的，你可以使用 chrome.extension.onRequestExternal 或者 chrome.extension.onConnectExternal 方法，如下面的例子所示：
 
-```
+```js
 // For simple requests:
 chrome.extension.onRequestExternal.addListener(
   function(request, sender, sendResponse) {
@@ -1111,7 +1111,7 @@ chrome.extension.onConnectExternal.addListener(function(port) {
 
 同样，传递一个消息到另外一个扩展和把消息传递给自己扩展的另外一部分是一样的，唯一不同的是你必须知道你要传给消息的扩展的 ID 例如：
 
-```
+```js
 // The ID of the extension we want to talk to.
 var laserExtensionId = "abcdefghijklmnoabcdefhijklmnoabc";
 
@@ -1131,7 +1131,7 @@ port.postMessage(...);
 
 无论是从 content script 还是从扩展接收消息，你的页面不应该[cross-site scripting](http://en.wikipedia.org/wiki/Cross-site_scripting)，特别是避免使用那些不安全的 API 例如下面的例子：
 
-```
+```js
 background.html
 ===============
 chrome.tabs.sendRequest(tab.id, {greeting: "hello"}, function(response) {
@@ -1149,7 +1149,7 @@ chrome.tabs.sendRequest(tab.id, {greeting: "hello"}, function(response) {
 
 相反的，选择更安全的 API 而不是运行脚本。
 
-```
+```js
 background.html
 ===============
 chrome.tabs.sendRequest(tab.id, {greeting: "hello"}, function(response) {
@@ -1197,7 +1197,7 @@ The callback *parameter* should specify a function that looks like this:
 
 If you specify the *callback* parameter, it should specify a function that looks like this:
 
-```
+```js
 function(Type param1, Type param2) {...}; 
 ```
 
@@ -1266,7 +1266,7 @@ A description from the json schema def of the event goes here.
 
 在 extension manifest 中用`optional_permissions`关键字声明可选权限，与声明 permissions 相同：
 
-```
+```js
 {
         "name": "My extension",
         ...
@@ -1306,7 +1306,7 @@ A description from the json schema def of the event goes here.
 
 通过调用`permissions.request()`请求权限，并且需要获得用户授权：
 
-```
+```js
 document.querySelector('#my-button').addEventListener('click', function(event) {
         // Permissions must be requested from inside a user gesture, like a button's
         // click handler.
@@ -1334,7 +1334,7 @@ document.querySelector('#my-button').addEventListener('click', function(event) {
 
 检查扩展是否拥有特定的权限，可以通过`permission.contains()`实现：
 
-```
+```js
 Chrome.permissions.contains({
         permissions: ['tabs'],
         origins: ['http://www.google.com/']
@@ -1353,7 +1353,7 @@ Chrome.permissions.contains({
 
 您应该删除不再需要的权限。当某个用户已授权权限被删除后，使用`permissions.request()`再次添加此权限时不会再提示用户。
 
-```
+```js
 Chrome.permissions.remove({
         permissions: ['tabs'],
         origins: ['http://www.google.com/']
@@ -1393,7 +1393,7 @@ Undocumented.
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function(boolean result) {...}; 
 ```
 
@@ -1417,7 +1417,7 @@ Undocumented.
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function(Permissions permissions) {...}; 
 ```
 
@@ -1445,7 +1445,7 @@ Undocumented.
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function(boolean removed) {...}; 
 ```
 
@@ -1473,7 +1473,7 @@ Undocumented.
 
 如果需要指定*回调函数*，则回调函数格式如下：
 
-```
+```js
 function(boolean granted) {...}; 
 ```
 
@@ -1543,7 +1543,7 @@ Undocumented.
 
 1.  在你扩展的 manifest.json 文件中加入一个节，描述如何找到你的插件，以及其他一些信息，:
 
-    ```
+    ```js
     {
       "name": "My extension",
       ...
@@ -1559,7 +1559,7 @@ Undocumented.
 
 2.  创建一个 HTML 文件，mime-type 为：application/x-my-extension" ，用于加载你的插件。
 
-    ```
+    ```js
     &lt;embed type="application/x-my-extension" id="pluginId"&gt;
     &lt;script&gt;
       var plugin = document.getElementById("pluginId");

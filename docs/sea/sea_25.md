@@ -10,7 +10,7 @@
 
 所谓 `ID 和路径匹配原则` 是指，使用 `seajs.use` 或 `require` 进行引用的文件，如果是具名模块（即定义了 ID 的模块），会把 ID 和 `seajs.use` 的路径名进行匹配，如果一致，则正确执行模块返回结果。反之，则返回 `null`。例如：
 
-```
+```js
 seajs.use('lib/jquery', function($) {
     // use $
 });
@@ -18,7 +18,7 @@ seajs.use('lib/jquery', function($) {
 
 或者在模块中 require ：
 
-```
+```js
 define(function(require, exports, module) {
     var $ = require('lib/jquery');
     // use $
@@ -27,7 +27,7 @@ define(function(require, exports, module) {
 
 当 jQuery 文件是下面的情况时，上述的变量 `$` 能拿到正确的返回结果。
 
-```
+```js
 // 文件路径是 lib/jquery.js
 // ID 和实际路径匹配了（.js 后缀会自动补上）
 define('lib/jquery', function(require, exports, module) {
@@ -37,7 +37,7 @@ define('lib/jquery', function(require, exports, module) {
 
 下面的代码则返回 null：
 
-```
+```js
 // 文件路径是 lib/jquery.js
 // 但是 ID 是 lib/jquery.min.js
 // ID 和路径不匹配
@@ -48,7 +48,7 @@ define('lib/jquery.min', function(require, exports, module) {
 
 而匿名模块始终能正确返回结果：
 
-```
+```js
 // lib/jquery.js
 // 匿名模块，不需要进行匹配
 // 但是文件中只能有一个 define 块
@@ -69,7 +69,7 @@ define(function(require, exports, module) {
 
 但是在生产环境下，静态文件不可避免地需要进行合并打包或者进行 combo，以优化请求数提高页面性能。这时，一个 js 文件可能有很多 `define()` 方法。
 
-```
+```js
 define(funtion(require, exports, module) {
     // module a
 });
@@ -87,7 +87,7 @@ define(funtion(require, exports, module) {
 
 所以这时候 ID 就派上了用场，我们可以这样写：
 
-```
+```js
 // path/a.js
 
 define('path/a', funtion(require, exports, module) {
@@ -105,7 +105,7 @@ define('path/c', funtion(require, exports, module) {
 
 我们定义好每个模块的 id ，在 Sea.js 里，那个和文件路径匹配的 ID 的模块就是这个文件的主模块。此时：
 
-```
+```js
 seajs.use('path/a', function(a) {
     // got a, not b or c
 });
@@ -119,7 +119,7 @@ seajs.use('path/a', function(a) {
 
 可能有人要问为啥一定要把 ID 定为文件路径，Sea.js 不是可以自定义 ID 吗，像下面这样：
 
-```
+```js
 define('module-id', funtion(require, exports, module) {
     // module id
 });
@@ -132,7 +132,7 @@ seajs.use('module-id', function(Module) {
 
 上面的代码当然可以运行。但是有一点，任何一个模块的运行都涉及到两个步骤：`模块定义` 和 `模块执行`，上面的代码两个步骤都包括在内。而使用了 Sea.js ，我们不希望用户去手动写 `script` 标签引用模块。希望只需要 `seajs.use` 模块的文件路径即可（入口唯一）：
 
-```
+```js
 seajs.use('path/to/module', function(Module) {
     // Module
 });
@@ -142,7 +142,7 @@ Sea.js 会自动插入 script 标签，完成定义步骤，然后执行模块�
 
 当然可以回避掉这个原则，你只需要自己负责模块的定义部分，再自己 `seajs.use` 之前定义好的模块 ID 就行。
 
-```
+```js
 <!-- 各种模块的定义 define define define -->
 <script src="http://example.com/modules.js"></script>
 
@@ -156,7 +156,7 @@ seajs.use('jquery', function($) {
 
 或者通过 alias 来帮助 ID 匹配上最终的路径，这样就和 RequireJS 的方案基本一致了。
 
-```
+```js
   // lib/jquery-1.7.2.js 的内容如下
 define('$', funtion(require, exports, module) {
   // jQuery
@@ -165,7 +165,7 @@ define('$', funtion(require, exports, module) {
 
 这样就不需要自己去引用上面的文件，可以直接通过 seajs.use 调用。
 
-```
+```js
 seajs.config({
   alias: {
     $: 'lib/jquery-1.7.2.js'

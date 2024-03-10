@@ -6,7 +6,7 @@
 
 下面的示例演示了如何定义一个模型，包括自定义方法、设置属性、以及触发该属性变化的事件。一旦运行此代码后，`sidebar`在浏览器的控制台就可用，这样你就可以充分发挥了。
 
-```
+```js
 var Sidebar = Backbone.Model.extend({
   promptColor: function() {
     var cssColor = prompt("Please enter a CSS color:");
@@ -29,7 +29,7 @@ sidebar.promptColor();
 
 **extend** 可以正确的设置原型链，因此通过 **extend** 创建的子类 (subclasses) 也可以被深度扩展。
 
-```
+```js
 var Note = Backbone.Model.extend({
 
   initialize: function() { ... },
@@ -55,7 +55,7 @@ var PrivateNote = Note.extend({
 
 父类（`super`） 的简述：Javascript 没有提供一种直接调用父类的方式 — 如果你要重载原型链中上层定义的同名函数，如 `set`, 或 `save` ， 并且你想调用父对象的实现，这时需要明确的调用它，类似这样：
 
-```
+```js
 var Note = Backbone.Model.extend({
   set: function(attributes, options) {
     Backbone.Model.prototype.set.apply(this, arguments);
@@ -66,7 +66,7 @@ var Note = Backbone.Model.extend({
 
 **constructor / initialize**`new Model([attributes], [options])` 当创建 model 实例时，可以传入 属性 (**attributes**)初始值，这些值会被 set （设置）到 model。 如果定义了 **initialize** 函数，该函数会在 model 创建后执行。
 
-```
+```js
 new Book({
   title: "One Thousand and One Nights",
   author: "Scheherazade"
@@ -75,7 +75,7 @@ new Book({
 
 在极少数的情况下，你可能需要去重写 **constructor** ，它可以让你替换你的 model 的实际构造函数。
 
-```
+```js
 var Library = Backbone.Model.extend({
   constructor: function() {
     this.books = new Books();
@@ -96,7 +96,7 @@ var Library = Backbone.Model.extend({
 
 **set**`model.set(attributes, [options])` 向 model 设置一个或多个 hash 属性(attributes)。如果任何一个属性改变了 model 的状态，在不传入 {silent: true} 选项参数的情况下，会触发 `"change"` 事件，更改特定属性的事件也会触发。 可以绑定事件到某个属性，例如：`change:title`，及 `change:content`。
 
-```
+```js
 note.set({title: "March 20", content: "In his eyes she eclipses..."});
 
 book.set("title", "A Scandal in Bohemia"); 
@@ -104,7 +104,7 @@ book.set("title", "A Scandal in Bohemia");
 
 **escape**`model.escape(attribute)` 与 get 类似，只是返回的是 HTML 转义后版本的 model 属性值。如果从 model 插入数据到 HTML，使用 escape 取数据可以避免 [XSS](http://en.wikipedia.org/wiki/Cross-site_scripting) 攻击。
 
-```
+```js
 var hacker = new Backbone.Model({
   name: "<script>alert('xss')</script>"
 });
@@ -114,7 +114,7 @@ alert(hacker.escape('name'));
 
 **has**`model.has(attribute)` 属性值为非 null 或非 undefined 时返回 `true`。
 
-```
+```js
 if (note.has("title")) {
   ...
 } 
@@ -128,7 +128,7 @@ if (note.has("title")) {
 
 **idAttribute**`model.idAttribute` 一个 model 的唯一标示符，被储存在 `id` 属性下。如果使用一个不同的唯一的 key 直接和后端通信。可以设置 Model 的 `idAttribute` 到一个从 key 到 `id` 的一个透明映射中。
 
-```
+```js
 var Meal = Backbone.Model.extend({
   idAttribute: "_id"
 });
@@ -149,7 +149,7 @@ alert("Cake id: " + cake.id);
 
 **defaults**`model.defaults or model.defaults()` **defaults** 散列（或函数）用于为模型指定默认属性。 创建模型实例时，任何未指定的属性会被设置为其默认值。
 
-```
+```js
 var Meal = Backbone.Model.extend({
   defaults: {
     "appetizer":  "caesar salad",
@@ -165,7 +165,7 @@ alert("Dessert will be " + (new Meal).get('dessert'));
 
 **toJSON**`model.toJSON([options])` 返回一个模型的 attributes 浅拷贝副本的 JSON 字符串化形式。 它可用于模型的持久化、序列化，或者发送到服务之前的扩充。 该方法名称比较混乱，因为它事实上并不返回 JSON 字符串， 但这是对 [JavaScript API 的 **JSON.stringify**](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON_behavior) 实现。
 
-```
+```js
 var artist = new Backbone.Model({
   firstName: "Wassily",
   lastName: "Kandinsky"
@@ -180,7 +180,7 @@ alert(JSON.stringify(artist));
 
 **fetch**`model.fetch([options])` 通过委托给 Backbone.sync 从服务器重置模型的状态。返回[jqXHR](http://www.css88.com/jqapi-1.9/jQuery.ajax/#jqXHR)。 如果模型从未填充数据时非常有用， 或者如果你想确保你有最新的服务器状态。 如果服务器的状态不同于当前属性的`"change"`事件将被触发。 接受 `success` 和 `error`回调的选项散列， 这两个回调都可以传递`(model, response, options)`作为参数。
 
-```
+```js
 // 每隔 10 秒从服务器拉取数据以保持频道模型是最新的
 setInterval(function() {
   channel.fetch();
@@ -195,7 +195,7 @@ setInterval(function() {
 
 在下面的例子中， 注意我们如何覆盖`Backbone.sync`的版本，在模型初次保存时接收到 `"create"`请求，第二次接收到 `"update"` 请求的。
 
-```
+```js
 Backbone.sync = function(method, model) {
   alert(method + ": " + JSON.stringify(model));
   model.set('id', 1);
@@ -213,13 +213,13 @@ book.save({author: "Teddy"});
 
 **save** 支持在选项散列表中传入 `success` 和 `error` 回调函数， 回调函数支持传入 `(model, response, options)` 作为参数。 如果服务端验证失败，返回非 `200` 的 HTTP 响应码，将产生文本或 JSON 的错误内容。
 
-```
+```js
 book.save("author", "F.D.R.", {error: function(){ ... }}); 
 ```
 
 **destroy**`model.destroy([options])` 通过委托给 Backbone.sync，保存模型到数据库（或替代持久化层）。 通过委托一个 HTTP `DELETE`请求给 Backbone.sync 破坏服务器上的模型。 返回一个[jqXHR](http://www.css88.com/jqapi-1.9/jQuery.ajax/#jqXHR)对象， 或者如果模型 isNew，那么返回`false`。 选项散列表中接受 `success` 和 `error` 回调函数， 回调函数支持传入 `(model, response, options)` 作为参数。 在模型上触发 `"destroy"` 事件，该事件将会冒泡到任何包含这个模型的集合中， 一个`"request"`事件作为 Ajax 请求开始到服务器， 并且当服务器确认模型被删除后立即触发 一个`"sync"`事件。如果你想在集合中删除这个模型前等待服务器相应，请传递`{wait: true}`。
 
-```
+```js
 book.destroy({success: function(model, response) {
   ...
 }}); 
@@ -234,7 +234,7 @@ book.destroy({success: function(model, response) {
 *   [pick](http://www.css88.com/doc/underscore/#pick)
 *   [omit](http://www.css88.com/doc/underscore/#omit)
 
-```
+```js
 user.pick('first_name', 'last_name', 'email');
 
 chapters.keys().join(', '); 
@@ -242,7 +242,7 @@ chapters.keys().join(', ');
 
 **validate**`model.validate(attributes, options)` 这种方法是未定义的， 如果您有任何可以在 JavaScript 中执行的代码 并且我们鼓励你用你自定义验证逻辑覆盖它 。 默认情况下**validate**在`save`之前调用， 但如果传递了 `{validate:true}`，也可以在`set`之前调用。 **validate**方法是通过模型的属性， 选项和`set` 和 `save`是一样的。 如果属性是有效的， **validate**不返回验证任何东西; 如果它们是无效的， 返回一个你选择的错误。 它可以是一个用来显示的简单的字符串错误信息， 或一个以编程方式描述错误的完整错误对象。 如果**validate**返回一个错误， `save`不会继续， 并且在服务器上该模型的属性将不被修改。 校验失败将触发`"invalid"`事件， 并用此方法返回的值设置模型上的`validationError`属性。
 
-```
+```js
 var Chapter = Backbone.Model.extend({
   validate: function(attrs, options) {
     if (attrs.end < attrs.start) {
@@ -271,7 +271,7 @@ one.save({
 
 **isValid**`model.isValid()` 运行 validate 来检查模型状态。
 
-```
+```js
 var Chapter = Backbone.Model.extend({
   validate: function(attrs, options) {
     if (attrs.end < attrs.start) {
@@ -300,7 +300,7 @@ if (!one.isValid()) {
 
 **urlRoot**`model.urlRoot or model.urlRoot()` 如果使用的集合*外部*的模型，通过指定 `urlRoot` 来设置生成基于模型 id 的 URLs 的默认 url 函数。 `"[urlRoot]/id"`。通常情况下，你不会需要定义这一点。 需要注意的是`urlRoot`也可以是一个函数。
 
-```
+```js
 var Book = Backbone.Model.extend({urlRoot : '/books'});
 
 var solaris = new Book({id: "1083-lem-solaris"});
@@ -312,7 +312,7 @@ alert(solaris.url());
 
 如果使用的 3.1 版本之前的 Rails 后端，需要注意 Rails's 默认的 `to_json` 实现已经包含了命名空间之下的模型属性。 对于无缝的后端集成环境禁用这种行为：
 
-```
+```js
 ActiveRecord::Base.include_root_in_json = false 
 ```
 
@@ -324,7 +324,7 @@ ActiveRecord::Base.include_root_in_json = false
 
 注意，本方法以及接下来 change 相关的方法，仅对 `"change"`事件发生有效。
 
-```
+```js
 book.on("change", function() {
   if (book.hasChanged("title")) {
     ...
@@ -336,7 +336,7 @@ book.on("change", function() {
 
 **previous**`model.previous(attribute)` 在 `"change"` 事件发生的过程中，本方法可被用于获取已改变属性的旧值。
 
-```
+```js
 var bill = new Backbone.Model({
   name: "Bill Smith"
 });

@@ -43,7 +43,7 @@
 
 任何需要的文件都可以放到应用（扩展）中，但是怎么使用它们呢？一般的说，可以像在普通的 HTML 文件中那样使用相对地址来引用一个文件。下面的例子演示了如何引用 images 子目录下的文件 myimage.png
 
-```
+```js
 <img **src="images/myimage.png"**> 
 ```
 
@@ -194,7 +194,7 @@ function saveTabData(tab, data) { if (tab.incognito) { bgPage[tab.url] = data; /
 
 下面的 JSON 示例了 manifest 支持的字段，每个字段都有连接指向专有的说明。必须的字段只有：name 和 version。
 
-```
+```js
 {
 _// 必须的字段 _
   "name": "_My Extension_",
@@ -260,7 +260,7 @@ _// 必须的字段 _
 
 图标要求是 png 格式，因为 png 格式是对透明支持最好的。你也可以用其他 webkit 支持的格式，如 BMP,GIF,ICON 和 JPEG。下面有个例子：
 
-```
+```js
 "icons":
   {
     "16": "icon16.png",             
@@ -291,7 +291,7 @@ _// 必须的字段 _
 
 一个字典，用于描述扩展或 app 所提供的全部 intent handler。字典里的每个键指定了一个 action verb。下面这个例子为"[`webintents.org/share`](http://webintents.org/share)"这个 action verb 指定了 2 个的 intent handler。
 
-```
+```js
 {
     "name": "test",
     "version": "1",
@@ -344,7 +344,7 @@ _// 必须的字段 _
 
 一个或多个从 MIME 到处理这个 MIME 的本地客户端模块之间的映射。 例如，下段代码中加粗部分将一个本地客户端模块注册为处理 OpenOffice 电子表格 MIME。
 
-```
+```js
 {
     "name": "Native Client OpenOffice Spreadsheet Viewer",
     "version": "0.1",
@@ -360,7 +360,7 @@ _// 必须的字段 _
 
 一个 MIME 只能与一个“.nmf”文件关联，但一个“.nmf”文件可处理多个 MIME。下面例子的扩展有 2 个“.nmf”文件，但处理了 3 个 MIME。
 
-```
+```js
 {
     "name": "Spreadsheet Viewer",
     "version": "0.1",
@@ -394,7 +394,7 @@ _// 必须的字段 _
 
 这是一个扩展的 manifest 文件的权限设置的一部分。
 
-```
+```js
 "permissions":
 [    
     "tabs",    
@@ -432,7 +432,7 @@ _// 必须的字段 _
 
 目前只支持指定“3D”，也就是 GPU 加速。您可以指定所需的 3D 相关功能，比如：
 
-```
+```js
 "requirements": {
     "3D": {
       "features": ["css3d", "webgl"]
@@ -465,7 +465,7 @@ _// 必须的字段 _
 
 用整数表示 manifest 文件自身格式的版本号。从 Chrome 18 开始，开发者应该（不是必须，但是 2012 年底左右就必须了）指定版本号为 2（没有引号），如下所示：
 
-```
+```js
 "manifest_version": 2 
 ```
 
@@ -479,7 +479,7 @@ manifest 版本 1 从 Chrome 18 才开始逐步被弃用，版本 2 目前并不
 
 一组字符串，指定本扩展在注入的目标页面上所需使用的资源的路径（相对于扩展的安装根目录）。例如，扩展在 example.com 上注入脚本以构建制界面，将其间所需的资源（图片、图标、样式、脚本等）加入白名单，如下所示：
 
-```
+```js
 {
     ...
     "web_accessible_resources": [
@@ -518,7 +518,7 @@ manifest*version 为 1 的扩展，缺省仍可访问任何扩展包内资源。
 
 下边列出了基本语法:
 
-```
+```js
 _<url-pattern>_ := _<scheme>_://_<host>__<path>_
 _<scheme>_ := '*' | 'http' | 'https' | 'file' | 'ftp' | 'chrome-extension'
 _<host>_ := '*' | '*.' _<除 '/' 和 '*' 外的其它任意字符>_+

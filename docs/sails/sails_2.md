@@ -6,7 +6,7 @@ Reference Section of Sails.js documentation
 
 ## ideas for some restructuring:
 
-```
+```js
  |
  |- Usage
    |
@@ -134,7 +134,7 @@ Add purchase 47 to the list of purchases that Dolly (employee #7) has been invol
 
 **Using [jQuery](http://jquery.com/):**
 
-```
+```js
 $.post('/employee/7/involvedInPurchases/47', function (purchases) {
   console.log(purchases);
 }); 
@@ -142,7 +142,7 @@ $.post('/employee/7/involvedInPurchases/47', function (purchases) {
 
 **Using [Angular](https://angularjs.org/):**
 
-```
+```js
 $http.post('/employee/7/involvedInPurchases/47')
 .then(function (purchases) {
   console.log(purchases);
@@ -151,7 +151,7 @@ $http.post('/employee/7/involvedInPurchases/47')
 
 **Using [sails.io.js](http://beta.sailsjs.org/#/documentation/reference/websockets/sails.io.js):**
 
-```
+```js
 io.socket.post('/employee/7/involvedInPurchases/47', function (purchases) {
   console.log(purchases);
 }); 
@@ -159,13 +159,13 @@ io.socket.post('/employee/7/involvedInPurchases/47', function (purchases) {
 
 **Using [cURL](http://en.wikipedia.org/wiki/CURL):**
 
-```
+```js
 curl http://localhost:1337/employee/7/involvedInPurchases/47 -X "POST" 
 ```
 
 Should return "Dolly", the primary record:
 
-```
+```js
 {
   "involvedInPurchases": [
     {
@@ -190,7 +190,7 @@ Should return "Dolly", the primary record:
 >     
 >     
 >     
->     ```
+>     ```js
 >     $ sails new foo
 >     $ cd foo
 >     $ sails generate api purchase
@@ -209,7 +209,7 @@ Should return "Dolly", the primary record:
 
 Creates a new model instance in your database then returns it's values.
 
-```
+```js
 POST /:model 
 ```
 
@@ -244,7 +244,7 @@ Create a new pony named "AppleJack" with a hobby of "pickin".
 
 #### JSON Request Body
 
-```
+```js
 {
   "name": "AppleJack",
   "hobby": "pickin"
@@ -253,7 +253,7 @@ Create a new pony named "AppleJack" with a hobby of "pickin".
 
 #### Example Response
 
-```
+```js
 {
   "name": "AppleJack",
   "hobby": "pickin",
@@ -271,7 +271,7 @@ Create a new pony named "AppleJack" with a hobby of "pickin".
 
 #### Expected Response
 
-```
+```js
 {
  "name": "Shutterfly",
  "best_pony": "yep",
@@ -297,7 +297,7 @@ Create a new pony named "Pinkie Pie" and associate it with an existing pet named
 
 #### JSON Request Body
 
-```
+```js
 {
   "name": "Pinkie Pie",
   "hobby": "ice skating",
@@ -307,7 +307,7 @@ Create a new pony named "Pinkie Pie" and associate it with an existing pet named
 
 #### Example Response
 
-```
+```js
 {
   "name": "Pinkie Pie",
   "hobby": "ice skating",
@@ -332,7 +332,7 @@ Create a new pony named "Pinkie Pie", an "ice skating" hobby, and a new pet name
 
 #### JSON Request Body
 
-```
+```js
 {
   "name": "Pinkie Pie",
   "hobby": "ice skating",
@@ -349,7 +349,7 @@ Create a new pony named "Pinkie Pie", an "ice skating" hobby, and a new pet name
 
 Deletes an existing record specified by `id` from the database forever and returns the values of the deleted record.
 
-```
+```js
 DELETE /:model/:record 
 ```
 
@@ -380,7 +380,7 @@ Delete Pinkie Pie.
 
 #### JSON Request Body
 
-```
+```js
 {
   "id": 4
 } 
@@ -388,7 +388,7 @@ Delete Pinkie Pie.
 
 #### Expected Response
 
-```
+```js
 {
   "name": "Pinkie Pie",
   "hobby": "kickin",
@@ -416,7 +416,7 @@ Same as above.
 
 Returns a list of records from the model as a JSON array of objects.
 
-```
+```js
 GET /:model 
 ```
 
@@ -447,7 +447,7 @@ e.g. ?callback=my_JSONP_data_receiver_fn |
 
 Find the 30 newest purchases in our database.
 
-```
+```js
 [
  {
    "amount": 49.99,
@@ -466,7 +466,7 @@ Find the 30 newest purchases in our database.
 
 **Using [jQuery](http://jquery.com/):**
 
-```
+```js
 $.get('/purchase?sort=createdAt DESC', function (purchases) {
   console.log(purchases);
 }); 
@@ -474,7 +474,7 @@ $.get('/purchase?sort=createdAt DESC', function (purchases) {
 
 **Using [Angular](https://angularjs.org/):**
 
-```
+```js
 $http.get('/purchase?sort=createdAt DESC')
 .then(function (res) {
   var purchases = res.data;
@@ -484,7 +484,7 @@ $http.get('/purchase?sort=createdAt DESC')
 
 **Using [sails.io.js](http://beta.sailsjs.org/#/documentation/reference/websockets/sails.io.js):**
 
-```
+```js
 io.socket.get('/purchase?sort=createdAt DESC', function (purchases) {
   console.log(purchases);
 }); 
@@ -492,7 +492,7 @@ io.socket.get('/purchase?sort=createdAt DESC', function (purchases) {
 
 **Using [cURL](http://en.wikipedia.org/wiki/CURL):**
 
-```
+```js
 curl http://localhost:1337/purchase?sort=createdAt%20DESC 
 ```
 
@@ -502,7 +502,7 @@ curl http://localhost:1337/purchase?sort=createdAt%20DESC
 >     
 >     
 >     
->     ```
+>     ```js
 >     $ sails new foo
 >     $ cd foo
 >     $ sails generate api purchase 
@@ -516,7 +516,7 @@ curl http://localhost:1337/purchase?sort=createdAt%20DESC
 
 Returns a single record from the model as a JSON Object.
 
-```
+```js
 GET /:model/:id 
 ```
 
@@ -544,7 +544,7 @@ Find the purchase with ID #1, E.g. `http://localhost:1337/purchase/1`
 
 #### Expected Response
 
-```
+```js
  {
    "amount": 49.99,
    "id": 1,
@@ -561,7 +561,7 @@ Find the purchase with ID #1, E.g. `http://localhost:1337/purchase/1`
 
 If the specified association is plural ("collection"), this action returns the list of associated records as a JSON array of objects. If the specified association is singular ("model"), this action returns the associated record as a JSON object.
 
-```
+```js
 GET /:model/:record/:association 
 ```
 
@@ -571,7 +571,7 @@ Populate the `cashier` who conducted purchase #47.
 
 **Using [jQuery](http://jquery.com/):**
 
-```
+```js
 $.get('/purchase/47/cashier', function (purchase) {
   console.log(purchase);
 }); 
@@ -579,7 +579,7 @@ $.get('/purchase/47/cashier', function (purchase) {
 
 **Using [Angular](https://angularjs.org/):**
 
-```
+```js
 $http.get('/purchase/47/cashier')
 .then(function (purchase) {
   console.log(purchase);
@@ -588,7 +588,7 @@ $http.get('/purchase/47/cashier')
 
 **Using [sails.io.js](http://beta.sailsjs.org/#/documentation/reference/websockets/sails.io.js):**
 
-```
+```js
 io.socket.get('/purchase/47/cashier', function (purchase) {
   console.log(purchase);
 }); 
@@ -596,13 +596,13 @@ io.socket.get('/purchase/47/cashier', function (purchase) {
 
 **Using [cURL](http://en.wikipedia.org/wiki/CURL):**
 
-```
+```js
 curl http://localhost:1337/purchase/47/cashier 
 ```
 
 Should return
 
-```
+```js
 {
   "amount": 99.99,
   "id": 47,
@@ -623,7 +623,7 @@ Should return
 >     
 >     
 >     
->     ```
+>     ```js
 >     $ sails new foo
 >     $ cd foo
 >     $ sails generate api purchase
@@ -642,7 +642,7 @@ Should return
 
 Removes an association between two records.
 
-```
+```js
 DELETE /:model/:record/:association/:record_to_remove 
 ```
 
@@ -658,7 +658,7 @@ Remove Dolly (employee #7) from the `employeesOfTheMonth` list of store #16.
 
 **Using [jQuery](http://jquery.com/):**
 
-```
+```js
 $.delete('/store/16/employeesOfTheMonth/7', function (purchases) {
   console.log(purchases);
 }); 
@@ -666,7 +666,7 @@ $.delete('/store/16/employeesOfTheMonth/7', function (purchases) {
 
 **Using [Angular](https://angularjs.org/):**
 
-```
+```js
 $http.delete('/store/16/employeesOfTheMonth/7')
 .then(function (purchases) {
   console.log(purchases);
@@ -675,7 +675,7 @@ $http.delete('/store/16/employeesOfTheMonth/7')
 
 **Using [sails.io.js](http://beta.sailsjs.org/#/documentation/reference/websockets/sails.io.js):**
 
-```
+```js
 io.socket.delete('/store/16/employeesOfTheMonth/7', function (purchases) {
   console.log(purchases);
 }); 
@@ -683,13 +683,13 @@ io.socket.delete('/store/16/employeesOfTheMonth/7', function (purchases) {
 
 **Using [cURL](http://en.wikipedia.org/wiki/CURL):**
 
-```
+```js
 curl http://localhost:1337/store/16/employeesOfTheMonth/7 -X "DELETE" 
 ```
 
 Should return store #16, the primary record:
 
-```
+```js
 {
   "employeesOfTheMonth": [],
   "name": "Dolly",
@@ -706,7 +706,7 @@ Should return store #16, the primary record:
 >     
 >     
 >     
->     ```
+>     ```js
 >     $ sails new foo
 >     $ cd foo
 >     $ sails generate api purchase
@@ -756,7 +756,7 @@ Change AppleJack's hobby to "kickin".
 
 #### JSON Request Body
 
-```
+```js
 {
   "hobby": "kickin"
 } 
@@ -764,7 +764,7 @@ Change AppleJack's hobby to "kickin".
 
 ### Expected Response
 
-```
+```js
 {
   "name": "AppleJack",
   "hobby": "kickin",
@@ -792,7 +792,7 @@ Give Pinkie Pie the pre-existing pet named "Bubbles" who has ID 15.
 
 #### JSON Request Body
 
-```
+```js
 {
   "id": 15
 } 
@@ -800,7 +800,7 @@ Give Pinkie Pie the pre-existing pet named "Bubbles" who has ID 15.
 
 #### Expected Response
 
-```
+```js
 {
   "name": "Pinkie Pie",
   "hobby": "kickin",
@@ -837,7 +837,7 @@ Remove Pinkie Pie's pet, "Gummy" (ID 12)
 
 #### JSON Request Body
 
-```
+```js
 {
   "id": 12
 } 
@@ -845,7 +845,7 @@ Remove Pinkie Pie's pet, "Gummy" (ID 12)
 
 #### Expected Response
 
-```
+```js
  {
   "name": "Pinkie Pie",
   "hobby": "ice skating",
@@ -898,7 +898,7 @@ Quietly lift your sails app (i.e. with logging silenced), and enter the [node RE
 
 ### Example
 
-```
+```js
 $ sails console
 
 info: Starting app in interactive mode...
@@ -921,19 +921,19 @@ Sails exposes the same [global variables](http://beta.sailsjs.org/#/documentatio
 > 
 > Instead, use lodash as `sails.util._`, e.g.:
 > 
-> ```
+> ```js
 > sails> sails.util._.keys(sails.config) 
 > ```
 > 
 > Or alternatively, build yourself a local variable to use for familiarity:
 > 
-> ```
+> ```js
 > sails> var lodash = _; 
 > ```
 > 
 > Then you can do:
 > 
-> ```
+> ```js
 > sails> lodash.keys(sails.config); 
 > ```
 
@@ -943,7 +943,7 @@ Sails exposes the same [global variables](http://beta.sailsjs.org/#/documentatio
 
 The format `Model.action(query).exec(console.log)` console.log is good for seeing the results.
 
-```
+```js
 sails> User.create({name: 'Brian', password: 'sailsRules'}).exec(console.log)
 undefined
 sails> null { name: 'Brian',
@@ -959,7 +959,7 @@ Pretty cool, it inserts it into the database. However, you might be noticing the
 
 In sails console, type in `sails` to view a list of sails properties. You can use this to learn more about sails, override properties, or check to see if you disabled globals.
 
-```
+```js
 sails> sails
   |>   [a lifted Sails app on port 1337]
 \___/  For help, see: http://links.sailsjs.org/docs
@@ -991,7 +991,7 @@ Attach the node debugger and lift the sails app; similar to running `node --debu
 
 ### Example
 
-```
+```js
 $ sails debug
 
 info: Running node-inspector on this app...
@@ -1062,7 +1062,7 @@ Run the Sails app in the current dir (if `node_modules/sails` exists, it will be
 
 ### Example
 
-```
+```js
 $ sails lift
 
 info: Starting app...
@@ -1121,7 +1121,7 @@ Get the current globally installed Sails version.
 
 ### Example
 
-```
+```js
 $ sails version
 0.10.0-rc5 
 ```
@@ -1198,13 +1198,13 @@ Contains an array of the "media types" this request (`req`) can accept (e.g. `te
 
 ### Usage
 
-```
+```js
 req.accepted; 
 ```
 
 ### Example
 
-```
+```js
 req.accepted;
 
 /*
@@ -1233,7 +1233,7 @@ This property is an array that contains the acceptable charsets specified by the
 
 ### Usage
 
-```
+```js
 req.acceptedCharsets; 
 ```
 
@@ -1243,7 +1243,7 @@ Useful for advanced content negotiation where a client may or may not support ce
 
 ### Example
 
-```
+```js
 req.acceptedCharsets;
 // -> ['utf-8', 'utf-16'] 
 ```
@@ -1262,7 +1262,7 @@ An array containing the "acceptable" response languages specified by the user ag
 
 ### Usage
 
-```
+```js
 req.acceptedLanguages; 
 ```
 
@@ -1274,7 +1274,7 @@ This method is used by Sails internally for its implementation of internationali
 
 ### Example
 
-```
+```js
 req.acceptedLanguages;
 // -> ['en-US', 'en'] 
 ```
@@ -1295,13 +1295,13 @@ Checks whether this request's stated list of "accepted" [media types](http://www
 
 ### Usage
 
-```
+```js
 req.accepts(type); 
 ```
 
 ### Example
 
-```
+```js
 req.accepts('application/json');
 // -> true
 req.accepts('json');
@@ -1322,7 +1322,7 @@ Returns whether this request (`req`) is able to handle a specified `characterSet
 
 ### Usage
 
-```
+```js
 req.acceptsCharset(characterSet); 
 ```
 
@@ -1334,7 +1334,7 @@ Useful for advanced content negotiation where a client may or may not support ce
 
 If a request is sent with a `"Accept-Charset: utf-8"` header:
 
-```
+```js
 req.acceptsCharset('utf-8');
 // -> true 
 ```
@@ -1353,7 +1353,7 @@ Returns whether this request (`req`) considers a certain `language` "acceptable"
 
 ### Usage
 
-```
+```js
 req.acceptsLanguage(language); 
 ```
 
@@ -1367,7 +1367,7 @@ This method is used by Sails internally for its implementation of internationali
 
 If a request is sent with a `"Accept-Charset: utf-8"` header:
 
-```
+```js
 req.acceptsCharset('utf-8');
 // -> true 
 ```
@@ -1388,7 +1388,7 @@ Returns the value of *all* parameters sent in the request, merged together into 
 
 ### Usage
 
-```
+```js
 req.allParams(); 
 ```
 
@@ -1396,7 +1396,7 @@ req.allParams();
 
 Update the product with the specified `sku`, setting new values using the parameters which were passed in:
 
-```
+```js
 var values = req.allParams();
 
 // Don't allow `price` or `isAvailable` to be edited.
@@ -1429,7 +1429,7 @@ By default, the request body can be url-encoded or stringified as JSON. Support 
 
 ### Usage
 
-```
+```js
 req.body; 
 ```
 
@@ -1447,7 +1447,7 @@ An object containing all of the [**unsigned cookies**](https://github.com/balder
 
 ### Usage
 
-```
+```js
 req.cookies; 
 ```
 
@@ -1455,7 +1455,7 @@ req.cookies;
 
 Assuming the request contained a cookie named "chocolatechip" with value "Yummy:
 
-```
+```js
 req.cookies.chocolatechip;
 // "Yummy" 
 ```
@@ -1470,7 +1470,7 @@ Returns a [readable Node stream](http://nodejs.org/api/stream.html#stream_class_
 
 ### Usage
 
-```
+```js
 req.file(field); 
 ```
 
@@ -1492,7 +1492,7 @@ When a multipart request hits your server, instead of writing temporary files to
 
 In a controller action or policy:
 
-```
+```js
 var SomeReceiver = require('../services/SomeReceiver');
 
 req.file('avatar').upload( SomeReceiver(), function (err, files) {
@@ -1523,13 +1523,13 @@ If the request wants "fresh" data, usually you'll want to `.find()` fresh data f
 
 ### Usage
 
-```
+```js
 req.fresh; 
 ```
 
 ### Example
 
-```
+```js
 if (req.fresh) {
   // The user-agent is asking for a more up-to-date version of the requested resource.
   // Let's hit the database to get some stuff and send it back.
@@ -1550,7 +1550,7 @@ Returns the value of the specified `header` field in this request (`req`). Note 
 
 ### Usage
 
-```
+```js
 req.get(header); 
 ```
 
@@ -1558,7 +1558,7 @@ req.get(header);
 
 Assuming `req` contains a header named 'myField' with value 'cat':
 
-```
+```js
 req.get('myField');
 // -> cat 
 ```
@@ -1578,7 +1578,7 @@ The hostname of this request, without the port number, as specified by its "Host
 
 ### Usage
 
-```
+```js
 req.host; 
 ```
 
@@ -1586,7 +1586,7 @@ req.host;
 
 If this request's "Host" header was: "ww3.staging.ibm.com:1492":
 
-```
+```js
 req.host;
 // -> "ww3.staging.ibm.com" 
 ```
@@ -1605,13 +1605,13 @@ If the `trust proxy` option is disabled, this is the "remote address". Otherwise
 
 ### Usage
 
-```
+```js
 req.ip; 
 ```
 
 ### Example
 
-```
+```js
 req.ip;
 // -> "127.0.0.1" 
 ```
@@ -1626,7 +1626,7 @@ If "trust proxy" is enabled, this variable contains the IP addresses in this req
 
 ### Usage
 
-```
+```js
 req.ips; 
 ```
 
@@ -1634,7 +1634,7 @@ req.ips;
 
 If a request contains a header: "X-Forwarded-For: client, proxy1, proxy2":
 
-```
+```js
 req.ips;
 // -> ["client", "proxy1", "proxy2"]`
 
@@ -1653,7 +1653,7 @@ Specifically, this method matches the given `type` against this request's "Conte
 
 ### Usage
 
-```
+```js
 req.is(type); 
 ```
 
@@ -1661,7 +1661,7 @@ req.is(type);
 
 Assuming the request contains a "Content-Type" header, "text/html; charset=utf-8":
 
-```
+```js
 req.is('html');
 // -> true
 req.is('text/html');
@@ -1680,13 +1680,13 @@ A flag indicating whether or not this request (`req`) originated from a Socket.i
 
 ### Usage
 
-```
+```js
 req.isSocket; 
 ```
 
 ### Example
 
-```
+```js
 if (req.isSocket){
   // You're a socket.  Do cool socket stuff.
 }
@@ -1710,7 +1710,7 @@ The request method (aka "verb".)
 
 ### Usage
 
-```
+```js
 req.method; 
 ```
 
@@ -1718,7 +1718,7 @@ req.method;
 
 If a client sends a POST request to `/product`:
 
-```
+```js
 req.method;
 // -> "POST" 
 ```
@@ -1737,7 +1737,7 @@ Returns the value of the parameter with the specified name.
 
 ### Usage
 
-```
+```js
 req.param(name); 
 ```
 
@@ -1756,7 +1756,7 @@ req.param(name);
 
 Consider a route (`POST /product/:sku`) which points to a blueprint, controller, or policy with the following code:
 
-```
+```js
 req.param('sku');
 // -> 123 
 ```
@@ -1784,7 +1784,7 @@ For example if you have the route `/user/:name`, then the "name" from the URL pa
 
 ### Usage
 
-```
+```js
 req.params; 
 ```
 
@@ -1802,7 +1802,7 @@ The URL pathname from the [request URL string](http://nodejs.org/api/http.html#h
 
 ### Usage
 
-```
+```js
 req.path; 
 ```
 
@@ -1814,7 +1814,7 @@ Assuming a client sends the following request:
 
 `req.path` will be defined as follows:
 
-```
+```js
 req.path;
 // -> "/donor/37" 
 ```
@@ -1829,13 +1829,13 @@ The protocol used to send this request (`req`).
 
 ### Usage
 
-```
+```js
 req.protocol; 
 ```
 
 ### Example
 
-```
+```js
 switch (req.protocol) {
   case 'http':
     // this is an HTTP request
@@ -1856,7 +1856,7 @@ An object containing the parsed query-string, defaulting to `{}`.
 
 ### Usage
 
-```
+```js
 req.query; 
 ```
 
@@ -1864,7 +1864,7 @@ req.query;
 
 If the request is `GET /search?q=mudslide`:
 
-```
+```js
 req.query.q
 // -> "mudslide" 
 ```
@@ -1879,7 +1879,7 @@ Indicates whether or not the request was sent over a secure [TLS](http://en.wiki
 
 ### Usage
 
-```
+```js
 req.secure; 
 ```
 
@@ -1895,7 +1895,7 @@ An object containing all of the [**signed cookies**](https://github.com/balderda
 
 ### Usage
 
-```
+```js
 req.signedCookies; 
 ```
 
@@ -1903,7 +1903,7 @@ req.signedCookies;
 
 Assuming the request contained a signed cookie named "chocolatechip" with value "Yummy:
 
-```
+```js
 req.cookies.chocolatechip;
 // "Yummy" 
 ```
@@ -1918,7 +1918,7 @@ If the current Request (`req`) originated from a connected Socket.io client, `re
 
 ### Usage
 
-```
+```js
 req.socket; 
 ```
 
@@ -1936,7 +1936,7 @@ Sails also provides direct, low-level access to all of the other methods and pro
 
 ### Example
 
-```
+```js
 if (req.isSocket) {
   // Low-level Socket.io methods and properties accessible on req.socket.
   // ...
@@ -1959,7 +1959,7 @@ An array of all the subdomains in this request's URL.
 
 ### Usage
 
-```
+```js
 req.subdomains; 
 ```
 
@@ -1967,7 +1967,7 @@ req.subdomains;
 
 If the requested URL was "[`ww3.staging.ibm.com`](https://ww3.staging.ibm.com)":
 
-```
+```js
 req.subdomains;
 // -> ['ww3', 'staging'] 
 ```
@@ -1980,7 +1980,7 @@ req.subdomains;
 
 Like [`req.path`](http://sailsjs.org/#/documentation/reference/req/req.path.html), but also includes the query string suffix.
 
-```
+```js
 req.url;
 
 // => "/search?q=worlds%20largest%20dogs" 
@@ -2003,7 +2003,7 @@ A flag indicating whether the requesting client would prefer a JSON response (as
 
 ### Usage
 
-```
+```js
 req.wantsJSON; 
 ```
 
@@ -2019,7 +2019,7 @@ This all makes your app more future-proof and less brittle: as best-practices fo
 
 ### Example
 
-```
+```js
 if (req.wantsJSON) {
   return res.json(data);
 }
@@ -2055,13 +2055,13 @@ A flag indicating whether the current request (`req`) appears to be an AJAX requ
 
 ### Usage
 
-```
+```js
 req.xhr; 
 ```
 
 ### Example
 
-```
+```js
 if (req.xhr) {
   // Yup, it's AJAX alright.
 } 
@@ -2132,13 +2132,13 @@ Sets the "Content-Disposition" header of the current response to "attachment". I
 
 ### Usage
 
-```
+```js
 res.attachment([filename]); 
 ```
 
 ### Example
 
-```
+```js
 res.attachment();
 // -> response header will contain:
 //   Content-Disposition: attachment
@@ -2159,7 +2159,7 @@ This method is used to send a [400](http://en.wikipedia.org/wiki/List_of_HTTP_st
 
 ### Usage
 
-```
+```js
 return res.badRequest(); 
 ```
 
@@ -2184,7 +2184,7 @@ By default, it works as follows:
 
 Using the default view:
 
-```
+```js
 if ( req.param('amount') < 500 )
   return res.badRequest(
     'Transaction limit exceeded. Please try again with an amount less than $500.'
@@ -2194,7 +2194,7 @@ if ( req.param('amount') < 500 )
 
 With a custom view:
 
-```
+```js
 if ( req.param('amount') < 500 )
   return res.badRequest(
     'Transaction limit exceeded. Please try again with an amount less than $500.',
@@ -2220,7 +2220,7 @@ Clears cookie (`name`) in the response.
 
 ### Usage
 
-```
+```js
 res.clearCookie(name [,options]); 
 ```
 
@@ -2230,7 +2230,7 @@ The path option defaults to "/".
 
 ### Example
 
-```
+```js
 res.cookie('name', 'tobi', { path: '/admin' });
 res.clearCookie('name', { path: '/admin' }); 
 ```
@@ -2245,7 +2245,7 @@ Sets a cookie with name (`name`) and value (`value`) to be sent along with the r
 
 ### Usage
 
-```
+```js
 res.cookie(name, value [,options]); 
 ```
 
@@ -2255,26 +2255,26 @@ The "path" option defaults to "/".
 
 The "maxAge" option is a convenience option for setting "expires" relative to the current time in milliseconds. The following is equivalent to the previous example.
 
-```
+```js
 res.cookie('rememberme', '1', { maxAge: 900000, httpOnly: true }) 
 ```
 
 An object may be passed which is then serialized as JSON, which is automatically parsed by the bodyParser() middleware.
 
-```
+```js
 res.cookie('cart', { items: [1,2,3] });
 res.cookie('cart', { items: [1,2,3] }, { maxAge: 900000 }); 
 ```
 
 Signed cookies are also supported through this method. Simply pass the signed option. When given res.cookie() will use the secret passed to express.cookieParser(secret) to sign the value.
 
-```
+```js
 res.cookie('name', 'tobi', { signed: true }); 
 ```
 
 ### Example
 
-```
+```js
 res.cookie('name', 'tobi', {
   domain: '.example.com',
   path: '/admin',
@@ -2297,7 +2297,7 @@ This method is used to send a [403](http://en.wikipedia.org/wiki/List_of_HTTP_st
 
 ### Usage
 
-```
+```js
 return res.forbidden(); 
 ```
 
@@ -2322,7 +2322,7 @@ By default, it works as follows:
 
 Using the default view:
 
-```
+```js
 if ( !req.session.canEditSalesforceLeads ) {
   return res.forbidden('Write access required');
 } 
@@ -2330,7 +2330,7 @@ if ( !req.session.canEditSalesforceLeads ) {
 
 With a custom view:
 
-```
+```js
 if ( !req.session.canEditSalesforceLeads ) {
   return res.forbidden(
     ''Write access required'',
@@ -2355,13 +2355,13 @@ Returns the current value of the specified response header (`header`).
 
 ### Usage
 
-```
+```js
 res.get(header); 
 ```
 
 ### Example
 
-```
+```js
 res.get('Content-Type');
 // -> "text/plain" 
 ```
@@ -2380,7 +2380,7 @@ Sends a JSON response composed of a stringified version of the specified `data`.
 
 ### Usage
 
-```
+```js
 return res.json([statusCode, ] data); 
 ```
 
@@ -2390,7 +2390,7 @@ This method is identical to res.send() when an object or array is passed, howeve
 
 ### Example
 
-```
+```js
 res.json(null)
 res.json({ user: 'tobi' })
 res.json(500, { error: 'message' }) 
@@ -2413,13 +2413,13 @@ Identical to `res.json()`, except if a "callback" parameter exists, a [JSONP](ht
 
 ### Usage
 
-```
+```js
 return res.jsonp([statusCode, ] data); 
 ```
 
 ### Example
 
-```
+```js
 return res.jsonp({
   users: [{
     name: 'Thelma',
@@ -2450,7 +2450,7 @@ res.location(url);
 
 ### Example
 
-```
+```js
 res.location('/foo/bar');
 res.location('foo/bar');
 res.location('http://example.com');
@@ -2472,7 +2472,7 @@ Given an error (`err`), send an appropriate error response back down to the clie
 
 ### Usage
 
-```
+```js
 return res.negotiate(err); 
 ```
 
@@ -2491,7 +2491,7 @@ The determination is made based on `err`'s "status" property. If a more specific
 
 ### Example
 
-```
+```js
 // Add Fido's birthday to the database:
 Pet.update({name: 'fido'})
   .set({birthday: new Date('01/01/2010')})
@@ -2519,7 +2519,7 @@ When called manually from your app code, this method is normally used to indicat
 
 ### Usage
 
-```
+```js
 return res.notFound(); 
 ```
 
@@ -2544,13 +2544,13 @@ By default, it works as follows:
 
 Using the default view:
 
-```
+```js
 return res.notFound(); 
 ```
 
 With a custom view:
 
-```
+```js
 Pet.findOne()
 .where(name: 'fido')
 .exec(function(err, fido) {
@@ -2576,7 +2576,7 @@ Send a 200 ("OK") response back down to the client with the provided data. Perfo
 
 ### Usage
 
-```
+```js
 return res.ok(); 
 ```
 
@@ -2599,7 +2599,7 @@ By default, it works as follows:
 
 ### Example
 
-```
+```js
 return res.ok({
   name: 'Loïc',
   occupation: 'developer'
@@ -2608,7 +2608,7 @@ return res.ok({
 
 If the request originated from a socket or AJAX request, the response sent from the usage above would contain the following JSON:
 
-```
+```js
 {
   "name": "Loïc",
   "occupation": "developer"
@@ -2617,7 +2617,7 @@ If the request originated from a socket or AJAX request, the response sent from 
 
 Alternatively, if the code that calls `res.ok()` was located somewhere where a view file could be guessed, that view would be served, with with Loïc available as the `data` local. For example if `res.ok()` was called in `UserController.update`, then we might create the following view as `views/user/update.ejs`:
 
-```
+```js
 <input type="text" placeholder="Name" value="<%= data.name %>"/>
 <input type="text" placeholder="Occupation" value="<%= data.occupation %>"/> 
 ```
@@ -2626,7 +2626,7 @@ If the code that calls `res.ok()` is not in a controller action, a conventional 
 
 Finally, if a custom `pathToView` is provided as the second argument, Sails will always use that view instead of guessing, e.g. the following usage will compile and respond with a view located in `views/user/detail.ejs`:
 
-```
+```js
 return res.ok({
   name: 'Loïc',
   occupation: 'developer'
@@ -2649,7 +2649,7 @@ Redirect the requesting user-agent to the given absolute or relative url.
 
 ### Usage
 
-```
+```js
 return res.redirect(url); 
 ```
 
@@ -2663,25 +2663,25 @@ return res.redirect(url);
 
 Sails/Express/Koa/Connect support a few forms of redirection, first being a fully qualified URI for redirecting to a different domain:
 
-```
+```js
 return res.redirect('http://google.com'); 
 ```
 
 The second form is the domain-relative redirect. For example, if you were on [`example.com/admin/post/new`](http://example.com/admin/post/new), the following redirect to `/admin` would land you at [`example.com/admin`](http://example.com/admin):
 
-```
+```js
 return res.redirect('/checkout'); 
 ```
 
 Pathname relative redirects are also possible. If you were on [`example.com/admin/post/new`](http://example.com/admin/post/new), the following redirect would land you at http//example.com/admin/post:
 
-```
+```js
 return res.redirect('..'); 
 ```
 
 The final special-case is a back redirect, which allows you to redirect a request back where it came from using the "Referer" (or "Referrer") header (if omitted, redirects to `/` by default)
 
-```
+```js
 return res.redirect('back'); 
 ```
 
@@ -2706,7 +2706,7 @@ This method is used in the underlying implementation of most of the other termin
 
 ### Usage
 
-```
+```js
 return res.send([statusCode,] body); 
 ```
 
@@ -2716,27 +2716,27 @@ This method performs a myriad of useful tasks for simple non-streaming responses
 
 When a Buffer is given the Content-Type is set to "application/octet-stream" unless previously defined as shown below:
 
-```
+```js
 res.set('Content-Type', 'text/html');
 res.send(new Buffer('some html')); 
 ```
 
 When a String is given the Content-Type is set defaulted to "text/html":
 
-```
+```js
 res.send('some html'); 
 ```
 
 When an Array or Object is given Express will respond with the JSON representation:
 
-```
+```js
 res.send({ user: 'tobi' })
 res.send([1,2,3]) 
 ```
 
 Finally when a Number is given without any of the previously mentioned bodies, then a response body string is assigned for you. For example 200 will respond will the text "OK", and 404 "Not Found" and so on.
 
-```
+```js
 res.send(200)
 res.send(404)
 res.send(500) 
@@ -2744,7 +2744,7 @@ res.send(500)
 
 ### Example
 
-```
+```js
 res.send(new Buffer('whoop'));
 res.send({ some: 'json' });
 res.send('some html');
@@ -2767,7 +2767,7 @@ This method is used to send a [500](http://en.wikipedia.org/wiki/List_of_HTTP_st
 
 ### Usage
 
-```
+```js
 return res.serverError(); 
 ```
 
@@ -2792,13 +2792,13 @@ By default, it works as follows:
 
 Using the default error view:
 
-```
+```js
 return res.serverError('Salesforce could not be reached'); 
 ```
 
 With a custom view:
 
-```
+```js
 return res.serverError(
   'Salesforce could not be reached',
   'salesforce/leads/edit'
@@ -2823,19 +2823,19 @@ Alternatively, you can pass in a single object argument (`headers`) to set multi
 
 ### Usage
 
-```
+```js
 res.set(header, value); 
 ```
 
 -or-
 
-```
+```js
 res.set(headers); 
 ```
 
 ### Example
 
-```
+```js
  res.set('Content-Type', 'text/plain');
 
 res.set({
@@ -2855,13 +2855,13 @@ Set the status code of this response.
 
 ### Usage
 
-```
+```js
 res.status(200); 
 ```
 
 ### Example
 
-```
+```js
 res.status(404);
 res.send('oops'); 
 ```
@@ -2883,13 +2883,13 @@ This method is pretty forgiving (see examples below), but note that if `type` co
 
 ### Usage
 
-```
+```js
 res.type(type); 
 ```
 
 ### Example
 
-```
+```js
 res.type('.html');
 res.type('html');
 res.type('json');
@@ -2907,7 +2907,7 @@ Respond with an HTML page.
 
 ### Usage
 
-```
+```js
 return res.view(pathToView, locals); 
 ```
 
@@ -2934,21 +2934,21 @@ Consider a conventionally configured Sails app with a call to `res.view()` in th
 
 With no `pathToView` argument, `res.view()` will decide the path by combining the identity of the controller (`oven`) and the name of the action (`cook`):
 
-```
+```js
 return res.view();
 // -> responds with `views/oven/cook.ejs` 
 ```
 
 Here's how you would load the same view using an explicit `pathToView`:
 
-```
+```js
 return res.view('oven/cook');
 // -> responds with `views/oven/cook.ejs` 
 ```
 
 Finally, here's a more involved example demonstrating how `res.view` can be combined with Waterline queries:
 
-```
+```js
 // Find the 5 hottest oven brands on the market
 Oven.find().sort('heat ASC').exec(function (err, ovens){
   if (err) return res.serverError(err);
@@ -3028,7 +3028,7 @@ This is an asynchronous boostrap function that runs before your Sails app gets l
 
 ### Description
 
-```
+```js
 module.exports.bootstrap = function (cb) {
 
   // It's very important to trigger this callback method when you are finished
@@ -3059,7 +3059,7 @@ Here is an example adapter configuration file
 
 `myApp/config/connections.js`
 
-```
+```js
  module.exports.connections = {
   // sails-disk is installed by default.
   localDiskDb: {
@@ -3073,7 +3073,7 @@ Here is an example adapter configuration file
 
 If you wanted to set `memory` as the default adapter for your models, you would do this. `myApp/config/models.js`
 
-```
+```js
 module.exports.models = {
 
   connection: 'memory'
@@ -3086,7 +3086,7 @@ module.exports.models = {
 
 You can set up more than one connection using the same adapter. For example, if you had two mysql databases, you could configure them as:
 
-```
+```js
  module.exports.connections = {
   localMysql: {
     adapter: 'sails-mysql',
@@ -3130,7 +3130,7 @@ These options are conventionally set in the **config/cors.js** configuration fil
 
 The following will allow cross-origin AJAX GET, PUT and POST requests to `/foo/bar` from sites hosted `http://foobar.com` and `https://owlhoot.com`. DELETE requests, or requests from sites on any other domains, will be blocked by the browser.
 
-```
+```js
 '/foo/bar': {
   target: 'FooController.bar',
   cors: {
@@ -3253,7 +3253,7 @@ Configuration for the instance of the [Sails logger](http://beta.sailsjs.org/#/d
 
 Your default project-wide **model settings**. Can also be overridden on a per-model basis by providing a top-level property with the same name in that model definition. For more details, see the conceptual docs on Model Settings. These options are conventionally specified in the config/models.js configuration file.
 
-```
+```js
 sails.config.models; 
 ```
 
@@ -3295,7 +3295,7 @@ Your app's ACL (access control list) is located in **config/policies.js**.
 
 To apply a policy to a specific action in particular, you should specify it on the right-hand side of that action:
 
-```
+```js
 {
   ProfileController: {
       edit: 'isLoggedIn'
@@ -3309,7 +3309,7 @@ To set the default policy mapping for a controller, use the `*` notation:
 
 > **Note:** Default policy mappings do not "cascade" or "trickle down." Specified mappings for the controller's actions will override the default mapping. In this example, `isLoggedIn` is overriding `false`.
 
-```
+```js
 {
   ProfileController: {
     '*': false,
@@ -3322,7 +3322,7 @@ To set the default policy mapping for a controller, use the `*` notation:
 
 > **Note:** Global policy mappings do not "cascade" or "trickle down" either. Specified mappings, whether they're default controller mappings or for specific actions, will **ALWAYS** override the global mapping. In this example, `isLoggedIn` is overriding `false`.
 
-```
+```js
 {
 
   // Anything you don't see here (the unmapped stuff) is publicly accessible
@@ -3343,7 +3343,7 @@ To set the default policy mapping for a controller, use the `*` notation:
 
 Allow public access to the mapped controller/action. This will allow any request to get through, no matter what.
 
-```
+```js
 module.exports = {
   UserController: {
 
@@ -3358,7 +3358,7 @@ module.exports = {
 
 **NO** access to the mapped controller/action. No requests get through. Period.
 
-```
+```js
 module.exports = {
   MathController: {
 
@@ -3374,7 +3374,7 @@ module.exports = {
 
 You can apply one or more policies to a given controller or action. Any file in your `/policies` folder (e.g. `authenticated.js`) is referable in your ACL (`config/policies.js`) by its filename minus the extension, (e.g. `'authenticated'`).
 
-```
+```js
 module.exports = {
   FileController: {
     upload: ['isAuthenticated', 'canWrite', 'hasEnoughSpace']
@@ -3386,7 +3386,7 @@ module.exports = {
 
 To apply two or more policies to a given action, (order matters!) you can specify an array, each referring to a specific policy.
 
-```
+```js
 UserController: {
     lock: ['isLoggedIn', 'isAdmin']
 } 
@@ -3402,7 +3402,7 @@ In each of the policies, the next policy in the chain will only be run if `next(
 
 Configuration for custom (aka "explicit") routes. `sails.config.routes` consists of a single Javascript object whose keys are URL paths (the "address") and whose values are one of several types of route handler configurations (the "target"), for example:
 
-```
+```js
 module.exports.routes = {
 
     "GET /": {view: "homepage"},
@@ -3435,13 +3435,13 @@ Session secret is automatically generated when your new app is created. Replace 
 
 In production, uncomment the following line to set up a shared redis session store that can be shared across multiple Sails.js servers.
 
-```
+```js
 adapter: 'redis', 
 ```
 
 The following values are optional, if no options are set a redis instance running on localhost is expected. Read more about options at: [`github.com/visionmedia/connect-redis`](https://github.com/visionmedia/connect-redis)
 
-```
+```js
  host: 'localhost',
         port: 6379,
         ttl: <redis session TTL in seconds>,
@@ -3452,7 +3452,7 @@ The following values are optional, if no options are set a redis instance runnin
 
 Uncomment the following lines to use your Mongo adapter as a session store
 
-```
+```js
  adapter: 'mongo',
 
         host: 'localhost',
@@ -3463,7 +3463,7 @@ Uncomment the following lines to use your Mongo adapter as a session store
 
 Optional Values:
 
-```
+```js
  // Note: url will override other connection settings
         // url: 'mongodb://user:pass@host:port/database/collection',
 
@@ -3579,7 +3579,7 @@ If you need to disable global variables in Sails, you can still use `sails.model
 
 A model's `identity` is different than its `globalId`. The `globalId` is determined automatically from the name of the model, whereas the `identity` is the all-lowercased version. For instance, you the model defined in `api/models/Kitten.js` has a globalId of `Kitten`, but its identity is `kitten`. For example:
 
-```
+```js
 // Kitten === sails.models.kitten
 sails.models.kitten.find().exec(function (err, allTheKittens) {
   // We also could have just used `Kitten.find().exec(...)`
@@ -3617,7 +3617,7 @@ Returns the number of records in your database that meet the given search criter
 
 ### Example Usage
 
-```
+```js
 User.count({name:'Flynn'}).exec(function countCB(error, found) {
   console.log('There are ' + found + ' users called "Flynn"');
 
@@ -3664,7 +3664,7 @@ Creates a new instance of this model in the database.
 
 ### Example Usage
 
-```
+```js
 // create a new record with name 'Walter Jr'
 
 User.create({name:'Walter Jr'}).exec(function createCB(err,created){
@@ -3709,7 +3709,7 @@ Destroys all records in your database that match the given criteria.
 
 ### Example Usage
 
-```
+```js
 User.destroy({name:'Flynn'}).exec(function deleteCB(err){
   console.log('The record has been deleted');
   });
@@ -3756,7 +3756,7 @@ Finds and returns all records that meet the criteria object(s) that you pass it.
 
 ### Example Usage
 
-```
+```js
 User.find({}).exec(function findCB(err,found){
   while (found.length)
     console.log('Found User with name '+found.pop().name)
@@ -3806,7 +3806,7 @@ This finds and returns a single record that meets the criteria.
 
 ### Example Usage
 
-```
+```js
 User.findOne({name:'Jessie'}).exec(function findOneCB(err,found){
   console.log('We found '+found.name);
   });
@@ -3856,7 +3856,7 @@ Checks for the existence of the record in the first parameter. If it can't be fo
 
 ### Example Usage
 
-```
+```js
 User.findOrCreate({name:'Walter'},{name:'Jessie'}).exec(function createFindCB(err,record){
   console.log('What\'s cookin\' '+record.name+'?');
   });
@@ -3891,7 +3891,7 @@ Note that `sails-mongo` maintains a single Mongo connection for each of your con
 
 ### Example
 
-```
+```js
 Pet.native(function(err, collection) {
   if (err) return res.serverError(err);
 
@@ -3926,7 +3926,7 @@ Source: [`gist.github.com/mikermcneil/483987369d54512b6104`](https://gist.github
 
 ### Example
 
-```
+```js
 Pet.query('SELECT pet.name FROM pet', function(err, results) {
   if (err) return res.serverError(err);
   return res.ok(results);
@@ -3973,7 +3973,7 @@ This method uses a [node write stream](http://nodejs.org/api/stream.html) to pip
 
 UsersController.js
 
-```
+```js
 module.exports = {
 
   testStream: function(req,res){
@@ -3998,7 +3998,7 @@ module.exports = {
 
 views/users/testSocket.ejs
 
-```
+```js
 <script type="text/javascript">
 window.onload = function startListening(){
     socket.on('gotUser',function(data){
@@ -4049,7 +4049,7 @@ Updates existing records in the database that match the specified criteria.
 
 ### Example Usage
 
-```
+```js
 User.update({name:'Walter Jr'},{name:'Flynn'}).exec(function afterwards(err,updated){
 
   if (err) {
@@ -4087,7 +4087,7 @@ The type of a populated value is either:
 
 For example, assuming we're dealing with orders of adorable wolf puppies:
 
-```
+```js
 Order.find()
 .populate('buyers')  // a "collection" association
 .populate('seller')  // a "model" association
@@ -4117,13 +4117,13 @@ Changes to populated values are persisted (i.e. saved to the database) by callin
 
 Changing or remove the linked record of a "model" association can be accomplished by simply setting the property directly on the original record:
 
-```
+```js
 orders[1].seller = { corporateName: 'Wolf Orphanage' }; 
 ```
 
 "collection" associations, on the other hand, *do* have a couple of special (non-enumerable) methods for associating and disassociating linked records. However, `.save()` must still be called on the original record in order for changes to be persisted to the database.
 
-```
+```js
 orders[1].buyers.add({ name: 'Jon Snow' });
 orders[1].save(function (err) { ... }); 
 ```
@@ -4132,7 +4132,7 @@ orders[1].save(function (err) { ... });
 
 Finally, to put it all together:
 
-```
+```js
 Order.find()
 .populate('buyers')
 .exec(function (err, orders){
@@ -4174,7 +4174,7 @@ Used to add records to the join table that is automatically generated during a M
 
 ### Example Usage
 
-```
+```js
 User.find({name:'Mike'}).populate('pets').exec(function(e,r){
   r[0].pets.add(7);
   r[0].save(function(err,res){
@@ -4241,7 +4241,7 @@ Used to remove records from the join table that is automatically generated durin
 
 ### Example Usage
 
-```
+```js
  User.find({name:'Mike'}).populate('pets').exec(function(e,r){
   r[0].pets.remove(7);
   r[0].save(console.log)
@@ -4288,7 +4288,7 @@ Used to remove records from the join table that is automatically generated durin
 
 Chainable deferred objects returned from Waterline model methods like `.find()` and `.create()`.
 
-```
+```js
 var query = Stuff.find(); 
 ```
 
@@ -4300,7 +4300,7 @@ The primary purpose of Waterline query instances is to provide a convenient, cha
 
 In addition to the `.exec()` method, Waterline queries implement a partial integration with the [q](https://github.com/kriskowal/q) promise library, exposing `.then()` and `.catch()` methods.
 
-```
+```js
 Stuff.find()
 .then(function (allTheStuff) {...})
 .catch(function (err) {...}); 
@@ -4308,7 +4308,7 @@ Stuff.find()
 
 If you are a fan of promises, and have a reasonable amount of experience with them, you should have no problem working with this interface. However if you are not very familiar with promises, or don't care one way or another, you will probably have an easier time working with `.exec()`, which uses standard Node.js callback conventions.
 
-```
+```js
 Stuff.find()
 .exec(function (err, allTheStuff) {...}) 
 ```
@@ -4317,7 +4317,7 @@ Stuff.find()
 
 When you **execute** a query, a lot happens:
 
-```
+```js
 Zookeeper.find().exec(function (err, zookeepers){
   // would you look at all those zookeepers?
 }); 
@@ -4358,7 +4358,7 @@ This is run at the end of a chain of stringable methods. It signals the adapter 
 
 ### Example Usage
 
-```
+```js
 // refer to any of the examples above 
 ```
 
@@ -4390,7 +4390,7 @@ This is run at the end of a chain of stringable methods. It signals the adapter 
 
 ### Example Usage
 
-```
+```js
 var myQuery = User.find();
 myQuery.limit(12);
 
@@ -4430,7 +4430,7 @@ This chainable method is used between .find()/.update() and .exec() in order to 
 
 ### Example Usage
 
-```
+```js
  User.find({name:'Mike'}).exec(function(e,r){
   console.log(r[0].toJSON())
 })
@@ -4520,7 +4520,7 @@ This chainable method is used between .find()/.update() and .exec() in order to 
 
 ### Example Usage
 
-```
+```js
  User.find({name:'Mike'}).exec(function(e,r){
   console.log(r[0].toJSON())
 })
@@ -4612,7 +4612,7 @@ User.find({name:'Mike'}).populateAll({color:'pink'}).exec(function(e,r){
 
 ### Example Usage
 
-```
+```js
 var myQuery = User.find();
 myQuery.skip(12);
 
@@ -4647,7 +4647,7 @@ myQuery.exec(function callBack(err,results){
 
 ### Example Usage
 
-```
+```js
 var myQuery = User.find();
 
 var sortString= 'name ASC';
@@ -4694,7 +4694,7 @@ myQuery.exec(function callBack(err,results){
 
 ### Example Usage
 
-```
+```js
 var myQuery = User.find();
 myQuery.where({'name':{startsWith:'W'}});
 
@@ -4719,7 +4719,7 @@ myQuery.exec(function callBack(err,results){
 
 A record is a uniquely identifiable object that corresponds 1-to-1 with a database entry; e.g. a row in Oracle/MSSQL/PostgreSQL/MySQL, a document in MongoDB, or a hash in Redis.
 
-```
+```js
 Order.findOne().exec(function (err, order){
   var record = order;
 }); 
@@ -4756,7 +4756,7 @@ The `save()` method updates your record in the database using the current attrib
 
 ### Example Usage
 
-```
+```js
 User.find().exec(
   function(err,myRecords){
 
@@ -4805,7 +4805,7 @@ This method also returns a cloned model instance. This one however includes all 
 
 ### Example Usage
 
-```
+```js
 User.find().exec(
   function(err,myRecord){
     var datUser = myRecord.pop().toObject();
@@ -4834,7 +4834,7 @@ User.find().exec(
 
 For model
 
-```
+```js
 module.exports = {
   attributes: {
     name: 'string',
@@ -4922,7 +4922,7 @@ Checks the current keys/values on the record against the validations specified i
 
 ### Example Usage
 
-```
+```js
 User.find().exec(
   function(err,myRecords){
 
@@ -4941,7 +4941,7 @@ User.find().exec(
 
 For model
 
-```
+```js
 module.exports = {
 
   attributes: {
@@ -4988,7 +4988,7 @@ For apps that rely heavily on real-time client-server communication--for example
 
 While you are free to use any Javascript library to listen for socket events on the client, Sails does provide its own Socket Client as a convenient way to communicate with the server. Using the Sails socket client makes listening for resourceful pubsub events as easy as:
 
-```
+```js
 io.socket.on("<model name>", listenerFunction) 
 ```
 
@@ -4996,13 +4996,13 @@ io.socket.on("<model name>", listenerFunction)
 
 Let’s say you have a model named `User` in your app, with a single “name” attribute. First, we’ll add a listener for “user” events:
 
-```
+```js
 io.socket.on("user", function(event){console.log(event);}) 
 ```
 
 This will log any notifications about `User` models to the console. However, we won’t receive any such messages until we *subscribe* to the existing `User` model instances. If you’re using the default blueprints, you can subscribe by making a socket request from the client to `/user`:
 
-```
+```js
 io.socket.get("/user", function(resData, jwres) {console.log(resData);}) 
 ```
 
@@ -5010,13 +5010,13 @@ This requests the current list of users from the Sails server, and subscribes th
 
 It’s important to note that in order for the subscription to take place, the `/user` request must be made via a websocket call, *not* a regular HTTP request. That is, using an AJAX request (e.g. `jQuery.get("/user")`) will *not* result in the client being subscribed to resourceful pubsub messages about `User`. However, once the subscription is made, *any* changes to models--whether they be the result of a socket call, an AJAX request, even a cURL request from the command line--will cause the client to receive a notification. Continuing with the above example, if you were to open up a new browser window and go to the following URL:
 
-```
+```js
 /user/create?name=joe 
 ```
 
 You would see something like the following in the console of the first window:
 
-```
+```js
 {
     data: {
         createdAt: "2014-08-01T05:50:19.855Z"
@@ -5145,7 +5145,7 @@ If this argument is included then the socket attached to that request will *not*
 
 UsersController.js
 
-```
+```js
 module.exports = {
 
   testSocket: function(req,res){
@@ -5177,7 +5177,7 @@ module.exports = {
 
 views/users/testSocket.ejs
 
-```
+```js
  <script type="text/javascript"> window.onload = function subscribeAndListen(){
     // When the document loads, send a request to users.testSocket
     // The controller code will subscribe you to the model 'users'
@@ -5243,7 +5243,7 @@ If this is set, it is expected to be a representation of the model before it was
 
 UsersController.js
 
-```
+```js
 module.exports = {
 
   testSocket: function(req,res){
@@ -5279,7 +5279,7 @@ module.exports = {
 
 views/users/testSocket.ejs
 
-```
+```js
  <script type="text/javascript"> window.onload = function subscribeAndListen(){
     // When the document loads, send a request to users.testSocket
     // The controller code will subscribe you to all of the 'users' model instances (records)
@@ -5398,7 +5398,7 @@ The default implementation of `publishUpdate` will, if `options.previous` is pre
 
 UsersController.js
 
-```
+```js
 module.exports = {
 
   testSocket: function(req,res){
@@ -5431,7 +5431,7 @@ module.exports = {
 
 views/users/testSocket.ejs
 
-```
+```js
 <script type="text/javascript"> window.onload = function subscribeAndListen(){
     // When the document loads, send a request to users.testSocket
     // The controller code will subscribe you to all of the 'users' model instances (records)
@@ -5490,7 +5490,7 @@ You can omit `context` to subscribe a socket to the default contexts for that mo
 
 Controller Code
 
-```
+```js
  // Subscribes client to ONLY the create and destroy events for every `User` record.
 
     User.find({}).exec(function(e,listOfUsers){
@@ -5536,7 +5536,7 @@ See `.subscribe()` for a discussion of pubsub contexts. Omit this argument to un
 
 Controller Code
 
-```
+```js
 User.findOne({id: 123}).exec(function(err, userInstance) {
     User.unsubscribe(req.socket, userInstance);
 }); 
@@ -5634,7 +5634,7 @@ Starts listening for server-sent events from Sails with the specified `eventIden
 
 ### Usage
 
-```
+```js
 io.socket.on(eventIdentity, function (msg) {
   // ...
 }); 
@@ -5668,7 +5668,7 @@ Note that the callback will NEVER trigger until one of your back-end controllers
 
 Listen for new orders and updates to existing orders:
 
-```
+```js
 io.socket.on('order', function onServerSentEvent (msg) {
   // msg => {...whatever the server published/emitted...}
 }); 
@@ -5678,7 +5678,7 @@ io.socket.on('order', function onServerSentEvent (msg) {
 
 > Note that this Angular example assumes the backend calls `publishCreate()` at some point.
 
-```
+```js
 angular.module('cafeteria').controller('CheckoutCtrl', function ($scope) {
 
   $scope.orders = $scope.orders || [];
@@ -5717,7 +5717,7 @@ Sends a virtual DELETE request to a Sails server using Socket.io.
 
 ### Usage
 
-```
+```js
 io.socket.delete(url, data, function (data, jwres){
   // ...
 }); 
@@ -5738,7 +5738,7 @@ io.socket.delete(url, data, function (data, jwres){
 
 ### Example
 
-```
+```js
 <script> io.socket.delete('/users/9', function (resData) {
   resData; // => {id:9, name: 'Timmy Mendez', occupation: 'psychic'}
 }); </script> 
@@ -5754,7 +5754,7 @@ Sends a virtual GET request to a Sails server using Socket.io.
 
 ### Usage
 
-```
+```js
 io.socket.get(url, data, function (data, jwres){
   // ...
 }); 
@@ -5775,7 +5775,7 @@ io.socket.get(url, data, function (data, jwres){
 
 ### Example
 
-```
+```js
 <script> io.socket.get('/users/9', function (resData) {
   resData; // => {id:9, name: 'Timmy Mendez'}
 }); </script> 
@@ -5791,7 +5791,7 @@ Sends a virtual POST request to a Sails server using Socket.io.
 
 ### Usage
 
-```
+```js
 io.socket.post(url, data, function (data, jwres){
   // ...
 }); 
@@ -5812,7 +5812,7 @@ io.socket.post(url, data, function (data, jwres){
 
 ### Example
 
-```
+```js
 <script> io.socket.post('/users', { name: 'Timmy Mendez' }, function (resData) {
   resData; // => {id:9, name: 'Timmy Mendez'}
 }); </script> 
@@ -5828,7 +5828,7 @@ Sends a virtual PUT request to a Sails server using Socket.io.
 
 ### Usage
 
-```
+```js
 io.socket.put(url, data, function (data, jwres){
   // ...
 }); 
@@ -5849,7 +5849,7 @@ io.socket.put(url, data, function (data, jwres){
 
 ### Example
 
-```
+```js
 <script> io.socket.put('/users/9', { occupation: 'psychic' }, function (resData) {
   resData; // => {id:9, name: 'Timmy Mendez', occupation: 'psychic'}
 }); </script> 
@@ -5900,7 +5900,7 @@ For raw access to the underlying [socket.io](http://socket.io/) singleton, you c
 
 Broadcast a message to all sockets connected to the server.
 
-```
+```js
 sails.sockets.blast(data); 
 ```
 
@@ -5922,7 +5922,7 @@ sails.sockets.blast(data);
 
 In a controller action...
 
-```
+```js
 sails.sockets.blast('user_logged_in', {
   msg: 'User #' + req.session.userId + ' just logged in.',
   user: {
@@ -5944,7 +5944,7 @@ sails.sockets.blast('user_logged_in', {
 
 Broadcast a message to a room.
 
-```
+```js
 sails.sockets.broadcast(roomName, data); 
 ```
 
@@ -5965,7 +5965,7 @@ sails.sockets.broadcast(roomName, data);
 
 ### Example
 
-```
+```js
 sails.sockets.broadcast('artsAndEntertainment', { msg: 'Hi there!' }); 
 ```
 
@@ -5995,7 +5995,7 @@ Send a message to one or more sockets by ID.
 
 ### Example Usage
 
-```
+```js
 // Controller action
 
 sayHiToFriend: function(req, res) {
@@ -6015,7 +6015,7 @@ sayHiToFriend: function(req, res) {
 
 Gets the ID of a request socket object.
 
-```
+```js
 sails.sockets.id(socket); 
 ```
 
@@ -6029,7 +6029,7 @@ Once acquired, the socket object's ID can be used to send direct messages to tha
 
 ### Example
 
-```
+```js
 // Controller action
 
 getSocketID: function(req, res) {
@@ -6056,7 +6056,7 @@ Subscribes a socket to a generic room.
 
 ### Usage
 
-```
+```js
 sails.sockets.join(socket, roomName); 
 ```
 
@@ -6069,7 +6069,7 @@ sails.sockets.join(socket, roomName);
 
 In a controller action:
 
-```
+```js
 subscribeToFunRoom: function(req, res) {
   var roomName = req.param('roomName');
   sails.sockets.join(req.socket, roomName);
@@ -6106,7 +6106,7 @@ Unsubscribe a socket from a generic room.
 
 ### Example Usage
 
-```
+```js
 // Controller action
 
 leaveFunRoom: function(req, res) {
@@ -6142,7 +6142,7 @@ None.
 
 ### Example Usage
 
-```
+```js
 // Controller action
 
 getRoomsList: function(req, res) {
@@ -6175,7 +6175,7 @@ Get the list of rooms a socket is subscribed to
 
 ### Example Usage
 
-```
+```js
 // Controller action
 
 getMyRooms: function(req, res) {
@@ -6198,7 +6198,7 @@ getMyRooms: function(req, res) {
 
 Get the IDs of all sockets subscribed to a room.
 
-```
+```js
 sails.sockets.subscribers(roomName); 
 ```
 
@@ -6210,7 +6210,7 @@ sails.sockets.subscribers(roomName);
 
 ### Example
 
-```
+```js
 sails.sockets.subscribers('supportchat');
 // => ['BetX2G-2889Bg22xi-jy', 'BTA4G-8126Kr32bi-za'] 
 ```

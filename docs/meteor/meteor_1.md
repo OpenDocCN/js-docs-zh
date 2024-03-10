@@ -14,7 +14,7 @@ Javascript 代码可以运行在两种环境：客户端(浏览器)，和服务�
 
 每个`.html`文件可以包含任意数量的顶级元素：`&lt;head&gt;`,`&lt;body&gt;`或是`&lt;template&gt;`。`&lt;head&gt;`,`&lt;body&gt;`标签里的代码会附加到 HTML 页面中对应的标签， `&lt;tempalte&gt;`标签里的代码可以用`{{&gt; templateName}}`引入，如下面的例子所示。模板可以引入多次—模板的主要目的之一就是避免重复手写相同的 HTML。
 
-```
+```js
 <!-- add code to the <head> of the page -->
 <head>
   <title>My website!</title>
@@ -48,14 +48,14 @@ Dictionary of helper functions by name.
 
 给`nametag`模板定义一个叫做`name`的 helper(在 javascript 里)：
 
-```
+```js
 Template.nametag.helpers({
   name: "Ben Bitdiddle" }); 
 ```
 
 `nametag` 模板本身 (在 HTML 里):
 
-```
+```js
 <!-- In an HTML file, display the value of the helper -->
 <template name="nametag">
   <p>My name is {{name}}.</p>
@@ -72,7 +72,7 @@ Spacebars 还有几个方便使用的控制结构，可以使视图更加动态�
 
 例如，`people` helper 的值为：
 
-```
+```js
 Template.welcomePage.helpers({
   people: [{name: "Bob"}, {name: "Frank"}, {name: "Alice"}]
 }); 
@@ -80,7 +80,7 @@ Template.welcomePage.helpers({
 
 然后你可以用一个`&lt;p&gt;`标签列表显示每一个人的姓名：
 
-```
+```js
 {{#each people}}
   <p>{{name}}</p>
 {{/each}} 
@@ -88,7 +88,7 @@ Template.welcomePage.helpers({
 
 或是用上面的"nametag"模板代替 `&lt;p&gt;`标签：
 
-```
+```js
 {{#each people}}
   {{> nametag}}
 {{/each}} 
@@ -96,7 +96,7 @@ Template.welcomePage.helpers({
 
 记住：helper 可以是简答值，也可以是函数。例如，要显示登录用户的用户名，你可以定义一个叫做`username`的 helper：
 
-```
+```js
 // in your JS file
 Template.profilePage.helpers({
   username: function () {
@@ -107,7 +107,7 @@ Template.profilePage.helpers({
 
 现在，每次使用`username` helper 的时候，都会调用上面的 helper 函数来确定用户名：
 
-```
+```js
 <!-- in your HTML -->
 <template name="profilePage">
   <p>Profile page for {{username}}</p>
@@ -116,7 +116,7 @@ Template.profilePage.helpers({
 
 Helper 可以接收参数。例如，
 
-```
+```js
 Template.post.helpers({
   commentCount: function (numComments) {
     if (numComments === 1) {
@@ -130,7 +130,7 @@ Template.post.helpers({
 
 参数放在大括号里，helper 名之后：
 
-```
+```js
 <p>There are {{commentCount 3}}.</p> 
 ```
 
@@ -154,7 +154,7 @@ Event handlers to associate with this template.
 
 假设有下面的模板：
 
-```
+```js
 <template name="example">
   {{#with myHelper}}
     <button class="my-button">My button</button>
@@ -168,7 +168,7 @@ Event handlers to associate with this template.
 
 调用 `Template.example.events` 给模板增加事件处理器：
 
-```
+```js
 Template.example.events({
   "click .my-button": function (event, template) {
     alert("My button was clicked!");
@@ -205,7 +205,7 @@ A function to be added as a callback.
 
 例如，要使用 HighlightJS 库高亮`codeSample`模板中所有`&lt;pre&gt;`元素，你可以传递如下回调函数给 `Template.codeSample.onRendered`：
 
-```
+```js
 Template.codeSample.onRendered(function () {
   hljs.highlightBlock(this.findAll('pre'));
 }); 
@@ -293,14 +293,14 @@ The name of the session variable to return
 
 例如：
 
-```
+```js
 <!-- In your template -->
 <template name="main">
   <p>We've always been at war with {{theEnemy}}.</p>
 </template> 
 ```
 
-```
+```js
 // In your JavaScript
 Template.main.helpers({
   theEnemy: function () {
@@ -347,7 +347,7 @@ Optional. The function to run when an error happens in the Computation. The only
 
 例如，可以监测一个`Session`变量，设置另外一个：
 
-```
+```js
 Tracker.autorun(function () {
   var celsius = Session.get("celsius");
   Session.set("fahrenheit", celsius * 9/5 + 32);
@@ -356,7 +356,7 @@ Tracker.autorun(function () {
 
 或者可以等待 session 变量成为一个特定值，执行一些特定操作。如果想阻止回调函数进一步重新运行，可以调用计算(computation)对象的`stop`，计算对象会作为回调函数的第一个参数传入：
 
-```
+```js
 // Initialize a session variable called "counter" to 0
 Session.set("counter", 0);
 
@@ -408,7 +408,7 @@ The name of the collection. If null, creates an unmanaged (unsynchronized) local
 
 示例：声明两个命名的，持久性的集合作为全局变量：
 
-```
+```js
 // In a JS file that's loaded on the client and the server
 Posts = new Mongo.Collection("posts");
 Comments = new Mongo.Collection("comments"); 
@@ -418,7 +418,7 @@ Comments = new Mongo.Collection("comments");
 
 默认情况下，Meteor 会自动发布所有集合里的文档到每一个连接上的客户端。要禁用此行为，必须移除`autopublish`包：
 
-```
+```js
 $ meteor remove autopublish 
 ```
 
@@ -454,13 +454,13 @@ Dictionary of fields to return or exclude.
 
 `findOne`方法可以从集合里查找特定的文档。调用`findOne`时，通常都会传入一个特定文档的`_id`:
 
-```
+```js
 var post = Posts.findOne(postId); 
 ```
 
 然而，也可以给`findOne`传入一个 Mongo 选择器，Mongo 选择器是一个对象，指明了目标文档要满足的一系列属性。 例如，下面的选择器
 
-```
+```js
 var post = Posts.findOne({
   createdBy: "12345",
   title: {$regex: /first/}
@@ -469,7 +469,7 @@ var post = Posts.findOne({
 
 会匹配到下面的文档
 
-```
+```js
 {
   createdBy: "12345",
   title: "My first post!",
@@ -480,14 +480,14 @@ var post = Posts.findOne({
 
 一个非常有用但是不那么明显的功能就是 Mongo 选择器可以匹配数组里的元素。例如：下面的选择器
 
-```
+```js
 Post.findOne({
   tags: "meteor" }); 
 ```
 
 会匹配到下面的文档
 
-```
+```js
 {
   title: "I love Meteor",
   createdBy: "242135223",
@@ -530,7 +530,7 @@ Dictionary of fields to return or exclude.
 
 `find`方法和`findOne`类似，不同的是，它不返回单一文档，而是返回一个 MongoDB *游标*。游标是一个特殊的对象，代表一个查询里会被返回的文档列表。可以在模板 Helper 里返回游标，或是其它可以返回数组的地方：
 
-```
+```js
 Template.blog.helpers({
   posts: function () {
     // this helper returns a cursor of
@@ -540,7 +540,7 @@ Template.blog.helpers({
 }); 
 ```
 
-```
+```js
 <!-- a template that renders multiple posts -->
 <template name="blog">
   {{#each posts}}
@@ -552,7 +552,7 @@ Template.blog.helpers({
 
 要想从一个游标里检索当前的文档列表时，调用游标的`.fetch()`方法：
 
-```
+```js
 // get an array of posts
 var postsArray = Posts.find().fetch(); 
 ```
@@ -579,7 +579,7 @@ Optional. If present, called with an error object as the first argument and, if 
 
 下面的例子展示了如何插入文档到集合里：
 
-```
+```js
 Posts.insert({
   createdBy: Meteor.userId(),
   createdAt: new Date(),
@@ -623,7 +623,7 @@ True to insert a document if no matching documents are found.
 
 下面的例子展示了，设置所有标题包含"first"的文章的内容字段
 
-```
+```js
 Posts.update({
   title: {$regex: /first/}
 }, {
@@ -669,7 +669,7 @@ Functions that look at a proposed modification to the database and return true i
 
 在新创建的 APP 中，Meteor 允许任何客户端和服务端代码调用`insert`, `update`, 和 `remove` 。这是因为用`meteor create`创建的 APP 默认包含了`insecure`包，目的是简化开发。很显然，如果任何用户都可以修改数据库，这是很不安全的，所以移除`insecure`包，并声明一些权限规则是很重要的：
 
-```
+```js
 $ meteor remove insecure 
 ```
 
@@ -677,7 +677,7 @@ $ meteor remove insecure
 
 例如，假设只有当`createBy`字段为当前用户 ID 时，才允许用户插入新文章，这样用户就不能冒充其他人
 
-```
+```js
 // In a file loaded on the server (ignored on the client)
 Posts.allow({
   insert: function (userId, post) {
@@ -723,7 +723,7 @@ Functions that look at a proposed modification to the database and return true i
 
 例如，我们要重写上面定义的`allow`规则：排除特定标题的文章：
 
-```
+```js
 // In a file loaded on the server (ignored on the client)
 Posts.deny({
   insert: function (userId, post) {
@@ -747,7 +747,7 @@ Posts.deny({
 
 在 HTML 中引入`loginButtions`模板，就可以使用 Meteor 默认的登录 UI。使用前，需要先添加`accounts-ui`包：
 
-```
+```js
 $ meteor add accounts-ui 
 ```
 
@@ -769,7 +769,7 @@ A Mongo.Collection containing user documents.
 
 这个集合包含了所有注册用户，每个用户是一个文档。例如：
 
-```
+```js
 {
   _id: "bbca5d6a-2156-41c4-89da-0329e8c99a4f",  // Meteor.userId()
   username: "cool_kid_13", // unique name
@@ -810,7 +810,7 @@ A Mongo.Collection containing user documents.
 
 默认情况下，当前用户的`username`,`emails`,和`profile`会发布到客户端。 可以使用下面的代码发布当前用户的其它字段：
 
-```
+```js
 // server
 Meteor.publish("userData", function () {
   if (this.userId) {
@@ -829,7 +829,7 @@ Meteor.subscribe("userData");
 
 默认情况下，用户可以通过`Accounts.createUser`声明自己的`profile`字段， 也可以通过`Meteor.users.update`来修改它。要允许用户修改更多的字段，使用`Meteor.users.allow` ，要禁止用户对自己的文档做任何修改，使用：
 
-```
+```js
 Meteor.users.deny({update: function () { return true; }}); 
 ```
 
@@ -859,7 +859,7 @@ Dictionary whose keys are method names and values are functions.
 
 在服务端调用`Meteor.methods`定义的函数可以在客户端远程调用。下面是一个 method 的例子，检查参数，抛出错误：
 
-```
+```js
 // On the server
 Meteor.methods({
   commentOnPost: function (comment, postId) {
@@ -923,7 +923,7 @@ Optional callback, which is called asynchronously with the error or result after
 
 示例：调用`commentOnPost`method ，传入两个参数`comment` 和 `postId`：
 
-```
+```js
 // Asynchronous call with a callback on the client
 Meteor.call('commentOnPost', comment, postId, function (error, result) {
   if (error) {
@@ -940,7 +940,7 @@ Meteor.call('commentOnPost', comment, postId, function (error, result) {
 
 在服务端，不用传入回调函数 — 方法调用会阻塞直到执行完毕，返回结果或是抛出异常，就好像直接调用函数一样：
 
-```
+```js
 // Synchronous call on the server with no callback
 var result = Meteor.call('commentOnPost', comment, postId); 
 ```
@@ -957,7 +957,7 @@ error String
 
 A string code uniquely identifying this kind of error. This string should be used by callers of the method to determine the appropriate action to take, instead of attempting to parse the reason or details fields. For example:
 
-```
+```js
 // on the server, pick a code unique to this error
 // the reason field should be a useful debug message
 throw new Meteor.Error("logged-out", 
@@ -993,7 +993,7 @@ Meteor 服务端可以通过`Meteor.publish`发布文档集，同时客户端可
 
 默认情况下，每个新创建的 Meteor 应用包含有 autopublish 包，它会自动为每个客户端发布所有可用的文档。 为了可以更细化的控制不同客户端所接收的数据文档,首先应该在终端移除 autopublish：
 
-```
+```js
 $ meteor remove autopublish 
 ```
 
@@ -1019,7 +1019,7 @@ Function called on the server each time a client subscribes. Inside the function
 
 发布功能通过返回在一些`collection`调用`collection.find(query)`的结果。通过`query`来限制发布的文档集：
 
-```
+```js
 // 发布已登录用户的文章集合
 Meteor.publish("posts", function () {
   return Posts.find({ createdBy: this.userId });
@@ -1028,7 +1028,7 @@ Meteor.publish("posts", function () {
 
 你可以发布来自多个 collection 的文档，通过返回一个`collection.find` 结果集合:
 
-```
+```js
 // 发布一个单独的文章和对应的评论
 Meteor.publish("postAndComments", function (postId) {
   // 检查参数
@@ -1115,7 +1115,7 @@ A function to run on startup.
 
 例如：当服务端启动时，如果数据库为空则创建一些初始数据，可以用下面的方式：
 
-```
+```js
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Rooms.find().count() === 0) {
@@ -1135,7 +1135,7 @@ Meteor 所有的功能都是以模块化的包实现的。除了上面提到的�
 
 在命令行，添加和删除包使用`meteor add` 和 `meteor remove`:
 
-```
+```js
 # add the less package
 meteor add less
 
@@ -1209,7 +1209,7 @@ JQuery 自动添加到每个 Meteor APP 中，因为框架大量的使用了 jQu
 
 在模板中插入[Markdown](http://daringfireball.net/projects/markdown/syntax)代码。使用`{{# markdown}}`Helper 很简单：
 
-```
+```js
 <div class="my-div">
 {{#markdown}}
 # My heading

@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12058 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.camelcase "See the npm package.")
 
-```
+```js
 _.camelCase([string='']) 
 ```
 
@@ -26,7 +26,7 @@ _.camelCase([string=''])
 
 ### 示例
 
-```
+```js
 _.camelCase('Foo Bar');
 // => 'fooBar'
 
@@ -45,7 +45,7 @@ _.camelCase('__foo_bar__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12076 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.capitalize "See the npm package.")
 
-```
+```js
 _.capitalize([string='']) 
 ```
 
@@ -63,7 +63,7 @@ _.capitalize([string=''])
 
 ### 示例
 
-```
+```js
 _.capitalize('FRED');
 // => 'Fred' 
 ```
@@ -76,7 +76,7 @@ _.capitalize('FRED');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12093 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.deburr "See the npm package.")
 
-```
+```js
 _.deburr([string='']) 
 ```
 
@@ -94,7 +94,7 @@ _.deburr([string=''])
 
 ### 示例
 
-```
+```js
 _.deburr('déjà vu');
 // => 'deja vu' 
 ```
@@ -107,7 +107,7 @@ _.deburr('déjà vu');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12119 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.endswith "See the npm package.")
 
-```
+```js
 _.endsWith([string=''], [target], [position=string.length]) 
 ```
 
@@ -133,7 +133,7 @@ _.endsWith([string=''], [target], [position=string.length])
 
 ### 示例
 
-```
+```js
 _.endsWith('abc', 'c');
 // => true
 
@@ -152,7 +152,7 @@ _.endsWith('abc', 'b', 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12160 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.escape "See the npm package.")
 
-```
+```js
 _.escape([string='']) 
 ```
 
@@ -178,7 +178,7 @@ _.escape([string=''])
 
 ### 示例
 
-```
+```js
 _.escape('fred, barney, & pebbles');
 // => 'fred, barney, &amp; pebbles' 
 ```
@@ -191,7 +191,7 @@ _.escape('fred, barney, & pebbles');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12181 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.escaperegexp "See the npm package.")
 
-```
+```js
 _.escapeRegExp([string='']) 
 ```
 
@@ -209,7 +209,7 @@ _.escapeRegExp([string=''])
 
 ### 示例
 
-```
+```js
 _.escapeRegExp('[lodash](https://lodash.com/)');
 // => '\[lodash\]\(https://lodash\.com/\)' 
 ```
@@ -222,7 +222,7 @@ _.escapeRegExp('[lodash](https://lodash.com/)');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12207 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.kebabcase "See the npm package.")
 
-```
+```js
 _.kebabCase([string='']) 
 ```
 
@@ -240,7 +240,7 @@ _.kebabCase([string=''])
 
 ### 示例
 
-```
+```js
 _.kebabCase('Foo Bar');
 // => 'foo-bar'
 
@@ -259,7 +259,7 @@ _.kebabCase('__foo_bar__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12230 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.lowercase "See the npm package.")
 
-```
+```js
 _.lowerCase([string='']) 
 ```
 
@@ -277,7 +277,7 @@ _.lowerCase([string=''])
 
 ### 示例
 
-```
+```js
 _.lowerCase('--Foo-Bar');
 // => 'foo bar'
 
@@ -296,7 +296,7 @@ _.lowerCase('__FOO_BAR__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12250 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.lowerfirst "See the npm package.")
 
-```
+```js
 _.lowerFirst([string='']) 
 ```
 
@@ -314,7 +314,7 @@ _.lowerFirst([string=''])
 
 ### 示例
 
-```
+```js
 _.lowerFirst('Fred');
 // => 'fred'
 
@@ -330,7 +330,7 @@ _.lowerFirst('FRED');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12292 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pad "See the npm package.")
 
-```
+```js
 _.pad([string=''], [length=0], [chars=' ']) 
 ```
 
@@ -356,7 +356,7 @@ _.pad([string=''], [length=0], [chars=' '])
 
 ### 示例
 
-```
+```js
 _.pad('abc', 8);
 // => '  abc   '
 
@@ -375,7 +375,7 @@ _.pad('abc', 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12328 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.padend "See the npm package.")
 
-```
+```js
 _.padEnd([string=''], [length=0], [chars=' ']) 
 ```
 
@@ -401,7 +401,7 @@ Returns 返回填充后的字符串
 
 ### 示例
 
-```
+```js
 _.padEnd('abc', 6);
 // => 'abc   '
 
@@ -420,7 +420,7 @@ _.padEnd('abc', 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12354 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.padstart "See the npm package.")
 
-```
+```js
 _.padStart([string=''], [length=0], [chars=' ']) 
 ```
 
@@ -446,7 +446,7 @@ Returns 返回填充后的字符串
 
 ### 示例
 
-```
+```js
 _.padStart('abc', 6);
 // => '   abc'
 
@@ -465,7 +465,7 @@ _.padStart('abc', 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12381 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.parseint "See the npm package.")
 
-```
+```js
 _.parseInt(string, [radix]) 
 ```
 
@@ -489,7 +489,7 @@ _.parseInt(string, [radix])
 
 ### 示例
 
-```
+```js
 _.parseInt('08');
 // => 8
 
@@ -505,7 +505,7 @@ _.map(['6', '08', '10'], _.parseInt);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12413 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.repeat "See the npm package.")
 
-```
+```js
 _.repeat([string=''], [n=0]) 
 ```
 
@@ -527,7 +527,7 @@ _.repeat([string=''], [n=0])
 
 ### 示例
 
-```
+```js
 _.repeat('*', 3);
 // => '***'
 
@@ -546,7 +546,7 @@ _.repeat('abc', 0);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12451 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.replace "See the npm package.")
 
-```
+```js
 _.replace([string=''], pattern, 要替换的内容) 
 ```
 
@@ -572,7 +572,7 @@ _.replace([string=''], pattern, 要替换的内容)
 
 ### 示例
 
-```
+```js
 _.replace('Hi Fred', 'Fred', 'Barney');
 // => 'Hi Barney' 
 ```
@@ -585,7 +585,7 @@ _.replace('Hi Fred', 'Fred', 'Barney');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12477 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.snakecase "See the npm package.")
 
-```
+```js
 _.snakeCase([string='']) 
 ```
 
@@ -603,7 +603,7 @@ _.snakeCase([string=''])
 
 ### 示例
 
-```
+```js
 _.snakeCase('Foo Bar');
 // => 'foo_bar'
 
@@ -622,7 +622,7 @@ _.snakeCase('--foo-bar');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12498 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.split "See the npm package.")
 
-```
+```js
 _.split([string=''], [separator], [limit]) 
 ```
 
@@ -650,7 +650,7 @@ _.split([string=''], [separator], [limit])
 
 ### 示例
 
-```
+```js
 _.split('a-b-c', '-', 2);
 // => ['a', 'b'] 
 ```
@@ -663,7 +663,7 @@ _.split('a-b-c', '-', 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12521 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.startcase "See the npm package.")
 
-```
+```js
 _.startCase([string='']) 
 ```
 
@@ -681,7 +681,7 @@ _.startCase([string=''])
 
 ### 示例
 
-```
+```js
 _.startCase('--foo-bar');
 // => 'Foo Bar'
 
@@ -700,7 +700,7 @@ _.startCase('__foo_bar__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12546 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.startswith "See the npm package.")
 
-```
+```js
 _.startsWith([string=''], [target], [position=0]) 
 ```
 
@@ -726,7 +726,7 @@ _.startsWith([string=''], [target], [position=0])
 
 ### 示例
 
-```
+```js
 _.startsWith('abc', 'a');
 // => true
 
@@ -745,7 +745,7 @@ _.startsWith('abc', 'b', 1);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12648 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.template "See the npm package.")
 
-```
+```js
 _.template([string=''], [options]) 
 ```
 
@@ -797,7 +797,7 @@ _.template([string=''], [options])
 
 ### 示例
 
-```
+```js
 // 使用 "interpolate" 分隔符创建编译模板
 var compiled = _.template('hello <%= user %>!');
 compiled({ 'user': 'fred' });
@@ -871,7 +871,7 @@ fs.writeFileSync(path.join(cwd, 'jst.js'), '\
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12773 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tolower "See the npm package.")
 
-```
+```js
 _.toLower([string='']) 
 ```
 
@@ -889,7 +889,7 @@ _.toLower([string=''])
 
 ### 示例
 
-```
+```js
 _.toLower('--Foo-Bar');
 // => '--foo-bar'
 
@@ -908,7 +908,7 @@ _.toLower('__FOO_BAR__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12796 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.toupper "See the npm package.")
 
-```
+```js
 _.toUpper([string='']) 
 ```
 
@@ -926,7 +926,7 @@ _.toUpper([string=''])
 
 ### 示例
 
-```
+```js
 _.toUpper('--foo-bar');
 // => '--FOO-BAR'
 
@@ -945,7 +945,7 @@ _.toUpper('__foo_bar__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12821 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.trim "See the npm package.")
 
-```
+```js
 _.trim([string=''], [chars=whitespace]) 
 ```
 
@@ -967,7 +967,7 @@ _.trim([string=''], [chars=whitespace])
 
 ### 示例
 
-```
+```js
 _.trim('  abc  ');
 // => 'abc'
 
@@ -986,7 +986,7 @@ _.map(['  foo  ', '  bar  '], _.trim);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12857 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.trimend "See the npm package.")
 
-```
+```js
 _.trimEnd([string=''], [chars=whitespace]) 
 ```
 
@@ -1008,7 +1008,7 @@ _.trimEnd([string=''], [chars=whitespace])
 
 ### 示例
 
-```
+```js
 _.trimEnd('  abc  ');
 // => '  abc'
 
@@ -1024,7 +1024,7 @@ _.trimEnd('-_-abc-_-', '_-');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12891 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.trimstart "See the npm package.")
 
-```
+```js
 _.trimStart([string=''], [chars=whitespace]) 
 ```
 
@@ -1046,7 +1046,7 @@ _.trimStart([string=''], [chars=whitespace])
 
 ### 示例
 
-```
+```js
 _.trimStart('  abc  ');
 // => 'abc  '
 
@@ -1062,7 +1062,7 @@ _.trimStart('-_-abc-_-', '_-');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12942 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.truncate "See the npm package.")
 
-```
+```js
 _.truncate([string=''], [options]) 
 ```
 
@@ -1096,7 +1096,7 @@ _.truncate([string=''], [options])
 
 ### 示例
 
-```
+```js
 _.truncate('hi-diddly-ho there, neighborino');
 // => 'hi-diddly-ho there, neighbo...'
 
@@ -1126,7 +1126,7 @@ _.truncate('hi-diddly-ho there, neighborino', {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13015 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unescape "See the npm package.")
 
-```
+```js
 _.unescape([string='']) 
 ```
 
@@ -1146,7 +1146,7 @@ _.unescape([string=''])
 
 ### 示例
 
-```
+```js
 _.unescape('fred, barney, &amp; pebbles');
 // => 'fred, barney, & pebbles' 
 ```
@@ -1159,7 +1159,7 @@ _.unescape('fred, barney, &amp; pebbles');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13041 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.uppercase "See the npm package.")
 
-```
+```js
 _.upperCase([string='']) 
 ```
 
@@ -1177,7 +1177,7 @@ _.upperCase([string=''])
 
 ### 示例
 
-```
+```js
 _.upperCase('--foo-bar');
 // => 'FOO BAR'
 
@@ -1196,7 +1196,7 @@ _.upperCase('__foo_bar__');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L12268 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.upperfirst "See the npm package.")
 
-```
+```js
 _.upperFirst([string='']) 
 ```
 
@@ -1214,7 +1214,7 @@ _.upperFirst([string=''])
 
 ### 示例
 
-```
+```js
 _.upperFirst('fred');
 // => 'Fred'
 
@@ -1230,7 +1230,7 @@ _.upperFirst('FRED');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13063 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.words "See the npm package.")
 
-```
+```js
 _.words([string=''], [pattern]) 
 ```
 
@@ -1252,7 +1252,7 @@ _.words([string=''], [pattern])
 
 ### 示例
 
-```
+```js
 _.words('fred, barney, & pebbles');
 // => ['fred', 'barney', 'pebbles']
 

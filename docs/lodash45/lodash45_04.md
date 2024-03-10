@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7504 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.countby "See the npm package.")
 
-```
+```js
 _.countBy(collection, [iteratee=_.identity]) 
 ```
 
@@ -30,7 +30,7 @@ _.countBy(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.countBy([6.1, 4.2, 6.3], Math.floor);
 // => { '4': 1, '6': 2 }
 
@@ -46,7 +46,7 @@ _.countBy(['one', 'two', 'three'], 'length');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7541 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.every "See the npm package.")
 
-```
+```js
 _.every(collection, [predicate=_.identity]) 
 ```
 
@@ -68,7 +68,7 @@ _.every(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 _.every([true, 1, null, 'yes'], Boolean);
 // => false
 
@@ -98,7 +98,7 @@ _.every(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7582 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.filter "See the npm package.")
 
-```
+```js
 _.filter(collection, [predicate=_.identity]) 
 ```
 
@@ -120,7 +120,7 @@ _.filter(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var resolve = _.partial(_.map, _, 'user');
 
 var users = [
@@ -152,7 +152,7 @@ resolve( _.filter(users, 'active') );
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7619 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.find "See the npm package.")
 
-```
+```js
 _.find(collection, [predicate=_.identity]) 
 ```
 
@@ -174,7 +174,7 @@ _.find(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'age': 36, 'active': true },
   { 'user': 'fred',    'age': 40, 'active': false },
@@ -205,7 +205,7 @@ _.find(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7644 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.findlast "See the npm package.")
 
-```
+```js
 _.findLast(collection, [predicate=_.identity]) 
 ```
 
@@ -227,7 +227,7 @@ _.findLast(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 _.findLast([1, 2, 3, 4], function(n) {
   return n % 2 == 1;
 });
@@ -242,7 +242,7 @@ _.findLast([1, 2, 3, 4], function(n) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7672 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.flatmap "See the npm package.")
 
-```
+```js
 _.flatMap(collection, [iteratee=_.identity]) 
 ```
 
@@ -264,7 +264,7 @@ _.flatMap(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function duplicate(n) {
   return [n, n];
 }
@@ -281,7 +281,7 @@ _.flatMap([1, 2], duplicate);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7702 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.foreach "See the npm package.")
 
-```
+```js
 _.forEach(collection, [iteratee=_.identity]) 
 ```
 
@@ -305,7 +305,7 @@ _.forEach(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _([1, 2]).forEach(function(value) {
   console.log(value);
 });
@@ -325,7 +325,7 @@ _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7725 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.foreachright "See the npm package.")
 
-```
+```js
 _.forEachRight(collection, [iteratee=_.identity]) 
 ```
 
@@ -347,7 +347,7 @@ _.forEachRight(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.forEachRight([1, 2], function(value) {
   console.log(value);
 });
@@ -362,7 +362,7 @@ _.forEachRight([1, 2], function(value) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7749 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.groupby "See the npm package.")
 
-```
+```js
 _.groupBy(collection, [iteratee=_.identity]) 
 ```
 
@@ -384,7 +384,7 @@ _.groupBy(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.groupBy([6.1, 4.2, 6.3], Math.floor);
 // => { '4': [4.2], '6': [6.1, 6.3] }
 
@@ -401,7 +401,7 @@ _.groupBy(['one', 'two', 'three'], 'length');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7785 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.includes "See the npm package.")
 
-```
+```js
 _.includes(collection, value, [fromIndex=0]) 
 ```
 
@@ -427,7 +427,7 @@ _.includes(collection, value, [fromIndex=0])
 
 ### 示例
 
-```
+```js
 _.includes([1, 2, 3], 1);
 // => true
 
@@ -449,7 +449,7 @@ _.includes('pebbles', 'eb');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7818 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.invokemap "See the npm package.")
 
-```
+```js
 _.invokeMap(collection, path, [args]) 
 ```
 
@@ -475,7 +475,7 @@ _.invokeMap(collection, path, [args])
 
 ### 示例
 
-```
+```js
 _.invokeMap([[5, 1, 7], [3, 2, 1]], 'sort');
 // => [[1, 5, 7], [1, 2, 3]]
 
@@ -491,7 +491,7 @@ _.invokeMap([123, 456], String.prototype.split, '');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7856 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.keyby "See the npm package.")
 
-```
+```js
 _.keyBy(collection, [iteratee=_.identity]) 
 ```
 
@@ -513,7 +513,7 @@ _.keyBy(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var array = [
   { 'dir': 'left', 'code': 97 },
   { 'dir': 'right', 'code': 100 }
@@ -536,7 +536,7 @@ _.keyBy(array, 'dir');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7900 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.map "See the npm package.")
 
-```
+```js
 _.map(collection, [iteratee=_.identity]) 
 ```
 
@@ -562,7 +562,7 @@ _.map(collection, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function square(n) {
   return n * n;
 }
@@ -591,7 +591,7 @@ _.map(users, 'user');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7931 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.orderby "See the npm package.")
 
-```
+```js
 _.orderBy(collection, [iteratees=[_.identity]], [orders]) 
 ```
 
@@ -617,7 +617,7 @@ _.orderBy(collection, [iteratees=[_.identity]], [orders])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'fred',   'age': 48 },
   { 'user': 'barney', 'age': 34 },
@@ -638,7 +638,7 @@ _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7979 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.partition "See the npm package.")
 
-```
+```js
 _.partition(collection, [predicate=_.identity]) 
 ```
 
@@ -660,7 +660,7 @@ _.partition(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'age': 36, 'active': false },
   { 'user': 'fred',    'age': 40, 'active': true },
@@ -691,7 +691,7 @@ _.partition(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8018 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.reduce "See the npm package.")
 
-```
+```js
 _.reduce(collection, [iteratee=_.identity], [accumulator]) 
 ```
 
@@ -721,7 +721,7 @@ _.reduce(collection, [iteratee=_.identity], [accumulator])
 
 ### 示例
 
-```
+```js
 _.reduce([1, 2], function(sum, n) {
   return sum + n;
 }, 0);
@@ -742,7 +742,7 @@ _.reduce({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8044 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.reduceright "See the npm package.")
 
-```
+```js
 _.reduceRight(collection, [iteratee=_.identity], [accumulator]) 
 ```
 
@@ -768,7 +768,7 @@ _.reduceRight(collection, [iteratee=_.identity], [accumulator])
 
 ### 示例
 
-```
+```js
 var array = [[0, 1], [2, 3], [4, 5]];
 
 _.reduceRight(array, function(flattened, other) {
@@ -785,7 +785,7 @@ _.reduceRight(array, function(flattened, other) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8082 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.reject "See the npm package.")
 
-```
+```js
 _.reject(collection, [predicate=_.identity]) 
 ```
 
@@ -807,7 +807,7 @@ _.reject(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney', 'age': 36, 'active': false },
   { 'user': 'fred',   'age': 40, 'active': true }
@@ -837,7 +837,7 @@ _.reject(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8103 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sample "See the npm package.")
 
-```
+```js
 _.sample(collection) 
 ```
 
@@ -855,7 +855,7 @@ _.sample(collection)
 
 ### 示例
 
-```
+```js
 _.sample([1, 2, 3, 4]);
 // => 2 
 ```
@@ -868,7 +868,7 @@ _.sample([1, 2, 3, 4]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8128 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.samplesize "See the npm package.")
 
-```
+```js
 _.sampleSize(collection, [n=0]) 
 ```
 
@@ -890,7 +890,7 @@ _.sampleSize(collection, [n=0])
 
 ### 示例
 
-```
+```js
 _.sampleSize([1, 2, 3], 2);
 // => [3, 1]
 
@@ -906,7 +906,7 @@ _.sampleSize([1, 2, 3], 4);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8160 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.shuffle "See the npm package.")
 
-```
+```js
 _.shuffle(collection) 
 ```
 
@@ -924,7 +924,7 @@ _.shuffle(collection)
 
 ### 示例
 
-```
+```js
 _.shuffle([1, 2, 3, 4]);
 // => [4, 1, 3, 2] 
 ```
@@ -937,7 +937,7 @@ _.shuffle([1, 2, 3, 4]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8183 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.size "See the npm package.")
 
-```
+```js
 _.size(collection) 
 ```
 
@@ -955,7 +955,7 @@ _.size(collection)
 
 ### 示例
 
-```
+```js
 _.size([1, 2, 3]);
 // => 3
 
@@ -974,7 +974,7 @@ _.size('pebbles');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8227 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.some "See the npm package.")
 
-```
+```js
 _.some(collection, [predicate=_.identity]) 
 ```
 
@@ -996,7 +996,7 @@ _.some(collection, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 _.some([null, 0, 'yes', false], Boolean);
 // => true
 
@@ -1026,7 +1026,7 @@ _.some(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8269 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortby "See the npm package.")
 
-```
+```js
 _.sortBy(collection, [iteratees=[_.identity]]) 
 ```
 
@@ -1048,7 +1048,7 @@ _.sortBy(collection, [iteratees=[_.identity]])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'fred',   'age': 48 },
   { 'user': 'barney', 'age': 36 },

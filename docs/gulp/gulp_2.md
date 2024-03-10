@@ -6,7 +6,7 @@
 
 输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 [Vinyl files](https://github.com/wearefractal/vinyl-fs) 的 [stream](http://nodejs.org/api/stream.html) 它可以被 [piped](http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options) 到别的插件中。
 
-```
+```js
 gulp.src('client/templates/*.jade')
   .pipe(jade())
   .pipe(minify())
@@ -47,7 +47,7 @@ gulp.src('client/templates/*.jade')
 
 如, 请想像一下在一个路径为 `client/js/somedir` 的目录中，有一个文件叫 `somefile.js` ：
 
-```
+```js
 gulp.src('client/js/**/*.js') // 匹配 'client/js/somedir/somefile.js' 并且将 `base` 解析为 `client/js/`
   .pipe(minify())
   .pipe(gulp.dest('build'));  // 写入 'build/somedir/somefile.js'
@@ -61,7 +61,7 @@ gulp.src('client/js/**/*.js', { base: 'client' })
 
 能被 pipe 进来，并且将会写文件。并且重新输出（emits）所有数据，因此你可以将它 pipe 到多个文件夹。如果某文件夹不存在，将会自动创建它。
 
-```
+```js
 gulp.src('./client/templates/*.jade')
   .pipe(jade())
   .pipe(gulp.dest('./build/templates'))
@@ -97,7 +97,7 @@ gulp.src('./client/templates/*.jade')
 
 定义一个使用 [Orchestrator](https://github.com/robrich/orchestrator) 实现的任务（task）。
 
-```
+```js
 gulp.task('somename', function() {
   // 做一些事
 }); 
@@ -113,7 +113,7 @@ gulp.task('somename', function() {
 
 一个包含任务列表的数组，这些任务会在你当前任务运行之前完成。
 
-```
+```js
 gulp.task('mytask', ['array', 'of', 'task', 'names'], function() {
   // 做一些事
 }); 
@@ -131,7 +131,7 @@ gulp.task('mytask', ['array', 'of', 'task', 'names'], function() {
 
 ##### 接受一个 callback
 
-```
+```js
 // 在 shell 中执行一个命令
 var exec = require('child_process').exec;
 gulp.task('jekyll', function(cb) {
@@ -145,7 +145,7 @@ gulp.task('jekyll', function(cb) {
 
 ##### 返回一个 stream
 
-```
+```js
 gulp.task('somename', function() {
   var stream = gulp.src('client/**/*.js')
     .pipe(minify())
@@ -156,7 +156,7 @@ gulp.task('somename', function() {
 
 ##### 返回一个 promise
 
-```
+```js
 var Q = require('q');
 
 gulp.task('somename', function() {
@@ -184,7 +184,7 @@ gulp.task('somename', function() {
 
 因此，这个例子的实际代码将会是这样：
 
-```
+```js
 var gulp = require('gulp');
 
 // 返回一个 callback，因此系统可以知道它什么时候完成
@@ -225,7 +225,7 @@ gulp.task('default', ['one', 'two']);
 
 需要在文件变动后执行的一个或者多个通过 `gulp.task()` 创建的 task 的名字，
 
-```
+```js
 var watcher = gulp.watch('js/**/*.js', ['uglify','reload']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
@@ -252,7 +252,7 @@ watcher.on('change', function(event) {
 
 每次变动需要执行的 callback。
 
-```
+```js
 gulp.watch('js/**/*.js', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 }); 

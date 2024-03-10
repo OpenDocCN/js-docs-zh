@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1538 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.templatesettings "See the npm package.")
 
-```
+```js
 _.templateSettings 
 ```
 
@@ -21,7 +21,7 @@ _.templateSettings
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1546 "View in source.")
 
-```
+```js
 _.templateSettings.escape 
 ```
 
@@ -34,7 +34,7 @@ _.templateSettings.escape
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1554 "View in source.")
 
-```
+```js
 _.templateSettings.evaluate 
 ```
 
@@ -47,7 +47,7 @@ _.templateSettings.evaluate
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1578 "View in source.")
 
-```
+```js
 _.templateSettings.imports 
 ```
 
@@ -60,7 +60,7 @@ _.templateSettings.imports
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1562 "View in source.")
 
-```
+```js
 _.templateSettings.interpolate 
 ```
 
@@ -73,7 +73,7 @@ _.templateSettings.interpolate
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1570 "View in source.")
 
-```
+```js
 _.templateSettings.variable 
 ```
 
@@ -86,7 +86,7 @@ _.templateSettings.variable
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L14473 "View in source.")
 
-```
+```js
 _.VERSION 
 ```
 

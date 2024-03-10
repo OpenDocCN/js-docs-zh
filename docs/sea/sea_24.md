@@ -13,7 +13,7 @@ CMD 模块在构建时，有两个基本操作：
 
     a.js
 
-    ```
+    ```js
     define(function(require, exports) {
       var b = require('./b');
     })
@@ -21,7 +21,7 @@ CMD 模块在构建时，有两个基本操作：
 
     经过提取操作后，a.js 的源码会转换成临时文件：
 
-    ```
+    ```js
     define('xxx/1.0.0/a', ['./b'], function(require, exports) {
       var b = require('./b');
     })
@@ -37,7 +37,7 @@ CMD 模块在构建时，有两个基本操作：
 
 a.js
 
-```
+```js
 define(function(require, exports) {
   ...
 });
@@ -45,7 +45,7 @@ define(function(require, exports) {
 
 b.js
 
-```
+```js
 define(function(require, exports) {
   ...
 });
@@ -55,7 +55,7 @@ define(function(require, exports) {
 
 a+b.js
 
-```
+```js
 define(function(require, exports) {
   ...
 });
@@ -68,7 +68,7 @@ define(function(require, exports) {
 
 a+b.js:
 
-```
+```js
 define('a', function(require, exports) {
   ...
 });
@@ -85,7 +85,7 @@ define('b', function(require, exports) {
 
 a.js
 
-```
+```js
 define(function(require, exports) {
   var b = require('./b');
   var c = require('./c');
@@ -102,7 +102,7 @@ Sea.js 在运行 `define` 时，接受 `factory` 参数，可以通过 `factory.
 
 为了保证压缩工具可以随意压缩代码，构建工具在提取 `id` 字符串时，同时也会提取 `dependencies` 数组。提取过后的代码变成：
 
-```
+```js
 define('xxx/1.0.0/a', ['./b', './c'], function(require, exports) {
   var b = require('./b');
   var c = require('./c');
@@ -121,7 +121,7 @@ define('xxx/1.0.0/a', ['./b', './c'], function(require, exports) {
 
 1.  如果项目需要支持 IE，请手写 `id`，即定义模块时，需要人肉写上第一个参数，比如：
 
-    ```
+    ```js
     define('a', function(require, exports) {
       ...
     });
@@ -131,7 +131,7 @@ define('xxx/1.0.0/a', ['./b', './c'], function(require, exports) {
 
 2.  压缩时，不要压缩 `require` 参数，目前 UglifyJS 支持通过参数来指定保留名字：
 
-    ```
+    ```js
     $ uglifyjs --reserved 'require' -o test-min.js test.js 
     ```
 

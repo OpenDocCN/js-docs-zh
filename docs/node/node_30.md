@@ -93,7 +93,7 @@
 
 接受一个基础 URL，和一个路径 URL，并且带上锚点像浏览器一样解析他们。例子：
 
-```
+```js
 url.resolve('/one/two/three', 'four')         // '/one/two/four'
 url.resolve('http://example.com/', '/one')    // 'http://example.com/one'
 url.resolve('http://example.com/one', '/two') // 'http://example.com/two' 

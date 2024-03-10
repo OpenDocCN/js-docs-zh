@@ -58,7 +58,7 @@ jQuery UI 中包含许多保持状态的小部件，因此比典型的 jQuery �
 
 为了跟踪小部件的状态，我们必须引入小部件的全生命周期。小部件初始化时生命周期开始。要初始化一个小部件，我们只需要简单地在一个或多个元素上调用插件。
 
-```
+```js
 $( "#elem" ).progressbar(); 
 ```
 
@@ -68,7 +68,7 @@ $( "#elem" ).progressbar();
 
 由于 `progressbar()` 调用时不带参数，小部件是使用默认选项进行初始化的。我们可以在初始化时传递一组选项来覆盖默认选项：
 
-```
+```js
 $( "#elem" ).progressbar({ value: 20 }); 
 ```
 
@@ -76,7 +76,7 @@ $( "#elem" ).progressbar({ value: 20 });
 
 您可以传递多个选项参数，这些参数将会被合并为一个对象（类似于 `$.extend( true, target, object1, objectN )`）。这在为所有实例覆盖一些设置，实例间共享选项时很有用：
 
-```
+```js
 var options = { modal: true, show: "slow" };
 $( "#dialog1" ).dialog( options );
 $( "#dialog2" ).dialog( options, { autoOpen: false }); 
@@ -86,7 +86,7 @@ $( "#dialog2" ).dialog( options, { autoOpen: false });
 
 默认值保存在小部件的属性中，因此我们可以覆盖 jQuery UI 设置的值。例如，在下面的设置后，所有将来的进度条实例将默认为值 80：
 
-```
+```js
 $.ui.progressbar.prototype.options.value = 80; 
 ```
 
@@ -96,19 +96,19 @@ $.ui.progressbar.prototype.options.value = 80;
 
 现在小部件已经初始化，我们可以查询它的状态，或者在小部件上执行动作。所有初始化后的动作都是以方法调用方式执行。为了在小部件上调用一个方法，我们向 jQuery 插件传递方法的名称。例如，在进度条部件（Progressbar Widget）上调用 `value()` 方法，我们可以使用：
 
-```
+```js
 $( "#elem" ).progressbar( "value" ); 
 ```
 
 如果方法接受参数，我们可以在方法名称后传递参数。例如，要传递参数 `40` 到 `value()` 方法，我们可以使用：
 
-```
+```js
 $( "#elem" ).progressbar( "value", 40 ); 
 ```
 
 就像 jQuery 中的其他方法，大多数的小部件方法返回 jQuery 对象：
 
-```
+```js
 $( "#elem" )
   .progressbar( "value", 90 )
   .addClass( "almost-done" ); 
@@ -120,7 +120,7 @@ $( "#elem" )
 
 所有的小部件都有与它们各种行为相关的事件，以便在状态改变的时候通知您。对于大多数的小部件，当事件被触发时，名称以小部件名称的小写字母形式作为前缀。例如，我们可以绑定进度条的 `change` 事件，该事件在值改变时触发。
 
-```
+```js
 $( "#elem" ).bind( "progressbarchange", function() {
   alert( "The value has changed!" );
 }); 
@@ -128,7 +128,7 @@ $( "#elem" ).bind( "progressbarchange", function() {
 
 每个事件都有一个对应的回调，这会作为选项。如果需要，我们可以抓住进度条的 `change` 回调，而不用绑定 `progressbarchange` 事件。
 
-```
+```js
 $( "#elem" ).progressbar({
   change: function() {
     alert( "The value has changed!" );
@@ -142,20 +142,20 @@ $( "#elem" ).progressbar({
 
 小部件的实例是使用带有小部件全称作为键的 `jQuery.data()` 存储的。因此，您可以使用下面代码从元素检索进度条部件（Progressbar Widget）的实例对象。
 
-```
+```js
 $( "#elem" ).data( "ui-progressbar" ); 
 ```
 
 元素是否绑定了给定小部件，可以使用 `:data` 选择器来检测。
 
-```
+```js
 $( "#elem" ).is( ":data( 'ui-progressbar' )" ); // true
 $( "#elem" ).is( ":data( 'ui-draggable' )" ); // false 
 ```
 
 您也可以使用 `:data` 来获得作为给定小部件实例的所有元素的列表。
 
-```
+```js
 $( ":data( 'ui-progressbar' )" ); 
 ```
 
@@ -222,13 +222,13 @@ $( ":data( 'ui-progressbar' )" );
 
 初始化带有指定 `disabled` 选项的小部件：
 
-```
+```js
 $( ".selector" ).widget({ disabled: true }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).widget( "option", "disabled" );
 
@@ -249,13 +249,13 @@ $( ".selector" ).widget( "option", "disabled", true );
 
 初始化带有指定 `hide` 选项的小部件：
 
-```
+```js
 $( ".selector" ).widget({ hide: { effect: "explode", duration: 1000 } }); 
 ```
 
 在初始化后，获取或设置`hide` 选项：
 
-```
+```js
 // getter
 var hide = $( ".selector" ).widget( "option", "hide" );
 
@@ -276,13 +276,13 @@ $( ".selector" ).widget( "option", "hide", { effect: "explode", duration: 1000 }
 
 初始化带有指定 `show` 选项的小部件：
 
-```
+```js
 $( ".selector" ).widget({ show: { effect: "blind", duration: 800 } }); 
 ```
 
 在初始化后，获取或设置`show` 选项：
 
-```
+```js
 // getter
 var show = $( ".selector" ).widget( "option", "show" );
 
@@ -302,7 +302,7 @@ $( ".selector" ).widget( "option", "show", { effect: "blind", duration: 800 } );
 
 基于一个选项设置小部件元素的背景颜色。
 
-```
+```js
 _create: function() {
   this.element.css( "background-color", this.options.color );
 } 
@@ -321,7 +321,7 @@ _create: function() {
 
 100 毫秒后在小部件上调用 `_foo()` 方法。
 
-```
+```js
 this._delay( this._foo, 100 ); 
 ```
 
@@ -335,7 +335,7 @@ this._delay( this._foo, 100 );
 
 当小部件被销毁时，从小部件的元素移除一个 class。
 
-```
+```js
 _destroy: function() {
   this.element.removeClass( "my-widget" );
 } 
@@ -353,7 +353,7 @@ _destroy: function() {
 
 向小部件内的一组元素应用 focusable 样式：
 
-```
+```js
 this._focusable( this.element.find( ".my-items" ) ); 
 ```
 
@@ -367,7 +367,7 @@ this._focusable( this.element.find( ".my-items" ) );
 
 向 `create` 事件处理程序传递小部件的选项，作为参数。
 
-```
+```js
 _getCreateEventData: function() {
   return this.options;
 } 
@@ -383,7 +383,7 @@ _getCreateEventData: function() {
 
 让小部件元素的 id 属性作为选项可用。
 
-```
+```js
 _getCreateOptions: function() {
   return { id: this.element.attr( "id" ) };
 } 
@@ -401,7 +401,7 @@ _getCreateOptions: function() {
 
 为自定义动画传递 `hide` 选项。
 
-```
+```js
 this._hide( this.element, this.options.hide, function() {
 
   // Remove the element from the DOM when it's fully hidden.
@@ -421,7 +421,7 @@ this._hide( this.element, this.options.hide, function() {
 
 当悬浮在元素上时，向元素内所有的 `&lt;div&gt;` 应用 hoverable 样式。
 
-```
+```js
 this._hoverable( this.element.find( "div" ) ); 
 ```
 
@@ -437,7 +437,7 @@ this._hoverable( this.element.find( "div" ) );
 
 如果设置了 `autoOpen` 选项，则调用 `open()` 方法。
 
-```
+```js
 _init: function() {
   if ( this.options.autoOpen ) {
     this.open();
@@ -456,7 +456,7 @@ _init: function() {
 
 从小部件的元素上取消绑定所有 click 事件。
 
-```
+```js
 this._off( this.element, "click" ); 
 ```
 
@@ -477,7 +477,7 @@ this._off( this.element, "click" );
 
 放置小部件元素内所有被点击的链接的默认行为。
 
-```
+```js
 this._on( this.element, {
   "click a": function( event ) {
     event.preventDefault();
@@ -496,7 +496,7 @@ this._on( this.element, {
 
 当小部件的 `height` 或 `width` 选项改变时，更新小部件的元素。
 
-```
+```js
 _setOption: function( key, value ) {
   if ( key === "width" ) {
     this.element.width( value );
@@ -520,7 +520,7 @@ _setOption: function( key, value ) {
 
 如果小部件的 `height` 或 `width` 选项改变，调用 `resize()` 方法。
 
-```
+```js
 _setOptions: function( options ) {
   var that = this,
     resize = false;
@@ -550,7 +550,7 @@ _setOptions: function( options ) {
 
 为自定义动画传递 `show` 选项。
 
-```
+```js
 this._show( this.element, this.options.show, function() {
 
   // Focus the element when it's fully visible.
@@ -568,7 +568,7 @@ this._show( this.element, this.options.show, function() {
 
 处理 `title` 选项更新，并调用付部件的 `_setOption()` 来更新选项的内部存储。
 
-```
+```js
 _setOption: function( key, value ) {
   if ( key === "title" ) {
     this.element.find( "h3" ).text( value );
@@ -587,7 +587,7 @@ _setOption: function( key, value ) {
 
 处理 `title` 选项更新，并调用付部件的 `_setOption()` 来更新选项的内部存储。
 
-```
+```js
 _setOption: function( key, value ) {
   if ( key === "title" ) {
     this.element.find( "h3" ).text( value );
@@ -616,7 +616,7 @@ _setOption: function( key, value ) {
 
 当按下一个键时，触发 `search` 事件。
 
-```
+```js
 this._on( this.element, {
   keydown: function( event ) {
 
@@ -641,7 +641,7 @@ this._on( this.element, {
 
 当点击小部件的任意锚点时销毁小部件。
 
-```
+```js
 this._on( this.element, {
   "click a": function( event ) {
     event.preventDefault();
@@ -660,7 +660,7 @@ this._on( this.element, {
 
 当点击小部件的任意锚点时禁用小部件。
 
-```
+```js
 this._on( this.element, {
   "click a": function( event ) {
     event.preventDefault();
@@ -679,7 +679,7 @@ this._on( this.element, {
 
 当点击小部件的任意锚点时启用小部件。
 
-```
+```js
 this._on( this.element, {
   "click a": function( event ) {
     event.preventDefault();
@@ -698,7 +698,7 @@ this._on( this.element, {
 
 获得 `width` 选项的值。
 
-```
+```js
 this.option( "width" ); 
 ```
 
@@ -712,7 +712,7 @@ this.option( "width" );
 
 Log the key and value of each of the widget's options for debugging.
 
-```
+```js
 var options = this.option();
 for ( var key in options ) {
   console.log( key, options[ key ] );
@@ -730,7 +730,7 @@ for ( var key in options ) {
 
 设置 `width` 选项为 `500`。
 
-```
+```js
 this.option( "width", 500 ); 
 ```
 
@@ -744,7 +744,7 @@ this.option( "width", 500 );
 
 设置 `height` 和 `width` 选项为 `500`。
 
-```
+```js
 this.option({
   width: 500,
   height: 500
@@ -761,7 +761,7 @@ this.option({
 
 当创建小部件时，在小部件的原始元素周围放置一个红色的边框。
 
-```
+```js
 _create: function() {
   this.widget().css( "border", "2px solid red" );
 } 
@@ -782,7 +782,7 @@ _create: function() {
 
 初始化带有指定 create 回调的小部件：
 
-```
+```js
 $( ".selector" ).widget({
   create: function( event, ui ) {}
 }); 
@@ -790,7 +790,7 @@ $( ".selector" ).widget({
 
 绑定一个事件监听器到 widgetcreate 事件：
 
-```
+```js
 $( ".selector" ).on( "widgetcreate", function( event, ui ) {} ); 
 ```
 
@@ -820,7 +820,7 @@ jQuery UI 小部件使用 `$.widget( "foo.bar", {} );` 语法定义一个对象�
 
 如果您只想一次性初始化并调用方法，那么您所传递给 `jQuery.widget.bridge()` 的对象可以很小：
 
-```
+```js
 var Highlighter = function( options, element ) {
   this.options = options;
   this.element = $( element );
@@ -843,7 +843,7 @@ Highlighter.prototype = {
 
 然后您可以使用桥（bridge）把该对象作为一个 jQuery 插件，且可以在任意的 jQuery 对象上使用它：
 
-```
+```js
 // Hook up the plugin
 $.widget.bridge( "colorToggle", Highlighter );
 

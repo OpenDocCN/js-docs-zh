@@ -6,13 +6,13 @@ A Sea.js plugin for concatenating HTTP requests
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-combo 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-combo.js"></script>
 

@@ -2,7 +2,7 @@
 
 ## $.Event
 
-```
+```js
 $.Event(type, [properties])   => event 
 ```
 
@@ -10,13 +10,13 @@ $.Event(type, [properties])   => event
 
 一个事件初始化的函数可以使用 trigger 来触发。
 
-```
+```js
 $.Event('mylib:change', { bubbles: false }) 
 ```
 
 ## $.proxy v1.0+
 
-```
+```js
 $.proxy(fn, context)   => function
 $.proxy(fn, context, [additionalArguments...])   => function v1.1.4+
 $.proxy(context, property)   => function
@@ -27,7 +27,7 @@ $.proxy(context, property, [additionalArguments...])   => function v1.1.4+
 
 如果传递超过 2 个的额外参数，它们被用于 传递给 fn 参数的函数 引用。
 
-```
+```js
 var obj = {name: 'Zepto'},
     handler = function(){ console.log("hello from + ", this.name) }
 
@@ -39,7 +39,7 @@ $(document).on('click', $.proxy(handler, obj))
 
 不推荐, 使用 on 代替。
 
-```
+```js
 bind(type, function(e){ ... })   => self
 bind(type, [data], function(e){ ... })   => self v1.1+
 bind({ type: handler, type2: handler2, ... })   => self
@@ -52,7 +52,7 @@ bind({ type: handler, type2: handler2, ... }, [data])   => self v1.1+
 
 不推荐, 使用 on 代替。
 
-```
+```js
 delegate(selector, type, function(e){ ... })   => self
 delegate(selector, { type: handler, type2: handler2, ... })   => self 
 ```
@@ -63,7 +63,7 @@ delegate(selector, { type: handler, type2: handler2, ... })   => self
 
 不推荐, 使用 on 代替。
 
-```
+```js
 die(type, function(e){ ... })   => self
 die({ type: handler, type2: handler2, ... })   => self 
 ```
@@ -72,13 +72,13 @@ die({ type: handler, type2: handler2, ... })   => self
 
 ## event.isDefaultPrevented v1.1+
 
-```
+```js
 event.isDefaultPrevented()   => boolean 
 ```
 
 如果`preventDefault()`被该事件的实例调用，那么返回 true。 这可作为跨平台的替代原生的 `defaultPrevented`属性，如果 `defaultPrevented`缺失或在某些浏览器下不可靠的时候。
 
-```
+```js
 // trigger a custom event and check whether it was cancelled
 var event = $.Event('custom')
 element.trigger(event)
@@ -87,7 +87,7 @@ event.isDefaultPrevented()
 
 ## event.isImmediatePropagationStopped v1.1+
 
-```
+```js
 event.isImmediatePropagationStopped()   => boolean 
 ```
 
@@ -95,7 +95,7 @@ event.isImmediatePropagationStopped()   => boolean
 
 ## event.isPropagationStopped v1.1+
 
-```
+```js
 event.isPropagationStopped()   => boolean 
 ```
 
@@ -105,7 +105,7 @@ event.isPropagationStopped()   => boolean
 
 不推荐, 使用 on 代替。
 
-```
+```js
 live(type, function(e){ ... })   => self
 live({ type: handler, type2: handler2, ... })   => self 
 ```
@@ -114,7 +114,7 @@ live({ type: handler, type2: handler2, ... })   => self
 
 ## off
 
-```
+```js
 off(type, [selector], function(e){ ... })   => self
 off({ type: handler, type2: handler2, ... }, [selector])   => self
 off(type, [selector])   => self
@@ -125,7 +125,7 @@ off()   => self
 
 ## on
 
-```
+```js
 on(type, [selector], function(e){ ... })   => self
 on(type, [selector], [data], function(e){ ... })   => self v1.1+
 on({ type: handler, type2: handler2, ... }, [selector])   => self
@@ -140,7 +140,7 @@ on({ type: handler, type2: handler2, ... }, [selector], [data])   => self v1.1+
 
 如果`false` 在回调函数的位置上作为参数传递给这个方法， 它相当于传递一个函数，这个函数直接返回`false`。（愚人码头注：即将 `false` 当作 `function(e){ ... }` 的参数，作为 `function(){ return false; }` 的简写形式，例如： `$("a.disabled").on("click", false);`这相当于`$("a.disabled").on("click", function(){ return false; } );`）
 
-```
+```js
 var elem = $('#content')
 // observe all clicks inside #content:
 elem.on('click', function(e){ ... })
@@ -154,7 +154,7 @@ $(document).on('click', 'nav a', false)
 
 ## one
 
-```
+```js
 one(type, [selector], function(e){ ... })   => self
 one(type, [selector], [data], function(e){ ... })   => self v1.1+
 one({ type: handler, type2: handler2, ... }, [selector])   => self
@@ -165,13 +165,13 @@ one({ type: handler, type2: handler2, ... }, [selector], [data])   => self v1.1+
 
 ## trigger
 
-```
+```js
 trigger(event, [args])   => self 
 ```
 
 在对象集合的元素上触发指定的事件。事件可以是一个字符串类型，也可以是一个 通过$.Event 定义的事件对象。如果给定 args 参数，它会作为参数传递给事件函数。
 
-```
+```js
 // add a handler for a custom event
 $(document).on('mylib:change', function(e, from, to){
   console.log('change on %o with data %s, %s', e.target, from, to)
@@ -184,13 +184,13 @@ Zepto 仅仅支持在 dom 元素上触发事件。
 
 ## triggerHandler
 
-```
+```js
 triggerHandler(event, [args])   => self 
 ```
 
 像 trigger，它只在当前元素上触发事件，但不冒泡。
 
-```
+```js
  $("input").triggerHandler('focus');
         // 此时 input 上的 focus 事件触发，但是 input 不会获取焦点
         $("input").trigger('focus');
@@ -201,7 +201,7 @@ triggerHandler(event, [args])   => self
 
 Deprecated, use off instead.
 
-```
+```js
 unbind(type, function(e){ ... })   => self
 unbind({ type: handler, type2: handler2, ... })   => self 
 ```
@@ -212,7 +212,7 @@ unbind({ type: handler, type2: handler2, ... })   => self
 
 Deprecated, use off instead.
 
-```
+```js
 undelegate(selector, type, function(e){ ... })   => self
 undelegate(selector, { type: handler, type2: handler2, ... })   => self 
 ```

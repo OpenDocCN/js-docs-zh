@@ -4,7 +4,7 @@
 
 创建一个 express 应用程序
 
-```
+```js
 var express = require('express');
 var app = express();
 
@@ -21,7 +21,7 @@ app.listen(3000);
 
 将设置项 `name` 的值设为 `value`
 
-```
+```js
 app.set('title', 'My Site');
 app.get('title');
 // => "My Site" 
@@ -31,7 +31,7 @@ app.get('title');
 
 获取设置项 `name` 的值
 
-```
+```js
 app.get('title');
 // => undefined
 
@@ -44,7 +44,7 @@ app.get('title');
 
 将设置项 `name` 的值设为 `true`.
 
-```
+```js
 app.enable('trust proxy');
 app.get('trust proxy');
 // => true 
@@ -54,7 +54,7 @@ app.get('trust proxy');
 
 将设置项 `name` 的值设为 `false`.
 
-```
+```js
 app.disable('trust proxy');
 app.get('trust proxy');
 // => false 
@@ -64,7 +64,7 @@ app.get('trust proxy');
 
 检查设置项 `name` 是否已启用
 
-```
+```js
 app.enabled('trust proxy');
 // => false
 
@@ -77,7 +77,7 @@ app.enabled('trust proxy');
 
 检查设置项 `name` 是否已禁用
 
-```
+```js
 app.disabled('trust proxy');
 // => true
 
@@ -90,7 +90,7 @@ app.disabled('trust proxy');
 
 当 `env` 和 `app.get('env')`(也就是 `process.env.NODE_ENV`) 匹配时, 调用`callback`。保留这个方法是出于历史原因，后面列出的`if`语句的代码其实更加高效、直接。使用`app.set()`配合其它一些配置方法后,*没有*必要再使用这个方法。
 
-```
+```js
 // 所有环境
 app.configure(function(){
   app.set('title', 'My Application');
@@ -109,7 +109,7 @@ app.configure('production', function(){
 
 更高效且直接的代码如下：
 
-```
+```js
 // 所有环境
 app.set('title', 'My Application');
 
@@ -128,7 +128,7 @@ if ('production' == app.get('env')) {
 
 使用中间件 `function`,可选参数`path`默认为"/"。
 
-```
+```js
 var express = require('express');
 var app = express();
 
@@ -150,7 +150,7 @@ app.listen(3000);
 
 这里有一个实际应用场景，常见的一个应用是使用./public 提供静态文件服务， 用 `express.static()` 中间件:
 
-```
+```js
 // GET /javascripts/jquery.js
 // GET /style.css
 // GET /favicon.ico
@@ -159,7 +159,7 @@ app.use(express.static(__dirname + '/public'));
 
 如果你想把所有的静态文件路径都前缀"/static", 你可以使用“挂载”功能。 如果`req.url` 不包含这个前缀, 挂载过的中间件**不会**执行。 当`function`被执行的时候,这个参数不会被传递。 这个只会影响这个函数，后面的中间件里得到的 `req.url`里将会包含"/static"
 
-```
+```js
 // GET /static/javascripts/jquery.js
 // GET /static/style.css
 // GET /static/favicon.ico
@@ -168,7 +168,7 @@ app.use('/static', express.static(__dirname + '/public'));
 
 使用 `app.use()` “定义的”中间件的顺序非常重要，它们将会顺序执行，use 的先后顺序决定了中间件的优先级。 比如说通常 `express.logger()` 是最先使用的一个组件，纪录每一个请求
 
-```
+```js
 app.use(express.logger());
 app.use(express.static(__dirname + '/public'));
 app.use(function(req, res){
@@ -178,7 +178,7 @@ app.use(function(req, res){
 
 如果你想忽略请求静态文件的纪录，但是对于在 `logger()`之后定义的路由和中间件想继续纪录，只需要简单的把 `static()` 移到前面就行了:
 
-```
+```js
 app.use(express.static(__dirname + '/public'));
 app.use(express.logger());
 app.use(function(req, res){
@@ -188,7 +188,7 @@ app.use(function(req, res){
 
 另一个现实的例子，有可能从多个目录提供静态文件服务，下面的例子中会优先从"./public"目录取文件
 
-```
+```js
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/files'));
 app.use(express.static(__dirname + '/uploads')); 
@@ -213,13 +213,13 @@ app.use(express.static(__dirname + '/uploads'));
 
 注册模板引擎的 `callback` 用来处理`ext`扩展名的文件 默认情况下, 根据文件扩展名`require()` 对应的模板引擎。 比如你想渲染一个 "foo.jade" 文件，Express 会在内部执行下面的代码，然后会缓存`require()`，这样就可以提高后面操作的性能
 
-```
+```js
 app.engine('jade', require('jade').__express); 
 ```
 
 那些没有提供 `.__express` 的或者你想渲染一个文件的扩展名与模板引擎默认的不一致的时候，也可以用这个方法。 比如你想用 EJS 模板引擎来处理 ".html" 后缀的文件:
 
-```
+```js
 app.engine('html', require('ejs').renderFile); 
 ```
 
@@ -227,7 +227,7 @@ app.engine('html', require('ejs').renderFile);
 
 有些模板引擎没有遵循这种转换， 这里有一个小项目[consolidate.js](https://github.com/visionmedia/consolidate.js) 专门把所有的 node 流行的模板引擎进行了包装，这样它们在 Express 内部看起来就一样了。
 
-```
+```js
 var engines = require('consolidate');
 app.engine('haml', engines.haml);
 app.engine('html', engines.hogan); 
@@ -239,7 +239,7 @@ app.engine('html', engines.hogan);
 
 下面的代码片段展示了`callback`很像中间件，但是在参数里多加了一个值，这里名为`id`. 它会尝试加载用户信息，然后赋值给`req.user`, 否则就传递错误`next(err)`.
 
-```
+```js
 app.param('user', function(req, res, next, id){
   User.find(id, function(err, user){
     if (err) {
@@ -258,7 +258,7 @@ app.param('user', function(req, res, next, id){
 
 下面的这个例子有一点点高级，检查如果第二个参数是一个正则，返回一个很像上面的"user"参数例子行为的回调函数。
 
-```
+```js
 app.param(function(name, fn){
   if (fn instanceof RegExp) {
     return function(req, res, next, val){
@@ -276,7 +276,7 @@ app.param(function(name, fn){
 
 这个函数现在可以非常有效的用来校验参数，或者提供正则捕获后的分组。
 
-```
+```js
 app.param('id', /^\d+$/);
 
 app.get('/user/:id', function(req, res){
@@ -297,7 +297,7 @@ app.get('/range/:range', function(req, res){
 
 下面的代码片段展示最简单的路由定义。Express 会把路径字符串转为正则表达式，然后在符合规则的请求到达时立即使用。 请求参数*不会* 被考虑进来，比如 "GET /" 会匹配下面的这个路由, 而"GET /?name=tobi"同样也会匹配。
 
-```
+```js
 app.get('/', function(req, res){
   res.send('hello world');
 }); 
@@ -305,7 +305,7 @@ app.get('/', function(req, res){
 
 同样也可以使用正则表达式，并且它能够在你指定特定路径的时候发挥大作用。 比如下面的例子可以匹配"GET /commits/71dbb9c" ， 同时也能匹配 "GET /commits/71dbb9c..4c084f9".
 
-```
+```js
 app.get(/^\/commits\/(\w+)(?:\.\.(\w+))?$/, function(req, res){
   var from = req.params[0];
   var to = req.params[1] || 'HEAD';
@@ -315,7 +315,7 @@ app.get(/^\/commits\/(\w+)(?:\.\.(\w+))?$/, function(req, res){
 
 可以传递一些回调，这对复用一些加载资源、校验的中间件很有用。
 
-```
+```js
 app.get('/user/:id', user.load, function(){
   // ... 
 }) 
@@ -323,7 +323,7 @@ app.get('/user/:id', user.load, function(){
 
 这些回调同样可以通过数组传递，简单的放置在数组中即可。
 
-```
+```js
 var middleware = [loadForum, loadThread];
 
 app.get('/forum/:fid/thread/:tid', middleware, function(){
@@ -341,20 +341,20 @@ app.post('/forum/:fid/thread/:tid', middleware, function(){
 
 这个方法在给特定前缀路径或者任意路径上处理时会特别有用。 比如你想把下面的路由放在所有其它路由之前，它需要所有从这个路由开始的加载验证，并且自动加载一个用户 记住所有的回调都不应该被当作终点， `loadUser` 能够被当作一个任务，然后`next()`去匹配接下来的路由。
 
-```
+```js
 app.all('*', requireAuthentication, loadUser); 
 ```
 
 Or the equivalent:
 
-```
+```js
 app.all('*', requireAuthentication)
 app.all('*', loadUser); 
 ```
 
 另一个非常赞的例子是全局白名单函数。这里有一个例子跟前一个很像，但是它限制前缀为"/api":
 
-```
+```js
 app.all('/api/*', requireAuthentication); 
 ```
 
@@ -362,14 +362,14 @@ app.all('/api/*', requireAuthentication);
 
 应用程序本地变量会附加给所有的在这个应用程序内渲染的模板。 这是一个非常有用的模板函数，就像应用程序级数据一样。
 
-```
+```js
 app.locals.title = 'My App';
 app.locals.strftime = require('strftime'); 
 ```
 
 `app.locals` 对象是一个 JavaScript `Function`, 执行的时候它会把属性合并到它自身，提供了一种简单展示已有对象作为本地变量的方法
 
-```
+```js
 app.locals({
   title: 'My App',
   phone: '1-250-858-9990',
@@ -385,7 +385,7 @@ app.locals.email
 
 `app.locals`对象最终会是一个 JavaScript 函数对象，你不可以使用 Functions 和 Objects 内置的属性，比如`name, apply, bind, call, arguments, length, constructor`
 
-```
+```js
 app.locals({name: 'My App'});
 
 app.locals.name
@@ -397,7 +397,7 @@ app.locals.name
 
 默认情况下 Express 只有一个应用程序级本地变量，它是 `settings`.
 
-```
+```js
 app.set('title', 'My App');
 // 在 view 里使用 settings.title 
 ```
@@ -406,7 +406,7 @@ app.set('title', 'My App');
 
 渲染 `view`, `callback` 用来处理返回的渲染后的字符串。 这个是 `res.render()` 的应用程序级版本，它们的行为是一样的。
 
-```
+```js
 app.render('email', function(err, html){
   // ...
 });
@@ -420,7 +420,7 @@ app.render('email', { name: 'Tobi' }, function(err, html){
 
 `app.routes` 对象存储了所有的被 HTTP verb 定义路由。 这个对象可以用在一些内部功能上，比如 Express 不仅用它来做路由分发，同时在没有`app.options()`定义的情况下用它来处理默认的<string>OPTIONS</string>行为。 你的应用程序或者框架也可以很轻松的通过在这个对象里移除路由来达到删除路由的目的。
 
-```
+```js
 console.log(app.routes)
 
 { get: 
@@ -446,7 +446,7 @@ delete:
 
 在给定的主机和端口上监听请求，这个和 node 的文档[http.Server#listen()](http://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback)是一致的
 
-```
+```js
 var express = require('express');
 var app = express();
 app.listen(3000); 
@@ -454,7 +454,7 @@ app.listen(3000);
 
 `express()`返回的`app`实际上是一个 JavaScript`Function`,它被设计为传给 node 的 http servers 作为处理请求的回调函数。因为`app`不是从 HTTP 或者 HTTPS 继承来的，它只是一个简单的回调函数，你可以以同一份代码同时处理 HTTP and HTTPS 版本的服务。
 
-```
+```js
 var express = require('express');
 var https = require('https');
 var http = require('http');
@@ -466,7 +466,7 @@ https.createServer(options, app).listen(443);
 
 `app.listen()` 方法只是一个快捷方法，如果你想使用 HTTPS，或者同时提供 HTTP 和 HTTPS，可以使用上面的代码
 
-```
+```js
 app.listen = function(){
   var server = http.createServer(this);
   return server.listen.apply(server, arguments);
@@ -479,7 +479,7 @@ app.listen = function(){
 
 这是一个数组对象，命名过的参数会以键值对的形式存放。 比如你有一个路由`/user/:name`, "name"属性会存放在`req.params.name`. 这个对象默认为 `{}`.
 
-```
+```js
 // GET /user/tj
 req.params.name
 // => "tj" 
@@ -487,7 +487,7 @@ req.params.name
 
 当使用正则表达式定义路由的时候，`req.params[N]`会是这个应用这个正则后的捕获分组, `N` 是代表的是第 N 个捕获分组。这个规则同样适用于全匹配的路由，如 `/file/*`:
 
-```
+```js
 // GET /file/javascripts/jquery.js
 req.params[0]
 // => "javascripts/jquery.js" 
@@ -497,7 +497,7 @@ req.params[0]
 
 这是一个解析过的请求参数对象，默认为`{}`.
 
-```
+```js
 // GET /search?q=tobi+ferret
 req.query.q
 // => "tobi ferret"
@@ -517,7 +517,7 @@ req.query.shoe.type
 
 这个对应的是解析过的请求体。这个特性是`bodyParser()` 中间件提供,其它的请求体解析中间件可以放在这个中间件之后。当`bodyParser()`中间件使用后，这个对象默认为 `{}`。
 
-```
+```js
 // POST user[name]=tobi&user[email]=tobi@learnboost.com
 req.body.user.name
 // => "tobi"
@@ -536,7 +536,7 @@ req.body.name
 
 例如 **file** 字段被命名为"image", 当一个文件上传完成后，`req.files.image` 将会包含下面的 `File` 对象:
 
-```
+```js
 { size: 74643,
   path: '/tmp/8ef9c52abe857867fd0a4e9a819d1876',
   name: 'edge.png',
@@ -562,7 +562,7 @@ req.body.name
 
 `bodyParser()` 中间件是在内部使用[node-formidable](https://github.com/felixge/node-formidable)来处理文件请求，所以接收的参数是一致的。 举个例子，使用 formidable 的选项`keepExtensions` , 它默认为 **false** , 在上面的例子可以看到给出的文件名"/tmp/8ef9c52abe857867fd0a4e9a819d1876" 不包含".png" 扩展名. 为了让它可以保留扩展名，你可以把参数传给 `bodyParser()`:
 
-```
+```js
 app.use(express.bodyParser({ keepExtensions: true, uploadDir: '/my/files' })); 
 ```
 
@@ -570,7 +570,7 @@ app.use(express.bodyParser({ keepExtensions: true, uploadDir: '/my/files' }));
 
 返回 `name` 参数的值。
 
-```
+```js
 // ?name=tobi
 req.param('name')
 // => "tobi"
@@ -596,7 +596,7 @@ req.param('name')
 
 这个对象里是当前匹配的 `Route` 里包含的属性，比如原始路径字符串，产生的正则，等等
 
-```
+```js
 app.get('/user/:id?', function(req, res){
   console.log(req.route);
 }); 
@@ -604,7 +604,7 @@ app.get('/user/:id?', function(req, res){
 
 上面代码的一个输出:
 
-```
+```js
 { path: '/user/:id?',
   method: 'get',
   callbacks: [ [Function] ],
@@ -617,7 +617,7 @@ app.get('/user/:id?', function(req, res){
 
 当使用 `cookieParser()`中间件之后，这个对象默认为`{}`, 它也包含了用户代理传过来的 cookies。
 
-```
+```js
 // Cookie: name=tj
 req.cookies.name
 // => "tj" 
@@ -627,7 +627,7 @@ req.cookies.name
 
 当使用了`cookieParser(secret)` 中间件后，这个对象默认为`{}`, 否则包含了用户代理传回来的签名后的 cookie，并等待使用。签名后的 cookies 被放在一个单独的对象里，恶意攻击者可以很简单的替换掉`req.cookie` 的值。需要注意的是签名的 cookie 不代表它是隐藏的或者加密的，这个只是简单的阻止篡改 cookie。
 
-```
+```js
 // Cookie: user=tobi.CP7AWaXDfAKIRfH49dQzKJx7sKzzSoPq7/AcBBRVwlI3
 req.signedCookies.user
 // => "tobi" 
@@ -637,7 +637,7 @@ req.signedCookies.user
 
 获取请求头里的`field`的值，大小写不敏感. *Referrer* 和 *Referer* 字段是可以互换的。
 
-```
+```js
 req.get('Content-Type');
 // => "text/plain"
 
@@ -656,7 +656,7 @@ req.get('Something');
 
 `type` 的值可能是单一的一个 mime 类型字符串,比如 "application/json", 扩展名为"json", 也可以为逗号分隔的列表或者数组。当给定的是数组或者列表，返回*最佳*匹配的。
 
-```
+```js
 // Accept: text/html
 req.accepts('html');
 // => "html"
@@ -686,7 +686,7 @@ req.accepts('html, json');
 
 返回一个从高质量到低质量排序的接受媒体类型数组
 
-```
+```js
 [ { value: 'application/json',
     quality: 1,
     type: 'application',
@@ -701,7 +701,7 @@ req.accepts('html, json');
 
 检查请求的文件头是不是包含"Content-Type" 字段, 它匹配给定的`type`.
 
-```
+```js
 // With Content-Type: text/html; charset=utf-8
 req.is('html');
 req.is('text/html');
@@ -722,7 +722,7 @@ req.is('html');
 
 返回远程地址，或者当“信任代理”使用时，返回上一级的地址
 
-```
+```js
 req.ip
 // => "127.0.0.1" 
 ```
@@ -735,7 +735,7 @@ req.ip
 
 返回请求的 URL 的路径名
 
-```
+```js
 // example.com/users?sort=desc
 req.path
 // => "/users" 
@@ -745,7 +745,7 @@ req.path
 
 返回从"Host"请求头里取的主机名,不包含端口号。
 
-```
+```js
 // Host: "example.com:3000"
 req.host
 // => "example.com" 
@@ -755,7 +755,7 @@ req.host
 
 判断请求是不是新的-通过对 Last-Modified 或者 ETag 进行匹配, 来标明这个资源是不是"新的".
 
-```
+```js
 req.fresh
 // => true 
 ```
@@ -764,7 +764,7 @@ req.fresh
 
 判断请求是不是旧的-如果 Last-Modified 或者 ETag 不匹配, 标明这个资源是"旧的". Check if the request is stale - aka Last-Modified and/or the ETag do not match, indicating that the resource is "stale".
 
-```
+```js
 req.stale
 // => true 
 ```
@@ -773,7 +773,7 @@ req.stale
 
 判断请求头里是否有"X-Requested-With"这样的字段并且值为"XMLHttpRequest", jQuery 等库发请求时会设置这个头
 
-```
+```js
 req.xhr
 // => true 
 ```
@@ -782,7 +782,7 @@ req.xhr
 
 返回标识请求协议的字符串，一般是"http"，当用 TLS 请求的时候是"https"。 当"trust proxy" 设置被激活， "X-Forwarded-Proto" 头部字段会被信任。 如果你使用了一个支持 https 的反向代理，那这个可能是激活的。
 
-```
+```js
 req.protocol
 // => "http" 
 ```
@@ -791,7 +791,7 @@ req.protocol
 
 检查 TLS 连接是否已经建立。 这是下面的缩写:
 
-```
+```js
 'https' == req.protocol; 
 ```
 
@@ -799,7 +799,7 @@ req.protocol
 
 把子域当作一个数组返回
 
-```
+```js
 // Host: "tobi.ferrets.example.com"
 req.subdomains
 // => ["ferrets", "tobi"] 
@@ -809,7 +809,7 @@ req.subdomains
 
 这个属性很像 `req.url`, 但是它保留了原始的 url。 这样你在做内部路由的时候可以重写`req.url`。 比如 app.use()的挂载功能会重写 `req.url`，把从它挂载的点开始
 
-```
+```js
 // GET /search?q=something
 req.originalUrl
 // => "/search?q=something" 
@@ -819,7 +819,7 @@ req.originalUrl
 
 返回一个从高质量到低质量排序的接受语言数组
 
-```
+```js
 Accept-Language: en;q=.5, en-us
 // => ['en-us', 'en'] 
 ```
@@ -828,7 +828,7 @@ Accept-Language: en;q=.5, en-us
 
 返回一个从高质量到低质量排序的可接受的字符集数组
 
-```
+```js
 Accept-Charset: iso-8859-5;q=.2, unicode-1-1;q=0.8
 // => ['unicode-1-1', 'iso-8859-5'] 
 ```
@@ -847,7 +847,7 @@ Accept-Charset: iso-8859-5;q=.2, unicode-1-1;q=0.8
 
 支持链式调用的 node's `res.statusCode=`.
 
-```
+```js
 res.status(404).sendfile('path/to/404.png'); 
 ```
 
@@ -855,7 +855,7 @@ res.status(404).sendfile('path/to/404.png');
 
 设置响应头字段`field` 值为 `value`, 也可以一次传入一个对象设置多个值。
 
-```
+```js
 res.set('Content-Type', 'text/plain');
 
 res.set({
@@ -871,7 +871,7 @@ res.set({
 
 返回一个大小写不敏感的响应头里的 `field`的值
 
-```
+```js
 res.get('Content-Type');
 // => "text/plain" 
 ```
@@ -880,27 +880,27 @@ res.get('Content-Type');
 
 设置 cookie `name` 值为`value`, 接受字符串参数或者 JSON 对象。 `path` 属性默认为 "/".
 
-```
+```js
 res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
 res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true }); 
 ```
 
 `maxAge` 属性是一个便利的设置"expires",它是一个从当前时间算起的毫秒。 下面的代码和上一个例子中的第二行是同样的作用。
 
-```
+```js
 res.cookie('rememberme', '1', { maxAge: 900000, httpOnly: true }) 
 ```
 
 可以传一个序列化的 JSON 对象作为参数， 它会自动被`bodyParser()` 中间件解析。
 
-```
+```js
 res.cookie('cart', { items: [1,2,3] });
 res.cookie('cart', { items: [1,2,3] }, { maxAge: 900000 }); 
 ```
 
 这个方法也支持签名的 cookies。 只需要简单的传递`signed` 参数。 `res.cookie()` 会使用通过 `express.cookieParser(secret)` 传 入的 secret 来签名这个值
 
-```
+```js
 res.cookie('name', 'tobi', { signed: true }); 
 ```
 
@@ -910,7 +910,7 @@ res.cookie('name', 'tobi', { signed: true });
 
 把`name`的 cookie 清除. `path`参数默认为 "/".
 
-```
+```js
 res.cookie('name', 'tobi', { path: '/admin' });
 res.clearCookie('name', { path: '/admin' }); 
 ```
@@ -919,7 +919,7 @@ res.clearCookie('name', { path: '/admin' });
 
 使用可选的状态码跳转到`url` 状态码`status`默认为 302 "Found".
 
-```
+```js
 res.redirect('/foo/bar');
 res.redirect('http://example.com');
 res.redirect(301, 'http://example.com');
@@ -928,31 +928,31 @@ res.redirect('../login');
 
 Express 支持几种跳转，第一种便是使用一个完整的 URI 跳转到一个完全不同的网站。
 
-```
+```js
 res.redirect('http://google.com'); 
 ```
 
 第二种是相对根域路径跳转，比如你现在在 `http://example.com/admin/post/new`, 下面的的代码跳转到 `/admin` 将会把你带到`http://example.com/admin`:
 
-```
+```js
 res.redirect('/admin'); 
 ```
 
 这是一种相对于应用程序挂载点的跳转。 比如把一个 blog 程序挂在 `/blog`, 事实上它无法知道它被挂载，所以当你使用跳转 `/admin/post/new` 时，将到跳到`http://example.com/admin/post/new`, 下面的相对于挂载点的跳转会把你带到 `http://example.com/blog/admin/post/new`:
 
-```
+```js
 res.redirect('admin/post/new'); 
 ```
 
 路径名.跳转同样也是支持的。 比如你在`http://example.com/admin/post/new`, 下面的跳转会把你带到 `http//example.com/admin/post`:
 
-```
+```js
 res.redirect('..'); 
 ```
 
 最后也是最特别的跳转是 `back` 跳转, 它会把你带回 Referer（也有可能是 Referrer）的地址 当 Referer 丢失的时候默认为 `/`
 
-```
+```js
 res.redirect('back'); 
 ```
 
@@ -960,7 +960,7 @@ res.redirect('back');
 
 设置 location 请求头.
 
-```
+```js
 res.location('/foo/bar');
 res.location('foo/bar');
 res.location('http://example.com');
@@ -972,7 +972,7 @@ res.location('back');
 
 举个例子，如果你的程序根地址是`/blog`, 下面的代码会把 `location` 请求头设置为`/blog/admin`:
 
-```
+```js
 res.location('admin') 
 ```
 
@@ -980,7 +980,7 @@ res.location('admin')
 
 设置字符集。默认为"utf-8"。
 
-```
+```js
 res.charset = 'value';
 res.send('some html');
 // => Content-Type: text/html; charset=value 
@@ -990,7 +990,7 @@ res.send('some html');
 
 发送一个响应。
 
-```
+```js
 res.send(new Buffer('whoop'));
 res.send({ some: 'json' });
 res.send('some html');
@@ -1003,27 +1003,27 @@ res.send(200);
 
 当参数为一个 `Buffer`时 Content-Type 会被设置为 "application/octet-stream" 除非它之前有像下面的代码：
 
-```
+```js
 res.set('Content-Type', 'text/html');
 res.send(new Buffer('some html')); 
 ```
 
 当参数为一个`String`时 Content-Type 默认设置为"text/html":
 
-```
+```js
 res.send('some html'); 
 ```
 
 当参数为 `Array` 或者 `Object` 时 Express 会返回一个 JSON :
 
-```
+```js
 res.send({ user: 'tobi' })
 res.send([1,2,3]) 
 ```
 
 最后一条当一个`Number` 作为参数， 并且没有上面提到的任何一条在响应体里， Express 会帮你设置一个响应体 比如 200 会返回字符"OK", 404 会返回"Not Found"等等.
 
-```
+```js
 res.send(200)
 res.send(204)
 res.send(500) 
@@ -1033,7 +1033,7 @@ res.send(500)
 
 返回一个 JSON 响应。 当`res.send()` 的参数是一个对象或者数组的时候， 会调用这个方法。 当然它也在复杂的空值(null, undefined, etc)JSON 转换的时候很有用， 因为规范上这些对象不是合法的 JSON。
 
-```
+```js
 res.json(null)
 res.json({ user: 'tobi' })
 res.json(500, { error: 'message' }) 
@@ -1043,7 +1043,7 @@ res.json(500, { error: 'message' })
 
 返回一个支持 JSONP 的 JSON 响应。 Send a JSON response with JSONP support. 这个方法同样使用了`res.json()`, 只是加了一个可以自定义的 JSONP 回调支持。
 
-```
+```js
 res.jsonp(null)
 // => null
 
@@ -1056,7 +1056,7 @@ res.jsonp(500, { error: 'message' })
 
 默认情况下 JSONP 回调的函数名就是`callback`。 你可以通过 jsonp callback name 来修改这个值。 下面是一些使用 JSONP 的例子。
 
-```
+```js
 // ?callback=foo
 res.jsonp({ user: 'tobi' })
 // => foo({ "user": "tobi" })
@@ -1072,7 +1072,7 @@ res.jsonp(500, { error: 'message' })
 
 设置 Sets the Content-Type to the mime lookup of `type`, or when "/" is present the Content-Type is simply set to this literal value.
 
-```
+```js
 res.type('.html');
 res.type('html');
 res.type('json');
@@ -1090,7 +1090,7 @@ Content-Type 在 callback 被选中执行的时候会被设置好, 如果你想�
 
 下面的例子展示了在请求头设置为"application/json" 或者 "*/json"的时候 会返回`{ "message": "hey" }` 如果设置的是"*/*" 那么所有的返回都将是"hey"
 
-```
+```js
 res.format({
   'text/plain': function(){
     res.send('hey');
@@ -1108,7 +1108,7 @@ res.format({
 
 除了使用标准的 MIME 类型，你也可以使用扩展名来映射这些类型 下面是一个不太完整的实现：
 
-```
+```js
 res.format({
   text: function(){
     res.send('hey');
@@ -1128,7 +1128,7 @@ res.format({
 
 设置响应头的 Content-Disposition 字段值为 "attachment". 如果有`filename` 参数，Content-Type 将会依据文件扩展名通过`res.type()`自动设置, 并且 Content-Disposition 的"filename="参数将会被设置
 
-```
+```js
 res.attachment();
 // Content-Disposition: attachment
 
@@ -1150,7 +1150,7 @@ Options:
 
 这个方法可以非常良好的支持有缩略图的文件服务。
 
-```
+```js
 app.get('/user/:uid/photos/:file', function(req, res){
   var uid = req.params.uid
     , file = req.params.file;
@@ -1171,7 +1171,7 @@ app.get('/user/:uid/photos/:file', function(req, res){
 
 当在传输的过程中发生一个错误时，可选的回调函数`fn`会被调用执行。 这个方法使用 res.sendfile()传输文件。
 
-```
+```js
 res.download('/report-12345.pdf');
 
 res.download('/report-12345.pdf', 'report.pdf');
@@ -1190,7 +1190,7 @@ res.download('/report-12345.pdf', 'report.pdf', function(err){
 
 合并给定的`links`, 并且设置给响应头里的"Link" 字段.
 
-```
+```js
 res.links({
   next: 'http://api.example.com/users?page=2',
   last: 'http://api.example.com/users?page=5'
@@ -1199,7 +1199,7 @@ res.links({
 
 转换后:
 
-```
+```js
 Link: <http://api.example.com/users?page=2>; rel="next", 
       <http://api.example.com/users?page=5>; rel="last" 
 ```
@@ -1210,7 +1210,7 @@ Link: <http://api.example.com/users?page=2>; rel="next",
 
 这个对象在放置请求级信息时非常有用，比如放置请求的路径名，验证过的用户，用户设置等等
 
-```
+```js
 app.use(function(req, res, next){
   res.locals.user = req.user;
   res.locals.authenticated = ! req.user.anonymous;
@@ -1222,7 +1222,7 @@ app.use(function(req, res, next){
 
 渲染`view`, 同时向 callback 传入渲染后的字符串。 callback 如果不传的话，直接会把渲染后的字符串输出至请求方， 一般如果不需要再对渲染后的模板作操作，就不需要传 callback。 当有错误发生时`next(err)`会被执行. 如果提供了 callback 参数，可能发生的错误和渲染的字符串都会被当作参数传入, 并且没有默认响应。
 
-```
+```js
 res.render('index', function(err, html){
   // ...
 });
@@ -1240,13 +1240,13 @@ res.render('user', { name: 'Tobi' }, function(err, html){
 
 用户名和密码的例子:
 
-```
+```js
 app.use(express.basicAuth('username', 'password')); 
 ```
 
 校验回调:
 
-```
+```js
 app.use(express.basicAuth(function(user, pass){
   return 'tj' == user && 'wahoo' == pass;
 })); 
@@ -1254,7 +1254,7 @@ app.use(express.basicAuth(function(user, pass){
 
 异步校验接受参数`fn(err, user)`, 下面的例子`req.user` 将会作为 user 对象传递.
 
-```
+```js
 app.use(connect.basicAuth(function(user, pass, fn){
   User.authenticate({ user: user, pass: pass }, fn);
 })) 
@@ -1264,7 +1264,7 @@ app.use(connect.basicAuth(function(user, pass, fn){
 
 支持 JSON, urlencoded 和 multipart requests 的请求体解析中间件。 这个中间件是`json()`, `urlencoded()`,和`multipart()` 这几个中间件的简单封装
 
-```
+```js
 app.use(express.bodyParser());
 
 // 等同于:
@@ -1275,7 +1275,7 @@ app.use(express.multipart());
 
 从安全上考虑，如果你的应用程序不需要文件上传功能，最好关闭它。我们只使用我们需要的中间件。例如：我们不使用`bodyParser`、`multipart()` 这两个中间件。
 
-```
+```js
 app.use(express.json());
 app.use(express.urlencoded()); 
 ```
@@ -1286,7 +1286,7 @@ app.use(express.urlencoded());
 
 通过 gzip / deflate 压缩响应数据. 这个中间件应该放置在所有的中间件最前面以保证所有的返回都是被压缩的
 
-```
+```js
 app.use(express.logger());
 app.use(express.compress());
 app.use(express.methodOverride());
@@ -1297,7 +1297,7 @@ app.use(express.bodyParser());
 
 解析请求头里的 Cookie, 并用 cookie 名字的键值对形式放在 `req.cookies` 你也可以通过传递一个`secret` 字符串激活签名了的 cookie
 
-```
+```js
 app.use(express.cookieParser());
 app.use(express.cookieParser('some secret')); 
 ```
@@ -1311,13 +1311,13 @@ app.use(express.cookieParser('some secret'));
 *   `cookie` session cookie 设置, 默认是 `{ path: '/', httpOnly: true, maxAge: null }`
 *   `proxy` 当设置安全 cookies 时信任反向代理 (通过 "x-forwarded-proto")
 
-```
+```js
 app.use(express.cookieSession()); 
 ```
 
 清掉一个 cookie, 只需要在响应前把 null 赋值给 session:
 
-```
+```js
 req.session = null 
 ```
 
@@ -1335,7 +1335,7 @@ CSRF 防护中间件
 
 文件夹服务中间件，用 `path` 提供服务。
 
-```
+```js
 app.use(express.directory('public'))
 app.use(express.static('public')) 
 ```

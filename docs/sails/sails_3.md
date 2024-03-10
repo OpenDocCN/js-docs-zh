@@ -55,13 +55,13 @@ Every .md file must contain two `<docmeta>` tags. They are required for automati
 
 The `uniqueID` tag is used by the router on the front-end of the Sails.js website. The value can be anything as it's unique among all the other .md files. We add some random numbers to it just in case.
 
-```
+```js
 <docmeta name="uniqueID" value="someUniqueName85732"> 
 ```
 
 The value of the `displayName` tag determines the link text on the navigation menu. This does not need to be unique.
 
-```
+```js
 <docmeta name="displayName" value="Name To Appear On Navigation"> 
 ```
 

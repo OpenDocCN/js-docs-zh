@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5508 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.chunk "See the npm package.")
 
-```
+```js
 _.chunk(array, [size=0]) 
 ```
 
@@ -30,7 +30,7 @@ _.chunk(array, [size=0])
 
 ### 示例
 
-```
+```js
 _.chunk(['a', 'b', 'c', 'd'], 2);
 // => [['a', 'b'], ['c', 'd']]
 
@@ -46,7 +46,7 @@ _.chunk(['a', 'b', 'c', 'd'], 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5539 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.compact "See the npm package.")
 
-```
+```js
 _.compact(array) 
 ```
 
@@ -64,7 +64,7 @@ _.compact(array)
 
 ### 示例
 
-```
+```js
 _.compact([0, 1, false, 2, '', 3]);
 // => [1, 2, 3] 
 ```
@@ -77,7 +77,7 @@ _.compact([0, 1, false, 2, '', 3]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5574 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.concat "See the npm package.")
 
-```
+```js
 _.concat(array, [values]) 
 ```
 
@@ -99,7 +99,7 @@ _.concat(array, [values])
 
 ### 示例
 
-```
+```js
 var array = [1];
 var other = _.concat(array, 2, [3], [[4]]);
 
@@ -118,7 +118,7 @@ console.log(array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5596 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.difference "See the npm package.")
 
-```
+```js
 _.difference(array, [values]) 
 ```
 
@@ -140,7 +140,7 @@ _.difference(array, [values])
 
 ### 示例
 
-```
+```js
 _.difference([3, 2, 1], [4, 2]);
 // => [3, 1] 
 ```
@@ -153,7 +153,7 @@ _.difference([3, 2, 1], [4, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5621 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.differenceby "See the npm package.")
 
-```
+```js
 _.differenceBy(array, [values], [iteratee=_.identity]) 
 ```
 
@@ -179,7 +179,7 @@ _.differenceBy(array, [values], [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.differenceBy([3.1, 2.2, 1.3], [4.4, 2.5], Math.floor);
 // => [3.1, 1.3]
 
@@ -196,7 +196,7 @@ _.differenceBy([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5648 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.differencewith "See the npm package.")
 
-```
+```js
 _.differenceWith(array, [values], [comparator]) 
 ```
 
@@ -222,7 +222,7 @@ _.differenceWith(array, [values], [comparator])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 
 _.differenceWith(objects, [{ 'x': 1, 'y': 2 }], _.isEqual);
@@ -237,7 +237,7 @@ _.differenceWith(objects, [{ 'x': 1, 'y': 2 }], _.isEqual);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5682 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.drop "See the npm package.")
 
-```
+```js
 _.drop(array, [n=1]) 
 ```
 
@@ -259,7 +259,7 @@ _.drop(array, [n=1])
 
 ### 示例
 
-```
+```js
 _.drop([1, 2, 3]);
 // => [2, 3]
 
@@ -281,7 +281,7 @@ _.drop([1, 2, 3], 0);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5715 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.dropright "See the npm package.")
 
-```
+```js
 _.dropRight(array, [n=1]) 
 ```
 
@@ -303,7 +303,7 @@ _.dropRight(array, [n=1])
 
 ### 示例
 
-```
+```js
 _.dropRight([1, 2, 3]);
 // => [1, 2]
 
@@ -325,7 +325,7 @@ _.dropRight([1, 2, 3], 0);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5759 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.droprightwhile "See the npm package.")
 
-```
+```js
 _.dropRightWhile(array, [predicate=_.identity]) 
 ```
 
@@ -347,7 +347,7 @@ _.dropRightWhile(array, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var resolve = _.partial(_.map, _, 'user');
 
 var users = [
@@ -380,7 +380,7 @@ resolve( _.dropRightWhile(users, 'active') );
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5797 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.dropwhile "See the npm package.")
 
-```
+```js
 _.dropWhile(array, [predicate=_.identity]) 
 ```
 
@@ -402,7 +402,7 @@ Returns the slice of `array`.
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'active': false },
   { 'user': 'fred',    'active': false },
@@ -433,7 +433,7 @@ _.dropWhile(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5830 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.fill "See the npm package.")
 
-```
+```js
 _.fill(array, value, [start=0], [end=array.length]) 
 ```
 
@@ -465,7 +465,7 @@ _.fill(array, value, [start=0], [end=array.length])
 
 ### 示例
 
-```
+```js
 var array = [1, 2, 3];
 
 _.fill(array, 'a');
@@ -487,7 +487,7 @@ _.fill([4, 6, 8, 10], '*', 1, 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5874 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.findindex "See the npm package.")
 
-```
+```js
 _.findIndex(array, [predicate=_.identity]) 
 ```
 
@@ -509,7 +509,7 @@ _.findIndex(array, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'active': false },
   { 'user': 'fred',    'active': false },
@@ -540,7 +540,7 @@ _.findIndex(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5912 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.findlastindex "See the npm package.")
 
-```
+```js
 _.findLastIndex(array, [predicate=_.identity]) 
 ```
 
@@ -562,7 +562,7 @@ _.findLastIndex(array, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'active': true },
   { 'user': 'fred',    'active': false },
@@ -593,7 +593,7 @@ _.findLastIndex(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5931 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.flatten "See the npm package.")
 
-```
+```js
 _.flatten(array) 
 ```
 
@@ -611,7 +611,7 @@ _.flatten(array)
 
 ### 示例
 
-```
+```js
 _.flatten([1, [2, [3, [4]], 5]]);
 // => [1, 2, [3, [4]], 5] 
 ```
@@ -624,7 +624,7 @@ _.flatten([1, [2, [3, [4]], 5]]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5949 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.flattendeep "See the npm package.")
 
-```
+```js
 _.flattenDeep(array) 
 ```
 
@@ -642,7 +642,7 @@ _.flattenDeep(array)
 
 ### 示例
 
-```
+```js
 _.flattenDeep([1, [2, [3, [4]], 5]]);
 // => [1, 2, 3, 4, 5] 
 ```
@@ -655,7 +655,7 @@ _.flattenDeep([1, [2, [3, [4]], 5]]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5973 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.flattendepth "See the npm package.")
 
-```
+```js
 _.flattenDepth(array, [depth=1]) 
 ```
 
@@ -677,7 +677,7 @@ _.flattenDepth(array, [depth=1])
 
 ### 示例
 
-```
+```js
 var array = [1, [2, [3, [4]], 5]];
 
 _.flattenDepth(array, 1);
@@ -695,7 +695,7 @@ _.flattenDepth(array, 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L5995 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.frompairs "See the npm package.")
 
-```
+```js
 _.fromPairs(pairs) 
 ```
 
@@ -713,7 +713,7 @@ _.fromPairs(pairs)
 
 ### 示例
 
-```
+```js
 _.fromPairs([['fred', 30], ['barney', 40]]);
 // => { 'fred': 30, 'barney': 40 } 
 ```
@@ -726,7 +726,7 @@ _.fromPairs([['fred', 30], ['barney', 40]]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6024 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.head "See the npm package.")
 
-```
+```js
 _.head(array) 
 ```
 
@@ -744,7 +744,7 @@ _.head(array)
 
 ### 示例
 
-```
+```js
 _.head([1, 2, 3]);
 // => 1
 
@@ -760,7 +760,7 @@ _.head([]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6047 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.indexof "See the npm package.")
 
-```
+```js
 _.indexOf(array, value, [fromIndex=0]) 
 ```
 
@@ -786,7 +786,7 @@ _.indexOf(array, value, [fromIndex=0])
 
 ### 示例
 
-```
+```js
 _.indexOf([1, 2, 1, 2], 2);
 // => 1
 
@@ -803,7 +803,7 @@ _.indexOf([1, 2, 1, 2], 2, 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6072 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.initial "See the npm package.")
 
-```
+```js
 _.initial(需要检索的数组) 
 ```
 
@@ -819,7 +819,7 @@ _.initial(需要检索的数组)
 
 ### 示例
 
-```
+```js
 _.initial([1, 2, 3]);
 // => [1, 2] 
 ```
@@ -832,7 +832,7 @@ _.initial([1, 2, 3]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6089 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.intersection "See the npm package.")
 
-```
+```js
 _.intersection([arrays]) 
 ```
 
@@ -850,7 +850,7 @@ _.intersection([arrays])
 
 ### 示例
 
-```
+```js
 _.intersection([2, 1], [4, 2], [1, 2]);
 // => [2] 
 ```
@@ -863,7 +863,7 @@ _.intersection([2, 1], [4, 2], [1, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6114 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.intersectionby "See the npm package.")
 
-```
+```js
 _.intersectionBy([arrays], [iteratee=_.identity]) 
 ```
 
@@ -885,7 +885,7 @@ _.intersectionBy([arrays], [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.intersectionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
 // => [2.1]
 
@@ -902,7 +902,7 @@ _.intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6145 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.intersectionwith "See the npm package.")
 
-```
+```js
 _.intersectionWith([arrays], [comparator]) 
 ```
 
@@ -924,7 +924,7 @@ _.intersectionWith([arrays], [comparator])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
 
@@ -940,7 +940,7 @@ _.intersectionWith(objects, others, _.isEqual);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6173 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.join "See the npm package.")
 
-```
+```js
 _.join(array, [separator=',']) 
 ```
 
@@ -962,7 +962,7 @@ _.join(array, [separator=','])
 
 ### 示例
 
-```
+```js
 _.join(['a', 'b', 'c'], '~');
 // => 'a~b~c' 
 ```
@@ -975,7 +975,7 @@ _.join(['a', 'b', 'c'], '~');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6190 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.last "See the npm package.")
 
-```
+```js
 _.last(array) 
 ```
 
@@ -993,7 +993,7 @@ _.last(array)
 
 ### 示例
 
-```
+```js
 _.last([1, 2, 3]);
 // => 3 
 ```
@@ -1006,7 +1006,7 @@ _.last([1, 2, 3]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6218 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.lastindexof "See the npm package.")
 
-```
+```js
 _.lastIndexOf(array, value, [fromIndex=array.length-1]) 
 ```
 
@@ -1032,7 +1032,7 @@ _.lastIndexOf(array, value, [fromIndex=array.length-1])
 
 ### 示例
 
-```
+```js
 _.lastIndexOf([1, 2, 1, 2], 2);
 // => 3
 
@@ -1049,7 +1049,7 @@ _.lastIndexOf([1, 2, 1, 2], 2, 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6405 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.reverse "See the npm package.")
 
-```
+```js
 _.prototype.reverse() 
 ```
 
@@ -1063,7 +1063,7 @@ _.prototype.reverse()
 
 ### 示例
 
-```
+```js
 var array = [1, 2, 3];
 
 _.reverse(array);
@@ -1081,7 +1081,7 @@ console.log(array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6258 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pull "See the npm package.")
 
-```
+```js
 _.pull(array, [values]) 
 ```
 
@@ -1105,7 +1105,7 @@ _.pull(array, [values])
 
 ### 示例
 
-```
+```js
 var array = [1, 2, 3, 1, 2, 3];
 
 _.pull(array, 2, 3);
@@ -1121,7 +1121,7 @@ console.log(array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6279 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pullall "See the npm package.")
 
-```
+```js
 _.pullAll(array, values) 
 ```
 
@@ -1145,7 +1145,7 @@ _.pullAll(array, values)
 
 ### 示例
 
-```
+```js
 var array = [1, 2, 3, 1, 2, 3];
 
 _.pullAll(array, [2, 3]);
@@ -1161,7 +1161,7 @@ console.log(array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6305 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pullallby "See the npm package.")
 
-```
+```js
 _.pullAllBy(array, values, [iteratee=_.identity]) 
 ```
 
@@ -1189,7 +1189,7 @@ _.pullAllBy(array, values, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var array = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }];
 
 _.pullAllBy(array, [{ 'x': 1 }, { 'x': 3 }], 'x');
@@ -1205,7 +1205,7 @@ console.log(array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6334 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.pullat "See the npm package.")
 
-```
+```js
 _.pullAt(array, [indexes]) 
 ```
 
@@ -1229,7 +1229,7 @@ _.pullAt(array, [indexes])
 
 ### 示例
 
-```
+```js
 var array = [5, 10, 15, 20];
 var evens = _.pullAt(array, 1, 3);
 
@@ -1248,7 +1248,7 @@ console.log(evens);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6366 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.remove "See the npm package.")
 
-```
+```js
 _.remove(array, [predicate=_.identity]) 
 ```
 
@@ -1272,7 +1272,7 @@ _.remove(array, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var array = [1, 2, 3, 4];
 var evens = _.remove(array, function(n) {
   return n % 2 == 0;
@@ -1293,7 +1293,7 @@ console.log(evens);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6423 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.slice "See the npm package.")
 
-```
+```js
 _.slice(array, [start=0], [end=array.length]) 
 ```
 
@@ -1327,7 +1327,7 @@ _.slice(array, [start=0], [end=array.length])
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6457 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortedindex "See the npm package.")
 
-```
+```js
 _.sortedIndex(array, value) 
 ```
 
@@ -1349,7 +1349,7 @@ _.sortedIndex(array, value)
 
 ### 示例
 
-```
+```js
 _.sortedIndex([30, 50], 40);
 // => 1
 
@@ -1365,7 +1365,7 @@ _.sortedIndex([4, 5], 4);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6482 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortedindexby "See the npm package.")
 
-```
+```js
 _.sortedIndexBy(array, value, [iteratee=_.identity]) 
 ```
 
@@ -1391,7 +1391,7 @@ _.sortedIndexBy(array, value, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var dict = { 'thirty': 30, 'forty': 40, 'fifty': 50 };
 
 _.sortedIndexBy(['thirty', 'fifty'], 'forty', _.propertyOf(dict));
@@ -1410,7 +1410,7 @@ _.sortedIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6500 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortedindexof "See the npm package.")
 
-```
+```js
 _.sortedIndexOf(array, value) 
 ```
 
@@ -1432,7 +1432,7 @@ _.sortedIndexOf(array, value)
 
 ### 示例
 
-```
+```js
 _.sortedIndexOf([1, 1, 2, 2], 2);
 // => 2 
 ```
@@ -1445,7 +1445,7 @@ _.sortedIndexOf([1, 1, 2, 2], 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6525 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortedlastindex "See the npm package.")
 
-```
+```js
 _.sortedLastIndex(array, value) 
 ```
 
@@ -1467,7 +1467,7 @@ _.sortedLastIndex(array, value)
 
 ### 示例
 
-```
+```js
 _.sortedLastIndex([4, 5], 4);
 // => 1 
 ```
@@ -1480,7 +1480,7 @@ _.sortedLastIndex([4, 5], 4);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6545 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortedlastindexby "See the npm package.")
 
-```
+```js
 _.sortedLastIndexBy(array, value, [iteratee=_.identity]) 
 ```
 
@@ -1506,7 +1506,7 @@ _.sortedLastIndexBy(array, value, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 // 使用了 `_.property` 的回调结果
 _.sortedLastIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, 'x');
 // => 1 
@@ -1520,7 +1520,7 @@ _.sortedLastIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6563 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sortedlastindexof "See the npm package.")
 
-```
+```js
 _.sortedLastIndexOf(array, value) 
 ```
 
@@ -1542,7 +1542,7 @@ _.sortedLastIndexOf(array, value)
 
 ### 示例
 
-```
+```js
 _.sortedLastIndexOf([1, 1, 2, 2], 2);
 // => 3 
 ```
@@ -1555,7 +1555,7 @@ _.sortedLastIndexOf([1, 1, 2, 2], 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6587 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sorteduniq "See the npm package.")
 
-```
+```js
 _.sortedUniq(array) 
 ```
 
@@ -1573,7 +1573,7 @@ _.sortedUniq(array)
 
 ### 示例
 
-```
+```js
 _.sortedUniq([1, 1, 2]);
 // => [1, 2] 
 ```
@@ -1586,7 +1586,7 @@ _.sortedUniq([1, 1, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6607 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sorteduniqby "See the npm package.")
 
-```
+```js
 _.sortedUniqBy(array, [iteratee]) 
 ```
 
@@ -1608,7 +1608,7 @@ _.sortedUniqBy(array, [iteratee])
 
 ### 示例
 
-```
+```js
 _.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
 // => [1.1, 2.3] 
 ```
@@ -1621,7 +1621,7 @@ _.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6626 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tail "See the npm package.")
 
-```
+```js
 _.tail(array) 
 ```
 
@@ -1639,7 +1639,7 @@ _.tail(array)
 
 ### 示例
 
-```
+```js
 _.tail([1, 2, 3]);
 // => [2, 3] 
 ```
@@ -1652,7 +1652,7 @@ _.tail([1, 2, 3]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6654 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.take "See the npm package.")
 
-```
+```js
 _.take(array, [n=1]) 
 ```
 
@@ -1674,7 +1674,7 @@ _.take(array, [n=1])
 
 ### 示例
 
-```
+```js
 _.take([1, 2, 3]);
 // => [1]
 
@@ -1696,7 +1696,7 @@ _.take([1, 2, 3], 0);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6686 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.takeright "See the npm package.")
 
-```
+```js
 _.takeRight(array, [n=1]) 
 ```
 
@@ -1718,7 +1718,7 @@ _.takeRight(array, [n=1])
 
 ### 示例
 
-```
+```js
 _.takeRight([1, 2, 3]);
 // => [3]
 
@@ -1740,7 +1740,7 @@ _.takeRight([1, 2, 3], 0);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6728 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.takerightwhile "See the npm package.")
 
-```
+```js
 _.takeRightWhile(array, [predicate=_.identity]) 
 ```
 
@@ -1762,7 +1762,7 @@ _.takeRightWhile(array, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'active': true },
   { 'user': 'fred',    'active': false },
@@ -1793,7 +1793,7 @@ _.takeRightWhile(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6766 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.takewhile "See the npm package.")
 
-```
+```js
 _.takeWhile(array, [predicate=_.identity]) 
 ```
 
@@ -1815,7 +1815,7 @@ _.takeWhile(array, [predicate=_.identity])
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'active': false },
   { 'user': 'fred',    'active': false},
@@ -1846,7 +1846,7 @@ _.takeWhile(users, 'active');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6785 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.union "See the npm package.")
 
-```
+```js
 _.union([arrays]) 
 ```
 
@@ -1864,7 +1864,7 @@ _.union([arrays])
 
 ### 示例
 
-```
+```js
 _.union([2, 1], [4, 2], [1, 2]);
 // => [2, 1, 4] 
 ```
@@ -1877,7 +1877,7 @@ _.union([2, 1], [4, 2], [1, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6807 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unionby "See the npm package.")
 
-```
+```js
 _.unionBy([arrays], [iteratee=_.identity]) 
 ```
 
@@ -1899,7 +1899,7 @@ _.unionBy([arrays], [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.unionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
 // => [2.1, 1.2, 4.3]
 
@@ -1916,7 +1916,7 @@ _.unionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6833 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unionwith "See the npm package.")
 
-```
+```js
 _.unionWith([arrays], [comparator]) 
 ```
 
@@ -1938,7 +1938,7 @@ _.unionWith([arrays], [comparator])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
 
@@ -1954,7 +1954,7 @@ _.unionWith(objects, others, _.isEqual);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6854 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.uniq "See the npm package.")
 
-```
+```js
 _.uniq(array) 
 ```
 
@@ -1972,7 +1972,7 @@ _.uniq(array)
 
 ### 示例
 
-```
+```js
 _.uniq([2, 1, 2]);
 // => [2, 1] 
 ```
@@ -1985,7 +1985,7 @@ _.uniq([2, 1, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6878 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.uniqby "See the npm package.")
 
-```
+```js
 _.uniqBy(array, [iteratee=_.identity]) 
 ```
 
@@ -2007,7 +2007,7 @@ _.uniqBy(array, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.uniqBy([2.1, 1.2, 2.3], Math.floor);
 // => [2.1, 1.2]
 
@@ -2024,7 +2024,7 @@ _.uniqBy([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6900 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.uniqwith "See the npm package.")
 
-```
+```js
 _.uniqWith(array, [comparator]) 
 ```
 
@@ -2046,7 +2046,7 @@ _.uniqWith(array, [comparator])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 },  { 'x': 1, 'y': 2 }];
 
 _.uniqWith(objects, _.isEqual);
@@ -2061,7 +2061,7 @@ _.uniqWith(objects, _.isEqual);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6922 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unzip "See the npm package.")
 
-```
+```js
 _.unzip(array) 
 ```
 
@@ -2079,7 +2079,7 @@ _.unzip(array)
 
 ### 示例
 
-```
+```js
 var zipped = _.zip(['fred', 'barney'], [30, 40], [true, false]);
 // => [['fred', 30, true], ['barney', 40, false]]
 
@@ -2095,7 +2095,7 @@ _.unzip(zipped);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6955 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unzipwith "See the npm package.")
 
-```
+```js
 _.unzipWith(array, [iteratee=_.identity]) 
 ```
 
@@ -2117,7 +2117,7 @@ _.unzipWith(array, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var zipped = _.zip([1, 2], [10, 20], [100, 200]);
 // => [[1, 10, 100], [2, 20, 200]]
 
@@ -2133,7 +2133,7 @@ _.unzipWith(zipped, _.add);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L6982 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.without "See the npm package.")
 
-```
+```js
 _.without(array, [values]) 
 ```
 
@@ -2155,7 +2155,7 @@ _.without(array, [values])
 
 ### 示例
 
-```
+```js
 _.without([1, 2, 1, 3], 1, 2);
 // => [3] 
 ```
@@ -2168,7 +2168,7 @@ _.without([1, 2, 1, 3], 1, 2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7001 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.xor "See the npm package.")
 
-```
+```js
 _.xor([arrays]) 
 ```
 
@@ -2186,7 +2186,7 @@ _.xor([arrays])
 
 ### 示例
 
-```
+```js
 _.xor([2, 1], [4, 2]);
 // => [1, 4] 
 ```
@@ -2199,7 +2199,7 @@ _.xor([2, 1], [4, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7023 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.xorby "See the npm package.")
 
-```
+```js
 _.xorBy([arrays], [iteratee=_.identity]) 
 ```
 
@@ -2221,7 +2221,7 @@ _.xorBy([arrays], [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 _.xorBy([2.1, 1.2], [4.3, 2.4], Math.floor);
 // => [1.2, 4.3]
 
@@ -2238,7 +2238,7 @@ _.xorBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7048 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.xorwith "See the npm package.")
 
-```
+```js
 _.xorWith([arrays], [comparator]) 
 ```
 
@@ -2260,7 +2260,7 @@ _.xorWith([arrays], [comparator])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
 
@@ -2276,7 +2276,7 @@ _.xorWith(objects, others, _.isEqual);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7069 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.zip "See the npm package.")
 
-```
+```js
 _.zip([arrays]) 
 ```
 
@@ -2294,7 +2294,7 @@ _.zip([arrays])
 
 ### 示例
 
-```
+```js
 _.zip(['fred', 'barney'], [30, 40], [true, false]);
 // => [['fred', 30, true], ['barney', 40, false]] 
 ```
@@ -2307,7 +2307,7 @@ _.zip(['fred', 'barney'], [30, 40], [true, false]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7085 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.zipobject "See the npm package.")
 
-```
+```js
 _.zipObject([props=[]], [values=[]]) 
 ```
 
@@ -2329,7 +2329,7 @@ _.zipObject([props=[]], [values=[]])
 
 ### 示例
 
-```
+```js
 _.zipObject(['a', 'b'], [1, 2]);
 // => { 'a': 1, 'b': 2 } 
 ```
@@ -2342,7 +2342,7 @@ _.zipObject(['a', 'b'], [1, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7105 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.zipobjectdeep "See the npm package.")
 
-```
+```js
 _.zipObjectDeep([props=[]], [values=[]]) 
 ```
 
@@ -2364,7 +2364,7 @@ _.zipObjectDeep([props=[]], [values=[]])
 
 ### 示例
 
-```
+```js
 _.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]);
 // => { 'a': { 'b': [{ 'c': 1 }, { 'd': 2 }] } } 
 ```
@@ -2377,7 +2377,7 @@ _.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7127 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.zipwith "See the npm package.")
 
-```
+```js
 _.zipWith([arrays]) 
 ```
 
@@ -2395,7 +2395,7 @@ _.zipWith([arrays])
 
 ### 示例
 
-```
+```js
 _.zipWith([1, 2], [10, 20], [100, 200], function(a, b, c) {
   return a + b + c;
 });

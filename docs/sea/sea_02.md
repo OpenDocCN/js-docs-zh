@@ -10,7 +10,7 @@
 
 我们从一个简单的习惯出发。我做项目时，常常会将一些通用的、底层的功能抽象出来，独立成一个个函数，比如
 
-```
+```js
 function each(arr) {
   // 实现代码
 }
@@ -30,7 +30,7 @@ function log(str) {
 
 抱怨越来越多。团队经过一番激烈的讨论，决定参照 Java 的方式，引入命名空间来解决。于是 util.js 里的代码变成了
 
-```
+```js
 var org = {};
 org.CoolSite = {};
 org.CoolSite.Utils = {};
@@ -46,7 +46,7 @@ org.CoolSite.Utils.log = function (str) {
 
 不要认为上面的代码是为了写这篇文章而故意捏造的。将命名空间的概念在前端中发扬光大，首推 Yahoo! 的 YUI2 项目。下面是一段真实代码，来自 Yahoo! 的一个开源项目。
 
-```
+```js
 if (org.cometd.Utils.isString(response)) {
   return org.cometd.JSON.fromJSON(response);
 }
@@ -59,7 +59,7 @@ if (org.cometd.Utils.isArray(response)) {
 
 作为前端业界的标杆，YUI 团队下定决心解决这一问题。在 YUI3 项目中，引入了一种新的命名空间机制。
 
-```
+```js
 YUI().use('node', function (Y) {
   // Node 模块已加载好
   // 下面可以通过 Y 来调用
@@ -69,7 +69,7 @@ YUI().use('node', function (Y) {
 
 YUI3 通过沙箱机制，很好的解决了命名空间过长的问题。然而，也带来了新问题。
 
-```
+```js
 YUI().use('a', 'b', function (Y) {
   Y.foo();
   // foo 方法究竟是模块 a 还是 b 提供的？
@@ -85,7 +85,7 @@ YUI().use('a', 'b', function (Y) {
 
 其中有一个最被大家喜欢的组件是 dialog.js，使用方式很简单。
 
-```
+```js
 <script src="util.js"></script>
 <script src="dialog.js"></script>
 <script>
@@ -95,7 +95,7 @@ YUI().use('a', 'b', function (Y) {
 
 可是无论我怎么写文档，以及多么郑重地发邮件宣告，时不时总会有同事来询问为什么 dialog.js 有问题。通过一番排查，发现导致错误的原因经常是
 
-```
+```js
 <script src="dialog.js"></script>
 <script>
  org.CoolSite.Dialog.init({ /* 传入配置 */ });
@@ -116,7 +116,7 @@ YUI().use('a', 'b', function (Y) {
 
 文件的依赖，目前在绝大部分类库框架里，比如国外的 YUI3 框架、国内的 KISSY 等类库，目前是通过配置的方式来解决。
 
-```
+```js
 YUI.add('my-module', function (Y) {
   // ...
 }, '0.0.1', {
@@ -134,7 +134,7 @@ Sea.js 是一个成熟的开源项目，核心目标是给前端开发提供简�
 
 使用 Sea.js，在书写文件时，需要遵守 CMD （Common Module Definition）模块定义规范。一个文件就是一个模块。前面例子中的 util.js 变成
 
-```
+```js
 define(function(require, exports) {
   exports.each = function (arr) {
     // 实现代码
@@ -148,7 +148,7 @@ define(function(require, exports) {
 
 通过 `exports` 就可以向外提供接口。这样，dialog.js 的代码变成
 
-```
+```js
 define(function(require, exports) {
   var util = require('./util.js');
 
@@ -162,7 +162,7 @@ define(function(require, exports) {
 
 这其实一点也不神奇。作为前端工程师，对 CSS 代码一定也不陌生。
 
-```
+```js
 @import url("base.css");
 
 #id { ... }
@@ -175,7 +175,7 @@ Sea.js 增加的 `require` 语法关键字，就如 CSS 文件中的 `@import` �
 
 这样，在页面中使用 dialog.js 将变得非常简单。
 
-```
+```js
 <script src="sea.js"></script>
 <script>
 seajs.use('dialog', function(Dialog) {

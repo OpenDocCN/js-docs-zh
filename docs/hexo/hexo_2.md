@@ -12,7 +12,7 @@
 
 首先，我们必须建立一个 Hexo 实例（instance），第一个参数是网站的根目录，也就是 `base_dir`，而第二个参数则是初始化的选项。接著执行 `init` 方法后，Hexo 会加载插件及配置文件。
 
-```
+```js
 varrequire'hexo'
 varnew
 hexo.init().then(function{  // ...
@@ -32,7 +32,7 @@ Hexo 提供了两种方法来载入文件：`load`, `watch`，前者用于载入
 
 这两个方法实际上所做的，就是载入文件列表，并把文件传给相对应的处理器（Processor），当文件全部处理完毕后，就执行生成器（Generator）来建立路由。
 
-```
+```js
 hexo.load().then(function{  // ...
 });hexo.watch().then(function{  // 之后可以调用 hexo.unwatch()，停止监视文件
 }); 
@@ -42,7 +42,7 @@ hexo.load().then(function{  // ...
 
 您可以通过 `call` 方法来调用控制台（Console），第一个参数是控制台的名称，而第二个参数是选项——根据不同控制台有所不同。
 
-```
+```js
 hexo.call('generate'function{  // ...
 }); 
 ```
@@ -51,7 +51,7 @@ hexo.call('generate'function{  // ...
 
 当指令完毕后，请执行 `exit` 方法让 Hexo 退出结束前的准备工作（如存储资料库）。
 
-```
+```js
 hexo.call('generate'function{  return
 }).catch(functionerr{  return
 }); 
@@ -85,7 +85,7 @@ Hexo 继承了 [EventEmitter](http://nodejs.org/api/events.html)，您可以用 
 
 在文章文件建立后发布。该事件返回文章参数。
 
-```
+```js
 hexo.on('new'functionpost{  // 
 }); 
 ```
@@ -122,32 +122,32 @@ hexo.on('new'functionpost{  //
 
 ## 获取变量
 
-```
+```js
 hexo.locals.get('posts' 
 ```
 
 ## 设置变量
 
-```
+```js
 hexo.locals.set('posts'function{  return
 }); 
 ```
 
 ## 移除变量
 
-```
+```js
 hexo.locals.remove('posts' 
 ```
 
 ## 获取所有变量
 
-```
+```js
 hexo.locals.toObject(); 
 ```
 
 ## 清除缓存
 
-```
+```js
 hexo.locals.invalidate(); 
 ```
 
@@ -159,7 +159,7 @@ hexo.locals.invalidate();
 
 `get` 方法会传回一个 [Stream](http://nodejs.org/api/stream.html)，例如把该路径的资料存储到某个指定位置。
 
-```
+```js
 var'index.html'
 var'somewhere'
 data.pipe(dest); 
@@ -169,7 +169,7 @@ data.pipe(dest);
 
 您可以在 `set` 方法中使用字符串、[Buffer](http://nodejs.org/api/buffer.html) 或函数，如下：
 
-```
+```js
 // String
 hexo.route.set('index.html''index'
 // Buffer
@@ -183,7 +183,7 @@ hexo.route.set('index.html'functioncallback{  callback(null'index'
 
 您还可以设置该路径是否更新，这样在生成文件时便能忽略未更动的文件，加快生成时间。
 
-```
+```js
 hexo.route.set('index.html'
     data: 'index'
     modified: false
@@ -192,13 +192,13 @@ hexo.route.set('index.html'
 
 ## 移除路径
 
-```
+```js
 hexo.route.remove('index.html' 
 ```
 
 ## 获得路由表
 
-```
+```js
 hexo.route.list(); 
 ```
 
@@ -206,7 +206,7 @@ hexo.route.list();
 
 `format` 方法可将字符串转为合法的路径。
 
-```
+```js
 hexo.route.format('archives/'
 // archives/index.html 
 ```
@@ -219,7 +219,7 @@ hexo.route.format('archives/'
 
 Box 提供了两种方法来载入文件：`process`, `watch`，前者用于载入文件夹内的所有文件；而后者除了执行 `process` 以外，还会继续监视文件变动。
 
-```
+```js
 box.process().then(function{  // ...
 });box.watch().then(function{  // 之后可调用 box.unwatch()，停止监视文件
 }); 
@@ -229,7 +229,7 @@ box.process().then(function{  // ...
 
 Box 提供了多种比对路径的模式，您可以以使用正则表达式（regular expression）、函数、或是一种类似于 Express 的路径字符串，例如：
 
-```
+```js
 posts/:id => posts/89
 posts/*path => posts/2015/title 
 ```
@@ -240,7 +240,7 @@ posts/*path => posts/2015/title
 
 处理器（Processor）是 Box 中非常重要的元素，它用于处理文件，您可以使用上述的路径对比来限制该处理器所要处理的文件类型。使用 `addProcessor` 来添加处理器。
 
-```
+```js
 box.addProcessor('posts/:id'functionfile{  //
 }); 
 ```
@@ -273,7 +273,7 @@ Box 还提供了一些方法，让您无须手动处理文件 I/O。
 
 在渲染字符串时，您必须指定 `engine`，如此一来 Hexo 才知道该使用哪个渲染引擎来渲染。
 
-```
+```js
 hexo.render.render({text: 'example''swig'functionresult{  // ...
 }); 
 ```
@@ -282,7 +282,7 @@ hexo.render.render({text: 'example''swig'functionresult{  // ...
 
 在渲染文件时，您无须指定 `engine`，Hexo 会自动根据扩展名猜测所要使用的渲染引擎，当然您也可以使用 `engine` 指定。
 
-```
+```js
 hexo.render.render({path: 'path/to/file.swig'functionresult{  // ...
 }); 
 ```
@@ -291,7 +291,7 @@ hexo.render.render({path: 'path/to/file.swig'functionresult{  // ...
 
 在渲染时，您可以向第二个参数中传入参数。
 
-```
+```js
 hexo.render.render({text: '''foo'functionresult{  // ...
 }); 
 ```
@@ -300,7 +300,7 @@ hexo.render.render({text: '''foo'functionresult{  // ...
 
 在渲染完成后，Hexo 会自动执行相对应的 `after_render` 过滤器，举例来说，我们可以通过这个功能实现 JavaScript 的压缩。
 
-```
+```js
 varrequire'uglify-js'
 hexo.extend.filter.register('after_render:js'functionstr, data{  var
   return
@@ -311,7 +311,7 @@ hexo.extend.filter.register('after_render:js'functionstr, data{  var
 
 您可以通过 `isRenderable` 或 `isRenderableSync` 两个方法检查文件路径是否可以被渲染，只有在相对应的渲染器（renderer）已注册的情况下才会返回 true。
 
-```
+```js
 hexo.render.isRenderable('layout.swig'// true
 hexo.render.isRenderable('image.png'// false 
 ```
@@ -320,7 +320,7 @@ hexo.render.isRenderable('image.png'// false
 
 您可以通过 `getOutput` 方法取得文件路径输出后的扩展名，如果文件无法渲染，则会返回空字符串。
 
-```
+```js
 hexo.render.getOutput('layout.swig'// html
 hexo.render.getOutput('image.png'// ''' 
 ```
@@ -329,7 +329,7 @@ hexo.render.getOutput('image.png'// '''
 
 ## 新建文章
 
-```
+```js
 hexo.post.create(data, replace); 
 ```
 
@@ -350,7 +350,7 @@ hexo.post.create(data, replace);
 
 ## 发布草稿
 
-```
+```js
 hexo.post.publish(data, replace); 
 ```
 
@@ -368,7 +368,7 @@ hexo.post.publish(data, replace);
 
 ## 渲染
 
-```
+```js
 hexo.post.render(source, data); 
 ```
 
@@ -388,19 +388,19 @@ hexo.post.render(source, data);
 
 ## 获得脚手架
 
-```
+```js
 hexo.scaffold.get(name); 
 ```
 
 ## 设置脚手架
 
-```
+```js
 hexo.scaffold.set(name, content); 
 ```
 
 ## 移除脚手架
 
-```
+```js
 hexo.scaffold.remove(name); 
 ```
 
@@ -410,19 +410,19 @@ hexo.scaffold.remove(name);
 
 ## 获取模板
 
-```
+```js
 hexo.theme.getView(path); 
 ```
 
 ## 设置模板
 
-```
+```js
 hexo.theme.setView(path, data); 
 ```
 
 ## 移除模板
 
-```
+```js
 hexo.theme.removeView(path); 
 ```
 
@@ -430,7 +430,7 @@ hexo.theme.removeView(path);
 
 模板本身有两个方法可供使用：`render` 和 `renderSync`。两者功能一样，只是前者为非同步函数，而后者为同步函數，因此仅以 `render` 演示调用方法。
 
-```
+```js
 var'layout.swig'
 view.render({foo: 12functionresult{  // ...
 }); 
@@ -446,7 +446,7 @@ view.render({foo: 12functionresult{  // ...
 
 ## 概要
 
-```
+```js
 hexo.extend.console.register(name, desc, options, functionargs{  // ...
 }); 
 ```
@@ -465,7 +465,7 @@ hexo.extend.console.register(name, desc, options, functionargs{  // ...
 
 控制台的操作方法，例如：
 
-```
+```js
 {usage: '[layout] <title>'
 // hexo new [layout] <title> 
 ```
@@ -474,7 +474,7 @@ hexo.extend.console.register(name, desc, options, functionargs{  // ...
 
 控制台各个参数的说明，例如：
 
-```
+```js
 {  arguments
     {name: 'layout''Post layout'
     {name: 'title''Post title'
@@ -485,7 +485,7 @@ hexo.extend.console.register(name, desc, options, functionargs{  // ...
 
 控制台的选项，例如：
 
-```
+```js
 {  options: [    {name: '-r, --replace''Replace existing files'
   ]} 
 ```
@@ -496,7 +496,7 @@ hexo.extend.console.register(name, desc, options, functionargs{  // ...
 
 ## 范例
 
-```
+```js
 hexo.extend.console.register('config''Display configuration'functionargs{  console
 }); 
 ```
@@ -507,7 +507,7 @@ hexo.extend.console.register('config''Display configuration'functionargs{  conso
 
 ## 概要
 
-```
+```js
 hexo.extend.deployer.register(name, functionargs{  // ...
 }); 
 ```
@@ -520,7 +520,7 @@ hexo.extend.deployer.register(name, functionargs{  // ...
 
 ## 概要
 
-```
+```js
 hexo.extend.filter.register(type, function{}, priority); 
 ```
 
@@ -528,7 +528,7 @@ hexo.extend.filter.register(type, function{}, priority);
 
 ## 执行过滤器
 
-```
+```js
 hexo.extend.filter.exec(type, data, options);hexo.extend.filter.execSync(type, data, options); 
 ```
 
@@ -539,7 +539,7 @@ hexo.extend.filter.exec(type, data, options);hexo.extend.filter.execSync(type, d
 
 `data` 会作为第一个参数传入每个过滤器，而您可以在过滤器中通过返回值改变下一个过滤器中的 `data`，如果什么都没有返回的话则会保持原本的 `data`。您还可以使用 `args` 指定过滤器的其他参数。举例来说：
 
-```
+```js
 hexo.extend.filter.register('test'functiondata, arg1, arg2{  // data === 'some data'
   // arg1 === 'foo'
   // arg2 === 'bar'
@@ -552,13 +552,13 @@ hexo.extend.filter.register('test'functiondata, arg1, arg2{  // data === 'some d
 
 您也可以使用以下方法来执行过滤器：
 
-```
+```js
 hexo.execFilter(type, data, options);hexo.execFilterSync(type, data, options); 
 ```
 
 ## 移除过滤器
 
-```
+```js
 hexo.extend.filter.unregister(type, filter); 
 ```
 
@@ -572,7 +572,7 @@ hexo.extend.filter.unregister(type, filter);
 
 举例来说，把标题转为小写：
 
-```
+```js
 hexo.extend.filter.register('before_post_render'functiondata{  data.title = data.title.toLowerCase();  return
 }); 
 ```
@@ -583,7 +583,7 @@ hexo.extend.filter.register('before_post_render'functiondata{  data.title = data
 
 举例来说，把 `@username` 取代为 Twitter 的开发者链接。
 
-```
+```js
 hexo.extend.filter.register('after_post_render'functiondata{  data.content = data.content.replace(/@(\d+)/'<a href="http://twitter.com/$1">#$1</a>'
   return
 }); 
@@ -593,7 +593,7 @@ hexo.extend.filter.register('after_post_render'functiondata{  data.content = dat
 
 在 Hexo 即将结束时执行，也就是在 `hexo.exit` 被调用后执行。
 
-```
+```js
 hexo.extend.filter.register('before_exit'function{  // ...
 }); 
 ```
@@ -602,7 +602,7 @@ hexo.extend.filter.register('before_exit'function{  // ...
 
 在生成器解析前执行。
 
-```
+```js
 hexo.extend.filter.register('before_generate'function{  // ...
 }); 
 ```
@@ -611,7 +611,7 @@ hexo.extend.filter.register('before_generate'function{  // ...
 
 在生成器解析后执行。
 
-```
+```js
 hexo.extend.filter.register('after_generate'function{  // ...
 }); 
 ```
@@ -622,7 +622,7 @@ hexo.extend.filter.register('after_generate'function{  // ...
 
 举例来说，在模板的局部变量中新增当前时间：
 
-```
+```js
 hexo.extend.filter.register('template_locals'functionlocals{  locals.now = Date
   return
 }); 
@@ -632,7 +632,7 @@ hexo.extend.filter.register('template_locals'functionlocals{  locals.now = Date
 
 在 Hexo 初始化完成后执行，也就是在 `hexo.init` 执行完成后执行。
 
-```
+```js
 hexo.extend.filter.register('after_init'function{  // ...
 }); 
 ```
@@ -641,7 +641,7 @@ hexo.extend.filter.register('after_init'function{  // ...
 
 用来决定新建文章的路径，在建立文章时执行。
 
-```
+```js
 hexo.extend.filter.register('new_post_path'functiondata, replace{  // ...
 }); 
 ```
@@ -650,7 +650,7 @@ hexo.extend.filter.register('new_post_path'functiondata, replace{  // ...
 
 用来决定文章的永久链接。
 
-```
+```js
 hexo.extend.filter.register('post_permalink'functiondata{  // ...
 }); 
 ```
@@ -665,7 +665,7 @@ hexo.extend.filter.register('post_permalink'functiondata{  // ...
 
 举例来说，在响应头中新增 `X-Powered-By: Hexo`。
 
-```
+```js
 hexo.extend.filter.register('server_middleware'functionapp{  app.use(functionreq, res, next{    res.setHeader('X-Powered-By''Hexo'
     next();  });}); 
 ```
@@ -676,7 +676,7 @@ hexo.extend.filter.register('server_middleware'functionapp{  app.use(functionreq
 
 ## 概要
 
-```
+```js
 hexo.extend.generator.register(name, functionlocals{}); 
 ```
 
@@ -684,7 +684,7 @@ hexo.extend.generator.register(name, functionlocals{});
 
 ## 更新路由
 
-```
+```js
 hexo.extend.generator.register('test'functionlocals{  // Object
   return
     path: 'foo'
@@ -712,7 +712,7 @@ hexo.extend.generator.register('test'functionlocals{  // Object
 
 然后，设置 `layout` 属性好让 Hexo 使用主题模板来渲染，在此例中同时设定了两个布局，当 `archive` 布局不存在时，会继续尝试 `index` 布局。
 
-```
+```js
 hexo.extend.generator.register('archive'functionlocals{  return
     path: 'archives/index.html'
     data: locals.posts,    layout: ['archive''index'
@@ -723,7 +723,7 @@ hexo.extend.generator.register('archive'functionlocals{  return
 
 您可以通过 [hexo-pagination](https://github.com/hexojs/hexo-pagination) 这个方便的官方工具来轻松建立分页归档。
 
-```
+```js
 varrequire'hexo-pagination'
 hexo.extend.generator.register('archive'functionlocals{  return'archives/index.html'
     perPage: 10
@@ -735,7 +735,7 @@ hexo.extend.generator.register('archive'functionlocals{  return'archives/index.h
 
 遍历 `locals.posts` 中的所有文章并生成所有文章的路由。
 
-```
+```js
 hexo.extend.generator.register('post'functionlocals{  returnfunctionpost{    return
       path: post.path,      data: post,      layout: 'post'
     };  });}); 
@@ -745,7 +745,7 @@ hexo.extend.generator.register('post'functionlocals{  returnfunctionpost{    ret
 
 这次不直接在 `data` 中返回数据而是返回一个函数，如此一来这个路由唯有在使用时才会建立 `fs.ReadStream`。
 
-```
+```js
 varrequire'hexo-fs'
 hexo.extend.generator.register('asset'functionlocals{  return
     path: 'file.txt'
@@ -759,18 +759,18 @@ hexo.extend.generator.register('asset'functionlocals{  return
 
 ## 概要
 
-```
+```js
 hexo.extend.helper.register(name, function{}); 
 ```
 
 ## 范例
 
-```
+```js
 hexo.extend.helper.register('js'functionpath{  return'<script type="text/javascript" src="''"></script>'
 }); 
 ```
 
-```
+```js
 <%- js('script.js'
 // <script type="text/javascript" src="script.js"></script> 
 ```
@@ -781,7 +781,7 @@ hexo.extend.helper.register('js'functionpath{  return'<script type="text/javascr
 
 ## 概要
 
-```
+```js
 hexo.extend.migrator.register(name, functionargs{  // ...
 }); 
 ```
@@ -794,7 +794,7 @@ hexo.extend.migrator.register(name, functionargs{  // ...
 
 ## 概要
 
-```
+```js
 hexo.extend.processor.register(rule, functionfile{}); 
 ```
 
@@ -806,7 +806,7 @@ hexo.extend.processor.register(rule, functionfile{});
 
 ## 概要
 
-```
+```js
 hexo.extend.renderer.register(name, output, functiondata, options{}, sync); 
 ```
 
@@ -827,7 +827,7 @@ hexo.extend.renderer.register(name, output, functiondata, options{}, sync);
 
 ### 非同步模式
 
-```
+```js
 varrequire'stylus'
 // Callback
 hexo.extend.renderer.register('styl''css'functiondata, options, callback{  stylus(data.text).set('filename'
@@ -838,7 +838,7 @@ hexo.extend.renderer.register('styl''css'functiondata, options{  returnnewPromis
 
 ### 同步模式
 
-```
+```js
 varrequire'ejs'
 hexo.extend.renderer.register('ejs''html'functiondata, options{  options.filename = data.path;  return
 }, true 
@@ -850,7 +850,7 @@ hexo.extend.renderer.register('ejs''html'functiondata, options{  options.filenam
 
 ## 概要
 
-```
+```js
 hexo.extend.tag.register(name, functionargs, content{}, options); 
 ```
 
@@ -874,7 +874,7 @@ hexo.extend.tag.register(name, functionargs, content{}, options);
 
 插入 Youtube 影片。
 
-```
+```js
 hexo.extend.tag.register('youtube'functionargs{  var0
   return'<div class="video-container"><iframe width="560" height="315" src="http://www.youtube.com/embed/''" frameborder="0" allowfullscreen></iframe></div>'
 }); 
@@ -884,7 +884,7 @@ hexo.extend.tag.register('youtube'functionargs{  var0
 
 插入 pull quote。
 
-```
+```js
 hexo.extend.tag.register('pullquote'functionargs, content{  var' '
   return'<blockquote class="pullquote''">''</blockquote>'
 }, {ends: true 
@@ -894,7 +894,7 @@ hexo.extend.tag.register('pullquote'functionargs, content{  var' '
 
 插入文件。
 
-```
+```js
 varrequire'hexo-fs'
 varrequire'path'
 hexo.extend.tag.register('include_code'functionargs{  var0

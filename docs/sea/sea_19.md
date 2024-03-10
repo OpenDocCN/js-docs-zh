@@ -8,7 +8,7 @@ A Sea.js plugin for debugging freely
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-debug 
 ```
 
@@ -16,7 +16,7 @@ $ spm install seajs/seajs-debug
 
 1) Set alias config first:
 
-```
+```js
 seajs.config({
   "alias": {
     "seajs-debug": "path/to/seajs-debug"

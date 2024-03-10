@@ -6,13 +6,13 @@ A Sea.js plugin for preload
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-preload 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-preload.js"></script>
 

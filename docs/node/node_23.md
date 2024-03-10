@@ -6,7 +6,7 @@
 
 在命令行中不带任何参数直接执行`iojs`，你会进入 REPL 界面。它有一个极简的 emacs 行编辑器。
 
-```
+```js
 mjr:~$ iojs
 Type '.help' for options.
 > a = [ 1, 2, 3];
@@ -23,7 +23,7 @@ Type '.help' for options.
 
 例如，你可以把以下内容加入`bashrc`文件：
 
-```
+```js
 alias iojs="env NODE_NO_READLINE=1 rlwrap iojs" 
 ```
 
@@ -63,7 +63,7 @@ alias iojs="env NODE_NO_READLINE=1 rlwrap iojs"
 
 你可以使用你自己的`eval`函数，如果它包含以下签名：
 
-```
+```js
 function eval(cmd, context, filename, callback) {
   callback(null, result);
 } 
@@ -75,7 +75,7 @@ function eval(cmd, context, filename, callback) {
 
 下面是在`stdin`，Unix `socket` 和 TCP `socket` 上启动一个`REPL`的例子：
 
-```
+```js
 var net = require("net"),
     repl = require("repl");
 
@@ -126,7 +126,7 @@ net.createServer(function (socket) {
 
 例子：
 
-```
+```js
 r.on('exit', function () {
   console.log('Got "exit" event from repl!');
   process.exit();
@@ -141,7 +141,7 @@ r.on('exit', function () {
 
 例子：
 
-```
+```js
 // Extend the initial repl context.
 r = repl.start({ options ... });
 someExtension.extend(r.context);
@@ -161,7 +161,7 @@ r.on('reset', function (context) {
 
 特殊的变量`_`（下划线）包含了上一个表达式的结果。
 
-```
+```js
 > [ "a", "b", "c" ]
 [ 'a', 'b', 'c' ]
 > _.length
@@ -172,7 +172,7 @@ r.on('reset', function (context) {
 
 `REPL`可以访问全局作用域里的任何变量。你可以通过将变量赋值给一个关联了所有`REPLServer`的`context`对象来暴露一个对象给`REPL`。例子：
 
-```
+```js
 // repl_test.js
 var repl = require("repl"),
     msg = "message";
@@ -182,7 +182,7 @@ repl.start("> ").context.m = msg;
 
 `context`对象里的对象会表现得像`REPL`的本地变量：
 
-```
+```js
 mjr:~$ iojs repl_test.js
 > m
 'message' 

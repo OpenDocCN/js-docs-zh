@@ -20,7 +20,7 @@ Meteor 支持 [OS X, Windows, and Linux](https://github.com/meteor/meteor/wiki/S
 
 用 OS X 或是 Linux? 通过命令行安装 Meteor 官方最新版：
 
-```
+```js
 $ curl https://install.meteor.com/ | sh 
 ```
 
@@ -28,13 +28,13 @@ Windows 安装包支持 Windows 7, Windows 8.1, Windows Server 2008, 和 Windows
 
 安装完成之后，创建一个项目：
 
-```
+```js
 $ meteor create myapp 
 ```
 
 在本地运行：
 
-```
+```js
 $ cd myapp
 $ meteor
 # Meteor server running on: http://localhost:3000/ 
@@ -42,7 +42,7 @@ $ meteor
 
 然后，打开一个命令行窗口，发布到线上（我们提供的一个免费服务器）
 
-```
+```js
 $ meteor deploy myapp.meteor.com 
 ```
 
@@ -132,7 +132,7 @@ GitHub
 
 如果你经常使用`meteor reset` ，但是又不想丢失一些初始数据，考虑使用`Meteor.startup` 在服务第一次启动时重建这些数据。
 
-```
+```js
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Rooms.find().count() === 0) {
@@ -188,7 +188,7 @@ if (Meteor.isServer) {
 
 安装 Android 或 ios 开发工具：
 
-```
+```js
 meteor install-sdk android     # for Android
 meteor install-sdk ios         # for iOS 
 ```
@@ -197,21 +197,21 @@ meteor install-sdk ios         # for iOS
 
 添加相关平台到你的应用：
 
-```
+```js
 meteor add-platform android    # for Android
 meteor add-platform ios        # for iOS 
 ```
 
 ### 运行模拟器
 
-```
+```js
 meteor run android             # for Android
 meteor run ios                 # for iOS 
 ```
 
 ### 在设备上运行
 
-```
+```js
 meteor run android-device      # for Android
 meteor run ios-device          # for iOS 
 ```

@@ -18,7 +18,7 @@ Jquery Mobile 网站必须使用 HTML5 文档声明开始，使得网站能够�
 
 **HTML 代码:**
 
-```
+```js
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -37,7 +37,7 @@ Jquery Mobile 网站必须使用 HTML5 文档声明开始，使得网站能够�
 
 在 body 标签内，移动设备上每一个视图或者"page"被一个带有 data-role="page"的容器（通常是 div）所标示：:
 
-```
+```js
 <div  data-role="page">   ...  </div> 
 ```
 
@@ -45,7 +45,7 @@ Jquery Mobile 网站必须使用 HTML5 文档声明开始，使得网站能够�
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="page"> 
 　<div data-role="header">...</div> 
 　 <div data-role="content">...</div> 
@@ -59,7 +59,7 @@ Jquery Mobile 网站必须使用 HTML5 文档声明开始，使得网站能够�
 
 **html 代码:**
 
-```
+```js
 <!DOCTYPE html> 
 <html> 
 　<head> 
@@ -97,13 +97,13 @@ Jquery Mobile 会自动构建 AJAX 驱动的站点和应用。默认情况下，
 
 一个单独的 HTML 文档内可以包含多个由"data-role="page"标记的 DIV 容器，他们在加载时共同加载，但是被解释成不同的页面（个人认为这是 Jquery Mobile 的独到之处），每一个 page 区块需要由一个独特的 ID(id="foo")标记，通过给内部链接地址定义为(herf="#foo"),互相跳转。当连接被点击时，JQmoblie 会在文档内寻找带有 ID 的 page 容器，然后通过页面转场显示。但请注意如果你的移动页面包括几个"page",然后通过某个链接被一个外部页面通过 AJAX 加载，你需要给这个链接添加 rel="external"和 data-ajax="false"的属性。这样就告知 Jquery Mobile 完全地加载一个页面，清理掉 AJAX 在 URL 的哈希值。这是很关键的，因为 AJAX 页面使用哈希值（"#"）记录 AJAX 历史，但是包含多个 PAGE 的页面也是用哈希值指向某个 PAGE，所以这样在哈希值上就会产生冲突。例如：一个指向包含多个内部 PAGE 页面的链接应该如下：
 
-```
+```js
 <a href="multipage.html" rel="external">Multi-page link</a> 
 ```
 
 下面是一个包含 2 个"PAGE"的页面，两个 DIV 通过 ID 标记和导航。请注意通过 ID 标记内部页面的做法只需要支持内部的页面链接,如果每个页面是分离的 HTML 文档,则属性可加也可不加。：
 
-```
+```js
 <body> 
 
 　<!-- Start of first page -->
@@ -163,7 +163,7 @@ Jquery Mobile 框架内置 6 中基于 css 的页面转场效果，你可以给�
 
 **给链接添加 data-transition 属性，可以设定自定义的页面转场效果**
 
-```
+```js
 <a href="index.html" data-transition="pop">I'll pop</a> 
 ```
 
@@ -177,7 +177,7 @@ Jquery Mobile 框架内置 6 中基于 css 的页面转场效果，你可以给�
 
 **HTML 代码:**
 
-```
+```js
 <a href="foo.html" data-rel="dialog">Open dialog</a> 
 ```
 
@@ -187,7 +187,7 @@ Jquery Mobile 框架内置 6 中基于 css 的页面转场效果，你可以给�
 
 **HTML 代码:**
 
-```
+```js
 <a href="foo.html" data-rel="dialog" data-transition="pop">Open dialog</a> 
 ```
 
@@ -239,7 +239,7 @@ Jquery Mobile 使用 1 生成的绝对 URL 地址，2 操作生成元素的 href
 
 一些 Jquery Mobile 的控件可能会根据情况动态地把一个页面的内容分离为多个可导航的页面，并通过层次化的链接来访问。比如说 list 控件，他会把一个嵌套的列表(ul 或者 ol)分离为多个页面，每一个页面赋予一个 data-url 属性，可以想正常的"page"页面一样被链接到。但是为了链接到这些页面，生成他们的源页面必须首先从服务器请求到，所以通过自动生成的页面会应用这样的特殊 data-url 结构:
 
-```
+```js
 <div data-url="page.html&subpageidentifier"> 
 ```
 
@@ -253,7 +253,7 @@ Jquery Mobile 使用 1 生成的绝对 URL 地址，2 操作生成元素的 href
 
 有时我们要用正常的 http 请求而不用 Ajax 请求，比如链接到别的网站的情况。通过给链接加下面的属性，可以将链接指定为正常的 http 请求:
 
-```
+```js
 rel=external
 
 target (打开规则, 例如"_blank") 
@@ -341,7 +341,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 标题文字一般用 h1 标签，但是从 h1-h6 都是可以的，这样可以使结构有弹性。比如说，一个页面内包含了多个"page"标记的页面，这样可以给主"page"的标题文字用 h1 标签，次级"page"的标题文字用 h2 标签。所有的头部默认下在样式上都是相同的，保持的外观的一致性
 
-```
+```js
 <div data-role="header"> 
 　 <h1>Page Title</h1> 
 </div> 
@@ -369,7 +369,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 头部的按钮是头部栏容器的直接子节点，第一个链接定位于头部栏左边，第二个链接放在右边，在这个例子中，根据两个链接在源代码中的位置，取消在左边，保存在右边
 
-```
+```js
 <div data-role="header" data-position="inline">
 　 <a href="index.html" data-icon="delete">Cancel</a>
 　 <h1>Edit Contact</h1>
@@ -383,7 +383,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 按钮会自动应用他们的父容器的主题样式，所以应用了"a"主题样式的头部栏里的按钮也会应用"a"主题样式，我们通过给按钮增加 data-theme 的属性并设置，可以使按钮看起来有所区别
 
-```
+```js
 <div data-role="header" data-position="inline">
 　 <a href="index.html" data-icon="delete">Cancel</a>
 　 <h1>Edit Contact</h1>
@@ -399,7 +399,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 在这个例子中，我们要把头部栏唯一一个按钮放于右边，首先给头部栏增加 data-backbtn="false"属性来阻止头部栏自动生成后退按钮的行为，然后给自己的按钮增加 ui-btn-right 的 class
 
-```
+```js
 <div data-role="header" data-position="inline" data-backbtn="false">
 <h1>Page Title</h1>
 <a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
@@ -424,7 +424,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 尾部栏除了使用的 data-role 的属性与头部栏不同之外，基本的结构与头部栏是相同的
 
-```
+```js
 <div data-role="footer"> 
 　 <h4>Footer content</h4> 
 </div> 
@@ -444,7 +444,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 默认情况下，工具栏内部容纳组件与导航时是不留 padding 的。如果要给工具栏增加 padding,请增加一个 ui-bar 的 class.
 
-```
+```js
 <div data-role="footer" class="ui-bar">
 　 <a href="index.html" data-role="button" data-icon="delete">Remove</a>
 　 <a href="index.html" data-role="button" data-icon="plus">Add</a>
@@ -455,7 +455,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 要想把几个按钮打包成一个按钮组，则需要把这些按钮用一个容器包裹，并给该容器增加 data-role="controlgroup"和 data-type="horizontal"属性
 
-```
+```js
 <div data-role="controlgroup" data-type="horizontal"> 
 ```
 
@@ -483,7 +483,7 @@ Jquery Mobile 提供了一个基本的导航栏组件，每一行可以最多放
 
 导航栏的代码为一个 ul 列表，被一个容器包裹，这个容器需要有 data-role="navbar"属性。要设定某一个链接为活动（selected）状态，给链接增加 class="ui-btn-active" 即可。我们给尾部栏设置了一个导航栏，把 one 项设置为活动状态
 
-```
+```js
 <div data-role="footer">
 　 <div data-role="navbar">
 　　 <ul>
@@ -554,7 +554,7 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 要给头部栏或底部栏设置这样的行为，需要给工具栏的容器增加 data-position="fixed"属性
 
-```
+```js
 <div data-role="header" data-position="fixed">
 　 <h1>Fixed toolbars</h1>
 </div> 
@@ -580,7 +580,7 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 给头部栏和尾部栏设置 data-theme 属性，并指定不同的字母（a, b, c 等）。下面一个例子是把头部栏的主题样式设?b"(蓝色)
 
-```
+```js
 <div data-role="header" data-theme="b"> 
 　 <h1>Page Title</h1> 
 </div> 
@@ -590,7 +590,7 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 头部栏里的任何加入的任何链接会自动设为与此工具栏相同的主题样式。给链接增加 data-theme 属性并设置，可以让按钮的主题样式与工具栏的不相一致。例如：如果我们给头部栏设定的主题样式为"c"(浅灰)，里面的两个按钮的主题样式默认也会为"c",如果我们想让按钮有所区别，可以给按钮设置 data-theme?b"(蓝色)
 
-```
+```js
 <a href="add-user.php" data-theme="b">Save</a> 
 ```
 
@@ -616,7 +616,7 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 **html 代码：**
 
-```
+```js
 <a href="index.html" data-role="button">Link button</a> 
 ```
 
@@ -638,7 +638,7 @@ Jquery Mobile 框架包含了一组最常用的移动应用程序所需的图标
 
 **html 代码**
 
-```
+```js
 <a href="index.html" data-role="button" data-icon="delete">Delete</a> 
 ```
 
@@ -690,7 +690,7 @@ data-icon 属性可以被用来创建如下所示的图标
 
 可以通过 data-iconpos="top" / "bottom" 属性来覆盖此默认
 
-```
+```js
 <a href="index.html" data-role="button" data-icon="delete"** data-iconpos="right"**>Delete</a> 
 ```
 
@@ -712,7 +712,7 @@ data-icon 属性可以被用来创建如下所示的图标
 
 你可以通过 data-iconpos="notext"创建一个只有图标的按钮。button 插件会在屏幕上隐藏文本，但是会把文本作为 title 属性作为 screen readers 的问容和支持小提示的浏览器， 例如，把前例中的 data-iconpos="right"替换为 data-iconpos="notext"
 
-```
+```js
 <a href="index.html" data-role="button" data-icon="delete"** data-iconpos="notext"**>Delete</a> 
 ```
 
@@ -752,7 +752,7 @@ data-icon 属性可以被用来创建如下所示的图标
 
 如果你有多个按钮想在一行横排，可以在按钮上增加 data-inline="true"的属性，这样就可以把按钮样式化为最小宽度，并且浮动，使他们在同一行横排
 
-```
+```js
 <div data-inline="true">
 　 <a href="index.html" data-role="button">Cancel</a>
 　 <a href="index.html" data-role="button" data-theme="b">Save</a>
@@ -767,7 +767,7 @@ data-icon 属性可以被用来创建如下所示的图标
 
 有时候，你想把一组按钮放进一个单独的容器内，使他们看起来想一个独立的导航部件。你可以把一组按钮包裹在一个容器内，然后给该容器添加 data-role="controlgroup"属性，Jquery Mobile 会创建一个垂直的按钮组，删除掉按钮间的 margin 和阴影，然后只在第一个按钮和最后一个按钮产生圆角，使他们看起来是一组按钮
 
-```
+```js
 <div data-role="controlgroup">
 　<a href="index.html" data-role="button">Yes</a>
 　<a href="index.html" data-role="button">No</a>
@@ -811,7 +811,7 @@ Jquery Mobile 内建了几套样式系统，给你定义样式时多种选择，
 
 给按钮增加 data-theme="字母"属性，可以手动的给按钮添加样式，使得按钮不一定非要与父容器的样式相符
 
-```
+```js
 <a href="index.html" data-role="button" data-theme="a">Theme a</a> 
 ```
 
@@ -865,7 +865,7 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 要构建两栏的布局（50/50%），先构建一个父容器，添加一个 class 名字为：ui-grid-a,内部设置两个字容器，分别给第一个子容器添加 class：ui-block-a，第二个子容器添加 class：ui-block-b
 
-```
+```js
 <div class="ui-grid-a">
 　 <div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
 　 <div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
@@ -886,7 +886,7 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 另一种布局的方式是三栏布局，给父容器添加”class="ui-grid-b"，然后分别给三个字容器添?加 class="ui-block-a"，“class="ui-block-b"，”class="ui-block-c"
 
-```
+```js
 <div class="ui-grid-b">
 　 <div class="ui-block-a">Block A</div>
 　 <div class="ui-block-b">Block B</div>
@@ -918,7 +918,7 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 在头部后面你可以添加任何想要折叠的 html 标记。框架会自动把这些标记包裹在一个容器里用以折叠或显
 
-```
+```js
 <div data-role="collapsible">
 　 <h3>I'm a header</h3>
 　 <p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
@@ -929,7 +929,7 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 如上所示：默认情况下，可折叠容器是展开的，可以通过通过点击头部收缩。给折叠的容器添加 data-collapsed="true"的属性，可以设为默认收缩
 
-```
+```js
 <div data-role="collapsible" **data-collapsed="true">** 
 ```
 
@@ -949,7 +949,7 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 页面的主题内容区域（标有 data-role="content"属性的容器），应该通过给 data-role="page"属性的容器增加 data-theme 属性来确保不管页面多高背景色都能够在整个页面都应用到 （如果你只为 data-role="content"容器添加了 data-theme 属性，则背景色会在内容结束部分停止，可能会造成固定尾部栏和内容之间产生留白
 
-```
+```js
 <div data-role="page" **data-theme="a"**> 
 ```
 
@@ -957,7 +957,7 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 给可折叠区块的容器添加 data-theme 属性，就可以给折叠块的标题设置主题。图标和折叠的内容目前还不能通过 data-theme 属性设置，但是可以通过自定义的 css 设置
 
-```
+```js
 <div data-role="collapsible" data-collapsed="true" **data-theme="a">** 
 ```
 
@@ -997,7 +997,7 @@ Jquery Mobile 提供了一套完整的，适合触摸操作的表单元素，他
 
 **html 代码**
 
-```
+```js
 <form action="form.php" method="post"> ... </form> 
 ```
 
@@ -1015,7 +1015,7 @@ Jquery Mobile 提供了一套完整的，适合触摸操作的表单元素，他
 
 **html 代码**
 
-```
+```js
 <label for="foo">
 　<select name="foo" id="foo" data-role="none">
 　 <option value="a" >A</option>
@@ -1028,7 +1028,7 @@ Jquery Mobile 提供了一套完整的，适合触摸操作的表单元素，他
 
 **html 代码**
 
-```
+```js
 $(document).bind('mobileinit',function(){
 $.mobile.page.prototype.options.keepNative = "select, input.foo, textarea.bar";
 }); 
@@ -1050,7 +1050,7 @@ select 元素情况比较特殊。如果 select 元素在表单当中，上例�
 
 **html 代码**
 
-```
+```js
 <div data-role="fieldcontain">
 ...label/input code goes here...
 </div> 
@@ -1062,7 +1062,7 @@ select 元素情况比较特殊。如果 select 元素在表单当中，上例�
 
 **html 代码**
 
-```
+```js
 复选按钮
 
 $("input[type='checkbox']").attr("checked",true).checkboxradio("refresh"); 
@@ -1070,13 +1070,13 @@ $("input[type='checkbox']").attr("checked",true).checkboxradio("refresh");
 
 单选按钮组:
 
-```
+```js
 $("input[type='radio']").attr("checked",true).checkboxradio("refresh"); 
 ```
 
 选择列表::
 
-```
+```js
 var myselect = $("select#foo");
 myselect[0].selectedIndex = 3;
 myselect.selectmenu("refresh"); 
@@ -1084,13 +1084,13 @@ myselect.selectmenu("refresh");
 
 滑动条
 
-```
+```js
 $("input[type=range]").val(60).slider("refresh"); 
 ```
 
 开关 (they use slider):
 
-```
+```js
 var myswitch = $("select#bar");
 myswitch[0].selectedIndex = 1;
 myswitch .slider("refresh"); 
@@ -1150,7 +1150,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">    
     <label for="name">Text Input:</label>    
     <input type="text" name="name" id="name" value=""  />
@@ -1167,7 +1167,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
     <label for="password">Password Input:</label>
     <input type="password" name="password" id="password" value="" />
@@ -1190,7 +1190,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
     <label for="textarea">Textarea:</label>
     <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
@@ -1209,7 +1209,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
     <label for="search">Search Input:</label>
     <input type="search" name="password" id="search" value="" />
@@ -1226,7 +1226,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
     <label for="slider">Input slider:</label>
     <input type="range" name="slider" id="slider" value="0" min="0" max="100"  />
@@ -1245,7 +1245,7 @@ myswitch .slider("refresh");
 
 如果你想通过 js 手动控制滑动条，务必调用 refresh 方法刷新滑动条的样式
 
-```
+```js
  $("input[type=range]").val(60).slider("refresh"); 
 ```
 
@@ -1257,7 +1257,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
     <label for="slider">Select slider:</label>
     <select name="slider" id="slider" data-role="slider">
@@ -1275,7 +1275,7 @@ myswitch .slider("refresh");
 
 如果你想通过 js 手动控制开关，务必调用 refresh 方法刷新样式
 
-```
+```js
 var myswitch = $("select#bar");
 myswitch[0].selectedIndex = 1;
 myswitch .slider("refresh"); 
@@ -1295,7 +1295,7 @@ myswitch .slider("refresh");
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
 <fieldset data-role="controlgroup">
 <legend>Agree to the terms:</legend>
@@ -1315,7 +1315,7 @@ myswitch .slider("refresh");
 
 复选按钮组也可用作复选的水平按钮组，,可以同时选择多个按钮。比如说文字编辑器的粗体,斜体, 下划线。只需要为 fieldset 添加 data-type="horizontal"属性即可。
 
-```
+```js
 <fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain"> 
 ```
 
@@ -1339,7 +1339,7 @@ Jquery Mobile 会自动将标签浮动，并排放置，并隐藏复选按钮的
 
 **HTML 代码:**
 
-```
+```js
 <div data-role="fieldcontain">
 <fieldset data-role="controlgroup">
 <legend>Agree to the terms:</legend>
@@ -1357,7 +1357,7 @@ Jquery Mobile 会自动将标签浮动，并排放置，并隐藏复选按钮的
 
 复选按钮组也可用作复选的水平按钮组，,可以同时选择多个按钮。比如说文字编辑器的粗体,斜体, 下划线。只需要为 fieldset 添加 data-type="horizontal"属性即可
 
-```
+```js
 <fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain"> 
 ```
 
@@ -1369,7 +1369,7 @@ Jquery Mobile 会自动将标签浮动，并排放置，并隐藏复选按钮的
 
 如果你想通过 js 手动控制复选按钮，务必调用 refresh 方法刷新样式
 
-```
+```js
 $("input[type='checkbox']").attr("checked",true).checkboxradio("refresh"); 
 ```
 
@@ -1385,7 +1385,7 @@ $("input[type='checkbox']").attr("checked",true).checkboxradio("refresh");
 
 **选择菜单 Select menus**
 
-```
+```js
 <div data-role="fieldcontain">
 　 <label for="select-choice-1" class="select">Choose shipping method:</label>
 　 <select name="select-choice-1" id="select-choice-1">
@@ -1415,7 +1415,7 @@ $("input[type='checkbox']").attr("checked",true).checkboxradio("refresh");
 
 给菜单添加 data-native-menu="false"属性，就可以把菜单转为自定义菜单。或者，在页面的 mobileinit 事件的回调函数中将选择菜单的 nativeMenu 设为 false 也可以达到相同的效果。这将会在全局把所有的选择菜单都默认设为自定义菜单。以下代码必须在 jQuery 加载后且 jQuery Mobile 加载前添加：
 
-```
+```js
 $(document).bind('mobileinit',function(){
 　　$.mobile.selectmenu.prototype.options.nativeMenu = false;
 }); 
@@ -1437,7 +1437,7 @@ $(document).bind('mobileinit',function(){
 
 你可以通过插件的 hidePlaceholderMenuItems 选项禁用该特性，方法如下：
 
-```
+```js
 $.mobile.selectmenu.prototype.options.hidePlaceholderMenuItems = false; 
 ```
 
@@ -1487,7 +1487,7 @@ jQuery Mobile 会把带有 disabled 属性的选项禁用并且在样式上标�
 
 如果你通过 js 操作了选择菜单，务必通过 refresh 方法来更新他的样式。
 
-```
+```js
 var myselect = $("select#foo");
 myselect[0].selectedIndex = 3;
 myselect.selectmenu("refresh"); 
@@ -1539,7 +1539,7 @@ Jquery Mobile 会自动通过 ajax 处理表单的提交，并在表单页面和
 
 **选择菜单 Select menus**
 
-```
+```js
 open 打开一个选择菜单
 $('select').selectmenu('open');
 
@@ -1563,7 +1563,7 @@ $('select').selectmenu('disable');
 
 **文本框 Textinput**
 
-```
+```js
 enable: 启用文本域
 $('input').textinput('enable'); 
 
@@ -1573,7 +1573,7 @@ $('textarea').textinput('disable');
 
 **单选复选框 checkboxradio**
 
-```
+```js
 enable: 启用单选复选框.
 $('input').checkboxradio('enable'); 
 
@@ -1586,7 +1586,7 @@ $('input').checkboxradio('refresh');
 
 **滑动条 slider**
 
-```
+```js
 enable: 启用滑动
 $('input').slider('enable'); 
 
@@ -1599,7 +1599,7 @@ $('input').slider('refresh');
 
 **表单按钮 Form buttons**
 
-```
+```js
 enable: 启用 按钮.
 $('input').button('enable'); 
 
@@ -1627,7 +1627,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 日期拾取器自动从 type="date"属性的输入框中生成
 
-```
+```js
 <label for="date">Date Input:</label>
 <input type="date" name="date" id="date" value="" /> 
 ```
@@ -1636,7 +1636,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **注意：**该插件并不包含在 Jquery Mobile 默认库当中，你需要包含以下文件来使用该插件：
 
-```
+```js
 <link rel="stylesheet" href="Jquery.ui.datepicker.mobile.css" /> 
 <script src="Jquery.ui.datepicker.js"></script>
 <script src="Jquery.ui.datepicker.mobile.js"></script> 
@@ -1644,7 +1644,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 你同样可能需要配置页面插件来使"date" input 转换为"text" input 以避免原生"date" input 与我们自定义的 datepicker 所冲突，要实现这样的功能需要在"mobileinit"事件处理函数中使用如下代码：
 
-```
+```js
 <script>
 　　　//reset type=date inputs to text
 　　　$( document ).bind( "mobileinit", function(){
@@ -1667,7 +1667,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview">
 　　<li><a href="index.html">Acura</a></li>
 　　<li><a href="index.html">Audi</a></li>
@@ -1684,7 +1684,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **html 代码**
 
-```
+```js
 <ul>
 　<li>Pets
 　　 <ul>
@@ -1711,7 +1711,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **html 代码**
 
-```
+```js
 <ol data-role="listview">
 　 <li><a href="index.html">The Godfather</a></li>
 　 <li><a href="index.html">Inception</a></li>
@@ -1728,7 +1728,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview" data-inset="true">
 　 <li>Acura</li>
 　 <li>Audi</li>
@@ -1747,7 +1747,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview" data-split-icon="gear" data-split-theme="d">
 　<li>
 　　<img src="images/album-bb.jpg" />
@@ -1775,7 +1775,7 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview">
 　<li data-role="list-divider">A</li>
 　 <li><a href="index.html">Adam Kinkaid</a></li>
@@ -1799,7 +1799,7 @@ Jquery Mobile 提供了一种非常方便的方式通过在客户端进行的搜
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview" data-filter="true" >
 　　<li><a href="index.html">Acura</a></li>
 　　<li><a href="index.html">Audi</a></li>
@@ -1822,7 +1822,7 @@ Jquery Mobile 支持通过 HTML 语义化的标签来显示列表项中所需常
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview">
 　<li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
 　<li>
@@ -1846,7 +1846,7 @@ Jquery Mobile 支持通过 HTML 语义化的标签来显示列表项中所需常
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview">
 　<li><a href="index.html">Inbox</a> <span class="ui-li-count">12</span></li>
 　 <li><a href="index.html">Outbox</a> <span class="ui-li-count">0</span></li>
@@ -1863,7 +1863,7 @@ Jquery Mobile 支持通过 HTML 语义化的标签来显示列表项中所需常
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview">
 　<li>
 　　 <img src="images/album-bb.jpg" />
@@ -1884,7 +1884,7 @@ Jquery Mobile 支持通过 HTML 语义化的标签来显示列表项中所需常
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview">
 　<li><img src="images/gf.png" alt="France" class="ui-li-icon"><a href="index.html">France</a> <span class="ui-li-count">4</span></li>
 　 <li><img src="images/de.png" alt="Germany" class="ui-li-icon"><a href="index.html">Germany</a> <span class="ui-li-count">4</span></li>
@@ -1901,7 +1901,7 @@ Jquery Mobile 支持通过 HTML 语义化的标签来显示列表项中所需常
 
 **html 代码**
 
-```
+```js
 <ul data-role="listview" data-filter="true" >
 　　<li><a href="index.html">Acura</a></li>
 　　<li><a href="index.html">Audi</a></li>

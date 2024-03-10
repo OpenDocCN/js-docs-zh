@@ -10,7 +10,7 @@
 
 当 Jquery Mobile 开始执行时，他就会在 document 对象上触发 mobileinit 事件，所以你可以绑定别的行为来覆盖默认配置
 
-```
+```js
 $(document).bind("mobileinit", function(){
 //覆盖的代码
 }); 
@@ -18,7 +18,7 @@ $(document).bind("mobileinit", function(){
 
 因为 mobileinit 事件是在加载后马上触发，所以你需要在 Jquery Mobile 加载之前绑定你的事件处理函数，所以我建议你如下安排你的 js 引用顺序
 
-```
+```js
 <script src="Jquery.js"></script> 
 <script src="custom-scripting.js"></script> 
 <script src="Jquery-mobile.js"></script> 
@@ -26,7 +26,7 @@ $(document).bind("mobileinit", function(){
 
 在事件绑定内部，你可以设置你的默认配置，或者是使用 jq?.extend 方法扩展 $.mobile 对象
 
-```
+```js
 $(document).bind("mobileinit", function(){
 　$.extend( $.mobile , {
 　foo: bar
@@ -36,7 +36,7 @@ $(document).bind("mobileinit", function(){
 
 **或者单独设置它**
 
-```
+```js
 $(document).bind("mobileinit", function(){
 　$.mobile.foo = bar;
 }); 
@@ -46,79 +46,79 @@ $(document).bind("mobileinit", function(){
 
 以下的默认配置可以通过$.mobile 对象重新配置
 
-```
+```js
 ns (_ 字符 _, 默认: ""): 
 ```
 
 按照 data-属性格式安排的命名空间，例如：data-role,可以设置为任何东西，默认为空字符串。如果你包含一个面包屑的话用起来会比较明晰，比如 mynamespace-",会映射到 data-mynamespace-foo="...".
 
-```
+```js
 subPageUrlKey (_ 字符串，_ 默认: "ui-page"): 
 ```
 
 url 参数用来指向组件产生的子页面（比如生成的嵌套的列表）。会被转义为*example.html&ui-page=subpageIdentifier*.Jquery Mobile 会把 &ui-page=之前的部分用来向子页面的 url 地址发出 ajax 请求
 
-```
+```js
 nonHistorySelectors (_ 字符串 _, 默认: "dialog"): 
 ```
 
 对于带有 data-rel 属性的链接，或? data-role 属性的页面，如果选择器与之匹配，则他们不会在历史记录中被追踪 (即它们不会在 location.hash 中被更新，也不能加入到收藏夹?.
 
-```
+```js
 activePageClass (**_ 字符 _ 串**, 默认: "ui-page-active"): 
 ```
 
 给当前页面(包括转场中的) 分配 class
 
-```
+```js
 activeBtnClass (_ 字符串 _, 默认: "ui-page-active"): 
 ```
 
 给活动状态的按钮分配 class 值，该 class 值必须在 css 框架中存
 
-```
+```js
 ajaxEnabled (_ 布尔值 _, 默认: true): 
 ```
 
 Jquery Mobile 会自动通过 ajax 处理链接点击以及表单提交?如果无法处理，url hash 监听将会被禁用，url 也会像常规那样发出 HTTP 请求.
 
-```
+```js
 ajaxLinksEnabled (_ 布尔值 _, 默认: true): 
 ```
 
 可行时，Jquery Mobile 就会自动通过 ajax 处理链接的点击
 
-```
+```js
 ajaxFormsEnabled (_ 布尔值 _, 默认: true): 
 ```
 
 可行时，Jquery Mobile 就会自动通过 ajax 处理表单的提交
 
-```
+```js
 hashListeningEnabled (_ 布尔值 _, 默认: true): 
 ```
 
 Jquery Mobile 会自动监听与处理 location.hash 的改变。禁用它会防止 Jquery Mobile 处理 location.hash 的改?使你可以自己处理他们，或者在文档中用完整的链接地址指到一个特定的 id 值上
 
-```
+```js
 defaultTransition (_ 字符串 _, 默认: 'slide'): 
 ```
 
 设置默认的页面之间的转场效果。默认的对话框的转场效果为”pop?设为 none,则无转场效果
 
-```
+```js
 loadingMessage (_ 字符串 _, 默认: "loading"): 
 ```
 
 设置页面加载时显示的文本. 如果设置为 false 将不会显示任何文字
 
-```
+```js
 pageLoadErrorMessage (_ 字符串 _, 默认: "Error Loading Page"): 
 ```
 
 通过 ajax 加载页面失败时出现的文本
 
-```
+```js
 gradeA (_ 返回一个布尔值 _, 默认: 返回$.support.mediaquery 的值: 
 ```
 
@@ -180,7 +180,7 @@ pagehide：转场之后，页面被隐藏时触发
 
 请注意这 4 个事件都引用了”上一页“，或”下一页“，这取决于哪一页被显示或者隐藏，以及”上一页“或者”下一页“是否存在。（第一个被显示的 page 并没?quot;上一?quot;可以引用，但是同样会引用一个空的 Jquery 对象 ），你可以通过将第二个参数作为一个绑定的回调函数访问这一引用
 
-```
+```js
 $('div').live('pageshow',function(event, ui){
 　alert('This page was just hidden: '+ ui.prevPage);
 });
@@ -202,7 +202,7 @@ pagebeforecreate：页面初始化时，初始化之前触
 
 pagecreate：页面初始化时，初始化之后触
 
-```
+```js
 $('#aboutPage').live('pagebeforecreate',function(event){
 alert('This page was just inserted into the dom!');
 });
@@ -248,7 +248,7 @@ Jquery Mobile.mobile 对象提供了几种方法供你在应用中使用
 
 **实例**
 
-```
+```js
 //使用 slideup(上滑)的转场效果转到 about/us.html 页面 
 　$.mobile.changePage("about/us.html", "slideup");
 
@@ -281,13 +281,13 @@ Jquery Mobile.mobile 对象提供了几种方法供你在应用中使用
 
 **参数**
 
-```
+```js
 Done (_ 布尔 _, 默认为 false, 意味着加载已经开始. 设为 True 会隐藏 loading 消息 
 ```
 
 **示例**
 
-```
+```js
 // 显示页面加载消息
 $.mobile.pageLoading(); 
 
@@ -309,13 +309,13 @@ $.mobile.pageLoading(true);
 
 **参数**
 
-```
+```js
 yPos (数字，默认为 0). 
 ```
 
 **示例**
 
-```
+```js
 //滚屏到 y 100px 处
 $.mobile.silentScroll(100); 
 ```
@@ -326,7 +326,7 @@ $.mobile.silentScroll(100);
 
 **示例**
 
-```
+```js
 //添加 400px 的分辨率断点
 $.mobile.addResolutionBreakpoints(400);
 
@@ -336,7 +336,7 @@ $.mobile.addResolutionBreakpoints([600,800]);
 
 **示例**
 
-```
+```js
 //滚屏到 y 100px 处
 $.mobile.silentScroll(100); 
 ```
@@ -355,7 +355,7 @@ Jquery Mobile 给 html 元素增加了用来模拟浏览器的水平竖直方向
 
 取决于浏览器或者设备的方向，HTML 元素总是会有"portrait"(竖屏) "landscape"(横屏) class. 你可以在 css 中如下使用它们:
 
-```
+```js
 .portrait {
 /* 垂直方向的变化的代码 */
 }
@@ -368,7 +368,7 @@ Jquery Mobile 给 html 元素增加了用来模拟浏览器的水平竖直方向
 
 默认情况下， 我们为如下宽度创建了折断： 320，80，68，024\. 这些宽度对应着如同这样的 class:"min-width-320px"，"max-width-480px"这意味着这些 class 可以应用在 替换(或附加) 它们模拟的等值的媒介查询
 
-```
+```js
 .myelement { 
 　float: none;
 } 
@@ -379,7 +379,7 @@ Jquery Mobile 给 html 元素增加了用来模拟浏览器的水平竖直方向
 
 Jquery Mobile 中的许多插件都利用了这些宽度折断点.例如，当浏览器宽度在 480 以上时，表单元素会浮动在 label 的旁边. 约束表单文本框的 CSS 在支持这样的行为时看起来像这样:
 
-```
+```js
 label.ui-input-text { 
 　display: block; 
 }
@@ -392,7 +392,7 @@ label.ui-input-text {
 
 要利用你自己的宽度折断点。Jquery Mobile 公开$.mobile.addResolutionBreakpoints 函数，该函数接受一个数字或者数字的数组，这些值无论何时在函数被应用到时会被添加到 min/max 折断点中.
 
-```
+```js
 //添加一个 1200 像素的最大/最小折断点
 $.mobile.addResolutionBreakpoints(1200);
 
@@ -404,7 +404,7 @@ $.mobile.addResolutionBreakpoints([1200,1440]);
 
 Jquery Mobile 提供一个函数允许你来测试是否有特殊的 css 媒介查询生效，只需调用 $.mobile.media()然后传递一个 media type 或 query 即可.如果浏览器支持你传递的那种 type 或 query，它会立即生效，函数会返回 true，否则会返回 false.
 
-```
+```js
 //测试屏幕媒体类型
 $.mobile.media("screen");
 

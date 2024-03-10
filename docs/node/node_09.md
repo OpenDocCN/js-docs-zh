@@ -30,7 +30,7 @@ API 被调用的风格决定了生成的错误如何回送（handed back），�
 
 一个堆栈追踪信息例子：
 
-```
+```js
 Error: Things keep happening!
    at /home/gbusey/file.js:525:2
    at Frobnicator.refrobulate (/home/gbusey/business-logic.js:424:21)
@@ -42,7 +42,7 @@ Error: Things keep happening!
 
 帧只会由`JavaScript`函数生成。例如，如果在一个`JavaScript`函数里，同步执行了一个叫`cheetahify`的 C++ `addon`函数，那么堆栈追踪信息中的帧里将不会有`cheetahify`调用：
 
-```
+```js
 var cheetahify = require('./native-binding.node');
 
 function makeFaster() {
@@ -85,7 +85,7 @@ makeFaster(); // will throw:
 
 为`targetObject`创建一个`.stack`属性，它代表了`Error.captureStackTrace`被调用时，在程序中的位置。
 
-```
+```js
 var myObject = {};
 
 Error.captureStackTrace(myObject);
@@ -99,7 +99,7 @@ myObject.stack  // similar to `new Error().stack`
 
 这对于向最终用户隐藏实现细节十分有用。一个普遍的使用这个参数的例子：
 
-```
+```js
 function MyError() {
   Error.captureStackTrace(this, MyError);
 }
@@ -121,7 +121,7 @@ new MyError().stack
 
 一个`Error`子类，表明了为一个函数提供的参数没有在可接受的值的范围之内；不论是在一个数字范围之外，或是在一个参数指定的参数集合范围之外。例子：
 
-```
+```js
 require('net').connect(-1);  // throws RangeError, port should be > 0 && < 65536 
 ```
 
@@ -131,7 +131,7 @@ require('net').connect(-1);  // throws RangeError, port should be > 0 && < 65536
 
 一个`Error`子类，表明了提供的参数不是被允许的类型。例如，为一个期望收到字符串参数的函数，传入一个函数作为参数，将导致一个类型错误。
 
-```
+```js
 require('url').parse(function() { }); // throws TypeError, since it expected a string 
 ```
 
@@ -141,13 +141,13 @@ require('url').parse(function() { }); // throws TypeError, since it expected a s
 
 一个`Error`子类，表明了试图去获取一个未定义的对象的属性。大多数情况下它表明了一个输入错误，或者一个不完整的程序。客户端代码可能会生成和传播这些错误，但实际上只有 V8 会。
 
-```
+```js
 doesNotExist; // throws ReferenceError, doesNotExist is not a variable in this program. 
 ```
 
 `ReferenceError`实例将有一个`.arguments`属性，它是一个包含了一个元素的数组。这个元素表示没有被定义的那个变量。
 
-```
+```js
 try {
   doesNotExist;
 } catch(err) {
@@ -161,7 +161,7 @@ try {
 
 一个`Error`子类，表明了程序代码不是合法的`JavaScript`。这些错误可能只会作为代码运行的结果生成。代码运行可能是`eval`，`Function`，`require`或`vm`的结果。这些错误经常表明了一个不完整的程序。
 
-```
+```js
 try {
   require("vm").runInThisContext("binary ! isNotOk");
 } catch(err) {
@@ -265,7 +265,7 @@ try {
 
 单个操作使用`Node 风格的回调函数` -- 一个提供给 API 作为参数的函数。Node 风格的回调函数至少有一个参数 -- `error` -- 它可以是`null`（如果没有错误发生）或是`Error`实例。例子：
 
-```
+```js
 var fs = require('fs');
 
 fs.readFile('/some/file/that/does-not-exist', function nodeStyleCallback(err, data) {
@@ -281,7 +281,7 @@ fs.readFile('/some/file/that/does-exist', function(err, data) {
 
 注意，`try { } catch(err) { }`不能捕获异步 API 生成的错误。一个初学者的常见错误是尝试在 Node 风格的回调函数中抛出错误：
 
-```
+```js
 // THIS WILL NOT WORK:
 var fs = require('fs');
 
@@ -304,7 +304,7 @@ try {
 
 另一个提供错误的机制是`error`事件。这常被用在基于流或基于`event emitter`的 API 中，它们自身就代表了一系列的异步操作（每一个单一的操作都可能成功或失败）。如果在错误的源头没有添加`error`事件的监听器，那么`error`会被抛出。此时，进程会因为一个未处理的异常而挂掉，除非提供了合适的`domains`，或监听了`process.on('uncaughtException')`。
 
-```
+```js
 var net = require('net');
 
 var connection = net.connect('localhost');
@@ -322,7 +322,7 @@ connection.pipe(process.stdout);
 
 “当没有没有监听错误时会抛出错误”这个行为不仅限与`node.js`提供的 API -- 用户创建的基于流或`event emitters`的 API 也会如此。例子：
 
-```
+```js
 var events = require('events');
 
 var ee = new events.EventEmitter;

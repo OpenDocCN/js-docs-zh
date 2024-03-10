@@ -4,7 +4,7 @@
 
 > 判断对象是否为【document】。
 
-```
+```js
 $.isDocument(document) //? true 
 ```
 
@@ -16,7 +16,7 @@ $.isDocument(document) //? true
 
 > 判断对象是否为函数【function】。
 
-```
+```js
 $.isFunction(function(){}) //? true 
 ```
 
@@ -24,7 +24,7 @@ $.isFunction(function(){}) //? true
 
 > 判断是否为 `Object` 。
 
-```
+```js
 $.isObject({})  //? true 
 ```
 
@@ -33,7 +33,7 @@ $.isObject({})  //? true
 > `$.isPlainObject(object) ? boolean`
 > 如果通过 "{}" 或者 "new Object" 创建的则返回 true。判断对象是否是纯粹的对象。
 
-```
+```js
 $.isPlainObject({})         // => true
 $.isPlainObject(new Object) // => true
 $.isPlainObject(new Date)   // => false
@@ -44,7 +44,7 @@ $.isPlainObject(window)     // => false
 
 > 判断是否为【数组】。
 
-```
+```js
 $.isArray([1,2,3])  //? true 
 ```
 
@@ -52,7 +52,7 @@ $.isArray([1,2,3])  //? true
 
 > 判断是否为【数组】。
 
-```
+```js
 $.isJson({})  //? true 
 ```
 
@@ -60,7 +60,7 @@ $.isJson({})  //? true
 
 > `$.contains(parent, node) ? boolean` `parent`是否包含`node`节点对象。
 
-```
+```js
 $.contains($("#box")[0],$(".boxss")[0]) //? parent 是否包含 node 节点对象 
 ```
 
@@ -68,7 +68,7 @@ $.contains($("#box")[0],$(".boxss")[0]) //? parent 是否包含 node 节点对�
 
 > 判断对象是否为数组或者是字符。
 
-```
+```js
 $.likeArray([1,2,3])     //? true
 $.likeArray("222")  //? true 
 ```
@@ -77,7 +77,7 @@ $.likeArray("222")  //? true
 
 > 获取 JavaScript 对象的类型。可能的类型有： `null` `undefined` `boolean` `number` `string` `function` `array` `date` `regexp` `object` `error` 。
 
-```
+```js
 $.type(true)  //? Boolean
 $.type("div") //? String 
 ```
@@ -87,7 +87,7 @@ $.type("div") //? String
 > 如果当前节点能被指定的 css 选择器查找到，则返回`true`，否则返回`false`。
 > `$.matches(element,selector) ? boolean`
 
-```
+```js
 $.matches($("#box")[0], "#box")//? true 
 ```
 
@@ -96,7 +96,7 @@ $.matches($("#box")[0], "#box")//? true
 > 判断当前匹配的元素集合中的元素，是否为一个选择器，DOM 元素 is(selector) ? boolean
 > is(element) ? boolean
 
-```
+```js
 $('#box').is('div');  //? true 
 $('#box').is('#box');  //? true 
 $('#box').is('#boxsss');  //? false 

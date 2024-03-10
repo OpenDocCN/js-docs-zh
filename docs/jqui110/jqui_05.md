@@ -99,7 +99,7 @@ jQuery UI `.position()` 方法允许您相对窗体（window）、文档、另�
 
 #### 一个简单的 jQuery UI 定位（Position）实例。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>

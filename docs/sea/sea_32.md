@@ -6,7 +6,7 @@ Sea.js 的模块遵循 [CMD](https://github.com/seajs/seajs/issues/242) 规范�
 
 非常简单。首先需要安装 `seajs` 的 Node 模块：
 
-```
+```js
 $ npm install seajs -g 
 ```
 
@@ -14,7 +14,7 @@ $ npm install seajs -g
 
 a.js
 
-```
+```js
 define(function(require, exports) {
   exports.name = 'A';
 });
@@ -22,7 +22,7 @@ define(function(require, exports) {
 
 main.js
 
-```
+```js
 require('seajs');
 
 var a = require('./a');
@@ -31,7 +31,7 @@ console.log(a.name);
 
 这样就可以在 Node 环境中运行 Sea.js 的模块了：
 
-```
+```js
 $ node main.js
 A 
 ```
@@ -42,13 +42,13 @@ A
 
 a.js
 
-```
+```js
 exports.name = 'A';
 ```
 
 封装成
 
-```
+```js
 define(function(require, exports) {
   exports.name = 'A';
 });
@@ -56,7 +56,7 @@ define(function(require, exports) {
 
 这样在浏览器端就可以通过 Sea.js 来加载使用了：
 
-```
+```js
 seajs.use('./a', function(a) {
   console.log(a.name);
 });

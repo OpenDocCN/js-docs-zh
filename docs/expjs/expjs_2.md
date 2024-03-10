@@ -32,7 +32,7 @@ Express 根本没有涉及到数据库，这个任务留给了第三方的 node 
 
 你可以会在你的程序中多次使用任意一个中间件。 使用下面的方式，当你请求"GET /javascripts/jquery.js" 时，会先检查 "./public/javascripts/jquery.js", 如果它不存在，随后的中间件会检查 "./files/javascripts/jquery.js".
 
-```
+```js
 app.use(express.static('public'));
 app.use(express.static('files')); 
 ```
@@ -41,7 +41,7 @@ app.use(express.static('files'));
 
 Connect's 的中间件绑定技术允许你指定一个路径名前缀, 一个常用的例子是你可以前缀一个根本不是请求路径中一部分的字符。 假设你要请求 "GET /files/javascripts/jquery.js", 你可以把中间件挂在 "/files", 暴露出 "/javascripts/jquery.js"作为 `req.url` 来让中间件为这个文件提供服务:
 
-```
+```js
 app.use('/public', express.static('public')); 
 ```
 
@@ -53,7 +53,7 @@ Express 2x 甚至能支持到 node 1.0, 所以可能没有必要由于 Express 3
 
 在 Express 里 404s 不被认为是出错的结果，所以错误处理中间件不会捕获 404s,这是因为一个 404 只是由于有一些额外的工作没有做，换而言之，Express 已经执行了所有的中间件 / 路由分发，然而没有发现有返回。你所要做的仅仅是在代码底部加一个中间件去处理没有返回的情况，并且手动返回一个 404
 
-```
+```js
 app.use(function(req, res, next){
   res.send(404, 'Sorry cant find that!');
 }); 
@@ -63,7 +63,7 @@ app.use(function(req, res, next){
 
 定义错误处理的中间件跟定义普通的中间件没有什么区别，仅仅是参数必须定义为 4 个，它们定义如下 `(err, req, res, next)`:
 
-```
+```js
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.send(500, 'Something broke!');

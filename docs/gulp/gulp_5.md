@@ -31,7 +31,7 @@
 
 这里是一个在 gulpfile 中使用它的例子：
 
-```
+```js
 var combiner = require('stream-combiner2');
 var uglify = require('gulp-uglify');
 var gulp = require('gulp');
@@ -57,13 +57,13 @@ gulp.task('test', function() {
 
 因为 [`del`](https://github.com/sindresorhus/del) 模块支持多个文件以及 [globbing](https://github.com/sindresorhus/multimatch#globbing-patterns)，因此，在这个例子中，我们将使用它来删除文件：
 
-```
+```js
 $ npm install --save-dev gulp del 
 ```
 
 假想有如下的文件结构：
 
-```
+```js
 .
 ├── dist
 │   ├── report.csv
@@ -77,7 +77,7 @@ $ npm install --save-dev gulp del
 
 在 gulpfile 中，我们希望在运行我们的编译任务之前，将 `mobile` 文件的内容先清理掉：
 
-```
+```js
 var gulp = require('gulp');
 var del = require('del');
 
@@ -100,13 +100,13 @@ gulp.task('default', ['clean:mobile']);
 
 我们使用 [vinyl-paths](https://github.com/sindresorhus/vinyl-paths) 模块来简单地获取 stream 中每个文件的路径，然后传给 `del` 方法。
 
-```
+```js
 $ npm install --save-dev gulp del vinyl-paths 
 ```
 
 假想有如下的文件结构：
 
-```
+```js
 .
 ├── tmp
 │   ├── rainbow.js
@@ -114,7 +114,7 @@ $ npm install --save-dev gulp del vinyl-paths
 └── dist 
 ```
 
-```
+```js
 var gulp = require('gulp');
 var stripDebug = require('gulp-strip-debug'); // 仅用于本例做演示
 var del = require('del');
@@ -140,7 +140,7 @@ gulp.task('default', ['clean:tmp']);
 
 watchify 并没有一个相应的 gulp 插件，并且也不需要有：你可以使用 [vinyl-source-stream](http://github.com/hughsk/vinyl-source-stream) 来把你的用于打包的 stream 连接到 gulp 管道中。
 
-```
+```js
 'use strict';
 
 var watchify = require('watchify');
@@ -188,7 +188,7 @@ function bundle() {
 
 使用 [gulp-cached](https://github.com/wearefractal/gulp-cached) 以及 [gulp-remember](https://github.com/ahaurw01/gulp-remember) 来解决这个问题。
 
-```
+```js
 var gulp = require('gulp');
 var header = require('gulp-header');
 var footer = require('gulp-footer');
@@ -237,7 +237,7 @@ gulp.task('watch', function () {
 
 想象如下的文件结构：
 
-```
+```js
 ├── libs
 │   ├── lib1.js
 │   └── lib2.js
@@ -248,7 +248,7 @@ gulp.task('watch', function () {
 
 你应该要得到这样的结果：
 
-```
+```js
 └── output
     ├── version.1.complete.js # lib1.js + lib2.js + version.1.js
     └── version.2.complete.js # lib1.js + lib2.js + version.2.js 
@@ -256,7 +256,7 @@ gulp.task('watch', function () {
 
 一个简单的模块化处理方式将会像下面这样：
 
-```
+```js
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var source = require('vinyl-source-stream');
@@ -360,7 +360,7 @@ gulp.task('watch', ['default'], function() {
 
 ### 运行所有的测试用例
 
-```
+```js
 // npm install gulp gulp-mocha
 
 var gulp = require('gulp');
@@ -379,7 +379,7 @@ gulp.task('default', function() {
 
 ### 在文件改动时候运行 mocha 测试用例
 
-```
+```js
 // npm install gulp gulp-mocha gulp-util
 
 var gulp = require('gulp');
@@ -401,7 +401,7 @@ gulp.task('watch-mocha', function() {
 
 默认情况下，每次运行时候所有的文件都会传递并通过整个管道。通过使用 [gulp-changed](https://github.com/sindresorhus/gulp-changed) 可以只让更改过的文件传递过管道。这可以大大加快连续多次的运行。
 
-```
+```js
 // npm install --save-dev gulp gulp-changed gulp-jscs gulp-uglify
 
 var gulp = require('gulp');
@@ -427,7 +427,7 @@ gulp.task('default', function() {
 
 # 从命令行传递参数
 
-```
+```js
 // npm install --save-dev gulp gulp-if gulp-uglify minimist
 
 var gulp = require('gulp');
@@ -452,7 +452,7 @@ gulp.task('scripts', function() {
 
 然后，通过如下命令运行 gulp：
 
-```
+```js
 $ gulp scripts --env development 
 ```
 
@@ -460,7 +460,7 @@ $ gulp scripts --env development
 
 通过使用 [`gulp-watch`](https://github.com/floatdrop/gulp-watch):
 
-```
+```js
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
@@ -477,7 +477,7 @@ gulp.task('default', function() {
 
 如果你有一整套的文件目录，并且希望执行相应的一套任务，比如...
 
-```
+```js
 /scripts
 /scripts/jquery/*.js
 /scripts/angularjs/*.js 
@@ -485,7 +485,7 @@ gulp.task('default', function() {
 
 ...然后希望完成如下的结果 h...
 
-```
+```js
 /scripts
 /scripts/jquery.min.js
 /scripts/angularjs.min.js 
@@ -493,7 +493,7 @@ gulp.task('default', function() {
 
 ...你将会需要像下面所示的东西...
 
-```
+```js
 var fs = require('fs');
 var path = require('path');
 var merge = require('merge-stream');
@@ -552,7 +552,7 @@ gulp.task('scripts', function() {
 
 因此，这个例子将会是像这样：
 
-```
+```js
 var gulp = require('gulp');
 
 // 传入一个回调函数，因此引擎可以知道何时它会被完成
@@ -572,7 +572,7 @@ gulp.task('default', ['one', 'two']);
 
 另一个例子，通过返回一个 stream 来取代使用回调函数的方法：
 
-```
+```js
 var gulp = require('gulp');
 var del = require('del'); // rm -rf
 
@@ -610,13 +610,13 @@ gulp.task('default', ['build']);
 
 首先安装模块：
 
-```
+```js
 $ npm install --save-dev browser-sync 
 ```
 
 然后，考虑拥有如下的目录结构...
 
-```
+```js
 gulpfile.js
 app/
   styles/
@@ -628,7 +628,7 @@ app/
 
 ... 通过如下的 `gulpfile.js`，你可以轻松地将 `app` 目录中的文件加到服务器中，并且所有的浏览器都会在文件发生改变之后自动刷新：
 
-```
+```js
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -647,7 +647,7 @@ gulp.task('serve', function() {
 
 在 `index.html` 中引入 CSS：
 
-```
+```js
 <html>
   <head>
     ...
@@ -657,7 +657,7 @@ gulp.task('serve', function() {
 
 通过如下命令启动服务，并且打开一个浏览器，访问默认的 URL ([`localhost:3000)：`](http://localhost:3000)：)
 
-```
+```js
 gulp serve 
 ```
 
@@ -667,7 +667,7 @@ gulp serve
 
 考虑有如下的文件目录结构...
 
-```
+```js
 gulpfile.js
 app/
   scss/
@@ -679,7 +679,7 @@ app/
 
 ... 通过如下的 `gulpfile.js`，你可以轻松地监视 `scss` 目录中的文件，并且所有的浏览器都会在文件发生改变之后自动刷新：
 
-```
+```js
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var browserSync = require('browser-sync');
@@ -705,7 +705,7 @@ gulp.task('serve', ['sass'], function() {
 
 在 `index.html` 文件中引入预处理后的 CSS 文件：
 
-```
+```js
 <html>
   <head>
     ...
@@ -715,7 +715,7 @@ gulp.task('serve', ['sass'], function() {
 
 通过如下命令启动服务，并且打开一个浏览器，访问默认的 URL ([`localhost:3000)：`](http://localhost:3000)：)
 
-```
+```js
 gulp serve 
 ```
 
@@ -732,7 +732,7 @@ gulp serve
 
 这是我们的例子：
 
-```
+```js
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var coffee = require('gulp-coffee');
@@ -759,7 +759,7 @@ gulp.task('coffee', function() {
 
 然后，使用了 lazypipe 之后，将会是这样：
 
-```
+```js
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var coffee = require('gulp-coffee');
@@ -793,7 +793,7 @@ gulp.task('coffee', function() {
 
 在一个多层嵌套的项目中，这是非常有用的，比如：
 
-```
+```js
 /project
   /layer1
   /layer2 
@@ -803,13 +803,13 @@ gulp.task('coffee', function() {
 
 在 `project/` 目中中：
 
-```
+```js
 gulp --cwd layer1 
 ```
 
 如果你需要对特定的匹配指定一个 cwd，你可以使用 [glob-stream](https://github.com/wearefractal/glob-stream) 的 `cwd` 选项：
 
-```
+```js
 gulp.src('./some/dir/**/*.js', { cwd: 'public' }); 
 ```
 
@@ -819,7 +819,7 @@ gulp.src('./some/dir/**/*.js', { cwd: 'public' });
 
 想象如下的文件结构：
 
-```
+```js
 gulpfile.js
 tasks/
 ├── dev.js
@@ -829,13 +829,13 @@ tasks/
 
 安装 `require-dir` 模块：
 
-```
+```js
 npm install --save-dev require-dir 
 ```
 
 在 `gulpfile.js` 中增加如下几行代码：
 
-```
+```js
 var requireDir = require('require-dir');
 var dir = requireDir('./tasks'); 
 ```
@@ -846,7 +846,7 @@ var dir = requireDir('./tasks');
 
 ###### `config.json`
 
-```
+```js
 {
   "desktop" : {
     "src" : [
@@ -864,7 +864,7 @@ var dir = requireDir('./tasks');
 
 ###### `gulpfile.js`
 
-```
+```js
 // npm install --save-dev gulp gulp-uglify
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
@@ -884,7 +884,7 @@ gulp.task('dry', function() {
 
 # 在一个任务中使用多个文件来源
 
-```
+```js
 // npm install --save-dev gulp merge-stream
 
 var gulp = require('gulp');
@@ -903,7 +903,7 @@ gulp.task('test', function() {
 
 `gulp.src` 会以文件被添加的顺序来 emit：
 
-```
+```js
 // npm install gulp gulp-concat
 
 var gulp = require('gulp');
@@ -922,7 +922,7 @@ gulp.task('default', function() {
 
 同时请看: [组合 Streams 来处理错误](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md) 范例来查看如何处理你的 stream 中 browserify 或者 uglify 的错误。
 
-```
+```js
 'use strict';
 
 var browserify = require('browserify');
@@ -958,7 +958,7 @@ gulp.task('javascript', function () {
 
 同时请看: [组合 Streams 来处理错误](https://github.com/gulpjs/gulp/blob/master/docs/recipes/combining-streams-to-handle-errors.md) 范例来查看如何处理你的 stream 中 browserify 或者 uglify 的错误。
 
-```
+```js
 'use strict';
 
 var browserify = require('browserify');
@@ -1019,7 +1019,7 @@ gulp.task('javascript', function () {
 
 同时输出压缩过的和未压缩版本的文件可以通过使用 `gulp-rename` 然后 pipe 到 `dest` 两次来实现 (一次是压缩之前的，一次是压缩后的)：
 
-```
+```js
 'use strict';
 
 var gulp = require('gulp');
@@ -1043,7 +1043,7 @@ gulp.task('default', function() {
 
 如果你的项目遵循语义化版本，那么，把那些发布新版本的时候需要做的事情通过自动化的手段去完成将会是个很不错的主意。 下面有一个简单的范例展示了如何改变项目的版本号，将更新提交到 git，以及创建一个 tag。
 
-```
+```js
  var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var bump = require('gulp-bump');
@@ -1107,7 +1107,7 @@ gulp.task('release', function (callback) {
 
 ##### `page.html`
 
-```
+```js
 ---
 title: Things to do
 todos:
@@ -1130,7 +1130,7 @@ todos:
 
 ##### `gulpfile.js`
 
-```
+```js
 var gulp = require('gulp');
 var swig = require('gulp-swig');
 var frontMatter = require('gulp-front-matter');

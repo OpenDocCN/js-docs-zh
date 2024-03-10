@@ -52,7 +52,7 @@ Translation for Getting Started with nw.js
 
 创建 `index.html`:
 
-```
+```js
 <html>
 <head>
 <title>Hello World!</title>
@@ -65,7 +65,7 @@ Translation for Getting Started with nw.js
 
 创建 `package.json`:
 
-```
+```js
 {
   "name": "nw-demo",
   "main": "index.html"
@@ -74,7 +74,7 @@ Translation for Getting Started with nw.js
 
 压缩 `index.html` 和 `package.json` 到 zip 压缩文件，并修改文件名为 `app.nw`:
 
-```
+```js
 app.nw
 |-- package.json
 `-- index.html 
@@ -82,7 +82,7 @@ app.nw
 
 下载你所使用的平台的预构建的二进制文件并用它打开 `app.nw` 文件:
 
-```
+```js
 $ ./nw app.nw 
 ```
 
@@ -96,7 +96,7 @@ nw.js 有原生 UI 控制 API。 你可以用这些来控制窗口、菜单等�
 
 下面的示例演示如何使用菜单的 API。
 
-```
+```js
 <html>
 <head>
   <title> Menu </title>
@@ -177,7 +177,7 @@ menu.items[0].click = function() {
 
 您可以直接在 DOM 调用的 Node.js 和模块。因此，它实现了无限的可能性，写的应用程序与 nw.js.
 
-```
+```js
 <html>
 <body>
 <script> // 使用 node.js 获取系统平台
@@ -200,7 +200,7 @@ document.write('Our computer is: ', os.platform()) </script>
 
 例如:
 
-```
+```js
 nw path_to_app_dir
 nw path_to_app.nw 
 ```
@@ -223,7 +223,7 @@ title: node-webkit 文档翻译#package.json date: 2013-12-07 21:38:25
 
 ### 基本示例
 
-```
+```js
 {
     "main": "index.html",
     "name": "nw-demo",
@@ -273,7 +273,7 @@ title: node-webkit 文档翻译#package.json date: 2013-12-07 21:38:25
 
 index.html
 
-```
+```js
  <html>
     <head>
         <title>Hello World!</title>
@@ -287,7 +287,7 @@ index.html
 
 index.js
 
-```
+```js
 var i = 0;
 exports.callback0 = function () {
     console.log(i + ": " + window.location);
@@ -298,7 +298,7 @@ exports.callback0 = function () {
 
 package.json
 
-```
+```js
 {
   "name": "nw-demo",
   "node-main": "index.js",
@@ -356,7 +356,7 @@ package.json
 
 可以在代替框架的元素上添加 css。
 
-```
+```js
 .titlebar {
   -webkit-user-select: none;//禁止选中文字
   -webkit-app-region: drag;//拖动

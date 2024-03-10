@@ -16,7 +16,7 @@
 
 ## animate
 
-```
+```js
 animate(properties, [duration, [easing, [function(){ ... }]]])   => self
       animate(properties, { duration: msec, easing: type, complete: fn })   => self
       animate(animationName, { ... })   => self 
@@ -52,7 +52,7 @@ Zepto 还支持以下 [CSS transform](http://www.w3.org/TR/css3-transforms/#tran
 
 如果第一个参数是字符串而不是一个对象，它将被当作一个 css 关键帧动画 [CSS keyframe animation](http://www.w3.org/TR/css3-animations/#animations)的名称。
 
-```
+```js
 $("#some_element").animate({
         opacity: 0.25,
         left:

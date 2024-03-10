@@ -6,7 +6,7 @@
 
 `cluster`模块允许你方便地创建共享服务器端口的子进程：
 
-```
+```js
 var cluster = require('cluster');
 var http = require('http');
 var numCPUs = require('os').cpus().length;
@@ -32,7 +32,7 @@ if (cluster.isMaster) {
 
 启动`node.js`将会在工作线程中共享 8000 端口：
 
-```
+```js
 % NODE_DEBUG=cluster iojs server.js
 23521,Master Worker 23524 online
 23521,Master Worker 23526 online
@@ -110,7 +110,7 @@ if (cluster.isMaster) {
 
 当一个新的工作进程由`cluster`模块所开启时会触发`fork`事件。这能被用来记录工作进程活动日志，或创建自定义的超时。
 
-```
+```js
 var timeouts = [];
 function errorMsg() {
   console.error("Something must be wrong with the connection ...");
@@ -134,7 +134,7 @@ cluster.on('exit', function(worker, code, signal) {
 
 当创建了一个新的工作线程后，工作线程必须响应一个在线信息。当主进程接收到在线信息后它会触发这个事件。`fork`和`online`事件的区别在于：`fork`是主进程创建了工作进程后触发，`online`是工作进程开始运行时触发。
 
-```
+```js
 cluster.on('online', function(worker) {
   console.log("Yay, the worker responded after it was forked");
 }); 
@@ -149,7 +149,7 @@ cluster.on('online', function(worker) {
 
 这个事件的回调函数包含两个参数，第一个`worker`是一个包含工作进程的对象，`address`对象是一个包含以下属性的对象：`address`，`port`和`addressType`。当工作进程监听多个地址时，这非常有用。
 
-```
+```js
 cluster.on('listening', function(worker, address) {
   console.log("A worker is now connected to " + address.address + ":" + address.port);
 }); 
@@ -170,7 +170,7 @@ cluster.on('listening', function(worker, address) {
 
 `disconnect`和`exit`事件之间可能存在延迟。这两个事件可以用来侦测是否进程在清理的过程中被阻塞，或者是否存在长连接。
 
-```
+```js
 cluster.on('disconnect', function(worker) {
   console.log('The worker #' + worker.id + ' has disconnected');
 }); 
@@ -186,7 +186,7 @@ cluster.on('disconnect', function(worker) {
 
 这可以被用来通过再次调用`.fork()`方法重启服务器。
 
-```
+```js
 cluster.on('exit', function(worker, code, signal) {
   console.log('worker %d died (%s). restarting...',
     worker.process.pid, signal || code);
@@ -223,7 +223,7 @@ cluster.on('exit', function(worker, code, signal) {
 
 例子：
 
-```
+```js
 var cluster = require('cluster');
 cluster.setupMaster({
   exec: 'worker.js',
@@ -266,7 +266,7 @@ cluster.fork(); // http worker
 
 当前工作进程对象的引用。对于主进程不可用。
 
-```
+```js
 var cluster = require('cluster');
 
 if (cluster.isMaster) {
@@ -286,7 +286,7 @@ if (cluster.isMaster) {
 
 当工作进程断开连接或退出时，它会从`cluster.workers`中移除。这个两个事件的触发顺序不能被提前决定。但是，能保证的是，从`cluster.workers`移除一定发生在这两个事件触发之后。
 
-```
+```js
 // Go through all workers
 function eachWorker(callback) {
   for (var id in cluster.workers) {
@@ -300,7 +300,7 @@ eachWorker(function(worker) {
 
 想要跨越通信信道来得到一个工作进程的引用时，使用工作进程的唯一`id`能简单找到工作进程。
 
-```
+```js
 socket.on('data', function(id) {
   var worker = cluster.workers[id];
 }); 
@@ -336,7 +336,7 @@ socket.on('data', function(id) {
 
 布尔值`worker.suicide`使你可以区别自发和意外的退出，主进程可以通过这个值来决定使用重新创建一个工作进程。
 
-```
+```js
 cluster.on('exit', function(worker, code, signal) {
   if (worker.suicide === true) {
     console.log('Oh, it was just suicide\' – no need to worry').
@@ -360,7 +360,7 @@ worker.kill();
 
 下面的例子将来自主进程的所有信息返回：
 
-```
+```js
 if (cluster.isMaster) {
   var worker = cluster.fork();
   worker.send('hi there');
@@ -400,7 +400,7 @@ if (cluster.isMaster) {
 
 由于长连接可能会阻塞工作进程的退出，这时传递一个动作信息非常有用，应用来根据信息指定的动作来关闭它们。超时机制是上述的有用实现，在`disconnect`事件在指定时长后没有触发时，杀死工作进程。
 
-```
+```js
 if (cluster.isMaster) {
   var worker = cluster.fork();
   var timeout;
@@ -451,7 +451,7 @@ if (cluster.isMaster) {
 
 例子，这里有一个集群，使用消息系统在主进程中统计请求的数量：
 
-```
+```js
 var cluster = require('cluster');
 var http = require('http');
 
@@ -497,7 +497,7 @@ if (cluster.isMaster) {
 
 与`cluster.on('online')`事件相似，但指向了特定的工作进程。
 
-```
+```js
 cluster.fork().on('online', function() {
   // Worker is online
 }); 
@@ -511,7 +511,7 @@ cluster.fork().on('online', function() {
 
 与`cluster.on('listening')`事件相似，但指向了特定的工作进程。
 
-```
+```js
 cluster.fork().on('listening', function(address) {
   // Worker is listening
 }); 
@@ -523,7 +523,7 @@ cluster.fork().on('listening', function(address) {
 
 与`cluster.on('disconnect')`事件相似，但指向了特定的工作进程。
 
-```
+```js
 cluster.fork().on('disconnect', function() {
   // Worker has disconnected
 }); 
@@ -536,7 +536,7 @@ cluster.fork().on('disconnect', function() {
 
 与`cluster.on('exit')`事件相似，但指向了特定的工作进程。
 
-```
+```js
 var worker = cluster.fork();
 worker.on('exit', function(code, signal) {
   if( signal ) {

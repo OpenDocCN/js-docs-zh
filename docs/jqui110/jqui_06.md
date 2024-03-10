@@ -167,7 +167,7 @@ Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View
 
 该方法假设带有嵌套 z-index 的元素不带有一个 `0` 值的 z-index。例如，给出下面的 DOM，内部元素将被当成不带有 z-index，因为在 Internet Explorer 中无法区分一个 `0` 显式值和无值。
 
-```
+```js
 <div style="z-index: -10;">
   <div style="z-index: 0;"></div>
 </div> 

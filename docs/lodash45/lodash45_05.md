@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8299 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.now "See the npm package.")
 
-```
+```js
 _.now() 
 ```
 
@@ -20,7 +20,7 @@ _.now()
 
 ### 示例
 
-```
+```js
 _.defer(function(stamp) {
   console.log(_.now() - stamp);
 }, _.now());

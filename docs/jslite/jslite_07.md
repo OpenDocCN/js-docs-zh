@@ -4,7 +4,7 @@
 
 > 取得所有匹配节点对象的文本内容。
 
-```
+```js
 $("#box").text() //? string 返回文本
 $("#box").text(function(){
     return "这里干点儿什么？"
@@ -15,7 +15,7 @@ $("#box").text(function(){
 
 > 获取或设置节点对象内容。
 
-```
+```js
 $("#box").html()
 //? string 返回包括 HTML 的文本 
 ```
@@ -24,7 +24,7 @@ $("#box").html()
 
 > 获取设置 input 的 value 。
 
-```
+```js
 $('input').val() //? string 
 $('input').val('test') //? self 
 
@@ -38,7 +38,7 @@ $('#input').val(function(index,oldvalue){
 
 > 读取或写入 dom 的 data-* 属性。 data(name) ? value data(name, value) ? self
 
-```
+```js
 $('#test').eq(0).data('name',{"sss":1}) //? self
 $('#test').eq(0).data('name',[1,2,3,4]) //? self 
 $('#test').eq(0).data('name') //? [1,2,3,4]  或者 {"sss":1} 对象

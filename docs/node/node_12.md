@@ -54,7 +54,7 @@
 
 将扩展名为`.sjs`的文件当做`.js`文件处理：
 
-```
+```js
 require.extensions['.sjs'] = require.extensions['.js']; 
 ```
 
@@ -70,7 +70,7 @@ require.extensions['.sjs'] = require.extensions['.js'];
 
 例子：在`/Users/mjr`目录中执行`iojs example.js`
 
-```
+```js
 console.log(__filename);
 // /Users/mjr/example.js 
 ```
@@ -85,7 +85,7 @@ console.log(__filename);
 
 例子：在`/Users/mjr`目录中执行`iojs example.js`
 
-```
+```js
 console.log(__dirname);
 // /Users/mjr 
 ```

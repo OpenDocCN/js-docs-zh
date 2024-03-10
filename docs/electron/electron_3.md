@@ -32,7 +32,7 @@ Electron 可以让你使用纯 JavaScript 调用丰富的原生 APIs 来创造�
 
 大体上，一个 Electron 应用的目录结构如下：
 
-```
+```js
 your-app/
 ├── package.json
 ├── main.js
@@ -41,7 +41,7 @@ your-app/
 
 `package.json`的格式和 Node 的完全一致，并且那个被 `main` 字段声明的脚本文件是你的应用的启动脚本，它运行在主进程上。你应用里的 `package.json` 看起来应该像：
 
-```
+```js
 {
   "name"    : "your-app",
   "version" : "0.1.0",
@@ -53,7 +53,7 @@ your-app/
 
 `main.js` 应该用于创建窗口和处理系统时间，一个典型的例子如下：
 
-```
+```js
 var app = require('app');  // 控制应用生命周期的模块。
 var BrowserWindow = require('browser-window');  // 创建原生浏览器窗口的模块
 
@@ -94,7 +94,7 @@ app.on('ready', function() {
 
 最后，你想展示的 `index.html` ：
 
-```
+```js
 <!DOCTYPE html>
 <html>
   <head>
@@ -116,13 +116,13 @@ app.on('ready', function() {
 
 如果你已经用 `npm` 全局安装了 `electron-prebuilt`，你只需要按照如下方式直接运行你的应用：
 
-```
+```js
 electron . 
 ```
 
 如果你是局部安装，那运行：
 
-```
+```js
 ./node_modules/.bin/electron . 
 ```
 
@@ -132,19 +132,19 @@ electron .
 
 ### Windows
 
-```
+```js
 $ .\electron\electron.exe your-app\ 
 ```
 
 ### Linux
 
-```
+```js
 $ ./electron/electron your-app/ 
 ```
 
 ### OS X
 
-```
+```js
 $ ./Electron.app/Contents/MacOS/Electron your-app/ 
 ```
 
@@ -170,14 +170,14 @@ Windows 和 OS X 提供获取最近文档列表的便捷方式，那就是打开
 
 为了增加一个文件到最近文件列表，你可以使用 [app.addRecentDocument](https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/app.md) API:
 
-```
+```js
 var app = require('app');
 app.addRecentDocument('/Users/USERNAME/Desktop/work.type'); 
 ```
 
 或者你也可以使用 [app.clearRecentDocuments](https://github.com/electron/electron/blob/master/docs/tutorial/clearrecentdocuments) API 来清空最近文件列表。
 
-```
+```js
 app.clearRecentDocuments(); 
 ```
 
@@ -199,7 +199,7 @@ OS X 可以让开发者定制自己的菜单，通常会包含一些常用特性
 
 使用 `app.dock.setMenu` API 来设置你的菜单，这仅在 OS X 上可行：
 
-```
+```js
 var app = require('app');
 var Menu = require('menu');
 var dockMenu = Menu.buildFromTemplate([
@@ -227,7 +227,7 @@ app.dock.setMenu(dockMenu);
 
 你可以使用 [app.setUserTasks](https://github.com/electron/electron/blob/master/docs/api/app.md#appsetusertaskstasks) API 来设置你的应用中的用户任务：
 
-```
+```js
 var app = require('app');
 app.setUserTasks([
   {
@@ -243,7 +243,7 @@ app.setUserTasks([
 
 调用 `app.setUserTasks` 并传入空数组就可以清除你的任务列表：
 
-```
+```js
 app.setUserTasks([]); 
 ```
 
@@ -263,7 +263,7 @@ app.setUserTasks([]);
 
 ![Thumbnail toolbar of Windows Media Player](img/a8699091) 你可以使用 [BrowserWindow.setThumbarButtons](https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md) 来设置你的应用的缩略图工具栏。
 
-```
+```js
 var BrowserWindow = require('browser-window');
 var path = require('path');
 var win = new BrowserWindow({
@@ -287,7 +287,7 @@ win.setThumbarButtons([
 
 调用 `BrowserWindow.setThumbarButtons` 并传入空数组即可清空缩略图工具栏：
 
-```
+```js
 win.setThumbarButtons([]); 
 ```
 
@@ -315,7 +315,7 @@ Unity DE 也具有同样的特性，在运行器上显示进度条。
 
 给一个窗口设置进度条，你可以调用 [BrowserWindow.setProgressBar](https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md) API：
 
-```
+```js
 var window = new BrowserWindow({...});
 window.setProgressBar(0.5); 
 ```
@@ -328,7 +328,7 @@ window.setProgressBar(0.5);
 
 你可以调用 [BrowserWindow.setRepresentedFilename](https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md) 和 [BrowserWindow.setDocumentEdited](https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md) APIs：
 
-```
+```js
 var window = new BrowserWindow({...});
 window.setRepresentedFilename('/etc/passwd');
 window.setDocumentEdited(true); 
@@ -340,7 +340,7 @@ window.setDocumentEdited(true);
 
 *main.js*
 
-```
+```js
 var app = require('app');
 var BrowserWindow = require('browser-window');
 var onlineStatusWindow;
@@ -353,7 +353,7 @@ app.on('ready', function() {
 
 *online-status.html*
 
-```
+```js
 <!DOCTYPE html>
 <html>
   <body>
@@ -373,7 +373,7 @@ app.on('ready', function() {
 
 *main.js*
 
-```
+```js
 var app = require('app');
 var ipc = require('ipc');
 var BrowserWindow = require('browser-window');
@@ -391,7 +391,7 @@ ipc.on('online-status-changed', function(event, status) {
 
 *online-status.html*
 
-```
+```js
 <!DOCTYPE html>
 <html>
   <body>

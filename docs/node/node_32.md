@@ -8,7 +8,7 @@
 
 返回一个包含以下属性的对象。
 
-```
+```js
 {
   total_heap_size: 7326976,
   total_heap_size_executable: 4194304,
@@ -26,7 +26,7 @@
 
 用处：
 
-```
+```js
 // Print GC events to stdout for one minute.
 var v8 = require('v8');
 v8.setFlagsFromString('--trace_gc');

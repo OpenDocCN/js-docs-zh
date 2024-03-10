@@ -20,7 +20,7 @@
 
 **Batch operations** on Models are common, but often best handled differently depending on your server-side setup. Some folks don't mind making individual Ajax requests. Others create explicit resources for RESTful batch operations: `/notes/batch/destroy?ids=1,2,3,4`. Others tunnel REST over JSON, with the creation of "changeset" requests:
 
-```
+```js
  {
     "create":  [array of models to create]
     "update":  [array of models to update]
@@ -34,7 +34,7 @@
 
 **Nested Models & Collections** It's common to nest collections inside of models with Backbone. For example, consider a `Mailbox` model that contains many `Message` models. One nice pattern for handling this is have a `this.messages` collection for each mailbox, enabling the lazy-loading of messages, when the mailbox is first opened ... perhaps with `MessageList` views listening for `"add"` and `"remove"` events.
 
-```
+```js
 var Mailbox = Backbone.Model.extend({
 
   initialize: function() {
@@ -66,7 +66,7 @@ Backbone doesn't include direct support for nested models and collections or "ha
 
 **Loading Bootstrapped Models** When your app first loads, it's common to have a set of initial models that you know you're going to need, in order to render the page. Instead of firing an extra AJAX request to fetch them, a nicer pattern is to have their data already bootstrapped into the page. You can then use reset to populate your collections with the initial data. At DocumentCloud, in the [ERB](http://en.wikipedia.org/wiki/ERuby) template for the workspace, we do something along these lines:
 
-```
+```js
 <script>
   var accounts = new Backbone.Collection;
   accounts.reset(<%= @accounts.to_json %>);
@@ -93,7 +93,7 @@ Comparing the overall structure of Backbone to a server-side MVC framework like 
 
 **Binding "this"** Perhaps the single most common JavaScript "gotcha" is the fact that when you pass a function as a callback, its value for `this` is lost. When dealing with events and callbacks in Backbone, you'll often find it useful to rely on listenTo or the optional `context` argument that many of Underscore and Backbone's methods use to specify the `this` that will be used when the callback is later invoked. (See [_.each](http://www.css88.com/doc/underscore/#each), [_.map](http://www.css88.com/doc/underscore/#map), and object.on, to name a few). View events are automatically bound to the view's context for you. You may also find it helpful to use [_.bind](http://www.css88.com/doc/underscore/#bind) and [_.bindAll](http://www.css88.com/doc/underscore/#bindAll) from Underscore.js.
 
-```
+```js
 var MessageList = Backbone.View.extend({
 
   initialize: function() {
@@ -116,7 +116,7 @@ Inbox.messages.add(newMessage);
 
 By default, Rails versions prior to 3.1 add an extra layer of wrapping around the JSON representation of models. You can disable this wrapping by setting:
 
-```
+```js
 ActiveRecord::Base.include_root_in_json = false 
 ```
 

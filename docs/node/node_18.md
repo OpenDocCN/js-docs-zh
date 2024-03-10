@@ -14,7 +14,7 @@
 
 例子：
 
-```
+```js
 path.normalize('/foo/bar//baz/asdf/quux/..')
 // returns
 '/foo/bar/baz/asdf' 
@@ -28,7 +28,7 @@ path.normalize('/foo/bar//baz/asdf/quux/..')
 
 例子：
 
-```
+```js
 path.join('/foo', 'bar', 'baz/asdf', 'quux', '..')
 // returns
 '/foo/bar/baz/asdf'
@@ -46,13 +46,13 @@ TypeError: Arguments to path.join must be strings
 
 另一个思路是将它看做 shell 中一系列的`cd`命令：
 
-```
+```js
 path.resolve('foo/bar', '/tmp/file/', '..', 'a/../subfile') 
 ```
 
 相似于：
 
-```
+```js
 cd foo/bar
 cd /tmp/file/
 cd ..
@@ -64,7 +64,7 @@ pwd
 
 例子：
 
-```
+```js
 path.resolve('/foo/bar', './baz')
 // returns
 '/foo/bar/baz'
@@ -84,7 +84,7 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif')
 
 Posix 例子：
 
-```
+```js
 path.isAbsolute('/foo/bar') // true
 path.isAbsolute('/baz/..')  // true
 path.isAbsolute('qux/')     // false
@@ -93,7 +93,7 @@ path.isAbsolute('.')        // false
 
 Windows 例子：
 
-```
+```js
 path.isAbsolute('//server')  // true
 path.isAbsolute('C:/foo/..') // true
 path.isAbsolute('bar\\baz')   // false
@@ -106,13 +106,13 @@ path.isAbsolute('.')         // false
 
 当我们有两个绝对路径，并且我们要得到它们间一个对于另外一个的相对路径。这实际上是`path.resolve`的相反操作。我们可以看看这是什么意思：
 
-```
+```js
 path.resolve(from, path.relative(from, to)) == path.resolve(to) 
 ```
 
 例子：
 
-```
+```js
 path.relative('C:\\orandea\\test\\aaa', 'C:\\orandea\\impl\\bbb')
 // returns
 '..\\..\\impl\\bbb'
@@ -128,7 +128,7 @@ path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb')
 
 例子：
 
-```
+```js
 path.dirname('/foo/bar/baz/asdf/quux')
 // returns
 '/foo/bar/baz/asdf' 
@@ -140,7 +140,7 @@ path.dirname('/foo/bar/baz/asdf/quux')
 
 例子：
 
-```
+```js
 path.basename('/foo/bar/baz/asdf/quux.html')
 // returns
 'quux.html'
@@ -154,7 +154,7 @@ path.basename('/foo/bar/baz/asdf/quux.html', '.html')
 
 返回路径的扩展名，即从路径的最后一部分中的最后一个`'.'`到末尾之间的字符串。如果路径的最后一部分没有`'.'`，或者第一个字符是`'.'`，那么将返回一个空字符串，例子：
 
-```
+```js
 path.extname('index.html')
 // returns
 '.html'
@@ -178,7 +178,7 @@ path.extname('index')
 
 一个*nix 上的例子：
 
-```
+```js
 'foo/bar/baz'.split(path.sep)
 // returns
 ['foo', 'bar', 'baz'] 
@@ -186,7 +186,7 @@ path.extname('index')
 
 一个 Windows 上的例子：
 
-```
+```js
 'foo\\bar\\baz'.split(path.sep)
 // returns
 ['foo', 'bar', 'baz'] 
@@ -198,7 +198,7 @@ path.extname('index')
 
 一个*nix 上的例子：
 
-```
+```js
 console.log(process.env.PATH)
 // '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin'
 
@@ -209,7 +209,7 @@ process.env.PATH.split(path.delimiter)
 
 一个 Windows 上的例子：
 
-```
+```js
 console.log(process.env.PATH)
 // 'C:\Windows\system32;C:\Windows;C:\Program Files\iojs\'
 
@@ -224,7 +224,7 @@ process.env.PATH.split(path.delimiter)
 
 一个*nix 上的例子：
 
-```
+```js
 path.parse('/home/user/dir/file.txt')
 // returns
 {
@@ -238,7 +238,7 @@ path.parse('/home/user/dir/file.txt')
 
 一个 Windows 上的例子：
 
-```
+```js
 path.parse('C:\\path\\dir\\index.html')
 // returns
 {
@@ -254,7 +254,7 @@ path.parse('C:\\path\\dir\\index.html')
 
 根据一个对象，返回一个路径字符串，与`path.parse`相反。
 
-```
+```js
 path.format({
     root : "/",
     dir : "/home/user/dir",

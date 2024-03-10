@@ -6,7 +6,7 @@
 
 注意，一旦你执行了这个模块，你的`node.js`程序在你关闭此接口之前，将不会退出。以下是如何让你的程序优雅的退出的例子：
 
-```
+```js
 var readline = require('readline');
 
 var rl = readline.createInterface({
@@ -46,7 +46,7 @@ rl.question("What do you think of node.js? ", function(answer) {
 
 例子：
 
-```
+```js
 function completer(line) {
   var completions = '.help .error .exit .quit .q'.split(' ')
   var hits = completions.filter(function(c) { return c.indexOf(line) == 0 })
@@ -57,7 +57,7 @@ function completer(line) {
 
 `completer`同样也可以以同步的方式运行，如果它接受两个参数：
 
-```
+```js
 function completer(linePartial, callback) {
   callback(null, [['123'], linePartial]);
 } 
@@ -65,7 +65,7 @@ function completer(linePartial, callback) {
 
 `createInterface`通常与`process.stdin`和`process.stdout`搭配，用来接受用户输入：
 
-```
+```js
 var readline = require('readline');
 var rl = readline.createInterface({
   input: process.stdin,
@@ -103,7 +103,7 @@ var rl = readline.createInterface({
 
 例子：
 
-```
+```js
 interface.question('What is your favorite food?', function(answer) {
   console.log('Oh, so your favorite food is ' + answer);
 }); 
@@ -131,7 +131,7 @@ interface.question('What is your favorite food?', function(answer) {
 
 例子：
 
-```
+```js
 rl.write('Delete me!');
 // Simulate ctrl+u to delete the line written previously
 rl.write(null, {ctrl: true, name: 'u'}); 
@@ -147,7 +147,7 @@ rl.write(null, {ctrl: true, name: 'u'});
 
 例子：
 
-```
+```js
 rl.on('line', function (cmd) {
   console.log('You just typed: '+cmd);
 }); 
@@ -163,7 +163,7 @@ rl.on('line', function (cmd) {
 
 例子：
 
-```
+```js
 rl.on('pause', function() {
   console.log('Readline paused.');
 }); 
@@ -177,7 +177,7 @@ rl.on('pause', function() {
 
 例子：
 
-```
+```js
 rl.on('resume', function() {
   console.log('Readline resumed.');
 }); 
@@ -201,7 +201,7 @@ rl.on('resume', function() {
 
 例子：
 
-```
+```js
 rl.on('SIGINT', function() {
   rl.question('Are you sure you want to exit?', function(answer) {
     if (answer.match(/^y(es)?$/i)) rl.pause();
@@ -223,7 +223,7 @@ rl.on('SIGINT', function() {
 
 例子：
 
-```
+```js
 rl.on('SIGTSTP', function() {
   // This will override SIGTSTP and prevent the program from going to the
   // background.
@@ -241,7 +241,7 @@ rl.on('SIGTSTP', function() {
 
 例子：
 
-```
+```js
 rl.on('SIGCONT', function() {
   // `prompt` will automatically resume the stream
   rl.prompt();
@@ -252,7 +252,7 @@ rl.on('SIGCONT', function() {
 
 下面是一个使用以上方法来创建一个迷你的控制台接口的例子：
 
-```
+```js
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 

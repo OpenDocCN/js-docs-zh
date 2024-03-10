@@ -4,7 +4,7 @@
 
 > 获取 `url` 参数的值。
 
-```
+```js
 //[URL] = http://blog.pc175.com/?param=2
 $.getUrlParam("param") //? 2 
 ```
@@ -15,7 +15,7 @@ $.getUrlParam("param") //? 2
 > `$.param(object, [shallow]) ? string`
 > `$.param(array) ? string`
 
-```
+```js
 $.param({
     foo: {one: 1,two: 2 }
 })  //? "foo[one]=1&foo[two]=2"

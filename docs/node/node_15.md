@@ -6,7 +6,7 @@
 
 `foo.js`的内容：
 
-```
+```js
 var circle = require('./circle.js');
 console.log( 'The area of a circle of radius 4 is '
            + circle.area(4)); 
@@ -14,7 +14,7 @@ console.log( 'The area of a circle of radius 4 is '
 
 `circle.js`的内容：
 
-```
+```js
 var PI = Math.PI;
 
 exports.area = function (r) {
@@ -34,7 +34,7 @@ exports.circumference = function (r) {
 
 以下，`bar.js`使用了暴露了一个构造函数的`square`模块：
 
-```
+```js
 var square = require('./square.js');
 var mySquare = square(2);
 console.log('The area of my square is ' + mySquare.area()); 
@@ -42,7 +42,7 @@ console.log('The area of my square is ' + mySquare.area());
 
 `square`模块内部：
 
-```
+```js
 // assigning to exports will not modify module, must use module.exports
 module.exports = function(width) {
   return {
@@ -63,7 +63,7 @@ module.exports = function(width) {
 
 `a.js`：
 
-```
+```js
 console.log('a starting');
 exports.done = false;
 var b = require('./b.js');
@@ -74,7 +74,7 @@ console.log('a done');
 
 `b.js`：
 
-```
+```js
 console.log('b starting');
 exports.done = false;
 var a = require('./a.js');
@@ -85,7 +85,7 @@ console.log('b done');
 
 `main.js`：
 
-```
+```js
 console.log('main starting');
 var a = require('./a.js');
 var b = require('./b.js');
@@ -96,7 +96,7 @@ console.log('in main, a.done=%j, b.done=%j', a.done, b.done);
 
 这样`main.js`就完成了它们的加载。因此程序的输出是：
 
-```
+```js
 $ iojs main.js
 main starting
 a starting
@@ -140,7 +140,7 @@ in main, a.done=true, b.done=true
 
 例如，如果一个位于`'/home/ry/projects/foo.js'`的文件调用了`require('bar.js')`，那么`node.js`将会按照以下的路径顺序来查找：
 
-```
+```js
 /home/ry/projects/node_modules/bar.js
 /home/ry/node_modules/bar.js
 /home/node_modules/bar.js
@@ -157,7 +157,7 @@ in main, a.done=true, b.done=true
 
 第一种方法是，在模块的根目录下创建一个`package.json`文件，其中指定了`main`模块。一个示例`package.json`文件：
 
-```
+```js
 { "name" : "some-library",
   "main" : "./lib/some-library.js" } 
 ```
@@ -168,7 +168,7 @@ in main, a.done=true, b.done=true
 
 如果目录中没有`package.json`文件，那么`node.js`将会视图去加载当前目录中的`index.js`或`index.node`。例如，如果在上面的例子中没有`package.json`，那么`require('./some-library')`将会试图加载：
 
-```
+```js
 ./some-library/index.js
 ./some-library/index.node 
 ```
@@ -199,7 +199,7 @@ in main, a.done=true, b.done=true
 
 例如假设我们正在写一个叫做`a.js`的模块：
 
-```
+```js
 var EventEmitter = require('events').EventEmitter;
 
 module.exports = new EventEmitter();
@@ -213,7 +213,7 @@ setTimeout(function() {
 
 那么在另一个文件中我们可以：
 
-```
+```js
 var a = require('./a');
 a.on('ready', function() {
   console.log('module a is ready');
@@ -224,7 +224,7 @@ a.on('ready', function() {
 
 `x.js`：
 
-```
+```js
 setTimeout(function() {
   module.exports = { a: "hello" };
 }, 0); 
@@ -232,7 +232,7 @@ setTimeout(function() {
 
 `y.js`：
 
-```
+```js
 var x = require('./x');
 console.log(x.a); 
 ```
@@ -243,7 +243,7 @@ console.log(x.a);
 
 为了说明这个行为，将`require()`的实现假设为这样：
 
-```
+```js
 function require(...) {
   // ...
   function (module, exports) {
@@ -303,7 +303,7 @@ function require(...) {
 
 综上所述，以下是一个`require.resolve`所做的事的高级算法伪代码：
 
-```
+```js
 require(X) from module at path Y
 1\. If X is a core module,
    a. return the core module
@@ -369,7 +369,7 @@ NODE_MODULES_PATHS(START)
 
 当一个文件直接由`node.js`执行，`require.main`将被设置为这个模块。这意味着你可以判断一个文件是否是直接被运行的。
 
-```
+```js
 require.main === module 
 ```
 

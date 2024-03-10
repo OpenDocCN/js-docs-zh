@@ -36,7 +36,7 @@
 
 例子：
 
-```
+```js
 var ciphers = crypto.getCiphers();
 console.log(ciphers); // ['aes-128-cbc', 'aes-128-ccm', ...] 
 ```
@@ -47,7 +47,7 @@ console.log(ciphers); // ['aes-128-cbc', 'aes-128-ccm', ...]
 
 例子：
 
-```
+```js
 var hashes = crypto.getHashes();
 console.log(hashes); // ['sha', 'sha1', 'sha1WithRSAEncryption', ...] 
 ```
@@ -58,7 +58,7 @@ console.log(hashes); // ['sha', 'sha1', 'sha1WithRSAEncryption', ...]
 
 例子：
 
-```
+```js
 var curves = crypto.getCurves();
 console.log(curves); // ['secp256k1', 'secp384r1', ...] 
 ```
@@ -87,7 +87,7 @@ console.log(curves); // ['secp256k1', 'secp384r1', ...]
 
 例子：这个程序计算出一个文件的 sha1 摘要：
 
-```
+```js
 var filename = process.argv[2];
 var crypto = require('crypto');
 var fs = require('fs');
@@ -361,7 +361,7 @@ OpenSSL 建议使用`pbkdf2`替代`EVP_BytesToKey`，推荐你通过`crypto.pbkd
 
 例子（获取一个共享秘密）：
 
-```
+```js
 var crypto = require('crypto');
 var alice = crypto.getDiffieHellman('modp5');
 var bob = crypto.getDiffieHellman('modp5');
@@ -422,7 +422,7 @@ console.log(alice_secret == bob_secret);
 
 例子（获取一个共享秘密）：
 
-```
+```js
 var crypto = require('crypto');
 var alice = crypto.createECDH('secp256k1');
 var bob = crypto.createECDH('secp256k1');
@@ -443,7 +443,7 @@ console.log(alice_secret == bob_secret);
 
 例子：
 
-```
+```js
 crypto.pbkdf2('secret', 'salt', 4096, 512, 'sha256', function(err, key) {
   if (err)
     throw err;
@@ -461,7 +461,7 @@ crypto.pbkdf2('secret', 'salt', 4096, 512, 'sha256', function(err, key) {
 
 生成有密码图谱一般健壮的伪随机数据，用处：
 
-```
+```js
 // async
 crypto.randomBytes(256, function(ex, buf) {
   if (ex) throw ex;

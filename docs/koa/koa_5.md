@@ -68,7 +68,7 @@ Koa `Request` 对象是对 node 的 request 进一步抽象和封装，提供了
 
 获取请求 `Content-Type`，不包含像 "charset" 这样的参数。
 
-```
+```js
 var ct = this.request.type;
 // => "image/png" 
 ```
@@ -77,7 +77,7 @@ var ct = this.request.type;
 
 获取请求 charset，没有则返回 `undefined`:
 
-```
+```js
 this.request.charset
 // => "utf-8" 
 ```
@@ -90,7 +90,7 @@ this.request.charset
 
 比如 "color=blue&size=small":
 
-```
+```js
 {
   color: 'blue',
   size: 'small'
@@ -103,7 +103,7 @@ this.request.charset
 
 注意：该方法不支持嵌套对象。
 
-```
+```js
 this.query = { next: '/login' }; 
 ```
 
@@ -111,7 +111,7 @@ this.query = { next: '/login' };
 
 检查请求缓存是否 "fresh"(内容没有发生变化)。该方法用于在 `If-None-Match` / `ETag`, `If-Modified-Since` 和 `Last-Modified` 中进行缓存协调。当在 response headers 中设置一个或多个上述参数后，该方法应该被使用。
 
-```
+```js
 this.set('ETag', '123');
 
 // cache is ok
@@ -159,7 +159,7 @@ this.body = yield db.find('something');
 
 检查请求所包含的 "Content-Type" 是否为给定的 type 值。 如果没有 request body，返回 `undefined`。 如果没有 content type，或者匹配失败，返回 `false`。 否则返回匹配的 content-type。
 
-```
+```js
 // With Content-Type: text/html; charset=utf-8
 this.is('html'); // => 'html'
 this.is('text/html'); // => 'text/html'
@@ -175,7 +175,7 @@ this.is('html'); // => false
 
 比如说您希望保证只有图片发送给指定路由：
 
-```
+```js
 if (this.is('image/*')) {
   // process
 } else {
@@ -202,7 +202,7 @@ Koa `request` 对象包含 content negotiation 功能（由 [accepts](http://git
 
 检查给定的类型 `types(s)` 是否可被接受，当为 true 时返回最佳匹配，否则返回 `false`。`type` 的值可以是一个或者多个 mime 类型字符串。 比如 "application/json" 扩展名为 "json"，或者数组 `["json", "html", "text/plain"]`。
 
-```
+```js
 // Accept: text/html
 this.accepts('html');
 // => "html"
@@ -236,7 +236,7 @@ this.accepts('json', 'html');
 
 `this.accepts()` 可以被调用多次，或者使用 switch:
 
-```
+```js
 switch (this.accepts('json', 'html', 'text')) {
   case 'json': break;
   case 'html': break;
@@ -249,7 +249,7 @@ switch (this.accepts('json', 'html', 'text')) {
 
 检查 `encodings` 是否可以被接受，当为 `true` 时返回最佳匹配，否则返回 `false`。 注意：您应该在 encodings 中包含 `identity`。
 
-```
+```js
 // Accept-Encoding: gzip
 this.acceptsEncodings('gzip', 'deflate', 'identity');
 // => "gzip"
@@ -260,7 +260,7 @@ this.acceptsEncodings(['gzip', 'deflate', 'identity']);
 
 当没有传递参数时，返回包含所有可接受的 encodings 的数组：
 
-```
+```js
 // Accept-Encoding: gzip, deflate
 this.acceptsEncodings();
 // => ["gzip", "deflate", "identity"] 
@@ -272,7 +272,7 @@ this.acceptsEncodings();
 
 检查 `charsets` 是否可以被接受，如果为 `true` 则返回最佳匹配， 否则返回 `false`。
 
-```
+```js
 // Accept-Charset: utf-8, iso-8859-1;q=0.2, utf-7;q=0.5
 this.acceptsCharsets('utf-8', 'utf-7');
 // => "utf-8"
@@ -283,7 +283,7 @@ this.acceptsCharsets(['utf-7', 'utf-8']);
 
 当没有传递参数时， 返回包含所有可接受的 charsets 的数组：
 
-```
+```js
 // Accept-Charset: utf-8, iso-8859-1;q=0.2, utf-7;q=0.5
 this.acceptsCharsets();
 // => ["utf-8", "utf-7", "iso-8859-1"] 
@@ -293,7 +293,7 @@ this.acceptsCharsets();
 
 检查 `langs` 是否可以被接受，如果为 `true` 则返回最佳匹配，否则返回 `false`。
 
-```
+```js
 // Accept-Language: en;q=0.8, es, pt
 this.acceptsLanguages('es', 'en');
 // => "es"
@@ -304,7 +304,7 @@ this.acceptsLanguages(['en', 'es']);
 
 当没有传递参数时，返回包含所有可接受的 langs 的数组：
 
-```
+```js
 // Accept-Language: en;q=0.8, es, pt
 this.acceptsLanguages();
 // => ["es", "pt", "en"] 

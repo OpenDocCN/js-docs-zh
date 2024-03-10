@@ -18,7 +18,7 @@ Backbone 会自动判断浏览器对 **pushState** 的支持，以做内部的�
 
 因为在 Internet Explorer 中基于 hash 的历史记录依赖于`&lt;iframe&gt;`，因此需要确定 DOM 已准备就绪后再调用 `start()` 。
 
-```
+```js
 $(function(){
   new WorkspaceRouter();
   new HelpPaneRouter();

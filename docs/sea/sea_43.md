@@ -26,7 +26,7 @@ Sea.js 2.1.0 发布后，很多用户已直接升级。根据用户的使用反�
 
 推荐通过 spm 下载最新版本：
 
-```
+```js
 $ spm install seajs
 $ spm install seajs/seajs-text
 $ spm install seajs/seajs-flush 

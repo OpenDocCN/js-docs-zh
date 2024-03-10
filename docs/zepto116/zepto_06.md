@@ -2,7 +2,7 @@
 
 ## $()
 
-```
+```js
 $(selector, [context])   => collection
 $(<Zepto collection>)   => same collection
 $(<DOM nodes>)   => collection
@@ -21,7 +21,7 @@ Zepto 集合是一个类似数组的对象，它具有链式方法来操作它�
 
 当一个函数附加在 `DOMContentLoaded` 事件的处理流程中。如果页面已经加载完毕，这个方法将会立即被执行。
 
-```
+```js
 $('div')  //=> 所有页面中得 div 元素
 $('#foo') //=> ID 为 "foo" 的元素
 
@@ -43,20 +43,20 @@ Zepto(function($){
 
 ## $.camelCase v1.0+
 
-```
+```js
 $.camelCase(string)   => string 
 ```
 
 将一组字符串变成“骆驼”命名法的新字符串，如果该字符已经是“骆驼”命名法，则不变化。
 
-```
+```js
 $.camelCase('hello-there') //=> "helloThere"
 $.camelCase('helloThere')  //=> "helloThere" 
 ```
 
 ## $.contains v1.0+
 
-```
+```js
 $.contains(parent, node)   => boolean 
 ```
 
@@ -64,13 +64,13 @@ $.contains(parent, node)   => boolean
 
 ## $.each
 
-```
+```js
 $.each(collection, function(index, item){ ... })   => collection 
 ```
 
 遍历数组元素或以 key-value 值对方式遍历对象。回调函数返回 `false` 时停止遍历。
 
-```
+```js
 $.each(['a', 'b', 'c'], function(index, item){
   console.log('item %d is: %s', index, item)
 })
@@ -83,7 +83,7 @@ $.each(hash, function(key, value){
 
 ## $.extend
 
-```
+```js
 $.extend(target, [source, [source2, ...]])   => target
 $.extend(true, target, [source, ...])   => target v1.0+ 
 ```
@@ -92,7 +92,7 @@ $.extend(true, target, [source, ...])   => target v1.0+
 
 默认情况下为，复制为浅拷贝（浅复制）。如果第一个参数为 true 表示深度拷贝（深度复制）。
 
-```
+```js
 var target = { one: 'patridge' },
     source = { two: 'turtle doves' }
 
@@ -107,7 +107,7 @@ $.extend(target, source)
 
 这里有一个实现 Zepto 的 `empty()` 方法的例子：
 
-```
+```js
 $.fn.empty = function(){
   return this.each(function(){ this.innerHTML = '' })
 } 
@@ -115,13 +115,13 @@ $.fn.empty = function(){
 
 ## $.grep v1.0+
 
-```
+```js
 $.grep(items, function(item){ ... })   => array 
 ```
 
 获取一个新数组，新数组只包含回调函数中返回 ture 的数组项。
 
-```
+```js
 $.grep([1,2,3],function(item){
     return item > 1
 });//=>[2,3] 
@@ -129,7 +129,7 @@ $.grep([1,2,3],function(item){
 
 ## $.inArray v1.0+
 
-```
+```js
 $.inArray(element, array, [fromIndex])   => number 
 ```
 
@@ -137,7 +137,7 @@ $.inArray(element, array, [fromIndex])   => number
 
 愚人码头注：`[fromIndex]` 参数可选，表示从哪个索引值开始向后查找。
 
-```
+```js
 $.inArray("abc",["bcd","abc","edf","aaa"]);//=>1
 
 $.inArray("abc",["bcd","abc","edf","aaa"],1);//=>1
@@ -147,7 +147,7 @@ $.inArray("abc",["bcd","abc","edf","aaa"],2);//=>-1
 
 ## $.isArray
 
-```
+```js
 $.isArray(object)   => boolean 
 ```
 
@@ -155,7 +155,7 @@ $.isArray(object)   => boolean
 
 ## $.isFunction
 
-```
+```js
 $.isFunction(object)   => boolean 
 ```
 
@@ -163,13 +163,13 @@ $.isFunction(object)   => boolean
 
 ## $.isPlainObject v1.0+
 
-```
+```js
 $.isPlainObject(object)   => boolean 
 ```
 
 测试对象是否是“纯粹”的对象，这个对象是通过 对象常量（"{}"） 或者 `new Object` 创建的，如果是，则返回 true。
 
-```
+```js
 $.isPlainObject({})         // => true
 $.isPlainObject(new Object) // => true
 $.isPlainObject(new Date)   // => false
@@ -178,7 +178,7 @@ $.isPlainObject(window)     // => false
 
 ## $.isWindow v1.0+
 
-```
+```js
 $.isWindow(object)   => boolean 
 ```
 
@@ -186,13 +186,13 @@ $.isWindow(object)   => boolean
 
 ## $.map
 
-```
+```js
 $.map(collection, function(item, index){ ... })   => collection 
 ```
 
 通过遍历集合中的元素，返回通过迭代函数的全部结果，（愚人码头注：一个新数组）`null` 和 `undefined` 将被过滤掉。
 
-```
+```js
 $.map([1,2,3,4,5],function(item,index){
         if(item>1){return item*item;}
 }); 
@@ -206,7 +206,7 @@ $.map({"yao":1,"tai":2,"yang":3},function(item,index){
 
 ## $.parseJSON v1.0+
 
-```
+```js
 $.parseJSON(string)  ? object 
 ```
 
@@ -214,7 +214,7 @@ $.parseJSON(string)  ? object
 
 ## $.trim v1.0+
 
-```
+```js
 $.trim(string)   => string 
 ```
 
@@ -222,7 +222,7 @@ $.trim(string)   => string
 
 ## $.type v1.0+
 
-```
+```js
 $.type(object)   => string 
 ```
 
@@ -232,13 +232,13 @@ $.type(object)   => string
 
 ## add
 
-```
+```js
 add(selector, [context])   => self 
 ```
 
 添加元素到当前匹配的元素集合中。如果给定 content 参数，将只在 content 元素中进行查找，否则在整个 document 中查找。
 
-```
+```js
 <ul>
     <li>list item 1</li>
     <li>list item 2</li>
@@ -253,7 +253,7 @@ add(selector, [context])   => self
 
 ## addClass
 
-```
+```js
 addClass(name)   => self
 addClass(function(index, oldClassName){ ... })   => self 
 ```
@@ -262,43 +262,43 @@ addClass(function(index, oldClassName){ ... })   => self
 
 ## after
 
-```
+```js
 after(content)   => self 
 ```
 
 在每个匹配的元素后插入内容（愚人码头注：外部插入）。内容可以为 html 字符串，dom 节点，或者节点组成的数组。
 
-```
+```js
 $('form label').after('<p>A note below the label</p>') 
 ```
 
 ## append
 
-```
+```js
 append(content)   => self 
 ```
 
 在每个匹配的元素末尾插入内容（愚人码头注：内部插入）。内容可以为 html 字符串，dom 节点，或者节点组成的数组。
 
-```
+```js
 $('ul').append('<li>new list item</li>') 
 ```
 
 ## appendTo
 
-```
+```js
 appendTo(target)   => self 
 ```
 
 将匹配的元素插入到目标元素的末尾（愚人码头注：内部插入）。这个有点像 append，但是插入的目标与其相反。
 
-```
+```js
 $('<li>new list item</li>').appendTo('ul') 
 ```
 
 ## attr
 
-```
+```js
 attr(name)   => string
 attr(name, value)   => self
 attr(name, function(index, oldValue){ ... })   => self
@@ -309,7 +309,7 @@ attr({ name: value, name2: value2, ... })   => self
 
 要读取 DOM 的属性如 `checked`和`selected`, 使用 prop。
 
-```
+```js
 var form = $('form')
 form.attr('action')             //=> 读取值
 form.attr('action', '/create')  //=> 设置值
@@ -324,32 +324,32 @@ form.attr({
 
 ## before
 
-```
+```js
 before(content)   => self 
 ```
 
 在匹配每个元素的前面插入内容（愚人码头注：外部插入）。内容可以为 html 字符串，dom 节点，或者节点组成的数组。
 
-```
+```js
 $('table').before('<p>See the following table:</p>') 
 ```
 
 ## children
 
-```
+```js
 children([selector])   => collection 
 ```
 
 获得每个匹配元素集合元素的直接子元素，如果给定 selector，那么返回的结果中只包含符合 css 选择器的元素。
 
-```
+```js
 $('ol').children('*:nth-child(2n)')
 //=> every other list item from every ordered list 
 ```
 
 ## clone v1.0+
 
-```
+```js
 clone()   => collection 
 ```
 
@@ -359,7 +359,7 @@ clone()   => collection
 
 ## closest
 
-```
+```js
 closest(selector, [context])   => collection
 closest(collection)   => collection v1.0+
 closest(element)   => collection v1.0+ 
@@ -369,14 +369,14 @@ closest(element)   => collection v1.0+
 
 如果参数是一个 Zepto 对象集合或者一个元素，结果必须匹配给定的元素而不是选择器。
 
-```
+```js
 var input = $('input[type=text]')
 input.closest('form') 
 ```
 
 ## concat
 
-```
+```js
 concat(nodes, [node2, ...])   => self 
 ```
 
@@ -386,7 +386,7 @@ concat(nodes, [node2, ...])   => self
 
 ## contents v1.0+
 
-```
+```js
 contents()   => collection 
 ```
 
@@ -394,7 +394,7 @@ contents()   => collection
 
 ## css
 
-```
+```js
 css(property)   => value
 css([property1, property2, ...])   => object v1.1+
 css(property, value)   => self
@@ -407,7 +407,7 @@ css({ property: value, property2: value2, ... })   => self
 
 当 value 为空(空字符串，`null` 或 `undefined`)，那个 css 属性将会被移出。当 value 参数为一个无单位的数字，如果该 css 属性需要单位，“px”将会自动添加到该属性上。
 
-```
+```js
 var elem = $('h1')
 elem.css('background-color')          // read property
 elem.css('background-color', '#369')  // set property
@@ -422,7 +422,7 @@ elem.css(['backgroundColor', 'fontSize'])['fontSize']
 
 ## data
 
-```
+```js
 data(name)   => value
 data(name, value)   => self 
 ```
@@ -440,13 +440,13 @@ data(name, value)   => self
 
 ## each
 
-```
+```js
 each(function(index, item){ ... })   => self 
 ```
 
 遍历一个对象集合每个元素。在迭代函数中，`this`关键字指向当前项(作为函数的第二个参数传递)。如果迭代函数返回 `false`，遍历结束。
 
-```
+```js
 $('form input').each(function(index){
   console.log('input %d is: %o', index, this)
 }) 
@@ -454,7 +454,7 @@ $('form input').each(function(index){
 
 ## empty
 
-```
+```js
 empty()   => self 
 ```
 
@@ -462,20 +462,20 @@ empty()   => self
 
 ## eq
 
-```
+```js
 eq(index)   => collection 
 ```
 
 从当前对象集合中获取给定索引值（愚人码头注：以 0 为基数）的元素。
 
-```
+```js
 $('li').eq(0)   //=> only the first list item
 $('li').eq(-1)  //=> only the last list item 
 ```
 
 ## filter
 
-```
+```js
 filter(selector)   => collection
 filter(function(index){ ... })   => collection v1.0+ 
 ```
@@ -486,7 +486,7 @@ filter(function(index){ ... })   => collection v1.0+
 
 ## find
 
-```
+```js
 find(selector)   => collection
 find(collection)   => collection v1.0+
 find(element)   => collection v1.0+ 
@@ -496,26 +496,26 @@ find(element)   => collection v1.0+
 
 如果给定 Zepto 对象集合或者元素，过滤它们，只有当它们在当前 Zepto 集合对象中时，才回被返回。
 
-```
+```js
 var form = $('#myform')
 form.find('input, select') 
 ```
 
 ## first
 
-```
+```js
 first()   => collection 
 ```
 
 获取当前对象集合中的第一个元素。
 
-```
+```js
 $('form').first() 
 ```
 
 ## forEach
 
-```
+```js
 forEach(function(item, index, array){ ... }, [context]) 
 ```
 
@@ -525,14 +525,14 @@ forEach(function(item, index, array){ ... }, [context])
 
 ## get
 
-```
+```js
 get()   => array
 get(index)   => DOM node 
 ```
 
 从当前对象集合中获取所有元素或单个元素。当 index 参数不存在的时，以普通数组的方式返回所有的元素。当指定 index 时，只返回该置的元素。这点与 eq 不同，该方法返回的是 DOM 节点，不是 Zepto 对象集合。
 
-```
+```js
 var elements = $('h2')
 elements.get()   //=> get all headings as an array
 elements.get(0)  //=> get first heading node 
@@ -540,27 +540,27 @@ elements.get(0)  //=> get first heading node
 
 ## has v1.0+
 
-```
+```js
 has(selector)   => collection
 has(node)   => collection 
 ```
 
 判断当前对象集合的子元素是否有符合选择器的元素，或者是否包含指定的 DOM 节点，如果有，则返回新的对象集合，该对象过滤掉不含有选择器匹配元素或者不含有指定 DOM 节点的对象。
 
-```
+```js
 $('ol > li').has('a[href]')
 //=> get only LI elements that contain links 
 ```
 
 ## hasClass
 
-```
+```js
 hasClass(name)   => boolean 
 ```
 
 检查对象集合中是否有元素含有指定的 class。
 
-```
+```js
 <ul>
     <li>list item 1</li>
     <li class="yaotaiyang">list item 2</li>
@@ -576,7 +576,7 @@ hasClass(name)   => boolean
 
 ## height
 
-```
+```js
 height()   => number
 height(value)   => self
 height(function(index, oldHeight){ ... })   => self 
@@ -584,7 +584,7 @@ height(function(index, oldHeight){ ... })   => self
 
 获取对象集合中第一个元素的高度；或者设置对象集合中所有元素的高度。
 
-```
+```js
 $('#foo').height()   // => 123
 $(window).height()   // => 838 (viewport height)
 $(document).height() // => 22302 
@@ -592,7 +592,7 @@ $(document).height() // => 22302
 
 ## hide
 
-```
+```js
 hide()   => self 
 ```
 
@@ -602,7 +602,7 @@ Hide elements in this collection by setting their `display` CSS property to `non
 
 ## html
 
-```
+```js
 html()   => string
 html(content)   => self
 html(function(index, oldHtml){ ... })   => self 
@@ -610,7 +610,7 @@ html(function(index, oldHtml){ ... })   => self
 
 获取或设置对象集合中元素的 HTML 内容。当没有给定 content 参数时，返回对象集合中第一个元素的 innerHtml。当给定 content 参数时，用其替换对象集合中每个元素的内容。content 可以是 append 中描述的所有类型。
 
-```
+```js
 // autolink everything that looks like a Twitter username
 $('.comment p').html(function(idx, oldHtml){
   return oldHtml.replace(/(^|\W)@(\w{1,15})/g,
@@ -620,19 +620,19 @@ $('.comment p').html(function(idx, oldHtml){
 
 ## index
 
-```
+```js
 index([element])   => number 
 ```
 
 获取一个元素的索引值（愚人码头注：从 0 开始计数）。当 elemen 参数没有给出时，返回当前元素在兄弟节点中的位置。当 element 参数给出时，返回它在当前对象集合中的位置。如果没有找到该元素，则返回`-1`。
 
-```
+```js
 $('li:nth-child(2)').index()  //=> 1 
 ```
 
 ## indexOf
 
-```
+```js
 indexOf(element, [fromIndex])   => number 
 ```
 
@@ -644,31 +644,31 @@ Get the position of an element in the current collection. If fromIndex number is
 
 ## insertAfter
 
-```
+```js
 insertAfter(target)   => self 
 ```
 
 将集合中的元素插入到指定的目标元素后面（愚人码头注：外部插入）。这个有点像 after，但是使用方式相反。
 
-```
+```js
 $('<p>Emphasis mine.</p>').insertAfter('blockquote') 
 ```
 
 ## insertBefore
 
-```
+```js
 insertBefore(target)   => self 
 ```
 
 将集合中的元素插入到指定的目标元素前面（愚人码头注：外部插入）。这个有点像 before，但是使用方式相反。
 
-```
+```js
 $('<p>See the following table:</p>').insertBefore('table') 
 ```
 
 ## is
 
-```
+```js
 is(selector)   => boolean 
 ```
 
@@ -678,19 +678,19 @@ is(selector)   => boolean
 
 ## last
 
-```
+```js
 last()   => collection 
 ```
 
 获取对象集合中最后一个元素。
 
-```
+```js
 $('li').last() 
 ```
 
 ## map
 
-```
+```js
 map(function(index, item){ ... })   => collection 
 ```
 
@@ -698,14 +698,14 @@ map(function(index, item){ ... })   => collection
 
 遍历中返回 `null`和`undefined`，遍历将结束。
 
-```
+```js
 // get text contents of all elements in collection
 elements.map(function(){ return $(this).text() }).get().join(', ') 
 ```
 
 ## next
 
-```
+```js
 next()   => collection
 next(selector)   => collection v1.0+ 
 ```
@@ -714,13 +714,13 @@ Get the next sibling–optionally filtered by selector–of each element in the 
 
 获取对象集合中每一个元素的下一个兄弟节点(可以选择性的带上过滤选择器)。
 
-```
+```js
 $('dl dt').next()   //=> the DD elements 
 ```
 
 ## not
 
-```
+```js
 not(selector)   => collection
 not(collection)   => collection
 not(function(index){ ... })   => collection 
@@ -732,7 +732,7 @@ not(function(index){ ... })   => collection
 
 ## offset
 
-```
+```js
 offset()   => object
 offset(coordinates)   => self v1.0+
 offset(function(index, oldOffset){ ... })   => self v1.0+ 
@@ -744,7 +744,7 @@ offset(function(index, oldOffset){ ... })   => self v1.0+
 
 ## offsetParent v1.0+
 
-```
+```js
 offsetParent()   => collection 
 ```
 
@@ -752,7 +752,7 @@ offsetParent()   => collection
 
 ## parent
 
-```
+```js
 parent([selector])   => collection 
 ```
 
@@ -760,7 +760,7 @@ parent([selector])   => collection
 
 ## parents
 
-```
+```js
 parents([selector])   => collection 
 ```
 
@@ -768,19 +768,19 @@ parents([selector])   => collection
 
 如果想获取直接父级元素，使用 parent。如果只想获取到第一个符合 css 选择器的元素，使用 closest。
 
-```
+```js
 $('h1').parents()   //=> [<div#container>, <body>, <html>] 
 ```
 
 ## pluck
 
-```
+```js
 pluck(property)   => array 
 ```
 
 获取对象集合中每一个元素的属性值。返回值为 `null`或`undefined`值得过滤掉。
 
-```
+```js
 $('body > *').pluck('nodeName') // => ["DIV", "SCRIPT"]
 
 // implementation of Zepto's `next` method
@@ -793,7 +793,7 @@ $.fn.next = function(){
 
 ## position v1.0+
 
-```
+```js
 position()   => object 
 ```
 
@@ -801,7 +801,7 @@ position()   => object
 
 Returns an object with properties: `top`, `left`.
 
-```
+```js
 var pos = element.position()
 
 // position a tooltip relative to the element
@@ -814,31 +814,31 @@ $('#tooltip').css({
 
 ## prepend
 
-```
+```js
 prepend(content)   => self 
 ```
 
 将参数内容插入到每个匹配元素的前面（愚人码头注：元素内部插入）。插入 d 的元素可以试 html 字符串片段，一个 dom 节点，或者一个节点的数组。
 
-```
+```js
 $('ul').prepend('<li>first list item</li>') 
 ```
 
 ## prependTo
 
-```
+```js
 prependTo(target)   => self 
 ```
 
 将所有元素插入到目标前面（愚人码头注：元素内部插入）。这有点像 prepend，但是是相反的方式。
 
-```
+```js
 $('<li>first list item</li>').prependTo('ul') 
 ```
 
 ## prev
 
-```
+```js
 prev()   => collection
 prev(selector)   => collection v1.0+ 
 ```
@@ -847,7 +847,7 @@ prev(selector)   => collection v1.0+
 
 ## prop v1.0+
 
-```
+```js
 prop(name)   => value
 prop(name, value)   => self
 prop(name, function(index, oldValue){ ... })   => self 
@@ -859,7 +859,7 @@ prop(name, function(index, oldValue){ ... })   => self
 
 ## push
 
-```
+```js
 push(element, [element2, ...])   => self 
 ```
 
@@ -871,7 +871,7 @@ Add elements to the end of the current collection.
 
 ## ready
 
-```
+```js
 ready(function($){ ... })   => self 
 ```
 
@@ -879,7 +879,7 @@ ready(function($){ ... })   => self
 
 ## reduce
 
-```
+```js
 reduce(function(memo, item, index, array){ ... }, [initial])   => value 
 ```
 
@@ -889,7 +889,7 @@ reduce(function(memo, item, index, array){ ... }, [initial])   => value
 
 ## remove
 
-```
+```js
 remove()   => self 
 ```
 
@@ -897,7 +897,7 @@ remove()   => self
 
 ## removeAttr
 
-```
+```js
 removeAttr(name)   => self 
 ```
 
@@ -905,14 +905,14 @@ removeAttr(name)   => self
 
 ## removeClass
 
-```
+```js
 removeClass([name])   => self
 removeClass(function(index, oldClassName){ ... })   => self 
 ```
 
 移除当前对象集合中所有元素的指定 class。如果没有指定 name 参数，将移出所有的 class。多个 class 参数名称可以利用空格分隔。下例移除了两个 class。
 
-```
+```js
 <input class="taiyang yueliang" id="check1" type="checkbox" checked="checked">
 <input class="yaotaiyang" id="check2" type="checkbox">
 
@@ -924,7 +924,7 @@ removeClass(function(index, oldClassName){ ... })   => self
 
 ## replaceWith
 
-```
+```js
 replaceWith(content)   => self 
 ```
 
@@ -932,7 +932,7 @@ replaceWith(content)   => self
 
 ## scrollLeft v1.1+
 
-```
+```js
 scrollLeft()   => number
 scrollLeft(value)   => self 
 ```
@@ -941,7 +941,7 @@ scrollLeft(value)   => self
 
 ## scrollTop v1.0+
 
-```
+```js
 scrollTop()   => number
 scrollTop(value)   => self v1.1+ 
 ```
@@ -950,7 +950,7 @@ scrollTop(value)   => self v1.1+
 
 ## show
 
-```
+```js
 show()   => self 
 ```
 
@@ -958,7 +958,7 @@ show()   => self
 
 ## siblings
 
-```
+```js
 siblings([selector])   => collection 
 ```
 
@@ -966,7 +966,7 @@ siblings([selector])   => collection
 
 ## size
 
-```
+```js
 size()   => number 
 ```
 
@@ -974,7 +974,7 @@ size()   => number
 
 ## slice
 
-```
+```js
 slice(start, [end])   => array 
 ```
 
@@ -982,7 +982,7 @@ slice(start, [end])   => array
 
 ## text
 
-```
+```js
 text()   => string
 text(content)   => self
 text(function(index, oldText){ ... })   => self v1.1.4+ 
@@ -992,20 +992,20 @@ text(function(index, oldText){ ... })   => self v1.1.4+
 
 ## toggle
 
-```
+```js
 toggle([setting])   => self 
 ```
 
 显示或隐藏匹配元素。如果 `setting`为 true，相当于 show 法。如果`setting`为 false。相当于 hide 方法。
 
-```
+```js
 var input = $('input[type=text]')
 $('#too_long').toggle(input.val().length > 140) 
 ```
 
 ## toggleClass
 
-```
+```js
 toggleClass(names, [setting])   => self
 toggleClass(function(index, oldClassNames){ ... }, [setting])   => self 
 ```
@@ -1014,20 +1014,20 @@ toggleClass(function(index, oldClassNames){ ... }, [setting])   => self
 
 ## unwrap
 
-```
+```js
 unwrap()   => self 
 ```
 
 移除集合中每个元素的直接父节点，并把他们的子元素保留在原来的位置。 基本上，这种方法删除上一的祖先元素，同时保持 DOM 中的当前元素。
 
-```
+```js
 $(document.body).append('<div id=wrapper><p>Content</p></div>')
 $('#wrapper p').unwrap().parents()  //=> [<body>, <html>] 
 ```
 
 ## val
 
-```
+```js
 val()   => string
 val(value)   => self
 val(function(index, oldValue){ ... })   => self 
@@ -1037,7 +1037,7 @@ val(function(index, oldValue){ ... })   => self
 
 ## width
 
-```
+```js
 width()   => number
 width(value)   => self
 width(function(index, oldWidth){ ... })   => self 
@@ -1045,7 +1045,7 @@ width(function(index, oldWidth){ ... })   => self
 
 获取对象集合中第一个元素的宽；或者设置对象集合中所有元素的宽。
 
-```
+```js
 $('#foo').width()   // => 123
 $(window).width()   // => 768 (viewport width)
 $(document).width() // => 768 
@@ -1053,7 +1053,7 @@ $(document).width() // => 768
 
 ## wrap
 
-```
+```js
 wrap(structure)   => self
 wrap(function(index){ ... })   => self v1.0+ 
 ```
@@ -1062,7 +1062,7 @@ wrap(function(index){ ... })   => self v1.0+
 
 **需要提醒的是：**该方法对于 dom 中的节点有着很好的支持。如果将`wrap()` 用在一个新的元素上，然后再将结果插入到 document 中，此时该方法无效。
 
-```
+```js
 // wrap each button in a separate span:
 $('.buttons a').wrap('<span>')
 
@@ -1085,27 +1085,27 @@ $('<em>better</em>').appendTo(document.body).wrap('<li>')
 
 ## wrapAll
 
-```
+```js
 wrapAll(structure)   => self 
 ```
 
 在所有匹配元素外面包一个单独的结构。结构可以是单个元素或 几个嵌套的元素，并且可以通过在作为 HTML 字符串或 DOM 节点。
 
-```
+```js
 // wrap all buttons in a single div:
 $('a.button').wrapAll('<div id=buttons />') 
 ```
 
 ## wrapInner
 
-```
+```js
 wrapInner(structure)   => self
 wrapInner(function(index){ ... })   => self v1.0+ 
 ```
 
 将每个元素中的*内容*包裹在一个单独的结构中。结构可以是单个元件或多个嵌套元件，并且可以通过在作为 HTML 字符串或 DOM 节点，或者是一个生成用来包元素的回调函数，这个函数返回前两种类型的包裹片段。
 
-```
+```js
 // wrap the contents of each navigation link in a span:
 $('nav a').wrapInner('<span>')
 

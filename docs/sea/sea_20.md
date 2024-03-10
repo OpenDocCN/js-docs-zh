@@ -6,13 +6,13 @@ A Sea.js plugin to provide log function
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-log 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-log.js"></script>
 

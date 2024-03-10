@@ -2,7 +2,7 @@
 
 ## serialize
 
-```
+```js
 serialize()   => string 
 ```
 
@@ -10,13 +10,13 @@ serialize()   => string
 
 ## serializeArray
 
-```
+```js
 serializeArray()   => array 
 ```
 
 将用作提交的表单元素的值编译成拥有`name`和`value`对象组成的数组。不能使用的表单元素，buttons，未选中的 radio buttons/checkboxs 将会被跳过。结果不包含 file inputs 的数据。
 
-```
+```js
 $('form').serializeArray()
 //=> [{ name: 'size', value: 'micro' },
 //    { name: 'name', value: 'Zepto' }] 
@@ -24,7 +24,7 @@ $('form').serializeArray()
 
 ## submit
 
-```
+```js
 submit()   => self
 submit(function(e){ ... })   => self 
 ```

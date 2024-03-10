@@ -8,7 +8,7 @@
 
 比如，打开 [seajs.org](http://seajs.org/)，然后在 WebKit Developer Tools 的 Console 面板中输入 `seajs.cache`，可以看到：
 
-```
+```js
 Object
   > http://seajs.org/docs/assets/main.js: x
   > https://a.alipayobjects.com/jquery/jquery/1.10.1/jquery.js: x
@@ -21,7 +21,7 @@ Object
 
 类似 `require.resolve`，会利用模块系统的内部机制对传入的字符串参数进行路径解析。
 
-```
+```js
 seajs.resolve('jquery');
 // => http://path/to/jquery.js
 
@@ -36,7 +36,7 @@ seajs.resolve('./a', 'http://example.com/to/b.js');
 
 全局的 `require` 方法，可用来直接获取模块接口，比如
 
-```
+```js
 seajs.use(['a', 'b'], function() {
 
   var a = seajs.require('a')

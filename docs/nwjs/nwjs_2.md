@@ -61,7 +61,7 @@ Prebuilt binaries (v0.9.2 - Feb 20, 2014):
 
 以 ubuntu 为例，首先下载安装包。
 
-```
+```js
 wget http://dl.node-webkit.org/v0.8.5/node-webkit-v0.8.5-linux-ia32.tar.gz 
 ```
 
@@ -69,7 +69,7 @@ wget http://dl.node-webkit.org/v0.8.5/node-webkit-v0.8.5-linux-ia32.tar.gz
 
 解压：
 
-```
+```js
 tar -xzf node-webkit-v0.8.5-linux-ia32.tar.gz 
 ```
 
@@ -83,7 +83,7 @@ tar -xzf node-webkit-v0.8.5-linux-ia32.tar.gz
 
 我出现
 
-```
+```js
 ./nw: error while loading shared libraries: libudev.so.0: cannot open shared object file: No such file or directory 
 ```
 
@@ -95,7 +95,7 @@ tar -xzf node-webkit-v0.8.5-linux-ia32.tar.gz
 
 2)在 nw 可执行文件目录中用 ghex 打开 nw：
 
-```
+```js
 ghex nw 
 ```
 
@@ -123,7 +123,7 @@ ghex nw
 
 先创建 helloWorld.html 文件，内容如下（来自作者的示例）：
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,7 +140,7 @@ We are using node.js <script>document.write(process.version)</script>.
 
 下一步，创建 package.json 文件：
 
-```
+```js
 {
     "name": "helloworld",
     "main": "helloworld.html"
@@ -155,7 +155,7 @@ We are using node.js <script>document.write(process.version)</script>.
 
 下面我们使用 nw 来执行压缩包。
 
-```
+```js
 ./nw ../helloword/hello.nw 
 ```
 
@@ -189,7 +189,7 @@ nw 在启动应用程序时，首先要读取 package.json 文件，初始化基
 
 一个完整的 package.json 实例如下：
 
-```
+```js
 {
     "main": "index.html",
     "name": "nw-demo",
@@ -239,7 +239,7 @@ bool 值，如果设置为 false，将禁用 webkit 的 node 支持。
 
 版本信息没有输出，同时在终端会出现未捕获异常：
 
-```
+```js
 [10894:0409/144559:INFO:CONSOLE(8)] "Uncaught ReferenceError: process is not defined", source: file:///tmp/.org.chromium.Chromium.F4YVql/helloword.html (8) 
 ```
 
@@ -253,7 +253,7 @@ bool 值，如果设置为 false，将禁用 webkit 的 node 支持。
 
 继续修改之前的 helloworld，在程序源文件夹下，添加一个 hello.js，内容如下：
 
-```
+```js
 var i = 0;
 exports.callback0 = function () {
     console.log(i + ": " + window.location);
@@ -264,7 +264,7 @@ exports.callback0 = function () {
 
 修改 helloworld.html 为：
 
-```
+```js
 <html>
 <head>
 <title>Hello World!</title>
@@ -378,7 +378,7 @@ bool 值。如果设置为 false，程序将无边框显示。
 
 可以通过添加如下样式来使窗口可拖动：
 
-```
+```js
 <html>
 <head>
 <style>
@@ -437,7 +437,7 @@ bool 值，是否启用页面缓存，默认为 false。
 
 示例配置：
 
-```
+```js
 {
     "name": "nw-demo",
     "main": "helloword.html",
@@ -468,7 +468,7 @@ string 类型，自定义 chromium 启动参数。详细的参数列表参考：
 
 string 类型，传递给 js 引擎（V8）的参数。例如，想启用 Harmony Proxies 和 Collections 功能，可以使用如下配置方式：
 
-```
+```js
 {
     "name": "nw-demo",
     "main": "index.html",
@@ -512,7 +512,7 @@ bool 值，Edit 菜单是否显示。仅在 Mac 系统下有效。
 
 软件维护者信息，是一个数组，示例如下：
 
-```
+```js
 "maintainers":[ {
     "name": "Bill Bloggs",
     "email": "billblogs@bblogmedia.com",
@@ -536,7 +536,7 @@ bool 值，Edit 菜单是否显示。仅在 Mac 系统下有效。
 
 示例如下：
 
-```
+```js
 "licenses": [
     {
         "type": "GPLv2",
@@ -549,7 +549,7 @@ bool 值，Edit 菜单是否显示。仅在 Mac 系统下有效。
 
 程序包的存储地址数组。示例如下：
 
-```
+```js
 "repositories": [
     {
         "type": "git",
@@ -594,7 +594,7 @@ Native UI API，是提供了在代码中访问、控制应用程序界面显示�
 
 先创建 guidemo.html，内容如下：
 
-```
+```js
 <html>
 <head>
 </head>
@@ -608,7 +608,7 @@ Native UI API，是提供了在代码中访问、控制应用程序界面显示�
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "gui-demo",
     "main": "guidemo.html",
@@ -637,19 +637,19 @@ package.json 内容如下：
 
 若要访问 native ui api，需要先加载“nw.gui”模块，代码如下：
 
-```
+```js
 var gui = require('nw.gui'); 
 ```
 
 加载 gui 模块之后，就可以像创建普通的 javascript 对象一样，创建 GUI 元素了。例如，我们可以使用如下代码创建一个菜单：
 
-```
+```js
 var menu = new gui.Menu({ title: '菜单' }); 
 ```
 
 下面，我们按如下内容修改 guidemo.html：
 
-```
+```js
 <html>
 <head>
 <title>gui</title>
@@ -679,7 +679,7 @@ var menu = new gui.Menu({ title: '菜单' });
 
 首先，通过
 
-```
+```js
 var gui = require('nw.gui'); 
 ```
 
@@ -687,7 +687,7 @@ var gui = require('nw.gui');
 
 随后通过
 
-```
+```js
 var menubar = new gui.Menu({ type: 'menubar' }); 
 ```
 
@@ -695,7 +695,7 @@ var menubar = new gui.Menu({ type: 'menubar' });
 
 随后通过
 
-```
+```js
 menubar.append(new gui.MenuItem({ label: '菜单 1', submenu: sub1 })); 
 ```
 
@@ -703,13 +703,13 @@ menubar.append(new gui.MenuItem({ label: '菜单 1', submenu: sub1 }));
 
 目前为止，菜单项创建完毕，需要将其添加到当前窗口上。通过
 
-```
+```js
 var win = gui.Window.get(); 
 ```
 
 获取窗口对象，然后通过
 
-```
+```js
 win.menu = menubar; 
 ```
 
@@ -721,20 +721,20 @@ win.menu = menubar;
 
 对于每个 gui 对象的属性，比如 title、label、 icon 和 menu，可以直接通过对象去访问和修改。比如下面的代码：
 
-```
+```js
 menu.title = 'New Title'; 
 ```
 
 remove、append 和 insert 方法，在每个 GUI 对象上都可以使用，例如：
 
-```
+```js
 menu.append(new gui.MenuItem({ label: 'Im an item' }));
 menu.removeAt(0); 
 ```
 
 子元素通常被存储在 items 字段中，可以通过索引进行访问:
 
-```
+```js
 for (var i = 0; i < menu.items.length; ++i) {
     console.log('MenuItem', i, menu.items[i]);
 } 
@@ -764,13 +764,13 @@ for (var i = 0; i < menu.items.length; ++i) {
 
 不要通过赋值的方式直接修改一个 GUI 对象，比如：
 
-```
+```js
 menu.items[0] = item 
 ```
 
 或者
 
-```
+```js
 item = new gui.MenuItem({}) 
 ```
 
@@ -780,7 +780,7 @@ item = new gui.MenuItem({})
 
 删除一个对象之后，要将其设置为 null 值，如：
 
-```
+```js
 var tray = new gui.Tray(...);
 // blablabla...
 // We are done with it
@@ -793,7 +793,7 @@ Do not change UI types' prototype（没明白具体指什么，望读者告知�
 
 在 node-webkit 中，每一个 ui 元素都从 node.js 的 EventEmitter 继承而来，所以你可以用如下的方式监听元素的实践：
 
-```
+```js
 menuitem.on('click', function() {
     console.log('Item is clicked');
 }); 
@@ -896,7 +896,7 @@ Native GUI API 中的 window 是对 DOM 页面的 windows 的一个封装，扩�
 
 windowdemo.html 文件代码如下：
 
-```
+```js
 <html>
 <head>
 <title>windowdemo</title>
@@ -930,7 +930,7 @@ windowdemo.html 文件代码如下：
 
 package.json 代码如下：
 
-```
+```js
 {
     "name": "window-demo",
     "main": "windowdemo.html",
@@ -955,14 +955,14 @@ package.json 代码如下：
 
 现在我们简单解释下 windowdemo.html，首先通过
 
-```
+```js
 var gui = require('nw.gui');
 var win = gui.Window.get(); 
 ```
 
 获得当前窗口对象 win，然后通过下面的代码定义了窗口最小化事件的处理函数。
 
-```
+```js
 win.on('minimize', function () {
     var element = document.createElement('div');
     element.appendChild(document.createTextNode('窗口最小化'));
@@ -974,7 +974,7 @@ win.on('minimize', function () {
 
 下面的代码示例了如何打开一个新窗口。
 
-```
+```js
 var new_win = gui.Window.get(
     window.open('[`ebook.xuanhun521.com`](http://ebook.xuanhun521.com/)')
 ); 
@@ -982,7 +982,7 @@ var new_win = gui.Window.get(
 
 通过类似的方式监听新窗口的获取焦点事件。
 
-```
+```js
 new_win.on('focus', function () {
     var element = document.createElement('div');
     element.appendChild(document.createTextNode('新窗口被激活'));
@@ -993,7 +993,7 @@ new_win.on('focus', function () {
 
 上面的代码中通过 removeAllListeners 函数，移除了主窗口所有最小化事件的处理函数。
 
-```
+```js
 win.removeAllListeners('minimize'); 
 ```
 
@@ -1009,13 +1009,13 @@ win.removeAllListeners('minimize');
 
 获取和创建新的 window 都是使用 get 方法，在上面的示例中，已经演示的很清楚，无参的 get 方法获取当前窗口对象。
 
-```
+```js
 var win = gui.Window.get(); 
 ```
 
 向 get 方法传入一个 DOM window 对象，会打开新的窗口。
 
-```
+```js
 var new_win = gui.Window.get(
     window.open('https://github.com')
 ); 
@@ -1023,7 +1023,7 @@ var new_win = gui.Window.get(
 
 获取新窗口对象的另一种方法是，使用 nw.gui.Window.open 方法。
 
-```
+```js
 var win = gui.Window.open('[`ebook.xuanhun521.com`](http://ebook.xuanhun521.com/)', {
     position: 'center',
     width: 901,
@@ -1033,7 +1033,7 @@ var win = gui.Window.open('[`ebook.xuanhun521.com`](http://ebook.xuanhun521.com/
 
 该方法传入一个 url，可选的配置参数，新窗体会加载 url。在最新版本的 node-webkit，默认情况下新打开的窗口是没有被激活的（未获取焦点）,如果想默认获取焦点，可以在在配置中设置“focus”属性为 true，如下：
 
-```
+```js
 var win = gui.Window.open('[`ebook.xuanhun521.com`](http://ebook.xuanhun521.com/)', {
     position: 'center',
     width: 901,
@@ -1044,7 +1044,7 @@ var win = gui.Window.open('[`ebook.xuanhun521.com`](http://ebook.xuanhun521.com/
 
 修改 windowdemo.html 如下，使用 gui.Window.open 的方式打开新窗口。
 
-```
+```js
 <html>
 <head>
 <title>windowdemo</title>
@@ -1092,7 +1092,7 @@ Window.window 属性获取的是当前 DOM 文档中的 window 对象。
 
 修改 windowdemo.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>windowdemo</title>
@@ -1124,7 +1124,7 @@ Window.window 属性获取的是当前 DOM 文档中的 window 对象。
 
 下面我们修改 windowdemo.html，使其显示后移动到屏幕的左上角。
 
-```
+```js
 var gui = require('nw.gui');
 var win = gui.Window.get();
 win.x = 0;
@@ -1137,7 +1137,7 @@ win.y = 0;
 
 修改 windowdemo.html 的 script 如下：
 
-```
+```js
 <script>
     var gui = require('nw.gui');
     var win = gui.Window.get();
@@ -1164,7 +1164,7 @@ win.y = 0;
 
 修改后的页面内容为：
 
-```
+```js
 <html>
 <head>
 <title>windowdemo</title>
@@ -1219,7 +1219,7 @@ win.y = 0;
 
 如在之前的脚本中添加
 
-```
+```js
 win.zoomLevel = 50; 
 ```
 
@@ -1229,7 +1229,7 @@ win.zoomLevel = 50;
 
 如果设置
 
-```
+```js
 win.zoomLevel = -50; 
 ```
 
@@ -1277,7 +1277,7 @@ show(false)和 Window.hide()方法效果一样。
 
 一般情况下，我们会在程序中先监听 close 事件，在事件处理函数中做一些基本工作再关闭窗口。如：
 
-```
+```js
 win.on('close', function() {
     this.hide(); // Pretend to be closed already
     console.log("We're closing...");
@@ -1378,7 +1378,7 @@ win.close();
 
 新建 html：
 
-```
+```js
 <html>
 <head>
 <title>windowdemo</title>
@@ -1417,7 +1417,7 @@ win.close();
 
 从 node-webkit *v0.9.3*开始，可以通过配置参数的方式进行截图了，使用方法如下：
 
-```
+```js
 // png as base64string
 win.capturePage(function(base64string){
     // do something with the base64string
@@ -1430,7 +1430,7 @@ win.capturePage(function(buffer){
 
 配置项可用值参考：
 
-```
+```js
 {
     format : "[jpeg|png]",
     datatype : "[raw|buffer|datauri]"
@@ -1463,7 +1463,7 @@ win.capturePage(function(buffer){
 
 但是我们可以通过在另一窗口，监听被关闭窗口的已关闭事件。如：
 
-```
+```js
 <script>
     var gui = require('nw.gui');
     //var new_win = gui.Window.get(
@@ -1509,7 +1509,7 @@ function (frame) {}
 
 ### 4.4.6 document-end
 
-```
+```js
 function (frame) {} 
 ```
 
@@ -1581,7 +1581,7 @@ function (frame) {}
 
 当一个新窗口被从当前窗口打开，或者打开一个 iframe 时触发该事件。
 
-```
+```js
 function (frame, url, policy) {} 
 ```
 
@@ -1622,7 +1622,7 @@ Frameless window 的使用场景，通常是我们需要自定义标题栏，窗
 
 framelessDemo.html 代码如下：
 
-```
+```js
 <html>
 <head>
 <title>frame less windowdemo</title>
@@ -1639,7 +1639,7 @@ framelessDemo.html 代码如下：
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "framelessWindow-demo",
     "main": "framelessDemo.html",
@@ -1670,7 +1670,7 @@ package.json 内容如下：
 
 注意 package.json 中 window 的配置，将字段 frame 设置为 false 即可。
 
-```
+```js
 {
     "window": {
         "frame": false
@@ -1684,7 +1684,7 @@ package.json 内容如下：
 
 如果在 body 上设置了拖拽，需要在 button 上去除拖拽，否则按钮无法点击，添加如下样式：
 
-```
+```js
 button {
     -webkit-app-region: no-drag;
 } 
@@ -1755,7 +1755,7 @@ Menu 分为两种，window 菜单和上下文（右键）菜单（context menu�
 
 创建 menu 对象使用构造函数 Menu([option])，如：
 
-```
+```js
 // Load native UI library
 var gui = require('nw.gui');
 // Create an empty menu
@@ -1764,19 +1764,19 @@ var menu = new gui.Menu();
 
 不带参数构造的 menu 属于 context menu，如果想创建 window menu，使用如下方式：
 
-```
+```js
 var your_menu = new gui.Menu({ type: 'menubar' }); 
 ```
 
 将 window menu 直接赋值给 window 对象的 menu 属性即可生效。
 
-```
+```js
 gui.Window.get().menu = your_menu; 
 ```
 
 创建 menuDemo.html 和 package.json。menuDemo.html 代码如下：
 
-```
+```js
 <html>
 <head>
 <title>menuDemo</title>
@@ -1821,7 +1821,7 @@ gui.Window.get().menu = your_menu;
 
 package.json 文件内容如下：
 
-```
+```js
 {
     "name": "menu-demo",
     "main": "menuDemo.html",
@@ -1858,7 +1858,7 @@ package.json 文件内容如下：
 
 获取该 Menu 下所有的 MenuItem 对象，返回结果为数组。上文中的例子，有这样的代码：
 
-```
+```js
 for (var i = 0; i < menu.items.length; ++i) {
     var element = document.createElement('div');
     element.appendChild(document.createTextNode(menu.items[i].label));
@@ -1896,7 +1896,7 @@ menuitem 的个数。参加上文 demo。
 
 设置 menuitem 集合中指定位置的 menuitem 对象的 click 事件，在 menuDemo.html 中添加如下代码：
 
-```
+```js
 menu.items[0].click = function() {
     var element = document.createElement('div');
     element.appendChild(document.createTextNode(‘我被点击了’));
@@ -1922,7 +1922,7 @@ menu.items[0].click = function() {
 
 创建右键菜单，需要在页面监听`contextmenu` 事件，然后控制弹出菜单。修改之前的菜单弹出代码：
 
-```
+```js
 document.body.addEventListener('contextmenu', function (ev) {
     ev.preventDefault();
     menu.popup(10, 10);
@@ -1982,7 +1982,7 @@ var subMenuItem = new gui.MenuItem({ label: '子菜单项', icon: '2655716405282
 
 下面我们继续修改 subMenuItem，为其添加 tooltip：
 
-```
+```js
 var subMenuItem = new gui.MenuItem({
     label: '子菜单项',
     icon: '2655716405282662783.png',
@@ -2039,7 +2039,7 @@ APP 类别的 API 是针对当前正在运行的应用程序实例的，换个�
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "app-demo",
     "main": "appDemo.html",
@@ -2063,7 +2063,7 @@ package.json 内容如下：
 
 appDemo.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>appDemo</title>
@@ -2084,7 +2084,7 @@ appDemo.html 内容如下：
 
 通过如下方式获得 APP 对象：
 
-```
+```js
 // Load native UI library
 var gui = require('nw.gui');
 var app = gui.App; 
@@ -2096,7 +2096,7 @@ var app = gui.App;
 
 修改 appDemo.html 如下：
 
-```
+```js
 <html>
 <head>
 <title>appDemo</title>
@@ -2146,7 +2146,7 @@ var app = gui.App;
 
 使用 manifest 属性，可以获取 package.json 中的 json 对象。修改 appDemo。html 的脚本内容如下：
 
-```
+```js
 <script>
     // Load native UI library
     var gui = require('nw.gui');
@@ -2186,7 +2186,7 @@ var app = gui.App;
 
 为了方便测试，node-webkit 提供了 App.crashBrowser()和 App.crashRenderer()两个 api，分别保存 browser 进程和 render 进程的数据。下面我们通过实例演示将 dump 文件保存到本地磁盘 D。
 
-```
+```js
 <script>
     // Load native UI library
     var gui = require('nw.gui');
@@ -2268,7 +2268,7 @@ Clipboard 是对操作系统剪贴板的一个抽象，目前只支持获取和�
 
 clip.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>appDemo</title>
@@ -2312,7 +2312,7 @@ clip.html 内容如下：
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "clip-demo",
     "main": "clip.html",
@@ -2340,13 +2340,13 @@ package.json 内容如下：
 
 程序有三个按钮，分别是获取、写入和清除剪贴板内容。在操作剪贴板之前，我们需要先获取 clipboard 对象：
 
-```
+```js
 var clipboard = gui.Clipboard.get(); 
 ```
 
 现在我们先单击第二个按钮，向剪贴板写入内容，代码如下：
 
-```
+```js
 function setText()
 {
     // Or write something
@@ -2358,7 +2358,7 @@ clipboard.set 方法接收两个参数，第一个参数是要写入的内容，
 
 是否写入成功了呢？我们再单击第一个按钮，事件处理代码如下：
 
-```
+```js
 function getText()
 {
     // Read from clipboard
@@ -2373,7 +2373,7 @@ function getText()
 
 下面我们再看清楚内容的按钮做了什么：
 
-```
+```js
 function clearText()
 {
     // And clear it!
@@ -2415,7 +2415,7 @@ Tray 在不同的平台下的展现形式不一样，通常以一个 ICON 的形
 
 tray.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>trayDemo</title>
@@ -2433,7 +2433,7 @@ tray.html 内容如下：
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "tray-demo",
     "main": "tray.html",
@@ -2471,19 +2471,19 @@ alticon 只有在 mac 下起作用，配置切换效果 icon 图标。
 
 ## 9.3 tray 的构造函数
 
-```
+```js
 new Tray(option) 
 ```
 
 option 中用来初始化 tray 的属性值，但是只能配置 title, tooltip, icon 和 menu 四个属性。如：
 
-```
+```js
 var tray = new gui.Tray({ title: 'Tray', icon: 'img/icon.png' }); 
 ```
 
 所有的属性都可以通过对象直接获取或赋值，如：
 
-```
+```js
 tray.menu = menu; 
 ```
 
@@ -2491,7 +2491,7 @@ tray.menu = menu;
 
 现在我们修改 tray.html：
 
-```
+```js
 <script>
     var isShowWindow = true;
     // Load native UI library
@@ -2533,7 +2533,7 @@ tray.menu = menu;
 
 在删除需要调用 remove 方法，然后设置为 null。如：
 
-```
+```js
 tray.remove();
 
 tray = null; 
@@ -2569,7 +2569,7 @@ tray = null;
 
 在 html 中，我们可以通过
 
-```
+```js
 <input type='file' /> 
 ```
 
@@ -2581,7 +2581,7 @@ node-wekit 对 html 的文件对话框做了扩展，本文将对这些特性做
 
 dialog.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>dialogDemo</title>
@@ -2600,7 +2600,7 @@ dialog.html 内容如下：
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "dialog-demo",
     "main": "dialog.html",
@@ -2626,7 +2626,7 @@ package.json 内容如下：
 
 修改 dialog.html 如下：
 
-```
+```js
 <html>
 <head>
 <title>dialogDemo</title>
@@ -2652,13 +2652,13 @@ package.json 内容如下：
 
 首先，在代码中添加了“file”类型的 input 标签。
 
-```
+```js
 <input id="fileDialog" type="file" /> 
 ```
 
 这就是一个普通的文件选择框，在 script 中，我们添加对改选择框的选择文件之后的事件监听代码，获取选择文件的路径。
 
-```
+```js
 var chooser = document.querySelector('#fileDialog');
 chooser.addEventListener("change", function (evt) {
     apendText(this.value);
@@ -2677,7 +2677,7 @@ chooser.addEventListener("change", function (evt) {
 
 若要支持文件选择框支持多文件，只需要在 input 标签内添加“`multiple` ”属性即可，这是 html5 支持的属性。
 
-```
+```js
 <input id="fileDialog" type="file" multiple /> 
 ```
 
@@ -2689,7 +2689,7 @@ chooser.addEventListener("change", function (evt) {
 
 使用 accept 属性来过滤需要的文件类型，如：
 
-```
+```js
 <input id="fileDialog" type="file" multiple accept=".html"/> 
 ```
 
@@ -2699,7 +2699,7 @@ chooser.addEventListener("change", function (evt) {
 
 使用 nwdirectory 属性，可以是 input 支持选择文件夹。
 
-```
+```js
 <input id="fileDialog" type="file" nwdirectory /> 
 ```
 
@@ -2715,7 +2715,7 @@ chooser.addEventListener("change", function (evt) {
 
 使用`nwsaveas` 属性可以启动保存文件对话框。
 
-```
+```js
 <input id="fileDialog" type="file" nwsaveas /> 
 ```
 
@@ -2725,7 +2725,7 @@ chooser.addEventListener("change", function (evt) {
 
 可以设置默认文件名，如：
 
-```
+```js
 <input id="fileDialog" type="file" nwsaveas="aa.txt"/> 
 ```
 
@@ -2735,7 +2735,7 @@ chooser.addEventListener("change", function (evt) {
 
 修改示例程序的 script，如下：
 
-```
+```js
 <script>
     var chooser = document.querySelector('#fileDialog');
     chooser.addEventListener("change", function (evt) {
@@ -2757,7 +2757,7 @@ chooser.addEventListener("change", function (evt) {
 
 在上图中，我们看到程序输出了选择的文件名，但是并没有完整的路径。node-webkit，扩展了一个名为 path 的属性，通过这个属性，可以获取完整的文件路径。继续修改代码：
 
-```
+```js
 for (var i = 0; i < files.length; ++i)
 apendText(files[i].path); 
 ```
@@ -2772,7 +2772,7 @@ apendText(files[i].path);
 
 修改 input 标签如下：
 
-```
+```js
 <input id="fileDialog" type="file" nwworkingdir="D:\xuanhunfile" /> 
 ```
 
@@ -2824,7 +2824,7 @@ Node-Webkit 提供的 shell 功能很有限，现在能看到的只有三个 api
 
 shell.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>shellDemo</title>
@@ -2858,7 +2858,7 @@ shell.html 内容如下：
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "shell-demo",
     "main": "shell.html",
@@ -2882,7 +2882,7 @@ package.json 内容如下：
 
 在上面的代码中，我们首先获取 shell 对象，
 
-```
+```js
 // Load native UI library.
 var gui = require('nw.gui');
 var shell = gui.Shell; 
@@ -2946,7 +2946,7 @@ var shell = gui.Shell;
 
 fullscreen.html 内容如下：
 
-```
+```js
 <html>
 <head>
 <title>玄魂测试 node-webkit 全屏 api</title>
@@ -2975,7 +2975,7 @@ fullscreen.html 内容如下：
 
 package.json 内容如下：
 
-```
+```js
 {
     "name": "nw-demo",
     "main": "fullscreen.html",
@@ -3049,7 +3049,7 @@ Chrome 中可以通过 chrome://gpu 来查看 gpu 的诊断信息。因为 chrom
 
 ### (三)在控制台输入代码：
 
-```
+```js
 var browserBridge = {
     onGpuInfoUpdate:function(arg){console.log(JSON.stringify(arg,null,1));
 }}; 
@@ -3059,7 +3059,7 @@ var browserBridge = {
 
 ### (四)在控制台继续输入：
 
-```
+```js
 chrome.send('browserBridgeInitialized'); 
 ```
 
@@ -3089,7 +3089,7 @@ chrome.send('browserBridgeInitialized');
 
 ## 2\. 在配置文件中，配置 webkit 缓存禁用和启用
 
-```
+```js
 {
     "name": "name",
     "description": "description",

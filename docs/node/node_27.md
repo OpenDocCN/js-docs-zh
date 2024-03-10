@@ -10,19 +10,19 @@
 
 TLS/SSL 是一种公/私钥架构。每个客户端和每个服务器都必须有一个私钥。一个私钥通过像如下的方式创建：
 
-```
+```js
 openssl genrsa -out ryans-key.pem 2048 
 ```
 
 所有的服务器和部分的客户端需要一个证书。证书是被 CA 签名或自签名的公钥。获取一个证书第一步是创建一个“证书签署请求（Certificate Signing Request）”（CSR）文件。通过：
 
-```
+```js
 openssl req -new -sha256 -key ryans-key.pem -out ryans-csr.pem 
 ```
 
 要通过 CSR 创建一个自签名证书，通过：
 
-```
+```js
 openssl x509 -req -in ryans-csr.pem -signkey ryans-key.pem -out ryans-cert.pem 
 ```
 
@@ -30,13 +30,13 @@ openssl x509 -req -in ryans-csr.pem -signkey ryans-key.pem -out ryans-cert.pem
 
 为了完全向前保密（PFS），需要产生一个 迪菲-赫尔曼 参数：
 
-```
+```js
 openssl dhparam -outform PEM -out dhparam.pem 2048 
 ```
 
 创建`.pfx`或`.p12`，通过：
 
-```
+```js
 openssl pkcs12 -export -in agent5-cert.pem -inkey agent5-key.pem \
     -certfile ca-cert.pem -out agent5.pfx 
 ```
@@ -85,7 +85,7 @@ TLS 协议让客户端可以重新协商某些部分的 TLS 会话。不幸的�
 
 例子：
 
-```
+```js
 var ciphers = tls.getCiphers();
 console.log(ciphers); // ['AES128-SHA', 'AES256-SHA', ...] 
 ```
@@ -108,7 +108,7 @@ console.log(ciphers); // ['AES128-SHA', 'AES256-SHA', ...]
 
 *   ciphers: 一个描述要使用或排除的加密器的字符串，通过`:`分割。默认的加密器套件是：
 
-```
+```js
 ECDHE-RSA-AES128-GCM-SHA256:
 ECDHE-ECDSA-AES128-GCM-SHA256:
 ECDHE-RSA-AES256-GCM-SHA384:
@@ -170,7 +170,7 @@ HIGH:
 
 下面是一个简单应答服务器的例子：
 
-```
+```js
 var tls = require('tls');
 var fs = require('fs');
 
@@ -199,7 +199,7 @@ server.listen(8000, function() {
 
 或
 
-```
+```js
 var tls = require('tls');
 var fs = require('fs');
 
@@ -225,7 +225,7 @@ server.listen(8000, function() {
 
 你可以通过`openssl s_client`来连接服务器：
 
-```
+```js
 openssl s_client -connect 127.0.0.1:8000 
 ```
 
@@ -273,7 +273,7 @@ openssl s_client -connect 127.0.0.1:8000
 
 以下是一个上述应答服务器的客户端的例子：
 
-```
+```js
 var tls = require('tls');
 var fs = require('fs');
 
@@ -303,7 +303,7 @@ socket.on('end', function() {
 
 或
 
-```
+```js
 var tls = require('tls');
 var fs = require('fs');
 
@@ -531,7 +531,7 @@ socket.on('end', function() {
 
 例子：
 
-```
+```js
 { subject:
    { C: 'UK',
      ST: 'Acknack Ltd',

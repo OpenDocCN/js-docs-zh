@@ -93,7 +93,7 @@
 
 在下面的例子中，在`stdio`参数中只有索引为 1 的元素被设置为了`pipe`，所以父进程中只有`child.stdio[1]`是一个流，其他的元素都为`null`。
 
-```
+```js
 var assert = require('assert');
 var fs = require('fs');
 var child_process = require('child_process');
@@ -124,7 +124,7 @@ assert.equal(child.stdio[2], child.stderr);
 
 例子：
 
-```
+```js
 var spawn = require('child_process').spawn,
     grep  = spawn('grep', ['ssh']);
 
@@ -142,7 +142,7 @@ grep.stdin.end();
 
 给子进程传递一个信号。如果没有指定任何参数，那么将发送`'SIGTERM'`给子进程。更多可用的信号请参阅`signal(7)`。
 
-```
+```js
 var spawn = require('child_process').spawn,
     grep  = spawn('grep', ['ssh']);
 
@@ -169,7 +169,7 @@ grep.kill('SIGHUP');
 
 例子：
 
-```
+```js
 var cp = require('child_process');
 
 var n = cp.fork(__dirname + '/sub.js');
@@ -183,7 +183,7 @@ n.send({ hello: 'world' });
 
 子进程代码, `sub.js`可能看起来类似这样:
 
-```
+```js
 process.on('message', function(m) {
   console.log('CHILD got message:', m);
 });
@@ -203,7 +203,7 @@ process.send({ foo: 'bar' });
 
 例子：发送一个`server`对象
 
-```
+```js
 var child = require('child_process').fork('child.js');
 
 // Open up the server object and send the handle.
@@ -218,7 +218,7 @@ server.listen(1337, function() {
 
 子进程将会收到`server`对象：
 
-```
+```js
 process.on('message', function(m, server) {
   if (m === 'server') {
     server.on('connection', function (socket) {
@@ -236,7 +236,7 @@ process.on('message', function(m, server) {
 
 以下是发送一个`socket`的例子。创建了两个子进程。并且将地址为`74.125.127.100`的链接通过将`socket`发送给"special"子进程来视作 VIP。其他的`socket`则被发送给"normal"子进程。
 
-```
+```js
 var normal = require('child_process').fork('child.js', ['normal']);
 var special = require('child_process').fork('child.js', ['special']);
 
@@ -261,7 +261,7 @@ process.on('message', function(m, socket) {
     socket.end('You were handled as a ' + process.argv[2] + ' person');
   }
 }); 
-```
+```js
 
 注意一旦一个单独的`socket`被发送给了子进程，那么父进程将不能追踪到这个`socket`被删除的时间，这个情况下`.connections`属性将会成为`null`。在这个情况下同样也不推荐使用`.maxConnections`属性。
 
@@ -300,7 +300,7 @@ process.on('message', function(m, socket) {
 { cwd: undefined,
   env: process.env
 } 
-```
+```js
 
 使用`cwd`来指定子进程的工作目录。如果没有指定，默认值是当前父进程的工作目录。
 
@@ -323,7 +323,7 @@ ls.stderr.on('data', function (data) {
 ls.on('close', function (code) {
   console.log('child process exited with code ' + code);
 }); 
-```
+```js
 
 例子：一个非常精巧的运行`ps ax | grep ssh`的方式
 
@@ -360,7 +360,7 @@ grep.on('close', function (code) {
     console.log('grep process exited with code ' + code);
   }
 }); 
-```
+```js
 
 一个检查执行失败的例子：
 
@@ -371,7 +371,7 @@ var spawn = require('child_process').spawn,
 child.on('error', function (err) {
   console.log('Failed to start child process.');
 }); 
-```
+```js
 
 ##### options.stdio
 
@@ -407,7 +407,7 @@ spawn('prg', [], { stdio: ['pipe', 'pipe', process.stderr] });
 // Open an extra fd=4, to interact with programs present a
 // startd-style interface.
 spawn('prg', [], { stdio: ['pipe', null, null, null, 'pipe'] }); 
-```
+```js
 
 ##### options.detached
 
@@ -429,7 +429,7 @@ spawn('prg', [], { stdio: ['pipe', null, null, null, 'pipe'] });
  });
 
  child.unref(); 
-```
+```js
 
 当使用`detached`选项创建一个长时间运行的进程时，进程不会保持运行除非向它提供了一个不连接到父进程的`stdio`的配置。如果继承了父进程的`stdio`，那么子进程将会继续附着在控制终端。
 
@@ -472,7 +472,7 @@ child = exec('cat *.js bad_file | wc -l',
       console.log('exec error: ' + error);
     }
 }); 
-```
+```js
 
 回调函数的参数是`error`，`stdout`，`stderr`。在成功时，`error`将会是`null`。在发生错误时，`error`将会是一个`Error`实例，`error.code`将会是子进程的退出码，`error.signal`将会被设置为结束进程的信号。
 

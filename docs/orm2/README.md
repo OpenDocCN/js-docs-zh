@@ -14,7 +14,7 @@
 
 ## 安装
 
-```
+```js
 npm install orm 
 ```
 
@@ -24,7 +24,7 @@ npm install orm
 
 `0.10.x`，`0.12.x` 和 `iojs-1.5` 版本的测试在 [Travis CI](https://travis-ci.org/) 上运行。如果你想要的话，可以在本地运行测试：
 
-```
+```js
 npm test 
 ```
 
@@ -50,7 +50,7 @@ npm test
 
 示例：
 
-```
+```js
 var orm = require("orm");
 
 orm.connect("mysql://username:password@host/database", function (err, db) {
@@ -110,7 +110,7 @@ orm.connect("mysql://username:password@host/database", function (err, db) {
 
 如果你使用了 Express，你可能想使用这一简单的中间件，使集成变得更容易。
 
-```
+```js
 var express = require('express');
 var orm = require('orm');
 var app = express();
@@ -156,13 +156,13 @@ app.get("/", function (req, res) {
 
 例如，使用 MySQL 要这样做：
 
-```
+```js
 $ npm install --save mysql@2.0.0-alpha8 
 ```
 
 你可以传递一个 URL 字符串来连接数据库，其中 scheme 为受支持的驱动，或者你可以传递一个带有连接参数的`Object`。
 
-```
+```js
 var orm = require('orm');
 
 orm.connect('mysql://root:password@localhost/test', function(err, db) {
@@ -175,7 +175,7 @@ orm.connect('mysql://root:password@localhost/test', function(err, db) {
 
 回调函数只在连接建立成功（或失败）时调用。如果你愿意的话，可以不传入回调函数，而是监听`connect`事件。
 
-```
+```js
 var orm = require('orm');
 
 var db = orm.connect('mysql://root:password@localhost/test');
@@ -203,7 +203,7 @@ db.on('connect', function(err) {
 
 ORM 模型受数据库连接约束，所以如果你需要“多租户”，即连接到不同的服务器或数据库，你可以使用像下面这样的方法：
 
-```
+```js
 // db.js
 var connections = {};
 
@@ -255,7 +255,7 @@ database('dbserver1', 'main', function(err, db) {
 
 如果你在连接 MySQL 数据库的时候遇到了如下错误：
 
-```
+```js
 Error: connect ECONNREFUSED
     at errnoException (net.js:670:11)
     at Object.afterConnect [as oncomplete] (net.js:661:19) 
@@ -263,7 +263,7 @@ Error: connect ECONNREFUSED
 
 你可以尝试添加`socketPath`参数：
 
-```
+```js
 var db = orm.connect({
     host:     'localhost',
     database: 'database',
@@ -284,7 +284,7 @@ var db = orm.connect({
 
 设置用于储存键值对。设置对象是`orm`（默认值）上的实例，之后会为每个`db`连接和每个定义过的`Model`建立快照。所以`orm.settings`上的更改只会作用于更改之后建立的连接，而`db.settings`会作用于更改之后定义的模型。
 
-```
+```js
 var orm = require("orm");
 
 orm.settings.set("some.deep.value", 123);
@@ -305,7 +305,7 @@ orm.connect("....", function (err, db) {
 
 默认设置的结构是这样的：
 
-```
+```js
 var Settings = {
     properties : {
         primary_key     : "id",
@@ -353,7 +353,7 @@ var Settings = {
 
 在连接之后，你可以使用连接对象（`db`）来定义你的模型。你需要指定模型的名称，一个用于描述的属性和一些（可选的）选项。下面是一个简短的例子：
 
-```
+```js
 var Person = db.define('person', {
   id:      {type: 'serial', key: true}, // the auto-incrementing primary key
   name:    {type: 'text'},
@@ -370,7 +370,7 @@ var Person = db.define('person', {
 
 这个模型叫做`person`（通常也是数据库里面表的名称），它有三个属性（`name`和`surname`为文本，`age`为数值）。如果你自己不指定任何键的话，默认的`id: { type: 'serial', key: true }`会添加进来。在这个例子中，有个模型方法叫做`fullName`。下面是这个模型的使用方法的示例：
 
-```
+```js
 Person.get(73, function(err, person) {
   if (err) throw err;
 
@@ -382,7 +382,7 @@ Person.get(73, function(err, person) {
 
 ## API
 
-```
+```js
 /**
  * @param {Object} props Property definitions
  * @param {Object} opts Options
@@ -432,7 +432,7 @@ db.define(props, opts)
 
 每个类型都有额外的选项。这个模型定义使用了它们中的绝大多数：
 
-```
+```js
 var Person = db.define("person", {
     name    : { type: "text", size: 50 },
     surname : { type: "text", defaultValue: "Doe" },
@@ -449,7 +449,7 @@ var Person = db.define("person", {
 
 如果你打算用默认选项，你可以使用原生类型来指定属性类型：
 
-```
+```js
 var Person = db.define("person", {
     name    : String,
     male    : Boolean,
@@ -463,7 +463,7 @@ var Person = db.define("person", {
 
 ## 将 ORM 字段映射到不同名称的数据库列中
 
-```
+```js
 var Person = db.define("person", {
     name    : { type: 'text', mapsTo: 'fullname' }
 }); 
@@ -475,7 +475,7 @@ ORM 属性`name`映射`person`表的`fullname`列。
 
 你可以向 ORM 添加你自己的类型，像这样：
 
-```
+```js
 db.defineType('numberArray', {
   datastoreType: function(prop) {
     return 'TEXT'
@@ -512,7 +512,7 @@ var LottoTicket = db.define('lotto_ticket', {
 
 `unique`验证器也构建于 ORM 中，可以这样来访问：
 
-```
+```js
 name: orm.enforce.unique("name already taken!")
 name: orm.enforce.unique({ scope: ['age'] }, "Sorry, name already taken for this age group")
 name: orm.enforce.unique({ ignoreCase: true }) // 'John' is same as 'john' (mysql is case insensitive by default) 
@@ -520,7 +520,7 @@ name: orm.enforce.unique({ ignoreCase: true }) // 'John' is same as 'john' (mysq
 
 你可以为模型的每个属性定义验证器。对于每个属性，你可以定义一个或多个验证器。你也可以使用预定义的验证器，或者自己新建。
 
-```
+```js
 var Person = db.define("person", {
     name : String,
     age  : Number
@@ -536,7 +536,7 @@ var Person = db.define("person", {
 
 保存一个对象的时候，如果由任何一个验证器验证失败，你都会得到一个带有属性名称和验证错误描述的`error`对象。这个描述可以帮助你弄清楚发生了什么。
 
-```
+```js
 var John = new Person({
     name : "",
     age : 20
@@ -548,7 +548,7 @@ John.save(function (err) {
 
 在第一个验证器验证失败之后，验证就停止了。如果你想要验证每个属性并且返回所有验证错误，你可以在全局或局部设置中更改这一行为：
 
-```
+```js
 var orm = require("orm");
 
 orm.settings.set("instance.returnAllErrors", true); // global or..
@@ -595,7 +595,7 @@ orm.connect("....", function (err, db) {
 
 对于所有`before*`钩子，你可以添加一个额外的参数到钩子函数中。这个函数用来告诉钩子应该继续执行下去还是中断。你或许已经从 Express 的工作流中熟悉了这一点。下面是一个示例：
 
-```
+```js
 var Person = db.define("person", {
     name    : String,
     surname : String
@@ -619,7 +619,7 @@ var Person = db.define("person", {
 
 **示例**
 
-```
+```js
 var Person = db.define("person", {
     name    : String,
     surname : String
@@ -664,7 +664,7 @@ hasOne 关联是一种多对一的关系，意思是你定义的模型可以有�
 
 ## 用法
 
-```
+```js
 Animal.hasOne(association_name [, association_model [, options ] ]); 
 ```
 
@@ -676,7 +676,7 @@ Animal.hasOne(association_name [, association_model [, options ] ]);
 
 ## 示例
 
-```
+```js
 Animal.hasOne("owner", Person); 
 ```
 
@@ -684,7 +684,7 @@ Animal.hasOne("owner", Person);
 
 这个关联也会创建一些额外的便利方法（叫做关联访问器）来帮助你管理它。访问器的名称也可以修改（同上，在选项里面），默认情况下，它们会拥有和关联名称相似的名称。例如，下面的代码展示了可以做类似这样的事情：
 
-```
+```js
 // assuming John is a Person..
 Animal.find({ name: "Deco" }).first(function (err, Deco) {
     Deco.setOwner(John, function (err) {
@@ -703,7 +703,7 @@ Animal.find({ name: "Deco" }).first(function (err, Deco) {
 
 有时你希望通过对面的模型来访问关联。在上面的例子中，是通过`Person`。你可以向关联传递一个选项来实现它。
 
-```
+```js
 Animal.hasOne('owner', Person, { reverse: "pets" }); 
 ```
 
@@ -736,7 +736,7 @@ Animal.hasOne('owner', Person, { reverse: "pets" });
 
 下列函数是可用的：
 
-```
+```js
 // 获取所有关联医生的列表
 patient.getDoctors(function(err, doctors) {
   // ...
@@ -781,7 +781,7 @@ bob.getPatients(function(err, patients) {
 
 要把医生关联到病人：
 
-```
+```js
 patient.addDoctor(surgeon, {why: 'remove appendix'}, function(err) {
   // ...
 });
@@ -796,7 +796,7 @@ surgeon.addPatient(patient, {why: 'remove appendix'}, function(err) {
 
 ## API
 
-```
+```js
 Model.hasMany(
   name,       // String. 关联名称
   otherModel, // Model. 要关联的模型
@@ -832,7 +832,7 @@ Model.hasMany(
 
 例如：
 
-```
+```js
 var Person = db.define("person", {
     name : String
 });
@@ -861,7 +861,7 @@ var PersonAddress = Person.extendsTo("address", {
 
 删除是一个类似的方法，但是它会删掉你模型涉及的所有表，即使不是 ORM 创建的。删除也有两种方式。
 
-```
+```js
 var orm = require("orm");
 
 orm.connect("....", function (err, db) {
@@ -892,7 +892,7 @@ orm.connect("....", function (err, db) {
 
 查找匹配标准的记录，可以链式查询（见下文）：
 
-```
+```js
 Person.find({status:'active'}, function(err, results) {
   // ...
 }); 
@@ -900,7 +900,7 @@ Person.find({status:'active'}, function(err, results) {
 
 你也可以限制结果的个数，这条语句限制结果为 10 个：
 
-```
+```js
 Person.find({status:'active'}, 10, function(err, results) {
   // ...
 }); 
@@ -912,7 +912,7 @@ Person.find({status:'active'}, 10, function(err, results) {
 
 通过主键来查找记录。
 
-```
+```js
 Person.get(1, function(err, person) {
   // ...
 }); 
@@ -922,7 +922,7 @@ Person.get(1, function(err, person) {
 
 只查找一个记录，和`find`的语法相似。
 
-```
+```js
 Person.one({status:'active'}, function(err, person) {
   // ...
 }); 
@@ -932,7 +932,7 @@ Person.one({status:'active'}, function(err, person) {
 
 获取所匹配记录的数量。
 
-```
+```js
 Person.count({status:'active'}, function(err, activePeopleCount) {
   // ...
 }); 
@@ -942,7 +942,7 @@ Person.count({status:'active'}, function(err, activePeopleCount) {
 
 测试匹配你的条件的记录是否存在。
 
-```
+```js
 Person.exists({id:1, status:'active'}, function(err, personIsActive) {
   // ...
 }); 
@@ -954,7 +954,7 @@ Person.exists({id:1, status:'active'}, function(err, personIsActive) {
 
 [`github.com/dresende/node-orm2/blob/v2.1.20/lib/AggregateFunctions.js#L36`](https://github.com/dresende/node-orm2/blob/v2.1.20/lib/AggregateFunctions.js#L36)
 
-```
+```js
 Person.find({status:'active'}, {limit:10}, function(err, res) {
 
 }); 
@@ -964,7 +964,7 @@ Person.find({status:'active'}, {limit:10}, function(err, res) {
 
 所有以逗号分隔的键值对在查询中都会以`AND`连接。你可以把逻辑运算符放在一系列条件的前面。
 
-```
+```js
 Person.find({or:[{col1: 1}, {col2: 2}]}, function(err, res) {
   // res 为 col1 == 1 或者 col2 == 2 的 Person
 }); 
@@ -976,7 +976,7 @@ Person.find({or:[{col1: 1}, {col2: 2}]}, function(err, res) {
 
 [`github.com/dresende/node-sql-query/blob/v0.1.23/lib/Where.js#L172`](https://github.com/dresende/node-sql-query/blob/v0.1.23/lib/Where.js#L172)
 
-```
+```js
 Person.find({id: [1, 2]}, function(err, persons) {
   // 查找 id 是 1 或者 2 的 Person （例如 WHERE id IN (1, 2) ）
 }); 
@@ -990,7 +990,7 @@ Person.find({id: [1, 2]}, function(err, persons) {
 
 ## 创建
 
-```
+```js
 var newRecord = {};
 newRecord.id = 1;
 newRecord.name = "John"
@@ -1001,7 +1001,7 @@ Person.create(newRecord, function(err, results) {
 
 ## 保存
 
-```
+```js
 Person.find({ surname: "Doe" }, function (err, people) {
     // SQL: "SELECT * FROM person WHERE surname = 'Doe'"
 
@@ -1023,7 +1023,7 @@ Person.find({ surname: "Doe" }, function (err, people) {
 
 如果你需要从一个模型中获取一些聚合值，你可以使用`Model.aggregate()`。下面通过一个例子来展示：
 
-```
+```js
 Person.aggregate({ surname: "Doe" }).min("age").max("age").get(function (err, min, max) {
     console.log("The youngest Doe guy has %d years, while the oldest is %d", min, max);
 }); 
@@ -1033,7 +1033,7 @@ Person.aggregate({ surname: "Doe" }).min("age").max("age").get(function (err, mi
 
 下面是一个展示如何使用`.groupBy()`的例子：
 
-```
+```js
 // 和 "select avg(weight), age from person where country='someCountry' group by age;" 相同
 Person.aggregate(["age"], { country: "someCountry" }).avg("weight").groupBy("age").get(function (err, stats) {
     // stats 是一个数组，每个记录都有 'age' 和 'avg_weight' 属性

@@ -11,7 +11,7 @@
 
 这些事件也是所有 Zepto 对象集合上的快捷方法。
 
-```
+```js
 <style>.delete { display: none; }</style>
 
 <ul id=items>

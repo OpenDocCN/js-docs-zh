@@ -7,7 +7,7 @@
 *   link
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1586 "View in source.")
 
-```
+```js
 _.templateSettings.imports._ 
 ```
 

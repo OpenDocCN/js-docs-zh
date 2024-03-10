@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L1494 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash._ "See the npm package.")
 
-```
+```js
 _(value) 
 ```
 
@@ -46,7 +46,7 @@ _(value)
 
 ### 示例
 
-```
+```js
 function square(n) {
   return n * n;
 }
@@ -75,7 +75,7 @@ _.isArray(squares.value());
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7163 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.chain "See the npm package.")
 
-```
+```js
 _.chain(value) 
 ```
 
@@ -93,7 +93,7 @@ _.chain(value)
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney',  'age': 36 },
   { 'user': 'fred',    'age': 40 },
@@ -119,7 +119,7 @@ var youngest = _
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7238 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.at "See the npm package.")
 
-```
+```js
 _.prototype.at([paths]) 
 ```
 
@@ -137,7 +137,7 @@ _.prototype.at([paths])
 
 ### 示例
 
-```
+```js
 var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
 
 _(object).at(['a[0].b.c', 'a[1]']).value();
@@ -155,7 +155,7 @@ _(['a', 'b', 'c']).at(0, 2).value();
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7286 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.chain "See the npm package.")
 
-```
+```js
 _.prototype.chain() 
 ```
 
@@ -167,7 +167,7 @@ _.prototype.chain()
 
 ### 示例
 
-```
+```js
 var users = [
   { 'user': 'barney', 'age': 36 },
   { 'user': 'fred',   'age': 40 }
@@ -194,7 +194,7 @@ _(users)
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7315 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.commit "See the npm package.")
 
-```
+```js
 _.prototype.commit() 
 ```
 
@@ -206,7 +206,7 @@ _.prototype.commit()
 
 ### 示例
 
-```
+```js
 var array = [1, 2];
 var wrapped = _(array).push(3);
 
@@ -232,7 +232,7 @@ console.log(array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7361 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.next "See the npm package.")
 
-```
+```js
 _.prototype.next() 
 ```
 
@@ -244,7 +244,7 @@ _.prototype.next()
 
 ### 示例
 
-```
+```js
 var wrapped = _([1, 2]);
 
 wrapped.next();
@@ -265,7 +265,7 @@ wrapped.next();
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7415 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.plant "See the npm package.")
 
-```
+```js
 _.prototype.plant(value) 
 ```
 
@@ -283,7 +283,7 @@ _.prototype.plant(value)
 
 ### 示例
 
-```
+```js
 function square(n) {
   return n * n;
 }
@@ -306,7 +306,7 @@ wrapped.value();
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7388 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.symbol.iterator "See the npm package.")
 
-```
+```js
 _.prototype.Symbol.iterator() 
 ```
 
@@ -318,7 +318,7 @@ _.prototype.Symbol.iterator()
 
 ### 示例
 
-```
+```js
 var wrapped = _([1, 2]);
 
 wrapped[Symbol.iterator]() === wrapped;
@@ -336,7 +336,7 @@ Array.from(wrapped);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7481 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.prototype.value "See the npm package.")
 
-```
+```js
 _.prototype.value() 
 ```
 
@@ -348,7 +348,7 @@ _.prototype.value()
 
 ### 示例
 
-```
+```js
 _([1, 2, 3]).value();
 // => [1, 2, 3] 
 ```
@@ -361,7 +361,7 @@ _([1, 2, 3]).value();
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7190 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tap "See the npm package.")
 
-```
+```js
 _.tap(value, interceptor) 
 ```
 
@@ -383,7 +383,7 @@ _.tap(value, interceptor)
 
 ### 示例
 
-```
+```js
 _([1, 2, 3])
  .tap(function(array) {
    // 改变传入的数组
@@ -402,7 +402,7 @@ _([1, 2, 3])
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7215 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.thru "See the npm package.")
 
-```
+```js
 _.thru(value, interceptor) 
 ```
 
@@ -424,7 +424,7 @@ _.thru(value, interceptor)
 
 ### 示例
 
-```
+```js
 _('  abc  ')
  .chain()
  .trim()
@@ -443,7 +443,7 @@ _('  abc  ')
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L7336 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.wrapperflatmap "See the npm package.")
 
-```
+```js
 _.wrapperFlatMap([iteratee=_.identity]) 
 ```
 
@@ -461,7 +461,7 @@ _.wrapperFlatMap([iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 function duplicate(n) {
   return [n, n];
 }

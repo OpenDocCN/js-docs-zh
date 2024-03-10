@@ -6,7 +6,7 @@ Backbone 视图几乎约定比他们的代码多 — 他们并不限定你的 HT
 
 **extend**`Backbone.View.extend(properties, [classProperties])` 开始创建自定义的视图类。 通常我们需要重载 render 函数，声明 events， 以及通过 `tagName`, `className`, 或 `id` 为视图指定根元素。
 
-```
+```js
 var DocumentRow = Backbone.View.extend({
 
   tagName: "li",
@@ -34,7 +34,7 @@ var DocumentRow = Backbone.View.extend({
 
 **constructor / initialize**`new View([options])` 有几个特殊的选项， 如果传入，则直接注册到视图中去： `model`, `collection`, `el`, `id`, `className`, `tagName`, `attributes` 和 `events`。 如果视图定义了一个**initialize**初始化函数， 首先创建视图时，它会立刻被调用。 如果希望创建一个指向 DOM 中已存在的元素的视图，传入该元素作为选项：`new View({el: existingElement})`。
 
-```
+```js
 var doc = documents.first();
 
 new DocumentRow({
@@ -45,7 +45,7 @@ new DocumentRow({
 
 **el**`view.el` 所有的视图都拥有一个 DOM 元素（**el** 属性），即使该元素仍未插入页面中去。 视图可以在任何时候渲染，然后一次性插入 DOM 中去，这样能尽量减少 reflows 和 repaints 从而获得高性能的 UI 渲染。 `this.el` 可以从视图的 `tagName`, `className`, `id` 和 `attributes` 创建，如果都未指定，**el** 会是一个空 `div`。
 
-```
+```js
 var ItemView = Backbone.View.extend({
   tagName: 'li'
 });
@@ -62,7 +62,7 @@ alert(item.el + ' ' + body.el);
 
 **$el**`view.$el` 一个视图元素的缓存 jQuery 对象。 一个简单的引用，而不是重新包装的 DOM 元素。
 
-```
+```js
 view.$el.show();
 
 listView.$el.append(itemView.el); 
@@ -74,7 +74,7 @@ listView.$el.append(itemView.el);
 
 **$ (jQuery)**`view.$(selector)` 如果页面中引入了 jQuery，每个视图都将拥有 **$** 函数，可以在视图元素查询作用域内运行。 如果使用该作用域内的 jQuery 函数，就不需要从列表中指定的元素获取模型的 ids 这种查询了，我们可以更多的依赖 HTML class 属性。 它等价于运行：`view.$el.find(selector)`。
 
-```
+```js
 ui.Chapter = Backbone.View.extend({
   serialize : function() {
     return {
@@ -88,7 +88,7 @@ ui.Chapter = Backbone.View.extend({
 
 **template**`view.template([data])` 虽然模板化的视图 不是 Backbone 直接提供的一个功能， 它往往是一个在你视图定义**template**函数很好的约定。 如此， 渲染你的视图时， 您方便地访问实例数据。 例如，使用 Underscore 的模板：
 
-```
+```js
 var LibraryView = Backbone.View.extend({
   template: _.template(...)
 }); 
@@ -96,7 +96,7 @@ var LibraryView = Backbone.View.extend({
 
 **render**`view.render()` **render** 默认实现是没有操作的。 重载本函数可以实现从模型数据渲染视图模板，并可用新的 HTML 更新 `this.el`。 推荐的做法是在 **render** 函数的末尾 `return this` 以开启链式调用。
 
-```
+```js
 var Bookmark = Backbone.View.extend({
   template: _.template(...),
   render: function() {
@@ -120,7 +120,7 @@ Backbone 并不知道您首选 HTML 模板的方法。 **render**（渲染） �
 
 搜索结果页面显示文档的视图看起来类似这样：
 
-```
+```js
 var DocumentView = Backbone.View.extend({
 
   events: {

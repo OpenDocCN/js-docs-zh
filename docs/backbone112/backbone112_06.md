@@ -8,7 +8,7 @@ web 应用程序通常需要为应用的重要位置提供可链接，可收藏�
 
 **extend**`Backbone.Router.extend(properties, [classProperties])` 开始创建一个自定义的路由类。当匹配了 URL 片段便执行定义的动作，并可以通过 routes 定义路由动作键值对。 请注意，你要避免在路由定义时使用前导斜杠：
 
-```
+```js
 var Workspace = Backbone.Router.extend({
 
   routes: {
@@ -40,7 +40,7 @@ var Workspace = Backbone.Router.extend({
 
 当访问者点击浏览器后退按钮，或者输入 URL ，如果匹配一个路由，此时会触发一个基于动作名称的 event， 其它对象可以监听这个路由并接收到通知。 下面的示例中，用户访问 `#help/uploading` 将从路由中触发 `route:help` 事件。
 
-```
+```js
 routes: {
   "help/:page":         "help",
   "download/*path":     "download",
@@ -49,7 +49,7 @@ routes: {
 } 
 ```
 
-```
+```js
 router.on("route:help", function(page) {
   ...
 }); 
@@ -59,7 +59,7 @@ router.on("route:help", function(page) {
 
 **route**`router.route(route, name, [callback])` 为路由对象手动创建路由，`route` 参数可以是 routing string（路由字符串） 或 正则表达式。 每个捕捉到的被传入的路由或正则表达式，都将作为参数传入回调函数（callback）。 一旦路由匹配， `name` 参数会触发 `"route:name"` 事件。如果`callback`参数省略 `router[name]`将被用来代替。 后来添加的路由可以覆盖先前声明的路由。
 
-```
+```js
 initialize: function(options) {
 
   // Matches #page/10, passing "10"
@@ -75,7 +75,7 @@ open: function(id) { ... }
 
 **navigate**`router.navigate(fragment, [options])` 每当你达到你的应用的一个点时，你想保存为一个 URL， 可以调用**navigate**以更新的 URL。 如果您也想调用路由功能， 设置**trigger**选项设置为`true`。 无需在浏览器的历史记录创建条目来更新 URL， 设置 **replace**选项设置为`true`。
 
-```
+```js
 openPage: function(pageNumber) {
   this.document.pages.at(pageNumber).open();
   this.navigate("page/" + pageNumber);
@@ -92,7 +92,7 @@ app.navigate("help/troubleshooting", {trigger: true, replace: true});
 
 **execute**`router.execute(callback, args)` 这种方法在路由内部被调用， 每当路由和其相应的**callback**匹配时被执行。 覆盖它来执行自定义解析或包装路由， 例如， 在传递他们给你的路由回调之前解析查询字符串，像这样：
 
-```
+```js
 var Router = Backbone.Router.extend({
   execute: function(callback, args) {
     args.push(parseQueryString(args.pop()));

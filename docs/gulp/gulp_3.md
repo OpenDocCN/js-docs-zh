@@ -126,7 +126,7 @@ npm 对每个人来说是免费的，你可以开发任何你想要开发的东�
 
 ### 一个插件大概会是怎么样的？
 
-```
+```js
 // through2 是一个对 node 的 transform streams 简单封装
 var through = require('through2');
 var gutil = require('gulp-util');
@@ -182,7 +182,7 @@ module.exports = gulpPrefixer;
 
 如果你的插件依赖着一个基于 buffer 处理的库，你可能会选择让你的插件以 buffer 的形式来处理 file.contents。让我们来实现一个在文件头部插入额外文本的插件：
 
-```
+```js
 var through = require('through2');
 var gutil = require('gulp-util');
 var PluginError = gutil.PluginError;
@@ -226,7 +226,7 @@ module.exports = gulpPrefixer;
 
 上述的插件可以这样使用：
 
-```
+```js
 var gulp = require('gulp');
 var gulpPrefixer = require('gulp-prefixer');
 
@@ -258,7 +258,7 @@ gulp.src('files/**/*.js')
 
 让我们来实现一个用于在文件头部插入一些文本的插件，这个插件支持 file.contents 所有可能的形式。
 
-```
+```js
 var through = require('through2');
 var gutil = require('gulp-util');
 var PluginError = gutil.PluginError;
@@ -312,7 +312,7 @@ module.exports = gulpPrefixer;
 
 上面的插件可以像这样使用：
 
-```
+```js
 var gulp = require('gulp');
 var gulpPrefixer = require('gulp-prefixer');
 
@@ -337,7 +337,7 @@ gulp.src('files/**/*.js', { buffer: false })
 
 ## 测试插件的流处理（streaming）模式
 
-```
+```js
 var assert = require('assert');
 var es = require('event-stream');
 var File = require('vinyl');
@@ -380,7 +380,7 @@ describe('gulp-prefixer', function() {
 
 ## 测试插件的 buffer 模式
 
-```
+```js
 var assert = require('assert');
 var es = require('event-stream');
 var File = require('vinyl');

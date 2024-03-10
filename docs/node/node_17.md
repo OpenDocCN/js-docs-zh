@@ -64,7 +64,7 @@
 
 `os.cpus`例子：
 
-```
+```js
 [ { model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
     speed: 2926,
     times:
@@ -137,7 +137,7 @@
 
 获取一个网络接口列表：
 
-```
+```js
 { lo:
    [ { address: '127.0.0.1',
        netmask: '255.0.0.0',

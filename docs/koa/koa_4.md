@@ -6,7 +6,7 @@ Koa Context 将 node 的 `request` 和 `response` 对象封装在一个单独的
 
 `context` 在每个 request 请求中被创建，在中间件中作为接收器(receiver)来引用，或者通过 `this` 标识符来引用：
 
-```
+```js
 app.use(function *(){
   this; // is the Context
   this.request; // is a koa Request
@@ -72,7 +72,7 @@ Koa 的 `Response` 对象。
 
 抛出包含 `.status` 属性的错误，默认为 `500`。该方法可以让 Koa 准确的响应处理状态。 Koa 支持以下组合：
 
-```
+```js
 this.throw(403)
 this.throw('name required', 400)
 this.throw(400, 'name required')
@@ -81,7 +81,7 @@ this.throw('something exploded')
 
 `this.throw('name required', 400)` 等价于：
 
-```
+```js
 var err = new Error('name required');
 err.status = 400;
 throw err; 

@@ -8,7 +8,7 @@
 
 4.  远程模块的设计，个人觉得让 define 承担了不应该承担的职责。比如
 
-    ```
+    ```js
     define("a", ["path/to/b.js"], "path/to/a.js")
     // 干了两件事情：
     // 给模块 a 动态添加了依赖 b
@@ -17,7 +17,7 @@
 
     上面两件事情，是否通过 config 来配置会更明确？比如
 
-    ```
+    ```js
     require.config({
       aliases: {
          "a": "path/to/a.js"
@@ -31,7 +31,7 @@
 
     在 SeaJS 里，通过增加 shim 配置来实现，比如
 
-    ```
+    ```js
     seajs.config({
      plugins: ["shim"], // 激活 shim 插件，有这个插件 shim 配置才生效
 

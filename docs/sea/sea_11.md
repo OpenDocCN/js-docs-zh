@@ -8,7 +8,7 @@
 
 如果项目遵循推荐的标准目录结构：
 
-```
+```js
 foo-module/
   |-- dist                    存放构建好的文件
   |-- src                     存放 js、css 等源码
@@ -19,14 +19,14 @@ foo-module/
 
 那么构建很简单。首先安装 spm 工具（spm2）：
 
-```
+```js
 $ npm install spm@2.x -g
 $ npm install spm-build@0.x -g 
 ```
 
 然后运行构建命令：
 
-```
+```js
 $ cd foo-module
 $ spm build 
 ```

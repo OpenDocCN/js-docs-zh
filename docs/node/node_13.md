@@ -8,7 +8,7 @@
 
 HTTP 消息头可能是一个类似于以下例子的对象：
 
-```
+```js
 { 'content-length': '123',
   'content-type': 'text/plain',
   'connection': 'keep-alive',
@@ -24,7 +24,7 @@ HTTP 消息头可能是一个类似于以下例子的对象：
 
 收到的原始消息头会被保留在`rawHeaders`属性中，它是一个形式如`[key, value, key2, value2, ...]`的数组。例如，之前的消息头可以有如下的`rawHeaders`：
 
-```
+```js
 [ 'ConTent-Length', '123456',
   'content-LENGTH', '123',
   'content-type', 'text/plain',
@@ -209,7 +209,7 @@ HTTP 消息头可能是一个类似于以下例子的对象：
 
 例子：
 
-```
+```js
 var body = 'hello world';
 response.writeHead(200, {
   'Content-Length': body.length,
@@ -239,7 +239,7 @@ response.writeHead(200, {
 
 例子：
 
-```
+```js
 response.statusCode = 404; 
 ```
 
@@ -251,7 +251,7 @@ response.statusCode = 404;
 
 例子：
 
-```
+```js
 response.statusMessage = 'Not found'; 
 ```
 
@@ -263,7 +263,7 @@ response.statusMessage = 'Not found';
 
 例子：
 
-```
+```js
 response.setHeader("Content-Type", "text/html");
 //or
 
@@ -286,7 +286,7 @@ response.setHeader("Set-Cookie", ["type=ninja", "language=javascript"]);
 
 例子：
 
-```
+```js
 var contentType = response.getHeader('content-type'); 
 ```
 
@@ -296,7 +296,7 @@ var contentType = response.getHeader('content-type');
 
 例子：
 
-```
+```js
 response.removeHeader("Content-Encoding"); 
 ```
 
@@ -320,7 +320,7 @@ response.removeHeader("Content-Encoding");
 
 注意，如果你要触发尾随消息，HTTP 要求传递一个包含报文头场列表的尾随头：
 
-```
+```js
 response.writeHead(200, { 'Content-Type': 'text/plain',
                           'Trailer': 'Content-MD5' });
 response.write(fileData);
@@ -365,7 +365,7 @@ response.end();
 
 例子：
 
-```
+```js
 var postData = querystring.stringify({
   'msg' : 'Hello World!'
 });
@@ -422,7 +422,7 @@ req.end();
 
 例子：
 
-```
+```js
 http.get("http://www.google.com/index.html", function(res) {
   console.log("Got response: " + res.statusCode);
 }).on('error', function(e) {
@@ -440,7 +440,7 @@ HTTP Agent 也把客户端的请求默认为使用`Connection:keep-alive`。如�
 
 当`socket`触发了`close`事件或者特殊的`agentRemove`事件的时候，套接字们从 agent 的资源池中移除。这意味着如果你打算保持一个 HTTP 请求长时间开启，并且不希望它保持在资源池中，那么你可以按照下列几行的代码做事：
 
-```
+```js
 http.get(options, function(res) {
   // Do stuff
 }).on("socket", function (socket) {
@@ -450,7 +450,7 @@ http.get(options, function(res) {
 
 另外，你可以使用`agent:false`来停用池：
 
-```
+```js
 http.get({
   hostname: 'localhost',
   port: 80,
@@ -474,7 +474,7 @@ new Agent([options])#
 
 为了配置它们中的任何一个，你必须创建你自己的`Agent`对象。
 
-```
+```js
 var http = require('http');
 var keepAliveAgent = new http.Agent({ keepAlive: true });
 options.agent = keepAliveAgent;
@@ -554,7 +554,7 @@ http.request(options, onResponseCallback);
 
 以下是一对客户端/服务器代码，展示如何监听`connect`事件。
 
-```
+```js
 var http = require('http');
 var net = require('net');
 var url = require('url');
@@ -617,7 +617,7 @@ Emitted each time a server responds to a request with an upgrade. If this event 
 
 以下是一对客户端/服务器代码，展示如何监听`upgrade`事件。
 
-```
+```js
 var http = require('http');
 
 // Create an HTTP server
@@ -738,7 +738,7 @@ srv.listen(1337, '127.0.0.1', function() {
 
 只读的头名称和值映射。头名称是小写的，例子：
 
-```
+```js
 // Prints something like:
 //
 // { 'user-agent': 'curl/7.22.0',
@@ -755,7 +755,7 @@ console.log(request.headers);
 
 头名称不是必须小写的，并且重复也没有被合并。
 
-```
+```js
 // Prints something like:
 //
 // [ 'user-agent',
@@ -798,7 +798,7 @@ console.log(request.rawHeaders);
 
 请求的 URL 字符串。这仅仅只包含实际 HTTP 请求中的 URL。如果请求是：
 
-```
+```js
 GET /status?name=ryan HTTP/1.1\r\n
 Accept: text/plain\r\n
 \r\n 
@@ -806,13 +806,13 @@ Accept: text/plain\r\n
 
 那么`request.url`将是：
 
-```
+```js
 '/status?name=ryan' 
 ```
 
 如果你想分块地解释 URL。你可以调用`require('url').parse(request.url)`。例子：
 
-```
+```js
 iojs> require('url').parse('/status?name=ryan')
 { href: '/status?name=ryan',
   search: '?name=ryan',
@@ -822,7 +822,7 @@ iojs> require('url').parse('/status?name=ryan')
 
 如果你想从查询字符串中提取参数，你可以使用`require('querystring').parse`函数，或者给`require('url').parse`方法的第二个参数传递`true`，例子：
 
-```
+```js
 iojs> require('url').parse('/status?name=ryan', true)
 { href: '/status?name=ryan',
   search: '?name=ryan',

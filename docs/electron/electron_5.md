@@ -33,7 +33,7 @@ Electron 的源代码主要依据 Chromium 的拆分约定被拆成了许多部�
 
 ## 源代码的结构
 
-```
+```js
 Electron
 ├──atom - Electron 的源代码
 |  ├── app - 系统入口代码
@@ -135,7 +135,7 @@ Electron 使用 [gyp](https://gyp.gsrc.io/) 来生成项目 ，使用 [ninja](ht
 
 默认，`libchromiumcontent` 是从 Amazon Web Services 上下载下来的.如果设置了 `LIBCHROMIUMCONTENT_MIRROR` 环境变量，bootstrap 脚本会从这里下载下来. [`libchromiumcontent-qiniu-mirror`](https://github.com/hokein/libchromiumcontent-qiniu-mirror) 是 `libchromiumcontent` 的映射.如果你不能连接 AWS，你可以切换下载路径：`export LIBCHROMIUMCONTENT_MIRROR=http://7xk3d2.dl1.z0.glb.clouddn.com/` 如果只是想快速搭建一个 Electron 的测试或开发环境，可以通过 `--dev` 参数只下载共享版本库:
 
-```
+```js
 $ ./script/bootstrap.py --dev
 $ ./script/build.py -c D 
 ```
@@ -170,7 +170,7 @@ $ ./script/build.py -c D
 
 ## 获取代码
 
-```
+```js
 $ git clone https://github.com/electron/electron.git 
 ```
 
@@ -178,7 +178,7 @@ $ git clone https://github.com/electron/electron.git
 
 bootstrap 脚本也是必要下载的构建依赖，来创建项目文件.注意我们使用的是 [ninja](https://ninja-build.org/) 来构建 Electron，所以没有生成 Xcode 项目.
 
-```
+```js
 $ cd electron
 $ ./script/bootstrap.py -v 
 ```
@@ -187,13 +187,13 @@ $ ./script/bootstrap.py -v
 
 创建 `Release` 、 `Debug` target:
 
-```
+```js
 $ ./script/build.py 
 ```
 
 可以只创建 `Debug` target:
 
-```
+```js
 $ ./script/build.py -c D 
 ```
 
@@ -207,13 +207,13 @@ $ ./script/build.py -c D
 
 测试你的修改是否符合项目代码风格，使用:
 
-```
+```js
 $ ./script/cpplint.py 
 ```
 
 测试有效性使用:
 
-```
+```js
 $ ./script/test.py 
 ```
 
@@ -241,7 +241,7 @@ $ ./script/test.py
 
 ## 获取代码
 
-```
+```js
 $ git clone https://github.com/electron/electron.git 
 ```
 
@@ -249,7 +249,7 @@ $ git clone https://github.com/electron/electron.git
 
 bootstrap 脚本也是必要下载的构建依赖，来创建项目文件.注意我们使用的是 `ninja` 来构建 Electron，所以没有生成 Visual Studio 项目.
 
-```
+```js
 $ cd electron
 $ python script\bootstrap.py -v 
 ```
@@ -258,13 +258,13 @@ $ python script\bootstrap.py -v
 
 创建 `Release` 、 `Debug` target:
 
-```
+```js
 $ python script\build.py 
 ```
 
 可以只创建 `Debug` target:
 
-```
+```js
 $ python script\build.py -c D 
 ```
 
@@ -274,7 +274,7 @@ $ python script\build.py -c D
 
 为了构建 64 位的 target,在运行 bootstrap 脚本的时候需要使用 `--target_arch=x64` :
 
-```
+```js
 $ python script\bootstrap.py -v --target_arch=x64 
 ```
 
@@ -284,13 +284,13 @@ $ python script\bootstrap.py -v --target_arch=x64
 
 测试你的修改是否符合项目代码风格，使用:
 
-```
+```js
 $ python script\cpplint.py 
 ```
 
 测试有效性使用:
 
-```
+```js
 $ python script\test.py 
 ```
 
@@ -298,7 +298,7 @@ $ python script\test.py
 
 运行 release 构建使用 :
 
-```
+```js
 $ python script\test.py -R 
 ```
 
@@ -316,7 +316,7 @@ $ python script\test.py -R
 
 如果在 Cygwin 下构建的，你可能会看到 `bootstrap.py` 失败并且附带下面错误 :
 
-```
+```js
 Assertion failed: ((handle))->activecnt >= 0, file src\win\pipe.c, line 1430
 
 Traceback (most recent call last):
@@ -333,7 +333,7 @@ subprocess.CalledProcessError: Command '['npm.cmd', 'install']' returned non-zer
 
 这是由同时使用 Cygwin Python 和 Win32 Node 造成的 bug.解决办法就是使用 Win32 Python 执行 bootstrap 脚本 (假定你已经在目录 `C:\Python27` 下安装了 Python):
 
-```
+```js
 $ /cygdrive/c/Python27/python.exe script/bootstrap.py 
 ```
 
@@ -345,7 +345,7 @@ $ /cygdrive/c/Python27/python.exe script/bootstrap.py
 
 简单创建目录 [应该可以解决问题](http://stackoverflow.com/a/25095327/102704):
 
-```
+```js
 $ mkdir ~\AppData\Roaming\npm 
 ```
 
@@ -368,7 +368,7 @@ $ mkdir ~\AppData\Roaming\npm
 
 在 Ubuntu, 安装下面的库 :
 
-```
+```js
 $ sudo apt-get install build-essential clang libdbus-1-dev libgtk2.0-dev \
                        libnotify-dev libgnome-keyring-dev libgconf2-dev \
                        libasound2-dev libcap-dev libcups2-dev libxtst-dev \
@@ -377,7 +377,7 @@ $ sudo apt-get install build-essential clang libdbus-1-dev libgtk2.0-dev \
 
 在 Fedora, 安装下面的库 :
 
-```
+```js
 $ sudo yum install clang dbus-devel gtk2-devel libnotify-devel libgnome-keyring-devel \
                    xorg-x11-server-utils libcap-devel cups-devel libXtst-devel \
                    alsa-lib-devel libXrandr-devel GConf2-devel nss-devel 
@@ -391,7 +391,7 @@ $ sudo yum install clang dbus-devel gtk2-devel libnotify-devel libgnome-keyring-
 
 ## 获取代码
 
-```
+```js
 $ git clone https://github.com/electron/electron.git 
 ```
 
@@ -399,7 +399,7 @@ $ git clone https://github.com/electron/electron.git
 
 bootstrap 脚本也是必要下载的构建依赖，来创建项目文件.需要使用 Python 2.7.x 来让脚本成功执行.正确下载文件会花费较长的时间. 注意我们使用的是 `ninja` 来构建 Electron，所以没有生成 `Makefile` 项目.
 
-```
+```js
 $ cd electron
 $ ./script/bootstrap.py -v 
 ```
@@ -408,14 +408,14 @@ $ ./script/bootstrap.py -v
 
 如果想创建一个 `arm` target ，应当还要下载下面的依赖 :
 
-```
+```js
 $ sudo apt-get install libc6-dev-armhf-cross linux-libc-dev-armhf-cross \
                        g++-arm-linux-gnueabihf 
 ```
 
 为了编译 `arm` 或 `ia32` targets, 你应当为 `bootstrap.py` 脚本使用 `--target_arch` 参数:
 
-```
+```js
 $ ./script/bootstrap.py -v --target_arch=arm 
 ```
 
@@ -423,13 +423,13 @@ $ ./script/bootstrap.py -v --target_arch=arm
 
 创建 `Release` 、 `Debug` target:
 
-```
+```js
 $ ./script/build.py 
 ```
 
 这个脚本也许会在目录 `out/R` 下创建一个巨大的可执行的 Electron . 文件大小或许会超过 1.3 gigabytes. 原因是 Release target 二进制文件包含了 调试符号 .运行 `create-dist.py` 脚本来减小文件的 size :
 
-```
+```js
 $ ./script/create-dist.py 
 ```
 
@@ -437,7 +437,7 @@ $ ./script/create-dist.py
 
 可以只创建 `Debug` target:
 
-```
+```js
 $ ./script/build.py -c D 
 ```
 
@@ -447,7 +447,7 @@ $ ./script/build.py -c D
 
 删除构建文件 :
 
-```
+```js
 $ ./script/clean.py 
 ```
 
@@ -459,7 +459,7 @@ $ ./script/clean.py
 
 预构建的 `clang` 会尝试链接到 `libtinfo.so.5`. 取决于 host 架构, 适当的使用 `libncurses`:
 
-```
+```js
 $ sudo ln -s /usr/lib/libncurses.so.5 /usr/lib/libtinfo.so.5 
 ```
 
@@ -467,13 +467,13 @@ $ sudo ln -s /usr/lib/libncurses.so.5 /usr/lib/libtinfo.so.5
 
 测试你的修改是否符合项目代码风格，使用:
 
-```
+```js
 $ ./script/cpplint.py 
 ```
 
 测试有效性使用:
 
-```
+```js
 $ ./script/test.py 
 ```
 
@@ -491,13 +491,13 @@ Electron 使用的官方 symbol 服务器地址为 `http://54.249.141.255:8086/a
 
 Windbg symbol 路径被配制为一个限制带星号字符的字符串. 要只使用 Electron 的 symbol 服务器, 将下列记录添加到你的 symbol 路径 (**注意:** 如果你愿意使用一个不同的地点来下载 symbols，你可以在你的电脑中使用任何可写的目录来代替 `c:\code\symbols`):
 
-```
+```js
 SRV*c:\code\symbols\*http://54.249.141.255:8086/atom-shell/symbols 
 ```
 
 使用 Windbg 菜单或通过输入 `.sympath` 命令，在环境中设置一个 `_NT_SYMBOL_PATH` 字符串.如果你也想从微软的 symbol 服务器获得 symbols ，你应当首先将它们先列出来 :
 
-```
+```js
 SRV*c:\code\symbols\*http://msdl.microsoft.com/download/symbols;SRV*c:\code\symbols\*http://54.249.141.255:8086/atom-shell/symbols 
 ```
 
@@ -509,7 +509,7 @@ SRV*c:\code\symbols\*http://msdl.microsoft.com/download/symbols;SRV*c:\code\symb
 
 在 Windbg 中输入下列命令，打印出未什么 symbols 没有加载 :
 
-```
+```js
 > !sym noisy
 > .reload /f chromiumcontent.dll 
 ```

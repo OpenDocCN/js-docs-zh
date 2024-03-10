@@ -10,7 +10,7 @@
 
 `options`是一个包含下列默认值的对象：
 
-```
+```js
 {
   allowHalfOpen: false,
   pauseOnConnect: false
@@ -23,7 +23,7 @@
 
 以下是一个应答服务器的例子，监听 8124 端口：
 
-```
+```js
 var net = require('net');
 var server = net.createServer(function(c) { //'connection' listener
   console.log('client connected');
@@ -40,19 +40,19 @@ server.listen(8124, function() { //'listening' listener
 
 使用`telnet`测试：
 
-```
+```js
 telnet localhost 8124 
 ```
 
 想要监听`socket``/tmp/echo.sock`，只需改变倒数第三行：
 
-```
+```js
 server.listen('/tmp/echo.sock', function() { //'listening' listener 
 ```
 
 使用`nc`连接一个 UNIX domain socket 服务器：
 
-```
+```js
 nc -U /tmp/echo.sock 
 ```
 
@@ -68,7 +68,7 @@ nc -U /tmp/echo.sock
 
 下面是一个上文应答服务器的客户端的例子：
 
-```
+```js
 var net = require('net');
 var client = net.connect({port: 8124},
     function() { //'connect' listener
@@ -86,7 +86,7 @@ client.on('end', function() {
 
 要连接`socket``/tmp/echo.sock`只需要改变第二行为：
 
-```
+```js
 var client = net.connect({path: '/tmp/echo.sock'}); 
 ```
 
@@ -122,7 +122,7 @@ var client = net.connect({path: '/tmp/echo.sock'});
 
 有些用户可能遇到的情况是收到`EADDRINUSE`错误。这意味着另一个服务器已经使用了该端口。一个解决的办法是等待一段时间后重试。
 
-```
+```js
 server.on('error', function (e) {
   if (e.code == 'EADDRINUSE') {
     console.log('Address in use, retrying...');
@@ -149,7 +149,7 @@ server.on('error', function (e) {
 
 在 Windows 中，`local doamin`使用一个命名管道（named pipe）实现。`path`必须指向`\\?\pipe\`或`\\.\pipe\.`中的一个条目，但是后者可能会做一些命名管道的处理，如处理`..`序列。除去表现，命名管道空间是平坦的（flat）。管道不会持续存在，它们将在最后一个它们的引用关闭后被删除。不要忘记，由于`JavaScript`的字符串转义，你必须在指定`path`时使用双反斜杠：
 
-```
+```js
 net.createServer().listen(
     path.join('\\\\?\\pipe', process.cwd(), 'myctl')) 
 ```
@@ -182,7 +182,7 @@ net.createServer().listen(
 
 如果`exclusive`是`false`（默认），那么工作集群（cluster workers）将会使用相同的底层句柄，处理的连接的职责将会被它们共享。如果`exclusive`是`true`，那么句柄是不被共享的，企图共享将得到一个报错的结果。下面是一个监听独有端口的例子：
 
-```
+```js
 server.listen({
   host: 'localhost',
   port: 80,
@@ -200,7 +200,7 @@ server.listen({
 
 例子：
 
-```
+```js
 var server = net.createServer(function (socket) {
   socket.end("goodbye\n");
 });
@@ -278,7 +278,7 @@ server.listen(function() {
 
 `options`是一个有以下默认值的对象：
 
-```
+```js
 { fd: null
   allowHalfOpen: false,
   readable: false,

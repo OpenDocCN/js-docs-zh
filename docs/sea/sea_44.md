@@ -9,7 +9,7 @@
 
 Node.js 环境下，可以通过命令行下载：
 
-```
+```js
 $ npm install spm -g
 $ spm install seajs 
 ```

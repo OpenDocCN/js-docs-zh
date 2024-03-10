@@ -8,7 +8,7 @@
 
 重要提示：`dgram.Socket#bind()`的表现在 v0.10 中被改变，并且现在总是异步的，如果你有像这样的代码：
 
-```
+```js
 var s = dgram.createSocket('udp4');
 s.bind(1234);
 s.addMembership('224.0.0.114'); 
@@ -16,7 +16,7 @@ s.addMembership('224.0.0.114');
 
 你必须改成这样：
 
-```
+```js
 var s = dgram.createSocket('udp4');
 s.bind(1234, function() {
   s.addMembership('224.0.0.114');
@@ -60,7 +60,7 @@ s.bind(1234, function() {
 
 当在`socket`中一个新的数据报可用时触发。`msg`是一个`buffer`并且`rinfo`是一个包含发送者地址信息的对象：
 
-```
+```js
 socket.on('message', function(msg, rinfo) {
   console.log('Received %d bytes from %s:%d\n',
               msg.length, rinfo.address, rinfo.port);
@@ -102,7 +102,7 @@ socket.on('message', function(msg, rinfo) {
 
 一个向`localhost`上的一个随机端口发送 UDP 报文的例子：
 
-```
+```js
 var dgram = require('dgram');
 var message = new Buffer("Some bytes");
 var client = dgram.createSocket("udp4");
@@ -137,7 +137,7 @@ IPv4/v6 数据报的最大大小取决于`MTU`（最大传输单位），和`Pay
 
 一个监听 41234 端口的 UDP 服务器：
 
-```
+```js
 var dgram = require("dgram");
 
 var server = dgram.createSocket("udp4");
@@ -174,7 +174,7 @@ server.bind(41234);
 
 如`exclusive`为`false`（默认），那么集群的工作进程将会使用相同的底层句柄，允许共享处理连接的职责。当为`true`时，句柄不被共享，企图共享端口会导致一个错误。一个监听一个`exclusive`端口的例子：
 
-```
+```js
 socket.bind({
   address: 'localhost',
   port: 8000,

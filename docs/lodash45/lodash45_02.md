@@ -6,7 +6,7 @@
 
 安装 [lodash-cli](https://npmjs.org/package/lodash-cli) 来作为 `lodash` 全局命令行工具:
 
-```
+```js
 $ {sudo -H} npm i -g npm
 $ {sudo -H} npm i -g lodash-cli
 $ lodash -h 
@@ -16,25 +16,25 @@ $ lodash -h
 
 *   兼容版本构建，同时支持新旧运行环境，使用 `compat` 修饰。 *(默认)*
 
-```
+```js
 lodash compat 
 ```
 
 *   现代版本构建，针对新的环境，包括 [ES5](https://es5.github.io/)/ES6 支持，使用 `modern` 修饰。
 
-```
+```js
 lodash modern 
 ```
 
 *   严格模式版本构建, 开启 [ES 严格模式](https://es5.github.io/#C)，使用 `strict` 修饰。
 
-```
+```js
 lodash strict 
 ```
 
 *   模块化版本构建，拆散 lodash 为各个模块，使用 `modularize` 修饰。
 
-```
+```js
 lodash modularize 
 ```
 
@@ -42,55 +42,55 @@ lodash modularize
 
 *   使用 `category` 命令以逗号分隔的方式传入需要的函数分类。可用的函数分类有： *“array”*, *“chain”*, *“collection”*, *“date”*, *“function”*, *“lang”*, *“object”*, *“number”*, *“string”*, & *“utility”*=。
 
-```
+```js
 lodash category=collection,function 
 ```
 
 *   使用 `exports` 命令以逗号分隔的方式传入导出 `lodash` 函数的方式，可用的方式有： *“amd”*, *“commonjs”*, *“es”*, *“global”*, *“iojs”*, *“node”*, *“npm”*, *“none”*, & *“umd”*.
 
-```
+```js
 lodash exports=amd,commonjs,iojs 
 ```
 
 *   使用 `iife` 命令指定代码替换 包裹 lodash 的 [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)。
 
-```
+```js
 lodash iife="!function(window,undefined){%output%}(this)" 
 ```
 
 *   使用 `include` 命令以逗号分隔的方式传入需要包含的函数。
 
-```
+```js
 lodash include=each,filter,map 
 ```
 
 *   使用 `minus` 命令以逗号分隔的方式传入需要删减的函数/分类。
 
-```
+```js
 lodash modern minus=result,shuffle 
 ```
 
 *   使用 `plus` 命令以逗号分隔的方式传入需要补充的函数/分类。
 
-```
+```js
 lodash category=array plus=random,template 
 ```
 
 *   使用 `template` 命令传入路径相匹配的文件生成预编译模板。 **注意:** 预编译模板分配在 `_.templates` 对象上。
 
-```
+```js
 lodash template="./*.jst" 
 ```
 
 *   使用 `settings` 命令设置预编译模板时的模板语法。
 
-```
+```js
 lodash settings="{interpolate:/\{\{([\s\S]+?)\}\}/g}" 
 ```
 
 *   使用 `moduleId` 命令指定 lodash 的 AMD module ID 或 包含 lodash 的编译模板的 module ID。指定为 `none` 表示创建编译模板不依赖 lodash。
 
-```
+```js
 lodash moduleId=underscore 
 ```
 
@@ -104,7 +104,7 @@ lodash moduleId=underscore
 
 另外还支持以下选项：
 
-```
+```js
 -c, --stdout .......... 输出到 stdout(译注：类似直接输出在终端那样)
 -d, --development ..... 输出非最小化的开发代码
 -h, --help ............ 显示帮助信息

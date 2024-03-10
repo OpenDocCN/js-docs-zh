@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9262 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.castarray "See the npm package.")
 
-```
+```js
 _.castArray(value) 
 ```
 
@@ -26,7 +26,7 @@ _.castArray(value)
 
 ### 示例
 
-```
+```js
 _.castArray(1);
 // => [1]
 
@@ -58,7 +58,7 @@ console.log(_.castArray(array) === array);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9294 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.clone "See the npm package.")
 
-```
+```js
 _.clone(value) 
 ```
 
@@ -78,7 +78,7 @@ _.clone(value)
 
 ### 示例
 
-```
+```js
 var objects = [{ 'a': 1 }, { 'b': 2 }];
 
 var shallow = _.clone(objects);
@@ -94,7 +94,7 @@ console.log(shallow[0] === objects[0]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9346 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.clonedeep "See the npm package.")
 
-```
+```js
 _.cloneDeep(value) 
 ```
 
@@ -112,7 +112,7 @@ _.cloneDeep(value)
 
 ### 示例
 
-```
+```js
 var objects = [{ 'a': 1 }, { 'b': 2 }];
 
 var deep = _.cloneDeep(objects);
@@ -128,7 +128,7 @@ console.log(deep[0] === objects[0]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9376 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.clonedeepwith "See the npm package.")
 
-```
+```js
 _.cloneDeepWith(value, [customizer]) 
 ```
 
@@ -150,7 +150,7 @@ _.cloneDeepWith(value, [customizer])
 
 ### 示例
 
-```
+```js
 function customizer(value) {
   if (_.isElement(value)) {
     return value.cloneNode(true);
@@ -175,7 +175,7 @@ console.log(el.childNodes.length);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9326 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.clonewith "See the npm package.")
 
-```
+```js
 _.cloneWith(value, [customizer]) 
 ```
 
@@ -197,7 +197,7 @@ _.cloneWith(value, [customizer])
 
 ### 示例
 
-```
+```js
 function customizer(value) {
   if (_.isElement(value)) {
     return value.cloneNode(false);
@@ -222,7 +222,7 @@ console.log(el.childNodes.length);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9409 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.eq "See the npm package.")
 
-```
+```js
 _.eq(value, other) 
 ```
 
@@ -244,7 +244,7 @@ _.eq(value, other)
 
 ### 示例
 
-```
+```js
 var object = { 'user': 'fred' };
 var other = { 'user': 'fred' };
 
@@ -272,7 +272,7 @@ _.eq(NaN, NaN);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9433 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.gt "See the npm package.")
 
-```
+```js
 _.gt(value, other) 
 ```
 
@@ -294,7 +294,7 @@ _.gt(value, other)
 
 ### 示例
 
-```
+```js
 _.gt(3, 1);
 // => true
 
@@ -313,7 +313,7 @@ _.gt(1, 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9457 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.gte "See the npm package.")
 
-```
+```js
 _.gte(value, other) 
 ```
 
@@ -335,7 +335,7 @@ _.gte(value, other)
 
 ### 示例
 
-```
+```js
 _.gte(3, 1);
 // => true
 
@@ -354,7 +354,7 @@ _.gte(1, 3);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9477 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isarguments "See the npm package.")
 
-```
+```js
 _.isArguments(value) 
 ```
 
@@ -372,7 +372,7 @@ _.isArguments(value)
 
 ### 示例
 
-```
+```js
 _.isArguments(function() { return arguments; }());
 // => true
 
@@ -388,7 +388,7 @@ _.isArguments([1, 2, 3]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9506 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isarray "See the npm package.")
 
-```
+```js
 _.isArray(value) 
 ```
 
@@ -406,7 +406,7 @@ _.isArray(value)
 
 ### 示例
 
-```
+```js
 _.isArray([1, 2, 3]);
 // => true
 
@@ -428,7 +428,7 @@ _.isArray(_.noop);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9524 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isarraybuffer "See the npm package.")
 
-```
+```js
 _.isArrayBuffer(value) 
 ```
 
@@ -446,7 +446,7 @@ _.isArrayBuffer(value)
 
 ### 示例
 
-```
+```js
 _.isArrayBuffer(new ArrayBuffer(2));
 // => true
 
@@ -462,7 +462,7 @@ _.isArrayBuffer(new Array(2));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9551 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isarraylike "See the npm package.")
 
-```
+```js
 _.isArrayLike(value) 
 ```
 
@@ -480,7 +480,7 @@ _.isArrayLike(value)
 
 ### 示例
 
-```
+```js
 _.isArrayLike([1, 2, 3]);
 // => true
 
@@ -502,7 +502,7 @@ _.isArrayLike(_.noop);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9577 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isarraylikeobject "See the npm package.")
 
-```
+```js
 _.isArrayLikeObject(value) 
 ```
 
@@ -520,7 +520,7 @@ _.isArrayLikeObject(value)
 
 ### 示例
 
-```
+```js
 _.isArrayLikeObject([1, 2, 3]);
 // => true
 
@@ -542,7 +542,7 @@ _.isArrayLikeObject(_.noop);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9597 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isboolean "See the npm package.")
 
-```
+```js
 _.isBoolean(value) 
 ```
 
@@ -560,7 +560,7 @@ _.isBoolean(value)
 
 ### 示例
 
-```
+```js
 _.isBoolean(false);
 // => true
 
@@ -576,7 +576,7 @@ _.isBoolean(null);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9618 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isbuffer "See the npm package.")
 
-```
+```js
 _.isBuffer(value) 
 ```
 
@@ -594,7 +594,7 @@ _.isBuffer(value)
 
 ### 示例
 
-```
+```js
 _.isBuffer(new Buffer(2));
 // => true
 
@@ -610,7 +610,7 @@ _.isBuffer(new Uint8Array(2));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9638 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isdate "See the npm package.")
 
-```
+```js
 _.isDate(value) 
 ```
 
@@ -628,7 +628,7 @@ _.isDate(value)
 
 ### 示例
 
-```
+```js
 _.isDate(new Date);
 // => true
 
@@ -644,7 +644,7 @@ _.isDate('Mon April 23 2012');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9658 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.iselement "See the npm package.")
 
-```
+```js
 _.isElement(value) 
 ```
 
@@ -662,7 +662,7 @@ _.isElement(value)
 
 ### 示例
 
-```
+```js
 _.isElement(document.body);
 // => true
 
@@ -678,7 +678,7 @@ _.isElement('<body>');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9688 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isempty "See the npm package.")
 
-```
+```js
 _.isEmpty(value) 
 ```
 
@@ -696,7 +696,7 @@ _.isEmpty(value)
 
 ### 示例
 
-```
+```js
 _.isEmpty(null);
 // => true
 
@@ -721,7 +721,7 @@ _.isEmpty({ 'a': 1 });
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9726 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isequal "See the npm package.")
 
-```
+```js
 _.isEqual(value, other) 
 ```
 
@@ -745,7 +745,7 @@ _.isEqual(value, other)
 
 ### 示例
 
-```
+```js
 var object = { 'user': 'fred' };
 var other = { 'user': 'fred' };
 
@@ -764,7 +764,7 @@ object === other;
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9760 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isequalwith "See the npm package.")
 
-```
+```js
 _.isEqualWith(value, other, [customizer]) 
 ```
 
@@ -790,7 +790,7 @@ _.isEqualWith(value, other, [customizer])
 
 ### 示例
 
-```
+```js
 function isGreeting(value) {
   return /^h(?:i|ello)$/.test(value);
 }
@@ -816,7 +816,7 @@ _.isEqualWith(array, other, customizer);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9783 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.iserror "See the npm package.")
 
-```
+```js
 _.isError(value) 
 ```
 
@@ -834,7 +834,7 @@ _.isError(value)
 
 ### 示例
 
-```
+```js
 _.isError(new Error);
 // => true
 
@@ -850,7 +850,7 @@ _.isError(Error);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9815 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isfinite "See the npm package.")
 
-```
+```js
 _.isFinite(value) 
 ```
 
@@ -870,7 +870,7 @@ _.isFinite(value)
 
 ### 示例
 
-```
+```js
 _.isFinite(3);
 // => true
 
@@ -892,7 +892,7 @@ _.isFinite(Infinity);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9835 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isfunction "See the npm package.")
 
-```
+```js
 _.isFunction(value) 
 ```
 
@@ -910,7 +910,7 @@ _.isFunction(value)
 
 ### 示例
 
-```
+```js
 _.isFunction(_);
 // => true
 
@@ -926,7 +926,7 @@ _.isFunction(/abc/);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9867 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isinteger "See the npm package.")
 
-```
+```js
 _.isInteger(value) 
 ```
 
@@ -946,7 +946,7 @@ _.isInteger(value)
 
 ### 示例
 
-```
+```js
 _.isInteger(3);
 // => true
 
@@ -968,7 +968,7 @@ _.isInteger('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9895 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.islength "See the npm package.")
 
-```
+```js
 _.isLength(value) 
 ```
 
@@ -988,7 +988,7 @@ _.isLength(value)
 
 ### 示例
 
-```
+```js
 _.isLength(3);
 // => true
 
@@ -1010,7 +1010,7 @@ _.isLength('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9970 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.ismap "See the npm package.")
 
-```
+```js
 _.isMap(value) 
 ```
 
@@ -1028,7 +1028,7 @@ _.isMap(value)
 
 ### 示例
 
-```
+```js
 _.isMap(new Map);
 // => true
 
@@ -1044,7 +1044,7 @@ _.isMap(new WeakMap);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9995 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.ismatch "See the npm package.")
 
-```
+```js
 _.isMatch(object, source) 
 ```
 
@@ -1068,7 +1068,7 @@ _.isMatch(object, source)
 
 ### 示例
 
-```
+```js
 var object = { 'user': 'fred', 'age': 40 };
 
 _.isMatch(object, { 'age': 40 });
@@ -1086,7 +1086,7 @@ _.isMatch(object, { 'age': 36 });
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10029 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.ismatchwith "See the npm package.")
 
-```
+```js
 _.isMatchWith(object, source, [customizer]) 
 ```
 
@@ -1112,7 +1112,7 @@ _.isMatchWith(object, source, [customizer])
 
 ### 示例
 
-```
+```js
 function isGreeting(value) {
   return /^h(?:i|ello)$/.test(value);
 }
@@ -1138,7 +1138,7 @@ _.isMatchWith(object, source, customizer);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10059 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isnan "See the npm package.")
 
-```
+```js
 _.isNaN(value) 
 ```
 
@@ -1158,7 +1158,7 @@ _.isNaN(value)
 
 ### 示例
 
-```
+```js
 _.isNaN(NaN);
 // => true
 
@@ -1180,7 +1180,7 @@ _.isNaN(undefined);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10081 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isnative "See the npm package.")
 
-```
+```js
 _.isNative(value) 
 ```
 
@@ -1198,7 +1198,7 @@ _.isNative(value)
 
 ### 示例
 
-```
+```js
 _.isNative(Array.prototype.push);
 // => true
 
@@ -1214,7 +1214,7 @@ _.isNative(_);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10131 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isnil "See the npm package.")
 
-```
+```js
 _.isNil(value) 
 ```
 
@@ -1232,7 +1232,7 @@ _.isNil(value)
 
 ### 示例
 
-```
+```js
 _.isNil(null);
 // => true
 
@@ -1251,7 +1251,7 @@ _.isNil(NaN);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10108 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isnull "See the npm package.")
 
-```
+```js
 _.isNull(value) 
 ```
 
@@ -1269,7 +1269,7 @@ _.isNull(value)
 
 ### 示例
 
-```
+```js
 _.isNull(null);
 // => true
 
@@ -1285,7 +1285,7 @@ _.isNull(void 0);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10159 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isnumber "See the npm package.")
 
-```
+```js
 _.isNumber(value) 
 ```
 
@@ -1305,7 +1305,7 @@ _.isNumber(value)
 
 ### 示例
 
-```
+```js
 _.isNumber(3);
 // => true
 
@@ -1327,7 +1327,7 @@ _.isNumber('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9922 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isobject "See the npm package.")
 
-```
+```js
 _.isObject(value) 
 ```
 
@@ -1345,7 +1345,7 @@ _.isObject(value)
 
 ### 示例
 
-```
+```js
 _.isObject({});
 // => true
 
@@ -1367,7 +1367,7 @@ _.isObject(null);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9950 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isobjectlike "See the npm package.")
 
-```
+```js
 _.isObjectLike(value) 
 ```
 
@@ -1385,7 +1385,7 @@ _.isObjectLike(value)
 
 ### 示例
 
-```
+```js
 _.isObjectLike({});
 // => true
 
@@ -1407,7 +1407,7 @@ _.isObjectLike(null);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10191 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isplainobject "See the npm package.")
 
-```
+```js
 _.isPlainObject(value) 
 ```
 
@@ -1425,7 +1425,7 @@ _.isPlainObject(value)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.a = 1;
 }
@@ -1451,7 +1451,7 @@ _.isPlainObject(Object.create(null));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10220 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isregexp "See the npm package.")
 
-```
+```js
 _.isRegExp(value) 
 ```
 
@@ -1469,7 +1469,7 @@ _.isRegExp(value)
 
 ### 示例
 
-```
+```js
 _.isRegExp(/abc/);
 // => true
 
@@ -1485,7 +1485,7 @@ _.isRegExp('/abc/');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10249 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.issafeinteger "See the npm package.")
 
-```
+```js
 _.isSafeInteger(value) 
 ```
 
@@ -1505,7 +1505,7 @@ _.isSafeInteger(value)
 
 ### 示例
 
-```
+```js
 _.isSafeInteger(3);
 // => true
 
@@ -1527,7 +1527,7 @@ _.isSafeInteger('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10269 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isset "See the npm package.")
 
-```
+```js
 _.isSet(value) 
 ```
 
@@ -1545,7 +1545,7 @@ _.isSet(value)
 
 ### 示例
 
-```
+```js
 _.isSet(new Set);
 // => true
 
@@ -1561,7 +1561,7 @@ _.isSet(new WeakSet);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10289 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isstring "See the npm package.")
 
-```
+```js
 _.isString(value) 
 ```
 
@@ -1579,7 +1579,7 @@ _.isString(value)
 
 ### 示例
 
-```
+```js
 _.isString('abc');
 // => true
 
@@ -1595,7 +1595,7 @@ _.isString(1);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10310 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.issymbol "See the npm package.")
 
-```
+```js
 _.isSymbol(value) 
 ```
 
@@ -1613,7 +1613,7 @@ _.isSymbol(value)
 
 ### 示例
 
-```
+```js
 _.isSymbol(Symbol.iterator);
 // => true
 
@@ -1629,7 +1629,7 @@ _.isSymbol('abc');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10331 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.istypedarray "See the npm package.")
 
-```
+```js
 _.isTypedArray(value) 
 ```
 
@@ -1647,7 +1647,7 @@ _.isTypedArray(value)
 
 ### 示例
 
-```
+```js
 _.isTypedArray(new Uint8Array);
 // => true
 
@@ -1663,7 +1663,7 @@ _.isTypedArray([]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10351 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isundefined "See the npm package.")
 
-```
+```js
 _.isUndefined(value) 
 ```
 
@@ -1681,7 +1681,7 @@ _.isUndefined(value)
 
 ### 示例
 
-```
+```js
 _.isUndefined(void 0);
 // => true
 
@@ -1697,7 +1697,7 @@ _.isUndefined(null);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10371 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isweakmap "See the npm package.")
 
-```
+```js
 _.isWeakMap(value) 
 ```
 
@@ -1715,7 +1715,7 @@ _.isWeakMap(value)
 
 ### 示例
 
-```
+```js
 _.isWeakMap(new WeakMap);
 // => true
 
@@ -1731,7 +1731,7 @@ _.isWeakMap(new Map);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10391 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.isweakset "See the npm package.")
 
-```
+```js
 _.isWeakSet(value) 
 ```
 
@@ -1749,7 +1749,7 @@ _.isWeakSet(value)
 
 ### 示例
 
-```
+```js
 _.isWeakSet(new WeakSet);
 // => true
 
@@ -1765,7 +1765,7 @@ _.isWeakSet(new Set);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10415 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.lt "See the npm package.")
 
-```
+```js
 _.lt(value, other) 
 ```
 
@@ -1787,7 +1787,7 @@ _.lt(value, other)
 
 ### 示例
 
-```
+```js
 _.lt(1, 3);
 // => true
 
@@ -1806,7 +1806,7 @@ _.lt(3, 1);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10439 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.lte "See the npm package.")
 
-```
+```js
 _.lte(value, other) 
 ```
 
@@ -1828,7 +1828,7 @@ _.lte(value, other)
 
 ### 示例
 
-```
+```js
 _.lte(1, 3);
 // => true
 
@@ -1847,7 +1847,7 @@ _.lte(3, 1);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10465 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.toarray "See the npm package.")
 
-```
+```js
 _.toArray(value) 
 ```
 
@@ -1865,7 +1865,7 @@ _.toArray(value)
 
 ### 示例
 
-```
+```js
 _.toArray({ 'a': 1, 'b': 2 });
 // => [1, 2]
 
@@ -1887,7 +1887,7 @@ _.toArray(null);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10505 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tointeger "See the npm package.")
 
-```
+```js
 _.toInteger(value) 
 ```
 
@@ -1907,7 +1907,7 @@ _.toInteger(value)
 
 ### 示例
 
-```
+```js
 _.toInteger(3);
 // => 3
 
@@ -1929,7 +1929,7 @@ _.toInteger('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10542 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tolength "See the npm package.")
 
-```
+```js
 _.toLength(value) 
 ```
 
@@ -1949,7 +1949,7 @@ _.toLength(value)
 
 ### 示例
 
-```
+```js
 _.toLength(3);
 // => 3
 
@@ -1971,7 +1971,7 @@ _.toLength('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10568 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tonumber "See the npm package.")
 
-```
+```js
 _.toNumber(value) 
 ```
 
@@ -1989,7 +1989,7 @@ _.toNumber(value)
 
 ### 示例
 
-```
+```js
 _.toNumber(3);
 // => 3
 
@@ -2011,7 +2011,7 @@ _.toNumber('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10606 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.toplainobject "See the npm package.")
 
-```
+```js
 _.toPlainObject(value) 
 ```
 
@@ -2029,7 +2029,7 @@ _.toPlainObject(value)
 
 ### 示例
 
-```
+```js
 function Foo() {
   this.b = 2;
 }
@@ -2051,7 +2051,7 @@ _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10633 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tosafeinteger "See the npm package.")
 
-```
+```js
 _.toSafeInteger(value) 
 ```
 
@@ -2069,7 +2069,7 @@ _.toSafeInteger(value)
 
 ### 示例
 
-```
+```js
 _.toSafeInteger(3);
 // => 3
 
@@ -2091,7 +2091,7 @@ _.toSafeInteger('3');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L10657 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.tostring "See the npm package.")
 
-```
+```js
 _.toString(value) 
 ```
 
@@ -2109,7 +2109,7 @@ _.toString(value)
 
 ### 示例
 
-```
+```js
 _.toString(null);
 // => ''
 

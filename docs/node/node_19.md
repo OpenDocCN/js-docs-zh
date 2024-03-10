@@ -25,7 +25,7 @@
 
 例子：
 
-```
+```js
 process.on('exit', function(code) {
   // do *NOT* do this
   setTimeout(function() {
@@ -47,7 +47,7 @@ process.on('exit', function(code) {
 
 例子：
 
-```
+```js
 process.on('uncaughtException', function(err) {
   console.log('Caught exception: ' + err);
 });
@@ -80,7 +80,7 @@ console.log('This will not run.');
 
 下面是一个把所有未处理的“拒绝”打印到控制台的例子：
 
-```
+```js
 process.on('unhandledRejection', function(reason, p) {
     console.log("Unhandled Rejection at: Promise ", p, " reason: ", reason);
     // application specific logging, throwing an error, or other logic here
@@ -89,7 +89,7 @@ process.on('unhandledRejection', function(reason, p) {
 
 下面是一个会触发`unhandledRejection`事件的“拒绝”：
 
-```
+```js
 somePromise.then(function(res) {
   return reportToUser(JSON.pasre(res)); // note the typo
 }); // no `.catch` or `.then` 
@@ -107,7 +107,7 @@ somePromise.then(function(res) {
 
 使用“拒绝”侦测钩子来保持一个被“拒绝”的`promise`列表：
 
-```
+```js
 var unhandledRejections = [];
 process.on('unhandledRejection', function(reason, p) {
     unhandledRejections.push(p);
@@ -124,7 +124,7 @@ process.on('rejectionHandled', function(p) {
 
 监听`SIGINT`信号的例子：
 
-```
+```js
 // Start reading from stdin so we don't exit.
 process.stdin.resume();
 
@@ -156,7 +156,7 @@ process.on('SIGINT', function() {
 
 例如，`console.log`可能与这个相似：
 
-```
+```js
 console.log = function(msg) {
   process.stdout.write(msg + '\n');
 }; 
@@ -173,7 +173,7 @@ console.log = function(msg) {
 
 若要检查`node.js`是否在一个 TTY 上下文中运行，读取`process.stderr`，`process.stdout`或`process.stdin`的`isTTY`属性：
 
-```
+```js
 $ iojs -p "Boolean(process.stdin.isTTY)"
 true
 $ echo "foo" | iojs -p "Boolean(process.stdin.isTTY)"
@@ -206,7 +206,7 @@ false
 
 一个打开标准输入并且监听两个事件的例子：
 
-```
+```js
 process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', function() {
@@ -231,7 +231,7 @@ process.stdin.on('end', function() {
 
 一个包含了命令行参数的数组。第一次元素将会是`'iojs'`，第二个元素将会是`JavaScript`文件名。之后的元素将会是额外的命令行参数。
 
-```
+```js
 // print process.argv
 process.argv.forEach(function(val, index, array) {
   console.log(index + ': ' + val);
@@ -240,7 +240,7 @@ process.argv.forEach(function(val, index, array) {
 
 这将会是：
 
-```
+```js
 $ iojs process-2.js one two=three four
 0: iojs
 1: /Users/mjr/work/iojs/process-2.js
@@ -255,7 +255,7 @@ $ iojs process-2.js one two=three four
 
 例子：
 
-```
+```js
 /usr/local/bin/iojs 
 ```
 
@@ -265,19 +265,19 @@ $ iojs process-2.js one two=three four
 
 例子：
 
-```
+```js
 $ iojs --harmony script.js --version 
 ```
 
 `process.execArgv`将会是：
 
-```
+```js
 ['--harmony'] 
 ```
 
 `process.argv`将会是：
 
-```
+```js
 ['/usr/local/bin/iojs', 'script.js', '--version'] 
 ```
 
@@ -289,7 +289,7 @@ $ iojs --harmony script.js --version
 
 为进程改变当前工作目录，如果失败，则抛出一个异常。
 
-```
+```js
 console.log('Starting directory: ' + process.cwd());
 try {
   process.chdir('/tmp');
@@ -304,7 +304,7 @@ catch (err) {
 
 返回进程的当前工作目录。
 
-```
+```js
 console.log('Current directory: ' + process.cwd()); 
 ```
 
@@ -314,7 +314,7 @@ console.log('Current directory: ' + process.cwd());
 
 一个例子：
 
-```
+```js
 { TERM: 'xterm-256color',
   SHELL: '/usr/local/bin/bash',
   USER: 'maciej',
@@ -329,13 +329,13 @@ console.log('Current directory: ' + process.cwd());
 
 你可以改写这个对象，但是改变不会反应在你的进程之外。这以为着以下代码不会正常工作：
 
-```
+```js
 $ iojs -e 'process.env.foo = "bar"' && echo $foo 
 ```
 
 但是以下代码会：
 
-```
+```js
 process.env.foo = 'bar';
 console.log(process.env.foo); 
 ```
@@ -346,7 +346,7 @@ console.log(process.env.foo);
 
 以一个“失败”退出码结束：
 
-```
+```js
 process.exit(1); 
 ```
 
@@ -364,7 +364,7 @@ process.exit(1);
 
 获取进程的群组标识（参阅`getgid(2)`）。这是一个群组 id 数组，不是群组名。
 
-```
+```js
 if (process.getgid) {
   console.log('Current gid: ' + process.getgid());
 } 
@@ -376,7 +376,7 @@ if (process.getgid) {
 
 获取进程的有效群组标识（参阅`getgid(2)`）。这是一个群组 id 数组，不是群组名。
 
-```
+```js
 if (process.getegid) {
   console.log('Current gid: ' + process.getegid());
 } 
@@ -388,7 +388,7 @@ if (process.getegid) {
 
 设置进程的群组标识（参阅`setgid(2)`）。它接受一个数字 ID 或一个群组名字符串。如果群组名被指定，那么这个方法将在解析群组名为一个 ID 的过程中阻塞。
 
-```
+```js
 if (process.getgid && process.setgid) {
   console.log('Current gid: ' + process.getgid());
   try {
@@ -407,7 +407,7 @@ if (process.getgid && process.setgid) {
 
 设置进程的有效群组标识（参阅`setgid(2)`）。它接受一个数字 ID 或一个群组名字符串。如果群组名被指定，那么这个方法将在解析群组名为一个 ID 的过程中阻塞。
 
-```
+```js
 if (process.getegid && process.setegid) {
   console.log('Current gid: ' + process.getegid());
   try {
@@ -426,7 +426,7 @@ if (process.getegid && process.setegid) {
 
 获取进程的用户 id（参阅`getuid(2)`）。这是一个数字用户 id，不是用户名。
 
-```
+```js
 if (process.getuid) {
   console.log('Current uid: ' + process.getuid());
 } 
@@ -438,7 +438,7 @@ if (process.getuid) {
 
 获取进程的有效用户 id（参阅`getuid(2)`）。这是一个数字用户 id，不是用户名。
 
-```
+```js
 if (process.geteuid) {
   console.log('Current uid: ' + process.geteuid());
 } 
@@ -450,7 +450,7 @@ if (process.geteuid) {
 
 设置进程的用户 ID（参阅`setuid(2)`）。它接受一个数字 ID 或一个用户名字符串。如果用户名被指定，那么这个方法将在解析用户名为一个 ID 的过程中阻塞。
 
-```
+```js
 if (process.getuid && process.setuid) {
   console.log('Current uid: ' + process.getuid());
   try {
@@ -469,7 +469,7 @@ if (process.getuid && process.setuid) {
 
 设置进程的有效用户 ID（参阅`seteuid(2)`）。它接受一个数字 ID 或一个用户名字符串。如果用户名被指定，那么这个方法将在解析用户名为一个 ID 的过程中阻塞。
 
-```
+```js
 if (process.geteuid && process.seteuid) {
   console.log('Current uid: ' + process.geteuid());
   try {
@@ -506,7 +506,7 @@ if (process.geteuid && process.seteuid) {
 
 当你注销权限时有些需要关心的：
 
-```
+```js
 console.log(process.getgroups());         // [ 0 ]
 process.initgroups('bnoordhuis', 1000);   // switch user
 console.log(process.getgroups());         // [ 27, 30, 46, 1000, 0 ]
@@ -518,7 +518,7 @@ console.log(process.getgroups());         // [ 27, 30, 46, 1000 ]
 
 一个暴露`NODE_VERSION`的编译时存储属性。
 
-```
+```js
 console.log('Version: ' + process.version); 
 ```
 
@@ -526,13 +526,13 @@ console.log('Version: ' + process.version);
 
 一个暴露 node.js 版本和它的依赖的字符串属性。
 
-```
+```js
 console.log(process.versions); 
 ```
 
 将可能打印：
 
-```
+```js
 { http_parser: '2.3.0',
   node: '1.1.1',
   v8: '4.1.0.14',
@@ -549,7 +549,7 @@ console.log(process.versions);
 
 一个可能的输出：
 
-```
+```js
 { target_defaults:
    { cflags: [],
      default_configuration: 'Release',
@@ -582,7 +582,7 @@ console.log(process.versions);
 
 一个发送信号给自身的例子：
 
-```
+```js
 process.on('SIGHUP', function() {
   console.log('Got SIGHUP signal.');
 });
@@ -601,7 +601,7 @@ process.pid#
 
 进程的 PID。
 
-```
+```js
 console.log('This process is pid ' + process.pid); 
 ```
 
@@ -619,7 +619,7 @@ v0.8 版本允许更长的进程标题字符串，也支持覆盖环境内存，
 
 返回当前的处理器结构：`'arm'`，`'ia32'`或`'x64'`。
 
-```
+```js
 console.log('This processor architecture is ' + process.arch); 
 ```
 
@@ -627,7 +627,7 @@ console.log('This processor architecture is ' + process.arch);
 
 放回当前的平台：`'darwin'`，`'freebsd'`，`'linux'`，`'sunos'`或`'win32'`。
 
-```
+```js
 console.log('This platform is ' + process.platform); 
 ```
 
@@ -635,7 +635,7 @@ console.log('This platform is ' + process.platform);
 
 返回当前`node.js`进程内存使用情况（用字节描述）的对象。
 
-```
+```js
 var util = require('util');
 
 console.log(util.inspect(process.memoryUsage())); 
@@ -643,7 +643,7 @@ console.log(util.inspect(process.memoryUsage()));
 
 可能的输出：
 
-```
+```js
 { rss: 4935680,
   heapTotal: 1826816,
   heapUsed: 650472 } 
@@ -659,7 +659,7 @@ console.log(util.inspect(process.memoryUsage()));
 
 这不是`setTimeout(fn, 0)`的简单别名，它更有效率。在之后的`tick`中，它在任何其他的 I/O 事件（包括`timer`）触发之前运行。
 
-```
+```js
 console.log('start');
 process.nextTick(function() {
   console.log('nextTick callback');
@@ -673,7 +673,7 @@ console.log('scheduled');
 
 这对于开发你想要给予用户在对象被构建后，任何 I/O 发生前，去设置事件监听器的机会时，非常有用。
 
-```
+```js
 function MyThing(options) {
   this.setupOptions(options);
 
@@ -689,7 +689,7 @@ thing.getReadyForStuff();
 
 这对于 100%同步或 100%异步的 API 非常重要。考虑一下例子：
 
-```
+```js
 // WARNING!  DO NOT USE!  BAD UNSAFE HAZARD!
 function maybeSync(arg, cb) {
   if (arg) {
@@ -703,7 +703,7 @@ function maybeSync(arg, cb) {
 
 这个 API 是危险的，如果你这样做：
 
-```
+```js
 maybeSync(true, function() {
   foo();
 });
@@ -714,7 +714,7 @@ bar();
 
 更好的做法是：
 
-```
+```js
 function definitelyAsync(arg, cb) {
   if (arg) {
     process.nextTick(cb);
@@ -731,7 +731,7 @@ function definitelyAsync(arg, cb) {
 
 设置或读取进程的文件模式的创建掩码。子进程从父进程中继承这个掩码。返回旧的掩码如果`mask`参数被指定。否则，会返回当前掩码。
 
-```
+```js
 var oldmask, newmask = 0022;
 
 oldmask = process.umask(newmask);
@@ -749,7 +749,7 @@ console.log('Changed umask from: ' + oldmask.toString(8) +
 
 你可以将之前的`process.hrtime()`返回传递给一个新的`process.hrtime()`来获得一个比较。衡量性能时非常有用：
 
-```
+```js
 var time = process.hrtime();
 // [ 1800216, 25 ]
 

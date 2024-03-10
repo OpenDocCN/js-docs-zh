@@ -86,7 +86,7 @@ jQuery UI 的 [ThemeRoller](http://jqueryui.com/themeroller) 在它的预览一�
 
 jQuery UI 提供了大量可以通过对元素应用 Class 名称来使用的图标（Icons）。Class 名称大体上遵循语法 `.ui-icon-{icon type}-{icon sub description}-{direction}`。例如，下面将显示一个向北的厚箭头的图标：
 
-```
+```js
 <span class="ui-icon ui-icon-arrowthick-1-n"></span> 
 ```
 

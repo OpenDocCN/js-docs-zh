@@ -14,7 +14,7 @@
 
 例子：
 
-```
+```js
 querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' })
 // returns
 'foo=bar&baz=qux&baz=quux&corge='
@@ -41,7 +41,7 @@ querystring.stringify({ w: '中文', foo: 'bar' }, null, null,
 
 例子：
 
-```
+```js
 querystring.parse('foo=bar&baz=qux&baz=quux&corge')
 // returns
 { foo: 'bar', baz: ['qux', 'quux'], corge: '' }

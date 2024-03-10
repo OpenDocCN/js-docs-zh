@@ -26,7 +26,7 @@
 
 举个例子，一个 Rail 4 处理程序响应一个来自`Backbone`的`"update"`调用，可能是这样的： *（在真正的代码中， 千万不要盲目的使用`update_attributes`， ，你可以被改变的属性始终是白名单。）*
 
-```
+```js
 def update
   account = Account.find params[:id]
   account.update_attributes params.require(:account).permit(:name, :otherparam)
@@ -40,7 +40,7 @@ end
 
 **emulateHTTP**`Backbone.emulateHTTP = true` 如果你想在不支持 Backbone 的默认 REST/ HTTP 方式的 Web 服务器上工作， 您可以选择开启`Backbone.emulateHTTP`。 设置该选项将通过 `POST` 方法伪造 `PUT`，`PATCH` 和 `DELETE` 请求 用真实的方法设定`X-HTTP-Method-Override`头信息。 如果支持`emulateJSON`，此时该请求会向服务器传入名为 `_method` 的参数。
 
-```
+```js
 Backbone.emulateHTTP = true;
 
 model.save();  // POST to "/collection/id", with "_method=PUT" + header. 

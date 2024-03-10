@@ -6,13 +6,13 @@ A Sea.js plugin for collecting HTTP requests and sending all at once
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-flush 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-combo.js"></script>
 <script src="path/to/seajs-flush.js"></script>

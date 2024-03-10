@@ -8,7 +8,7 @@
 
 推荐使用 spm
 
-```
+```js
 spm install seajs
 npm install seajs 
 ```
@@ -20,7 +20,7 @@ npm install seajs
 
 全局安装
 
-```
+```js
 npm install seatools -g 
 ```
 

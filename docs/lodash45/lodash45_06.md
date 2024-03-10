@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8326 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.after "See the npm package.")
 
-```
+```js
 _.after(n, func) 
 ```
 
@@ -30,7 +30,7 @@ _.after(n, func)
 
 ### 示例
 
-```
+```js
 var saves = ['profile', 'settings'];
 
 var done = _.after(saves.length, function() {
@@ -51,7 +51,7 @@ _.forEach(saves, function(type) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8353 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.ary "See the npm package.")
 
-```
+```js
 _.ary(func, [n=func.length]) 
 ```
 
@@ -73,7 +73,7 @@ _.ary(func, [n=func.length])
 
 ### 示例
 
-```
+```js
 _.map(['6', '8', '10'], _.ary(parseInt, 1));
 // => [6, 8, 10] 
 ```
@@ -86,7 +86,7 @@ _.map(['6', '8', '10'], _.ary(parseInt, 1));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8375 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.before "See the npm package.")
 
-```
+```js
 _.before(n, func) 
 ```
 
@@ -108,7 +108,7 @@ _.before(n, func)
 
 ### 示例
 
-```
+```js
 jQuery(element).on('click', _.before(5, addContactToList));
 // => 最多允许添加 4 个联系人到列表里 
 ```
@@ -121,7 +121,7 @@ jQuery(element).on('click', _.before(5, addContactToList));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8423 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.bind "See the npm package.")
 
-```
+```js
 _.bind(func, thisArg, [partials]) 
 ```
 
@@ -149,7 +149,7 @@ _.bind(func, thisArg, [partials])
 
 ### 示例
 
-```
+```js
 var greet = function(greeting, punctuation) {
   return greeting + ' ' + this.user + punctuation;
 };
@@ -174,7 +174,7 @@ bound('hi');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8475 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.bindkey "See the npm package.")
 
-```
+```js
 _.bindKey(object, key, [partials]) 
 ```
 
@@ -204,7 +204,7 @@ _.bindKey(object, key, [partials])
 
 ### 示例
 
-```
+```js
 var object = {
   'user': 'fred',
   'greet': function(greeting, punctuation) {
@@ -237,7 +237,7 @@ bound('hi');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8522 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.curry "See the npm package.")
 
-```
+```js
 _.curry(func, [arity=func.length]) 
 ```
 
@@ -263,7 +263,7 @@ _.curry(func, [arity=func.length])
 
 ### 示例
 
-```
+```js
 var abc = function(a, b, c) {
   return [a, b, c];
 };
@@ -292,7 +292,7 @@ curried(1)(_, 3)(2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8565 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.curryright "See the npm package.")
 
-```
+```js
 _.curryRight(func, [arity=func.length]) 
 ```
 
@@ -318,7 +318,7 @@ _.curryRight(func, [arity=func.length])
 
 ### 示例
 
-```
+```js
 var abc = function(a, b, c) {
   return [a, b, c];
 };
@@ -347,7 +347,7 @@ curried(3)(1, _)(2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8616 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.debounce "See the npm package.")
 
-```
+```js
 _.debounce(func, [wait=0], [options]) 
 ```
 
@@ -389,7 +389,7 @@ _.debounce(func, [wait=0], [options])
 
 ### 示例
 
-```
+```js
 // 避免窗口在变动时出现昂贵的计算开销。
 jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 
@@ -416,7 +416,7 @@ jQuery(window).on('popstate', debounced.cancel);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8751 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.defer "See the npm package.")
 
-```
+```js
 _.defer(func, [args]) 
 ```
 
@@ -438,7 +438,7 @@ _.defer(func, [args])
 
 ### 示例
 
-```
+```js
 _.defer(function(text) {
   console.log(text);
 }, 'deferred');
@@ -453,7 +453,7 @@ _.defer(function(text) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8773 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.delay "See the npm package.")
 
-```
+```js
 _.delay(func, wait, [args]) 
 ```
 
@@ -479,7 +479,7 @@ _.delay(func, wait, [args])
 
 ### 示例
 
-```
+```js
 _.delay(function(text) {
   console.log(text);
 }, 1000, 'later');
@@ -494,7 +494,7 @@ _.delay(function(text) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8794 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.flip "See the npm package.")
 
-```
+```js
 _.flip(func) 
 ```
 
@@ -512,7 +512,7 @@ _.flip(func)
 
 ### 示例
 
-```
+```js
 var flipped = _.flip(function() {
   return _.toArray(arguments);
 });
@@ -529,7 +529,7 @@ flipped('a', 'b', 'c', 'd');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8839 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.memoize "See the npm package.")
 
-```
+```js
 _.memoize(func, [resolver]) 
 ```
 
@@ -553,7 +553,7 @@ _.memoize(func, [resolver])
 
 ### 示例
 
-```
+```js
 var object = { 'a': 1, 'b': 2 };
 var other = { 'c': 3, 'd': 4 };
 
@@ -585,7 +585,7 @@ _.memoize.Cache = WeakMap;
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8877 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.negate "See the npm package.")
 
-```
+```js
 _.negate(predicate) 
 ```
 
@@ -603,7 +603,7 @@ _.negate(predicate)
 
 ### 示例
 
-```
+```js
 function isEven(n) {
   return n % 2 == 0;
 }
@@ -620,7 +620,7 @@ _.filter([1, 2, 3, 4, 5, 6], _.negate(isEven));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8903 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.once "See the npm package.")
 
-```
+```js
 _.once(func) 
 ```
 
@@ -638,7 +638,7 @@ _.once(func)
 
 ### 示例
 
-```
+```js
 var initialize = _.once(createApplication);
 initialize();
 initialize();
@@ -653,7 +653,7 @@ initialize();
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8936 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.overargs "See the npm package.")
 
-```
+```js
 _.overArgs(func, [transforms]) 
 ```
 
@@ -675,7 +675,7 @@ _.overArgs(func, [transforms])
 
 ### 示例
 
-```
+```js
 function doubled(n) {
   return n * 2;
 }
@@ -703,7 +703,7 @@ func(10, 5);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L8980 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.partial "See the npm package.")
 
-```
+```js
 _.partial(func, [partials]) 
 ```
 
@@ -727,7 +727,7 @@ _.partial(func, [partials])
 
 ### 示例
 
-```
+```js
 var greet = function(greeting, name) {
   return greeting + ' ' + name;
 };
@@ -750,7 +750,7 @@ greetFred('hi');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9012 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.partialright "See the npm package.")
 
-```
+```js
 _.partialRight(func, [partials]) 
 ```
 
@@ -774,7 +774,7 @@ _.partialRight(func, [partials])
 
 ### 示例
 
-```
+```js
 var greet = function(greeting, name) {
   return greeting + ' ' + name;
 };
@@ -797,7 +797,7 @@ sayHelloTo('fred');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9037 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.rearg "See the npm package.")
 
-```
+```js
 _.rearg(func, indexes) 
 ```
 
@@ -819,7 +819,7 @@ _.rearg(func, indexes)
 
 ### 示例
 
-```
+```js
 var rearged = _.rearg(function(a, b, c) {
   return [a, b, c];
 }, 2, 0, 1);
@@ -836,7 +836,7 @@ rearged('b', 'c', 'a')
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9063 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.rest "See the npm package.")
 
-```
+```js
 _.rest(func, [start=func.length-1]) 
 ```
 
@@ -860,7 +860,7 @@ _.rest(func, [start=func.length-1])
 
 ### 示例
 
-```
+```js
 var say = _.rest(function(what, names) {
   return what + ' ' + _.initial(names).join(', ') +
     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
@@ -878,7 +878,7 @@ say('hello', 'fred', 'barney', 'pebbles');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9125 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.spread "See the npm package.")
 
-```
+```js
 _.spread(func) 
 ```
 
@@ -898,7 +898,7 @@ _.spread(func)
 
 ### 示例
 
-```
+```js
 var say = _.spread(function(who, what) {
   return who + ' says ' + what;
 });
@@ -925,7 +925,7 @@ numbers.then(_.spread(function(x, y) {
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9172 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.throttle "See the npm package.")
 
-```
+```js
 _.throttle(func, [wait=0], [options]) 
 ```
 
@@ -963,7 +963,7 @@ _.throttle(func, [wait=0], [options])
 
 ### 示例
 
-```
+```js
 // 避免在滚动时过分的更新定位
 jQuery(window).on('scroll', _.throttle(updatePosition, 100));
 
@@ -983,7 +983,7 @@ jQuery(window).on('popstate', throttled.cancel);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9199 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.unary "See the npm package.")
 
-```
+```js
 _.unary(func) 
 ```
 
@@ -1001,7 +1001,7 @@ _.unary(func)
 
 ### 示例
 
-```
+```js
 _.map(['6', '8', '10'], _.unary(parseInt));
 // => [6, 8, 10] 
 ```
@@ -1014,7 +1014,7 @@ _.map(['6', '8', '10'], _.unary(parseInt));
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L9223 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.wrap "See the npm package.")
 
-```
+```js
 _.wrap(value, wrapper) 
 ```
 
@@ -1036,7 +1036,7 @@ _.wrap(value, wrapper)
 
 ### 示例
 
-```
+```js
 var p = _.wrap(_.escape, function(func, text) {
   return '<p>' + func(text) + '</p>';
 });

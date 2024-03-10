@@ -2,7 +2,7 @@
 
 ## $.ajax
 
-```
+```js
 $.ajax(options)   => XMLHttpRequest 
 ```
 
@@ -47,7 +47,7 @@ $.ajax(options)   => XMLHttpRequest
 
 如果可选的“callbacks” 和 “deferred” 模块被加载，从`$.ajax()`返回的 XHR 对象实现了 promise 接口链式的回调：
 
-```
+```js
 xhr.done(function(data, status, xhr){ ... })
 xhr.fail(function(xhr, errorType, error){ ... })
 xhr.always(function(){ ... })
@@ -76,7 +76,7 @@ xhr.then(function(){ ... })
 
 默认情况下，Ajax 事件在 document 对象上触发。然而，如果请求的 `context` 是一个 DOM 节点，该事件会在此节点上触发然后再 DOM 中冒泡。唯一的例外是 `ajaxStart` & `ajaxStop`这两个全局事件。
 
-```
+```js
 $(document).on('ajaxBeforeSend', function(e, xhr, options){
   // This gets fired for every Ajax request performed on the page.
   // The xhr object and $.ajax() options are available for editing.
@@ -117,7 +117,7 @@ $.ajax({
 
 不推荐, 使用 $.ajax 代替。
 
-```
+```js
 $.ajaxJSONP(options)   => mock XMLHttpRequest 
 ```
 
@@ -141,14 +141,14 @@ $.ajaxJSONP(options)   => mock XMLHttpRequest
 
 ## $.get
 
-```
+```js
 $.get(url, function(data, status, xhr){ ... })   => XMLHttpRequest
 $.get(url, [data], [function(data, status, xhr){ ... }], [dataType])   => XMLHttpRequest v1.0+ 
 ```
 
 执行一个 Ajax GET 请求。这是一个 $.ajax 的简写方式。
 
-```
+```js
 $.get('/whatevs.html', function(response){
   $(document.body).append(response)
 }) 
@@ -156,14 +156,14 @@ $.get('/whatevs.html', function(response){
 
 ## $.getJSON
 
-```
+```js
 $.getJSON(url, function(data, status, xhr){ ... })   => XMLHttpRequest
 $.getJSON(url, [data], function(data, status, xhr){ ... })   => XMLHttpRequest v1.0+ 
 ```
 
 通过 Ajax GET 请求获取 JSON 数据。这是一个 $.ajax 的简写方式。
 
-```
+```js
 $.getJSON('/awesome.json', function(data){
   console.log(data)
 })
@@ -176,7 +176,7 @@ $.getJSON('//example.com/awesome.json?callback=?', function(remoteData){
 
 ## $.param
 
-```
+```js
 $.param(object, [shallow])   => string
 $.param(array)   => string 
 ```
@@ -187,7 +187,7 @@ $.param(array)   => string
 
 此外，还接受 serializeArray 格式的数组，其中每个项都有 “name” 和 “value”属性。
 
-```
+```js
 $.param({ foo: { one: 1, two: 2 }})
 //=> "foo[one]=1&foo[two]=2)"
 
@@ -209,13 +209,13 @@ $.param({ id: function(){ return 1 + 2 } })
 
 ## $.post
 
-```
+```js
 $.post(url, [data], function(data, status, xhr){ ... }, [dataType])   => XMLHttpRequest 
 ```
 
 执行 Ajax POST 请求。这是一个 $.ajax 的简写方式。
 
-```
+```js
 $.post('/create', { sample: 'payload' }, function(response){
   // process response
 }) 
@@ -223,7 +223,7 @@ $.post('/create', { sample: 'payload' }, function(response){
 
 `data` 参数可以是一个字符串：
 
-```
+```js
 $.post('/create', $('#some_form').serialize(), function(response){
   // ...
 }) 
@@ -231,13 +231,13 @@ $.post('/create', $('#some_form').serialize(), function(response){
 
 ## load
 
-```
+```js
 load(url, function(data, status, xhr){ ... })   => self 
 ```
 
 通过 GET Ajax 载入远程 HTML 内容代码并插入至 当前的集合 中。另外，一个 css 选择器可以在 url 中指定，像这样，可以使用匹配 selector 选择器的 HTML 内容来更新集合。
 
-```
+```js
 $('#some_element').load('/foo.html #bar') 
 ```
 

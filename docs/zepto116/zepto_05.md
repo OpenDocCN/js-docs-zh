@@ -2,7 +2,7 @@
 
 可以通过添加方法作为 `$.fn` 的属性来写插件：
 
-```
+```js
 ;(function($){
   $.extend($.fn, {
     foo: function(){

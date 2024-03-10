@@ -6,7 +6,7 @@
 
 要获取这个模块，你可以通过：
 
-```
+```js
 var vm = require('vm'); 
 ```
 
@@ -18,7 +18,7 @@ var vm = require('vm');
 
 使用`vm.runInThisContext`和`eval`运行相同代码的例子：
 
-```
+```js
 var vm = require('vm');
 var localVar = 'initial value';
 
@@ -62,7 +62,7 @@ console.log('localVar: ', localVar);
 
 例子：编译并执行不同的脚本，在同一个已存在的上下文中。
 
-```
+```js
 var util = require('util');
 var vm = require('vm');
 
@@ -87,7 +87,7 @@ console.log(util.inspect(sandbox));
 
 例子：编译并执行一个 自增一个全局变量然后设置一个新的全局变量 的代码。这些全局变量包含在沙箱中。
 
-```
+```js
 var util = require('util');
 var vm = require('vm');
 
@@ -108,7 +108,7 @@ console.log(util.inspect(sandbox));
 
 `vm.runInDebugContext`编译代码，然后将它们在 V8 调试上下文中执行。主要的用途是访问 V8 调试对象：
 
-```
+```js
 var Debug = vm.runInDebugContext('Debug');
 Debug.scripts().forEach(function(script) { console.log(script.name); }); 
 ```
@@ -136,7 +136,7 @@ Debug.scripts().forEach(function(script) { console.log(script.name); });
 
 一个使用`script.runInThisContext`来编译一次代码，然后运行多次的例子：
 
-```
+```js
 var vm = require('vm');
 
 global.globalVar = 0;
@@ -166,7 +166,7 @@ console.log(globalVar);
 
 例子：编译一段 自增一个全局对象并且创建一个全局对象 的代码，然后执行多次，这些全局对象包含在沙箱中。
 
-```
+```js
 var util = require('util');
 var vm = require('vm');
 
@@ -197,7 +197,7 @@ console.log(util.inspect(sandbox));
 
 例子：编译一段 设置一个全局对象 的代码，然后在不同的上下文中多次执行它。这些全局对象包含在沙箱中。
 
-```
+```js
 var util = require('util');
 var vm = require('vm');
 

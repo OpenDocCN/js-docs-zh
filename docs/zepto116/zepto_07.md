@@ -4,7 +4,7 @@
 
 该检测方法可以在不同的环境中微调你的站点或者应用程序，并帮助你识别手机和平板；以及不同的浏览器和操作系统。
 
-```
+```js
 // The following boolean flags are set to true if they apply,
 // if not they're either set to `false` or `undefined`.
 // We recommend accessing them with `!!` prefixed to coerce to a boolean. 

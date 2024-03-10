@@ -10,7 +10,7 @@ JavaScript 并没有内置模块系统（反正现在没有，需要等到 ES6 �
 
 math.js
 
-```
+```js
 exports.add = function() {
   var sum = 0, i = 0, args = arguments, l = args.length;
   while (i < l) {
@@ -22,7 +22,7 @@ exports.add = function() {
 
 increment.js
 
-```
+```js
 var add = require('math').add;
 exports.increment = function(val) {
   return add(val, 1);
@@ -31,7 +31,7 @@ exports.increment = function(val) {
 
 program.js
 
-```
+```js
 var inc = require('increment').increment;
 var a = 1;
 inc(a); // 2
@@ -49,7 +49,7 @@ inc(a); // 2
 
 另一种解决思路是，用一套标准模板来封装模块定义：
 
-```
+```js
 define(function(require, exports, module) {
 
   // The module code goes here
@@ -65,7 +65,7 @@ define(function(require, exports, module) {
 
 math.js
 
-```
+```js
 define(function(require, exports, module) {
   exports.add = function() {
     var sum = 0, i = 0, args = arguments, l = args.length;
@@ -79,7 +79,7 @@ define(function(require, exports, module) {
 
 increment.js
 
-```
+```js
 define(function(require, exports, module) {
   var add = require('math').add;
   exports.increment = function(val) {
@@ -90,7 +90,7 @@ define(function(require, exports, module) {
 
 program.js
 
-```
+```js
 define(function(require, exports, module) {
   var inc = require('increment').increment;
   var a = 1;
@@ -110,7 +110,7 @@ Sea.js 的封装方案就是 CMD 规范：[CMD 模块定义规范](https://githu
 
 目前 Sea.js 的模块，如果没有用到浏览器环境下的特有属性，可以很方便跑在 NodeJS 端。只要在入口文件处，引入 Sea.js 的 Node.js 版本即可：
 
-```
+```js
 // 让 Node 环境可以加载执行 CMD 模块
 require('seajs');
 var a = require('./a');
@@ -122,7 +122,7 @@ CommonJS 的模块需要跑在浏览器端时，通过简单封装就行：
 
 a.js
 
-```
+```js
 define(function(require, exports, module) {
    // a.js 原来的代码
 });

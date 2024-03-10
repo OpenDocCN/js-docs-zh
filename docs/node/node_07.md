@@ -4,7 +4,7 @@
 
 V8 自带了一个强大的调试器，可以从外部通过 TCP 协议访问。`node.js`为这个调试器内建了一个客户端。要使用它的话，使用`debug`参数启动`node.js`；会出现提示符：
 
-```
+```js
 % iojs debug myscript.js
 < debugger listening on port 5858
 connecting... ok
@@ -19,7 +19,7 @@ debug>
 
 例如，假设又一个这样的`myscript.js`：
 
-```
+```js
 // myscript.js
 x = 5;
 setTimeout(function () {
@@ -31,7 +31,7 @@ console.log("hello");
 
 那么一旦你打开调试器，它会在第四行中断。
 
-```
+```js
 % iojs debug myscript.js
 < debugger listening on port 5858
 connecting... ok
@@ -100,7 +100,7 @@ debug> quit
 
 同样也可以在一个还未载入的文件（模块）中设置断点：
 
-```
+```js
 % ./iojs debug test/fixtures/break-in-module/main.js
 < debugger listening on port 5858
 connecting to port 5858... ok

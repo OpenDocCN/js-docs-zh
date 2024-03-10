@@ -17,7 +17,7 @@ Sea.js 中的模块标识是 [CommonJS 模块标识](http://wiki.commonjs.org/wi
 
 相对标识以 `.` 开头，只出现在模块环境中（`define` 的 `factory` 方法里面）。相对标识永远相对当前模块的 URI 来解析：
 
-```
+```js
 // 在 http://example.com/js/a.js 的 factory 中：
 require.resolve('./b');
   // => http://example.com/js/b.js
@@ -31,7 +31,7 @@ require.resolve('../c');
 
 顶级标识不以点（`.`）或斜线（`/`）开始， 会相对模块系统的基础路径（即 Sea.js 的 `base` 路径）来解析：
 
-```
+```js
 // 假设 base 路径是：http://example.com/assets/
 
 // 在模块代码里：
@@ -41,7 +41,7 @@ require.resolve('gallery/jquery/1.9.1/jquery');
 
 模块系统的基础路径即 `base` 的默认值，与 `sea.js` 的访问路径相关：
 
-```
+```js
 如果 sea.js 的访问路径是：
   http://example.com/assets/sea.js
 
@@ -51,7 +51,7 @@ require.resolve('gallery/jquery/1.9.1/jquery');
 
 当 `sea.js` 的访问路径中含有版本号时，`base` 不会包含 `seajs/x.y.z` 字串。 当 `sea.js` 有多个版本时，这样会很方便。
 
-```
+```js
 如果 sea.js 的路径是：
   http://example.com/assets/seajs/1.0.0/sea.js
 
@@ -61,7 +61,7 @@ require.resolve('gallery/jquery/1.9.1/jquery');
 
 当然，也可以手工配置 `base` 路径：
 
-```
+```js
 seajs.config({
   base: 'http://code.jquery.com/'
 });
@@ -75,7 +75,7 @@ require.resolve('jquery');
 
 除了相对和顶级标识之外的标识都是普通路径。普通路径的解析规则，和 HTML 代码中的 `<script src="..."></script>` 一样，会相对当前页面解析。
 
-```
+```js
 // 假设当前页面是 http://example.com/path/to/page/index.html
 
 // 绝对路径是普通路径：
@@ -105,7 +105,7 @@ seajs.use('../d');
 
 Sea.js 在解析模块标识时， 除非在路径中有问号（`?`）或最后一个字符是井号（`#`），否则都会自动添加 JS 扩展名（`.js`）。如果不想自动添加扩展名，可以在路径末尾加上井号（`#`）。
 
-```
+```js
 // ".js" 后缀可以省略：
 require.resolve('http://example.com/js/a');
 require.resolve('http://example.com/js/a.js');

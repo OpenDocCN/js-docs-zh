@@ -10,7 +10,7 @@ Sea.js 内置了一个非常小巧的 Pub-Sub 机制。API 简要如下：
 
 用来添加事件回调。
 
-```
+```js
 // 给 fetch 事件添加一个回调
 seajs.on('fetch', function(data) {
   ...
@@ -21,7 +21,7 @@ seajs.on('fetch', function(data) {
 
 用来移除事件回调。
 
-```
+```js
 // 从 fetch 事件的回调中移除掉 fn 函数
 seajs.off('fetch', fn);
 
@@ -36,7 +36,7 @@ seajs.off();
 
 用来触发事件。
 
-```
+```js
 // 触发 fetch 事件
 seajs.emit('fetch', { uri: uri, fetchedList: fetchedList });
 ```
@@ -47,7 +47,7 @@ seajs.emit('fetch', { uri: uri, fetchedList: fetchedList });
 
 Sea.js 内部提供了 8 种事件。
 
-```
+```js
 resolve       -- 将 id 解析成为 uri 时触发
 load          -- 开始加载文件时触发
 fetch         -- 具体获取某个 uri 时触发
@@ -60,7 +60,7 @@ error          -- 加载脚本文件出现 404 或其他错误时触发
 
 每个事件触发时会带上相关联的数据，比如
 
-```
+```js
   // Emit `fetch` event for plugins such as plugin-combo
   var data = { uri: uri }
   emit("fetch", data)
@@ -68,7 +68,7 @@ error          -- 加载脚本文件出现 404 或其他错误时触发
 
 上面是触发 `fetch` 事件的源码。订阅的 `callback` 回调会接受到 data 参数：
 
-```
+```js
 seajs.on('fetch', function(data) {
   if (data.uri) {
     data.requestUri = data.uri + '?t=' + new Date().getTime()

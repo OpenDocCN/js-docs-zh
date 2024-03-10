@@ -6,7 +6,7 @@
 
 当`node.js`检测到它运行于 TTY 上下文中，那么`process.stdin`将会是一个`tty.ReadStream`实例，`process.stdout`将会是一个`tty.WriteStream`实例。测试`node.js`是否运行在 TTY 上下文中的一个比较好的办法是检查`process.stdout.isTTY`：
 
-```
+```js
 $ iojs -p -e "Boolean(process.stdout.isTTY)"
 true
 $ iojs -p -e "Boolean(process.stdout.isTTY)" | cat
@@ -51,7 +51,7 @@ false
 
 当列属性或行属性被改变时，通过`refreshSize()`被触发。
 
-```
+```js
 process.stdout.on('resize', function() {
   console.log('screen size has changed!');
   console.log(process.stdout.columns + 'x' + process.stdout.rows);

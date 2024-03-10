@@ -23,7 +23,7 @@ Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](h
 
 如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。
 
-```
+```js
 $ npm install -g hexo-cli 
 ```
 
@@ -44,19 +44,19 @@ $ npm install -g hexo-cli
 
 cURL:
 
-```
+```js
 $ curl https://raw.github.com/creationix/nvm/master/install.sh | sh 
 ```
 
 Wget:
 
-```
+```js
 $ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh 
 ```
 
 安装完成后，重启终端并执行下列命令即可安装 Node.js。
 
-```
+```js
 $ nvm install 4 
 ```
 
@@ -66,7 +66,7 @@ $ nvm install 4
 
 所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。
 
-```
+```js
 $ npm install -g hexo-cli 
 ```
 
@@ -74,14 +74,14 @@ $ npm install -g hexo-cli
 
 安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
 
-```
+```js
 $ hexo init <folder>$ cd
 $ npm install 
 ```
 
 新建完成后，指定文件夹的目录如下：
 
-```
+```js
 .
 ├── _config.yml
 ├── package.json
@@ -100,7 +100,7 @@ $ npm install
 
 应用程序的信息。[EJS](http://embeddedjs.com/), [Stylus](http://learnboost.github.io/stylus/) 和 [Markdown](http://daringfireball.net/projects/markdown/) renderer 已默认安装，您可以自由移除。
 
-```
+```js
 {  "name"hexo-site",  "version"0.0.0",  "privatetrue,  "hexo{    "version""
   ,  "dependencies{    "hexo"³.0.0",    "hexo-generator-archive"⁰.1.0",    "hexo-generator-category"⁰.1.0",    "hexo-generator-index"⁰.1.0",    "hexo-generator-tag"⁰.1.0",    "hexo-renderer-ejs"⁰.1.0",    "hexo-renderer-stylus"⁰.2.0",    "hexo-renderer-marked"⁰.2.4",    "hexo-server"⁰.1.2" 
 ```
@@ -207,7 +207,7 @@ Hexo 使用 [Moment.js](http://momentjs.com/) 来解析和显示时间。
 
 ## init
 
-```
+```js
 $ hexo init [folder] 
 ```
 
@@ -215,7 +215,7 @@ $ hexo init [folder]
 
 ## new
 
-```
+```js
 $ hexo new [layout] <title> 
 ```
 
@@ -223,7 +223,7 @@ $ hexo new [layout] <title>
 
 ## generate
 
-```
+```js
 $ hexo generate 
 ```
 
@@ -236,7 +236,7 @@ $ hexo generate
 
 ## publish
 
-```
+```js
 $ hexo publish [layout] <filename> 
 ```
 
@@ -244,7 +244,7 @@ $ hexo publish [layout] <filename>
 
 ## server
 
-```
+```js
 $ hexo server 
 ```
 
@@ -258,7 +258,7 @@ $ hexo server
 
 ## deploy
 
-```
+```js
 $ hexo deploy 
 ```
 
@@ -270,7 +270,7 @@ $ hexo deploy
 
 ## render
 
-```
+```js
 $ hexo render <file1> [file2] ... 
 ```
 
@@ -282,7 +282,7 @@ $ hexo render <file1> [file2] ...
 
 ## migrate
 
-```
+```js
 $ hexo migrate <type 
 ```
 
@@ -290,7 +290,7 @@ $ hexo migrate <type
 
 ## clean
 
-```
+```js
 $ hexo clean 
 ```
 
@@ -298,7 +298,7 @@ $ hexo clean
 
 ## list
 
-```
+```js
 $ hexo list <type 
 ```
 
@@ -306,7 +306,7 @@ $ hexo list <type
 
 ## version
 
-```
+```js
 $ hexo version 
 ```
 
@@ -316,7 +316,7 @@ $ hexo version
 
 ### 安全模式
 
-```
+```js
 $ hexo --safe 
 ```
 
@@ -324,7 +324,7 @@ $ hexo --safe
 
 ### 调试模式
 
-```
+```js
 $ hexo --debug 
 ```
 
@@ -332,7 +332,7 @@ $ hexo --debug
 
 ### 简洁模式
 
-```
+```js
 $ hexo --silent 
 ```
 
@@ -340,7 +340,7 @@ $ hexo --silent
 
 ### 自定义配置文件的路径
 
-```
+```js
 $ hexo --config custom.yml 
 ```
 
@@ -348,7 +348,7 @@ $ hexo --config custom.yml
 
 ### 显示草稿
 
-```
+```js
 $ hexo --draft 
 ```
 
@@ -356,7 +356,7 @@ $ hexo --draft
 
 ### 自定义 CWD
 
-```
+```js
 $ hexo --cwd /path/to/cwd 
 ```
 
@@ -368,13 +368,13 @@ $ hexo --cwd /path/to/cwd
 
 首先，安装 `hexo-migrator-rss` 插件。
 
-```
+```js
 $ npm install hexo-migrator-rss --save 
 ```
 
 插件安装完成后，执行下列命令，从 RSS 迁移所有文章。`source` 可以是文件路径或网址。
 
-```
+```js
 $ hexo migrate rss <source 
 ```
 
@@ -382,7 +382,7 @@ $ hexo migrate rss <source
 
 把 `_posts` 文件夹内的所有文件复制到 `source/_posts` 文件夹，并在 `_config.yml` 中修改 `new_post_name` 参数。
 
-```
+```js
 new_post_name: :year-:month-:day-:title.md 
 ```
 
@@ -390,7 +390,7 @@ new_post_name: :year-:month-:day-:title.md
 
 把 Octopress `source/_posts` 文件夹内的所有文件转移到 Hexo 的 `source/_posts` 文件夹，并修改 `_config.yml` 中的 `new_post_name` 参数。
 
-```
+```js
 new_post_name: :year-:month-:day-:title.md 
 ```
 
@@ -398,7 +398,7 @@ new_post_name: :year-:month-:day-:title.md
 
 首先，安装 `hexo-migrator-wordpress` 插件。
 
-```
+```js
 $ npm install hexo-migrator-wordpress --save 
 ```
 
@@ -406,7 +406,7 @@ $ npm install hexo-migrator-wordpress --save
 
 插件安装完成后，执行下列命令来迁移所有文章。`source` 可以是 WordPress 导出的文件路径或网址。
 
-```
+```js
 $ hexo migrate wordpress <source 
 ```
 
@@ -414,13 +414,13 @@ $ hexo migrate wordpress <source
 
 首先，安装 `hexo-migrator-joomla` 插件。
 
-```
+```js
 $ npm install hexo-migrator-joomla --save 
 ```
 
 使用 [J2XML](http://extensions.joomla.org/extensions/migration-a-conversion/data-import-a-export/12816?qh=YToxOntpOjA7czo1OiJqMnhtbCI7fQ%3D%3D) 组件导出 Joomla 文章。 插件安装完成后，执行下列命令来迁移所有文章。`source` 可以是 Joomla 导出的文件路径或网址。
 
-```
+```js
 $ hexo migrate joomla <source 
 ```
 
@@ -430,7 +430,7 @@ $ hexo migrate joomla <source
 
 你可以执行下列命令来创建一篇新文章。
 
-```
+```js
 $ hexo new [layout] <title> 
 ```
 
@@ -465,7 +465,7 @@ Hexo 默认以标题做为文件名称，但您可编辑 `new_post_name` 参数�
 
 刚刚提到了 Hexo 的一种特殊布局：`draft`，这种布局在建立时会被保存到 `source/_drafts` 文件夹，您可通过 `publish` 命令将草稿移动到 `source/_posts` 文件夹，该命令的使用方式与 `new` 十分类似，您也可在命令中指定 `layout` 来指定布局。
 
-```
+```js
 $ hexo publish [layout] <title> 
 ```
 
@@ -475,7 +475,7 @@ $ hexo publish [layout] <title>
 
 在新建文章时，Hexo 会根据 `scaffolds` 文件夹内相对应的文件来建立文件，例如：
 
-```
+```js
 $ hexo new photo "My Gallery" 
 ```
 
@@ -491,7 +491,7 @@ $ hexo new photo "My Gallery"
 
 Front-matter 是文件最上方以 `---` 分隔的区域，用于指定个别文件的变量，举例来说：
 
-```
+```js
 title: Hello World
 date: 2013/7/13 20:46:25
 --- 
@@ -514,7 +514,7 @@ date: 2013/7/13 20:46:25
 
 只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 `Foo, Bar` 不等于 `Bar, Foo`；而标签没有顺序和层次。
 
-```
+```js
 categories:
 - Diary
 tags:
@@ -526,7 +526,7 @@ tags:
 
 除了 YAML 外，你也可以使用 JSON 来编写 Front-matter，只要将 `---` 代换成 `;;;` 即可。
 
-```
+```js
 "title": "Hello World","date": "2013/7/13 20:46:25";;; 
 ```
 
@@ -540,7 +540,7 @@ tags:
 
 **别号：** quote
 
-```
+```js
 {% blockquote [author[, source]] [link] [source_link_title] %}
 content
 {% endblockquote %} 
@@ -550,7 +550,7 @@ content
 
 **没有提供参数，则只输出普通的 blockquote**
 
-```
+```js
 {% blockquote %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
 {% endblockquote %} 
@@ -560,7 +560,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit 
 
 **引用书上的句子**
 
-```
+```js
 {% blockquote David Levithan, Wide Awake %}
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %} 
@@ -570,7 +570,7 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 
 **引用 Twitter**
 
-```
+```js
 {% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
 NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
 {% endblockquote %} 
@@ -580,7 +580,7 @@ NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
 
 **引用网络上的文章**
 
-```
+```js
 {% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
 Every interaction is both precious and an opportunity to delight.
 {% endblockquote %} 
@@ -594,7 +594,7 @@ Every interaction is both precious and an opportunity to delight.
 
 **别名：** code
 
-```
+```js
 {% codeblock [title] [lang:language] [url] [link text] %}
 code snippet
 {% endcodeblock %} 
@@ -604,43 +604,43 @@ code snippet
 
 **普通的代码块**
 
-```
+```js
 {% codeblock %}
 alert('Hello World!');
 {% endcodeblock %} 
 ```
 
-```
+```js
 alert('Hello World!'); 
 ```
 
 **指定语言**
 
-```
+```js
 {% codeblock lang:objc %}
 [rectangle setX: 10 y: 10 width: 20 height: 20];
 {% endcodeblock %} 
 ```
 
-```
+```js
 [rectangle setX: 10102020 
 ```
 
 **附加说明**
 
-```
+```js
 {% codeblock Array.map %}
 array.map(callback[, thisArg])
 {% endcodeblock %} 
 ```
 
-```
+```js
 array.map(callback[, thisArg]) 
 ```
 
 **附加说明和网址**
 
-```
+```js
 {% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
 _.compact([0, 1, false, 2, '', 3]);
 => [1, 2, 3]
@@ -649,7 +649,7 @@ _.compact([0, 1, false, 2, '', 3]);
 
 [Underscore.js](http://underscorejs.org/#compact)
 
-```
+```js
 _.compact([0, 1, false, 2, '', 3]);
 => [1, 2, 3] 
 ```
@@ -664,7 +664,7 @@ _.compact([0, 1, false, 2, '', 3]);
 
 在文章中插入 Pull quote。
 
-```
+```js
 {% pullquote [class] %}
 content
 {% endpullquote %} 
@@ -674,7 +674,7 @@ content
 
 在文章中嵌入 jsFiddle。
 
-```
+```js
 {% jsfiddle shorttag [tabs] [skin] [width] [height] %} 
 ```
 
@@ -682,7 +682,7 @@ content
 
 在文章中嵌入 Gist。
 
-```
+```js
 {% gist gist_id [filename] %} 
 ```
 
@@ -690,7 +690,7 @@ content
 
 在文章中插入 iframe。
 
-```
+```js
 {% iframe url [width] [height] %} 
 ```
 
@@ -698,7 +698,7 @@ content
 
 在文章中插入指定大小的图片。
 
-```
+```js
 {% img [class names] /path/to/image [width] [height] [title text [alt text]] %} 
 ```
 
@@ -706,7 +706,7 @@ content
 
 在文章中插入链接，并自动给外部链接添加 `target="_blank"` 属性。
 
-```
+```js
 {% link text url [external] [title] %} 
 ```
 
@@ -714,7 +714,7 @@ content
 
 插入 `source` 文件夹内的代码文件。
 
-```
+```js
 {% include_code [title] [lang:language] path/to/file %} 
 ```
 
@@ -722,7 +722,7 @@ content
 
 在文章中插入 Youtube 视频。
 
-```
+```js
 {% youtube video_id %} 
 ```
 
@@ -730,7 +730,7 @@ content
 
 在文章中插入 Vimeo 视频。
 
-```
+```js
 {% vimeo video_id %} 
 ```
 
@@ -738,7 +738,7 @@ content
 
 引用其他文章的链接。
 
-```
+```js
 {% post_path slug %}
 {% post_link slug [title] %} 
 ```
@@ -747,7 +747,7 @@ content
 
 引用文章的资源。
 
-```
+```js
 {% asset_path slug %}
 {% asset_img slug [title] %}
 {% asset_link slug [title] %} 
@@ -757,7 +757,7 @@ content
 
 如果您想在文章中插入 Swig 标签，可以尝试使用 Raw 标签，以免发生解析异常。
 
-```
+```js
 {% raw %}
 content
 {% endraw %} 
@@ -771,7 +771,7 @@ content
 
 对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo 也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 `config.yml` 文件中的 `post_asset_folder` 选项设为 `true` 来打开。
 
-```
+```js
 post_asset_folder: true 
 ```
 
@@ -781,7 +781,7 @@ post_asset_folder: true
 
 通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在 Hexo 2 时代，社区创建了很多插件来解决这个问题。但是，随着 Hexo 3 的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。
 
-```
+```js
 {% asset_path slug %}
 {% asset_img slug [title] %}
 {% asset_link slug [title] %} 
@@ -791,7 +791,7 @@ post_asset_folder: true
 
 正确的引用图片方式是使用下列的标签插件而不是 markdown ：
 
-```
+```js
 {% asset_img example.jpg This is an example image %} 
 ```
 
@@ -803,7 +803,7 @@ post_asset_folder: true
 
 举例来说，在 `source/_data` 文件夹中新建 `menu.yml` 文件：
 
-```
+```js
 Home: /
 Gallery: /gallery/
 Archives: /archives/ 
@@ -811,7 +811,7 @@ Archives: /archives/
 
 您就能在模板中使用这些资料：
 
-```
+```js
 {% for link in site.data.menu %}
   <a href="{{ link }}">{{ loop.key }}</a>
 {% endfor %} 
@@ -823,19 +823,19 @@ Archives: /archives/
 
 Hexo 3.0 把服务器独立成了个别模块，您必须先安装 [hexo-server](https://github.com/hexojs/hexo-server) 才能使用。
 
-```
+```js
 $ npm install hexo-server --save 
 ```
 
 安装完成后，输入以下命令以启动服务器，您的网站会在 `http://localhost:4000` 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。
 
-```
+```js
 $ hexo server 
 ```
 
 如果您想要更改端口，或是在执行时遇到了 `EADDRINUSE` 错误，可以在执行时使用 `-p` 选项指定其他端口，如下：
 
-```
+```js
 $ hexo server -p 5000 
 ```
 
@@ -843,7 +843,7 @@ $ hexo server -p 5000
 
 在静态模式下，服务器只处理 `public` 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 `hexo generate`，此模式通常用于生产环境（production mode）下。
 
-```
+```js
 $ hexo server -s 
 ```
 
@@ -851,7 +851,7 @@ $ hexo server -s
 
 服务器默认运行在 `0.0.0.0`，您可以覆盖默认的 IP 设置，如下：
 
-```
+```js
 $ hexo server -i 192.1681.1 
 ```
 
@@ -861,7 +861,7 @@ $ hexo server -i 192.1681.1
 
 ### 安装
 
-```
+```js
 $ curl get.pow.cx | sh 
 ```
 
@@ -869,7 +869,7 @@ $ curl get.pow.cx | sh
 
 在 `~/.pow` 文件夹建立链接（symlink）。
 
-```
+```js
 $ cd
 $ ln -s 
 ```
@@ -880,7 +880,7 @@ $ ln -s
 
 使用 Hexo 生成静态文件快速而且简单。
 
-```
+```js
 $ hexo generate 
 ```
 
@@ -888,7 +888,7 @@ $ hexo generate
 
 Hexo 能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的 SHA1 checksum，只有变动的文件才会写入。
 
-```
+```js
 $ hexo generate --watch 
 ```
 
@@ -896,7 +896,7 @@ $ hexo generate --watch
 
 您可执行下列的其中一个命令，让 Hexo 在生成完毕后自动部署网站，两个命令的作用是相同的。
 
-```
+```js
 $ hexo generate --deploy$ hexo deploy --generate 
 ```
 
@@ -904,20 +904,20 @@ $ hexo generate --deploy$ hexo deploy --generate
 
 Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。
 
-```
+```js
 $ hexo deploy 
 ```
 
 在开始之前，您必须先在 `_config.yml` 中修改参数，一个正确的部署配置中至少要有 `type` 参数，例如：
 
-```
+```js
 deploy:
   type: git 
 ```
 
 您可同时使用多个 deployer，Hexo 会依照顺序执行每个 deployer。
 
-```
+```js
 deploy:
 - type: git
   repo:
@@ -929,13 +929,13 @@ deploy:
 
 安装 [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)。
 
-```
+```js
 $ npm install hexo-deployer-git --save 
 ```
 
 修改配置。
 
-```
+```js
 deploy:
   type: git
   repo: <repository url>
@@ -953,13 +953,13 @@ deploy:
 
 安装 [hexo-deployer-heroku](https://github.com/hexojs/hexo-deployer-heroku)。
 
-```
+```js
 $ npm install hexo-deployer-heroku --save 
 ```
 
 修改配置。
 
-```
+```js
 deploy:
   type: heroku
   repo: <repository url>
@@ -975,13 +975,13 @@ deploy:
 
 安装 [hexo-deployer-rsync](https://github.com/hexojs/hexo-deployer-rsync)。
 
-```
+```js
 $ npm install hexo-deployer-rsync --save 
 ```
 
 修改配置。
 
-```
+```js
 deploy:
   type: rsync
   host: <host>
@@ -1007,13 +1007,13 @@ deploy:
 
 安装 [hexo-deployer-openshift](https://github.com/hexojs/hexo-deployer-openshift)。
 
-```
+```js
 $ npm install hexo-deployer-openshift --save 
 ```
 
 修改配置。
 
-```
+```js
 deploy:
   type: openshift
   repo: <repository url>
@@ -1029,13 +1029,13 @@ deploy:
 
 安装 [hexo-deployer-ftpsync](https://github.com/hexojs/hexo-deployer-ftpsync)。
 
-```
+```js
 $ npm install hexo-deployer-ftpsync --save 
 ```
 
 修改配置。
 
-```
+```js
 deploy:
   type: ftpsync
   host: <host>
@@ -1086,7 +1086,7 @@ Hexo 生成的所有文件都放在 `public` 文件夹中，您可以将它们�
 
 您可在 `permalink_defaults` 参数下调整永久链接中各变量的默认值：
 
-```
+```js
 permalink_defaults:
   lang: en 
 ```
@@ -1095,7 +1095,7 @@ permalink_defaults:
 
 假设 `source/_posts` 文件夹中有个 `hello-world.md`，包含以下内容：
 
-```
+```js
 title: Hello World
 date: 2013-07-14 17:01:34
 categories:
@@ -1113,21 +1113,21 @@ categories:
 
 若要建立一个多语种的网站，您可修改 `new_post_name` 和 `permalink` 参数，如下：
 
-```
+```js
 new_post_name: :lang/:title.md
 permalink: :lang/:title/ 
 ```
 
 当您建立新文章时，文章会被储存到：
 
-```
+```js
 $ hexo new "Hello World"
 # => source/_posts/tw/Hello-World.md 
 ```
 
 而网址会是：
 
-```
+```js
 http://localhost:4000/tw/hello-world/ 
 ```
 
@@ -1135,7 +1135,7 @@ http://localhost:4000/tw/hello-world/
 
 创建 Hexo 主题非常容易，您只要在 `themes` 文件夹内，新增一个任意名称的文件夹，并修改 `_config.yml` 内的 `theme` 设定，即可切换主题。一个主题可能会有以下的结构：
 
-```
+```js
 .
 ├── _config.yml
 ├── languages
@@ -1156,7 +1156,7 @@ http://localhost:4000/tw/hello-world/
 
 布局文件夹。用于存放主题的模板文件，决定了网站内容的呈现方式，Hexo 内建 [Swig](http://paularmstrong.github.com/swig/) 模板引擎，您可以另外安装插件来获得 [EJS](https://github.com/hexojs/hexo-renderer-ejs)、[Haml](https://github.com/hexojs/hexo-renderer-haml) 或 [Jade](https://github.com/hexojs/hexo-renderer-jade) 支持，Hexo 根据模板文件的扩展名来决定所使用的模板引擎，例如：
 
-```
+```js
 layout.ejs   - 使用 EJS
 layout.swig  - 使用 Swig 
 ```
@@ -1180,7 +1180,7 @@ layout.swig  - 使用 Swig
 1.  Fork [hexojs/site](https://github.com/hexojs/site)
 2.  把库（repository）复制到电脑上，并安装所依赖的插件。
 
-    ```
+    ```js
     $ git clone https://github.com/&lt;username&gt;/site.git
     $ cd site
     $ npm install 
@@ -1188,7 +1188,7 @@ layout.swig  - 使用 Swig
 
 3.  编辑 `source/_data/themes.yml`，在文件中新增您的主题，例如：
 
-    ```
+    ```js
     - name: landscape
       description: A brand new default theme for Hexo.
       link: https://github.com/hexojs/hexo-theme-landscape
@@ -1224,18 +1224,18 @@ layout.swig  - 使用 Swig
 
 如果页面结构类似，例如两个模板都有页首（Header）和页脚（Footer），您可考虑通过「布局」让两个模板共享相同的结构。一个布局文件必须要能显示 `body` 变量的内容，如此一来模板的内容才会被显示，举例来说：
 
-```
+```js
 index 
 ```
 
-```
+```js
 <!DOCTYPE html>
 <html  <body<%-body</body</html 
 ```
 
 生成：
 
-```
+```js
 <!DOCTYPE html>
 <html  <bodyindex</body</html 
 ```
@@ -1246,17 +1246,17 @@ index
 
 局部模板让您在不同模板之间共享相同的组件，例如页首（Header）、页脚（Footer）或侧边栏（Sidebar）等，可利用局部模板功能分割为个别文件，让维护更加便利。举例来说：
 
-```
+```js
 <h1id"logo"<%=config.title</h1 
 ```
 
-```
+```js
 <%-partialpartialheader<divid"content"Home page</div 
 ```
 
 生成：
 
-```
+```js
 <h1id"logo"My Site</h1<divid"content"Home page</div 
 ```
 
@@ -1264,17 +1264,17 @@ index
 
 您可以在局部模板中指定局部变量并使用。
 
-```
+```js
 <h1id"logo"<%=title</h1 
 ```
 
-```
+```js
 <%-partialpartialheadertitle:HelloWorld<divid"content"Home page</div 
 ```
 
 生成：
 
-```
+```js
 <h1id"logo"Hello World</h1<divid"content"Home page</div 
 ```
 
@@ -1286,14 +1286,14 @@ index
 
 它可用于页首、页脚、侧边栏等文件不常变动的位置，举例来说：
 
-```
+```js
 <%- fragment_cache('header'function{  return'<header></header>'
 }); 
 ```
 
 如果您使用局部模板的话，可以更简单：
 
-```
+```js
 <%- partial('header'true 
 ```
 
@@ -1400,7 +1400,7 @@ index
 
 在路径前加上根路径，从 Hexo 2.7 开始您应该使用此函数而不是 `config.root + path`。
 
-```
+```js
 <%- url_for(path) %> 
 ```
 
@@ -1408,7 +1408,7 @@ index
 
 取得与 `from` 相对的 `to` 路径。
 
-```
+```js
 <%- relative_url(from, to) %> 
 ```
 
@@ -1416,13 +1416,13 @@ index
 
 插入 Gravatar 图片。 如果你不指定 `options` 参数，将会应用默认参数。否则，你可以将其设置为一个数字，这个数字将会作为 Gravatar 的大小参数。最后，如果你设置它一个对象，它将会被转换为 Gravatar 的一个查询字符串参数。
 
-```
+```js
 <%- gravatar(email, [options]); 
 ```
 
 **示例：**
 
-```
+```js
 <%- gravatar('a@abc.com'
 // http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787
 <%- gravatar('a@abc.com'40
@@ -1437,13 +1437,13 @@ index
 
 载入 CSS 文件。`path` 可以是数组或字符串，如果 `path` 开头不是 `/` 或任何协议，则会自动加上根路径；如果后面没有加上 `.css` 扩展名的话，也会自动加上。
 
-```
+```js
 <%- css(path, ...) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- css('style.css'
 // <link rel="stylesheet" href="/style.css" type="text/css">
 <%- css(['style.css''screen.css'
@@ -1455,13 +1455,13 @@ index
 
 载入 JavaScript 文件。`path` 可以是数组或字符串，如果 `path` 开头不是 `/` 或任何协议，则会自动加上根路径；如果后面没有加上 `.js` 扩展名的话，也会自动加上。
 
-```
+```js
 <%- js(path, ...) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- js('script.js'
 // <script type="text/javascript" src="/script.js"></script>
 <%- js(['script.js''gallery.js'
@@ -1473,7 +1473,7 @@ index
 
 插入链接。
 
-```
+```js
 <%- link_to(path, [text], [options]) %> 
 ```
 
@@ -1485,7 +1485,7 @@ index
 
 **示例：**
 
-```
+```js
 <%- link_to('http://www.google.com'
 // <a href="http://www.google.com" title="http://www.google.com">http://www.google.com</a>
 <%- link_to('http://www.google.com''Google'
@@ -1498,7 +1498,7 @@ index
 
 插入电子邮箱链接。
 
-```
+```js
 <%- mail_to(path, [text], [options]) %> 
 ```
 
@@ -1513,7 +1513,7 @@ index
 
 **示例：**
 
-```
+```js
 <%- mail_to('a@abc.com'
 // <a href="mailto:a@abc.com" title="a@abc.com">a@abc.com</a>
 <%- mail_to('a@abc.com''Email'
@@ -1524,7 +1524,7 @@ index
 
 插入图片。
 
-```
+```js
 <%- image_tag(path, [options]) %> 
 ```
 
@@ -1540,7 +1540,7 @@ index
 
 插入 favicon。
 
-```
+```js
 <%- favicon_tag(path) %> 
 ```
 
@@ -1548,7 +1548,7 @@ index
 
 插入 feed 链接。
 
-```
+```js
 <%- feed_tag(path, [options]) %> 
 ```
 
@@ -1563,7 +1563,7 @@ index
 
 检查 `path` 是否符合目前页面的网址。开启 `strict` 选项启用严格比对。
 
-```
+```js
 <%- is_current(path, [strict]) %> 
 ```
 
@@ -1571,7 +1571,7 @@ index
 
 检查目前是否为首页。
 
-```
+```js
 <%- is_home() %> 
 ```
 
@@ -1579,7 +1579,7 @@ index
 
 检查目前是否为文章。
 
-```
+```js
 <%- is_post() %> 
 ```
 
@@ -1587,7 +1587,7 @@ index
 
 检查目前是否为存档页面。
 
-```
+```js
 <%- is_archive() %> 
 ```
 
@@ -1595,7 +1595,7 @@ index
 
 检查目前是否为年度归档页面。
 
-```
+```js
 <%- is_year() %> 
 ```
 
@@ -1603,7 +1603,7 @@ index
 
 检查目前是否为月度归档页面。
 
-```
+```js
 <%- is_month() %> 
 ```
 
@@ -1611,7 +1611,7 @@ index
 
 检查目前是否为分类归档页面。 如果给定一个字符串作为参数，将会检查目前是否为指定分类。
 
-```
+```js
 <%- is_category() %><%-is_categoryhobby 
 ```
 
@@ -1619,7 +1619,7 @@ index
 
 检查目前是否为标签归档页面。 如果给定一个字符串作为参数，将会检查目前是否为指定标签。
 
-```
+```js
 <%- is_tag() %><%-is_taghobby 
 ```
 
@@ -1629,7 +1629,7 @@ index
 
 清除字符串开头和结尾的空格。
 
-```
+```js
 <%- trim(string) %> 
 ```
 
@@ -1637,13 +1637,13 @@ index
 
 清除字符串中的 HTML 标签。
 
-```
+```js
 <%- strip_html(string) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- strip_html('It's not <b>important</b> anymore!') %>// It's not important anymore! 
 ```
 
@@ -1651,13 +1651,13 @@ index
 
 把字符串转换为正确的 Title case。
 
-```
+```js
 <%- titlecase(string) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- titlecase('this is an apple') %># This is an Apple 
 ```
 
@@ -1665,13 +1665,13 @@ index
 
 使用 Markdown 解析字符串。
 
-```
+```js
 <%- markdown(str) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- markdown('make me **strong**'
 // make me <strong>strong</strong> 
 ```
@@ -1680,7 +1680,7 @@ index
 
 解析字符串。
 
-```
+```js
 <%- render(str, engine, [options]) %> 
 ```
 
@@ -1688,13 +1688,13 @@ index
 
 使每行的字符串长度不超过 `length`。`length` 预设为 80。
 
-```
+```js
 <%- word_wrap(str, [length]) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- word_wrap('Once upon a time'8
 // Once upon\n a time 
 ```
@@ -1703,13 +1703,13 @@ index
 
 移除超过 `length` 长度的字符串。
 
-```
+```js
 <%- truncate(text, length) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- truncate('Once upon a time in a world far far away'17
 // Once upon a ti...
 <%- truncate('Once upon a time in a world far far away'17' '
@@ -1724,7 +1724,7 @@ index
 
 载入其他模板文件，您可在 `locals` 设定区域变量。
 
-```
+```js
 <%- partial(layout, [locals], [options]) %> 
 ```
 
@@ -1737,13 +1737,13 @@ index
 
 局部缓存。它储存局部内容，下次使用时就能直接使用缓存。
 
-```
+```js
 <%- fragment_cache(id, fn); 
 ```
 
 **示例：**
 
-```
+```js
 <%- fragment_cache('header'function{  return'<header></header>'
 }) %> 
 ```
@@ -1754,13 +1754,13 @@ index
 
 插入格式化的日期。`date` 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js](http://momentjs.com/) 对象。`format` 默认为 `date_format` 配置信息。
 
-```
+```js
 <%- date(date, [format]) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- date(Date
 // 2013-01-01
 <%- date(Date'YYYY/M/D'
@@ -1771,13 +1771,13 @@ index
 
 插入 XML 格式的日期。`date` 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js](http://momentjs.com/) 对象。
 
-```
+```js
 <%- date_xml(date) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- date_xml(Date
 // 2013-01-01T00:00:00.000Z 
 ```
@@ -1786,13 +1786,13 @@ index
 
 插入格式化的时间。`date` 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js](http://momentjs.com/) 对象。`format` 默认为 `time_format` 配置信息。
 
-```
+```js
 <%- time(date, [format]) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- time(Date
 // 13:05:12
 <%- time(Date'h:mm:ss a'
@@ -1803,13 +1803,13 @@ index
 
 插入格式化的日期和时间。`date` 可以是 UNIX 时间、ISO 字符串、Date 对象或 [Moment.js](http://momentjs.com/) 对象。`format` 默认为 `date_format + time_format`。
 
-```
+```js
 <%- full_date(date, [format]) %> 
 ```
 
 **示例：**
 
-```
+```js
 <%- full_date(newDate
 // Jan 1, 2013 0:00:00
 <%- full_date(newDate'dddd, MMMM Do YYYY, h:mm:ss a'
@@ -1826,7 +1826,7 @@ index
 
 插入分类列表。
 
-```
+```js
 <%- list_categories([options]) %> 
 ```
 
@@ -1845,7 +1845,7 @@ index
 
 插入标签列表。
 
-```
+```js
 <%- list_tags([options]) %> 
 ```
 
@@ -1864,7 +1864,7 @@ index
 
 插入归档列表。
 
-```
+```js
 <%- list_archives([options]) %> 
 ```
 
@@ -1883,7 +1883,7 @@ index
 
 插入文章列表。
 
-```
+```js
 <%- list_posts([options]) %> 
 ```
 
@@ -1901,7 +1901,7 @@ index
 
 插入标签云。
 
-```
+```js
 <%- tagcloud([tags], [options]) %> 
 ```
 
@@ -1923,7 +1923,7 @@ index
 
 插入分页链接。
 
-```
+```js
 <%- paginator(options) %> 
 ```
 
@@ -1945,7 +1945,7 @@ index
 
 插入 Google 搜索框。
 
-```
+```js
 <%- search_form(options) %> 
 ```
 
@@ -1959,7 +1959,7 @@ index
 
 格式化数字。
 
-```
+```js
 <%- number_format(number, [options]) %> 
 ```
 
@@ -1971,7 +1971,7 @@ index
 
 **示例：**
 
-```
+```js
 <%- number_format(12345.671
 // 12,345.68
 <%- number_format(12345.674
@@ -1988,7 +1988,7 @@ index
 
 插入 open graph 资源。
 
-```
+```js
 <%- open_graph([options]) %> 
 ```
 
@@ -2011,7 +2011,7 @@ index
 
 解析内容中的标题标签 (h1~h6) 并插入目录。
 
-```
+```js
 <%- toc(str, [options]) %> 
 ```
 
@@ -2022,7 +2022,7 @@ index
 
 **示例：**
 
-```
+```js
 <%- toc(page.content) %> 
 ```
 
@@ -2030,7 +2030,7 @@ index
 
 若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 `_config.yml` 中调整 `language` 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。
 
-```
+```js
 language: zh-tw
 
 language: 
@@ -2046,7 +2046,7 @@ language:
 
 在模板中，透过 `__` 或 `_p` 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。例如：
 
-```
+```js
 index:
   title: Home
   add: Add
@@ -2056,7 +2056,7 @@ index:
     other: %d videos 
 ```
 
-```
+```js
 <%= __('index.title'
 // Home
 <%= _p('index.video'3
@@ -2067,13 +2067,13 @@ index:
 
 您可在 front-matter 中指定该页面的语言，也可在 `_config.yml` 中修改 `i18n_dir` 设定，让 Hexo 自动侦测。
 
-```
+```js
 i18n_dir: :lang 
 ```
 
 `i18n_dir` 的预设值是 `:lang`，也就是说 Hexo 会捕获网址中的第一段以检测语言，举例来说：
 
-```
+```js
 /index.html => en
 /archives/index.html => en
 /zh-tw/index.html => zh-tw 
@@ -2095,7 +2095,7 @@ Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心
 
 文件夹内至少要包含 2 个文件：一个是主程序，另一个是 `package.json`，描述插件的用途和所依赖的插件。
 
-```
+```js
 .
 ├── index.js
 └── package.json 
@@ -2103,7 +2103,7 @@ Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心
 
 `package.json` 中至少要包含 `name`, `version`, `main` 属性，例如：
 
-```
+```js
 {  "name"hexo-my-plugin",  "version"0.0.1",  "main"index" 
 ```
 
@@ -2123,7 +2123,7 @@ Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心
 1.  Fork [hexojs/site](https://github.com/hexojs/site)
 2.  把库（repository）复制到电脑上，并安装所依赖的插件。
 
-    ```
+    ```js
     $ git clone https://github.com/&lt;username&gt;/site.git
     $ cd site
     $ npm install 
@@ -2131,7 +2131,7 @@ Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心
 
 3.  编辑 `source/_data/plugins.yml`，在档案中新增您的插件，例如：
 
-    ```
+    ```js
     - name: hexo-server
       description: Server module for Hexo.
       link: https://github.com/hexojs/hexo-server
@@ -2153,14 +2153,14 @@ Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心
 
 ## YAML 解析错误
 
-```
+```js
 JS-YAML: incomplete explicit mapping pair; a key node is missed at line 18, column 29:
       last_updated: Last updated: %s 
 ```
 
 如果 YAML 字符串中包含冒号（`:`）的话，请加上引号。
 
-```
+```js
 JS-YAML: bad indentation of a mapping entry at line 18, column 31:
       last_updated:"Last updated: %s" 
 ```
@@ -2171,19 +2171,19 @@ JS-YAML: bad indentation of a mapping entry at line 18, column 31:
 
 ## EMFILE 错误
 
-```
+```js
 Error: EMFILE, too many open files 
 ```
 
 虽然 Node.js 有非阻塞 I/O，同步 I/O 的数量仍被系统所限制，在生成大量静态文件的时候，您可能会碰到 EMFILE 错误，您可以尝试提高同步 I/O 的限制数量来解决此问题。
 
-```
+```js
 $ ulimit10000 
 ```
 
 ## Git 部署问题
 
-```
+```js
 fatal: 'username.github.io' does not appear to be a git repository 
 ```
 
@@ -2191,19 +2191,19 @@ fatal: 'username.github.io' does not appear to be a git repository
 
 ## 服务器问题
 
-```
+```js
 Error: listen EADDRINUSE 
 ```
 
 您可能同时开启两个 Hexo 服务器，或者有其他应用程序正在占用相同的端口，请尝试修改 `port` 参数，或是在启动 Hexo 服务器时加上 `-p` 选项。
 
-```
+```js
 $ hexo server -p 5000 
 ```
 
 ## 插件安装问题
 
-```
+```js
 npm ERR! node-waf configure build 
 ```
 
@@ -2211,7 +2211,7 @@ npm ERR! node-waf configure build
 
 ## DTrace 错误 （Mac OS X）
 
-```
+```js
 { [Error: Cannot find module './build/Release/DTraceProviderBindings'] code: 'MODULE_NOT_FOUND' }
 { [Error: Cannot find module './build/default/DTraceProviderBindings'] code: 'MODULE_NOT_FOUND' }
 { [Error: Cannot find module './build/Debug/DTraceProviderBindings'] code: 'MODULE_NOT_FOUND' } 
@@ -2219,7 +2219,7 @@ npm ERR! node-waf configure build
 
 DTrace 安装可能有错误 , 使用下列命令:
 
-```
+```js
 $ npm install hexo --no-optional 
 ```
 
@@ -2229,7 +2229,7 @@ $ npm install hexo --no-optional
 
 Hexo 使用 [Warehouse](https://github.com/tommy351/warehouse) 存储资料，它不是一般数组所以必须先进行类型转型才能遍历。
 
-```
+```js
 {% for post in site.posts.toArray() %}
 {% endfor %} 
 ```
@@ -2238,7 +2238,7 @@ Hexo 使用 [Warehouse](https://github.com/tommy351/warehouse) 存储资料，�
 
 有时资料可能没有被更新，或是生成的文件与修改前的相同，您可以尝试清除缓存并再执行一次。
 
-```
+```js
 $ hexo clean 
 ```
 
@@ -2246,7 +2246,7 @@ $ hexo clean
 
 Hexo 使用 [Nunjucks](http://mozilla.github.io/nunjucks/) 来解析文章（旧版本使用 [Swig](http://paularmstrong.github.io/swig/)，两者语法类似），内容若包含 `{{ }}` 或 `{% %}` 可能导致解析错误，您可以用 `raw` 标签包裹来避免潜在问题发生。
 
-```
+```js
 {% raw %}
 Hello {{ sensitive }}
 {% endraw %} 
@@ -2256,13 +2256,13 @@ Hello {{ sensitive }}
 
 运行 `$ hexo server` 命令有时会返回这样的错误：
 
-```
+```js
 Error: watch ENOSPC ... 
 ```
 
 它可以用过运行 `$ npm dedupe` 来解决，如果不起作用的话，可以尝试在 Linux 终端中运行下列命令：
 
-```
+```js
 $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p 
 ```
 
@@ -2287,7 +2287,7 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 1.  Fork [hexojs/hexo](https://github.com/hexojs/hexo)
 2.  把库（repository）复制到电脑上，并安装所依赖的插件。
 
-    ```
+    ```js
     $ git clone https://github.com/&lt;username&gt;/hexo.git
     $ cd hexo
     $ npm install
@@ -2296,7 +2296,7 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 
 3.  新增一个功能分支。
 
-    ```
+    ```js
     $ git checkout -b new_feature 
     ```
 
@@ -2304,7 +2304,7 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 
 5.  推送（push）分支。
 
-    ```
+    ```js
     $ git push origin new_feature 
     ```
 
@@ -2315,7 +2315,7 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 *   不要修改 `package.json` 的版本号。
 *   只有在测试通过的情况下您的合并申请才会被批准，在提交前别忘了进行测试。
 
-    ```
+    ```js
     $ npm test 
     ```
 
@@ -2328,7 +2328,7 @@ Hexo 文档开放源代码，您可以在 [hexojs/site](https://github.com/hexoj
 1.  Fork [hexojs/site](https://github.com/hexojs/site)
 2.  把库（repository）复制到电脑上，并安装所依赖的插件。
 
-    ```
+    ```js
     $ git clone https://github.com/&lt;username&gt;/site.git
     $ cd site
     $ npm install 
@@ -2336,7 +2336,7 @@ Hexo 文档开放源代码，您可以在 [hexojs/site](https://github.com/hexoj
 
 3.  开始编辑文件，您可以通过服务器预览变动。
 
-    ```
+    ```js
     $ hexo server 
     ```
 

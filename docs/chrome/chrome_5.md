@@ -32,7 +32,7 @@
 
 如果将扩展托管在 360 服务器上，那么你需要在 manifest.json 文件里面加一个 update_url 字段，如下：
 
-```
+```js
 {
     "name": "My extension",
     ...
@@ -45,7 +45,7 @@
 
 服务器返回的升级 manifest xml 格式文件看起来如下：
 
-```
+```js
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='**aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa**'>
@@ -70,7 +70,7 @@
 
 另外一种选择是通过命令行参数--extensions-update-frequency 来设置更加频繁的升级间隔，单位秒。例如，每 45 秒检测一次，你可以用这样的命令行参数来运行 chrome：
 
-```
+```js
 chrome.exe **--extensions-update-frequency=45** 
 ```
 
@@ -114,7 +114,7 @@ Extension 1 with id "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" and version "1.1" Extensi
 
 随着我们添加越来越多的 api 到扩展系统，你可能希望发布一个升级过的扩展，仅仅只允许运行在新版本的浏览器上。虽然 chrome 是自动升级的，但所有用户升级到新版浏览器也需要很多天时间。为了确保一个指定的扩展升级只作用在特定的比较高的版本上，你可以添加**prodversionmin**到你的升级 manifest 文件里面的 app 标签。例如：
 
-```
+```js
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'>
@@ -202,7 +202,7 @@ Extension 1 with id "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" and version "1.1" Extensi
 
 另一种打包方式是用特定的命令行参数，--pack-extension 指定扩展所在的文件夹，--pack-extension-key 指定私钥所在的文件位置，然后调用 chrome.exe 下面是示例：
 
-```
+```js
 chrome.exe --pack-extension=c:myext --pack-extension-key=c:myext.pem 
 ```
 

@@ -96,7 +96,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 你的 accordion 容器需要按照一个元素成组的满足拥有配对的头部和内容面板的格式要求：
 
-```
+```js
 <div id="accordion">
   <h3>First header</h3>
   <div>First content panel</div>
@@ -156,13 +156,13 @@ Accordions （折叠面板）支持任意的标记，但每个内容面板必须
 
 初始化带有指定 `active`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ active: 2 }); 
 ```
 
 在初始化后，获取或设置 `active` 选项：
 
-```
+```js
 // getter
 var active = $( ".selector" ).accordion( "option", "active" );
 
@@ -185,13 +185,13 @@ $( ".selector" ).accordion( "option", "active", 2 );
 
 初始化带有指定 `animate`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ animate: "bounceslide" }); 
 ```
 
 在初始化后，获取或设置 `animate` 选项：
 
-```
+```js
 // getter
 var animate = $( ".selector" ).accordion( "option", "animate" );
 
@@ -205,13 +205,13 @@ $( ".selector" ).accordion( "option", "animate", "bounceslide" );
 
 初始化带有指定 `collapsible`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ collapsible: true }); 
 ```
 
 在初始化后，获取或设置 `collapsible` 选项：
 
-```
+```js
 // getter
 var collapsible = $( ".selector" ).accordion( "option", "collapsible" );
 
@@ -225,13 +225,13 @@ $( ".selector" ).accordion( "option", "collapsible", true );
 
 初始化带有指定 `disabled`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ disabled: true }); 
 ```
 
 在初始化后，获取或设置 `disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).accordion( "option", "disabled" );
 
@@ -245,13 +245,13 @@ $( ".selector" ).accordion( "option", "disabled", true );
 
 初始化带有指定 `event`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ event: "mouseover" }); 
 ```
 
 在初始化后，获取或设置 `event` 选项：
 
-```
+```js
 // getter
 var event = $( ".selector" ).accordion( "option", "event" );
 
@@ -269,13 +269,13 @@ $( ".selector" ).accordion( "option", "event", "mouseover" );
 
 初始化带有指定 `header`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ header: "h3" }); 
 ```
 
 在初始化后，获取或设置 `header` 选项：
 
-```
+```js
 // getter
 var header = $( ".selector" ).accordion( "option", "header" );
 
@@ -297,13 +297,13 @@ $( ".selector" ).accordion( "option", "header", "h3" );
 
 初始化带有指定 `heightStyle`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ heightStyle: "fill" }); 
 ```
 
 在初始化后，获取或设置 `heightStyle` 选项：
 
-```
+```js
 // getter
 var heightStyle = $( ".selector" ).accordion( "option", "heightStyle" );
 
@@ -324,13 +324,13 @@ $( ".selector" ).accordion( "option", "heightStyle", "fill" );
 
 初始化带有指定 `icons`选项的 Accordion（折叠面板）：
 
-```
+```js
 $( ".selector" ).accordion({ icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" } }); 
 ```
 
 在初始化后，获取或设置 `icons` 选项：
 
-```
+```js
 // getter
 var icons = $( ".selector" ).accordion( "option", "icons" );
 
@@ -350,7 +350,7 @@ $( ".selector" ).accordion( "option", "icons", { "header": "ui-icon-plus", "acti
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).accordion( "destroy" ); 
 ```
 
@@ -364,7 +364,7 @@ $( ".selector" ).accordion( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).accordion( "disable" ); 
 ```
 
@@ -378,7 +378,7 @@ $( ".selector" ).accordion( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).accordion( "enable" ); 
 ```
 
@@ -392,7 +392,7 @@ $( ".selector" ).accordion( "enable" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).accordion( "option", "disabled" ); 
 ```
 
@@ -406,7 +406,7 @@ var isDisabled = $( ".selector" ).accordion( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).accordion( "option" ); 
 ```
 
@@ -421,7 +421,7 @@ var options = $( ".selector" ).accordion( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).accordion( "option", "disabled", true ); 
 ```
 
@@ -435,7 +435,7 @@ $( ".selector" ).accordion( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).accordion( "option", { disabled: true } ); 
 ```
 
@@ -449,7 +449,7 @@ $( ".selector" ).accordion( "option", { disabled: true } );
 
 调用 refresh 方法：
 
-```
+```js
 $( ".selector" ).accordion( "refresh" ); 
 ```
 
@@ -463,7 +463,7 @@ $( ".selector" ).accordion( "refresh" );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).accordion( "widget" ); 
 ```
 
@@ -486,7 +486,7 @@ var widget = $( ".selector" ).accordion( "widget" );
 
 初始化带有指定 activate 回调的 accordion：
 
-```
+```js
 $( ".selector" ).accordion({
   activate: function( event, ui ) {}
 }); 
@@ -494,7 +494,7 @@ $( ".selector" ).accordion({
 
 绑定一个事件监听器到 accordionactivate 事件:
 
-```
+```js
 $( ".selector" ).on( "accordionactivate", function( event, ui ) {} ); 
 ```
 
@@ -513,7 +513,7 @@ $( ".selector" ).on( "accordionactivate", function( event, ui ) {} );
 
 初始化带有指定 beforeActivate 回调的 accordion：
 
-```
+```js
 $( ".selector" ).accordion({
   beforeActivate: function( event, ui ) {}
 }); 
@@ -521,7 +521,7 @@ $( ".selector" ).accordion({
 
 绑定一个事件监听器到 accordionbeforeactivate 事件:
 
-```
+```js
 $( ".selector" ).on( "accordionbeforeactivate", function( event, ui ) {} ); 
 ```
 
@@ -538,7 +538,7 @@ $( ".selector" ).on( "accordionbeforeactivate", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 accordion：
 
-```
+```js
 $( ".selector" ).accordion({
   create: function( event, ui ) {}
 }); 
@@ -546,7 +546,7 @@ $( ".selector" ).accordion({
 
 绑定一个事件监听器到 accordioncreate 事件:
 
-```
+```js
 $( ".selector" ).on( "accordioncreate", function( event, ui ) {} ); 
 ```
 
@@ -554,7 +554,7 @@ $( ".selector" ).on( "accordioncreate", function( event, ui ) {} );
 
 #### 一个简单的 jQuery UI 折叠面板（Accordion）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -701,13 +701,13 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 初始化带有指定 `appendTo` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ appendTo: "#someElem" }); 
 ```
 
 在初始化后，获取或设置 `appendTo` 选项：
 
-```
+```js
 // getter
 var appendTo = $( ".selector" ).autocomplete( "option", "appendTo" );
 
@@ -721,13 +721,13 @@ $( ".selector" ).autocomplete( "option", "appendTo", "#someElem" );
 
 初始化带有指定 `autoFocus` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ autoFocus: true }); 
 ```
 
 在初始化后，获取或设置 `autoFocus` 选项：
 
-```
+```js
 // getter
 var autoFocus = $( ".selector" ).autocomplete( "option", "autoFocus" );
 
@@ -741,13 +741,13 @@ $( ".selector" ).autocomplete( "option", "autoFocus", true );
 
 初始化带有指定 `delay` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ delay: 500 }); 
 ```
 
 在初始化后，获取或设置 `delay` 选项：
 
-```
+```js
 // getter
 var delay = $( ".selector" ).autocomplete( "option", "delay" );
 
@@ -761,13 +761,13 @@ $( ".selector" ).autocomplete( "option", "delay", 500 );
 
 初始化带有指定 `disabled` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ disabled: true }); 
 ```
 
 在初始化后，获取或设置 `disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).autocomplete( "option", "disabled" );
 
@@ -781,13 +781,13 @@ $( ".selector" ).autocomplete( "option", "disabled", true );
 
 初始化带有指定 `minLength` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ minLength: 0 }); 
 ```
 
 在初始化后，获取或设置 `minLength` 选项：
 
-```
+```js
 // getter
 var minLength = $( ".selector" ).autocomplete( "option", "minLength" );
 
@@ -801,13 +801,13 @@ $( ".selector" ).autocomplete( "option", "minLength", 0 );
 
 初始化带有指定 `position` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ position: { my : "right top", at: "right bottom" } }); 
 ```
 
 在初始化后，获取或设置 `position` 选项：
 
-```
+```js
 // getter
 var position = $( ".selector" ).autocomplete( "option", "position" );
 
@@ -838,13 +838,13 @@ $( ".selector" ).autocomplete( "option", "position", { my : "right top", at: "ri
 
 初始化带有指定 `source` 选项的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({ source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ] }); 
 ```
 
 在初始化后，获取或设置 `source` 选项：
 
-```
+```js
 // getter
 var source = $( ".selector" ).autocomplete( "option", "source" );
 
@@ -864,7 +864,7 @@ $( ".selector" ).autocomplete( "option", "source", [ "c++", "java", "php", "cold
 
 调用 close 方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "close" ); 
 ```
 
@@ -878,7 +878,7 @@ $( ".selector" ).autocomplete( "close" );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "destroy" ); 
 ```
 
@@ -892,7 +892,7 @@ $( ".selector" ).autocomplete( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "disable" ); 
 ```
 
@@ -906,7 +906,7 @@ $( ".selector" ).autocomplete( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "enable" ); 
 ```
 
@@ -920,7 +920,7 @@ $( ".selector" ).autocomplete( "enable" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).autocomplete( "option", "disabled" ); 
 ```
 
@@ -934,7 +934,7 @@ var isDisabled = $( ".selector" ).autocomplete( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).autocomplete( "option" ); 
 ```
 
@@ -949,7 +949,7 @@ var options = $( ".selector" ).autocomplete( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "option", "disabled", true ); 
 ```
 
@@ -963,7 +963,7 @@ $( ".selector" ).autocomplete( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "option", { disabled: true } ); 
 ```
 
@@ -977,7 +977,7 @@ $( ".selector" ).autocomplete( "option", { disabled: true } );
 
 调用 search 方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "search", "" ); 
 ```
 
@@ -991,7 +991,7 @@ $( ".selector" ).autocomplete( "search", "" );
 
 调用 widget 方法：
 
-```
+```js
 $( ".selector" ).autocomplete( "widget" ); 
 ```
 
@@ -1014,7 +1014,7 @@ $( ".selector" ).autocomplete( "widget" );
 
 添加条目的值作为 `&lt;li&gt;` 上的 data 属性。
 
-```
+```js
 _renderItem: function( ul, item ) {
   return $( "<li>" )
     .attr( "data-value", item.value )
@@ -1034,7 +1034,7 @@ _renderItem: function( ul, item ) {
 
 添加一个 CSS class 名称到旧的菜单项。
 
-```
+```js
 _renderMenu: function( ul, items ) {
   var that = this;
   $.each( items, function( index, item ) {
@@ -1056,7 +1056,7 @@ thod-_resizeMenu">
 
 菜单总是显示为 500 像素宽。
 
-```
+```js
 _resizeMenu: function() {
   this.menu.element.outerWidth( 500 );
 } 
@@ -1078,7 +1078,7 @@ ction id="events">
 
 初始化带有指定 change 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   change: function( event, ui ) {}
 }); 
@@ -1086,7 +1086,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompletechange 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompletechange", function( event, ui ) {} ); 
 ```
 
@@ -1103,7 +1103,7 @@ $( ".selector" ).on( "autocompletechange", function( event, ui ) {} );
 
 初始化带有指定 close 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   close: function( event, ui ) {}
 }); 
@@ -1111,7 +1111,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompleteclose 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompleteclose", function( event, ui ) {} ); 
 ```
 
@@ -1128,7 +1128,7 @@ $( ".selector" ).on( "autocompleteclose", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   create: function( event, ui ) {}
 }); 
@@ -1136,7 +1136,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompletecreate 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompletecreate", function( event, ui ) {} ); 
 ```
 
@@ -1154,7 +1154,7 @@ $( ".selector" ).on( "autocompletecreate", function( event, ui ) {} );
 
 初始化带有指定 focus 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   focus: function( event, ui ) {}
 }); 
@@ -1162,7 +1162,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompletefocus 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompletefocus", function( event, ui ) {} ); 
 ```
 
@@ -1179,7 +1179,7 @@ $( ".selector" ).on( "autocompletefocus", function( event, ui ) {} );
 
 初始化带有指定 open 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   open: function( event, ui ) {}
 }); 
@@ -1187,7 +1187,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompleteopen 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompleteopen", function( event, ui ) {} ); 
 ```
 
@@ -1203,7 +1203,7 @@ $( ".selector" ).on( "autocompleteopen", function( event, ui ) {} );
 
 初始化带有指定 response 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   response: function( event, ui ) {}
 }); 
@@ -1211,7 +1211,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompleteresponse 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompleteresponse", function( event, ui ) {} ); 
 ```
 
@@ -1228,7 +1228,7 @@ $( ".selector" ).on( "autocompleteresponse", function( event, ui ) {} );
 
 初始化带有指定 search 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   search: function( event, ui ) {}
 }); 
@@ -1236,7 +1236,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompletesearch 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompletesearch", function( event, ui ) {} ); 
 ```
 
@@ -1254,7 +1254,7 @@ $( ".selector" ).on( "autocompletesearch", function( event, ui ) {} );
 
 初始化带有指定 select 回调的 autocomplete：
 
-```
+```js
 $( ".selector" ).autocomplete({
   select: function( event, ui ) {}
 }); 
@@ -1262,7 +1262,7 @@ $( ".selector" ).autocomplete({
 
 绑定一个事件监听器到 autocompleteselect 事件：
 
-```
+```js
 $( ".selector" ).on( "autocompleteselect", function( event, ui ) {} ); 
 ```
 
@@ -1270,7 +1270,7 @@ $( ".selector" ).on( "autocompleteselect", function( event, ui ) {} );
 
 #### Example: 一个简单的 jQuery UI 自动完成（Autocomplete）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1297,7 +1297,7 @@ $( "#autocomplete" ).autocomplete({
 
 #### Example: Using a custom source callback to match only the beginning of terms
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1393,13 +1393,13 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 初始化带有指定 `disabled` 选项的 button：
 
-```
+```js
 $( ".selector" ).button({ disabled: true }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).button( "option", "disabled" );
 
@@ -1419,13 +1419,13 @@ $( ".selector" ).button( "option", "disabled", true );
 
 初始化带有指定 `icons` 选项的 button：
 
-```
+```js
 $( ".selector" ).button({ icons: { primary: "ui-icon-gear", secondary: "ui-icon-triangle-1-s" } }); 
 ```
 
 在初始化后，获取或设置`icons` 选项：
 
-```
+```js
 // getter
 var icons = $( ".selector" ).button( "option", "icons" );
 
@@ -1439,13 +1439,13 @@ $( ".selector" ).button( "option", "icons", { primary: "ui-icon-gear", secondary
 
 初始化带有指定 `label` 选项的 button：
 
-```
+```js
 $( ".selector" ).button({ label: "custom label" }); 
 ```
 
 在初始化后，获取或设置`label` 选项：
 
-```
+```js
 // getter
 var label = $( ".selector" ).button( "option", "label" );
 
@@ -1459,13 +1459,13 @@ $( ".selector" ).button( "option", "label", "custom label" );
 
 初始化带有指定 `text` 选项的 button：
 
-```
+```js
 $( ".selector" ).button({ text: false }); 
 ```
 
 在初始化后，获取或设置`text` 选项：
 
-```
+```js
 // getter
 var text = $( ".selector" ).button( "option", "text" );
 
@@ -1485,7 +1485,7 @@ $( ".selector" ).button( "option", "text", false );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).button( "destroy" ); 
 ```
 
@@ -1499,7 +1499,7 @@ $( ".selector" ).button( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).button( "disable" ); 
 ```
 
@@ -1513,7 +1513,7 @@ $( ".selector" ).button( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).button( "enable" ); 
 ```
 
@@ -1527,7 +1527,7 @@ $( ".selector" ).button( "enable" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).button( "option", "disabled" ); 
 ```
 
@@ -1541,7 +1541,7 @@ var isDisabled = $( ".selector" ).button( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).button( "option" ); 
 ```
 
@@ -1556,7 +1556,7 @@ var options = $( ".selector" ).button( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).button( "option", "disabled", true ); 
 ```
 
@@ -1570,7 +1570,7 @@ $( ".selector" ).button( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).button( "option", { disabled: true } ); 
 ```
 
@@ -1584,7 +1584,7 @@ $( ".selector" ).button( "option", { disabled: true } );
 
 调用 refresh 方法：
 
-```
+```js
 $( ".selector" ).button( "refresh" ); 
 ```
 
@@ -1598,7 +1598,7 @@ $( ".selector" ).button( "refresh" );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).button( "widget" ); 
 ```
 
@@ -1617,7 +1617,7 @@ var widget = $( ".selector" ).button( "widget" );
 
 初始化带有指定 create 回调的 button
 
-```
+```js
 $( ".selector" ).button({
   create: function( event, ui ) {}
 }); 
@@ -1625,7 +1625,7 @@ $( ".selector" ).button({
 
 绑定一个事件监听器到 buttoncreate 事件：
 
-```
+```js
 $( ".selector" ).on( "buttoncreate", function( event, ui ) {} ); 
 ```
 
@@ -1633,7 +1633,7 @@ $( ".selector" ).on( "buttoncreate", function( event, ui ) {} );
 
 #### Example: 一个简单的 jQuery UI 按钮（Button）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1657,7 +1657,7 @@ $( "button" ).button();
 
 #### Example: 一个简单的 jQuery UI 按钮集（Buttonset）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -1804,7 +1804,7 @@ jQuery UI 日期选择器（Datepicker）是向页面添加日期选择功能的
 
 设置所有的日期选择器在获得焦点时或点击图标时打开。
 
-```
+```js
 $.datepicker.setDefaults({
   showOn: "both",
   buttonImageOnly: true,
@@ -1815,7 +1815,7 @@ $.datepicker.setDefaults({
 
 设置所有的日期选择器都有法语文本。
 
-```
+```js
 $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] ); 
 ```
 
@@ -1862,13 +1862,13 @@ $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
 
 以 ISO 格式显示日期。产生 "2007-01-26"。
 
-```
+```js
 $.datepicker.formatDate( "yy-mm-dd", new Date( 2007, 1 - 1, 26 ) ); 
 ```
 
 以扩展法语格式显示日期。产生 "Samedi, Juillet 14, 2007"。
 
-```
+```js
 $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
   dayNamesShort: $.datepicker.regional[ "fr" ].dayNamesShort,
   dayNames: $.datepicker.regional[ "fr" ].dayNames,
@@ -1913,13 +1913,13 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 
 提取一个 ISO 格式的日期。
 
-```
+```js
 $.datepicker.parseDate( "yy-mm-dd", "2007-01-26" ); 
 ```
 
 提取一个扩展法语格式的日期。
 
-```
+```js
 $.datepicker.parseDate( "DD, MM d, yy", "Samedi, Juillet 14, 2007", {
   shortYearCuroff: 20,
   dayNamesShort: $.datepicker.regional[ "fr" ].dayNamesShort,
@@ -1941,7 +1941,7 @@ $.datepicker.parseDate( "DD, MM d, yy", "Samedi, Juillet 14, 2007", {
 
 查找日期在一年中的第几周。
 
-```
+```js
 $.datepicker.iso8601Week( new Date( 2007, 1 - 1, 26 ) ); 
 ```
 
@@ -1955,7 +1955,7 @@ $.datepicker.iso8601Week( new Date( 2007, 1 - 1, 26 ) );
 
 设置 DatePicker，让周末不可选。
 
-```
+```js
 $( "#datepicker" ).datepicker({
   beforeShowDay: $.datepicker.noWeekends
 }); 
@@ -2019,13 +2019,13 @@ $( "#datepicker" ).datepicker({
 
 初始化带有指定 `altField` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ altField: "#actualDate" }); 
 ```
 
 在初始化后，获取或设置`altField` 选项：
 
-```
+```js
 // getter
 var altField = $( ".selector" ).datepicker( "option", "altField" );
 
@@ -2039,13 +2039,13 @@ $( ".selector" ).datepicker( "option", "altField", "#actualDate" );
 
 初始化带有指定 `altFormat` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ altFormat: "yy-mm-dd" }); 
 ```
 
 在初始化后，获取或设置`altFormat` 选项：
 
-```
+```js
 // getter
 var altFormat = $( ".selector" ).datepicker( "option", "altFormat" );
 
@@ -2059,13 +2059,13 @@ $( ".selector" ).datepicker( "option", "altFormat", "yy-mm-dd" );
 
 初始化带有指定 `appendText` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ appendText: "(yyyy-mm-dd)" }); 
 ```
 
 在初始化后，获取或设置`appendText` 选项：
 
-```
+```js
 // getter
 var appendText = $( ".selector" ).datepicker( "option", "appendText" );
 
@@ -2079,13 +2079,13 @@ $( ".selector" ).datepicker( "option", "appendText", "(yyyy-mm-dd)" );
 
 初始化带有指定 `autoSize` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ autoSize: true }); 
 ```
 
 在初始化后，获取或设置`autoSize` 选项：
 
-```
+```js
 // getter
 var autoSize = $( ".selector" ).datepicker( "option", "autoSize" );
 
@@ -2113,13 +2113,13 @@ $( ".selector" ).datepicker( "option", "autoSize", true );
 
 初始化带有指定 `buttonImage` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ buttonImage: "/images/datepicker.gif" }); 
 ```
 
 在初始化后，获取或设置`buttonImage` 选项：
 
-```
+```js
 // getter
 var buttonImage = $( ".selector" ).datepicker( "option", "buttonImage" );
 
@@ -2133,13 +2133,13 @@ $( ".selector" ).datepicker( "option", "buttonImage", "/images/datepicker.gif" )
 
 初始化带有指定 `buttonImageOnly` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ buttonImageOnly: true }); 
 ```
 
 在初始化后，获取或设置`buttonImageOnly` 选项：
 
-```
+```js
 // getter
 var buttonImageOnly = $( ".selector" ).datepicker( "option", "buttonImageOnly" );
 
@@ -2153,13 +2153,13 @@ $( ".selector" ).datepicker( "option", "buttonImageOnly", true );
 
 初始化带有指定 `buttonText` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ buttonText: "Choose" }); 
 ```
 
 在初始化后，获取或设置`buttonText` 选项：
 
-```
+```js
 // getter
 var buttonText = $( ".selector" ).datepicker( "option", "buttonText" );
 
@@ -2173,13 +2173,13 @@ $( ".selector" ).datepicker( "option", "buttonText", "Choose" );
 
 初始化带有指定 `calculateWeek` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ calculateWeek: myWeekCalc }); 
 ```
 
 在初始化后，获取或设置`calculateWeek` 选项：
 
-```
+```js
 // getter
 var calculateWeek = $( ".selector" ).datepicker( "option", "calculateWeek" );
 
@@ -2193,13 +2193,13 @@ $( ".selector" ).datepicker( "option", "calculateWeek", myWeekCalc );
 
 初始化带有指定 `changeMonth` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ changeMonth: true }); 
 ```
 
 在初始化后，获取或设置`changeMonth` 选项：
 
-```
+```js
 // getter
 var changeMonth = $( ".selector" ).datepicker( "option", "changeMonth" );
 
@@ -2213,13 +2213,13 @@ $( ".selector" ).datepicker( "option", "changeMonth", true );
 
 初始化带有指定 `changeYear` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ changeYear: true }); 
 ```
 
 在初始化后，获取或设置`changeYear` 选项：
 
-```
+```js
 // getter
 var changeYear = $( ".selector" ).datepicker( "option", "changeYear" );
 
@@ -2233,13 +2233,13 @@ $( ".selector" ).datepicker( "option", "changeYear", true );
 
 初始化带有指定 `closeText` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ closeText: "Close" }); 
 ```
 
 在初始化后，获取或设置`closeText` 选项：
 
-```
+```js
 // getter
 var closeText = $( ".selector" ).datepicker( "option", "closeText" );
 
@@ -2253,13 +2253,13 @@ $( ".selector" ).datepicker( "option", "closeText", "Close" );
 
 初始化带有指定 `constrainInput` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ constrainInput: false }); 
 ```
 
 在初始化后，获取或设置`constrainInput` 选项：
 
-```
+```js
 // getter
 var constrainInput = $( ".selector" ).datepicker( "option", "constrainInput" );
 
@@ -2273,13 +2273,13 @@ $( ".selector" ).datepicker( "option", "constrainInput", false );
 
 初始化带有指定 `currentText` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ currentText: "Now" }); 
 ```
 
 在初始化后，获取或设置`currentText` 选项：
 
-```
+```js
 // getter
 var currentText = $( ".selector" ).datepicker( "option", "currentText" );
 
@@ -2293,13 +2293,13 @@ $( ".selector" ).datepicker( "option", "currentText", "Now" );
 
 初始化带有指定 `dateFormat` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ dateFormat: "yy-mm-dd" }); 
 ```
 
 在初始化后，获取或设置`dateFormat` 选项：
 
-```
+```js
 // getter
 var dateFormat = $( ".selector" ).datepicker( "option", "dateFormat" );
 
@@ -2313,13 +2313,13 @@ $( ".selector" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
 
 初始化带有指定 `dayNames` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ dayNames: [ "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" ] }); 
 ```
 
 在初始化后，获取或设置`dayNames` 选项：
 
-```
+```js
 // getter
 var dayNames = $( ".selector" ).datepicker( "option", "dayNames" );
 
@@ -2333,13 +2333,13 @@ $( ".selector" ).datepicker( "option", "dayNames", [ "Dimanche", "Lundi", "Mardi
 
 初始化带有指定 `dayNamesMin` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ] }); 
 ```
 
 在初始化后，获取或设置`dayNamesMin` 选项：
 
-```
+```js
 // getter
 var dayNamesMin = $( ".selector" ).datepicker( "option", "dayNamesMin" );
 
@@ -2353,13 +2353,13 @@ $( ".selector" ).datepicker( "option", "dayNamesMin", [ "Di", "Lu", "Ma", "Me", 
 
 初始化带有指定 `dayNamesShort` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ dayNamesShort: [ "Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam" ] }); 
 ```
 
 在初始化后，获取或设置`dayNamesShort` 选项：
 
-```
+```js
 // getter
 var dayNamesShort = $( ".selector" ).datepicker( "option", "dayNamesShort" );
 
@@ -2379,13 +2379,13 @@ $( ".selector" ).datepicker( "option", "dayNamesShort", [ "Dim", "Lun", "Mar", "
 
 初始化带有指定 `defaultDate` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ defaultDate: +7 }); 
 ```
 
 在初始化后，获取或设置`defaultDate` 选项：
 
-```
+```js
 // getter
 var defaultDate = $( ".selector" ).datepicker( "option", "defaultDate" );
 
@@ -2399,13 +2399,13 @@ $( ".selector" ).datepicker( "option", "defaultDate", +7 );
 
 初始化带有指定 `duration` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ duration: "slow" }); 
 ```
 
 在初始化后，获取或设置`duration` 选项：
 
-```
+```js
 // getter
 var duration = $( ".selector" ).datepicker( "option", "duration" );
 
@@ -2419,13 +2419,13 @@ $( ".selector" ).datepicker( "option", "duration", "slow" );
 
 初始化带有指定 `firstDay` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ firstDay: 1 }); 
 ```
 
 在初始化后，获取或设置`firstDay` 选项：
 
-```
+```js
 // getter
 var firstDay = $( ".selector" ).datepicker( "option", "firstDay" );
 
@@ -2439,13 +2439,13 @@ $( ".selector" ).datepicker( "option", "firstDay", 1 );
 
 初始化带有指定 `gotoCurrent` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ gotoCurrent: true }); 
 ```
 
 在初始化后，获取或设置`gotoCurrent` 选项：
 
-```
+```js
 // getter
 var gotoCurrent = $( ".selector" ).datepicker( "option", "gotoCurrent" );
 
@@ -2459,13 +2459,13 @@ $( ".selector" ).datepicker( "option", "gotoCurrent", true );
 
 初始化带有指定 `hideIfNoPrevNext` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ hideIfNoPrevNext: true }); 
 ```
 
 在初始化后，获取或设置`hideIfNoPrevNext` 选项：
 
-```
+```js
 // getter
 var hideIfNoPrevNext = $( ".selector" ).datepicker( "option", "hideIfNoPrevNext" );
 
@@ -2479,13 +2479,13 @@ $( ".selector" ).datepicker( "option", "hideIfNoPrevNext", true );
 
 初始化带有指定 `isRTL` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ isRTL: true }); 
 ```
 
 在初始化后，获取或设置`isRTL` 选项：
 
-```
+```js
 // getter
 var isRTL = $( ".selector" ).datepicker( "option", "isRTL" );
 
@@ -2505,13 +2505,13 @@ $( ".selector" ).datepicker( "option", "isRTL", true );
 
 初始化带有指定 `maxDate` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ maxDate: "+1m +1w" }); 
 ```
 
 在初始化后，获取或设置`maxDate` 选项：
 
-```
+```js
 // getter
 var maxDate = $( ".selector" ).datepicker( "option", "maxDate" );
 
@@ -2531,13 +2531,13 @@ $( ".selector" ).datepicker( "option", "maxDate", "+1m +1w" );
 
 初始化带有指定 `minDate` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ minDate: new Date(2007, 1 - 1, 1) }); 
 ```
 
 在初始化后，获取或设置`minDate` 选项：
 
-```
+```js
 // getter
 var minDate = $( ".selector" ).datepicker( "option", "minDate" );
 
@@ -2551,13 +2551,13 @@ $( ".selector" ).datepicker( "option", "minDate", new Date(2007, 1 - 1, 1) );
 
 初始化带有指定 `monthNames` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ monthNames: [ "Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December" ] }); 
 ```
 
 在初始化后，获取或设置`monthNames` 选项：
 
-```
+```js
 // getter
 var monthNames = $( ".selector" ).datepicker( "option", "monthNames" );
 
@@ -2571,13 +2571,13 @@ $( ".selector" ).datepicker( "option", "monthNames", [ "Januar", "Februar", "Mar
 
 初始化带有指定 `monthNamesShort` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" ] }); 
 ```
 
 在初始化后，获取或设置`monthNamesShort` 选项：
 
-```
+```js
 // getter
 var monthNamesShort = $( ".selector" ).datepicker( "option", "monthNamesShort" );
 
@@ -2591,13 +2591,13 @@ $( ".selector" ).datepicker( "option", "monthNamesShort", [ "Jan", "Feb", "Mar",
 
 初始化带有指定 `navigationAsDateFormat` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ navigationAsDateFormat: true }); 
 ```
 
 在初始化后，获取或设置`navigationAsDateFormat` 选项：
 
-```
+```js
 // getter
 var navigationAsDateFormat = $( ".selector" ).datepicker( "option", "navigationAsDateFormat" );
 
@@ -2611,13 +2611,13 @@ $( ".selector" ).datepicker( "option", "navigationAsDateFormat", true );
 
 初始化带有指定 `nextText` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ nextText: "Later" }); 
 ```
 
 在初始化后，获取或设置`nextText` 选项：
 
-```
+```js
 // getter
 var nextText = $( ".selector" ).datepicker( "option", "nextText" );
 
@@ -2636,13 +2636,13 @@ $( ".selector" ).datepicker( "option", "nextText", "Later" );
 
 初始化带有指定 `numberOfMonths` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ numberOfMonths: [ 2, 3 ] }); 
 ```
 
 在初始化后，获取或设置`numberOfMonths` 选项：
 
-```
+```js
 // getter
 var numberOfMonths = $( ".selector" ).datepicker( "option", "numberOfMonths" );
 
@@ -2668,13 +2668,13 @@ $( ".selector" ).datepicker( "option", "numberOfMonths", [ 2, 3 ] );
 
 初始化带有指定 `prevText` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ prevText: "Earlier" }); 
 ```
 
 在初始化后，获取或设置`prevText` 选项：
 
-```
+```js
 // getter
 var prevText = $( ".selector" ).datepicker( "option", "prevText" );
 
@@ -2688,13 +2688,13 @@ $( ".selector" ).datepicker( "option", "prevText", "Earlier" );
 
 初始化带有指定 `selectOtherMonths` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ selectOtherMonths: true }); 
 ```
 
 在初始化后，获取或设置`selectOtherMonths` 选项：
 
-```
+```js
 // getter
 var selectOtherMonths = $( ".selector" ).datepicker( "option", "selectOtherMonths" );
 
@@ -2713,13 +2713,13 @@ $( ".selector" ).datepicker( "option", "selectOtherMonths", true );
 
 初始化带有指定 `shortYearCutoff` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ shortYearCutoff: 50 }); 
 ```
 
 在初始化后，获取或设置`shortYearCutoff` 选项：
 
-```
+```js
 // getter
 var shortYearCutoff = $( ".selector" ).datepicker( "option", "shortYearCutoff" );
 
@@ -2733,13 +2733,13 @@ $( ".selector" ).datepicker( "option", "shortYearCutoff", 50 );
 
 初始化带有指定 `showAnim` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showAnim: "fold" }); 
 ```
 
 在初始化后，获取或设置`showAnim` 选项：
 
-```
+```js
 // getter
 var showAnim = $( ".selector" ).datepicker( "option", "showAnim" );
 
@@ -2753,13 +2753,13 @@ $( ".selector" ).datepicker( "option", "showAnim", "fold" );
 
 初始化带有指定 `showButtonPanel` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showButtonPanel: true }); 
 ```
 
 在初始化后，获取或设置`showButtonPanel` 选项：
 
-```
+```js
 // getter
 var showButtonPanel = $( ".selector" ).datepicker( "option", "showButtonPanel" );
 
@@ -2773,13 +2773,13 @@ $( ".selector" ).datepicker( "option", "showButtonPanel", true );
 
 初始化带有指定 `showCurrentAtPos` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showCurrentAtPos: 3 }); 
 ```
 
 在初始化后，获取或设置`showCurrentAtPos` 选项：
 
-```
+```js
 // getter
 var showCurrentAtPos = $( ".selector" ).datepicker( "option", "showCurrentAtPos" );
 
@@ -2793,13 +2793,13 @@ $( ".selector" ).datepicker( "option", "showCurrentAtPos", 3 );
 
 初始化带有指定 `showMonthAfterYear` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showMonthAfterYear: true }); 
 ```
 
 在初始化后，获取或设置`showMonthAfterYear` 选项：
 
-```
+```js
 // getter
 var showMonthAfterYear = $( ".selector" ).datepicker( "option", "showMonthAfterYear" );
 
@@ -2813,13 +2813,13 @@ $( ".selector" ).datepicker( "option", "showMonthAfterYear", true );
 
 初始化带有指定 `showOn` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showOn: "both" }); 
 ```
 
 在初始化后，获取或设置`showOn` 选项：
 
-```
+```js
 // getter
 var showOn = $( ".selector" ).datepicker( "option", "showOn" );
 
@@ -2833,13 +2833,13 @@ $( ".selector" ).datepicker( "option", "showOn", "both" );
 
 初始化带有指定 `showOptions` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showOptions: { direction: "up" } }); 
 ```
 
 在初始化后，获取或设置`showOptions` 选项：
 
-```
+```js
 // getter
 var showOptions = $( ".selector" ).datepicker( "option", "showOptions" );
 
@@ -2853,13 +2853,13 @@ $( ".selector" ).datepicker( "option", "showOptions", { direction: "up" } );
 
 初始化带有指定 `showOtherMonths` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showOtherMonths: true }); 
 ```
 
 在初始化后，获取或设置`showOtherMonths` 选项：
 
-```
+```js
 // getter
 var showOtherMonths = $( ".selector" ).datepicker( "option", "showOtherMonths" );
 
@@ -2873,13 +2873,13 @@ $( ".selector" ).datepicker( "option", "showOtherMonths", true );
 
 初始化带有指定 `showWeek` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ showWeek: true }); 
 ```
 
 在初始化后，获取或设置`showWeek` 选项：
 
-```
+```js
 // getter
 var showWeek = $( ".selector" ).datepicker( "option", "showWeek" );
 
@@ -2893,13 +2893,13 @@ $( ".selector" ).datepicker( "option", "showWeek", true );
 
 初始化带有指定 `stepMonths` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ stepMonths: 3 }); 
 ```
 
 在初始化后，获取或设置`stepMonths` 选项：
 
-```
+```js
 // getter
 var stepMonths = $( ".selector" ).datepicker( "option", "stepMonths" );
 
@@ -2913,13 +2913,13 @@ $( ".selector" ).datepicker( "option", "stepMonths", 3 );
 
 初始化带有指定 `weekHeader` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ weekHeader: "W" }); 
 ```
 
 在初始化后，获取或设置`weekHeader` 选项：
 
-```
+```js
 // getter
 var weekHeader = $( ".selector" ).datepicker( "option", "weekHeader" );
 
@@ -2933,13 +2933,13 @@ $( ".selector" ).datepicker( "option", "weekHeader", "W" );
 
 初始化带有指定 `yearRange` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ yearRange: "2002:2012" }); 
 ```
 
 在初始化后，获取或设置`yearRange` 选项：
 
-```
+```js
 // getter
 var yearRange = $( ".selector" ).datepicker( "option", "yearRange" );
 
@@ -2953,13 +2953,13 @@ $( ".selector" ).datepicker( "option", "yearRange", "2002:2012" );
 
 初始化带有指定 `yearSuffix` 选项的 datepicker：
 
-```
+```js
 $( ".selector" ).datepicker({ yearSuffix: "CE" }); 
 ```
 
 在初始化后，获取或设置`yearSuffix` 选项：
 
-```
+```js
 // getter
 var yearSuffix = $( ".selector" ).datepicker( "option", "yearSuffix" );
 
@@ -2979,7 +2979,7 @@ $( ".selector" ).datepicker( "option", "yearSuffix", "CE" );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).datepicker( "destroy" ); 
 ```
 
@@ -2996,7 +2996,7 @@ $( ".selector" ).datepicker( "destroy" );
 
 调用 dialog 方法：
 
-```
+```js
 $( ".selector" ).datepicker( "dialog", "10/12/2012" ); 
 ```
 
@@ -3010,7 +3010,7 @@ $( ".selector" ).datepicker( "dialog", "10/12/2012" );
 
 调用 getDate 方法：
 
-```
+```js
 var currentDate = $( ".selector" ).datepicker( "getDate" ); 
 ```
 
@@ -3024,7 +3024,7 @@ var currentDate = $( ".selector" ).datepicker( "getDate" );
 
 调用 hide 方法：
 
-```
+```js
 $( ".selector" ).datepicker( "hide" ); 
 ```
 
@@ -3038,7 +3038,7 @@ $( ".selector" ).datepicker( "hide" );
 
 调用 isDisabled 方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).datepicker( "isDisabled" ); 
 ```
 
@@ -3052,7 +3052,7 @@ var isDisabled = $( ".selector" ).datepicker( "isDisabled" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).datepicker( "option", "disabled" ); 
 ```
 
@@ -3066,7 +3066,7 @@ var isDisabled = $( ".selector" ).datepicker( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).datepicker( "option" ); 
 ```
 
@@ -3081,7 +3081,7 @@ var options = $( ".selector" ).datepicker( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).datepicker( "option", "disabled", true ); 
 ```
 
@@ -3095,7 +3095,7 @@ $( ".selector" ).datepicker( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).datepicker( "option", { disabled: true } ); 
 ```
 
@@ -3109,7 +3109,7 @@ $( ".selector" ).datepicker( "option", { disabled: true } );
 
 调用 refresh 方法：
 
-```
+```js
 $( ".selector" ).datepicker( "refresh" ); 
 ```
 
@@ -3123,7 +3123,7 @@ $( ".selector" ).datepicker( "refresh" );
 
 调用 setDate 方法：
 
-```
+```js
 $( ".selector" ).datepicker( "setDate", "10/12/2012" ); 
 ```
 
@@ -3137,7 +3137,7 @@ $( ".selector" ).datepicker( "setDate", "10/12/2012" );
 
 调用 show 方法：
 
-```
+```js
 $( ".selector" ).datepicker( "show" ); 
 ```
 
@@ -3151,7 +3151,7 @@ $( ".selector" ).datepicker( "show" );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).datepicker( "widget" ); 
 ```
 
@@ -3159,7 +3159,7 @@ var widget = $( ".selector" ).datepicker( "widget" );
 
 #### 一个简单的 jQuery UI Datepicker.
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -3265,7 +3265,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 在一些情况下，您可能想要隐藏关闭按钮，例如，在按钮面板中已经有一个关闭按钮的情况。最好的解决方法是通过 CSS。作为实例，您可以定义一个简单的规则，比如：
 
-```
+```js
 .no-close .ui-dialog-titlebar-close {
   display: none;
 } 
@@ -3273,7 +3273,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 然后，您可以添加 `no-close` class 到任意的对话框，用来隐藏关闭按钮：
 
-```
+```js
 $( "#dialog" ).dialog({
   dialogClass: "no-close",
   buttons: [
@@ -3327,13 +3327,13 @@ dialog（和遮罩层，如果 modal 存在）应该被追加到哪个元素。
 
 初始化带有指定 `appendTo`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ appendTo: "#someElem" }); 
 ```
 
 在初始化后，获取或设置`appendTo` 选项：
 
-```
+```js
 // getter
 var appendTo = $( ".selector" ).dialog( "option", "appendTo" );
 
@@ -3347,13 +3347,13 @@ $( ".selector" ).dialog( "option", "appendTo", "#someElem" );
 
 初始化带有指定 `autoOpen`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ autoOpen: false }); 
 ```
 
 在初始化后，获取或设置`autoOpen` 选项：
 
-```
+```js
 // getter
 var autoOpen = $( ".selector" ).dialog( "option", "autoOpen" );
 
@@ -3372,13 +3372,13 @@ $( ".selector" ).dialog( "option", "autoOpen", false );
 
 初始化带有指定 `buttons`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ buttons: [ { text: "Ok", click: function() { $( this ).dialog( "close" ); } } ] }); 
 ```
 
 在初始化后，获取或设置`buttons` 选项：
 
-```
+```js
 // getter
 var buttons = $( ".selector" ).dialog( "option", "buttons" );
 
@@ -3392,13 +3392,13 @@ $( ".selector" ).dialog( "option", "buttons", [ { text: "Ok", click: function() 
 
 初始化带有指定 `closeOnEscape`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ closeOnEscape: false }); 
 ```
 
 在初始化后，获取或设置`closeOnEscape` 选项：
 
-```
+```js
 // getter
 var closeOnEscape = $( ".selector" ).dialog( "option", "closeOnEscape" );
 
@@ -3412,13 +3412,13 @@ $( ".selector" ).dialog( "option", "closeOnEscape", false );
 
 初始化带有指定 `closeText`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ closeText: "hide" }); 
 ```
 
 在初始化后，获取或设置`closeText` 选项：
 
-```
+```js
 // getter
 var closeText = $( ".selector" ).dialog( "option", "closeText" );
 
@@ -3432,13 +3432,13 @@ $( ".selector" ).dialog( "option", "closeText", "hide" );
 
 初始化带有指定 `dialogClass`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ dialogClass: "alert" }); 
 ```
 
 在初始化后，获取或设置`dialogClass` 选项：
 
-```
+```js
 // getter
 var dialogClass = $( ".selector" ).dialog( "option", "dialogClass" );
 
@@ -3452,13 +3452,13 @@ $( ".selector" ).dialog( "option", "dialogClass", "alert" );
 
 初始化带有指定 `draggable`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ draggable: false }); 
 ```
 
 在初始化后，获取或设置`draggable` 选项：
 
-```
+```js
 // getter
 var draggable = $( ".selector" ).dialog( "option", "draggable" );
 
@@ -3477,13 +3477,13 @@ $( ".selector" ).dialog( "option", "draggable", false );
 
 初始化带有指定 `height`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ height: 400 }); 
 ```
 
 在初始化后，获取或设置`height` 选项：
 
-```
+```js
 // getter
 var height = $( ".selector" ).dialog( "option", "height" );
 
@@ -3504,13 +3504,13 @@ $( ".selector" ).dialog( "option", "height", 400 );
 
 初始化带有指定 `hide`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ hide: { effect: "explode", duration: 1000 } }); 
 ```
 
 在初始化后，获取或设置`hide` 选项：
 
-```
+```js
 // getter
 var hide = $( ".selector" ).dialog( "option", "hide" );
 
@@ -3524,13 +3524,13 @@ $( ".selector" ).dialog( "option", "hide", { effect: "explode", duration: 1000 }
 
 初始化带有指定 `maxHeight`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ maxHeight: 600 }); 
 ```
 
 在初始化后，获取或设置`maxHeight` 选项：
 
-```
+```js
 // getter
 var maxHeight = $( ".selector" ).dialog( "option", "maxHeight" );
 
@@ -3544,13 +3544,13 @@ $( ".selector" ).dialog( "option", "maxHeight", 600 );
 
 初始化带有指定 `maxWidth`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ maxWidth: 600 }); 
 ```
 
 在初始化后，获取或设置`maxWidth` 选项：
 
-```
+```js
 // getter
 var maxWidth = $( ".selector" ).dialog( "option", "maxWidth" );
 
@@ -3564,13 +3564,13 @@ $( ".selector" ).dialog( "option", "maxWidth", 600 );
 
 初始化带有指定 `minHeight`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ minHeight: 200 }); 
 ```
 
 在初始化后，获取或设置`minHeight` 选项：
 
-```
+```js
 // getter
 var minHeight = $( ".selector" ).dialog( "option", "minHeight" );
 
@@ -3584,13 +3584,13 @@ $( ".selector" ).dialog( "option", "minHeight", 200 );
 
 初始化带有指定 `minWidth`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ minWidth: 200 }); 
 ```
 
 在初始化后，获取或设置`minWidth` 选项：
 
-```
+```js
 // getter
 var minWidth = $( ".selector" ).dialog( "option", "minWidth" );
 
@@ -3604,13 +3604,13 @@ $( ".selector" ).dialog( "option", "minWidth", 200 );
 
 初始化带有指定 `modal`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ modal: true }); 
 ```
 
 在初始化后，获取或设置`modal` 选项：
 
-```
+```js
 // getter
 var modal = $( ".selector" ).dialog( "option", "modal" );
 
@@ -3636,13 +3636,13 @@ $( ".selector" ).dialog( "option", "modal", true );
 
 初始化带有指定 `position`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ position: { my: "left top", at: "left bottom", of: button } }); 
 ```
 
 在初始化后，获取或设置`position` 选项：
 
-```
+```js
 // getter
 var position = $( ".selector" ).dialog( "option", "position" );
 
@@ -3656,13 +3656,13 @@ $( ".selector" ).dialog( "option", "position", { my: "left top", at: "left botto
 
 初始化带有指定 `resizable`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ resizable: false }); 
 ```
 
 在初始化后，获取或设置`resizable` 选项：
 
-```
+```js
 // getter
 var resizable = $( ".selector" ).dialog( "option", "resizable" );
 
@@ -3683,13 +3683,13 @@ $( ".selector" ).dialog( "option", "resizable", false );
 
 初始化带有指定 `show`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ show: { effect: "blind", duration: 800 } }); 
 ```
 
 在初始化后，获取或设置`show` 选项：
 
-```
+```js
 // getter
 var show = $( ".selector" ).dialog( "option", "show" );
 
@@ -3703,13 +3703,13 @@ $( ".selector" ).dialog( "option", "show", { effect: "blind", duration: 800 } );
 
 初始化带有指定 `title`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ title: "Dialog Title" }); 
 ```
 
 在初始化后，获取或设置`title` 选项：
 
-```
+```js
 // getter
 var title = $( ".selector" ).dialog( "option", "title" );
 
@@ -3723,13 +3723,13 @@ $( ".selector" ).dialog( "option", "title", "Dialog Title" );
 
 初始化带有指定 `width`选项的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({ width: 500 }); 
 ```
 
 在初始化后，获取或设置`width` 选项：
 
-```
+```js
 // getter
 var width = $( ".selector" ).dialog( "option", "width" );
 
@@ -3749,7 +3749,7 @@ $( ".selector" ).dialog( "option", "width", 500 );
 
 调用 close 方法：
 
-```
+```js
 $( ".selector" ).dialog( "close" ); 
 ```
 
@@ -3763,7 +3763,7 @@ $( ".selector" ).dialog( "close" );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).dialog( "destroy" ); 
 ```
 
@@ -3777,7 +3777,7 @@ $( ".selector" ).dialog( "destroy" );
 
 调用 isOpen 方法：
 
-```
+```js
 var isOpen = $( ".selector" ).dialog( "isOpen" ); 
 ```
 
@@ -3791,7 +3791,7 @@ var isOpen = $( ".selector" ).dialog( "isOpen" );
 
 调用 moveToTop 方法：
 
-```
+```js
 $( ".selector" ).dialog( "moveToTop" ); 
 ```
 
@@ -3805,7 +3805,7 @@ $( ".selector" ).dialog( "moveToTop" );
 
 调用 open 方法：
 
-```
+```js
 $( ".selector" ).dialog( "open" ); 
 ```
 
@@ -3819,7 +3819,7 @@ $( ".selector" ).dialog( "open" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).dialog( "option", "disabled" ); 
 ```
 
@@ -3833,7 +3833,7 @@ var isDisabled = $( ".selector" ).dialog( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).dialog( "option" ); 
 ```
 
@@ -3848,7 +3848,7 @@ var options = $( ".selector" ).dialog( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).dialog( "option", "disabled", true ); 
 ```
 
@@ -3862,7 +3862,7 @@ $( ".selector" ).dialog( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).dialog( "option", { disabled: true } ); 
 ```
 
@@ -3876,7 +3876,7 @@ $( ".selector" ).dialog( "option", { disabled: true } );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).dialog( "widget" ); 
 ```
 
@@ -3894,7 +3894,7 @@ dialog 小部件是[widget factory](http://www.css88.com/jquery-ui-api/jQuery.wi
 
 允许 Select2 插件在遮罩对话框中使用。 `_super()`调用确保该对话框中的元素仍然可以交互。
 
-```
+```js
 _allowInteraction: function( event ) {
   return !!$( event.target ).is( ".select2-input" ) || this._super( event );
 } 
@@ -3915,7 +3915,7 @@ _allowInteraction: function( event ) {
 
 初始化带有指定 beforeClose 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   beforeClose: function( event, ui ) {}
 }); 
@@ -3923,7 +3923,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogbeforeclose 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogbeforeclose", function( event, ui ) {} ); 
 ```
 
@@ -3940,7 +3940,7 @@ $( ".selector" ).on( "dialogbeforeclose", function( event, ui ) {} );
 
 初始化带有指定 close 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   close: function( event, ui ) {}
 }); 
@@ -3948,7 +3948,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogclose 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogclose", function( event, ui ) {} ); 
 ```
 
@@ -3965,7 +3965,7 @@ $( ".selector" ).on( "dialogclose", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   create: function( event, ui ) {}
 }); 
@@ -3973,7 +3973,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogcreate 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogcreate", function( event, ui ) {} ); 
 ```
 
@@ -3990,7 +3990,7 @@ $( ".selector" ).on( "dialogcreate", function( event, ui ) {} );
 
 初始化带有指定 drag 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   drag: function( event, ui ) {}
 }); 
@@ -3998,7 +3998,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogdrag 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogdrag", function( event, ui ) {} ); 
 ```
 
@@ -4015,7 +4015,7 @@ $( ".selector" ).on( "dialogdrag", function( event, ui ) {} );
 
 初始化带有指定 dragStart 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   dragStart: function( event, ui ) {}
 }); 
@@ -4023,7 +4023,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogdragstart 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogdragstart", function( event, ui ) {} ); 
 ```
 
@@ -4040,7 +4040,7 @@ $( ".selector" ).on( "dialogdragstart", function( event, ui ) {} );
 
 初始化带有指定 dragStop 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   dragStop: function( event, ui ) {}
 }); 
@@ -4048,7 +4048,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogdragstop 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogdragstop", function( event, ui ) {} ); 
 ```
 
@@ -4065,7 +4065,7 @@ $( ".selector" ).on( "dialogdragstop", function( event, ui ) {} );
 
 初始化带有指定 focus 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   focus: function( event, ui ) {}
 }); 
@@ -4073,7 +4073,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogfocus 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogfocus", function( event, ui ) {} ); 
 ```
 
@@ -4090,7 +4090,7 @@ $( ".selector" ).on( "dialogfocus", function( event, ui ) {} );
 
 初始化带有指定 open 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   open: function( event, ui ) {}
 }); 
@@ -4098,7 +4098,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogopen 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogopen", function( event, ui ) {} ); 
 ```
 
@@ -4117,7 +4117,7 @@ $( ".selector" ).on( "dialogopen", function( event, ui ) {} );
 
 初始化带有指定 resize 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   resize: function( event, ui ) {}
 }); 
@@ -4125,7 +4125,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogresize 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogresize", function( event, ui ) {} ); 
 ```
 
@@ -4144,7 +4144,7 @@ $( ".selector" ).on( "dialogresize", function( event, ui ) {} );
 
 初始化带有指定 resizeStart 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   resizeStart: function( event, ui ) {}
 }); 
@@ -4152,7 +4152,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogresizestart 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogresizestart", function( event, ui ) {} ); 
 ```
 
@@ -4171,7 +4171,7 @@ $( ".selector" ).on( "dialogresizestart", function( event, ui ) {} );
 
 初始化带有指定 resizeStop 回调的 dialog：
 
-```
+```js
 $( ".selector" ).dialog({
   resizeStop: function( event, ui ) {}
 }); 
@@ -4179,7 +4179,7 @@ $( ".selector" ).dialog({
 
 绑定一个事件监听器到 dialogresizestop 事件：
 
-```
+```js
 $( ".selector" ).on( "dialogresizestop", function( event, ui ) {} ); 
 ```
 
@@ -4187,7 +4187,7 @@ $( ".selector" ).on( "dialogresizestop", function( event, ui ) {} );
 
 #### 一个简单的 jQuery UI 对话框（Dialog）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -4261,7 +4261,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 菜单可以用任何有效的标记创建，只要元素有严格的父/子关系且每个条目都有一个锚。最常用的元素是无序列表（`&lt;ul&gt;`）：
 
-```
+```js
 <ul id="menu">
   <li><a href="#">Item 1</a></li>
   <li><a href="#">Item 2</a></li>
@@ -4287,7 +4287,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 为了向菜单添加图标，请在标记中包含图标：
 
-```
+```js
 <ul id="menu">
   <li><a href="#"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
 </ul> 
@@ -4299,7 +4299,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 分隔符元素可通过包含未链接的菜单条目来创建，菜单条目只能是空格/破折号：
 
-```
+```js
 <ul id="menu">
   <li><a href="#">Item 1</a></li>
   <li>-</li>
@@ -4347,13 +4347,13 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 初始化带有指定 `disabled`选项的 menu（菜单）
 
-```
+```js
 $( ".selector" ).menu({ disabled: true }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).menu( "option", "disabled" );
 
@@ -4371,13 +4371,13 @@ $( ".selector" ).menu( "option", "disabled", true );
 
 初始化带有指定 `icons`选项的 menu（菜单）
 
-```
+```js
 $( ".selector" ).menu({ icons: { submenu: "ui-icon-circle-triangle-e" } }); 
 ```
 
 在初始化后，获取或设置`icons` 选项：
 
-```
+```js
 // getter
 var icons = $( ".selector" ).menu( "option", "icons" );
 
@@ -4395,13 +4395,13 @@ $( ".selector" ).menu( "option", "icons", { submenu: "ui-icon-circle-triangle-e"
 
 初始化带有指定 `menus`选项的 menu（菜单）
 
-```
+```js
 $( ".selector" ).menu({ menus: "div" }); 
 ```
 
 获取 `menus` 选项：
 
-```
+```js
 // getter
 var menus = $( ".selector" ).menu( "option", "menus" ); 
 ```
@@ -4412,13 +4412,13 @@ var menus = $( ".selector" ).menu( "option", "menus" );
 
 初始化带有指定 `position`选项的 menu（菜单）
 
-```
+```js
 $( ".selector" ).menu({ position: { my: "left top", at: "right-5 top+5" } }); 
 ```
 
 在初始化后，获取或设置`position` 选项：
 
-```
+```js
 // getter
 var position = $( ".selector" ).menu( "option", "position" );
 
@@ -4436,13 +4436,13 @@ $( ".selector" ).menu( "option", "position", { my: "left top", at: "right-5 top+
 
 初始化带有指定 `role`选项的 menu（菜单）
 
-```
+```js
 $( ".selector" ).menu({ role: null }); 
 ```
 
 获取 `role` 选项：
 
-```
+```js
 // getter
 var role = $( ".selector" ).menu( "option", "role" ); 
 ```
@@ -4459,7 +4459,7 @@ var role = $( ".selector" ).menu( "option", "role" );
 
 调用 blur 方法：
 
-```
+```js
 $( ".selector" ).menu( "blur" ); 
 ```
 
@@ -4473,7 +4473,7 @@ $( ".selector" ).menu( "blur" );
 
 调用 collapse 方法：
 
-```
+```js
 $( ".selector" ).menu( "collapse" ); 
 ```
 
@@ -4488,7 +4488,7 @@ $( ".selector" ).menu( "collapse" );
 
 调用 collapseAll 方法：
 
-```
+```js
 $( ".selector" ).menu( "collapseAll", null, true ); 
 ```
 
@@ -4502,7 +4502,7 @@ $( ".selector" ).menu( "collapseAll", null, true );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).menu( "destroy" ); 
 ```
 
@@ -4516,7 +4516,7 @@ $( ".selector" ).menu( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).menu( "disable" ); 
 ```
 
@@ -4530,7 +4530,7 @@ $( ".selector" ).menu( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).menu( "enable" ); 
 ```
 
@@ -4544,7 +4544,7 @@ $( ".selector" ).menu( "enable" );
 
 调用 expand 方法：
 
-```
+```js
 $( ".selector" ).menu( "expand" ); 
 ```
 
@@ -4559,7 +4559,7 @@ $( ".selector" ).menu( "expand" );
 
 调用 focus 方法：
 
-```
+```js
 $( ".selector" ).menu( "focus", null, menu.find( ".ui-menu-item:last" ) ); 
 ```
 
@@ -4573,7 +4573,7 @@ $( ".selector" ).menu( "focus", null, menu.find( ".ui-menu-item:last" ) );
 
 调用 isFirstItem 方法：
 
-```
+```js
 var firstItem = $( ".selector" ).menu( "isFirstItem" ); 
 ```
 
@@ -4587,7 +4587,7 @@ var firstItem = $( ".selector" ).menu( "isFirstItem" );
 
 调用 isLastItem 方法：
 
-```
+```js
 var lastItem = $( ".selector" ).menu( "isLastItem" ); 
 ```
 
@@ -4601,7 +4601,7 @@ var lastItem = $( ".selector" ).menu( "isLastItem" );
 
 调用 next 方法：
 
-```
+```js
 $( ".selector" ).menu( "next" ); 
 ```
 
@@ -4615,7 +4615,7 @@ $( ".selector" ).menu( "next" );
 
 调用 nextPage 方法：
 
-```
+```js
 $( ".selector" ).menu( "nextPage" ); 
 ```
 
@@ -4629,7 +4629,7 @@ $( ".selector" ).menu( "nextPage" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).menu( "option", "disabled" ); 
 ```
 
@@ -4643,7 +4643,7 @@ var isDisabled = $( ".selector" ).menu( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).menu( "option" ); 
 ```
 
@@ -4658,7 +4658,7 @@ var options = $( ".selector" ).menu( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).menu( "option", "disabled", true ); 
 ```
 
@@ -4672,7 +4672,7 @@ $( ".selector" ).menu( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).menu( "option", { disabled: true } ); 
 ```
 
@@ -4686,7 +4686,7 @@ $( ".selector" ).menu( "option", { disabled: true } );
 
 调用 previous 方法：
 
-```
+```js
 $( ".selector" ).menu( "previous" ); 
 ```
 
@@ -4700,7 +4700,7 @@ $( ".selector" ).menu( "previous" );
 
 调用 previousPage 方法：
 
-```
+```js
 $( ".selector" ).menu( "previousPage" ); 
 ```
 
@@ -4714,7 +4714,7 @@ $( ".selector" ).menu( "previousPage" );
 
 调用 refresh 方法：
 
-```
+```js
 $( ".selector" ).menu( "refresh" ); 
 ```
 
@@ -4728,7 +4728,7 @@ $( ".selector" ).menu( "refresh" );
 
 调用 select 方法：
 
-```
+```js
 $( ".selector" ).menu( "select" ); 
 ```
 
@@ -4742,7 +4742,7 @@ $( ".selector" ).menu( "select" );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).menu( "widget" ); 
 ```
 
@@ -4760,7 +4760,7 @@ var widget = $( ".selector" ).menu( "widget" );
 
 初始化带有指定 blur 回调的 menu：
 
-```
+```js
 $( ".selector" ).menu({
   blur: function( event, ui ) {}
 }); 
@@ -4768,7 +4768,7 @@ $( ".selector" ).menu({
 
 绑定一个事件监听器到 menublur 事件：
 
-```
+```js
 $( ".selector" ).on( "menublur", function( event, ui ) {} ); 
 ```
 
@@ -4785,7 +4785,7 @@ $( ".selector" ).on( "menublur", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 menu：
 
-```
+```js
 $( ".selector" ).menu({
   create: function( event, ui ) {}
 }); 
@@ -4793,7 +4793,7 @@ $( ".selector" ).menu({
 
 绑定一个事件监听器到 menucreate 事件：
 
-```
+```js
 $( ".selector" ).on( "menucreate", function( event, ui ) {} ); 
 ```
 
@@ -4809,7 +4809,7 @@ $( ".selector" ).on( "menucreate", function( event, ui ) {} );
 
 初始化带有指定 focus 回调的 menu：
 
-```
+```js
 $( ".selector" ).menu({
   focus: function( event, ui ) {}
 }); 
@@ -4817,7 +4817,7 @@ $( ".selector" ).menu({
 
 绑定一个事件监听器到 menufocus 事件：
 
-```
+```js
 $( ".selector" ).on( "menufocus", function( event, ui ) {} ); 
 ```
 
@@ -4833,7 +4833,7 @@ $( ".selector" ).on( "menufocus", function( event, ui ) {} );
 
 初始化带有指定 select 回调的 menu：
 
-```
+```js
 $( ".selector" ).menu({
   select: function( event, ui ) {}
 }); 
@@ -4841,7 +4841,7 @@ $( ".selector" ).menu({
 
 绑定一个事件监听器到 menuselect 事件：
 
-```
+```js
 $( ".selector" ).on( "menuselect", function( event, ui ) {} ); 
 ```
 
@@ -4849,7 +4849,7 @@ $( ".selector" ).on( "menuselect", function( event, ui ) {} );
 
 #### 一个简单的 jQuery UI Menu
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -4950,13 +4950,13 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 初始化带有指定`disabled`选项的 progressbar（进度条）：
 
-```
+```js
 $( ".selector" ).progressbar({ disabled: true }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).progressbar( "option", "disabled" );
 
@@ -4970,13 +4970,13 @@ $( ".selector" ).progressbar( "option", "disabled", true );
 
 初始化带有指定`max`选项的 progressbar（进度条）：
 
-```
+```js
 $( ".selector" ).progressbar({ max: 1024 }); 
 ```
 
 在初始化后，获取或设置`max` 选项：
 
-```
+```js
 // getter
 var max = $( ".selector" ).progressbar( "option", "max" );
 
@@ -4995,13 +4995,13 @@ $( ".selector" ).progressbar( "option", "max", 1024 );
 
 初始化带有指定`value`选项的 progressbar（进度条）：
 
-```
+```js
 $( ".selector" ).progressbar({ value: 25 }); 
 ```
 
 在初始化后，获取或设置`value` 选项：
 
-```
+```js
 // getter
 var value = $( ".selector" ).progressbar( "option", "value" );
 
@@ -5021,7 +5021,7 @@ $( ".selector" ).progressbar( "option", "value", 25 );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).progressbar( "destroy" ); 
 ```
 
@@ -5035,7 +5035,7 @@ $( ".selector" ).progressbar( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).progressbar( "disable" ); 
 ```
 
@@ -5049,7 +5049,7 @@ $( ".selector" ).progressbar( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).progressbar( "enable" ); 
 ```
 
@@ -5063,7 +5063,7 @@ $( ".selector" ).progressbar( "enable" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).progressbar( "option", "disabled" ); 
 ```
 
@@ -5077,7 +5077,7 @@ var isDisabled = $( ".selector" ).progressbar( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).progressbar( "option" ); 
 ```
 
@@ -5092,7 +5092,7 @@ var options = $( ".selector" ).progressbar( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).progressbar( "option", "disabled", true ); 
 ```
 
@@ -5106,7 +5106,7 @@ $( ".selector" ).progressbar( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).progressbar( "option", { disabled: true } ); 
 ```
 
@@ -5120,7 +5120,7 @@ $( ".selector" ).progressbar( "option", { disabled: true } );
 
 调用该方法：
 
-```
+```js
 var progressSoFar = $( ".selector" ).progressbar( "value" ); 
 ```
 
@@ -5134,7 +5134,7 @@ var progressSoFar = $( ".selector" ).progressbar( "value" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).progressbar( "value", 50 ); 
 ```
 
@@ -5148,7 +5148,7 @@ $( ".selector" ).progressbar( "value", 50 );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).progressbar( "widget" ); 
 ```
 
@@ -5167,7 +5167,7 @@ var widget = $( ".selector" ).progressbar( "widget" );
 
 初始化带有指定 change 回调的 progressbar（进度条）：
 
-```
+```js
 $( ".selector" ).progressbar({
   change: function( event, ui ) {}
 }); 
@@ -5175,7 +5175,7 @@ $( ".selector" ).progressbar({
 
 绑定一个事件监听器到 progressbarchange 事件：
 
-```
+```js
 $( ".selector" ).on( "progressbarchange", function( event, ui ) {} ); 
 ```
 
@@ -5192,7 +5192,7 @@ $( ".selector" ).on( "progressbarchange", function( event, ui ) {} );
 
 初始化带有指定 complete 回调的 progressbar（进度条）：
 
-```
+```js
 $( ".selector" ).progressbar({
   complete: function( event, ui ) {}
 }); 
@@ -5200,7 +5200,7 @@ $( ".selector" ).progressbar({
 
 绑定一个事件监听器到 progressbarcomplete 事件：
 
-```
+```js
 $( ".selector" ).on( "progressbarcomplete", function( event, ui ) {} ); 
 ```
 
@@ -5217,7 +5217,7 @@ $( ".selector" ).on( "progressbarcomplete", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 progressbar（进度条）：
 
-```
+```js
 $( ".selector" ).progressbar({
   create: function( event, ui ) {}
 }); 
@@ -5225,7 +5225,7 @@ $( ".selector" ).progressbar({
 
 绑定一个事件监听器到 progressbarcreate 事件：
 
-```
+```js
 $( ".selector" ).on( "progressbarcreate", function( event, ui ) {} ); 
 ```
 
@@ -5233,7 +5233,7 @@ $( ".selector" ).on( "progressbarcreate", function( event, ui ) {} );
 
 #### Example: 一个简单的 jQuery UI Progressbar
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -5259,7 +5259,7 @@ $( "#progressbar" ).progressbar({
 
 #### Example: 一个简单的 jQuery UI 不确定的进度条（Indeterminate Progressbar）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -5359,13 +5359,13 @@ slider 小工具使用 jQuery UI CSS framework 样式的外观和感觉。如果
 
 使用指定`animate`选项初始化滑块：
 
-```
+```js
 $( ".selector" ).slider({ animate: "fast" }); 
 ```
 
 初始化后，获取或者设置`animate`选项:
 
-```
+```js
 // getter
 var animate = $( ".selector" ).slider( "option", "animate" );
 
@@ -5379,13 +5379,13 @@ $( ".selector" ).slider( "option", "animate", "fast" );
 
 使用`disabled`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ disabled: true }); 
 ```
 
 在组件初始化之后，读取或设置 `disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).slider( "option", "disabled" );
 
@@ -5399,13 +5399,13 @@ $( ".selector" ).slider( "option", "disabled", true );
 
 使用`max`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ max: 50 }); 
 ```
 
 在组件初始化之后，读取或设置 `max` 选项：
 
-```
+```js
 // getter
 var max = $( ".selector" ).slider( "option", "max" );
 
@@ -5419,13 +5419,13 @@ $( ".selector" ).slider( "option", "max", 50 );
 
 使用`min`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ min: 10 }); 
 ```
 
 在组件初始化之后，读取或设置 `min` 选项：
 
-```
+```js
 // getter
 var min = $( ".selector" ).slider( "option", "min" );
 
@@ -5439,13 +5439,13 @@ $( ".selector" ).slider( "option", "min", 10 );
 
 使用`orientation`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ orientation: "vertical" }); 
 ```
 
 在组件初始化之后，读取或设置 `orientation` 选项：
 
-```
+```js
 // getter
 var orientation = $( ".selector" ).slider( "option", "orientation" );
 
@@ -5464,13 +5464,13 @@ $( ".selector" ).slider( "option", "orientation", "vertical" );
 
 使用`range`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ range: true }); 
 ```
 
 在组件初始化之后，读取或设置 `range` 选项：
 
-```
+```js
 // getter
 var range = $( ".selector" ).slider( "option", "range" );
 
@@ -5484,13 +5484,13 @@ $( ".selector" ).slider( "option", "range", true );
 
 使用`step`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ step: 5 }); 
 ```
 
 在组件初始化之后，读取或设置 `step` 选项：
 
-```
+```js
 // getter
 var step = $( ".selector" ).slider( "option", "step" );
 
@@ -5504,13 +5504,13 @@ $( ".selector" ).slider( "option", "step", 5 );
 
 使用`value`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ value: 10 }); 
 ```
 
 在组件初始化之后，读取或设置 `value` 选项：
 
-```
+```js
 // getter
 var value = $( ".selector" ).slider( "option", "value" );
 
@@ -5524,13 +5524,13 @@ $( ".selector" ).slider( "option", "value", 10 );
 
 使用`values`选项初始化滑块组件：
 
-```
+```js
 $( ".selector" ).slider({ values: [ 10, 25 ] }); 
 ```
 
 在组件初始化之后，读取或设置 `values` 选项：
 
-```
+```js
 // getter
 var values = $( ".selector" ).slider( "option", "values" );
 
@@ -5550,7 +5550,7 @@ $( ".selector" ).slider( "option", "values", [ 10, 25 ] );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).slider( "destroy" ); 
 ```
 
@@ -5564,7 +5564,7 @@ $( ".selector" ).slider( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).slider( "disable" ); 
 ```
 
@@ -5578,7 +5578,7 @@ $( ".selector" ).slider( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).slider( "enable" ); 
 ```
 
@@ -5592,7 +5592,7 @@ $( ".selector" ).slider( "enable" );
 
 调用这个方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).slider( "option", "disabled" ); 
 ```
 
@@ -5606,7 +5606,7 @@ var isDisabled = $( ".selector" ).slider( "option", "disabled" );
 
 调用这个方法：
 
-```
+```js
 var options = $( ".selector" ).slider( "option" ); 
 ```
 
@@ -5621,7 +5621,7 @@ var options = $( ".selector" ).slider( "option" );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).slider( "option", "disabled", true ); 
 ```
 
@@ -5635,7 +5635,7 @@ $( ".selector" ).slider( "option", "disabled", true );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).slider( "option", { disabled: true } ); 
 ```
 
@@ -5649,7 +5649,7 @@ $( ".selector" ).slider( "option", { disabled: true } );
 
 调用这个方法：
 
-```
+```js
 var selection = $( ".selector" ).slider( "value" ); 
 ```
 
@@ -5663,7 +5663,7 @@ var selection = $( ".selector" ).slider( "value" );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).slider( "value", 55 ); 
 ```
 
@@ -5677,7 +5677,7 @@ $( ".selector" ).slider( "value", 55 );
 
 调用这个方法：
 
-```
+```js
 var values = $( ".selector" ).slider( "values" ); 
 ```
 
@@ -5691,7 +5691,7 @@ var values = $( ".selector" ).slider( "values" );
 
 调用这个方法：
 
-```
+```js
 var value = $( ".selector" ).slider( "values", 0 ); 
 ```
 
@@ -5706,7 +5706,7 @@ var value = $( ".selector" ).slider( "values", 0 );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).slider( "values", 0, 55 ); 
 ```
 
@@ -5720,7 +5720,7 @@ $( ".selector" ).slider( "values", 0, 55 );
 
 调用这个方法：
 
-```
+```js
 $( ".selector" ).slider( "values", [ 55, 105 ] ); 
 ```
 
@@ -5734,7 +5734,7 @@ $( ".selector" ).slider( "values", [ 55, 105 ] );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).slider( "widget" ); 
 ```
 
@@ -5753,7 +5753,7 @@ var widget = $( ".selector" ).slider( "widget" );
 
 使用 change 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).slider({
   change: function( event, ui ) {}
 }); 
@@ -5761,7 +5761,7 @@ $( ".selector" ).slider({
 
 绑定事件侦听器到 slidechange 事件：
 
-```
+```js
 $( ".selector" ).on( "slidechange", function( event, ui ) {} ); 
 ```
 
@@ -5778,7 +5778,7 @@ $( ".selector" ).on( "slidechange", function( event, ui ) {} );
 
 使用 create 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).slider({
   create: function( event, ui ) {}
 }); 
@@ -5786,7 +5786,7 @@ $( ".selector" ).slider({
 
 绑定一个事件监听器到 slidecreate 事件:
 
-```
+```js
 $( ".selector" ).on( "slidecreate", function( event, ui ) {} ); 
 ```
 
@@ -5804,7 +5804,7 @@ $( ".selector" ).on( "slidecreate", function( event, ui ) {} );
 
 使用 slide 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).slider({
   slide: function( event, ui ) {}
 }); 
@@ -5812,7 +5812,7 @@ $( ".selector" ).slider({
 
 绑定一个事件监听器到 slide 事件:
 
-```
+```js
 $( ".selector" ).on( "slide", function( event, ui ) {} ); 
 ```
 
@@ -5829,7 +5829,7 @@ $( ".selector" ).on( "slide", function( event, ui ) {} );
 
 使用 start 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).slider({
   start: function( event, ui ) {}
 }); 
@@ -5837,7 +5837,7 @@ $( ".selector" ).slider({
 
 绑定一个事件监听器到 slidestart 事件:
 
-```
+```js
 $( ".selector" ).on( "slidestart", function( event, ui ) {} ); 
 ```
 
@@ -5854,7 +5854,7 @@ $( ".selector" ).on( "slidestart", function( event, ui ) {} );
 
 使用 stop 回调函数指定事件:
 
-```
+```js
 $( ".selector" ).slider({
   stop: function( event, ui ) {}
 }); 
@@ -5862,7 +5862,7 @@ $( ".selector" ).slider({
 
 绑定一个事件监听器到 slidestop 事件:
 
-```
+```js
 $( ".selector" ).on( "slidestop", function( event, ui ) {} ); 
 ```
 
@@ -5870,7 +5870,7 @@ $( ".selector" ).on( "slidestop", function( event, ui ) {} );
 
 #### 一个简单的 jQuery UI 滑块（Slider）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -5985,13 +5985,13 @@ spinner（微调组件）使用 jQuery UI CSS 框架 来定义它的外观和感
 
 初始化带有指定 `culture`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ culture: "fr" }); 
 ```
 
 在初始化后，获取或设置`culture` 选项：
 
-```
+```js
 // getter
 var culture = $( ".selector" ).spinner( "option", "culture" );
 
@@ -6005,13 +6005,13 @@ $( ".selector" ).spinner( "option", "culture", "fr" );
 
 初始化带有指定 `disabled`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ disabled: true }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).spinner( "option", "disabled" );
 
@@ -6030,13 +6030,13 @@ $( ".selector" ).spinner( "option", "disabled", true );
 
 初始化带有指定 `icons`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ icons: { down: "custom-down-icon", up: "custom-up-icon" } }); 
 ```
 
 在初始化后，获取或设置`icons` 选项：
 
-```
+```js
 // getter
 var icons = $( ".selector" ).spinner( "option", "icons" );
 
@@ -6055,13 +6055,13 @@ $( ".selector" ).spinner( "option", "icons", { down: "custom-down-icon", up: "cu
 
 初始化带有指定 `incremental`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ incremental: false }); 
 ```
 
 在初始化后，获取或设置`incremental` 选项：
 
-```
+```js
 // getter
 var incremental = $( ".selector" ).spinner( "option", "incremental" );
 
@@ -6080,13 +6080,13 @@ $( ".selector" ).spinner( "option", "incremental", false );
 
 初始化带有指定 `max`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ max: 50 }); 
 ```
 
 在初始化后，获取或设置`max` 选项：
 
-```
+```js
 // getter
 var max = $( ".selector" ).spinner( "option", "max" );
 
@@ -6105,13 +6105,13 @@ $( ".selector" ).spinner( "option", "max", 50 );
 
 初始化带有指定 `min`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ min: 0 }); 
 ```
 
 在初始化后，获取或设置`min` 选项：
 
-```
+```js
 // getter
 var min = $( ".selector" ).spinner( "option", "min" );
 
@@ -6125,13 +6125,13 @@ $( ".selector" ).spinner( "option", "min", 0 );
 
 初始化带有指定 `numberFormat`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ numberFormat: "n" }); 
 ```
 
 在初始化后，获取或设置`numberFormat` 选项：
 
-```
+```js
 // getter
 var numberFormat = $( ".selector" ).spinner( "option", "numberFormat" );
 
@@ -6145,13 +6145,13 @@ $( ".selector" ).spinner( "option", "numberFormat", "n" );
 
 初始化带有指定 `page`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ page: 5 }); 
 ```
 
 在初始化后，获取或设置`page` 选项：
 
-```
+```js
 // getter
 var page = $( ".selector" ).spinner( "option", "page" );
 
@@ -6170,13 +6170,13 @@ $( ".selector" ).spinner( "option", "page", 5 );
 
 初始化带有指定 `step`选项的 spinner：
 
-```
+```js
 $( ".selector" ).spinner({ step: 2 }); 
 ```
 
 在初始化后，获取或设置`step` 选项：
 
-```
+```js
 // getter
 var step = $( ".selector" ).spinner( "option", "step" );
 
@@ -6196,7 +6196,7 @@ $( ".selector" ).spinner( "option", "step", 2 );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).spinner( "destroy" ); 
 ```
 
@@ -6210,7 +6210,7 @@ $( ".selector" ).spinner( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).spinner( "disable" ); 
 ```
 
@@ -6224,7 +6224,7 @@ $( ".selector" ).spinner( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).spinner( "enable" ); 
 ```
 
@@ -6238,7 +6238,7 @@ $( ".selector" ).spinner( "enable" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).spinner( "option", "disabled" ); 
 ```
 
@@ -6252,7 +6252,7 @@ var isDisabled = $( ".selector" ).spinner( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).spinner( "option" ); 
 ```
 
@@ -6267,7 +6267,7 @@ var options = $( ".selector" ).spinner( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).spinner( "option", "disabled", true ); 
 ```
 
@@ -6281,7 +6281,7 @@ $( ".selector" ).spinner( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).spinner( "option", { disabled: true } ); 
 ```
 
@@ -6299,7 +6299,7 @@ $( ".selector" ).spinner( "option", { disabled: true } );
 
 调用 pageDown 方法：
 
-```
+```js
 $( ".selector" ).spinner( "pageDown" ); 
 ```
 
@@ -6317,7 +6317,7 @@ $( ".selector" ).spinner( "pageDown" );
 
 调用 pageUp 方法：
 
-```
+```js
 $( ".selector" ).spinner( "pageUp", 10 ); 
 ```
 
@@ -6335,7 +6335,7 @@ $( ".selector" ).spinner( "pageUp", 10 );
 
 调用 stepDown 方法：
 
-```
+```js
 $( ".selector" ).spinner( "stepDown" ); 
 ```
 
@@ -6353,7 +6353,7 @@ $( ".selector" ).spinner( "stepDown" );
 
 调用 stepUp 方法：
 
-```
+```js
 $( ".selector" ).spinner( "stepUp", 5 ); 
 ```
 
@@ -6367,7 +6367,7 @@ $( ".selector" ).spinner( "stepUp", 5 );
 
 调用该方法：
 
-```
+```js
 var value = $( ".selector" ).spinner( "value" ); 
 ```
 
@@ -6381,7 +6381,7 @@ var value = $( ".selector" ).spinner( "value" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).spinner( "value", 50 ); 
 ```
 
@@ -6395,7 +6395,7 @@ $( ".selector" ).spinner( "value", 50 );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).spinner( "widget" ); 
 ```
 
@@ -6413,7 +6413,7 @@ spinner（微调组件）是[widget factory](http://www.css88.com/jquery-ui-api/
 
 使用`&lt;button&gt;`元素 作为递增和递减按钮。
 
-```
+```js
 _buttonHtml: function() {
   return "" +
     "<button class='ui-spinner-button ui-spinner-up'>" +
@@ -6435,7 +6435,7 @@ _buttonHtml: function() {
 
 用没有圆角的`&lt;div&gt;` 包裹 spinner（微调组件）。
 
-```
+```js
 _uiSpinnerHtml: function() {
   return "<div class='ui-spinner ui-widget ui-widget-content'></div>";
 } 
@@ -6456,7 +6456,7 @@ _uiSpinnerHtml: function() {
 
 初始化带有指定 change 回调的 spinner（微调器）：
 
-```
+```js
 $( ".selector" ).spinner({
   change: function( event, ui ) {}
 }); 
@@ -6464,7 +6464,7 @@ $( ".selector" ).spinner({
 
 绑定一个事件监听器到 spinchange 事件：
 
-```
+```js
 $( ".selector" ).on( "spinchange", function( event, ui ) {} ); 
 ```
 
@@ -6481,7 +6481,7 @@ $( ".selector" ).on( "spinchange", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 spinner（微调器）：
 
-```
+```js
 $( ".selector" ).spinner({
   create: function( event, ui ) {}
 }); 
@@ -6489,7 +6489,7 @@ $( ".selector" ).spinner({
 
 绑定一个事件监听器到 spincreate 事件：
 
-```
+```js
 $( ".selector" ).on( "spincreate", function( event, ui ) {} ); 
 ```
 
@@ -6507,7 +6507,7 @@ $( ".selector" ).on( "spincreate", function( event, ui ) {} );
 
 初始化带有指定 spin 回调的 spinner（微调器）：
 
-```
+```js
 $( ".selector" ).spinner({
   spin: function( event, ui ) {}
 }); 
@@ -6515,7 +6515,7 @@ $( ".selector" ).spinner({
 
 绑定一个事件监听器到 spin 事件：
 
-```
+```js
 $( ".selector" ).on( "spin", function( event, ui ) {} ); 
 ```
 
@@ -6532,7 +6532,7 @@ $( ".selector" ).on( "spin", function( event, ui ) {} );
 
 初始化带有指定 start 回调的 spinner（微调器）：
 
-```
+```js
 $( ".selector" ).spinner({
   start: function( event, ui ) {}
 }); 
@@ -6540,7 +6540,7 @@ $( ".selector" ).spinner({
 
 绑定一个事件监听器到 spinstart 事件：
 
-```
+```js
 $( ".selector" ).on( "spinstart", function( event, ui ) {} ); 
 ```
 
@@ -6557,7 +6557,7 @@ $( ".selector" ).on( "spinstart", function( event, ui ) {} );
 
 初始化带有指定 stop 回调的 spinner（微调器）：
 
-```
+```js
 $( ".selector" ).spinner({
   stop: function( event, ui ) {}
 }); 
@@ -6565,7 +6565,7 @@ $( ".selector" ).spinner({
 
 绑定一个事件监听器到 spinstop 事件：
 
-```
+```js
 $( ".selector" ).on( "spinstop", function( event, ui ) {} ); 
 ```
 
@@ -6573,7 +6573,7 @@ $( ".selector" ).on( "spinstop", function( event, ui ) {} );
 
 #### 普通的数字微调器。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -6645,7 +6645,7 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 下面是一些样品标记：
 
-```
+```js
 <div id="tabs">
   <ul>
     <li><a href="#fragment-1">One</a></li>
@@ -6716,13 +6716,13 @@ Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View
 
 初始化带有指定 `active`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ active: 1 }); 
 ```
 
 在初始化后，获取或设置`active` 选项：
 
-```
+```js
 // getter
 var active = $( ".selector" ).tabs( "option", "active" );
 
@@ -6736,13 +6736,13 @@ $( ".selector" ).tabs( "option", "active", 1 );
 
 初始化带有指定 `collapsible`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ collapsible: true }); 
 ```
 
 在初始化后，获取或设置`collapsible` 选项：
 
-```
+```js
 // getter
 var collapsible = $( ".selector" ).tabs( "option", "collapsible" );
 
@@ -6761,13 +6761,13 @@ $( ".selector" ).tabs( "option", "collapsible", true );
 
 初始化带有指定 `disabled`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ disabled: [ 0, 2 ] }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).tabs( "option", "disabled" );
 
@@ -6781,13 +6781,13 @@ $( ".selector" ).tabs( "option", "disabled", [ 0, 2 ] );
 
 初始化带有指定 `event`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ event: "mouseover" }); 
 ```
 
 在初始化后，获取或设置`event` 选项：
 
-```
+```js
 // getter
 var event = $( ".selector" ).tabs( "option", "event" );
 
@@ -6807,13 +6807,13 @@ $( ".selector" ).tabs( "option", "event", "mouseover" );
 
 初始化带有指定 `heightStyle`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ heightStyle: "fill" }); 
 ```
 
 在初始化后，获取或设置`heightStyle` 选项：
 
-```
+```js
 // getter
 var heightStyle = $( ".selector" ).tabs( "option", "heightStyle" );
 
@@ -6834,13 +6834,13 @@ $( ".selector" ).tabs( "option", "heightStyle", "fill" );
 
 初始化带有指定 `hide`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ hide: { effect: "explode", duration: 1000 } }); 
 ```
 
 在初始化后，获取或设置`hide` 选项：
 
-```
+```js
 // getter
 var hide = $( ".selector" ).tabs( "option", "hide" );
 
@@ -6861,13 +6861,13 @@ $( ".selector" ).tabs( "option", "hide", { effect: "explode", duration: 1000 } )
 
 初始化带有指定 `show`选项的 Tab（选项卡）：
 
-```
+```js
 $( ".selector" ).tabs({ show: { effect: "blind", duration: 800 } }); 
 ```
 
 在初始化后，获取或设置`show` 选项：
 
-```
+```js
 // getter
 var show = $( ".selector" ).tabs( "option", "show" );
 
@@ -6887,7 +6887,7 @@ $( ".selector" ).tabs( "option", "show", { effect: "blind", duration: 800 } );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).tabs( "destroy" ); 
 ```
 
@@ -6901,7 +6901,7 @@ $( ".selector" ).tabs( "destroy" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tabs( "disable" ); 
 ```
 
@@ -6915,7 +6915,7 @@ $( ".selector" ).tabs( "disable" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tabs( "disable", 1 ); 
 ```
 
@@ -6929,7 +6929,7 @@ $( ".selector" ).tabs( "disable", 1 );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tabs( "enable" ); 
 ```
 
@@ -6943,7 +6943,7 @@ $( ".selector" ).tabs( "enable" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tabs( "enable", 1 ); 
 ```
 
@@ -6957,7 +6957,7 @@ $( ".selector" ).tabs( "enable", 1 );
 
 调用 load 方法：
 
-```
+```js
 $( ".selector" ).tabs( "load", 1 ); 
 ```
 
@@ -6971,7 +6971,7 @@ $( ".selector" ).tabs( "load", 1 );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).tabs( "option", "disabled" ); 
 ```
 
@@ -6985,7 +6985,7 @@ var isDisabled = $( ".selector" ).tabs( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).tabs( "option" ); 
 ```
 
@@ -7000,7 +7000,7 @@ var options = $( ".selector" ).tabs( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tabs( "option", "disabled", true ); 
 ```
 
@@ -7014,7 +7014,7 @@ $( ".selector" ).tabs( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tabs( "option", { disabled: true } ); 
 ```
 
@@ -7028,7 +7028,7 @@ $( ".selector" ).tabs( "option", { disabled: true } );
 
 调用 refresh 方法：
 
-```
+```js
 $( ".selector" ).tabs( "refresh" ); 
 ```
 
@@ -7042,7 +7042,7 @@ $( ".selector" ).tabs( "refresh" );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).tabs( "widget" ); 
 ```
 
@@ -7065,7 +7065,7 @@ var widget = $( ".selector" ).tabs( "widget" );
 
 初始化带有指定 activate 回调的 Tab（选项卡面板）：
 
-```
+```js
 $( ".selector" ).tabs({
   activate: function( event, ui ) {}
 }); 
@@ -7073,7 +7073,7 @@ $( ".selector" ).tabs({
 
 绑定一个事件监听器到 tabsactivate 事件：
 
-```
+```js
 $( ".selector" ).on( "tabsactivate", function( event, ui ) {} ); 
 ```
 
@@ -7092,7 +7092,7 @@ tabs（选项卡）被激活前直接触发。可以取消以防止 tabs（选�
 
 初始化带有指定 beforeActivate 回调的 Tab（选项卡面板）：
 
-```
+```js
 $( ".selector" ).tabs({
   beforeActivate: function( event, ui ) {}
 }); 
@@ -7100,7 +7100,7 @@ $( ".selector" ).tabs({
 
 绑定一个事件监听器到 tabsbeforeactivate 事件：
 
-```
+```js
 $( ".selector" ).on( "tabsbeforeactivate", function( event, ui ) {} ); 
 ```
 
@@ -7121,7 +7121,7 @@ $( ".selector" ).on( "tabsbeforeactivate", function( event, ui ) {} );
 
 初始化带有指定 beforeLoad 回调的 Tab（选项卡面板）：
 
-```
+```js
 $( ".selector" ).tabs({
   beforeLoad: function( event, ui ) {}
 }); 
@@ -7129,7 +7129,7 @@ $( ".selector" ).tabs({
 
 绑定一个事件监听器到 tabsbeforeload 事件：
 
-```
+```js
 $( ".selector" ).on( "tabsbeforeload", function( event, ui ) {} ); 
 ```
 
@@ -7146,7 +7146,7 @@ $( ".selector" ).on( "tabsbeforeload", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 Tab（选项卡面板）：
 
-```
+```js
 $( ".selector" ).tabs({
   create: function( event, ui ) {}
 }); 
@@ -7154,7 +7154,7 @@ $( ".selector" ).tabs({
 
 绑定一个事件监听器到 tabscreate 事件：
 
-```
+```js
 $( ".selector" ).on( "tabscreate", function( event, ui ) {} ); 
 ```
 
@@ -7171,7 +7171,7 @@ $( ".selector" ).on( "tabscreate", function( event, ui ) {} );
 
 初始化带有指定 load 回调的 Tab（选项卡面板）：
 
-```
+```js
 $( ".selector" ).tabs({
   load: function( event, ui ) {}
 }); 
@@ -7179,7 +7179,7 @@ $( ".selector" ).tabs({
 
 绑定一个事件监听器到 tabsload 事件：
 
-```
+```js
 $( ".selector" ).on( "tabsload", function( event, ui ) {} ); 
 ```
 
@@ -7187,7 +7187,7 @@ $( ".selector" ).on( "tabsload", function( event, ui ) {} );
 
 #### 一个简单的 jQuery UI 选项卡（Tabs）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -7314,13 +7314,13 @@ tooltip(工具提示框)的内容。
 
 初始化带有指定 `content` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ content: "Awesome title!" }); 
 ```
 
 在初始化后，获取或设置`content` 选项：
 
-```
+```js
 // getter
 var content = $( ".selector" ).tooltip( "option", "content" );
 
@@ -7334,13 +7334,13 @@ $( ".selector" ).tooltip( "option", "content", "Awesome title!" );
 
 初始化带有指定 `disabled` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ disabled: true }); 
 ```
 
 在初始化后，获取或设置`disabled` 选项：
 
-```
+```js
 // getter
 var disabled = $( ".selector" ).tooltip( "option", "disabled" );
 
@@ -7361,13 +7361,13 @@ $( ".selector" ).tooltip( "option", "disabled", true );
 
 初始化带有指定 `hide` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ hide: { effect: "explode", duration: 1000 } }); 
 ```
 
 在初始化后，获取或设置`hide` 选项：
 
-```
+```js
 // getter
 var hide = $( ".selector" ).tooltip( "option", "hide" );
 
@@ -7387,13 +7387,13 @@ $( ".selector" ).tooltip( "option", "hide", { effect: "explode", duration: 1000 
 
 初始化带有指定 `items` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ items: "img[alt]" }); 
 ```
 
 在初始化后，获取或设置`items` 选项：
 
-```
+```js
 // getter
 var items = $( ".selector" ).tooltip( "option", "items" );
 
@@ -7411,13 +7411,13 @@ $( ".selector" ).tooltip( "option", "items", "img[alt]" );
 
 初始化带有指定 `position` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ position: { my: "left+15 center", at: "right center" } }); 
 ```
 
 在初始化后，获取或设置`position` 选项：
 
-```
+```js
 // getter
 var position = $( ".selector" ).tooltip( "option", "position" );
 
@@ -7438,13 +7438,13 @@ $( ".selector" ).tooltip( "option", "position", { my: "left+15 center", at: "rig
 
 初始化带有指定 `show` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ show: { effect: "blind", duration: 800 } }); 
 ```
 
 在初始化后，获取或设置`show` 选项：
 
-```
+```js
 // getter
 var show = $( ".selector" ).tooltip( "option", "show" );
 
@@ -7462,13 +7462,13 @@ $( ".selector" ).tooltip( "option", "show", { effect: "blind", duration: 800 } )
 
 初始化带有指定 `tooltipClass` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ tooltipClass: "custom-tooltip-styling" }); 
 ```
 
 在初始化后，获取或设置`tooltipClass` 选项：
 
-```
+```js
 // getter
 var tooltipClass = $( ".selector" ).tooltip( "option", "tooltipClass" );
 
@@ -7482,13 +7482,13 @@ $( ".selector" ).tooltip( "option", "tooltipClass", "custom-tooltip-styling" );
 
 初始化带有指定 `track` 选项的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({ track: true }); 
 ```
 
 在初始化后，获取或设置`track` 选项：
 
-```
+```js
 // getter
 var track = $( ".selector" ).tooltip( "option", "track" );
 
@@ -7508,7 +7508,7 @@ $( ".selector" ).tooltip( "option", "track", true );
 
 调用 close 方法：
 
-```
+```js
 $( ".selector" ).tooltip( "close" ); 
 ```
 
@@ -7522,7 +7522,7 @@ $( ".selector" ).tooltip( "close" );
 
 调用 destroy 方法：
 
-```
+```js
 $( ".selector" ).tooltip( "destroy" ); 
 ```
 
@@ -7536,7 +7536,7 @@ $( ".selector" ).tooltip( "destroy" );
 
 调用 disable 方法：
 
-```
+```js
 $( ".selector" ).tooltip( "disable" ); 
 ```
 
@@ -7550,7 +7550,7 @@ $( ".selector" ).tooltip( "disable" );
 
 调用 enable 方法：
 
-```
+```js
 $( ".selector" ).tooltip( "enable" ); 
 ```
 
@@ -7564,7 +7564,7 @@ $( ".selector" ).tooltip( "enable" );
 
 调用 open 方法：
 
-```
+```js
 $( ".selector" ).tooltip( "open" ); 
 ```
 
@@ -7578,7 +7578,7 @@ $( ".selector" ).tooltip( "open" );
 
 调用该方法：
 
-```
+```js
 var isDisabled = $( ".selector" ).tooltip( "option", "disabled" ); 
 ```
 
@@ -7592,7 +7592,7 @@ var isDisabled = $( ".selector" ).tooltip( "option", "disabled" );
 
 调用该方法：
 
-```
+```js
 var options = $( ".selector" ).tooltip( "option" ); 
 ```
 
@@ -7607,7 +7607,7 @@ var options = $( ".selector" ).tooltip( "option" );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tooltip( "option", "disabled", true ); 
 ```
 
@@ -7621,7 +7621,7 @@ $( ".selector" ).tooltip( "option", "disabled", true );
 
 调用该方法：
 
-```
+```js
 $( ".selector" ).tooltip( "option", { disabled: true } ); 
 ```
 
@@ -7635,7 +7635,7 @@ $( ".selector" ).tooltip( "option", { disabled: true } );
 
 调用 widget 方法：
 
-```
+```js
 var widget = $( ".selector" ).tooltip( "widget" ); 
 ```
 
@@ -7653,7 +7653,7 @@ var widget = $( ".selector" ).tooltip( "widget" );
 
 初始化带有指定 close 回调的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({
   close: function( event, ui ) {}
 }); 
@@ -7661,7 +7661,7 @@ $( ".selector" ).tooltip({
 
 绑定一个事件监听器到 tooltipclose 事件：
 
-```
+```js
 $( ".selector" ).on( "tooltipclose", function( event, ui ) {} ); 
 ```
 
@@ -7678,7 +7678,7 @@ $( ".selector" ).on( "tooltipclose", function( event, ui ) {} );
 
 初始化带有指定 create 回调的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({
   create: function( event, ui ) {}
 }); 
@@ -7686,7 +7686,7 @@ $( ".selector" ).tooltip({
 
 绑定一个事件监听器到 tooltipcreate 事件：
 
-```
+```js
 $( ".selector" ).on( "tooltipcreate", function( event, ui ) {} ); 
 ```
 
@@ -7702,7 +7702,7 @@ $( ".selector" ).on( "tooltipcreate", function( event, ui ) {} );
 
 初始化带有指定 open 回调的 tooltip(工具提示框)：
 
-```
+```js
 $( ".selector" ).tooltip({
   open: function( event, ui ) {}
 }); 
@@ -7710,7 +7710,7 @@ $( ".selector" ).tooltip({
 
 绑定一个事件监听器到 tooltipopen 事件：
 
-```
+```js
 $( ".selector" ).on( "tooltipopen", function( event, ui ) {} ); 
 ```
 
@@ -7718,7 +7718,7 @@ $( ".selector" ).on( "tooltipopen", function( event, ui ) {} );
 
 #### 使用带有 title 属性的所有元素的事件代理，在文档上创建一个工具提示框（Tooltip）。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>

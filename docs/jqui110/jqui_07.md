@@ -32,7 +32,7 @@ Categories: [Selectors](http://www.css88.com/jquery-ui-api/category/selectors/ "
 
 #### 选择带有数据的元素，改变它们的背景颜色。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -88,7 +88,7 @@ Categories: [Selectors](http://www.css88.com/jquery-ui-api/category/selectors/ "
 
 #### 选择可聚焦的元素，且用一个红色边框突出显示。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>
@@ -140,7 +140,7 @@ Categories: [Selectors](http://www.css88.com/jquery-ui-api/category/selectors/ "
 
 #### 选择可通过 tab 键聚焦的元素，且用一个红色边框突出显示。
 
-```
+```js
 <!doctype html>
 <html lang="en">
 <head>

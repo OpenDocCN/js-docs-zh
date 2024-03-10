@@ -6,13 +6,13 @@
 
 使用命令行工具安装最新稳定版：
 
-```
+```js
 sudo npm -g install sails 
 ```
 
 在 `Windows` 上(或者在有`Homebrew`的`Mac OS`系统上)，不需要使用`sudo`:
 
-```
+```js
 npm install -g sails 
 ```
 
@@ -20,13 +20,13 @@ npm install -g sails
 
 创建新应用:
 
-```
+```js
 sails new testProject 
 ```
 
 启动服务器:
 
-```
+```js
 cd testProject
 sails lift 
 ```
@@ -69,13 +69,13 @@ Node.js 可以安装在大部分主流的操作系统上，MacOSX，许多流行
 
 使用 [homebrew](https://github.com/mxcl/homebrew):
 
-```
+```js
 brew install node 
 ```
 
 使用 [macports](http://www.macports.org/):
 
-```
+```js
 port install nodejs 
 ```
 
@@ -85,7 +85,7 @@ port install nodejs
 
 例如:
 
-```
+```js
 sudo apt-get install python-software-properties python g++ make
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs 
@@ -99,7 +99,7 @@ sudo apt-get install -y nodejs
 
 Fedora 18 和更新版本，提供了[Node.js](https://apps.fedoraproject.org/packages/nodejs) 和 [npm](https://apps.fedoraproject.org/packages/npm)。仅仅使用您喜欢的图形包管理器，或在命令行安装即可:
 
-```
+```js
 sudo yum install npm 
 ```
 
@@ -107,7 +107,7 @@ sudo yum install npm
 
 [Fedora Extra Packages for Enterprise Linux (EPEL)](https://fedoraproject.org/wiki/EPEL) 提供了 Node.js and npm *测试* 库。如果你还没有这么做，首先[启用 EPEL](https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F)，然后运行下面的命令：
 
-```
+```js
 su -c 'yum --enablerepo=epel-testing install npm' 
 ```
 
@@ -115,7 +115,7 @@ su -c 'yum --enablerepo=epel-testing install npm'
 
 社区库提供了 Node.js
 
-```
+```js
 pacman -S nodejs 
 ```
 
@@ -123,7 +123,7 @@ pacman -S nodejs
 
 官方 gentoo 仓库树里提供了 Node.js ，你需要 unmask 它。
 
-```
+```js
 # emerge -aqv --autounmask-write nodejs
 # etc-update
 # emerge -aqv nodejs 
@@ -135,20 +135,20 @@ pacman -S nodejs
 
 对于 *Debian Wheezy (最新稳定版)*, [wheezy-backports 提供了 Node.js](http://packages.debian.org/wheezy-backports/nodejs). 为了安装 [backports](http://backports.debian.org/Instructions/)，添加下面一行到 sources.list (`/etc/apt/sources.list`):
 
-```
+```js
 deb http://YOURMIRROR.debian.org/debian wheezy-backports main 
 ```
 
 然后，运行：
 
-```
+```js
 apt-get update
 apt-get install nodejs 
 ```
 
 对于 *Debian Squeeze (旧稳定版)*，最好自己编译 (as `root`):
 
-```
+```js
 apt-get install python g++ make
 mkdir ~/nodejs && cd $_
 wget -N http://nodejs.org/dist/node-latest.tar.gz
@@ -165,7 +165,7 @@ make install
 
 例如， 安装在 openSUSE 12.1 上:
 
-```
+```js
 sudo zypper ar http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_12.1/ NodeJSBuildService
 sudo zypper in nodejs nodejs-devel 
 ```
@@ -174,31 +174,31 @@ sudo zypper in nodejs nodejs-devel
 
 Node.js 可通过 ports 系统使用。
 
-```
+```js
 /usr/ports/www/node 
 ```
 
 开发版本也可使用 ports
 
-```
+```js
 cd /usr/ports/www/node-devel/ && make install clean 
 ```
 
 或者 FreeBSD 上的包
 
-```
+```js
 pkg_add -r node-devel 
 ```
 
 在 FreeBSD 上，Node 包管理并不默认与 Node.js 一起安装，但对于开发和安装以来还是需要的。
 
-```
+```js
 /usr/ports/www/npm 
 ```
 
 还要注意，FreeBSD 10 与偶尔使用的构建脚本（好像是 gcc，用于 node-gyp）冲突，可以通过设置一个环境变量解决。
 
-```
+```js
 CXX=c++ 
 ```
 
@@ -210,13 +210,13 @@ CXX=c++
 
 使用 [chocolatey](http://chocolatey.org) 安装 [Node](http://chocolatey.org/packages/nodejs):
 
-```
+```js
 cinst nodejs 
 ```
 
 或者 [与 NPM 一起完全安装](http://chocolatey.org/packages/nodejs.install):
 
-```
+```js
 cinst nodejs.install 
 ```
 
@@ -397,7 +397,7 @@ Sails 内的 asset pipeline 是一组能增加工程一致性和效率的 Grunt 
 
 要禁用整合在 Sails 的 Grunt，只需删除 Gruntfile（和/或 `tasks/` 文件夹）。你还可以禁用 Grunt hook。只要像这样在 `.sailsrc` hooks 设置 `grunt` 属性为 `false`：
 
-```
+```js
 {
     "hooks": {
         "grunt": false
@@ -457,13 +457,13 @@ Asset pipeline 是让你组织要注入到检视的资源的地方，可以在 `
 
 *   第一步是在终端机使用以下指令安装 handlebars 的 grunt 插件：
 
-```
+```js
 npm install grunt-contrib-handlebars --save-dev 
 ```
 
 *   建立组件设置文档在 `tasks/config/handlebars.js`。这是我们要放 handlebars 设置的地方。
 
-```javascript // tasks/config/handlebars.js // -------------------------------- // handlebar 任务组件设置。
+```js // tasks/config/handlebars.js // -------------------------------- // handlebar 任务组件设置。
 
 module.exports = function(grunt) {
 
@@ -491,7 +491,7 @@ Sails 应用程序可以通过[程序设置](https://github.com/mikermcneil/sail
 module.exports.blueprints = {
   shortcuts: false
 }; 
-```
+```js
 
 对于个别设置项目的详细参考资料，默认存在于该设置文档中，请参考本章节内的参考资料页面，或查看 Sails 应用程序剖析的[「`config/`」](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config)取得更多的说明。
 
@@ -507,7 +507,7 @@ module.exports.blueprints = {
 if (sails.config.environment === 'production' && !sails.config.csrf) {
   throw new Error('STOP IMMEDIATELY ! CSRF should always be enabled in a production deployment!');
 } 
-```
+```js
 
 ### 自定义组件设置
 
@@ -521,7 +521,7 @@ module.exports.linkedin = {
   apiKey: '...',
   apiSecret: '...'
 }; 
-```
+```js
 
 ```
 // 在你的 controller/service/model/hook/whatever:
@@ -529,7 +529,7 @@ module.exports.linkedin = {
 var apiKey = sails.config.linkedin.apiKey;
 var apiSecret = sails.config.linkedin.apiSecret;
 // ... 
-```
+```js
 
 ### 设置 `sails` 命令行界面
 
@@ -571,7 +571,7 @@ foo: function(req, res) {
    }
    ...
 } 
-```
+```js
 
 这个程序码通过发送一个 400 错误状态及简短问题描述来处理错误请求。然而，这个程序码有几个缺点，主要是：
 
@@ -588,7 +588,7 @@ foo: function(req, res) {
    }
    ...
 } 
-```
+```js
 
 这种方法具有许多优点：
 
@@ -717,7 +717,7 @@ Node.js 非常快速。对于许多应用程序，在一开始一台服务器就
 
 **config/local.js**
 
-```
+```js
 // Local configuration
 // 
 // Included in the .gitignore by default,
@@ -767,7 +767,7 @@ Sails 的效能可与你所期望的标准 Node.js/Express 应用程序相比。
 
 要部署到 NodeJitsu，你需要稍微修改设置文档： 在应用程序文件夹开启 `config/local.js`。你需要加入以下几行到此设置文档。
 
-```
+```js
 // Port this Sails application will live on
 port: 80,
 host: 'subdomain.jit.su', 
@@ -782,7 +782,7 @@ host: 'subdomain.jit.su',
 
 要部署到 OpenShift，你需要稍微修改设置文档： 在应用程序文件夹开启 `config/local.js`。你需要加入以下几行到此设置文档。
 
-```
+```js
 port: process.env.OPENSHIFT_NODEJS_PORT,
 host: process.env.OPENSHIFT_NODEJS_IP, 
 ```
@@ -836,7 +836,7 @@ host: process.env.OPENSHIFT_NODEJS_IP,
 
 ### 例子架构
 
-```
+```js
 Sails.js 服务器
 　　　　　                ....                 
 　　　　　       /  Sails.js 服务器  \      /  资料库（如 Mongo、Postgres 等）
@@ -881,7 +881,7 @@ Sails.js 服务器
 
 首先，我们需要替 serving/storing 产生一个新的 `api` 文档。用 sails 命令行工具执行此动作。
 
-```
+```js
  dude@littleDude:~/node/myApp$ sails generate api file
 
 debug: Generated a new controller `file` at api/controllers/FileController.js!
@@ -897,7 +897,7 @@ dude@littleDude:~/node/myApp$
 
 让我们建立一个 `index` 动作来开始文档上传及 `upload` 动作来接收文档。
 
-```
+```js
  // myApp/api/controllers/FileController.js
 
 module.exports = {
@@ -936,7 +936,7 @@ module.exports = {
 
 在上面的例子中，我们可以将文档上传到 .tmp/uploads。那么我们该如何设置为自定义文件夹，例如 `assets/images`。我们可以通过增加选项到上传功能来实现这一目标，如下所示：
 
-```
+```js
  var uploadPath = './assets/images';
   uploadFile.upload({ dirname: uploadPath },function onUploadComplete (err, files) {             
 
@@ -985,14 +985,14 @@ Sails 通过检查 [`sails.config.globals`](http://beta.sailsjs.org/#/documentat
 
 要禁用所有全局变数，只需将组件设置为 `false`：
 
-```
+```js
 // config/globals.js
 module.exports.globals = false; 
 ```
 
 要禁用*一些*全局变数，指定一个对象来代替，例如：
 
-```
+```js
 // config/globals.js
 module.exports.globals = {
   _: false,
@@ -1020,7 +1020,7 @@ module.exports.globals = {
 
 在检视内：
 
-```
+```js
  #  <%= __('Hello')="" %=""> 
 
 #  <%= __('Hello="" %s,="" how="" are="" you="" today?',="" 'Mike')="" %=""> 
@@ -1030,7 +1030,7 @@ module.exports.globals = {
 
 在控制器或政策内：
 
-```
+```js
 req.__('Hello'); // => Hola
 req.__('Hello %s', 'Marcus'); // => Hola Marcus
 req.__('Hello {{name}}', { name: 'Marcus' }); // => Hola Marcus 
@@ -1038,7 +1038,7 @@ req.__('Hello {{name}}', { name: 'Marcus' }); // => Hola Marcus
 
 或者，你已经知道语系 ID，你可以在应用程序内的任何地方使用 `sails.__` 翻译：
 
-```
+```js
 sails.__({
   phrase: 'Hello',
   locale: 'es'
@@ -1054,7 +1054,7 @@ i18n 挂勾（hook）会从工程的「locales」目录（默认是 `config/loca
 
 这里有一个语系例子文档（`config/locales/es.json`）：
 
-```
+```js
 {
     "Hello!": "Hola!",
     "Hello %s, how are you today?": "¿Hola %s, como estas?",
@@ -1065,7 +1065,7 @@ i18n 挂勾（hook）会从工程的「locales」目录（默认是 `config/loca
 
 例如，这里有另一个翻译在 `config/locales/es.json`：
 
-```
+```js
 {
     "hello": "Hola!",
     "hello-how-are-you-today": "Hola %s, ¿cómo estás?",
@@ -1074,7 +1074,7 @@ i18n 挂勾（hook）会从工程的「locales」目录（默认是 `config/loca
 
 以及这里 `config/locales/en.json`：
 
-```
+```js
 {
     "hello": "Hello!",
     "hello-how-are-you-today": "Hello, how are you today?",
@@ -1085,7 +1085,7 @@ i18n 挂勾（hook）会从工程的「locales」目录（默认是 `config/loca
 
 使用新的语系代码呼叫 [`req.setLocale()`](https://github.com/mashpie/i18n-node#setlocale) 来覆写请求的自动侦测语言／本地化偏好设置：
 
-```
+```js
 // 强制让请求使用德文：
 req.setLocale('de');
 //（这会使用在 `config/locales/de.json` 的字串来翻译） 
@@ -1095,7 +1095,7 @@ req.setLocale('de');
 
 例如，如果你的应用程序允许使用者选择偏好语言，你可能会建立一个[政策](http://beta.sailsjs.org/#/documentation/concepts/Policies)用来检查使用者会话（Session）内的自定义语言，如果存在的话，设置相应语系以便在后续的政策、控制器动作和检视使用：
 
-```
+```js
 // api/policies/localize.js
 module.exports = function(req, res, next) {
   req.setLocale(req.session.languagePreference);
@@ -1151,7 +1151,7 @@ Sails 日志记录器的设置在 [`sails.config.log`](http://beta.sailsjs.org/#
 
 默认的日志功能，会将「debug」等级的日志输出到 `stderr`。
 
-```
+```js
 sails.log('hello');
 // -> debug: hello. 
 ```
@@ -1160,7 +1160,7 @@ sails.log('hello');
 
 将「error」等级的日志输出到 `stderr`。
 
-```
+```js
 sails.log.error('Unexpected error occurred.');
 // -> error: Unexpected error occurred. 
 ```
@@ -1169,7 +1169,7 @@ sails.log.error('Unexpected error occurred.');
 
 将「warn」等级的日志输出到 `stderr`。
 
-```
+```js
 sails.log.warn('File upload quota exceeded for user','request aborted.');
 // -> warn: File upload quota exceeded for user- request aborted. 
 ```
@@ -1182,7 +1182,7 @@ sails.log.warn('File upload quota exceeded for user','request aborted.');
 
 将「info」等级的日志输出到 `stderr`。
 
-```
+```js
 sails.log.info('A new user (', 'mike@foobar.com', ') just signed up!');
 // -> info: A new user ( mike@foobar.com ) just signed up! 
 ```
@@ -1191,7 +1191,7 @@ sails.log.info('A new user (', 'mike@foobar.com', ') just signed up!');
 
 将「verbose」等级的日志输出到 `stderr`。 可用于截取应用程序的详细资讯，你可能只会在少数情况下使用。
 
-```
+```js
 sails.log.verbose('A user initiated an account transfer...')
 // -> verbose: A user initiated an account transfer... 
 ```
@@ -1200,7 +1200,7 @@ sails.log.verbose('A user initiated an account transfer...')
 
 将「silly」等级的日志输出到 `stderr`。 可用于截取应用程序的完整资讯，你可能只会在少数情况下使用。
 
-```
+```js
 sails.log.silly('A user probably clicked on something..?');
 // -> silly: A user probably clicked on something..? 
 ```
@@ -1277,7 +1277,7 @@ Waterline 会看著你的模型，当它找到两个模型都有 collection 属�
 
 `myApp/api/models/pet.js`
 
-```
+```js
  module.exports = {
 
   attributes: {
@@ -1296,7 +1296,7 @@ Waterline 会看著你的模型，当它找到两个模型都有 collection 属�
 
 `myApp/api/models/user.js`
 
-```
+```js
  module.exports = {
 
   attributes: {
@@ -1315,7 +1315,7 @@ Waterline 会看著你的模型，当它找到两个模型都有 collection 属�
 
 `myApp/config/bootstrap.js`
 
-```
+```js
  module.exports.bootstrap = function (cb) {
 
 // 在建立 users 之后，我们会在这储存他们来关联 pets
@@ -1371,7 +1371,7 @@ User.create(users).exec(afterUser);
 
 使用 `sails console` 启动应用程序
 
-```sh
+```js
 
 dude@littleDude:~/node/myApp$ sails console
 
@@ -1404,7 +1404,7 @@ sails> null { name: 'Gabe', age: 107, createdAt: Wed Feb 12 2014 18:06:50 GMT-06
   }
 
 } 
-```
+```js
 
 `myApp/api/models/user.js`
 
@@ -1420,7 +1420,7 @@ sails> null { name: 'Gabe', age: 107, createdAt: Wed Feb 12 2014 18:06:50 GMT-06
   }
 
 } 
-```
+```js
 
 使用 `sails console`
 
@@ -1452,7 +1452,7 @@ null [ { name: 'Mike',
     createdAt: Tue Feb 11 2014 15:48:53 GMT-0600 (CST),
     updatedAt: Tue Feb 11 2014 15:48:53 GMT-0600 (CST),
     id: 1 } ] 
-```
+```js
 
 ### 注意事项
 
@@ -1490,7 +1490,7 @@ null [ { name: 'Mike',
   }
 
 } 
-```
+```js
 
 `myApp/api/models/user.js`
 
@@ -1507,7 +1507,7 @@ null [ { name: 'Mike',
   }
 
 } 
-```
+```js
 
 使用 `sails console`
 
@@ -1569,7 +1569,7 @@ null [ { name: 'Applejack',
     createdAt: Tue Feb 11 2014 18:02:58 GMT-0600 (CST),
     updatedAt: Tue Feb 11 2014 18:02:58 GMT-0600 (CST),
     id: 4 } ] 
-```
+```js
 
 ### 注意事项
 
@@ -1605,7 +1605,7 @@ null [ { name: 'Applejack',
   }
 
 } 
-```
+```js
 
 `myApp/api/models/user.js`
 
@@ -1621,7 +1621,7 @@ null [ { name: 'Applejack',
   }
 
 } 
-```
+```js
 
 使用 `sails console`
 
@@ -1683,7 +1683,7 @@ null { name: 'Mike',
      createdAt: Thu Feb 20 2014 17:26:16 GMT-0600 (CST),
      updatedAt: Thu Feb 20 2014 17:26:16 GMT-0600 (CST),
      owner: 1 } } 
-```
+```js
 
 ### 注意事项
 
@@ -1775,7 +1775,7 @@ module.exports = {
     });
   }
 }; 
-```
+```js
 
 <docmeta value="Lifecyclecallbacks631538" name="uniqueID" class="calibre25"></docmeta>
 
@@ -1829,7 +1829,7 @@ The criteria objects are formed using one of four types of object keys. These ar
 
 Queries can be built using either a `where` key to specify attributes, which will allow you to also use query options such as `limit` and `skip` or if `where` is excluded the entire object will be treated as a `where` criteria.
 
-```
+```js
 Model.find({ where: { name: 'foo' }, skip: 20, limit: 10, sort: 'name DESC' });
 
 // OR
@@ -1841,13 +1841,13 @@ Model.find({ name: 'foo' })
 
 A key pair can be used to search records for values matching exactly what is specified. This is the base of a criteria object where the key represents an attribute on a model and the value is a strict equality check of the records for matching values.
 
-```
+```js
 Model.find({ name: 'walter' }) 
 ```
 
 They can be used together to search multiple attributes.
 
-```
+```js
 Model.find({ name: 'walter', state: 'new mexico' }) 
 ```
 
@@ -1855,7 +1855,7 @@ Model.find({ name: 'walter', state: 'new mexico' })
 
 Modified pairs also have model attributes for keys but they also use any of the supported criteria modifiers to perform queries where a strict equality check wouldn't work.
 
-```
+```js
 Model.find({
   name : {
     'contains' : 'alt'
@@ -1867,7 +1867,7 @@ Model.find({
 
 IN queries work similarly to mysql 'in queries'. Each element in the array is treated as 'or'.
 
-```
+```js
 Model.find({
   name : ['Walter', 'Skyler']
 }); 
@@ -1877,7 +1877,7 @@ Model.find({
 
 Not-In queries work similar to `in` queries, except for the nested object criteria.
 
-```
+```js
 Model.find({
   name: { '!' : ['Walter', 'Skyler'] }
 }); 
@@ -1887,7 +1887,7 @@ Model.find({
 
 Performing `OR` queries is done by using an array of query pairs. Results will be returned that match any of the criteria objects inside the array.
 
-```
+```js
 Model.find({
   or : [
     { name: 'walter' },
@@ -1914,7 +1914,7 @@ The following modifiers are available to use when building queries.
 
 Searches for records where the value is less than the value specified.
 
-```
+```js
 Model.find({ age: { '<': 30 }}) 
 ```
 
@@ -1922,7 +1922,7 @@ Model.find({ age: { '<': 30 }})
 
 Searches for records where the value is less or equal to the value specified.
 
-```
+```js
 Model.find({ age: { '<=': 21 }}) 
 ```
 
@@ -1930,7 +1930,7 @@ Model.find({ age: { '<=': 21 }})
 
 Searches for records where the value is more than the value specified.
 
-```
+```js
 Model.find({ age: { '>': 18 }}) 
 ```
 
@@ -1938,7 +1938,7 @@ Model.find({ age: { '>': 18 }})
 
 Searches for records where the value is more or equal to the value specified.
 
-```
+```js
 Model.find({ age: { '>=': 21 }}) 
 ```
 
@@ -1946,7 +1946,7 @@ Model.find({ age: { '>=': 21 }})
 
 Searches for records where the value is not equal to the value specified.
 
-```
+```js
 Model.find({ name: { '!': 'foo' }}) 
 ```
 
@@ -1954,7 +1954,7 @@ Model.find({ name: { '!': 'foo' }})
 
 Searches for records using pattern matching with the `%` sign.
 
-```
+```js
 Model.find({ food: { 'like': '%beans' }}) 
 ```
 
@@ -1962,7 +1962,7 @@ Model.find({ food: { 'like': '%beans' }})
 
 A shorthand for pattern matching both sides of a string. Will return records where the value contains the string anywhere inside of it.
 
-```
+```js
 Model.find({ class: { 'contains': 'history' }})
 
 // The same as
@@ -1974,7 +1974,7 @@ Model.find({ class: { 'like': '%history%' }})
 
 A shorthand for pattern matching the right side of a string. Will return records where the value starts with the supplied string value.
 
-```
+```js
 Model.find({ class: { 'startsWith': 'american' }})
 
 // The same as
@@ -2051,7 +2051,7 @@ Validations are handled by [Anchor](https://github.com/balderdashy/anchor), a th
 
 ### `migrate`
 
-```
+```js
 migrate: 'safe' 
 ```
 
@@ -2075,7 +2075,7 @@ migrate: 'safe'
 
 ### `schema`
 
-```
+```js
 schema: true 
 ```
 
@@ -2085,7 +2085,7 @@ schema: true
 
 ### `connection`
 
-```
+```js
 connection: 'my-local-postgresql' 
 ```
 
@@ -2093,7 +2093,7 @@ connection: 'my-local-postgresql'
 
 ### `identity`
 
-```
+```js
 identity: 'purchase' 
 ```
 
@@ -2101,7 +2101,7 @@ identity: 'purchase'
 
 ### `globalId`
 
-```
+```js
 globalId: 'Purchase' 
 ```
 
@@ -2109,13 +2109,13 @@ globalId: 'Purchase'
 
 ### `autoPK`
 
-```
+```js
 autoPK: true 
 ```
 
 切换模型中自动定义主键的标记。此默认 PK 的细节依桥接器而有所不同（例如 MySQL 使用一个自动递增的整数主键，而 MongoDB 使用乱数字串 UUID）。在任何情况下，由 autoPK 产生的主键是唯一的。如果关闭，默认将不会建立主键，你将需要手动定义一个，例如：
 
-```
+```js
 attributes: {
   sku: {
     type: 'string',
@@ -2127,13 +2127,13 @@ attributes: {
 
 ### `autoCreatedAt`
 
-```
+```js
 autoCreatedAt: true 
 ```
 
 切换模型中自动定义 `createdAt` 属性的标记。默认情况下，当记录建立时 `createdAt` 属性会自动设置为目前时间戳记，例如：
 
-```
+```js
 attributes: {
   createdAt: {
     type: 'datetime',
@@ -2144,13 +2144,13 @@ attributes: {
 
 ### `autoUpdatedAt`
 
-```
+```js
 autoUpdatedAt: true 
 ```
 
 切换模型中自动定义 `updatedAt` 属性的标记。默认情况下，当记录被更新时 `updatedAt` 属性会自动设置为目前时间戳记，例如：
 
-```
+```js
 attributes: {
   updatedAt: {
     type: 'datetime',
@@ -2161,7 +2161,7 @@ attributes: {
 
 ### `tableName`
 
-```java
+```js
 
 # Policies
 
@@ -2204,7 +2204,7 @@ module.exports = function canWrite (req, res, next) {
     next();
   });
 }; 
-```
+```js
 
 ### Protecting Controllers with Policies
 
@@ -2225,7 +2225,7 @@ Your `config/policies.js` file should export a Javascript object whose keys are 
       create: ['isAdmin', 'isLoggedIn']
   }
 } 
-```
+```js
 
 ##### To apply a policy to an entire controller:
 
@@ -2239,7 +2239,7 @@ Your `config/policies.js` file should export a Javascript object whose keys are 
     edit: ['isAdmin', 'isLoggedIn']
   }
 } 
-```
+```js
 
 > **Note:** Default policy mappings do not "cascade" or "trickle down." Specified mappings for the controller'
 
@@ -2267,7 +2267,7 @@ module.exports = {
   '/logout': 'AuthController.logout',
   'get /me': 'UserController.profile'
 } 
-```
+```js
 
 Each **route** consists of an **address** (on the left, e.g. `'get /me'`) and a **target** (on the right, e.g. `'UserController.profile'`) The **address** is a URL path and (optionally) a specific [HTTP method](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods). The **target** can be defined a number of different ways ([see the expanded concepts section on the subject](http://beta.sailsjs.org/#/documentation/concepts/Routes/RouteTargetSyntax.html)), but the two different syntaxes above are the most common. When Sails receives an incoming request, it checks the **address** of all custom routes for matches. If a matching route is found, the request is then passed to its **target**.
 
@@ -2284,7 +2284,7 @@ What if I want to change the view layout within the route itself? No problem we 
       layout: 'users'
     }
   }, 
-```
+```js
 
 #### Notes
 
@@ -2303,13 +2303,13 @@ In addition to specifying a static path like **foo/bar**, you can use `*` as a w
 
 ```
 '/*' 
-```
+```js
 
 will match all paths, where as:
 
 ```
 '/user/foo/*' 
-```
+```js
 
 will match all paths that *start* with **/user/foo**.
 
@@ -2317,13 +2317,13 @@ You can capture the parts of the address that are matched by wildcards into name
 
 ```
 '/user/foo/:name/bar/:age' 
-```
+```js
 
 Will match the same URLs as:
 
 ```
 '/user/foo/*/bar/*' 
-```
+```js
 
 but will provide the values of the wildcard portions of the route to the route handler as `req.param('name')` and `req.param('age')`, respectively.
 
@@ -2348,7 +2348,7 @@ When using wildcards or regular expressions in your addresses, keep in mind that
 ```
 '/user': 'UserController.doSomething',
 '/*'   : 'CatchallController.doSomethingElse' 
-```
+```js
 
 then a request to `/user` will not be matched by the second configuration unless the first configuration's handler calls `next()` in its code, which is discouraged (only [policies](http://beta.sailsjs.org/#/documentation/concepts/Policies) should call `next()`). Unless you're doing something very advanced, it is safe to assume that every request will be handled by at most one route in your **config/routes.js** file.
 
@@ -2366,7 +2366,7 @@ The most common type of target is one which binds a route to a custom [controlle
 
 A common use case for explicit routes is the design of slugs or [vanity URLs](http://en.wikipedia.org/wiki/Clean_URL#Slug). For example, consider the URL of a repository on Github, [`http://www.github.com/balderdashy/sailsjs`](http://www.github.com/balderdashy/sailsjs). In Sails, we might define this route at the **bottom of our `config/routes.js` file** like so:
 
-```
+```js
  'get /:account/:repo': {
     controller: 'RepoController',
     action: 'show',
@@ -2404,7 +2404,7 @@ For security reasons, CORS is disabled by default in Sails. But enabling it is d
 
 To allow cross-origin requests from *any* domain to *any* route in your app, simply enable `allRoutes` in [`config/cors.js`](http://beta.sailsjs.org/#/documentation/reference/sails.config/sails.config.cors.html):
 
-```
+```js
 allRoutes: true 
 ```
 
@@ -2414,7 +2414,7 @@ See [`sails.config.cors`](http://beta.sailsjs.org/#/documentation/reference/sail
 
 Besides the global CORS configuration, you can set up individual routes in `config/routes.js` to accept (or deny) cross-origin requests. To indicate that a route should accept CORS requests using the configuration parameters in `config/cors.js`, set its `cors` property to `true`:
 
-```
+```js
 "get /foo": {
    controller: "FooController",
    action: "index",
@@ -2424,7 +2424,7 @@ Besides the global CORS configuration, you can set up individual routes in `conf
 
 If you have the `allRoutes` parameter set to `true` in `config.cors.js`, but you want to exempt a specific route, you can do so by explicitly setting its `cors` property to `false`:
 
-```
+```js
 "get /foo": {
    controller: "FooController",
    action: "index",
@@ -2434,7 +2434,7 @@ If you have the `allRoutes` parameter set to `true` in `config.cors.js`, but you
 
 To override specific CORS configuration parameters for a route, add a `cors` property object:
 
-```
+```js
 "get /foo": {
    controller: "FooController",
    action: "index",
@@ -2456,7 +2456,7 @@ Cross-site request forgery ([CSRF](https://www.owasp.org/index.php/Cross-Site_Re
 
 Sails bundles optional CSRF protection out of the box. To enable the built-in enforcement, just make the following adjustment to sails.config.csrf (conventionally located in your project's [`config/csrf.js`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config/csrf.js.html) file):
 
-```
+```js
 csrf: true 
 ```
 
@@ -2478,7 +2478,7 @@ For old-school form submissions, it's as easy as passing the data from a view in
 
 e.g.:
 
-```
+```js
 <form action="/signup" method="POST">
  <input type="text" name="emailaddress"/>
  <input type='hidden' name='_csrf' value='<%= _csrf %>'>
@@ -2492,7 +2492,7 @@ If you are doing a `multipart/form-data` upload with the form, be sure to place 
 
 In AJAX/Socket-heavy apps, you might prefer to send a GET request to the built-in `/csrfToken` route, where it will be returned as JSON, e.g.:
 
-```
+```js
 {
   "_csrf": "ajg4JD(JGdajhLJALHDa"
 } 
@@ -2519,7 +2519,7 @@ One simple way to help prevent clickjacking attacks is to enable the X-FRAME-OPT
 ```
 # In your sails app
 npm install lusca --save 
-```
+```js
 
 Then in the `middleware` config object in `config/http.js`:
 
@@ -2533,7 +2533,7 @@ Then in the `middleware` config object in `config/http.js`:
     'xframe'
     // ...
   ] 
-```
+```js
 
 ### Additional Resources
 
@@ -2625,7 +2625,7 @@ module.exports.http = {
     // .....
   }
 }; 
-```
+```js
 
 Check out the examples below for more guidance - and be sure and follow the links to see the docs for the module you're using for the latest information, comparative analysis of its features, any recent bug fixes, and advanced usage details.
 
@@ -2636,7 +2636,7 @@ Check out the examples below for more guidance - and be sure and follow the link
 ```
 # In your sails app
 npm install p3p --save 
-```
+```js
 
 Then in the `middleware` config object in `config/http.js`:
 
@@ -2645,7 +2645,7 @@ Then in the `middleware` config object in `config/http.js`:
   // node-p3p provides a recommended compact privacy policy out of the box
   p3p: require('p3p')(require('p3p').recommended)
   // ... 
-```
+```js
 
 ##### Using [lusca](https://github.com/krakenjs/lusca#luscap3pvalue)
 
@@ -2654,7 +2654,7 @@ Then in the `middleware` config object in `config/http.js`:
 ```
 # In your sails app
 npm install lusca --save 
-```
+```js
 
 Then in the `middleware` config object in `config/http.js`:
 
@@ -2663,7 +2663,7 @@ Then in the `middleware` config object in `config/http.js`:
   // "ABCDEF" ==> The compact privacy policy to use.
   p3p: require('lusca').p3p('ABCDEF')
   // ... 
-```
+```js
 
 ### Additional Resources:
 
@@ -2704,7 +2704,7 @@ Implementing STS is actually very simple and [only takes a few lines of code](ht
 ```
 # In your sails app
 npm install lusca --save 
-```
+```js
 
 Then in the `middleware` config object in `config/http.js`:
 
@@ -2713,7 +2713,7 @@ Then in the `middleware` config object in `config/http.js`:
   // maxAge ==> Number of seconds strict transport security will stay in effect.
   strictTransportSecurity: require('lusca').hsts({ maxAge: 31536000 })
   // ... 
-```
+```js
 
 ### Additional Resources
 
@@ -2768,14 +2768,14 @@ module.exports = {
 
     }
 }; 
-```
+```js
 
 You can then use `EmailService` anywhere in your app:
 
 ```
 // Somewhere in a controller
   EmailService.sendInviteEmail({email: 'test@test.com', name: 'test'}); 
-```
+```js
 
 <docmeta value="Services157331" name="uniqueID" class="calibre25"></docmeta>
 
@@ -2804,7 +2804,7 @@ For our test suite, we use [mocha](http://visionmedia.github.com/mocha/). Before
 │  ├── bootstrap.test.js
 │  └── mocha.opts
 └── views 
-```
+```js
 
 ### bootstrap.test.js
 
@@ -2827,7 +2827,7 @@ after(function(done) {
   // here you can clear fixtures, etc.
   sails.lower(done);
 }); 
-```
+```js
 
 ### mocha.opts
 
@@ -2854,7 +2854,7 @@ describe.only('UsersModel', function() {
   });
 
 }); 
-```
+```js
 
 #### Testing controllers
 
@@ -2878,7 +2878,7 @@ describe('UsersController', function() {
   });
 
 }); 
-```
+```js
 
 ## Code coverage
 
@@ -2891,7 +2891,7 @@ To test your code and prepare a simple HTML report run the following commands:
 ```
 istanbul cover -x "**/config/**" _mocha -- --timeout 5000
 istanbul report html 
-```
+```js
 
 <docmeta value="Testing765149" name="uniqueID" class="calibre25"></docmeta>
 
@@ -2987,7 +2987,7 @@ You can also hook up a view directly to a route in your `routes.js` file. Just i
   },
   // and so on.
 } 
-```
+```js
 
 ##### What about single-page apps?
 
@@ -3039,7 +3039,7 @@ The variables accessible in a particular view are called `locals`. Locals repres
 
 ```
 Logged in as <%= name="" %="">. 
-```
+```js
 
 ##### Using locals in your views
 
@@ -3068,7 +3068,7 @@ Here's an example of a view (`views/backOffice/profile.ejs`) using two locals, `
     <% }) %>
   </ul>
 </div> 
-```
+```js
 
 > You might have noticed another local, `_`. By default, Sails passes down a few locals to your views automatically, including lodash (`_`).
 
@@ -3091,7 +3091,7 @@ If the data you wanted to pass down to this view was completely static, you don'
     }
   },
   // ... 
-```
+```js
 
 On the other hand, in the more likely scenario that this data is dynamic, we'd need to use a controller action to load it from our models, then pass it to the view using the [res.view()](http://beta.sailsjs.org/#/documentation/reference/res/res.view.html) method.
 
@@ -3108,7 +3108,7 @@ Assuming we hooked up our route to one of our controller's actions (and our mode
     });
   },
   // ... 
-```
+```js
 
 <docmeta value="Locals453748" name="uniqueID" class="calibre25"></docmeta>
 
@@ -3120,7 +3120,7 @@ Sails uses `ejs-locals` in its view rendering code, so in your views you can do:
 
 ```
 <%- partial ('foo.ejs') %> 
-```
+```js
 
 to render a partial located at `/views/foo.ejs`. All of your locals will be sent to the partial automatically.
 
@@ -3128,7 +3128,7 @@ the paths are relative to the view, that is loading the partial. So if you have 
 
 ```
 <%- partial ('../../partials/widget.ejs') %> 
-```
+```js
 
 One thing to note: partials are rendered synchronously, so they will block Sails from serving more requests until they're done loading. It's something to keep in mind while developing your app, especially if you anticipate a large number of connections.
 

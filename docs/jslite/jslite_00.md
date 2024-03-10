@@ -9,7 +9,7 @@
 > `$("htmlString")` //? 生成
 > `JSLite(function($){ ... })` //? 相当于 ready
 
-```
+```js
 $("#box") //? 返回节点数组  //? [<div>?…?</div>?]
 $("<div></div>") //? 生成 div 节点
 //JSLite(func) 相当于 ready
@@ -34,7 +34,7 @@ $(function($){
 
 ### 常规
 
-```
+```js
 $.noConflict();
 JSLite(document).ready(function($) {
 // 使用 JSLite $ 的代码
@@ -46,7 +46,7 @@ JSLite(document).ready(function($) {
 
 将 `$` 引用的对象映射回原始的对象：
 
-```
+```js
 JSLite.noConflict();
 JSLite("div p").hide(); // 使用 JSLite
 $("content").style.display = "none";    // 使用其他库的 $() 
@@ -56,7 +56,7 @@ $("content").style.display = "none";    // 使用其他库的 $()
 
 恢复使用别名 `$`，然后创建并执行一个函数，在这个函数的作用域中仍然将 `$` 作为 `JSLite` 的别名来使用。在这个函数中，原来的 `$` 对象是无效的。这个函数对于大多数不依赖于其他库的插件都十分有效：
 
-```
+```js
 JSLite.noConflict();
 (function($) { 
   $(function() {
@@ -71,7 +71,7 @@ JSLite.noConflict();
 
 可以将 `JSLite.noConflict()` 与简写的 `ready` 结合，使代码更紧凑
 
-```
+```js
 JSLite.noConflict()(function(){
     // 使用 JSLite 的代码
     console.log($('div'))
@@ -82,7 +82,7 @@ JSLite.noConflict()(function(){
 
 创建一个新的别名用以在接下来的库中使用 `JSLite` 对象：
 
-```
+```js
 var j = JSLite.noConflict();
 j("#box").hide();  // 基于 JSLite 的代码
 $("content").style.display = "none";    // 基于其他库的 $() 代码 
@@ -92,14 +92,14 @@ $("content").style.display = "none";    // 基于其他库的 $() 代码
 
 完全将 `JSLite` 移到一个新的命名空间：
 
-```
+```js
 var dom = {};
 dom.jslite = JSLite.noConflict(true); 
 ```
 
 结果:
 
-```
+```js
 dom.jslite("div p").hide();  // 新 JSLite 的代码
 $("content").style.display = "none";    // 另一个库 $() 的代码
 JSLite("div > p").hide();   // 另一个版本 JSLite 的代码 

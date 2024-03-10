@@ -2,7 +2,7 @@
 
 来源：[Hexo](https://hexo.io/zh-cn/)
 
-```
+```js
 $ npm install hexo-cli -g
 $ hexo init blog
 $ cd blog

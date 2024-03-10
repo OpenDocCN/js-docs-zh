@@ -8,7 +8,7 @@
 
 用来进行配置的方法。
 
-```
+```js
 seajs.config({
 
   // 别名配置
@@ -56,7 +56,7 @@ seajs.config({
 
 当模块标识很长时，可以使用 `alias` 来简化。
 
-```
+```js
 seajs.config({
   alias: {
     'jquery': 'jquery/jquery/1.10.1/jquery',
@@ -65,7 +65,7 @@ seajs.config({
 });
 ```
 
-```
+```js
 define(function(require, exports, module) {
 
    var $ = require('jquery');
@@ -83,7 +83,7 @@ define(function(require, exports, module) {
 
 当目录比较深，或需要跨目录调用模块时，可以使用 `paths` 来简化书写。
 
-```
+```js
 seajs.config({
   paths: {
     'gallery': 'https://a.alipayobjects.com/gallery',
@@ -92,7 +92,7 @@ seajs.config({
 });
 ```
 
-```
+```js
 define(function(require, exports, module) {
 
    var underscore = require('gallery/underscore');
@@ -110,7 +110,7 @@ define(function(require, exports, module) {
 
 有些场景下，模块路径在运行时才能确定，这时可以使用 `vars` 变量来配置。
 
-```
+```js
 seajs.config({
   vars: {
     'locale': 'zh-cn'
@@ -118,7 +118,7 @@ seajs.config({
 });
 ```
 
-```
+```js
 define(function(require, exports, module) {
 
   var lang = require('./i18n/{locale}.js');
@@ -133,7 +133,7 @@ define(function(require, exports, module) {
 
 该配置可对模块路径进行映射修改，可用于路径转换、在线调试等。
 
-```
+```js
 seajs.config({
   map: [
     [ '.js', '-debug.js' ]
@@ -141,7 +141,7 @@ seajs.config({
 });
 ```
 
-```
+```js
 define(function(require, exports, module) {
 
   var a = require('./a');
@@ -156,7 +156,7 @@ define(function(require, exports, module) {
 
 使用 `preload` 配置项，可以在普通模块加载前，提前加载并初始化好指定模块。
 
-```
+```js
 // 在老浏览器中，提前加载好 ES5 和 json 模块
 seajs.config({
   preload: [
@@ -170,7 +170,7 @@ seajs.config({
 
 **注意**：`preload` 中的配置，需要等到 `use` 时才加载。比如：
 
-```
+```js
 seajs.config({
   preload: 'a'
 });
@@ -181,7 +181,7 @@ seajs.use('./b');
 
 `preload` 配置不能放在模块文件里面：
 
-```
+```js
 seajs.config({
   preload: 'a'
 });
@@ -207,7 +207,7 @@ Sea.js 在解析顶级标识时，会相对 `base` 路径来解析。详情请�
 
 `charset` 还可以是一个函数：
 
-```
+```js
 seajs.config({
   charset: function(url) {
 
@@ -229,7 +229,7 @@ seajs.config({
 
 `seajs.config` 可以多次运行，每次运行时，会对配置项进行合并操作：
 
-```
+```js
 seajs.config({
   alias: {
     'jquery': 'path/to/jquery.js',
@@ -239,7 +239,7 @@ seajs.config({
 });
 ```
 
-```
+```js
 seajs.config({
   alias: {
     'underscore': 'path/to/underscore.js',
@@ -251,7 +251,7 @@ seajs.config({
 
 上面两处 `config` 运行的结果是：
 
-```
+```js
  alias = {
    'jquery': 'path/to/jquery.js',
    'underscore': 'path/to/underscore.js',
@@ -273,7 +273,7 @@ seajs.config({
 
 config.js
 
-```
+```js
 seajs.config({
   ...
 });

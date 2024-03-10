@@ -82,7 +82,7 @@ Buffer 类是一个全局类用于直接处理二进制数据。它的实例可�
 
 例子:
 
-```
+```js
 str = '\u00bd + \u00bc = \u00be';
 
 console.log(str + ": " + str.length + " characters, " +
@@ -104,7 +104,7 @@ console.log(str + ": " + str.length + " characters, " +
 *   buf1 Buffer
 *   buf2 Buffer 与 buf1.compare(buf2)相同. 对于排序一个 Buffers 的数组非常有用:
 
-    ```
+    ```js
     var arr = [Buffer('1234'), Buffer('0123')];
     arr.sort(Buffer.compare); 
     ```
@@ -113,7 +113,7 @@ console.log(str + ": " + str.length + " characters, " +
 
 *   Return Number 这个 buffer 的字节长度。注意这不一定是这个 buffer 中的内容长度。它是这个 buffer 对象所分配内存大小，并不会随着 buffer 的内容的改变而改变
 
-```
+```js
 buf = new Buffer(1234);
 
 console.log(buf.length);
@@ -126,7 +126,7 @@ console.log(buf.length);
 
 虽然`buffer`的`length`属性并不是不可变的，改变`length`属性的值可能会使之变成`undefined`或引起一些不一致的行为。希望去改变`buffer`的`length`的应用应当把它视作一个只读的值，并且使用`buf.slice`来创建一个新的`buffer`。
 
-```
+```js
 buf = new Buffer(10);
 buf.write("abcdefghj", 0, "ascii");
 console.log(buf.length); // 10
@@ -143,7 +143,7 @@ console.log(buf.length); // 5
 
 从指定的偏移位置(offset)使用给定的编码向 buffer 中写入字符串，偏移位置默认为 0，编码默认为 UTF8。长度为将要写入的字符串的字节大小。返回被写入的八进制流的大小。如果 buffer 没有足够的空间写入整个字符串，那么它将只会写入一部分。`length`参数默认为`buffer.length - offset`，这个方法将不会只写入字符的一部分。
 
-```
+```js
 buf = new Buffer(256);
 len = buf.write('\u00bd + \u00bc = \u00be', 0);
 console.log(len + " bytes: " + buf.toString('utf8', 0, len)); 
@@ -165,7 +165,7 @@ console.log(len + " bytes: " + buf.toString('utf8', 0, len));
 
 根据指定的偏移位置(offset)和`byteLength`将`value`写入 buffer。最高支持 48 位的精确度。例子：
 
-```
+```js
 var b = new Buffer(6);
 b.writeUIntBE(0x1234567890ab, 0, 6);
 // <Buffer 12 34 56 78 90 ab> 
@@ -188,7 +188,7 @@ b.writeUIntBE(0x1234567890ab, 0, 6);
 
 一个普遍的用来作数值读取的方法，最高支持 48 位的精确度。例子：
 
-```
+```js
 var b = new Buffer(6);
 b.writeUint16LE(0x90ab, 0);
 b.writeUInt32LE(0x12345678, 2);
@@ -206,7 +206,7 @@ b.readUIntLE(0, 6).toString(16);  // Specify 6 bytes (48 bits)
 
 从编码的 buffer 数据中使用指定的编码解码并返回结果字符串。如果`encoding`为`undefined`或`null`，那么`encoding`将默认为 UTF8。`start`和`end`参数默认为`0`和`buffer.length`。
 
-```
+```js
 buf = new Buffer(26);
 for (var i = 0 ; i < 26 ; i++) {
   buf[i] = i + 97; // 97 is ASCII a
@@ -223,7 +223,7 @@ buf.toString(undefined,0,5); // encoding defaults to 'utf8', outputs abcde
 
 例子:
 
-```
+```js
 var buf = new Buffer('test');
 var json = JSON.stringify(buf);
 
@@ -246,7 +246,7 @@ console.log(copy);
 
 例子：复制一个 ASCII 字符串到一个 buffer，一次一个字节：
 
-```
+```js
 str = "node.js";
 buf = new Buffer(str.length);
 
@@ -282,7 +282,7 @@ console.log(buf);
 
 例子：创建两个 Buffer，然后复制 buf1 的第 16 字节到 19 字节到 buf2，buf2 的偏移位置从第 8 字节开始：
 
-```
+```js
 buf1 = new Buffer(26);
 buf2 = new Buffer(26);
 
@@ -299,7 +299,7 @@ console.log(buf2.toString('ascii', 0, 25));
 
 例子： 创建一个单独的 Buffer，然后复制数据到自身的一个重叠的范围。
 
-```
+```js
 buf = new Buffer(26);
 
 for (var i = 0 ; i < 26 ; i++) {
@@ -322,7 +322,7 @@ console.log(buf.toString());
 
 例子： 创建一个 ASCII 字母的 Buffer，然后对其进行`slice`，然后修改源 Buffer 上的一个字节：
 
-```
+```js
 var buf1 = new Buffer(26);
 
 for (var i = 0 ; i < 26 ; i++) {
@@ -358,7 +358,7 @@ console.log(buf2.toString('ascii', 0, buf2.length));
 
 例子:
 
-```
+```js
 var buf = new Buffer(4);
 
 buf[0] = 0x3;
@@ -390,7 +390,7 @@ for (ii = 0; ii < buf.length; ii++) {
 
 例子:
 
-```
+```js
 var buf = new Buffer(4);
 
 buf[0] = 0x3;
@@ -427,7 +427,7 @@ console.log(buf.readUInt16LE(2));
 
 例子：
 
-```
+```js
 var buf = new Buffer(4);
 
 buf[0] = 0x3;
@@ -496,7 +496,7 @@ console.log(buf.readUInt32LE(0));
 
 例子：
 
-```
+```js
 var buf = new Buffer(4);
 
 buf[0] = 0x00;
@@ -523,7 +523,7 @@ console.log(buf.readFloatLE(0));
 
 例子：
 
-```
+```js
 var buf = new Buffer(8);
 
 buf[0] = 0x55;
@@ -552,7 +552,7 @@ console.log(buf.readDoubleLE(0));
 
 例子：
 
-```
+```js
 var buf = new Buffer(4);
 buf.writeUInt8(0x3, 0);
 buf.writeUInt8(0x4, 1);
@@ -578,7 +578,7 @@ console.log(buf);
 
 例子：
 
-```
+```js
 var buf = new Buffer(4);
 buf.writeUInt16BE(0xdead, 0);
 buf.writeUInt16BE(0xbeef, 2);
@@ -608,7 +608,7 @@ console.log(buf);
 
 例子：
 
-```
+```js
 var buf = new Buffer(4);
 buf.writeUInt32BE(0xfeedface, 0);
 
@@ -676,7 +676,7 @@ console.log(buf);
 
 例子：
 
-```
+```js
 var buf = new Buffer(4);
 buf.writeFloatBE(0xcafebabe, 0);
 
@@ -704,7 +704,7 @@ console.log(buf);
 
 例子：
 
-```
+```js
 var buf = new Buffer(8);
 buf.writeDoubleBE(0xdeadbeefcafebabe, 0);
 
@@ -726,7 +726,7 @@ console.log(buf);
 
 使用指定的`value`填充 buffer。如果`offset`（默认为 0）和`end`（默认为`buffer.length`）没有指定，将会填充整个 buffer。
 
-```
+```js
 var b = new Buffer(50);
 b.fill("h"); 
 ```
@@ -755,7 +755,7 @@ Number 默认值： 50
 
 `Buffers`可以被 ES6 的`for..of`语法迭代：
 
-```
+```js
 var buf = new Buffer([1, 2, 3]);
 
 for (var b of buf)
@@ -776,7 +776,7 @@ for (var b of buf)
 
 当开发者需要将池中一小块数据保留不确定的一段时间，较为妥当的办法是用 `SlowBuffer`创建一个不被池管理的`Buffer`实例并将相应数据拷贝出来。
 
-```
+```js
 // need to keep around a few small chunks of memory
 var store = [];
 

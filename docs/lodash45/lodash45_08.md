@@ -8,7 +8,7 @@
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13849 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.add "See the npm package.")
 
-```
+```js
 _.add(augend, addend) 
 ```
 
@@ -30,7 +30,7 @@ _.add(augend, addend)
 
 ### 示例
 
-```
+```js
 _.add(6, 4);
 // => 10 
 ```
@@ -43,7 +43,7 @@ _.add(6, 4);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13883 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.ceil "See the npm package.")
 
-```
+```js
 _.ceil(number, [precision=0]) 
 ```
 
@@ -65,7 +65,7 @@ _.ceil(number, [precision=0])
 
 ### 示例
 
-```
+```js
 _.ceil(4.006);
 // => 5
 
@@ -84,7 +84,7 @@ _.ceil(6040, -2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13905 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.floor "See the npm package.")
 
-```
+```js
 _.floor(number, [precision=0]) 
 ```
 
@@ -106,7 +106,7 @@ _.floor(number, [precision=0])
 
 ### 示例
 
-```
+```js
 _.floor(4.006);
 // => 4
 
@@ -125,7 +125,7 @@ _.floor(4060, -2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13924 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.max "See the npm package.")
 
-```
+```js
 _.max(array) 
 ```
 
@@ -143,7 +143,7 @@ _.max(array)
 
 ### 示例
 
-```
+```js
 _.max([4, 2, 8, 6]);
 // => 8
 
@@ -159,7 +159,7 @@ _.max([]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13952 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.maxby "See the npm package.")
 
-```
+```js
 _.maxBy(array, [iteratee=_.identity]) 
 ```
 
@@ -181,7 +181,7 @@ _.maxBy(array, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'n': 1 }, { 'n': 2 }];
 
 _.maxBy(objects, function(o) { return o.n; });
@@ -200,7 +200,7 @@ _.maxBy(objects, 'n');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13971 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.mean "See the npm package.")
 
-```
+```js
 _.mean(array) 
 ```
 
@@ -218,7 +218,7 @@ _.mean(array)
 
 ### 示例
 
-```
+```js
 _.mean([4, 2, 8, 6]);
 // => 5 
 ```
@@ -231,7 +231,7 @@ _.mean([4, 2, 8, 6]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L13991 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.min "See the npm package.")
 
-```
+```js
 _.min(array) 
 ```
 
@@ -249,7 +249,7 @@ _.min(array)
 
 ### 示例
 
-```
+```js
 _.min([4, 2, 8, 6]);
 // => 2
 
@@ -265,7 +265,7 @@ _.min([]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L14018 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.minby "See the npm package.")
 
-```
+```js
 _.minBy(array, [iteratee=_.identity]) 
 ```
 
@@ -287,7 +287,7 @@ _.minBy(array, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'n': 1 }, { 'n': 2 }];
 
 _.minBy(objects, function(o) { return o.n; });
@@ -306,7 +306,7 @@ _.minBy(objects, 'n');
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L14044 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.round "See the npm package.")
 
-```
+```js
 _.round(number, [precision=0]) 
 ```
 
@@ -328,7 +328,7 @@ _.round(number, [precision=0])
 
 ### 示例
 
-```
+```js
 _.round(4.006);
 // => 4
 
@@ -347,7 +347,7 @@ _.round(4060, -2);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L14060 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.subtract "See the npm package.")
 
-```
+```js
 _.subtract(minuend, subtrahend) 
 ```
 
@@ -369,7 +369,7 @@ _.subtract(minuend, subtrahend)
 
 ### 示例
 
-```
+```js
 _.subtract(6, 4);
 // => 2 
 ```
@@ -382,7 +382,7 @@ _.subtract(6, 4);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L14087 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sum "See the npm package.")
 
-```
+```js
 _.sum(array) 
 ```
 
@@ -400,7 +400,7 @@ _.sum(array)
 
 ### 示例
 
-```
+```js
 _.sum([4, 2, 8, 6]);
 // => 20 
 ```
@@ -413,7 +413,7 @@ _.sum([4, 2, 8, 6]);
 *   [source](https://github.com/lodash/lodash/blob/4.5.0 正式版/lodash.src.js#L14115 "View in source.")
 *   [npm](https://www.npmjs.com/package/lodash.sumby "See the npm package.")
 
-```
+```js
 _.sumBy(array, [iteratee=_.identity]) 
 ```
 
@@ -435,7 +435,7 @@ _.sumBy(array, [iteratee=_.identity])
 
 ### 示例
 
-```
+```js
 var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
 
 _.sumBy(objects, function(o) { return o.n; });

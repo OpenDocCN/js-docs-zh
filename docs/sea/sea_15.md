@@ -6,13 +6,13 @@ A Sea.js plugin for loading text resources such as template, json etc
 
 Install with spm:
 
-```
+```js
 $ spm install seajs/seajs-text 
 ```
 
 ## [](#usage)Usage
 
-```
+```js
 <script src="path/to/sea.js"></script>
 <script src="path/to/seajs-text.js"></script>
 

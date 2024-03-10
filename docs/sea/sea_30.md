@@ -32,13 +32,13 @@
 
 Modules/1.0:
 
-```
+```js
 var a = require("./a") // 执行到此处时，a.js 才同步下载并执行
 ```
 
 AMD:
 
-```
+```js
 define(["require"], function(require) {
   // 在这里，模块 a 已经下载并执行好
   // ...
@@ -57,7 +57,7 @@ AMD 里提前下载 a.js 是浏览器的限制，没办法做到同步下载，�
 
 AMD 风格下，通过参数传入依赖模块，破坏了 **就近声明** 原则。比如：
 
-```
+```js
 define(["a", "b", "c", "d", "e", "f"], function(a, b, c, d, e, f) {
 
     // 等于在最前面申明并初始化了要用到的所有模块
@@ -90,7 +90,7 @@ BravoJS 的作者 Wes Garland 有很深厚的程序功底，在 CommonJS 社区�
 
 这时，Modules/2.0 阵营也有一个实战派：FlyScript。FlyScript 抛去了 Modules/2.0 中的学究气，提出了非常简洁的 [Modules/Wrappings](http://wiki.commonjs.org/wiki/Modules/Wrappings) 规范：
 
-```
+```js
 module.declare(function(require, exports, module)
 {
    var a = require("a"); 
@@ -100,7 +100,7 @@ module.declare(function(require, exports, module)
 
 这个简洁的规范考虑了浏览器的特殊性，同时也尽可能兼容了 Modules/1.0 规范。悲催的是，FlyScript 在推出正式版和官网之后，RequireJS 当时正直红火。期间 FlyScript 作者 khs4473 和 RequireJS 作者 James Burke 有过一些争论。再后来，FlyScript 作者做了自我阉割，将 GitHub 上的项目和官网都清空了，官网上当时留了一句话，模糊中记得是
 
-```
+```js
 我会回来的，带着更好的东西。 
 ```
 

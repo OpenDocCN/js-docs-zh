@@ -20,19 +20,19 @@ Node.js 的新特性通常是由新版本的 V8 带来的。由于 Electron 使�
 
 你还可以用 Electron 内的 IPC 机制实现。将数据存在主进程的某个全局变量中，然后在多个渲染进程中使用 `remote` 模块来访问它。
 
-```
+```js
 // 在主进程中
 global.sharedObject = {
   someProperty: 'default value'
 }; 
 ```
 
-```
+```js
 // 在第一个页面中
 require('remote').getGlobal('sharedObject').someProperty = 'new value'; 
 ```
 
-```
+```js
 // 在第二个页面中
 console.log(require('remote').getGlobal('sharedObject').someProperty); 
 ```
@@ -50,7 +50,7 @@ console.log(require('remote').getGlobal('sharedObject').someProperty);
 
 从
 
-```
+```js
 app.on('ready', function() {
   var tray = new Tray('/path/to/icon.png');
 }) 
@@ -58,7 +58,7 @@ app.on('ready', function() {
 
 改为
 
-```
+```js
 var tray = null;
 app.on('ready', function() {
   tray = new Tray('/path/to/icon.png');
@@ -71,7 +71,7 @@ app.on('ready', function() {
 
 我们可以通过禁用 Node.js 来解决这个问题，用如下的方式：
 
-```
+```js
 // 在主进程中
 var mainWindow = new BrowserWindow({
   webPreferences: {
@@ -82,7 +82,7 @@ var mainWindow = new BrowserWindow({
 
 假如你依然需要使用 Node.js 和 Electron 提供的 API，你需要在引入那些库之前将这些变量重命名，比如：
 
-```
+```js
 <head>
 <script> // 重命名 Electron 提供的 require
 window.nodeRequire = require;
@@ -97,7 +97,7 @@ delete window.module; </script>
 
 在使用 Electron 的提供的模块时，你可能会遇到和以下类似的错误：
 
-```
+```js
 > require('electron').webFrame.setZoomFactor(1.0);
 Uncaught TypeError: Cannot read property 'setZoomLevel' of undefined 
 ```
@@ -106,19 +106,19 @@ Uncaught TypeError: Cannot read property 'setZoomLevel' of undefined
 
 你可以通过以下方式输出 `electron` 模块的路径来确认你是否使用了正确的模块。
 
-```
+```js
 console.log(require.resolve('electron')); 
 ```
 
 确认以下它是不是像下面这样的：
 
-```
+```js
 "/path/to/Electron.app/Contents/Resources/atom.asar/renderer/api/lib/exports/electron.js" 
 ```
 
 假如输出的路径类似于 `node_modules/electron/index.js`，那么你需要移除或者重命名 npm 上的 `electron` 模块。
 
-```
+```js
 npm uninstall electron
 npm uninstall -g electron 
 ```
