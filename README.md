@@ -3,63 +3,55 @@
     
     README.md
     
-        {name}：文档中文名
+        龙哥盟 JavaScript 中文文档汇总给：文档中文名
         {nameEn}：文档英文名
         {urlEn}：文档原始链接
-        {domain}：域名前缀
-        {adminName}：负责人名称
-        {adminUn}：负责人 Github 用户名
-        {adminQq}：负责人 QQ
-        {repo}：ApacheCN 的 Github 仓库名称
-        {dockerName}：DockerHub 仓库名称
-        {pypiName}：PYPI 包名称
-        {npmName}：NPM 包名称
+        jsdoc：域名前缀
+        飞龙：负责人名称
+        wizardforcel：负责人 Github 用户名
+        562826179：负责人 QQ
+        flygon-js-docs-zh：ApacheCN 的 Github 仓库名称
+        flygon-js-docs-zh：DockerHub 仓库名称
+        flygon-js-docs-zh：PYPI 包名称
+        flygon-js-docs-zh：NPM 包名称
     
     CNAME
     
-        {domain}：域名前缀
+        jsdoc：域名前缀
 
     index.html
     
-        {name}：文档中文名
-        {color}：显示颜色
-        {repo}：ApacheCN 的 Github 仓库名称
+        龙哥盟 JavaScript 中文文档汇总给：文档中文名
+        #009d9c：显示颜色
+        flygon-js-docs-zh：ApacheCN 的 Github 仓库名称
 
     asset/docsify-flygon-footer.js
     
-        {repo}：ApacheCN 的 Github 仓库名称
+        flygon-js-docs-zh：ApacheCN 的 Github 仓库名称
 -->
 
-# {name}
+# 龙哥盟 JavaScript 中文文档汇总给
 
-> 原文：[{nameEn}]({urlEn})
-> 
 > 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
-> 
-> 阶段：机翻（1）
 > 
 > 真相一旦入眼，你就再也无法视而不见。——《黑客帝国》
 
-* [在线阅读](https://{domain}.flygon.net)
+* [在线阅读](https://jsdoc.flygon.net)
 
 ## 下载
 
 ### Docker
 
 ```
-docker pull apachecn0/{dockerName}
-docker run -tid -p <port>:80 apachecn0/{dockerName}
+docker pull apachecn0/flygon-js-docs-zh
+docker run -tid -p <port>:80 apachecn0/flygon-js-docs-zh
 # 访问 http://localhost:{port} 查看文档
 ```
 
 ### NPM
 
 ```
-npm install -g {npmName}
-{npmName} <port>
+npm install -g flygon-js-docs-zh
+flygon-js-docs-zh <port>
 # 访问 http://localhost:{port} 查看文档
 ```
-
-## 赞助我
-
-![](https://img-blog.csdnimg.cn/20200112005920729.png)
