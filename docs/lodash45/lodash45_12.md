@@ -1,7 +1,5 @@
 # Properties
 
-# Properties
-
 # templateSettings
 
 ## templateSettings

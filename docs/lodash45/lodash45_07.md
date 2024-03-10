@@ -1,7 +1,5 @@
 # Lang
 
-# Lang
-
 # castArray
 
 ## castArray

@@ -1,7 +1,5 @@
 # Selectors
 
-# Selectors
-
 ## :data() Selector
 
 选择数据已存储在指定的键下的元素。
@@ -17,8 +15,6 @@ Also in: [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View al
 ## :tabbable Selector
 
 选择用户可通过 tab 键聚焦的元素。
-
-# :data() Selector
 
 # :data() Selector
 
@@ -76,8 +72,6 @@ $( ":data(color)" ).each(function() {
 
 # :focusable Selector
 
-# :focusable Selector
-
 Categories: [Selectors](http://www.css88.com/jquery-ui-api/category/selectors/ "View all posts in Selectors") | [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View all posts in UI Core")
 
 **Description:** 选择可被聚焦的元素。
@@ -127,8 +121,6 @@ $( ":focusable" ).css( "border-color", "red" );
 </body>
 </html> 
 ```
-
-# :tabbable Selector
 
 # :tabbable Selector
 

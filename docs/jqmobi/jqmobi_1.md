@@ -1,9 +1,5 @@
 # 综述
 
-# 综述
-
-# Jquery mobile 介绍 Jquery Mobile Overview
-
 # Jquery mobile 介绍 Jquery Mobile Overview
 
 Jquery Mobile 的策略可以很容易的概括：创建一个顶级的 javascript 库，在不同的智能手机和桌面电脑的 web 浏览器上,形成统一的用户 ui.
@@ -13,8 +9,6 @@ Jquery Mobile 的策略可以很容易的概括：创建一个顶级的 javascri
 为了使设备设备浏览器能够广泛地支持，应用 Jquery Mobile 的项目的所有页面都必须**是干净的系统化的 html 页面**，来保证良好的兼容性， 在这些设备中 解析 css 和 javascript 的过程中，Jquery Mobile 应用**渐进增强技术**将语义化的页面转化成富媒体的浏览体验。而可访问性的问题，比如 WAI-ARIA，已经通过通过框架已经紧密集成进来，以给屏幕阅读器或者其他辅助设备（主要指手持设备）提供支持。
 
 ![](img/ipad-palm.jpg)
-
-# 关键特性： Key features:
 
 # 关键特性： Key features:
 
@@ -40,15 +34,11 @@ Jquery Mobile 的策略可以很容易的概括：创建一个顶级的 javascri
 
 # 可访问性 Accessibility
 
-# 可访问性 Accessibility
-
 Jquery Mobile 是基于标准的，系统化的 html 构建的，使得页面能够在最广范围的设备上得到支持。对于 A 级的浏览器，许多 Jquery Mobile 组件，比"焦点管理","键盘导航"等都能支持，其他可以详细参加 W3C 的 WAI-ARIA 说明.
 
 通过运用这些技术，我致力于使得通过 Jquery Mobile 开发的 web 产品拥有最好的可访问性，对于伤残人士，例如盲人，也可以用读屏软件，例如 iphone 的 voiceover,使用。
 
 我们现在正在改进可访问性，我们的目标是在 1.0 版本的时候，使 Jquery mobile 的所有控件都拥有全部的可访问性。
-
-# a4 版本支持的平台 Supported platforms in Alpha 4
 
 # a4 版本支持的平台 Supported platforms in Alpha 4
 

@@ -213,8 +213,6 @@ nw path_to_app.nw
 
 # package.json
 
-# package.json
-
 > 译者：[VDON](http://segmentfault.com/u/vdon)
 > 
 > 来源：[node-webkit 文档翻译#package.json](http://segmentfault.com/a/1190000000374529)

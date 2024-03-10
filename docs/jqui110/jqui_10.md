@@ -1,7 +1,5 @@
 # Utilities
 
-# Utilities
-
 ## Easings
 
 Easing 函数指定动画在不同点上的行进速度。
@@ -29,8 +27,6 @@ Also in: [Method Overrides](http://www.css88.com/jquery-ui-api/category/override
 ## .position()
 
 相对另一个元素定位一个元素。
-
-# Widget Factory
 
 # Widget Factory
 
@@ -797,8 +793,6 @@ $( ".selector" ).widget({
 ```
 $( ".selector" ).on( "widgetcreate", function( event, ui ) {} ); 
 ```
-
-# Widget Plugin Bridge
 
 # Widget Plugin Bridge
 

@@ -1,9 +1,5 @@
 # 完成并发布应用
 
-# 完成并发布应用
-
-# 自动升级
-
 # 自动升级
 
 ## Contents
@@ -131,8 +127,6 @@ Extension 1 with id "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" and version "1.1" Extensi
 
 # 托管
 
-# 托管
-
 本页告诉你如何在自己的服务器上托管 .crx 文件。如果你仅仅通过[Chrome Web Store](http://chrome.google.com/webstore)发布扩展，应用，或者主题那么你不需要本页。取而代之的是查阅 Chrome Web Store 帮助和[开发者文档](http://code.google.com/chrome/webstore/index.html)。
 
 **注意:**如果你已经把扩展发布到[扩展库](https://chrome.google.com/extensions),扩展就会合并到 Chrome Web Store 里。
@@ -157,8 +151,6 @@ Extension 1 with id "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" and version "1.1" Extensi
         *   "*/*"
 
 最常见的识别一个可安装的文件失败的原因就是服务器发送了 X-Content-Type-Options: no sniff 头。第二个最常见的原因是服务器发送了一个不在上面列表中的未知内容类型 。解决 HTTP 头的问题，要么修改服务器配置或者尝试在另外的服务器上托管.crx 文件。
-
-# 打包
 
 # 打包
 

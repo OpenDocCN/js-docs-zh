@@ -37,8 +37,6 @@ Nick (@uncletammy)
 
 # Contributing
 
-# Contributing
-
 ### Submit Your Own Guide
 
 Submitting your own guide is easy. Read this guide in its entirety before submitting a PR though.
@@ -106,8 +104,6 @@ Sails, Balderdash,cluckus
 
 # Deployment
 
-# Deployment
-
 ### Deploying your app
 
 Make sure you see 'before deployment' guide in 'security'
@@ -119,8 +115,6 @@ Here are some hosts...
 <docmeta value="guidesDeployment87563" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Deployment" name="displayName" class="calibre17"></docmeta>
-
-# Nodejitsu
 
 # Nodejitsu
 
@@ -141,8 +135,6 @@ Here are some hosts...
 <docmeta value="guidesDeploymentNodjitsu402941" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Nodejitsu" name="displayName" class="calibre17"></docmeta>
-
-# Openshift
 
 # Openshift
 

@@ -1,7 +1,5 @@
 # Zepto.js
 
-# Zepto.js
-
 ![Zepto.js](img/logo.png)
 
 **Zepto**是一个轻量级的**针对现代高级浏览器的 JavaScript 库，** 它与 jquery**有着类似的 api**。 如果你会用 jquery，那么你也会用 zepto。

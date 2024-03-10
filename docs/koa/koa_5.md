@@ -1,7 +1,5 @@
 # 请求(Request)
 
-# 请求(Request)
-
 Koa `Request` 对象是对 node 的 request 进一步抽象和封装，提供了日常 HTTP 服务器开发中一些有用的功能。
 
 ## API

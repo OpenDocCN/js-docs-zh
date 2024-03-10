@@ -1,7 +1,5 @@
 # Errors
 
-# Errors
-
 `node.js`生成的错误分为两类：`JavaScript`错误和系统错误。所有的错误都继承于`JavaScript`的`Error`类，或就是它的实例。并且都至少提供这个类中可用的属性。
 
 当一个操作因为语法错误或语言运行时级别（language-runtime-level）的原因不被允许时，一个`JavaScript error`会被生成并抛出一个异常。如果一个操作因为系统级别（system-level）限制而不被允许时，一个系统错误会被生成。客户端代码接着会根据 API 传播它的方式来被给予捕获这个错误的机会。

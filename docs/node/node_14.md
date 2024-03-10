@@ -1,7 +1,5 @@
 # HTTPS
 
-# HTTPS
-
 ### 稳定度: 2 - 稳定
 
 HTTPS 是建立在 TLS/SSL 之上的 HTTP 协议。在`node.js`中，它被作为单独模块实现。

@@ -1,7 +1,5 @@
 # Methods
 
-# Methods
-
 # templateSettings.imports._
 
 ## templateSettings.imports._

@@ -1,7 +1,5 @@
 # Change Log
 
-# Change Log
-
 ## v1.1.0 — *05 Dec 2013* — [diff](https://github.com/madrobby/zepto/compare/v1.0...v1.1.0)
 
 ### Notable changes

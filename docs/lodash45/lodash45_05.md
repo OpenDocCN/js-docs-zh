@@ -1,7 +1,5 @@
 # Date
 
-# Date
-
 # now
 
 ## now

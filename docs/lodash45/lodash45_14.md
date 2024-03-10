@@ -1,7 +1,5 @@
 # String
 
-# String
-
 # camelCase
 
 ## camelCase

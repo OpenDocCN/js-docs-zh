@@ -1,7 +1,5 @@
 # Object
 
-# Object
-
 # assign
 
 ## assign

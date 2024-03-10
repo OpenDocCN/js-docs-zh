@@ -1,9 +1,5 @@
 # 教程
 
-# 教程
-
-# 快速入门
-
 # 快速入门
 
 ## 简介
@@ -157,8 +153,6 @@ $ ./Electron.app/Contents/MacOS/Electron your-app/
 # 以发行版本运行
 
 在你完成了你的应用后，你可以按照[应用部署](https://github.com/electron/electron/blob/master/docs-translations/zh-CN/tutorial/application-distribution.md)指导发布一个版本，并且以已经打包好的形式运行应用。
-
-# 桌面环境集成
 
 # 桌面环境集成
 
@@ -339,8 +333,6 @@ var window = new BrowserWindow({...});
 window.setRepresentedFilename('/etc/passwd');
 window.setDocumentEdited(true); 
 ```
-
-# 在线/离线事件探测
 
 # 在线/离线事件探测
 

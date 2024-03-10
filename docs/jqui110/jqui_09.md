@@ -1,7 +1,5 @@
 # UI Core
 
-# UI Core
-
 由 jquery.ui.core.js 提供的功能。
 
 Also in: [Selectors](http://www.css88.com/jquery-ui-api/category/selectors/ "View all posts in Selectors")

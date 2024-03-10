@@ -1,12 +1,6 @@
 # 文档
 
-# 文档
-
 # 开始使用
-
-# 开始使用
-
-# 概述
 
 # 概述
 
@@ -78,8 +72,6 @@ $ npm install -g hexo-cli
 
 # 建站
 
-# 建站
-
 安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
 
 ```
@@ -124,8 +116,6 @@ $ npm install
 ### themes
 
 主题 文件夹。Hexo 会根据主题来生成静态页面。
-
-# 配置
 
 # 配置
 
@@ -212,8 +202,6 @@ Hexo 使用 [Moment.js](http://momentjs.com/) 来解析和显示时间。
 | --- | --- |
 | `theme` | 当前主题名称。值为`false`时禁用主题 |
 | `deploy` | 部署部分的设置 |
-
-# 指令
 
 # 指令
 
@@ -376,8 +364,6 @@ $ hexo --cwd /path/to/cwd
 
 # 迁移
 
-# 迁移
-
 ## RSS
 
 首先，安装 `hexo-migrator-rss` 插件。
@@ -439,10 +425,6 @@ $ hexo migrate joomla <source
 ```
 
 # 基本操作
-
-# 基本操作
-
-# 写作
 
 # 写作
 
@@ -507,8 +489,6 @@ $ hexo new photo "My Gallery"
 
 # Front-matter
 
-# Front-matter
-
 Front-matter 是文件最上方以 `---` 分隔的区域，用于指定个别文件的变量，举例来说：
 
 ```
@@ -549,8 +529,6 @@ tags:
 ```
 "title": "Hello World","date": "2013/7/13 20:46:25";;; 
 ```
-
-# 标签插件（Tag Plugins）
 
 # 标签插件（Tag Plugins）
 
@@ -787,8 +765,6 @@ content
 
 # 资源文件夹
 
-# 资源文件夹
-
 资源（Asset）代表 `source` 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的 Hexo 项目中只有少量图片，那最简单的方法就是将它们放在 `source/images` 文件夹中。然后通过类似于 `![](img/image.jpg)` 的方法访问它们。
 
 ## 文章资源文件夹
@@ -823,8 +799,6 @@ post_asset_folder: true
 
 # 数据文件
 
-# 数据文件
-
 有时您可能需要在主题中使用某些资料，而这些资料并不在文章内，并且是需要重复使用的，那么您可以考虑使用 Hexo 3.0 新增的「数据文件」功能。此功能会载入 `source/_data` 内的 YAML 或 JSON 文件，如此一来您便能在网站中复用这些文件了。
 
 举例来说，在 `source/_data` 文件夹中新建 `menu.yml` 文件：
@@ -842,8 +816,6 @@ Archives: /archives/
   <a href="{{ link }}">{{ loop.key }}</a>
 {% endfor %} 
 ```
-
-# 服务器
 
 # 服务器
 
@@ -906,8 +878,6 @@ $ ln -s
 
 # 生成文件
 
-# 生成文件
-
 使用 Hexo 生成静态文件快速而且简单。
 
 ```
@@ -929,8 +899,6 @@ $ hexo generate --watch
 ```
 $ hexo generate --deploy$ hexo deploy --generate 
 ```
-
-# 部署
 
 # 部署
 
@@ -1097,10 +1065,6 @@ Hexo 生成的所有文件都放在 `public` 文件夹中，您可以将它们�
 
 # 自定义
 
-# 自定义
-
-# 永久链接（Permalinks）
-
 # 永久链接（Permalinks）
 
 您可以在 `_config.yml` 配置中调整网站的永久链接或者在每篇文章的 Front-matter 中指定。
@@ -1166,8 +1130,6 @@ $ hexo new "Hello World"
 ```
 http://localhost:4000/tw/hello-world/ 
 ```
-
-# 主题
 
 # 主题
 
@@ -1244,8 +1206,6 @@ layout.swig  - 使用 Swig
 5.  推送（push）分支。
 
 6.  建立一个新的合并申请（pull request）并描述改动。
-
-# 模版
 
 # 模版
 
@@ -1341,8 +1301,6 @@ index
 
 # 变量
 
-# 变量
-
 ### 全局变量
 
 | 变量 | 描述 |
@@ -1431,8 +1389,6 @@ index
 | 变量 | 描述 |
 | --- | --- |
 | `page.tag` | 标签名称 |
-
-# 辅助函数（Helpers）
 
 # 辅助函数（Helpers）
 
@@ -2072,8 +2028,6 @@ index
 
 # 国际化（i18n）
 
-# 国际化（i18n）
-
 若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 `_config.yml` 中调整 `language` 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。
 
 ```
@@ -2126,8 +2080,6 @@ i18n_dir: :lang
 ```
 
 捕获到的字符串唯有在语言文件存在的情况下，才会被当作是语言，因此例二 `/archives/index.html` 中的 `archives` 就不被当成是语言。
-
-# 插件
 
 # 插件
 
@@ -2194,10 +2146,6 @@ Hexo 有强大的插件系统，使您能轻松扩展功能而不用修改核心
 5.  建立一个新的合并申请（pull request）并描述改动。
 
 # 其他
-
-# 其他
-
-# 问题解答
 
 # 问题解答
 
@@ -2319,8 +2267,6 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 ```
 
 这将会提高你能监视的文件数量。
-
-# 贡献
 
 # 贡献
 

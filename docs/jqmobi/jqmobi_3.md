@@ -1,14 +1,8 @@
 # 组件
 
-# 组件
-
-# 页面与对话框
-
 # 页面与对话框
 
 Jquery Mobile 支持包含历史回退按钮的自动 ajax 读取外部页面的功能，一组页面转场动画，以及将页面显示为对话框的简易工具。
-
-# 页面
 
 # 页面
 
@@ -165,8 +159,6 @@ Jquery Mobile 会自动构建 AJAX 驱动的站点和应用。默认情况下，
 
 # 页面转场 Page transitions
 
-# 页面转场 Page transitions
-
 Jquery Mobile 框架内置 6 中基于 css 的页面转场效果，你可以给任何对象或页面（比如关闭页面或想换到新页面或者回到上一个页面）添加。默认情况下，Jquery Mobile 应用的是从右到左划入的转场效果
 
 **给链接添加 data-transition 属性，可以设定自定义的页面转场效果**
@@ -178,8 +170,6 @@ Jquery Mobile 框架内置 6 中基于 css 的页面转场效果，你可以给�
 **1pop 2slideup 3slidedown 4pop 5fade 6flip**
 
 另外，如果给链接增加 data-direction="reverse"属性，则强制指定为回退的转场效果
-
-# 创建对话框 Creating dialogs
 
 # 创建对话框 Creating dialogs
 
@@ -214,8 +204,6 @@ Jquery Mobile 框架内置 6 中基于 css 的页面转场效果，你可以给�
 ## 历史和后退按钮的行为 History & Back button behavior
 
 因为对话框是典型地用来给页面起支持作用的，所以 Jquery Mobile 不会在历史记录的哈希值里包含对话框。这就意味着当点击对话框后退按钮时，他不会出现在你的浏览器历史记录里。比如说，如果你在一个页面上，点击了一个按钮打开了一个对话框，然后关闭了这个对话框，到了另一个页面。这时如果你点击浏览器的后退按钮，那你会回到第一个页面，而不是对话框
-
-# Jquery Mobile 的导航模型 Jquery Mobile's navigation model
 
 # Jquery Mobile 的导航模型 Jquery Mobile's navigation model
 
@@ -287,15 +275,11 @@ Jquery Mobile 也会自动通过导航模型处理表单的提交。更多细节
 
 # 链接的格式 Link formats
 
-# 链接的格式 Link formats
-
 Jquery Mobile 支持所有标准的 html 格式，为了让体验更加流畅,Jquery Mobile 会把同一个域下的所有指向页面的链接都会自动转为 ajax 请求，并且用动画的转场效果实现切换
 
 指向别的域的链接或者是含有 rel="external", data-ajax="false" 属性的链接以及含有 target 属性的链接不会通过 ajax 加载，页面会整体被刷新。如果一个 html 文档内含有多?pages"容器，可以通过?pages"容器设置 id 属性，然后将链接指向 id.
 
 所有其他类型的链接别如：mailto:以及 tel: 不会被 Jquery Mobile 影响到。更多细节请参见链接导航模型
-
-# 给页面主题样式 Page Theming
 
 # 给页面主题样式 Page Theming
 
@@ -331,11 +315,7 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 # 工具栏
 
-# 工具栏
-
 工具栏在此是指在移动网站和应用中的头部，尾部和内容中的工具条。所以 Jquery Mobile 提供了一套标准的工具和导航栏的工具，可以在绝大多数情况下直接使用
-
-# 工具栏
 
 # 工具栏
 
@@ -352,8 +332,6 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 ## 工具栏定位的设置 Toolbar positioning options
 
 在页面中设置头部栏和尾部栏的位置定位有几种方法。默认情况下，工具栏的定位的属性为**"inline"**.在这种模式下，头部栏和尾部栏通过 html 自动的文档流放置，保证了他们能在所有的设备上可见，而不需要依靠 css 和 js 的定位的支持固定的定位模式可以使工具条在页面处于固定的位置，而不需要通过 js 设置。工具条处于他们在页面自然的位置上，就像 inline 模式一样，但是当他被滚动出屏幕之外时，Jquery Mobile 会自动通过动画使滚动条重新出现在屏幕的顶部或底部任何时候，点击屏幕会切换固定定位模式的工具条的显示：当工具条消失时点击屏幕会让他出现，再点击则会让它消失。这样用户就有选择在最大化浏览时要不要隐藏工具栏， 要给工具栏设置固定的定位模式，只需给工具栏的容器加“data-position="fixed"的属性即可全屏的定位模式与固定的定位模式基本相同，但是当他被滚动出屏幕之外时，不会自动重新显示，除非点击屏幕。这对于图片或视频类有提升代入感的应用是非常有用的，当浏览时你想全屏都显示内容，而工具栏可以通过点击屏幕呼出。注意这种模式下工具栏会**遮住页面内容**，所以最好用在比较特殊的场合下
-
-# 头部栏
 
 # 头部栏
 
@@ -442,8 +420,6 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 
 # 尾部栏
 
-# 尾部栏
-
 ## 尾部栏结构 Footer bar structure
 
 尾部栏除了使用的 data-role 的属性与头部栏不同之外，基本的结构与头部栏是相同的
@@ -498,8 +474,6 @@ Jquery Mobile 内建了一套样式主题系统，让你给页面添加样式时
 有些情况下你需要一个尾部栏为全局导航元素，希望页面转场时尾部栏也固定并显示。创造一个持续的尾部栏可以做到这一点
 
 给尾部栏添加 data-id 属性，并且在所有关联的页面的尾部栏设定同样的 data-id 的值，就可以使尾部栏在页面转场时也固定并显示， **例如**给当前页面和目标页面的尾部栏添加 id="myfooter" 属性，Jquery Mobile 会在页面转场动画的时候保持尾部栏固定 请注意：这个效果只有在头部栏和尾部栏设定为固定的定位模式（data-position="fixed" ）时在才有用，这样他们在页面转场时才不被隐藏
-
-# 导航栏
 
 # 导航栏
 
@@ -576,8 +550,6 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 # 固定定位的工具栏会在滚屏后重新出现 Fixed toolbars will re-appear after you scroll
 
-# 固定定位的工具栏会在滚屏后重新出现 Fixed toolbars will re-appear after you scroll
-
 这个页面是一个使用 Jquery Mobile 设定了固定定位的头部栏和尾部栏的实例。页面的文档流是正常的，让我们能够正常的布局文档，而不用通过脚本写。头部栏和尾部栏在文档流中的正常位置，但是当他们被滚动出屏幕后，你可以通过点击屏幕，使他们重新出现。再次点击或者滚动屏幕会使他们重新出现在文档流中（在顶部或底部）
 
 要给头部栏或底部栏设置这样的行为，需要给工具栏的容器增加 data-position="fixed"属性
@@ -590,8 +562,6 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 # 全屏的固定的工具栏　Fullscreen fixed toolbar
 
-# 全屏的固定的工具栏　Fullscreen fixed toolbar
-
 这个页面展示“全屏"工具栏模式。这个工具栏一般用在比较特殊的场合，比如想要把内容撑满全屏，然后头部栏和尾部栏随着点击页面而出现和消失-在图片，照片和视频浏览器经常需要这样
 
 要打开工具栏的这种特性，给页面的"page"增加 data-fullscreen="true"属性，然后给头部工具栏和尾部栏的容器增加 data-position="fixed"属性
@@ -600,11 +570,7 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 # 持续的尾部栏　Persistent footer nav bar
 
-# 持续的尾部栏　Persistent footer nav bar
-
 这个页面是一个持续的尾部导航栏的示例。在页面的底部，你会看到一个持续的水平导航栏。点击任何链接，你会看到页面会转场到另一个，但是尾部栏保持了固定。因 2 个页面都是用了同样的 data-id 属性
-
-# 给头部栏和尾部栏设置主题样式
 
 # 给头部栏和尾部栏设置主题样式
 
@@ -638,11 +604,7 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 
 # 按钮
 
-# 按钮
-
 按钮是 Jquery Mobile 的核心组件，在其他的组件中也广泛应用。起导航作用的按钮应该写为链接，在表单内起提交作用的按钮-Jquery Mobile 会同样的样式来标记。
-
-# 按钮标记选项 Button markup options
 
 # 按钮标记选项 Button markup options
 
@@ -667,8 +629,6 @@ Icons by Joseph Wain / glyphish.com. Licensed under the Creative Commons Attribu
 为了容易的样式化按钮，Jquery Mobile 自动把 type 为 submi,reset,button 或 image 的按钮元素或输入元素样式化为按钮，所以没有必要增加 data-role="button"的属性
 
 基于表单(form-based)的按钮的原始按钮(input)是隐藏的，但是依然保留其标记。 当一个按钮的点击事件触发时，也会在原始的表单按钮上触发点击事件。
-
-# 给按钮添加图标 Adding Icons to Buttons
 
 # 给按钮添加图标 Adding Icons to Buttons
 
@@ -782,8 +742,6 @@ data-icon 属性可以被用来创建如下所示的图标
 
 # 内联按钮 Inline buttons
 
-# 内联按钮 Inline buttons
-
 默认情况下，body 里的所有按钮都会被样式化为块级元素，撑大到与页面等宽
 
 但是，如果你想让按钮外观紧凑，宽度只符合里面的文字和 icon，那就给按钮添加 data-inline="true"的属性
@@ -807,8 +765,6 @@ data-icon 属性可以被用来创建如下所示的图标
 
 # 组按钮 Grouped buttons
 
-# 组按钮 Grouped buttons
-
 有时候，你想把一组按钮放进一个单独的容器内，使他们看起来想一个独立的导航部件。你可以把一组按钮包裹在一个容器内，然后给该容器添加 data-role="controlgroup"属性，Jquery Mobile 会创建一个垂直的按钮组，删除掉按钮间的 margin 和阴影，然后只在第一个按钮和最后一个按钮产生圆角，使他们看起来是一组按钮
 
 ```
@@ -826,8 +782,6 @@ data-icon 属性可以被用来创建如下所示的图标
 **水平的组按钮 Horizontal grouped buttons:**
 
 ![](img/Grouped%20buttons_2.png) ![](img/Inline%20buttons_3.png) ![](img/Inline%20buttons_3.png)
-
-# 主题化按钮 Theming buttons
 
 # 主题化按钮 Theming buttons
 
@@ -887,11 +841,7 @@ Jquery Mobile 内建了几套样式系统，给你定义样式时多种选择，
 
 # 内容的格式化
 
-# 内容的格式化
-
 在 Jquery Mobilede 页面的内容是完全开放的，但是 Jquery Mobile 框架提供了一些有用的工具及组件，比如可折叠的面板，多列网格布局等?方便地为移动设备格式化你的内容
-
-# html 格式化 HTML Formatting
 
 # html 格式化 HTML Formatting
 
@@ -902,8 +852,6 @@ Jquery Mobile 内建了几套样式系统，给你定义样式时多种选择，
 ## 默认 HTML 标记样式 Default HTML markup styling
 
 默认情况下，Jquery Mobile 的主题样式为标准的 html 元素使用标准的 html 样式，字号，例如 header,p,block quotos,a,ul,ol,dl,dt
-
-# 布局网格 Layout grids
 
 # 布局网格 Layout grids
 
@@ -964,8 +912,6 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 
 # 可折叠的内容 Collapsible content markup
 
-# 可折叠的内容 Collapsible content markup
-
 要创建一个可折叠的区块，先创建一个容器，然后给容器添加 data-role="collapsible"属性
 
 容器内直接的标题（h1-h6)子结点，Jquery Mobile 会将之表现为可点击的按钮，并在左侧添加一个“+"按钮，表示是可以展开的
@@ -998,8 +944,6 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 通过给父容器添加 data-role="collapsible-set"属?然后每一个子容器 data-role="collapsible"属性，可以让容器展开时，其他容器被折叠的效果，类似手风琴组件
 
 ![](img/Collapsible%20content_2.png)
-
-# 给内容主题 Theming content
 
 # 给内容主题 Theming content
 
@@ -1038,12 +982,6 @@ Jquery Mobile 提供了两种预设的配置布局：两列布局（class 含有
 主题 e
 
 ![](img/Themed%20examples_e.png)
-
-# 表单元素
-
-# 表单元素
-
-# 表单元素 Form elements
 
 # 表单元素 Form elements
 
@@ -1160,8 +1098,6 @@ myswitch .slider("refresh");
 
 # 表单元素示例 Form element gallery
 
-# 表单元素示例 Form element gallery
-
 此页面包含了通过渐进增强驱动的表单元素。原生的表单元素有时被隐藏了，但他们的 value 值被保存了，所以表单可以正确的提交
 
 不支持自定义组件的浏览器也能使用它们，因为所有表单组件都基于原生的 html 表单元素.
@@ -1205,8 +1141,6 @@ myswitch .slider("refresh");
 **按钮 button**
 
 ![](img/btn.png)
-
-# 文本输入框 Text inputs
 
 # 文本输入框 Text inputs
 
@@ -1269,8 +1203,6 @@ myswitch .slider("refresh");
 
 # 搜索输入框 Search inputs
 
-# 搜索输入框 Search inputs
-
 搜索输入框是一个新兴的 html 元素，外观为圆角，当你输入文字后右边会出现一个叉的图标，点击则会清除你输入的内容。给 input 增加 type="search" 属性来定义
 
 注意要把 label 的 for 属性设为 input 的 id 值，使他们能够在语义上相关联，并且要用 div 容器包裹它们，并给他设定 data-role="fieldcontain"属性
@@ -1287,8 +1219,6 @@ myswitch .slider("refresh");
 **搜索输入框 Search inputs**
 
 ![](img/serach.png)
-
-# 滑动条 Slider
 
 # 滑动条 Slider
 
@@ -1321,8 +1251,6 @@ myswitch .slider("refresh");
 
 # 开关 Flip toggle switches
 
-# 开关 Flip toggle switches
-
 开关在移动设备上是一个常用的 ui 元素，用来二元的切换开/关或者输入 true/false 类型的数据。你可以像滑动框一样拖动开关，或者点击开关任意一半进行操作
 
 创建一个只有 2 个 option 的选择菜单就可以构造一个开关了。第一个 option 会被样式化为 开，第二个 option 会被样式化为 关，所以请注意代码书写顺序。注意要把 label 的 for 属性设为 input 的 id 值，使他们能够在语义上相关联，并且要用 div 容器包裹它们，并给他设定 data-role="fieldcontain"属性。
@@ -1352,8 +1280,6 @@ var myswitch = $("select#bar");
 myswitch[0].selectedIndex = 1;
 myswitch .slider("refresh"); 
 ```
-
-# 复选按钮 Checkboxes
 
 # 复选按钮 Checkboxes
 
@@ -1398,8 +1324,6 @@ Jquery Mobile 会自动将标签浮动，并排放置，并隐藏复选按钮的
 ## Refreshing a checkbox
 
 复选按钮组也可用作复选的水平按钮组，,可以同时选择多个按钮。比如说文字编辑器的粗体,斜体, 下划线。只需要为 fieldset 添加 data-type="horizontal"属性即可。
-
-# 单选按钮组 Radio buttons
 
 # 单选按钮组 Radio buttons
 
@@ -1448,8 +1372,6 @@ Jquery Mobile 会自动将标签浮动，并排放置，并隐藏复选按钮的
 ```
 $("input[type='checkbox']").attr("checked",true).checkboxradio("refresh"); 
 ```
-
-# 选择菜单 Select menus
 
 # 选择菜单 Select menus
 
@@ -1573,8 +1495,6 @@ myselect.selectmenu("refresh");
 
 # 表单的主题样式 Form themes
 
-# 表单的主题样式 Form themes
-
 Jquery Mobile 内建了一套样式主题系统，让你给页面和表单添加样式时有丰富的选择。默认情况下所有的表单元素都会应用与父容器相同的主题样式。是的表单元素融合进他们的布局中。给表单元素单独地应用 data-theme 属性，可以指定它的主题样式，使他在布局中凸现出
 
 下面实例中的所有表单的 html 都是相同的，并且没有为表单内的元素单独地指定主题样式。表单之间唯一的不同就是给表单父容器通过 data-theme 属性指定了不同的主题样式。这表现了表单元素自动应用父容器的主题样式的特性
@@ -1601,8 +1521,6 @@ BODY 为 E 主题
 
 # ajax 的表单提交 Ajax form submission
 
-# ajax 的表单提交 Ajax form submission
-
 Jquery Mobile 会自动通过 ajax 处理表单的提交，并在表单页面和结果页面之间创建一个平滑的转场效果。注意请在 form 元素上正确设定 action 和 method 属性，保证表单的提交。如果没有指定，提交方法默认为 get,action 默认为当前页的相对路径（通过$.mobile.path.get()方法取得
 
 表单也可以像链接一样指定转场效果的属性，比如 data-transition="pop"，和 data-direction="reverse".如果不希望通过 ajax 提交表单，可以在全局事件禁用 ajax，或给 form 设定 data-ajax="false" 属性。target 属性也可以在 form 上设置，表单提交时默认为浏览器的打开规则。。而与链接不同，rel 属性不可以在 form 上设
@@ -1614,8 +1532,6 @@ Jquery Mobile 会自动通过 ajax 处理表单的提交，并在表单页面和
 ## Simple Ajax form example
 
 本页面展示了表单自动通过 ajax 处理的提交。下面的表单采用常规（get 方式提交）forms-sample-response.php 。在提交时，Jquery Mobile 会确保指定的 Url 地址可以通过 Ajax 获取，并且适当的处理。请注意，就像普通的 HTTP 请求表单提交一样，Jquery Mobile 允许通过 get 请求成功得到的结果页通过更新 Url 的哈希值被添加为收藏页。而就像普通的表单提交一样，post 请求不包含查询参数，因此结果页不能被添加为收藏页
-
-# 表单插件的方法 Form Plugin Methods
 
 # 表单插件的方法 Form Plugin Methods
 
@@ -1701,8 +1617,6 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 # Jquery UI 的移动版日期拾取器插件 Jquery UI's Datepicker Styled for mobile
 
-# Jquery UI 的移动版日期拾取器插件 Jquery UI's Datepicker Styled for mobile
-
 下面这个示例是 Jquery UI 为移动设备开发的日期拾取器插件，这个插件并不包含在 Jquery Mobile 默认库当中，你需要自己手动 include 这些文件
 
 **日期拾取器 Datepicker**
@@ -1741,17 +1655,9 @@ Jquery Mobile 在应用了增强效果之后，会把几种 html5 输入框类�
 
 把这些代码放置在在 Jquery 加载后，Jquery Mobile 加载前。你可以查看该页面的源代码是如何写的
 
-# 列表
-
-# 列表
-
-# 列表 List views
-
 # 列表 List views
 
 列表用来展示数据，导航，结果列表以及列表标记的规约数据条目，所以 Jquery Mobile 提供了多种的列表类型以适应大多数的设计模式。
-
-# 列表标记的规约 List markup conventions
 
 # 列表标记的规约 List markup conventions
 

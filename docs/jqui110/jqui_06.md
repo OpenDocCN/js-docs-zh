@@ -1,7 +1,5 @@
 # Methods
 
-# Methods
-
 虽然 jQuery UI 主要包含的是 widgets, interactions, h 和 effects, 也添加了几个简单方便的方法。
 
 Also in: [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View all posts in UI Core")
@@ -78,8 +76,6 @@ Also in: [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View al
 
 # .disableSelection()
 
-# .disableSelection()
-
 Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View all posts in Methods") | [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View all posts in UI Core")
 
 ## .disableSelection()Returns: [jQuery](http://api.jquery.com/Types/#jQuery)
@@ -91,8 +87,6 @@ Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View
     *   该方法不接受任何参数。
 
 禁用的文本选择是有害的，不建议使用。
-
-# .enableSelection()
 
 # .enableSelection()
 
@@ -110,8 +104,6 @@ Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View
 
 # .removeUniqueId()
 
-# .removeUniqueId()
-
 Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View all posts in Methods") | [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View all posts in UI Core")
 
 ## .removeUniqueId()Returns: [jQuery](http://api.jquery.com/Types/#jQuery)
@@ -123,8 +115,6 @@ Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View
     *   该方法不接受任何参数。
 
 `.removeUniqueId()`移除由 `.uniqueId()` 设置的 id。在未使用 `.uniqueId()` 设置 id 的元素上调用 `.removeUniqueId()`则无影响，即使该元素有一个 id。
-
-# .scrollParent()
 
 # .scrollParent()
 
@@ -144,8 +134,6 @@ Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View
 
 # .uniqueId()
 
-# .uniqueId()
-
 Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View all posts in Methods") | [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View all posts in UI Core")
 
 ## .uniqueId()Returns: [jQuery](http://api.jquery.com/Types/#jQuery)
@@ -157,8 +145,6 @@ Categories: [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View
     *   该方法不接受任何参数。
 
 许多小部件需要元素生成唯一的 id。`.uniqueId()` 会检查元素是否有 id，如果元素没有 id，它将生成一个 id，并设置为该元素的 id。在未检查元素是否具有 id 就调用 `.uniqueId()` 是安全的。当小部件使用后需要清除，如果 id 是通过 `.uniqueId()` 添加的，`.removeUniqueId()` 方法将从元素上移除 id，如果 id 不是通过 .uniqueId() 添加的，则无影响。`.removeUniqueId()` 之所以能区分 id，是因为 `.uniqueId()` 生成的 id 带有前缀 "ui-id-"。
-
-# .zIndex()
 
 # .zIndex()
 

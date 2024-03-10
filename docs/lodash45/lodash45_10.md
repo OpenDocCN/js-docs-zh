@@ -1,7 +1,5 @@
 # Number
 
-# Number
-
 # clamp
 
 ## clamp

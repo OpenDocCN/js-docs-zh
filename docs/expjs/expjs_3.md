@@ -1,7 +1,5 @@
 # API 参考
 
-# API 参考
-
 ### express()
 
 创建一个 express 应用程序

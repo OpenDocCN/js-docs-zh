@@ -1,7 +1,5 @@
 # Widgets
 
-# Widgets
-
 小部件（Widgets）是功能丰富、有状态的插件，它有一个完整的生命周期，带有方法和事件。您可以查看 部件库（Widget Factory）文档 了解更多详情。
 
 ## Accordion Widget
@@ -59,8 +57,6 @@ jQuery.widget.bridge() 方法是 jQuery 部件库（Widget Factory）的一部�
 ## Tooltip Widget
 
 可自定义的、可主题化的工具提示框，替代原生的工具提示框。
-
-# Accordion Widget
 
 # Accordion Widget
 
@@ -603,8 +599,6 @@ $( "#accordion" ).accordion();
 </body>
 </html> 
 ```
-
-# Autocomplete Widget
 
 # Autocomplete Widget
 
@@ -1336,8 +1330,6 @@ $( "#autocomplete" ).autocomplete({
 
 # Button Widget
 
-# Button Widget
-
 Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View all posts in Widgets")
 
 ## version added: 1.8
@@ -1700,8 +1692,6 @@ $( "#radio" ).buttonset();
 </body>
 </html> 
 ```
-
-# Datepicker Widget
 
 # Datepicker Widget
 
@@ -3193,8 +3183,6 @@ $( "#datepicker" ).datepicker();
 
 # Dialog Widget
 
-# Dialog Widget
-
 Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View all posts in Widgets")
 
 ## version added: 1.0
@@ -4227,8 +4215,6 @@ $( "#opener" ).click(function() {
 
 # Menu Widget
 
-# Menu Widget
-
 Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View all posts in Widgets")
 
 ## version added: 1.9
@@ -4906,8 +4892,6 @@ $( "#menu" ).menu();
 
 # Progressbar Widget
 
-# Progressbar Widget
-
 Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View all posts in Widgets")
 
 ## version added: 1.6
@@ -5298,8 +5282,6 @@ $( "#progressbar" ).progressbar({
 </body>
 </html> 
 ```
-
-# Slider Widget
 
 # Slider Widget
 
@@ -5910,8 +5892,6 @@ $( "#slider" ).slider();
 </body>
 </html> 
 ```
-
-# Spinner Widget
 
 # Spinner Widget
 
@@ -6617,8 +6597,6 @@ $( "#spinner" ).spinner();
 
 # Tabs Widget
 
-# Tabs Widget
-
 Categories: [Widgets](http://www.css88.com/jquery-ui-api/category/widgets/ "View all posts in Widgets")
 
 ## version added: 1.0
@@ -7249,8 +7227,6 @@ $( "#tabs" ).tabs();
 </body>
 </html> 
 ```
-
-# Tooltip Widget
 
 # Tooltip Widget
 

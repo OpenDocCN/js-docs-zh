@@ -1,9 +1,5 @@
 # 改变浏览器外观
 
-# 改变浏览器外观
-
-# Browser Actions
-
 # Browser Actions
 
 ## Contents
@@ -384,8 +380,6 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 # Context Menus
 
-# Context Menus
-
 ## 内容
 
 1.  清单
@@ -669,8 +663,6 @@ function() {...};
 
 # 桌面通知
 
-# 桌面通知
-
 通知用户发生了一些重要的事情。桌面通知会显示在浏览器窗口之外。 下面的图片是通知显示时的效果，在不同的平台下，通知的显示效果会有些细微区别。
 
 ![Notifications on Microsoft Windows](img/notification-windows.png) ![Notifications on Mac OS X](img/notification-mac.png) ![Notifications on Ubuntu Linux](img/notification-linux.png)
@@ -786,8 +778,6 @@ A description from the json schema def of the event goes here.
 ### Types
 
 #### type name
-
-# Omnibox
 
 # Omnibox
 
@@ -1082,8 +1072,6 @@ Favorite Color:
 
 # Override 替代页
 
-# Override 替代页
-
 使用替代页，可以将 Chrome 默认的一些特定页面替换掉，改为使用扩展提供的页面。这让扩展开发者可以开发更多有趣或者实用的基本功能页面。替代页通常会有大量的 CSS 和 JavaScript 代码。
 
 扩展可以替代如下页面：
@@ -1141,8 +1129,6 @@ Favorite Color:
 ## 范例
 
 你可以在这里找到范例[examples/api/override](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/override/)，其他范例在这里 Samples
-
-# Page Actions
 
 # Page Actions
 
@@ -1465,8 +1451,6 @@ This parameter was added in version . You must omit this parameter in earlier ve
 ### Types
 
 #### type name
-
-# 主题
 
 # 主题
 

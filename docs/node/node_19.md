@@ -1,7 +1,5 @@
 # Process
 
-# process
-
 `process`对象是一个全局对象，并且何以被在任何地方调用。这是一个`EventEmitter`实例。
 
 ### Exit Codes

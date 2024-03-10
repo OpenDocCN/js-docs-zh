@@ -1,7 +1,5 @@
 # Effect Core
 
-# Effect Core
-
 由 jquery.ui.effect.js 提供的功能。除了下面列出的方法，jquery.ui.effect.js 还包括一些 Easings。
 
 Also in: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects") | [Method Overrides](http://www.css88.com/jquery-ui-api/category/overrides/ "View all posts in Method Overrides")

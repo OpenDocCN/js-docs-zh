@@ -1,7 +1,5 @@
 # Detect methods
 
-# Detect methods
-
 ## Detect module
 
 该检测方法可以在不同的环境中微调你的站点或者应用程序，并帮助你识别手机和平板；以及不同的浏览器和操作系统。

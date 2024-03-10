@@ -1,3 +1,4 @@
++   [jQuery 1.8.0 中文文档](README.md)
 +   [速查表](jq180_01.md)
 +   [核心](jq180_02.md)
 +   [选择器](jq180_03.md)
@@ -13,4 +14,3 @@
 +   [Callbacks](jq180_13.md)
 +   [关于](jq180_14.md)
 +   [其它](jq180_15.md)
-+   [jQuery 1.8.0 中文文档](REAADME.md)

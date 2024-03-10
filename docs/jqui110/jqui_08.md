@@ -1,7 +1,5 @@
 # Theming
 
-# Theming
-
 jQuery UI 包括一个强大的 CSS 框架，用于创建自定义的 jQuery 小部件。该框架包括涵盖广泛的公共用户界面需求的 Class，并且可以使用 [jQuery UI ThemeRoller](http://jqueryui.com/themeroller/) 进行操纵。通过使用 jQuery UI CSS 框架创建您自己的 UI 组件，您应采用共享标记公约，便于插件社区的代码集成。您可以查看 [jQuery UI 主题](http://learn.jquery.com/jquery-ui/theming/) 了解更多详情。
 
 ## CSS Framework
@@ -15,8 +13,6 @@ jQuery UI 提供的图标列表。
 ## Stacking Elements
 
 一种处理 z-index 和堆叠元素的模式。
-
-# CSS 框架（CSS Framework）
 
 # CSS 框架（CSS Framework）
 
@@ -88,8 +84,6 @@ jQuery UI 的 [ThemeRoller](http://jqueryui.com/themeroller) 在它的预览一�
 
 # Icons
 
-# Icons
-
 jQuery UI 提供了大量可以通过对元素应用 Class 名称来使用的图标（Icons）。Class 名称大体上遵循语法 `.ui-icon-{icon type}-{icon sub description}-{direction}`。例如，下面将显示一个向北的厚箭头的图标：
 
 ```
@@ -99,8 +93,6 @@ jQuery UI 提供了大量可以通过对元素应用 Class 名称来使用的图
 图标也集成到一些 jQuery UI 的小部件，比如 accordion、button、menu。
 
 下面是 jQuery UI 提供的图标的完整列表：
-
-# Stacking Elements
 
 # Stacking Elements
 

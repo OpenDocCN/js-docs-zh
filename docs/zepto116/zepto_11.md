@@ -1,7 +1,5 @@
 # Effects
 
-# Effects
-
 ## $.fx
 
 全局地动画设置：

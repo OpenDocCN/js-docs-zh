@@ -1,7 +1,5 @@
 # Touch
 
-# Touch
-
 ## Touch events
 
 “touch”模块添加以下事件，可以使用 on 和 off。

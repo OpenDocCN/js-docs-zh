@@ -1,7 +1,5 @@
 # Crypto
 
-# Crypto
-
 ### 稳定度: 2 - 稳定
 
 使用`require('crypto')`来获取这个模块。

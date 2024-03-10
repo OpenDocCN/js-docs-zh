@@ -1,7 +1,5 @@
 # Modules
 
-# Modules
-
 ### 稳定度: 3 - 锁定
 
 `node.js`又一个简单的模块加载系统。在`node.js`中，文件和模块是一一对应的。以下例子中，`foo.js`加载的同目录下的`circle.js`。

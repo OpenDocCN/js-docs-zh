@@ -1,7 +1,5 @@
 # TTY
 
-# TTY
-
 ### Stability: 2 - Stable
 
 `tty`模块主要提供了`tty.ReadStream`和`tty.WriteStream`这两个类。大多数情况下，你都不需要直接使用这个模块。

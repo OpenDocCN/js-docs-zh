@@ -1,7 +1,5 @@
 # 向导
 
-# 向导
-
 # 支持平台
 
 # 支持的平台
@@ -466,8 +464,6 @@ $ HOME=~/.electron-gyp node-gyp rebuild --target=0.29.1 --arch=x64 --dist-url=ht
 
 # 主进程调试
 
-# 主进程调试
-
 浏览器窗口的开发工具仅能调试渲染器的进程脚本（比如 web 页面）。为了提供一个可以调试主进程 的方法，Electron 提供了 `--debug` 和 `--debug-brk` 开关。
 
 ## 命令行开关
@@ -532,8 +528,6 @@ $ ELECTRON_RUN_AS_NODE=true path/to/electron.exe node_modules/node-inspector/bin
 ### 7\. 加载调试器界面
 
 在 Chrome 中打开 [`127.0.0.1:8080/debug?ws=127.0.0.1:8080&port=5858`](http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&port=5858)
-
-# 使用 Selenium 和 WebDriver
 
 # 使用 Selenium 和 WebDriver
 
@@ -701,8 +695,6 @@ Electron 目前并不支持 chrome 扩展里的后台运行(background pages)功
 
 # 使用 Pepper Flash 插件
 
-# 使用 Pepper Flash 插件
-
 Electron 现在支持 Pepper Flash 插件。要在 Electron 里面使用 Pepper Flash 插件，你需 要手动设置 Pepper Flash 的路径和在你的应用里启用 Pepper Flash。
 
 ## 保留一份 Flash 插件的副本
@@ -743,8 +735,6 @@ app.on('ready', function() {
 ```
 <webview src="http://www.adobe.com/software/flash/about/" plugins></webview> 
 ```
-
-# 使用 Widevine CDM 插件
 
 # 使用 Widevine CDM 插件
 

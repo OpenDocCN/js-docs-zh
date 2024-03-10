@@ -1,9 +1,5 @@
 # 基础文档
 
-# 基础文档
-
-# 综述
-
 # 综述
 
 当读完了这个综述和入门之后，就可以开始创建应用（扩展）和 WebApp 了。 注意：WebApp 是通过应用（扩展）的方式实现的，所以除非特别声明，本页所有内容都适用于 WebApp。
@@ -120,8 +116,6 @@ function saveTabData(tab, data) { if (tab.incognito) { bgPage[tab.url] = data; /
 
 # 调试
 
-# 调试
-
 这个指南会向您介绍如何使用 Chromium 的内建开发工具进行应用（扩展）调试。
 
 ## 查看应用（扩展）信息
@@ -169,8 +163,6 @@ function saveTabData(tab, data) { if (tab.incognito) { bgPage[tab.url] = data; /
 3.使用开发者工具设置脚本断点，单步调试，查看变量
 
 4.使用控制台命令 location.reload(true)来重新加载当前的调试页面
-
-# 格式：Manifest 文件
 
 # 格式：Manifest 文件
 
@@ -509,8 +501,6 @@ manifest 版本 1 从 Chrome 18 才开始逐步被弃用，版本 2 目前并不
 manifest_version 为 2 的扩展，缺省将不能使用除 web_accessible_resources 中指定外的任何其它任何扩展包内资源。
 
 manifest*version 为 1 的扩展，缺省仍可访问任何扩展包内资源。*但是 _，一旦指定 web_accessible_resources，将也只能访问其中指定的资源。
-
-# 模式匹配
 
 # 模式匹配
 

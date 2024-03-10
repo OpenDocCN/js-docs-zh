@@ -22,8 +22,6 @@
 
 # node-webkit 学习(1)hello world
 
-# node-webkit 学习(1)hello world
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 学习(1)hello world](http://www.cnblogs.com/xuanhun/p/3653816.html)
@@ -164,8 +162,6 @@ We are using node.js <script>document.write(process.version)</script>.
 ![](img/091122204344799.png)
 
 下一篇文章，讲解基本的程序结构和配置。
-
-# node-webkit 学习(2)基本结构和配置
 
 # node-webkit 学习(2)基本结构和配置
 
@@ -573,8 +569,6 @@ type 和 url 指定可以下载或者克隆程序包的地址，如果程序包�
 
 # node-webkit 学习(3)Native UI API 概览
 
-# node-webkit 学习(3)Native UI API 概览
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 学习(3)Native UI API 概览](http://www.cnblogs.com/xuanhun/p/3658275.html)
@@ -808,8 +802,6 @@ menuitem.on('click', function() {
 ## 3.4 小结
 
 本文内容主要来自 node-webkit 的官方英文文档（[`github.com/rogerwang/node-webkit/wiki/API-Overview-and-Notices`](https://github.com/rogerwang/node-webkit/wiki/API-Overview-and-Notices)），做了适当的改编和调整。主要目的是从整体上认识 Native UI API，同时了解基本用法。之后的文章，会对每一个类别的 api 做详细的介绍。
-
-# node-webkit 学习(4)Native UI API 之 window
 
 # node-webkit 学习(4)Native UI API 之 window
 
@@ -1614,8 +1606,6 @@ function (frame, url, policy) {}
 
 # node-webkit 教程(5)Native UI API 之 Frameless window
 
-# node-webkit 教程(5)Native UI API 之 Frameless window
-
 > 作者：玄魂
 > 
 > 来源：[nnode-webkit 教程(5)Native UI API 之 Frameless window](http://www.cnblogs.com/xuanhun/p/3666461.html)
@@ -1723,8 +1713,6 @@ demo 地址：[`github.com/zcbenz/nw-sample-apps/tree/master/frameless-window`](
 本文内容主要参考 node-webkit 的官方英文文档（[`github.com/rogerwang/node-webkit/wiki/Frameless-window`](https://github.com/rogerwang/node-webkit/wiki/Frameless-window)）。
 
 下一篇文章，介绍 menu。
-
-# node-webkit 教程(6)Native UI API 之 Menu(菜单)
 
 # node-webkit 教程(6)Native UI API 之 Menu(菜单)
 
@@ -2030,8 +2018,6 @@ var subMenuItem = new gui.MenuItem({
 
 # node-webkit 教程(7)Platform Service 之 APP
 
-# node-webkit 教程(7)Platform Service 之 APP
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 教程(7)Platform Service 之 APP](http://www.cnblogs.com/xuanhun/p/3670906.html)
@@ -2263,8 +2249,6 @@ Symbols file of official node-webkit binary is provided staring from 0.8.0\. It 
 
 # node-webkit 教程(8)Platform Service 之 Clipboard
 
-# node-webkit 教程(8)Platform Service 之 Clipboard
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 教程(8)Platform Service 之 Clipboard](http://www.cnblogs.com/xuanhun/p/3671461.html)
@@ -2407,8 +2391,6 @@ function clearText()
 本文内容主要参考 node-webkit 的官方英文文档，做了适当的调整（[`github.com/rogerwang/node-webkit/wiki/Clipboard`](https://github.com/rogerwang/node-webkit/wiki/Clipboard)）。
 
 下一篇文章，介绍 Tray。
-
-# node-webkit 教程(9)native api 之 Tray(托盘)
 
 # node-webkit 教程(9)native api 之 Tray(托盘)
 
@@ -2562,8 +2544,6 @@ tray = null;
 本文内容主要参考 node-webkit 的官方英文文档，做了适当的调整（[`github.com/rogerwang/node-webkit/wiki/Tray`](https://github.com/rogerwang/node-webkit/wiki/Tray)）。
 
 下一篇文章，介绍 Tray。
-
-# node-webkit 教程(10)Platform Service 之 File dialogs
 
 # node-webkit 教程(10)Platform Service 之 File dialogs
 
@@ -2808,8 +2788,6 @@ apendText(files[i].path);
 
 # node-webkit 教程(11)Platform Service 之 shell
 
-# node-webkit 教程(11)Platform Service 之 shell
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 教程(11)Platform Service 之 shell](http://www.cnblogs.com/xuanhun/p/3685100.html)
@@ -2930,8 +2908,6 @@ var shell = gui.Shell;
 
 # node-webkit 教程(12)全屏
 
-# node-webkit 教程(12)全屏
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 教程(12)全屏](http://www.cnblogs.com/xuanhun/p/3894272.html)
@@ -3040,8 +3016,6 @@ package.json 内容如下：
 
 # node-webkit 教程(13)gpu 支持信息查看
 
-# node-webkit 教程(13)gpu 支持信息查看
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 教程(13)gpu 支持信息查看](http://www.cnblogs.com/xuanhun/p/4034373.html)
@@ -3098,8 +3072,6 @@ chrome.send('browserBridgeInitialized');
 ## 11.2 小结
 
 本文内容主要参考 node-webkit 的官方英文文档，做了适当的调整（[`github.com/rogerwang/node-webkit/wiki/Extract-info-about-gpu）。`](https://github.com/rogerwang/node-webkit/wiki/Extract-info-about-gpu）。)
-
-# node-webkit 教程(14)禁用缓存
 
 # node-webkit 教程(14)禁用缓存
 
@@ -3166,8 +3138,6 @@ chrome.send('browserBridgeInitialized');
 
 # node-webkit 教程(15)当图片加载失败的时候
 
-# node-webkit 教程(15)当图片加载失败的时候
-
 > 作者：玄魂
 > 
 > 来源：[node-webkit 教程(15)当图片加载失败的时候](http://www.cnblogs.com/xuanhun/p/4127376.html)
@@ -3181,8 +3151,6 @@ chrome.send('browserBridgeInitialized');
 ![](img/272233526845261.jpg)
 
 插入 svg 图片的过程中，经常出现无法加载的现象，检测文件和 url 都是正确的。而且 svg 文件达到一定数量之后，再也无法插入新的文件。经过反复排查，确定是缓存引起的问题，无奈之下只能走清除缓存的路，实属下策。
-
-# node-webkit 教程(16)调试 typescript
 
 # node-webkit 教程(16)调试 typescript
 

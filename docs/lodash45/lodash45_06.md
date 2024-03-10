@@ -1,7 +1,5 @@
 # Function
 
-# Function
-
 # after
 
 ## after

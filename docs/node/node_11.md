@@ -1,7 +1,5 @@
 # File System
 
-# File System
-
 ### 稳定度: 2 - 稳定
 
 文件 I/O 是由标准 POSIX 函数的简单包装提供的。通过`require('fs')`来使用这个模块。所有的方法都有异步和同步两种形式。

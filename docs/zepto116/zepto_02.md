@@ -1,7 +1,5 @@
 # Download Zepto
 
-# Download Zepto
-
 默认构建包含以下模块： *Core, Ajax, Event, Form, IE*.
 
 Zepto v1.0 默认捆绑了 Effects, iOS3, 和 Detect 模块。 请参阅下面的 可选模块(optional modules)。

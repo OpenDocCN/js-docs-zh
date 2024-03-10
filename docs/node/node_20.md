@@ -1,7 +1,5 @@
 # Punycode
 
-# punycode
-
 #### Stability: 2 - Stable
 
 `Punycode.js`在`node.js` v1.0.0+ 和 `Node.js` v0.6.2+ 中被内置。通过`require('punycode')`来获取它（若要在其他版本的`node.js`中使用它，需要先通过 npm 来安装`punycode`模块）。

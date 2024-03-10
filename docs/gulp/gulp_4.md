@@ -1,7 +1,5 @@
 # FAQ
 
-# FAQ
-
 ## 为什用 gulp 而不是 ____?
 
 请先看 [gulp 介绍幻灯片](http://slid.es/contra/gulp) 来大致了解下 gulp 是怎么来的。

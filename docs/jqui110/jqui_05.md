@@ -1,7 +1,5 @@
 # Method Overrides
 
-# Method Overrides
-
 jQuery UI 重载了几个内置的 jQuery 方法，以提供额外的功能。当使用这些重载时，确保加载 jQuery UI 是很重要的。如果 jQuery UI 未加载，方法依然存在，但预期的功能将不可用，这会导致难以追踪的错误。
 
 Also in: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects") | [Effects Core](http://www.css88.com/jquery-ui-api/category/effects-core/ "View all posts in Effects Core")
@@ -54,8 +52,6 @@ Also in: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View al
 
 # .focus()
 
-# .focus()
-
 Categories: [Method Overrides](http://www.css88.com/jquery-ui-api/category/overrides/ "View all posts in Method Overrides") | [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View all posts in Methods") | [UI Core](http://www.css88.com/jquery-ui-api/category/ui-core/ "View all posts in UI Core")
 
 ## .focus( delay [, callback ] )Returns: [jQuery](http://api.jquery.com/Types/#jQuery)
@@ -68,8 +64,6 @@ Categories: [Method Overrides](http://www.css88.com/jquery-ui-api/category/overr
     *   **callback**Type: [Function](http://api.jquery.com/Types/#Function)()元素被聚焦后要调用的函数。
 
 该插件扩展自 jQuery 内置的 `.focus()` 方法。如果 jQuery UI 未加载，调用 `.focus()` 方法不会直接失败，因为该方法在 jQuery 中存在。但是不会发生预期的行为。
-
-# .position()
 
 # .position()
 

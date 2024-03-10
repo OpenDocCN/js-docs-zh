@@ -1,9 +1,5 @@
 # API 文档
 
-# API 文档
-
-# 简介
-
 # 简介
 
 所有的[Node.js's built-in modules](http://nodejs.org/api/)在 Electron 中都可用，并且所有的 node 的第三方组件也可以放心使用（包括[自身的模块](https://github.com/heyunjiang/electron/blob/master/docs/tutorial/using-native-node-modules.md)）。
@@ -116,8 +112,6 @@ process.once('loaded', function() {
 *   `maxDescriptors` Integer
 
 设置文件描述符软限制于 `maxDescriptors` 或硬限制与 os, 无论它是否低于当前进程.
-
-# 支持的 Chrome 命令行开关
 
 # 支持的 Chrome 命令行开关
 
@@ -252,8 +246,6 @@ app.commandLine.appendSwitch('proxy-bypass-list', '<local>;*.google.com;*foo.com
 
 # 环境变量
 
-# 环境变量
-
 一些 Electron 的行为受到环境变量的控制，因为他们的初始化比命令行和应用代码更早.
 
 POSIX shells 的例子:
@@ -308,8 +300,6 @@ Windows 控制台:
 
 # 自定义的 DOM 元素
 
-# 自定义的 DOM 元素
-
 # `File` 对象
 
 # `File`对象
@@ -341,8 +331,6 @@ Windows 控制台:
   };
 </script> 
 ```
-
-# `<webview>` 标签
 
 # `<webview>` 标签
 
@@ -1016,8 +1004,6 @@ ipcRenderer.on('ping', function() {
 
 # `window.open` 函数
 
-# `window.open` 函数
-
 当在界面中使用 `window.open` 来创建一个新的窗口时候，将会创建一个 `BrowserWindow` 的实例，并且将返回一个标识，这个界面通过标识来对这个新的窗口进行有限的控制.
 
 这个标识对传统的 web 界面来说，通过它能对子窗口进行有限的功能性兼容控制. 想要完全的控制这个窗口，可以直接创建一个 `BrowserWindow` .
@@ -1077,10 +1063,6 @@ ipcRenderer.on('ping', function() {
 除了这些方法，子窗口还可以无特性和使用单一方法来实现 `window.opener` 对象.
 
 # 在主进程内可用的模块
-
-# 在主进程内可用的模块
-
-# app
 
 # app
 
@@ -1539,8 +1521,6 @@ if (browserOptions.transparent) {
 
 # autoUpdater
 
-# autoUpdater
-
 这个模块提供了一个到 `Squirrel` 自动更新框架的接口。
 
 ## 平台相关的提示
@@ -1618,8 +1598,6 @@ Linux 下没有任何的自动更新支持，所以我们推荐用各个 Linux �
 ### `autoUpdater.quitAndInstall()`
 
 在下载完成后，重启当前的应用并且安装更新。这个方法应该仅在 `update-downloaded` 事件触发后被调用。
-
-# BrowserWindow
 
 # BrowserWindow
 
@@ -2361,8 +2339,6 @@ windows 上句柄类型为 `HWND` ，OS X `NSView*` ， Linux `Window`.
 
 # contentTracing
 
-# contentTracing
-
 `content-tracing` 模块是用来收集由底层的 Chromium content 模块 产生的搜索数据. 这个模块不具备 web 接口，所有需要我们在 chrome 浏览器中添加 `chrome://tracing/` 来加载生成文件从而查看结果.
 
 ```
@@ -2487,8 +2463,6 @@ contentTracing.startRecording(options, function() {
 ### `contentTracing.cancelWatchEvent()`
 
 取消 watch 事件. 如果启动查找，这或许会造成 watch 事件的回调函数 出错.
-
-# dialog
 
 # dialog
 
@@ -2640,8 +2614,6 @@ app.on('will-quit', function() {
 ### `globalShortcut.unregisterAll()`
 
 注销本应用注册的所有全局快捷键.
-
-# ipcMain
 
 # ipcMain
 
@@ -3128,8 +3100,6 @@ OS X 为一些菜单项提供了标准的行为方法，例如 `About xxx`, `Hid
 
 # powerMonitor
 
-# powerMonitor
-
 `power-monitor`模块是用来监听能源区改变的.只能在主进程中使用.在 `app` 模块的 `ready` 事件触发之后就不能使用这个模块了.
 
 例如:
@@ -3161,8 +3131,6 @@ app.on('ready', function() {
 ### Event: 'on-battery'
 
 在系统使用电池电源的时候触发. Emitted when system changes to battery power.
-
-# powerSaveBlocker
 
 # powerSaveBlocker
 
@@ -3380,8 +3348,6 @@ POST 请求应当包含 `uploadData` 对象.
 
 *   `scheme` String
 *   `completion` Function 取消对 `scheme` 的拦截，使用它的原始句柄进行处理.
-
-# session
 
 # session
 
@@ -3851,8 +3817,6 @@ session.defaultSession.webRequest.onBeforeSendHeaders(filter, function(details, 
     *   `timestamp` Double
     *   `fromCache` Boolean
     *   `error` String - 错误描述.
-
-# webContents
 
 # webContents
 
@@ -4690,8 +4654,6 @@ win.webContents.debugger.sendCommand("Network.enable");
 
 # Tray
 
-# Tray
-
 用一个 `Tray` 来表示一个图标,这个图标处于正在运行的系统的通知区 ，通常被添加到一个 context menu 上.
 
 ```
@@ -4895,10 +4857,6 @@ appIcon.setContextMenu(contextMenu);
 
 # 在渲染进程（网页）内可用的模块
 
-# 在渲染进程（网页）内可用的模块
-
-# desktopCapturer
-
 # desktopCapturer
 
 `desktopCapturer` 模块可用来获取可用资源，这个资源可通过 `getUserMedia` 捕获得到.
@@ -4962,8 +4920,6 @@ function getUserMediaError(e) {
 *   `thumbnail` NativeImage - 缩略图.
 
 **注意:** 不能保证 `source.thumbnail` 的 size 和 `options` 中的 `thumnbailSize` 一直一致. 它也取决于屏幕或窗口的缩放比例.
-
-# ipcRenderer
 
 # ipcRenderer
 
@@ -5032,8 +4988,6 @@ function getUserMediaError(e) {
 *   `arg` (可选)
 
 类似 `ipcRenderer.send` ，但是它的事件将发往 host page 的 `<webview>` 元素，而不是主进程.
-
-# remote
 
 # remote
 
@@ -5157,8 +5111,6 @@ const app = remote.app;
 
 # webFrame
 
-# webFrame
-
 `web-frame` 模块允许你自定义如何渲染当前网页 .
 
 例子，放大当前页到 200%.
@@ -5256,10 +5208,6 @@ webFrame.setSpellCheckProvider("en-US", true, {
 在浏览器窗口中，一些 HTML APIs ，例如 `requestFullScreen`，只可以通过用户手势来使用.设置`userGesture` 为 `true` 可以突破这个限制 .
 
 # 在两种进程中都可用的模块
-
-# 在两种进程中都可用的模块
-
-# clipboard
 
 # clipboard
 
@@ -5381,8 +5329,6 @@ clipboard.write({text: 'test', html: "<b>test</b>"});
 
 # crashReporter
 
-# crashReporter
-
 `crash-reporter` 模块开启发送应用崩溃报告.
 
 下面是一个自动提交崩溃报告给服务器的例子 :
@@ -5443,8 +5389,6 @@ crashReporter.start({
 *   `_companyName` String - `crashReporter` `options` 对象中的公司名字.
 *   `upload_file_minidump` File - 崩溃报告按照 `minidump` 的格式.
 *   `crashReporter` 中的 `extra` 对象的所有等级和一个属性. `options` object
-
-# nativeImage
 
 # nativeImage
 
@@ -5593,8 +5537,6 @@ var image = nativeImage.createFromPath('/Users/somebody/images/icon.png');
 
 # screen
 
-# screen
-
 `screen` 模块检索屏幕的 size，显示，鼠标位置等的信息.在 `app` 模块的`ready` 事件触发之前不可使用这个模块.
 
 `screen` 是一个 [EventEmitter](http://nodejs.org/api/events.html#events_class_events_eventemitter).
@@ -5723,8 +5665,6 @@ app.on('ready', function() {
     *   `height` Integer
 
 返回与提供的边界范围最密切相关的 display.
-
-# shell
 
 # shell
 

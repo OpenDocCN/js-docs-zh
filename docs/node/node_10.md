@@ -1,7 +1,5 @@
 # Events
 
-# Events
-
 ### 稳定度: 2 - 稳定
 
 `node.js`中的许多对象触发事件：一个`net.Server`每次被连接时触发事件，一个`fs.readStream`当文件打开时触发事件。所有触发事件的对象都是`events.EventEmitter`的实例。你可以通过`require("events");`来取得这个模块。

@@ -1,7 +1,5 @@
 # Interactions
 
-# Interactions
-
 jQuery UI 提供了一套基于鼠标的交互。
 
 ## Draggable Widget
@@ -29,8 +27,6 @@ Also in: [Utilities](http://www.css88.com/jquery-ui-api/category/utilities/ "Vie
 ## Sortable Widget
 
 使用鼠标调整列表中或者网格中元素的排序。
-
-# Draggable Widget
 
 # Draggable Widget
 
@@ -947,8 +943,6 @@ $( "#draggable" ).draggable();
 
 # Droppable Widget
 
-# Droppable Widget
-
 Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interactions/ "View all posts in Interactions")
 
 ## version added: 1.0
@@ -1493,8 +1487,6 @@ $( "#droppable" ).droppable({
 
 # Mouse Interaction
 
-# Mouse Interaction
-
 Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interactions/ "View all posts in Interactions") | [Utilities](http://www.css88.com/jquery-ui-api/category/utilities/ "View all posts in Utilities")
 
 **Description:** 底层的交互组件
@@ -1749,8 +1741,6 @@ $( ".selector" ).mouse( "_mouseUp" );
 
 # Resizable Widget
 
-# Resizable Widget
-
 Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interactions/ "View all posts in Interactions")
 
 ## version added: 1.0
@@ -2481,8 +2471,6 @@ $( "#resizable" ).resizable();
 
 # Resizable Widget
 
-# Resizable Widget
-
 Categories: [Interactions](http://www.css88.com/jquery-ui-api/category/interactions/ "View all posts in Interactions")
 
 ## version added: 1.0
@@ -3210,8 +3198,6 @@ $( "#resizable" ).resizable();
 </body>
 </html> 
 ```
-
-# Selectable Widget
 
 # Selectable Widget
 
@@ -3771,8 +3757,6 @@ $( "#selectable" ).selectable();
 </body>
 </html> 
 ```
-
-# Sortable Widget
 
 # Sortable Widget
 

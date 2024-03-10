@@ -1,7 +1,5 @@
 # Readline
 
-# Readline
-
 ### 稳定度: 2 - 稳定
 
 通过`require('readline')`来使用这个模块。`Readline`允许逐行读取一个流（如`process.stdin`）。

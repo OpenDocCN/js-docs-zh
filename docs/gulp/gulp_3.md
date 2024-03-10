@@ -1,7 +1,5 @@
 # 编写插件
 
-# 编写插件
-
 如果你打算自己写一个 Gulp 插件，为了节约你的时间，你可以先完整地阅读下这个文档。
 
 *   导览 (必读)
@@ -50,8 +48,6 @@ Vinyl 文件可以通过三种不同形式来访问文件内容：
 *   [`nodejs.org/api/stream.html`](http://nodejs.org/api/stream.html)
 
 其他的一些为 gulp 创建的和使用的，但又并非通过 stream 去处理的库，在 npm 上都会被打上 [gulpfriendly](https://npmjs.org/browse/keyword/gulpfriendly) 标签。
-
-# 指导
 
 # 指导
 
@@ -178,8 +174,6 @@ module.exports = gulpPrefixer;
 
 # 使用 buffer
 
-# 使用 buffer
-
 > 这里有些关于如何创建一个使用 buffer 来处理的插件的有用信息。
 
 编写插件 > 使用 buffer
@@ -251,8 +245,6 @@ gulp.src('files/**/*.js')
 *   [gulp-svgmin](https://github.com/ben-eb/gulp-svgmin)
 *   [gulp-marked](https://github.com/lmtm/gulp-marked)
 *   [gulp-svg2ttf](https://github.com/nfroidure/gulp-svg2ttf)
-
-# 使用 Stream 处理
 
 # 使用 Stream 处理
 
@@ -332,8 +324,6 @@ gulp.src('files/**/*.js', { buffer: false })
 ## 一些使用 stream 的插件
 
 *   [gulp-svgicons2svgfont](https://github.com/nfroidure/gulp-svgiconstosvgfont)
-
-# 测试
 
 # 测试
 

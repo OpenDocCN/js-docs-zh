@@ -8,8 +8,6 @@
 
 # orm2 中文文档
 
-# orm2 中文文档
-
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 来源：[Object Relational Mapping](https://github.com/dresende/node-orm2/blob/master/Readme.md)
@@ -136,8 +134,6 @@ app.get("/", function (req, res) {
 ## 示例
 
 请见[`examples/anontxt`](https://github.com/dresende/node-orm2/tree/master/examples/anontxt)，里面有一个基于 express 的应用示例。
-
-# 连接到数据库
 
 # 连接到数据库
 
@@ -282,8 +278,6 @@ var db = orm.connect({
 
 # 设置
 
-# 设置
-
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 来源：[Settings](https://github.com/dresende/node-orm2/wiki/Settings)
@@ -353,8 +347,6 @@ var Settings = {
 
 # 定义模型
 
-# 定义模型
-
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 来源：[Defining Models](https://github.com/dresende/node-orm2/wiki/Defining-Models)
@@ -414,8 +406,6 @@ db.define(props, opts)
 | `autoFetch` | `Boolean` | 是否自动获取关联 |
 | `autoFetchLimit` | `Number` | 自动获取关联的深度 |
 | `cascadeRemove` | `Boolean` | 删除实例时是否要删除关联 |
-
-# 模型属性
 
 # 模型属性
 
@@ -514,8 +504,6 @@ var LottoTicket = db.define('lotto_ticket', {
 
 # 模型验证器
 
-# 模型验证器
-
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 来源：[Model Validations](https://github.com/dresende/node-orm2/wiki/Model-Validations)
@@ -582,8 +570,6 @@ orm.connect("....", function (err, db) {
     });
 }); 
 ```
-
-# 模型钩子
 
 # 模型钩子
 
@@ -654,10 +640,6 @@ var Person = db.define("person", {
 
 # 模型缓存
 
-# 模型缓存
-
-# 定义关联
-
 # 定义关联
 
 > 译者：[飞龙](https://github.com/wizardforcel)
@@ -671,8 +653,6 @@ var Person = db.define("person", {
 *   hasOne（多对一）
 *   hasMany（多对多）
 *   extendsTo（一对一）
-
-# hasOne（多对一关系）
 
 # hasOne（多对一关系）
 
@@ -731,8 +711,6 @@ Animal.hasOne('owner', Person, { reverse: "pets" });
 
 *   `getPets(callback)` - 获取所有和这个人有关联的动物
 *   `setPets(cat, dog, callback)` - 移除所有和这个人有关联的动物，并且添加猫和狗
-
-# hasMany（多对多关系）
 
 # hasMany（多对多关系）
 
@@ -846,8 +824,6 @@ Model.hasMany(
 
 # extendsTo（一对一关系）
 
-# extendsTo（一对一关系）
-
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 来源：[extendsTo](https://github.com/dresende/node-orm2/wiki/extendsTo)
@@ -869,8 +845,6 @@ var PersonAddress = Person.extendsTo("address", {
 这样会创建`person`表，带有`id`和`name`列。扩展行为会创建`person_address`表，带有`person_id`，`street`和`number`列。`Person`模型中可用的方法类似于`hasOne`关联。这个例子中，你可以调用`.getAddress(cb)`，`.setAddress(Address, cb)`以及其他。
 
 **注意**：你并不需要保存`Person.extendsTo`的返回值，它返回了一个扩展模型。你可以使用它来直接查询扩展表（甚至查找相关的模型），但是这完全取决于你。如果你只希望通过原模型来访问它的话，可以丢弃返回值。
-
-# 同步和删除模型
 
 # 同步和删除模型
 
@@ -907,8 +881,6 @@ orm.connect("....", function (err, db) {
     });
 }); 
 ```
-
-# 查找记录
 
 # 查找记录
 
@@ -1012,8 +984,6 @@ Person.find({id: [1, 2]}, function(err, persons) {
 
 # 创建和更新记录
 
-# 创建和更新记录
-
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 来源：[Creating and Updating Items](https://github.com/dresende/node-orm2/wiki/Creating-and-Updating-Items)
@@ -1044,8 +1014,6 @@ Person.find({ surname: "Doe" }, function (err, people) {
     });
 }); 
 ```
-
-# 聚合
 
 # 聚合
 

@@ -1,7 +1,5 @@
 # gulp 技巧集
 
-# gulp 技巧集
-
 *   整合 streams 来处理错误
 *   删除文件和文件夹
 *   使用 watchify 加速 browserify 编译
@@ -24,8 +22,6 @@
 *   同时输出一个压缩过和一个未压缩版本的文件
 *   改变版本号以及创建一个 git tag
 *   Swig 以及 YAML front-matter 模板
-
-# 整合 streams 来处理错误
 
 # 整合 streams 来处理错误
 
@@ -54,8 +50,6 @@ gulp.task('test', function() {
   return combined;
 }); 
 ```
-
-# 删除文件和文件夹
 
 # 删除文件和文件夹
 
@@ -140,8 +134,6 @@ gulp.task('default', ['clean:tmp']);
 
 # 使用 watchify 加速 browserify 编译
 
-# 使用 watchify 加速 browserify 编译
-
 当一个 [browserify](http://github.com/substack/node-browserify) 项目开始变大的时候，编译打包的时间也会慢慢变得长起来。虽然开始的时候可能只需花 1 秒，然后当你的项目需要建立在一些流行的大型项目的基础上时，它很有可能就变成 30 秒了。
 
 这就是为什么 [substack](http://github.com/substack) 写了 [watchify](http://github.com/substack/watchify) 的原因，一个持续监视文件的改动，并且 *只重新打包必要的文件* 的 browserify 打包工具。用这种方法，第一次打包的时候可能会还是会花 30 秒，但是后续的编译打包工作将一直保持在 100 毫秒以下 —— 这是一个极大的提升。
@@ -192,8 +184,6 @@ function bundle() {
 
 # 增量编译打包，包括处理整所涉及的所有文件
 
-# 增量编译打包，包括处理整所涉及的所有文件
-
 在做增量编译打包的时候，有一个比较麻烦的事情，那就是你常常希望操作的是 *所有* 处理过的文件，而不仅仅是单个的文件。举个例子，你想要只对更改的文件做代码 lint 操作，以及一些模块封装的操作，然后将他们与其他已经 lint 过的，以及已经进行过模块封装的文件合并到一起。如果不用到临时文件的话，这将会非常困难。
 
 使用 [gulp-cached](https://github.com/wearefractal/gulp-cached) 以及 [gulp-remember](https://github.com/ahaurw01/gulp-remember) 来解决这个问题。
@@ -230,8 +220,6 @@ gulp.task('watch', function () {
   });
 }); 
 ```
-
-# 将 buffer 变为 stream (内存中的内容)
 
 # 将 buffer 变为 stream (内存中的内容)
 
@@ -370,8 +358,6 @@ gulp.task('watch', ['default'], function() {
 
 # 在 gulp 中运行 Mocha 测试
 
-# 在 gulp 中运行 Mocha 测试
-
 ### 运行所有的测试用例
 
 ```
@@ -413,8 +399,6 @@ gulp.task('watch-mocha', function() {
 
 # 仅仅传递更改过的文件
 
-# 仅仅传递更改过的文件
-
 默认情况下，每次运行时候所有的文件都会传递并通过整个管道。通过使用 [gulp-changed](https://github.com/sindresorhus/gulp-changed) 可以只让更改过的文件传递过管道。这可以大大加快连续多次的运行。
 
 ```
@@ -440,8 +424,6 @@ gulp.task('default', function() {
         .pipe(gulp.dest(DEST));
 }); 
 ```
-
-# 从命令行传递参数
 
 # 从命令行传递参数
 
@@ -476,8 +458,6 @@ $ gulp scripts --env development
 
 # 只重新编译被更改过的文件
 
-# 只重新编译被更改过的文件
-
 通过使用 [`gulp-watch`](https://github.com/floatdrop/gulp-watch):
 
 ```
@@ -492,8 +472,6 @@ gulp.task('default', function() {
     .pipe(gulp.dest('dist'));
 }); 
 ```
-
-# 每个文件夹生成单独一个文件
 
 # 每个文件夹生成单独一个文件
 
@@ -561,8 +539,6 @@ gulp.task('scripts', function() {
 
 # 串行方式运行任务，亦即，任务依赖
 
-# 串行方式运行任务，亦即，任务依赖
-
 默认情况下，任务会以最大的并发数同时运行 -- 也就是说，它会不做任何等待地将所有的任务同时开起来。如果你希望创建一个有特定顺序的串行的任务链，你需要做两件事：
 
 *   给它一个提示，用以告知任务在什么时候完成，
@@ -627,8 +603,6 @@ gulp.task('build', ['templates', 'styles']);
 
 gulp.task('default', ['build']); 
 ```
-
-# 拥有实时重载（live-reloading）和 CSS 注入的服务器
 
 # 拥有实时重载（live-reloading）和 CSS 注入的服务器
 
@@ -752,8 +726,6 @@ gulp serve
 
 # 通过 stream 工厂来共享 stream
 
-# 通过 stream 工厂来共享 stream
-
 如果你在多个任务中使用了相同的插件，你可能发现你很想把这些东西以 DRY 的原则去处理。这个方法可以创建一些工厂来把你经常使用的 stream 链分离出来。
 
 我们将使用 [lazypipe](https://github.com/OverZealous/lazypipe) 来完成这件事。
@@ -819,8 +791,6 @@ gulp.task('coffee', function() {
 
 # 指定一个新的 cwd (当前工作目录)
 
-# 指定一个新的 cwd (当前工作目录)
-
 在一个多层嵌套的项目中，这是非常有用的，比如：
 
 ```
@@ -842,8 +812,6 @@ gulp --cwd layer1
 ```
 gulp.src('./some/dir/**/*.js', { cwd: 'public' }); 
 ```
-
-# 分离任务到多个文件中
 
 # 分离任务到多个文件中
 
@@ -871,8 +839,6 @@ npm install --save-dev require-dir
 var requireDir = require('require-dir');
 var dir = requireDir('./tasks'); 
 ```
-
-# 使用外部配置文件
 
 # 使用外部配置文件
 
@@ -918,8 +884,6 @@ gulp.task('dry', function() {
 
 # 在一个任务中使用多个文件来源
 
-# 在一个任务中使用多个文件来源
-
 ```
 // npm install --save-dev gulp merge-stream
 
@@ -951,8 +915,6 @@ gulp.task('default', function() {
     .pipe(gulp.dest('build'));
 }); 
 ```
-
-# Browserify + Uglify2 和 sourcemaps
 
 # Browserify + Uglify2 和 sourcemaps
 
@@ -989,8 +951,6 @@ gulp.task('javascript', function () {
     .pipe(gulp.dest('./dist/js/'));
 }); 
 ```
-
-# Browserify + Globs
 
 # Browserify + Globs
 
@@ -1057,8 +1017,6 @@ gulp.task('javascript', function () {
 
 # 同时输出一个压缩过和一个未压缩版本的文件
 
-# 同时输出一个压缩过和一个未压缩版本的文件
-
 同时输出压缩过的和未压缩版本的文件可以通过使用 `gulp-rename` 然后 pipe 到 `dest` 两次来实现 (一次是压缩之前的，一次是压缩后的)：
 
 ```
@@ -1080,8 +1038,6 @@ gulp.task('default', function() {
     .pipe(gulp.dest(DEST));
 }); 
 ```
-
-# 改变版本号以及创建一个 git tag
 
 # 改变版本号以及创建一个 git tag
 
@@ -1144,8 +1100,6 @@ gulp.task('release', function (callback) {
     });
 }); 
 ```
-
-# Swig 以及 YAML front-matter 模板
 
 # Swig 以及 YAML front-matter 模板
 

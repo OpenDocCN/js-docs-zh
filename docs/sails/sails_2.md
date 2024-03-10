@@ -91,8 +91,6 @@ Reference Section of Sails.js documentation
 
 # Blueprint Api
 
-# Blueprint API
-
 ### Overview
 
 Together, blueprint routes and blueprint actions constitute the **blueprint API**, the built-in logic that powers the [RESTful JSON API](http://en.wikipedia.org/wiki/Representational_state_transfer) you get every time you create a model and controller.
@@ -206,8 +204,6 @@ Should return "Dolly", the primary record:
 <docmeta value="Add262514" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="add to" name="displayName" class="calibre17"></docmeta>
-
-# Create
 
 # Create a Record
 
@@ -349,8 +345,6 @@ Create a new pony named "Pinkie Pie", an "ice skating" hobby, and a new pet name
 
 #### Expected Response
 
-# Destroy
-
 # Destroy a Record
 
 Deletes an existing record specified by `id` from the database forever and returns the values of the deleted record.
@@ -417,8 +411,6 @@ Same as above.
 <docmeta value="DestroyARecord867513" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="destroy" name="displayName" class="calibre17"></docmeta>
-
-# Find
 
 # Find Records
 
@@ -522,8 +514,6 @@ curl http://localhost:1337/purchase?sort=createdAt%20DESC
 
 # Find One
 
-# Find One
-
 Returns a single record from the model as a JSON Object.
 
 ```
@@ -566,8 +556,6 @@ Find the purchase with ID #1, E.g. `http://localhost:1337/purchase/1`
 <docmeta value="FindOne259267" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="find one" name="displayName" class="calibre17"></docmeta>
-
-# Populate
 
 # Populate Where...
 
@@ -649,8 +637,6 @@ Should return
 <docmeta value="Populate838372" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="populate where" name="displayName" class="calibre17"></docmeta>
-
-# Remove
 
 # Remove from Collection
 
@@ -734,8 +720,6 @@ Should return store #16, the primary record:
 <docmeta value="Remove2294521" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="remove from" name="displayName" class="calibre17"></docmeta>
-
-# Update
 
 # Update a Record
 
@@ -1146,8 +1130,6 @@ $ sails version
 
 <docmeta value="sails version" name="displayName" class="calibre17"></docmeta>
 
-# Req
-
 # Request (`req`)
 
 Sails is built on [Express](https://github.com/balderdashy/sails-docs/blob/master/PAGE_NEEDED.md), and uses [Node's HTTP server](http://nodejs.org/api/http.html) conventions. Because of this, you can access all of the Node and Express methods and properties on the `req` object whereever it is accessible (i.e. in your controllers, policies, and custom responses.)
@@ -1212,8 +1194,6 @@ The chart below describes support for the methods and properties on the Sails Re
 
 # req.accepted
 
-# req.accepted
-
 Contains an array of the "media types" this request (`req`) can accept (e.g. `text/html` or `application/json`), ordered from highest to lowest quality.
 
 ### Usage
@@ -1249,8 +1229,6 @@ req.accepted;
 
 # req.acceptedCharsets
 
-# req.acceptedCharsets
-
 This property is an array that contains the acceptable charsets specified by the user agent in the request.
 
 ### Usage
@@ -1277,8 +1255,6 @@ req.acceptedCharsets;
 <docmeta value="reqacceptedCharsets230309" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.acceptedCharsets" name="displayName" class="calibre17"></docmeta>
-
-# req.acceptedLanguages
 
 # req.acceptedLanguages
 
@@ -1313,8 +1289,6 @@ req.acceptedLanguages;
 
 <docmeta value="req.acceptedLanguages" name="displayName" class="calibre17"></docmeta>
 
-# req.accepts
-
 # req.accepts()
 
 Checks whether this request's stated list of "accepted" [media types](http://www.iana.org/assignments/media-types/media-types.xhtml) includes the specified `type`. Returns true or false.
@@ -1341,8 +1315,6 @@ req.accepts('json');
 <docmeta value="reqaccepts89101" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.accepts()" name="displayName" class="calibre17"></docmeta>
-
-# req.acceptsCharset
 
 # req.acceptsCharset()
 
@@ -1374,8 +1346,6 @@ req.acceptsCharset('utf-8');
 <docmeta value="reqacceptsCharset303007" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.acceptsCharset()" name="displayName" class="calibre17"></docmeta>
-
-# req.acceptsLanguage
 
 # req.acceptsLanguage()
 
@@ -1411,8 +1381,6 @@ req.acceptsCharset('utf-8');
 <docmeta value="reqacceptsLanguage170988" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.acceptsLanguage()" name="displayName" class="calibre17"></docmeta>
-
-# req.allParams
 
 # req.allParams()
 
@@ -1455,8 +1423,6 @@ Product.update({sku: sku})
 
 # req.body
 
-# req.body
-
 An object containing text parameters from the parsed request body, defaulting to `{}`.
 
 By default, the request body can be url-encoded or stringified as JSON. Support for other formats, such as serialized XML, is possible using the [middleware](http://beta.sailsjs.org/#/documentation/concepts/Middleware) configuration.
@@ -1474,8 +1440,6 @@ req.body;
 <docmeta value="reqbody1481" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.body" name="displayName" class="calibre17"></docmeta>
-
-# req.cookies
 
 # req.cookies
 
@@ -1499,8 +1463,6 @@ req.cookies.chocolatechip;
 <docmeta value="reqcookies576909" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.cookies" name="displayName" class="calibre17"></docmeta>
-
-# req.file
 
 # req.file()
 
@@ -1555,8 +1517,6 @@ req.file('avatar').upload( SomeReceiver(), function (err, files) {
 
 # req.fresh
 
-# req.fresh
-
 A flag indicating the user-agent sending this request (`req`) wants "fresh" data (as indicated by the "[if-none-match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.26)", "[cache-control](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)", and/or "[if-modified-since](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.25)" request headers.)
 
 If the request wants "fresh" data, usually you'll want to `.find()` fresh data from your models and send it back to the client.
@@ -1583,8 +1543,6 @@ if (req.fresh) {
 <docmeta value="reqfresh718346" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.fresh" name="displayName" class="calibre17"></docmeta>
-
-# req.get
 
 # req.get()
 
@@ -1616,8 +1574,6 @@ req.get('myField');
 
 # req.host
 
-# req.host
-
 The hostname of this request, without the port number, as specified by its "Host" header.
 
 ### Usage
@@ -1638,8 +1594,6 @@ req.host;
 <docmeta value="reqhost35719" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.host" name="displayName" class="calibre17"></docmeta>
-
-# req.ip
 
 # req.ip
 
@@ -1668,8 +1622,6 @@ req.ip;
 
 # req.ips
 
-# req.ips
-
 If "trust proxy" is enabled, this variable contains the IP addresses in this request's "X-Forwarded-For" header as an array of the IP address strings. Otherwise an empty array is returned.
 
 ### Usage
@@ -1692,8 +1644,6 @@ req.ips;
 <docmeta value="reqips78262" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.ips" name="displayName" class="calibre17"></docmeta>
-
-# req.is
 
 # req.is()
 
@@ -1723,8 +1673,6 @@ req.is('text/*');
 <docmeta value="reqis371514" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.is()" name="displayName" class="calibre17"></docmeta>
-
-# req.isSocket
 
 # req.isSocket
 
@@ -1758,8 +1706,6 @@ else {
 
 # req.method
 
-# req.method
-
 The request method (aka "verb".)
 
 ### Usage
@@ -1784,8 +1730,6 @@ req.method;
 <docmeta value="reqmethod305728" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.method" name="displayName" class="calibre17"></docmeta>
-
-# req.param
 
 # req.param()
 
@@ -1834,8 +1778,6 @@ We can get the expected result by sending the `sku` parameter any of the followi
 
 # req.params
 
-# req.params
-
 An object containing parameter values parsed from the URL path.
 
 For example if you have the route `/user/:name`, then the "name" from the URL path wil be available as `req.params.name`. This object defaults to `{}`.
@@ -1853,8 +1795,6 @@ req.params;
 <docmeta value="reqparams977271" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.params" name="displayName" class="calibre17"></docmeta>
-
-# req.path
 
 # req.path
 
@@ -1885,8 +1825,6 @@ req.path;
 
 # req.protocol
 
-# req.protocol
-
 The protocol used to send this request (`req`).
 
 ### Usage
@@ -1914,8 +1852,6 @@ switch (req.protocol) {
 
 # req.query
 
-# req.query
-
 An object containing the parsed query-string, defaulting to `{}`.
 
 ### Usage
@@ -1939,8 +1875,6 @@ req.query.q
 
 # req.secure
 
-# req.secure
-
 Indicates whether or not the request was sent over a secure [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) connection (i.e. `https://` or `wss://`).
 
 ### Usage
@@ -1952,8 +1886,6 @@ req.secure;
 <docmeta value="reqsecure698791" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.secure" name="displayName" class="calibre17"></docmeta>
-
-# req.signedCookies
 
 # req.signedCookies
 
@@ -1979,8 +1911,6 @@ req.cookies.chocolatechip;
 <docmeta value="reqsignedCookies113713" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.signedCookies" name="displayName" class="calibre17"></docmeta>
-
-# req.socket
 
 # req.socket
 
@@ -2025,8 +1955,6 @@ else {
 
 # req.subdomains
 
-# req.subdomains
-
 An array of all the subdomains in this request's URL.
 
 ### Usage
@@ -2050,8 +1978,6 @@ req.subdomains;
 
 # req.url
 
-# req.url
-
 Like [`req.path`](http://sailsjs.org/#/documentation/reference/req/req.path.html), but also includes the query string suffix.
 
 ```
@@ -2068,8 +1994,6 @@ req.url;
 <docmeta value="requrl810500" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.url" name="displayName" class="calibre17"></docmeta>
-
-# req.wantsJSON
 
 # req.wantsJSON
 
@@ -2127,8 +2051,6 @@ A request "wantsJSON" if:
 
 # req.xhr
 
-# req.xhr
-
 A flag indicating whether the current request (`req`) appears to be an AJAX request (i.e. it was issued with its "X-Requested-With" header set to "XMLHttpRequest".)
 
 ### Usage
@@ -2152,8 +2074,6 @@ if (req.xhr) {
 <docmeta value="reqxhr450203" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="req.xhr" name="displayName" class="calibre17"></docmeta>
-
-# Res
 
 # Response (`res`)
 
@@ -2206,8 +2126,6 @@ The chart below describes support for the methods and properties on the Sails Re
 
 <docmeta value="3" name="stabilityIndex" class="calibre17"></docmeta>
 
-# res.attachment
-
 # res.attachment()
 
 Sets the "Content-Disposition" header of the current response to "attachment". If a `filename` is given, then the "Content-Type" will be automatically set based on the extension of the file (e.g. `.jpg` or `.html`), and the "Content-Disposition" header will be set to "filename=`filename`".
@@ -2234,8 +2152,6 @@ res.attachment('path/to/logo.png');
 <docmeta value="resattachment107506" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.attachment()" name="displayName" class="calibre17"></docmeta>
-
-# res.badRequest
 
 # res.badRequest()
 
@@ -2298,8 +2214,6 @@ if ( req.param('amount') < 500 )
 
 <docmeta value="res.badRequest()" name="displayName" class="calibre17"></docmeta>
 
-# res.clearCookie
-
 # res.clearCookie()
 
 Clears cookie (`name`) in the response.
@@ -2324,8 +2238,6 @@ res.clearCookie('name', { path: '/admin' });
 <docmeta value="resclearCookie314533" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.clearCookie()" name="displayName" class="calibre17"></docmeta>
-
-# res.cookie
 
 # res.cookie()
 
@@ -2378,8 +2290,6 @@ res.cookie('rememberme', '1', {
 <docmeta value="rescookie624994" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.cookie()" name="displayName" class="calibre17"></docmeta>
-
-# res.forbidden
 
 # res.forbidden()
 
@@ -2439,8 +2349,6 @@ if ( !req.session.canEditSalesforceLeads ) {
 
 <docmeta value="res.forbidden()" name="displayName" class="calibre17"></docmeta>
 
-# res.get
-
 # res.get()
 
 Returns the current value of the specified response header (`header`).
@@ -2465,8 +2373,6 @@ res.get('Content-Type');
 <docmeta value="resget697790" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.get()" name="displayName" class="calibre17"></docmeta>
-
-# res.json
 
 # res.json()
 
@@ -2498,8 +2404,6 @@ res.json(500, { error: 'message' })
 <docmeta value="resjson72272" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.json()" name="displayName" class="calibre17"></docmeta>
-
-# res.jsonp
 
 # res.jsonp()
 
@@ -2536,8 +2440,6 @@ return res.jsonp({
 
 <docmeta value="res.jsonp()" name="displayName" class="calibre17"></docmeta>
 
-# res.location
-
 # res.location()
 
 Sets the "Location" response header to the specified URL expression (`url`).
@@ -2563,8 +2465,6 @@ res.location('back');
 <docmeta value="reslocation779137" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.location()" name="displayName" class="calibre17"></docmeta>
-
-# res.negotiate
 
 # res.negotiate()
 
@@ -2610,8 +2510,6 @@ Pet.update({name: 'fido'})
 <docmeta value="resnegotiate730536" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.negotiate()" name="displayName" class="calibre17"></docmeta>
-
-# res.notFound
 
 # res.notFound()
 
@@ -2671,8 +2569,6 @@ Pet.findOne()
 <docmeta value="resnotFound130366" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.notFound()" name="displayName" class="calibre17"></docmeta>
-
-# res.ok
 
 # res.ok()
 
@@ -2747,8 +2643,6 @@ return res.ok({
 
 <docmeta value="res.ok()" name="displayName" class="calibre17"></docmeta>
 
-# res.redirect
-
 # res.redirect()
 
 Redirect the requesting user-agent to the given absolute or relative url.
@@ -2803,8 +2697,6 @@ return res.redirect('back');
 <docmeta value="resredirect444617" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.redirect()" name="displayName" class="calibre17"></docmeta>
-
-# res.send
 
 # res.send()
 
@@ -2869,8 +2761,6 @@ res.send(200);
 
 <docmeta value="res.send()" name="displayName" class="calibre17"></docmeta>
 
-# res.serverError
-
 # res.serverError()
 
 This method is used to send a [500](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_Error) ("Server Error") response back down to the client indicating that some kind of server error occurred.
@@ -2925,8 +2815,6 @@ return res.serverError(
 
 <docmeta value="res.serverError()" name="displayName" class="calibre17"></docmeta>
 
-# res.set
-
 # res.set()
 
 Sets specified response header (`header`) to the specified value (`value`).
@@ -2961,8 +2849,6 @@ res.set({
 
 <docmeta value="res.set()" name="displayName" class="calibre17"></docmeta>
 
-# res.status
-
 # res.status()
 
 Set the status code of this response.
@@ -2989,8 +2875,6 @@ res.send('oops');
 
 <docmeta value="res.status()" name="displayName" class="calibre17"></docmeta>
 
-# res.type
-
 # res.type()
 
 Sets the "Content-Type" response header to the specified `type`.
@@ -3016,8 +2900,6 @@ res.type('png');
 <docmeta value="restype43929" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="res.type()" name="displayName" class="calibre17"></docmeta>
-
-# res.view
 
 # res.view()
 
@@ -3118,8 +3000,6 @@ More specifically, when you load your app, whether that's using `node app`, [pro
 
 # sails.config.blueprints
 
-# sails.config.blueprints
-
 By default, Sails controllers automatically bind routes for each of their functions. Additionally, each controller will automatically bind routes for a CRUD API controlling the model which matches its name, if one exists.
 
 ### Properties
@@ -3142,8 +3022,6 @@ By default, Sails controllers automatically bind routes for each of their functi
 
 # sails.config.bootstrap
 
-# sails.config.bootstrap
-
 ### What is this?
 
 This is an asynchronous boostrap function that runs before your Sails app gets lifted (i.e. starts up). This gives you an opportunity to set up your data model, run jobs, or perform some special logic.
@@ -3162,8 +3040,6 @@ module.exports.bootstrap = function (cb) {
 <docmeta value="Bootstrap85232" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.config.bootstrap" name="displayName" class="calibre17"></docmeta>
-
-# sails.config.connections
 
 # sails.config.connections
 
@@ -3236,8 +3112,6 @@ You can set up more than one connection using the same adapter. For example, if 
 
 # sails.config.cors
 
-# sails.config.cors
-
 Configuration for Sails' [built-in support for Cross-Origin Resource Sharing](http://beta.sailsjs.org/#/documentation/concepts/CORS). CORS specifies how HTTP requests to your app originating from foreign domains should be treated. It is primarily used to allow third-party sites to make AJAX requests to your app, which are normally blocked by browsers following the [same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy).
 
 These options are conventionally set in the **config/cors.js** configuration file. Note that these settings (with the exception of `allRoutes`) can be changed on a per-route basis in the [**config/routes.js** file](http://beta.sailsjs.org/#/documentation/concepts/Routes/RouteTargetSyntax.html?q=route-target-options).
@@ -3272,8 +3146,6 @@ The following will allow cross-origin AJAX GET, PUT and POST requests to `/foo/b
 
 # sails.config.csrf
 
-# sails.config.csrf
-
 Configuration for Sails' built-in [CSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery) protection middleware. These options are conventionally set in the `config/csrf.js` configuration file. See the docs on Cross-Site Request Forgery in the security section for detailed usage instructions.
 
 This option protects your Sails app against cross-site request forgery (or CSRF) attacks. A would-be attacker needs not only a user's session cookie, but also this timestamped, secret CSRF token, which is refreshed/granted when the user visits a URL on your app's domain.
@@ -3302,8 +3174,6 @@ Besides `true` and `false`, you can set `sails.config.csrf` to an object with th
 
 # sails.config.globals
 
-# sails.config.globals
-
 Configuration for the global variables that Sails exposes to its Node process. The options are conventionally specified in the `config/globals.js` configuration file.
 
 ### Properties
@@ -3323,8 +3193,6 @@ Configuration for the global variables that Sails exposes to its Node process. T
 <docmeta value="sailsconfigglobals588825999999" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.config.globals" name="displayName" class="calibre17"></docmeta>
-
-# sails.config.http
 
 # sails.config.http
 
@@ -3352,8 +3220,6 @@ Configuration for your app's underlying HTTP server. These properties are conven
 
 # sails.config.i18n
 
-# sails.config.i18n
-
 Configuration for Sails' built-in internationalization & localization features. For more information see the [concepts section on internationalization](http://beta.sailsjs.org/#/documentation/concepts/Internationalization).
 
 ### Properties
@@ -3371,8 +3237,6 @@ Configuration for Sails' built-in internationalization & localization features. 
 
 # sails.config.log
 
-# sails.config.log
-
 Configuration for the instance of the [Sails logger](http://beta.sailsjs.org/#/documentation/reference/Logs) (`sails.log`) used in your Sails app. The options are conventionally specified in the config/log.js configuration file.
 
 ### Properties
@@ -3384,8 +3248,6 @@ Configuration for the instance of the [Sails logger](http://beta.sailsjs.org/#/d
 <docmeta value="sailsconfiglog812909" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.config.log" name="displayName" class="calibre17"></docmeta>
-
-# sails.config.models
 
 # sails.config.models
 
@@ -3412,8 +3274,6 @@ sails.config.models;
 <docmeta value="sails.config.models" name="displayName" class="calibre25"></docmeta>
 
 <docmeta value="3" name="stabilityIndex" class="calibre17"></docmeta>
-
-# sails.config.policies
 
 # sails.config.policies
 
@@ -3540,8 +3400,6 @@ In each of the policies, the next policy in the chain will only be run if `next(
 
 # sails.config.routes
 
-# sails.config.routes
-
 Configuration for custom (aka "explicit") routes. `sails.config.routes` consists of a single Javascript object whose keys are URL paths (the "address") and whose values are one of several types of route handler configurations (the "target"), for example:
 
 ```
@@ -3558,8 +3416,6 @@ Please see the routes concept overview for a full discussion of Sails routes, an
 <docmeta value="sailsconfigroutes141736" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.config.routes" name="displayName" class="calibre17"></docmeta>
-
-# sails.config.session
 
 # sails.config.session
 
@@ -3624,8 +3480,6 @@ Optional Values:
 
 # sails.config.sockets
 
-# sails.config.sockets
-
 ### What is this?
 
 These configuration options provide transparent access to Socket.io, the WebSocket/pubsub server encapsulated by Sails.
@@ -3668,8 +3522,6 @@ These configuration options provide lower-level access to the underlying Socket.
 
 # sails.config.views
 
-# sails.config.views
-
 Configuration for your app's server-side views. The options are conventionally specified in the `config/views.js` configuration file.
 
 ### Properties
@@ -3687,8 +3539,6 @@ Configuration for your app's server-side views. The options are conventionally s
 <docmeta value="sailsconfigviews588825" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.config.views" name="displayName" class="calibre17"></docmeta>
-
-# Waterline
 
 # Waterline (ORM)
 
@@ -4225,8 +4075,6 @@ User.update({name:'Walter Jr'},{name:'Flynn'}).exec(function afterwards(err,upda
 <docmeta value="undefined" name="importance" class="calibre25"></docmeta>
 
 <docmeta value=".update()" name="displayName" class="calibre17"></docmeta>
-
-# Populated Values
 
 # Populated Values
 
@@ -4869,8 +4717,6 @@ myQuery.exec(function callBack(err,results){
 
 # Records
 
-# Records
-
 A record is a uniquely identifiable object that corresponds 1-to-1 with a database entry; e.g. a row in Oracle/MSSQL/PostgreSQL/MySQL, a document in MongoDB, or a hash in Redis.
 
 ```
@@ -5124,8 +4970,6 @@ module.exports = {
 
 # Websockets
 
-# WebSockets
-
 ### Overview
 
 There are two main continents in the world of WebSockets- the client (e.g. browser) and the server (e.g. your routes, controllers, and so forth).
@@ -5135,8 +4979,6 @@ There are two main continents in the world of WebSockets- the client (e.g. brows
 <docmeta value="WebSockets" name="displayName" class="calibre17"></docmeta>
 
 # Resourceful Pubsub
-
-# Resourceful PubSub
 
 ### Overview
 
@@ -5786,8 +5628,6 @@ Fortunately, like every other boilerplate file and folder in Sails, the socket c
 
 <docmeta value="3" name="stabilityIndex" class="calibre17"></docmeta>
 
-# io.socket.on
-
 # io.socket.on()
 
 Starts listening for server-sent events from Sails with the specified `eventIdentity`. Will trigger the provided callback function when a matching event is received.
@@ -5871,8 +5711,6 @@ angular.module('cafeteria').controller('CheckoutCtrl', function ($scope) {
 
 <docmeta value="io.socket.on()" name="displayName" class="calibre17"></docmeta>
 
-# socket.delete
-
 # socket.delete()
 
 Sends a virtual DELETE request to a Sails server using Socket.io.
@@ -5909,8 +5747,6 @@ io.socket.delete(url, data, function (data, jwres){
 <docmeta value="socketdelete671580" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="io.socket.delete()" name="displayName" class="calibre17"></docmeta>
-
-# socket.get
 
 # socket.get()
 
@@ -5949,8 +5785,6 @@ io.socket.get(url, data, function (data, jwres){
 
 <docmeta value="io.socket.get()" name="displayName" class="calibre17"></docmeta>
 
-# socket.post
-
 # socket.post()
 
 Sends a virtual POST request to a Sails server using Socket.io.
@@ -5987,8 +5821,6 @@ io.socket.post(url, data, function (data, jwres){
 <docmeta value="socketpost175407" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="io.socket.post()" name="displayName" class="calibre17"></docmeta>
-
-# socket.put
 
 # socket.put()
 
@@ -6064,8 +5896,6 @@ For raw access to the underlying [socket.io](http://socket.io/) singleton, you c
 
 <docmeta value="3" name="stabilityIndex" class="calibre17"></docmeta>
 
-# sails.sockets.blast
-
 # sails.sockets.blast()
 
 Broadcast a message to all sockets connected to the server.
@@ -6110,8 +5940,6 @@ sails.sockets.blast('user_logged_in', {
 
 <docmeta value="sails.sockets.blast()" name="displayName" class="calibre17"></docmeta>
 
-# sails.sockets.broadcast
-
 # sails.sockets.broadcast( `roomName`, [`event`], `data`, [`socketToOmit`] )
 
 Broadcast a message to a room.
@@ -6149,8 +5977,6 @@ sails.sockets.broadcast('artsAndEntertainment', { msg: 'Hi there!' });
 
 <docmeta value="sails.sockets.broadcast()" name="displayName" class="calibre17"></docmeta>
 
-# sails.sockets.emit
-
 # sails.sockets.emit( `socketIds`, [`event`], `data`)
 
 ### Purpose
@@ -6184,8 +6010,6 @@ sayHiToFriend: function(req, res) {
 <docmeta value="sailssocketsemit963182" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.sockets.emit()" name="displayName" class="calibre17"></docmeta>
-
-# sails.sockets.id
 
 # sails.sockets.id()
 
@@ -6226,8 +6050,6 @@ getSocketID: function(req, res) {
 
 <docmeta value="sails.sockets.id()" name="displayName" class="calibre17"></docmeta>
 
-# sails.sockets.join
-
 # sails.sockets.join()
 
 Subscribes a socket to a generic room.
@@ -6266,8 +6088,6 @@ subscribeToFunRoom: function(req, res) {
 <docmeta value="sailssocketsjoin958690" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.sockets.join()" name="displayName" class="calibre17"></docmeta>
-
-# sails.sockets.leave
 
 # sails.sockets.leave( `socket`, `roomName` )
 
@@ -6308,8 +6128,6 @@ leaveFunRoom: function(req, res) {
 
 <docmeta value="sails.sockets.leave()" name="displayName" class="calibre17"></docmeta>
 
-# sails.sockets.rooms
-
 # sails.sockets.rooms()
 
 ### Purpose
@@ -6340,8 +6158,6 @@ getRoomsList: function(req, res) {
 <docmeta value="sailssocketsrooms183984" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.sockets.rooms()" name="displayName" class="calibre17"></docmeta>
-
-# sails.sockets.socketRooms
 
 # sails.sockets.socketRooms( `socket` )
 
@@ -6377,8 +6193,6 @@ getMyRooms: function(req, res) {
 <docmeta value="sailssocketssocketRooms270469" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="sails.sockets.socketRooms()" name="displayName" class="calibre17"></docmeta>
-
-# sails.sockets.subscribers
 
 # sails.sockets.subscribers()
 

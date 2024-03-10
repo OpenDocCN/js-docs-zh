@@ -1,7 +1,5 @@
 # HTTP
 
-# HTTP
-
 ### 稳定度: 2 - 稳定
 
 你必须通过`require('http')`来使用 HTTP 服务器和客户端。

@@ -1,9 +1,5 @@
 # 常见问题
 
-# 常见问题
-
-# Electron 常见问题
-
 # Electron 常见问题
 
 ## Electron 会在什么时候升级到最新版本的 Chrome？

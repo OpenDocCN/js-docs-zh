@@ -1,9 +1,5 @@
 # 实现扩展
 
-# 实现扩展
-
-# 无障碍性(a11y)
-
 # 无障碍性(a11y)
 
 当你设计一款扩展，需要让扩展对于诸如视觉缺陷，失聪，行动不便的残疾人没有使用障碍。
@@ -189,8 +185,6 @@ _element_.focus();
 
 # 背景页
 
-# 背景页
-
 扩展常常用一个单独的长时间运行的脚本来管理一些任务或者状态。 Background pages to the rescue.
 
 如同 architecture overview 的解释。背景页是一个运行在扩展进程中的 HTML 页面。它在你的扩展的整个生命周期都存在，同时，在同一时间只有一个实例处于活动状态。
@@ -273,8 +267,6 @@ _//In image.html:_
   </body>
 </html> 
 ```
-
-# Content Scripts
 
 # Content Scripts
 
@@ -539,8 +531,6 @@ document.getElementById("someImage").src = imgURL;
 
 # 跨域 XMLHttpRequest 请求
 
-# 跨域 XMLHttpRequest 请求
-
 普通网页能够使用[XMLHttpRequest](http://www.w3.org/TR/XMLHttpRequest/)对象发送或者接受服务器数据, 但是它们受限于[同源策略](http://en.wikipedia.org/wiki/Same_origin_policy). 扩展可以不受该限制. 任何扩展只要它先获取了跨域请求许可，就可以进行跨域请求。
 
 **注意:**页面内容脚本不能直接发起跨域请求. 然而, 任何一个页面内容脚本都可以发送消息给父扩展，请求父扩展发起一次跨域请求。关于使用这一技术的例子，请参照[contentscript_xhr example](http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/howto/contentscript_xhr).
@@ -655,8 +645,6 @@ xhr.send();
 ```
 
 另外在使用通过协议 HTTP 获取的资源时要特别小心. 如果你开发的扩展被应用在恶意网络环境中，网络攻击者(又叫 ["中间人攻击"](http://en.wikipedia.org/wiki/Man-in-the-middle_attack)) 可能篡改服务器响应内容从而可能攻击你编写的扩展. 事实上，你应该尽可能地首选使用 HTTPS 协议.
-
-# 国际化 (i18n)
 
 # 国际化 (i18n)
 
@@ -979,8 +967,6 @@ substitutions*(optionalstring or array of string)*
 
 # 消息传递
 
-# 消息传递
-
 ## 目录
 
 1.  一次简单的请求
@@ -1232,8 +1218,6 @@ A description from the json schema def of the event goes here.
 ### Types
 
 #### type name
-
-# Optional Permissions
 
 # Optional Permissions
 
@@ -1538,8 +1522,6 @@ Undocumented.
 `origins`*( optional array of string )*
 
 原始权限列表。
-
-# NPAPI 插件
 
 # NPAPI 插件
 

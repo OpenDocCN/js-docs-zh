@@ -232,8 +232,6 @@ cinst nodejs.install
 
 # sails 是什么？
 
-# Sails 是什么？
-
 当然，`Sails`是一个`web 框架`。但退一步，这又是什么意思呢？有时，当我们提到`web`的时候，我们指的是"front-end web"(web 前端）。 我们想到的是 Web 标准的概念，像 HTML5 或 CSS3；以及框架，`Backbone`、`Angular`, 或 `jQuery`。`sails`可不是“这种”的`web`框架。 `Sails`可以与`Angular`和`Backbone`工作的很好，但绝不会使用`Sails`取代这些包。
 
 换句话说，当我们谈论`Web 框架`的时候，我们指的是“back-end web”（服务器端）。这里提到的概念是`REST`、`HTTP`,或`WebSockets`， 以及`Java`、`Ruby`、`Node.js`等技术。一个“back-end web”框架有助于你构建 API，处理 HTML 文件成千上万的并发用户。`Sails`就是 “这种”`web 框架`。
@@ -302,8 +300,6 @@ Sails 完成许多与其他 MVC 网站应用程序框架相同的目标，使用
 <docmeta value="Assets220313" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Assets" name="displayName" class="calibre17"></docmeta>
-
-# 默认任务
 
 # 默认任务（Default Tasks）
 
@@ -397,8 +393,6 @@ Sails 内的 asset pipeline 是一组能增加工程一致性和效率的 Grunt 
 
 <docmeta value="Default Tasks" name="displayName" class="calibre17"></docmeta>
 
-# 禁用 Grunt
-
 # 禁用 Grunt（Disabling Grunt）
 
 要禁用整合在 Sails 的 Grunt，只需删除 Gruntfile（和/或 `tasks/` 文件夹）。你还可以禁用 Grunt hook。只要像这样在 `.sailsrc` hooks 设置 `grunt` 属性为 `false`：
@@ -474,8 +468,6 @@ npm install grunt-contrib-handlebars --save-dev
 module.exports = function(grunt) {
 
 // 我们使用 grunt.config api 的 set 方法来设置一个对象到定义的字串。 // 在这个例子中，'handlebars' 任
-
-# 设置
 
 # 设置（Configuration）
 
@@ -652,8 +644,6 @@ foo: function(req, res) {
 module.exports = function(message) {
 
 var
-
-# 部署
 
 # 部署（Deployment）
 
@@ -1020,8 +1010,6 @@ module.exports.globals = {
 
 <docmeta value="Globals" name="displayName" class="calibre17"></docmeta>
 
-# 国际化
-
 # 国际化（Internationalization）
 
 ### 概述
@@ -1152,8 +1140,6 @@ Sails 日志记录器的设置在 [`sails.config.log`](http://beta.sailsjs.org/#
 <docmeta value="Logging277763" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Logging" name="displayName" class="calibre17"></docmeta>
-
-# sails.log
 
 # sails.log()
 
@@ -1797,8 +1783,6 @@ module.exports = {
 
 # Models
 
-# Models
-
 A model represents a collection of structured data, usually corresponding to a single table or collection in a database. Models are usually defined by creating a file in an app's `api/models/` folder.
 
 ![screenshot of a Waterline/Sails model in Sublime Text 2](img/deade1d3.png)
@@ -2004,8 +1988,6 @@ A shorthand for pattern matching the left side of a string. Will
 
 # Validations
 
-# Validations
-
 Sails bundles support for automatic validations of your models' attributes. Any time a record is updated, or a new record is created, the data for each attribute will be checked against all of your predefined validation rules. This provides a convenient failsafe to ensure that invalid entries don't make their way into your app's database(s).
 
 ### Validation Rules
@@ -2183,8 +2165,6 @@ attributes: {
 
 # Policies
 
-# Policies
-
 ### Overview
 
 Policies in Sails are versatile tools for authorization and access control-- they let you allow or deny access to your controllers down to a fine level of granularity. For example, if you were building Dropbox, before letting a user upload a file to a folder, you might check that she `isAuthenticated`, then ensure that she `canWrite` (has write permissions on the folder.) Finally, you'd want to check that the folder she's uploading into `hasEnoughSpace`.
@@ -2262,8 +2242,6 @@ Your `config/policies.js` file should export a Javascript object whose keys are 
 ```
 
 > **Note:** Default policy mappings do not "cascade" or "trickle down." Specified mappings for the controller'
-
-# Routes
 
 # Routes
 
@@ -2386,8 +2364,6 @@ The most common type of target is one which binds a route to a custom [controlle
 
 # URL Slugs
 
-# URL Slugs
-
 A common use case for explicit routes is the design of slugs or [vanity URLs](http://en.wikipedia.org/wiki/Clean_URL#Slug). For example, consider the URL of a repository on Github, [`http://www.github.com/balderdashy/sailsjs`](http://www.github.com/balderdashy/sailsjs). In Sails, we might define this route at the **bottom of our `config/routes.js` file** like so:
 
 ```
@@ -2403,8 +2379,6 @@ In your `RepoController`'s `show` action, we'd use `req.param('account')` and `r
 <docmeta value="URLSlugs805236" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="URL Slugs" name="displayName" class="calibre17"></docmeta>
-
-# Security
 
 # Security
 
@@ -2476,8 +2450,6 @@ To override specific CORS configuration parameters for a route, add a `cors` pro
 
 # CSRF
 
-# CSRF
-
 Cross-site request forgery ([CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) is a type of attack which forces an end user to execute unwanted actions on a web application backend with which he/she is currently authenticated. In other words, without protection, cookies stored in a browser like Google Chrome can be used to send requests to Chase.com from a user's computer whether that user is currently visiting Chase.com or Horrible-Hacker-Site.com.
 
 ### Enabling CSRF Protection
@@ -2534,8 +2506,6 @@ For example, if you're sending an AJAX request from a webpage with jQuery: ```js
 
 # Clickjacking
 
-# Clickjacking
-
 [Clickjacking](https://www.owasp.org/index.php/Clickjacking) (aka "UI redress attacks") are where an attacker manages to trick your users into triggering "unintended" UI events (e.g. DOM events.)
 
 ### X-FRAME-OPTIONS
@@ -2577,8 +2547,6 @@ Then in the `middleware` config object in `config/http.js`:
 
 # Content Security Policy
 
-# Content Security Policy
-
 > TODO: flesh this section out [`www.owasp.org/index.php/Content_Security_Policy`](https://www.owasp.org/index.php/Content_Security_Policy)
 
 stuff stuff stuff
@@ -2586,8 +2554,6 @@ stuff stuff stuff
 <docmeta value="ContentSecurityPolicy649437" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Content Security Policy" name="displayName" class="calibre17"></docmeta>
-
-# DDOS
 
 # DDOS
 
@@ -2711,8 +2677,6 @@ Then in the `middleware` config object in `config/http.js`:
 
 # Socket Hijacking
 
-# Socket Hijacking
-
 Unfortunately, cross-site request forgery attacks are not limited to the HTTP protocol. WebSocket hijacking (sometimes known as [CSWSH](http://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)) is a commonly overlooked vulnerability in most realtime applications. Fortunately, since Sails treats both HTTP and WebSocket requests as first-class citizens, its built-in [CSRF protection](http://beta.sailsjs.org/#/documentation/concepts/Security/CSRF.html) and [configurable CORS rulesets](http://beta.sailsjs.org/#/documentation/concepts/Security/CORS.html) apply to both protocols.
 
 You can prepare your Sails app against CSWSH attacks by enabling the built-in protection in [`config/csrf.js`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config/csrf.js.html) and ensuring that a `_csrf` token is sent with all relevant incoming socket requests. Additionally, if you're planning on allowing sockets to connect to your Sails app cross-origin (i.e. from a different domain, subdomain, or port) you'll want to configure your CORS settings accordingly. You can also define the `authorization` setting in [`config/sockets.js`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config/sockets.js.html) as a custom function which allows or denies the initial socket connection based on your needs.
@@ -2761,8 +2725,6 @@ Then in the `middleware` config object in `config/http.js`:
 
 # XSS
 
-# XSS
-
 Cross-site scripting (XSS) is a type of attack in which a malicious agent manages to inject client-side JavaScript into your website, so that it runs in the trusted environment of your users' browsers.
 
 ### Additional Resources
@@ -2773,8 +2735,6 @@ Cross-site scripting (XSS) is a type of attack in which a malicious agent manage
 <docmeta value="XSS397141" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="XSS" name="displayName" class="calibre17"></docmeta>
-
-# Services
 
 # Services
 
@@ -2820,8 +2780,6 @@ You can then use `EmailService` anywhere in your app:
 <docmeta value="Services157331" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Services" name="displayName" class="calibre17"></docmeta>
-
-# Testing
 
 # Testing your code
 
@@ -2941,8 +2899,6 @@ istanbul report html
 
 # Upgrading
 
-# Upgrading
-
 > TODO: move this to the appropriate part of the docs (shouldn't show up in reference-- instead it should appear at the top of the other migration guide/changelog stuff in the "Support" section)
 
 Sails v0.11 is finally here.
@@ -2995,8 +2951,6 @@ For examples/documentation, please see the Skipper repository as well as the Sai
 A body parser's job is to parse the "body" of incoming multipart HTTP requests. Sometimes, that "body" includes text parameters, but sometimes, it includes file uploads.
 
 Connect multipart is great code, and it supports both file uploads AND text parameters in multipart requests. But like most modules of its kind, it accomplishes this by buffering file uploads to disk. This can quickl
-
-# Views
 
 # Views
 
@@ -3053,8 +3007,6 @@ In this case, you have a couple of options for bootstrapping the single-page app
 
 # Layouts
 
-# Layouts
-
 When building an app with many different pages, it can be helpful to extrapolate markup shared by several HTML files into a layout. This [reduces the total amount of code](http://en.wikipedia.org/wiki/Don't_repeat_yourself) in your project and helps you avoid making the same changes in multiple files down the road.
 
 In Sails and Express, layouts are implemented by the view engines themselves. For instance, `jade` has its own layout system, with its own syntax.
@@ -3080,8 +3032,6 @@ Layout support for your app can be configured or disabled in [`config/views.js`]
 <docmeta value="Layouts870655" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Layouts" name="displayName" class="calibre17"></docmeta>
-
-# Locals
 
 # Locals
 
@@ -3166,8 +3116,6 @@ Assuming we hooked up our route to one of our controller's actions (and our mode
 
 # Partials
 
-# Partials
-
 Sails uses `ejs-locals` in its view rendering code, so in your views you can do:
 
 ```
@@ -3189,8 +3137,6 @@ NOTE: When using other templating languages than ejs, their syntax for loading p
 <docmeta value="Partials610916" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Partials" name="displayName" class="calibre17"></docmeta>
-
-# View Engines
 
 # View Engines
 
@@ -3239,8 +3185,6 @@ For instructions on adding support for a view engine not listed above, check out
 
 # Extending Sails
 
-# Extending Sails
-
 There are currently three types of plugins in Sails:
 
 *   **Generators** - for adding and overriding functionality in the Sails CLI
@@ -3250,8 +3194,6 @@ There are currently three types of plugins in Sails:
 <docmeta value="extendingsails78468" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Extending Sails" name="displayName" class="calibre17"></docmeta>
-
-# Adapters
 
 # Adapters
 
@@ -3382,8 +3324,6 @@ Have you written a Sails adapter? Submit a PR to this file and add it here!
 
 # Custom Adapters
 
-# Custom Adapters
-
 ### Overview
 
 Sails makes it fairly easy to write your own adapter. Check out the [sails-boilerplate-repo](https://github.com/balderdashy/sails-adapter-boilerplate) to learn how
@@ -3391,8 +3331,6 @@ Sails makes it fairly easy to write your own adapter. Check out the [sails-boile
 <docmeta value="customAdapters92223" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Custom Adapters" name="displayName" class="calibre17"></docmeta>
-
-# Generators
 
 # Generators
 
@@ -3457,8 +3395,6 @@ Sails
 
 # Custom Generators
 
-# Custom Generators
-
 ### Overview
 
 Here is some info on writing custom generators.
@@ -3494,8 +3430,6 @@ Generate the boilerplates to make your own generator.
 <docmeta value="generatorList11719" name="uniqueID" class="calibre25"></docmeta>
 
 <docmeta value="Available Generators" name="displayName" class="calibre17"></docmeta>
-
-# Hooks
 
 # Hooks
 

@@ -1,7 +1,5 @@
 # Array
 
-# Array
-
 # chunk
 
 ## chunk

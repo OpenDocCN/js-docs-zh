@@ -1,7 +1,5 @@
 # Zepto 模块
 
-# Zepto 模块
-
 | module | default | description |
 | --- | --- | --- |
 | [zepto](https://github.com/madrobby/zepto/blob/master/src/zepto.js#files) | yes | 核心模块；包含许多方法 |

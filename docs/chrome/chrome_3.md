@@ -1,9 +1,5 @@
 # 与浏览器交互
 
-# 与浏览器交互
-
-# 书签
-
 # 书签
 
 ## 内容
@@ -969,8 +965,6 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 # Cookies
 
-# Cookies
-
 ## 内容
 
 1.  清单
@@ -1558,8 +1552,6 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 # chrome.devtools.* APIs
 
-# chrome.devtools.* APIs
-
 下列 API 模块提供了开发人员工具的部分接口，以支持您对开发人员工具进行扩展。
 
 *   devtools.inspectedWindow
@@ -1597,8 +1589,6 @@ This parameter was added in version . You must omit this parameter in earlier ve
 
 # Events
 
-# Events
-
 For information on how to use experimental APIs, see the chrome.experimental.* APIs page.
 
 `Event` 是一个对象，当你关注的一些事情发生时通知你。 以下是一个使用 `chrome.tabs.onCreated event` 的例子，每当一个新标签创建时，event 对象会得到通知：
@@ -1624,8 +1614,6 @@ void addListener(function callback(...))
 void removeListener(function callback(...))
 bool hasListener(function callback(...)) 
 ```
-
-# chrome.history
 
 # chrome.history
 
@@ -2142,8 +2130,6 @@ Undocumented.
 
 # Management
 
-# Management
-
 `chrome.management` 模块提供了管理已安装和正在运行中的扩展或应用的方法。对于重写内建的新标签页的扩展尤其有用。
 
 ## Manifest
@@ -2456,8 +2442,6 @@ chrome.management.onUninstalled.addListener(function(string id) {...});
 `hostPermissions`*( array of string )*
 
 根据授权情况返回所有允许访问的主机白名单。
-
-# 标签
 
 # 标签
 
@@ -3711,8 +3695,6 @@ Undocumented.
 可以被设置为 *loading* 或者 *complete*.
 
 This parameter was added in version . You must omit this parameter in earlier versions, and you may omit it in any version. If you require this parameter, the manifest key minimum_chrome_version can ensure that your extension won't be run in an earlier browser version.
-
-# 视窗
 
 # 视窗
 

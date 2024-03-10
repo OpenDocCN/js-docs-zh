@@ -1,7 +1,5 @@
 # Effects
 
-# Effects
-
 jQuery UI 在 jQuery 内置的特效上添加了一些功能。jQuery UI 支持颜色动画和 Class 转换，同时也提供了一些额外的 Easings。另外，提供了一套完整的定制特效，供显示和隐藏元素时或者只是添加一些视觉显示时使用。
 
 Also in: [Effects Core](http://www.css88.com/jquery-ui-api/category/effects-core/ "View all posts in Effects Core") | [Method Overrides](http://www.css88.com/jquery-ui-api/category/overrides/ "View all posts in Method Overrides")
@@ -122,8 +120,6 @@ Also in: [Effects Core](http://www.css88.com/jquery-ui-api/category/effects-core
 
 # .addClass()
 
-# .addClass()
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects") | [Effects Core](http://www.css88.com/jquery-ui-api/category/effects-core/ "View all posts in Effects Core") | [Method Overrides](http://www.css88.com/jquery-ui-api/category/overrides/ "View all posts in Method Overrides")
 
 ## .addClass( className [, duration ] [, easing ] [, complete ] )Returns: [jQuery](http://api.jquery.com/Types/#jQuery)
@@ -194,8 +190,6 @@ $( "div" ).click(function() {
 
 # Blind Effect
 
-# Blind Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 百叶窗效果隐藏或者显示一个包装在一个容器中的元素时候具有“拉百叶窗”的效果
@@ -248,8 +242,6 @@ $( document ).click(function() {
 
 # Bounce Effect
 
-# Bounce Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 反弹特效上下反弹一个元素。当反弹特效和隐藏或显示配合使用时，最后一个或第一个反弹也将呈现淡入或淡出效果。
@@ -294,8 +286,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# Clip Effect
 
 # Clip Effect
 
@@ -346,8 +336,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# Color Animation
 
 # Color Animation
 
@@ -413,8 +401,6 @@ $( "#toggle" ).click(function() {
 
 # Drop Effect
 
-# Drop Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 拉拽特效隐藏或显示一个元素，并使用通过淡入或淡出效果使它向一个方向滑动。
@@ -465,15 +451,11 @@ $( document ).click(function() {
 
 # Easings
 
-# Easings
-
 动画缓冲函数可以确定在动画过程中不同时刻的动画速度。 jQuery 内核自带有 2 种动画渐变: `linear`，整个动画在一个恒定的速度中进行（匀速） ，和`swing` (jQuery 内核的默认渐变效果)，此效果开始和结束的速度要比中间过程的速度要慢。 jQuery UI 还提供了其它一些额外的渐变函数，这些函数会在 `swing`效果中搜索变量来自定义其它效果，比如 bouncing（反弹）。
 
 一些缓冲函数在动画过程中会产生负数值。呈现动画效果的属性不同， 某些属性的实际值可能会在为 0 时被锁定。例如，你可以将`left`值渐变为一个负数，但是你不能将`height`或者`opacity`的值缓冲为一个负数。
 
 理解动画缓冲如何影响动画最好的方式就是查看对应的函数图像。下面列出了 jQuery UI 中所有动画的函数图像。
-
-# .effect()
 
 # .effect()
 
@@ -539,8 +521,6 @@ $( document ).click(function() {
 
 # Explode Effect
 
-# Explode Effect
-
 分类: 特效
 
 **描述:** 爆炸特效通过将元素分拆成若干片来隐藏或显示一个元素。
@@ -584,8 +564,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# Fade Effect
 
 # Fade Effect
 
@@ -633,8 +611,6 @@ $( document ).click(function() {
 
 # Fold Effect
 
-# Fold Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 通过折叠形式来隐藏或显示一个元素。
@@ -679,8 +655,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# .hide()
 
 # .hide()
 
@@ -746,8 +720,6 @@ $( "button" ).click(function() {
 
 # Highlight Effect
 
-# Highlight Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 高亮特效通过先动画呈现元素的背景颜色来隐藏或显示一个元素。
@@ -791,8 +763,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# Puff Effect
 
 # Puff Effect
 
@@ -842,8 +812,6 @@ $( document ).click(function() {
 
 # Pulsate Effect
 
-# Pulsate Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 闪烁效果通过脉冲闪烁隐藏或显示元素。
@@ -887,8 +855,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# .removeClass()
 
 # .removeClass()
 
@@ -959,8 +925,6 @@ $( "div" ).click(function() {
 </body>
 </html> 
 ```
-
-# Scale Effect
 
 # Scale Effect
 
@@ -1047,8 +1011,6 @@ $( document ).click(function() {
 
 # Shake Effect
 
-# Shake Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 在垂直或水平方向上多次抖动一个元素。
@@ -1094,8 +1056,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# .show()
 
 # .show()
 
@@ -1162,8 +1122,6 @@ $( "button" ).click(function() {
 
 # Size Effect
 
-# Size Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 将元素的尺寸设置到一个指定的宽度和高度。
@@ -1214,8 +1172,6 @@ $( document ).click(function() {
 
 # Slide Effect
 
-# Slide Effect
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects")
 
 **Description:** 将元素滑动到可视区域之外。
@@ -1260,8 +1216,6 @@ $( document ).click(function() {
 </body>
 </html> 
 ```
-
-# .switchClass()
 
 # .switchClass()
 
@@ -1341,8 +1295,6 @@ $( "div" ).click(function() {
 
 # .toggle()
 
-# .toggle()
-
 Categories: [Effects](http://www.css88.com/jquery-ui-api/category/effects/ "View all posts in Effects") | [Effects Core](http://www.css88.com/jquery-ui-api/category/effects-core/ "View all posts in Effects Core") | [Method Overrides](http://www.css88.com/jquery-ui-api/category/overrides/ "View all posts in Method Overrides") | [Methods](http://www.css88.com/jquery-ui-api/category/methods/ "View all posts in Methods")
 
 ## .toggle( effect [, options ] [, duration ] [, complete ] )Returns: [jQuery](http://api.jquery.com/Types/#jQuery)
@@ -1402,8 +1354,6 @@ $( "button" ).click(function() {
 </body>
 </html> 
 ```
-
-# .toggleClass()
 
 # .toggleClass()
 
@@ -1476,8 +1426,6 @@ $( "div" ).click(function() {
 </body>
 </html> 
 ```
-
-# Transfer Effect
 
 # Transfer Effect
 

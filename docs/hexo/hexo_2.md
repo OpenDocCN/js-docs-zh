@@ -1,12 +1,6 @@
 # API
 
-# API
-
 # 核心
-
-# 核心
-
-# 概述
 
 # 概述
 
@@ -65,8 +59,6 @@ hexo.call('generate'function{  return
 
 # 事件
 
-# 事件
-
 Hexo 继承了 [EventEmitter](http://nodejs.org/api/events.html)，您可以用 `on` 方法监听 Hexo 所发布的事件，也可以使用 `emit` 方法对 Hexo 发布事件，更详细的说明请参阅 Node.js 的 API。
 
 ### deployBefore
@@ -117,8 +109,6 @@ hexo.on('new'functionpost{  //
 
 # 局部变量
 
-# 局部变量
-
 局部变量用于模版渲染，也就是模版中的 `site` 变量。
 
 ## 默认变量
@@ -160,8 +150,6 @@ hexo.locals.toObject();
 ```
 hexo.locals.invalidate(); 
 ```
-
-# 路由
 
 # 路由
 
@@ -225,8 +213,6 @@ hexo.route.format('archives/'
 
 # Box
 
-# Box
-
 「Box」是 Hexo 用来处理特定文件夹中的文件的容器，在 Hexo 中有两个 Box，分别是 `hexo.source` 和 `hexo.theme`，前者用于处理 `source` 文件夹，而后者用于处理主题文件夹。
 
 ## 载入文件
@@ -278,8 +264,6 @@ Box 还提供了一些方法，让您无须手动处理文件 I/O。
 | `statSync` | 同步读取文件状态 |
 | `render` | 渲染文件 |
 | `renderSync` | 同步渲染文件 |
-
-# 渲染
 
 # 渲染
 
@@ -343,8 +327,6 @@ hexo.render.getOutput('image.png'// '''
 
 # 文章
 
-# 文章
-
 ## 新建文章
 
 ```
@@ -404,8 +386,6 @@ hexo.post.render(source, data);
 
 # 脚手架（Scaffold）
 
-# 脚手架（Scaffold）
-
 ## 获得脚手架
 
 ```
@@ -423,8 +403,6 @@ hexo.scaffold.set(name, content);
 ```
 hexo.scaffold.remove(name); 
 ```
-
-# 主题
 
 # 主题
 
@@ -461,10 +439,6 @@ view.render({foo: 12functionresult{  // ...
 您可以以向 `render` 方法传入对象作为参数，`render` 方法会先使用对应的渲染引擎进行解析，并加载 辅助函数。渲染完成后，会检测布局（layout）是否存在，当 `layout` 设为 `false` 或不存在时，就会直接返回渲染结果。
 
 # 扩展
-
-# 扩展
-
-# 控制台（Console）
 
 # 控制台（Console）
 
@@ -529,8 +503,6 @@ hexo.extend.console.register('config''Display configuration'functionargs{  conso
 
 # 部署器（Deployer）
 
-# 部署器（Deployer）
-
 部署器帮助开发者将网站快速部署到远程服务器上，避免了复杂的指令。
 
 ## 概要
@@ -541,8 +513,6 @@ hexo.extend.deployer.register(name, functionargs{  // ...
 ```
 
 在函数中会传入 `args` 参数，该参数包含了 `_config.yml` 中的 `deploy` 参数值，以及开发者在终端中所传入的参数。
-
-# 过滤器（Filter）
 
 # 过滤器（Filter）
 
@@ -702,8 +672,6 @@ hexo.extend.filter.register('server_middleware'functionapp{  app.use(functionreq
 
 # 生成器（Generator）
 
-# 生成器（Generator）
-
 生成器根据处理后的原始文件建立路由。
 
 ## 概要
@@ -787,8 +755,6 @@ hexo.extend.generator.register('asset'functionlocals{  return
 
 # 辅助函数（Helper）
 
-# 辅助函数（Helper）
-
 辅助函数帮助您在模板中快速插入内容，建议您把复杂的代码放在辅助函数而非模板中。
 
 ## 概要
@@ -811,8 +777,6 @@ hexo.extend.helper.register('js'functionpath{  return'<script type="text/javascr
 
 # 迁移器（Migrator）
 
-# 迁移器（Migrator）
-
 迁移器帮助开发者从其他系统迁移到 Hexo。
 
 ## 概要
@@ -826,8 +790,6 @@ hexo.extend.migrator.register(name, functionargs{  // ...
 
 # 处理器（Processor）
 
-# 处理器（Processor）
-
 处理器用于处理 `source` 文件夹内的原始文件。
 
 ## 概要
@@ -837,8 +799,6 @@ hexo.extend.processor.register(rule, functionfile{});
 ```
 
 完整说明请参考 [Box。
-
-# 渲染引擎（Renderer）
 
 # 渲染引擎（Renderer）
 
@@ -883,8 +843,6 @@ varrequire'ejs'
 hexo.extend.renderer.register('ejs''html'functiondata, options{  options.filename = data.path;  return
 }, true 
 ```
-
-# 标签插件（Tag）
 
 # 标签插件（Tag）
 

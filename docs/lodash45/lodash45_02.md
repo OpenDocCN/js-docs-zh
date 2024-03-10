@@ -1,7 +1,5 @@
 # 版本定制
 
-# 版本定制
-
 通过版本定制可以很轻松的定制仅包含你所需功能的 lodash 版本 。更棒的是，我们已经帮你处理好了函数依赖和别名对应，查看 [版本区别](https://github.com/lodash/lodash/wiki/build-differences) & 选择一个适合你的版本。
 
 使用 Grunt? 我们准备了 [Grunt plugin](https://npmjs.org/package/grunt-lodash) 协助构建 lodash。

@@ -1,7 +1,5 @@
 # Acknowledgements & Thanks
 
-# Acknowledgements & Thanks
-
 A big **Thank-You** goes out to all of our [awesome Zepto.js contributors](https://github.com/madrobby/zepto/contributors). May you all forever bask in glory.
 
 The Zepto API is based on [jQuery's Core API](http://jquery.com/), which is released under the [MIT license](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt).

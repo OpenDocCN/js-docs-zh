@@ -1,9 +1,5 @@
 # API
 
-# API
-
-# 默认配置
-
 # 默认配置
 
 ## 与 Jquery Mobile 自动初始化共同协作 Working with Jquery Mobile's Auto-initialization
@@ -130,8 +126,6 @@ gradeA (_ 返回一个布尔值 _, 默认: 返回$.support.mediaquery 的值:
 
 # 事件
 
-# 事件
-
 Jquery Mobile 提供了一些建于本地事件的自定义事件以用来创建一些有用的钩子. 要注意这些事件是建立于各种已存在的触摸事件之上，比如 鼠标和窗口事件，所以你可以通过使用 live() 或者 bind()将他们绑定到其他的 Jquery 事件
 
 ## 触摸事件 Touch events
@@ -225,8 +219,6 @@ alert('This page was just enhanced by Jquery Mobile!');
 ## 动画事件 Animation Events
 
 Jquery Mobile 提供了 animationComplete 插件，你可以用来添加或删除一个 class 来应用 CSS 转场效果
-
-# 方法
 
 # 方法
 
@@ -355,8 +347,6 @@ $.mobile.silentScroll(100);
 
 # 有响应的布局助手
 
-# 有响应的布局助手
-
 ## 媒体查询助手类 Media Query Helper Classes
 
 Jquery Mobile 给 html 元素增加了用来模拟浏览器的水平竖直方向以及常用的最?最大宽度 css 媒介查询 class.这些 class 会在加载，调整大小以及方向变化时更新，使你能够在 css 中切断这些 class，以创建有响应的布局，即使在不支持媒介查询的浏览器中也可以实现
@@ -424,8 +414,6 @@ $.mobile.media("screen and (min-width: 480px)");
 //测试是否为苹果 4 代手机的屏幕（视网膜）
 $.mobile.media("screen and (-webkit-min-device-pixel-ratio: 2)"); 
 ```
-
-# 主题
 
 # 主题
 
