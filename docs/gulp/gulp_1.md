@@ -1,0 +1,47 @@
+# 入门指南
+
+# 入门指南
+
+#### 1\. 全局安装 gulp：
+
+```
+$ npm install --global gulp 
+```
+
+#### 2\. 作为项目的开发依赖（devDependencies）安装：
+
+```
+$ npm install --save-dev gulp 
+```
+
+#### 3\. 在项目根目录下创建一个名为 `gulpfile.js` 的文件：
+
+```
+var gulp = require('gulp');
+
+gulp.task('default', function() {
+  // 将你的默认的任务代码放在这
+}); 
+```
+
+#### 4\. 运行 gulp：
+
+```
+$ gulp 
+```
+
+默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。
+
+想要单独执行特定的任务（task），请输入 `gulp &lt;task&gt; &lt;othertask&gt;`。
+
+## 下一步做什么呢？
+
+你已经安装了所有必要的东西，并且拥有了一个空的 gulpfile。那怎样才算是**真的**入门了呢？可以查看这些 秘籍 和这个 文章列表 来学习更多的内容。
+
+## .src, .watch, .dest, CLI 参数 - 我该怎么去用这些东西呢？
+
+要了解 API 规范文档，请查看 API 文档.
+
+## 可用的插件
+
+gulp 开发社区正在快速成长，每天都会有新的插件诞生。在 [主站](http://gulpjs.com/plugins/) 上可以查看完整的列表。
